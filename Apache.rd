@@ -40,13 +40,16 @@ Digest認証用のファイルを作る
 鍵とか，証明書のリクエストを作る．Common Nameはwww.cozmxing.orgとかstreaming.cozmixng.orgとかにする．
 
   % sudo openssl req -new \
-      -config /etc/ssl/openssl.cnf \
       -out /usr/local/etc/apache2/ssl.key/server.csr \
       -keyout /usr/local/etc/apache2/ssl.key/server.pem
   % sudo openssl rsa \
       -in /usr/local/etc/apache2/ssl.key/server.pem \
       -out /usr/local/etc/apache2/ssl.key/server.key
   % sudo chmod 600 /usr/local/etc/apache2/ssl.key/server.{pem,key}
+
+もしかしたら以下のような-configオプションが必要かもしれない．
+
+  -config /etc/ssl/openssl.cnf
 
 もしなかったら，認証局を作る．
   % cd /usr/local/share/ca
