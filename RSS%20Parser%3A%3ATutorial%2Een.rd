@@ -174,20 +174,20 @@ example, a way of accessing item element that child element
 of rdf:RDF element is like below:
 
   rss = RSS::Parser.parse(rss_source)
-  rss.channel.item # => /rdf:RDF/item; RSS::RDF::Channel::Item
+  rss.item # => /rdf:RDF/item; RSS::RDF::Item
 
 A way of accessing the third item element is shown below. Not
 omitted arguments of reader is handled same as arguments
 of Array#[].
 
   rss = RSS::Parser.parse(rss_source)
-  rss.channel.item(2) # => /rdf:RDF/item[3]; RSS::RDF::Channel::Item
+  rss.item(2) # => /rdf:RDF/item[3]; RSS::RDF::Item
 
 Plural of a child element name is a reader which get all
 children. A way of accessing all the item element is shown below.
 
   rss = RSS::Parser.parse(rss_source)
-  rss.channel.item # => /rdf:RDF/item; [RSS::RDF::Channel::Item, ...]
+  rss.item # => /rdf:RDF/item; [RSS::RDF::Item, ...]
 
 === writer
 
