@@ -2,6 +2,7 @@
 
 * ((<rwiki-devel:199>))をサクッと片付ける．
   * 今日中にできなかった．．．軽く焼酎呑んじゃったから，もう眠い．．．
+  * 今日もできなかった．．．
 * ((<Subversion>))の((<Ruby>))バインディングを((<SWIG>))で作る．
   * -> 本家のリポジトリに((<ブランチを切る|URL:https://svn.collab.net/repos/svn/branches/ruby>))
   * -> 切る前に置いておいた((<パッチ達|URL:http://pub.cozmixng.org/~kou/diff/>))．
