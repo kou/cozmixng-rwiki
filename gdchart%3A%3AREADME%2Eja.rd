@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 417 2004-08-16 11:54:14Z kou $
+$Id: README.ja 563 2005-02-28 00:43:34Z kou $
 
 == 名前
 
@@ -113,3 +113,6 @@ lib/gdchart/pie.rbの以下のコメントが書かれた部分より下のとこ
       graph.title_font = ".../mikachan.ttf"
       graph.title_ptsize = 20.0
 
+== 感謝
+
+  * Markusさん: バグ報告してくれました．
