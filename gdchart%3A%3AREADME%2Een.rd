@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 417 2004-08-16 11:54:14Z kou $
+$Id: README.en 563 2005-02-28 00:43:34Z kou $
 
 == Name
 
@@ -108,3 +108,8 @@ Note the following things if you use TrueType font.
       graph.title = "Title"
       graph.title_font = ".../XXX.ttf"
       graph.title_ptsize = 20.0
+
+== Thanks
+
+  * Markus: He sent me a bug report.
+
