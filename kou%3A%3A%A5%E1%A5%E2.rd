@@ -1,5 +1,60 @@
 = kou::メモ
 
+  * [CSS] 角を丸くする（IEでもGeckoでも動く）
+
+    CSS:
+
+      # enscript css
+      div.round
+      {
+	background: #f8f;
+      }
+
+      div.round p
+      {
+	margin: 0px;
+      }
+
+      div.round span.top,
+      div.round span.bottom
+      {
+	display: block;
+	background: #fff;
+      }
+
+      div.round span.top *,
+      div.round span.bottom *
+      {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	background: #f8f;
+      }
+
+      span.r1 {margin: 0px 5px}
+      span.r2 {margin: 0px 3px}
+      span.r3 {margin: 0px 2px}
+      span.r4 {margin: 0px 1px; height: 2px}
+
+    HTML:
+
+      # enscript html
+      <div class="round">
+      <span class="top">
+        <span class="r1"></span>
+        <span class="r2"></span>
+        <span class="r3"></span>
+        <span class="r4"></span>
+      </span>
+      <p>あいうえお</p>
+      <span class="bottom">
+        <span class="r4"></span>
+        <span class="r3"></span>
+        <span class="r2"></span>
+        <span class="r1"></span>
+      </span>
+      </div> 
+
   * ((<[debian-users:43271] Dell PowerEdge SC420にsargeのインストール|URL:http://lists.debian.or.jp/debian-users/200503/msg00128.html>))
 
   * [XSLT] xsltproc: コマンドラインのXSLTプロセサ．
