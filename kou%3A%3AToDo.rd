@@ -12,6 +12,7 @@
 * ((<Ruby>))で実装されたRelax NGバリデータを作る/探す
 * RWikiのRD2RWikiVisitor#default_ext_*をrwiki/rd/ext/以下のクラスに移動してはどうかと提案する．
 * ゼミのネタを考える．
+  * kouプロダクツをまとめてネタにする．
   * 関数型make
   * ((<Self Tutorial|URL:http://research.sun.com/research/self/release_4.0/Self-4.0/Tutorial/>))
   * アスペクト指向
