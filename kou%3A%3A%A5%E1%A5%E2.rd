@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<[debian-users:43271] Dell PowerEdge SC420にsargeのインストール|URL:http://lists.debian.or.jp/debian-users/200503/msg00128.html>))
+
   * [XSLT] xsltproc: コマンドラインのXSLTプロセサ．
 
   * wwwのバックアップ容量が150MB減った．CSDのリポジトリ（無意味に）でかすぎだよ．．．
