@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [Ruby] 1.8.3 prevewは来週(12日)っぽいみたい．
+
   * [Subversion] 1.2.xにRubyのやつが入りそう．RC1には入っているし．
 
   * [RSS Parser] ようやく複数のDublinCoreの要素（？）を扱えるようになった．
