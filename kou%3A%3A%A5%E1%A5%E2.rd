@@ -1,6 +1,6 @@
 = kou::メモ
 
-  * [Ruby][Subversion] FreeBSDだと落ちる．Svn::Contextにnotify_{func,baton}を設定していないから？libsvn_client/update.c:116とかsvn_wc_get_switch_editorが怪しい．update_editorがちゃんと設定されていないのかしら．
+  * [Ruby][Subversion] FreeBSDだと落ちる．Svn::Contextにnotify_{func,baton}を設定していないから？libsvn_client/update.c:116とかsvn_wc_get_update_editorが怪しい．update_editorがちゃんと設定されていないのかしら．
 
   * [CSS] 角を丸くする（IEでもGeckoでも動く）
 
