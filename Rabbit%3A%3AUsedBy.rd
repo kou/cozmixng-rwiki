@@ -8,3 +8,4 @@ Rabbit is used by ...  (dispense with the Mr. and Mrs., sorry)
 * かずひこ
   [((<1|URL:http://kazuhiko.tdiary.net/20041023.html#p01>))]
   [((<2|URL:http://kazuhiko.tdiary.net/20041203.html#p01>))]
+  [((<3|URL:http://kazuhiko.tdiary.net/20050312.html#p01>))]
