@@ -1,5 +1,11 @@
 = kou::メモ
 
+  * [ToDo] 画像置場を作る．
+
+  * [ToDo] 表も作りやすく．
+
+  * [ToDo] ブラウザ上で簡単にルビをふれるようなインターフェイスを作る．MecabだかChaSenとAjaxを使った日本語変換デモをどこかで見たなぁ．
+
   * [Mozilla][風博士] Ctrl+スクロールで1ページ単位でスクロールさせるには((<URL:about:config>))で
 
       mousewheel.withcontrolkey.action
