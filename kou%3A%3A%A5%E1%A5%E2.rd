@@ -1,5 +1,11 @@
 = kou::メモ
 
+  * [libtool] 共有ライブラリの拡張子を変更
+
+      % ./libtool --mode=link gcc -shrext .bundle ...
+
+    --mode=relinkのときとかに，--tagを指定しろと言われて，さらにLINK-COMMANDがccの時は--tagを指定しなくてもLINK-COMMANDをgccとかにするとうまく動く．
+
   * ルータできた．
 
     IPv6のパケット転送を有効にする．
