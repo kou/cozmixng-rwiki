@@ -122,6 +122,10 @@ TrackBack module.
     rss = RSS::Parser.parse(rss_source, false)
   end
 
+Some online RSS 2.0 feeds use the dublincore tags, despite the lack of a standard for dublincore in RSS 2.0. To use dublincore tags from such feeds, rss/dublincore/2.0 is required.
+ require 'rss/dublincore/2.0'
+This is not included with the RSS Parser distributed with Ruby.
+
 === Handling of unknown elements.
 
 The Parser's default behavior is to ignore unknown (not
