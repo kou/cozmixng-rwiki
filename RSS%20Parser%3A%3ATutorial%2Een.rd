@@ -187,7 +187,7 @@ Plural of a child element name is a reader which get all
 children. A way of accessing all the item element is shown below.
 
   rss = RSS::Parser.parse(rss_source)
-  rss.item # => /rdf:RDF/item; [RSS::RDF::Item, ...]
+  rss.items # => /rdf:RDF/item; [RSS::RDF::Item, ...]
 
 === writer
 
