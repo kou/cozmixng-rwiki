@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<hown wiki - モナド|URL:http://howm.sourceforge.jp/cgi-bin/hiki/hiki.cgi?Monad>))
+
   * [Subversion] Ruby関係じゃないところにパッチを当ててコミットするときはlog messageに以下のようなやつを書くんだって．
 
       Approved by: XXX
