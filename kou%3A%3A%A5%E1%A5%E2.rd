@@ -1,5 +1,42 @@
 = kou::メモ
 
+  * ルータできた．
+
+    IPv6のパケット転送を有効にする．
+
+      % sudo sh -c "echo 1 > /proc/sys/net/ipv6/conf/all/forwarding"
+
+    DTCPCを動かす．以下のXXXX:XXXX:XXXX:XXXX::/64はDTCPでもらったネットワークプレフィックス．
+
+    eth1にIPv6のアドレスを付加．
+
+      % sudo ip addr add XXXX:XXXX:XXXX:XXXX::2/64 dev eth1
+
+    内部ネットワークのパケットはeth1に送るようにする．
+
+      % sudo /sbin/ip route add XXXX:XXXX:XXXX:XXXX::/64 dev eth1
+
+    RAをするサーバradvdをインストール．
+
+      % sudo apt-get -u --purge -V install radvd
+
+    /etc/radvd.confを作成
+
+      interface eth1
+      {
+         AdvSendAdvert on;
+         prefix XXXX:XXXX:XXXX:XXXX::/64
+         {
+           AdvOnLink on;
+           AdvAutonomous on;
+           AdvRouterAddr on;
+         };
+      };
+
+    radvdを起動．
+
+      % sudo env - /etc/init.d/radvd restart
+
   * USB NICを買ってきた．おぉ，挿すだけで認識する！さすが．
 
   * CVSからSubversionにしたら起動時間も使用メモリも増えちゃった．
