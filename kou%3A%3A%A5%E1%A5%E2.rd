@@ -1,5 +1,11 @@
 = kou::メモ
 
+  * XXX:
+
+      # enscript scheme
+      (and (string-scan str "\0")
+           "none")
+
   * [libtool] 共有ライブラリの拡張子を変更
 
       % ./libtool --mode=link gcc -shrext .bundle ...
