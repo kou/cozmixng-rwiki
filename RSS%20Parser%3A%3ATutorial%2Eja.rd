@@ -185,19 +185,19 @@ rdf:RDF要素の最初のitem要素にアクセスするには以下のようにし
 ます。
 
   rss = RSS::Parser.parse(rss_source)
-  rss.channel.item # => /rdf:RDF/item[1]要素; RSS::RDF::Channel::Item
+  rss.item # => /rdf:RDF/item[1]要素; RSS::RDF::Item
 
 3番目のitem要素にアクセスするには以下のようにします。省略さ
 れなかったリーダの引数はArray#[]の引数と同じように扱われます。
 
   rss = RSS::Parser.parse(rss_source)
-  rss.channel.item(2) # => /rdf:RDF/item[3]要素; RSS::RDF::Channel::Item
+  rss.item(2) # => /rdf:RDF/item[3]要素; RSS::RDF::Item
 
 子要素すべてを取得したいときは要素名の複数形がリーダとなりま
 す。すべてのitem要素を取得するには以下のようにします。
 
   rss = RSS::Parser.parse(rss_source)
-  rss.channel.items # => /rdf:RDF/item要素の配列; [RSS::RDF::Channel::Item, ...]
+  rss.items # => /rdf:RDF/item要素の配列; [RSS::RDF::Item, ...]
 
 === ライタ(writer)
 
