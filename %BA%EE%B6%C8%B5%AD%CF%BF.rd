@@ -31,3 +31,4 @@
   * ((<Samba>))
   * ((<QuickML>))
   * ((<Mailgraph>))
+  * ((<VNC>))
