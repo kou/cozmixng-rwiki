@@ -7,28 +7,28 @@
       # enscript css
       div.round
       {
-	background: #f8f;
+        background: #f8f;
       }
 
       div.round p
       {
-	margin: 0px;
+        margin: 0px;
       }
 
       div.round span.top,
       div.round span.bottom
       {
-	display: block;
-	background: #fff;
+        display: block;
+        background: #fff;
       }
 
       div.round span.top *,
       div.round span.bottom *
       {
-	display: block;
-	height: 1px;
-	overflow: hidden;
-	background: #f8f;
+        display: block;
+        height: 1px;
+        overflow: hidden;
+        background: #f8f;
       }
 
       span.r1 {margin: 0px 5px}
