@@ -1,12 +1,10 @@
 = kou::メモ
 
+  * [CGI] ダウンロード
+
+       Content-Disposition: attachment; filename=XXX
+
   * [Debian] /etc/console-tools/remap
-
-  * XXX:
-
-      # enscript scheme
-      (and (string-scan str "\0")
-           "none")
 
   * [libtool] 共有ライブラリの拡張子を変更
 
