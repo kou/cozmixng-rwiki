@@ -1,5 +1,7 @@
 = kou::есет
 
+  * [Debian] /etc/console-tools/remap
+
   * XXX:
 
       # enscript scheme
