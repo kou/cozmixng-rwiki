@@ -1,6 +1,6 @@
 = kou::ToDo
 
-* CUNEのTシャツを通販している所を探す．
+* ((<rwiki-devel:199>))をサクッと片付ける．
 * ((<Subversion>))の((<Ruby>))バインディングを((<SWIG>))で作る．
   * -> 本家のリポジトリに((<ブランチを切る|URL:https://svn.collab.net/repos/svn/branches/ruby>))
   * -> 切る前に置いておいた((<パッチ達|URL:http://pub.cozmixng.org/~kou/diff/>))．
