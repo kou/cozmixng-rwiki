@@ -1,5 +1,15 @@
 = kou::メモ
 
+  * [Mozilla][風博士] Ctrl+スクロールで1ページ単位でスクロールさせるには((<URL:about:config>))で
+
+      mousewheel.withcontrolkey.action
+
+    を
+
+      1
+
+    にすればよい．
+
   * ((<hown wiki - モナド|URL:http://howm.sourceforge.jp/cgi-bin/hiki/hiki.cgi?Monad>))
 
   * [Subversion] Ruby関係じゃないところにパッチを当ててコミットするときはlog messageに以下のようなやつを書くんだって．
