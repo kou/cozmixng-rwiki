@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [RSS Parser] ようやく複数のDublinCoreの要素（？）を扱えるようになった．
+
   * [ToDo] 画像置場を作る．
 
   * [ToDo] 表も作りやすく．
