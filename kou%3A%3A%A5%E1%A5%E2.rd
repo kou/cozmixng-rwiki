@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [Subversion] 1.2.xにRubyのやつが入りそう．RC1には入っているし．
+
   * [RSS Parser] ようやく複数のDublinCoreの要素（？）を扱えるようになった．
 
   * [ToDo] 画像置場を作る．
