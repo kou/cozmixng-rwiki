@@ -2,7 +2,7 @@
 
   * [ToDo] [RSS Parser]
     * Dublin Core周りのドキュメントを更新する．
-    * test/test_maker_dc.rbに複数のDublin Coreを扱えるかのテストを追加する．
+    * (('del:test/test_maker_dc.rbに複数のDublin Coreを扱えるかのテストを追加する．'))
     * ruby_1_8にマージする．
 
   * [Ruby] 1.8.3 prevewは来週(12日)っぽいみたい．
