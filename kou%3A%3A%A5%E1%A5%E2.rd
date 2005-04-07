@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [ToDo] [Subversion] commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．
+
   * [ToDo] [RSS Parser]
     * (('del:Dublin Core周りのドキュメントを更新する．'))
     * (('del:test/test_maker_dc.rbに複数のDublin Coreを扱えるかのテストを追加する．'))
