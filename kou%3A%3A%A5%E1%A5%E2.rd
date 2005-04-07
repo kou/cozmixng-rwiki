@@ -1,7 +1,7 @@
 = kou::メモ
 
   * [ToDo] [RSS Parser]
-    * Dublin Core周りのドキュメントを更新する．
+    * (('del:Dublin Core周りのドキュメントを更新する．'))
     * (('del:test/test_maker_dc.rbに複数のDublin Coreを扱えるかのテストを追加する．'))
     * ruby_1_8にマージする．
 
