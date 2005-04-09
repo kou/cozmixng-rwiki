@@ -1,11 +1,13 @@
 = kou::メモ
 
+  * [ToDo] [RSS Parser] 0.1.3をリリースする．
+
   * [ToDo] [Subversion] commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．
 
   * [ToDo] [RSS Parser]
     * (('del:Dublin Core周りのドキュメントを更新する．'))
     * (('del:test/test_maker_dc.rbに複数のDublin Coreを扱えるかのテストを追加する．'))
-    * ruby_1_8にマージする．
+    * (('del:ruby_1_8にマージする．'))
 
   * [Ruby] 1.8.3 prevewは来週(12日)っぽいみたい．
 
