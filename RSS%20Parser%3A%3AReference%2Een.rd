@@ -2,7 +2,7 @@
 
 = Reference.en
 
-$Id: Reference.en 521 2004-11-28 07:36:24Z kou $
+$Id: Reference.en 23 2005-04-07 06:38:01Z kou $
 
 This is a reference of RSS Maker.
 
@@ -476,6 +476,70 @@ This adds the following methods to (({item})).
 This adds the following methods to (({maker.channel})),
 (({maker.image})), (({item})) and (({maker.textinput})).
 
+RSS Maker supports multiple Dublin Core elements from
+0.1.3. This causes API change but RSS Maker still has the
+API before 0.1.3. So some scripts for before 0.1.2 will
+work.
+
+--- dc_titles.new_title
+     Adds new <dc:title> element then returns it.
+    
+     You can use (({dc_titles.new_title.value=})) and
+     (({dc_titles.new_title.content=})) which is an alias of
+     (({value=})) for modifying the value of this.
+    
+     You can use (({value})) and (({content})) which is an
+     alias of (({value})) for getting the value of this.
+
+--- dc_descriptions.new_description
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_creators.new_creator
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_subjects.new_subject
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_publishers.new_publisher
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_contributors.new_contributor
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_types.new_type
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_formats.new_format
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_identifiers.new_identifier
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_sources.new_source
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_languages.new_language
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_relations.new_relation
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_coverages.new_coverage
+     The usage of this is same as (({dc_titles.new_title})).
+
+--- dc_rightses.new_rightses
+     The usage of this is same as (({dc_titles.new_title})).
+    
+     ((*FIXME*)): rightses is too strange, so I want to an
+     idea of good name of rightses.
+
+--- dc_dates.new_date
+     The usage of this is same as (({dc_titles.new_title})).
+
+
+For compatibility, this adds the following methods for
+handling the first Dublin Core element.
+
 --- dc_title
 --- dc_title=(value)
 
@@ -546,7 +610,7 @@ This adds the following methods to (({item})).
 
 --- trackback_abouts
 
-=== trackback_abouts
+==== trackback_abouts
 
 This has some methods like Array: (({#<<})), (({#[]})),
 (({#[]=})), (({#first})), (({#last})), (({#push})),
@@ -557,7 +621,7 @@ on.
      Makes new (({about})) and returns it. It is appended to
      (({about})) list.
 
-==== about
++ about
 
 (({about})) is the object which is made by
 (({trackback_abouts.new_about})).
@@ -574,3 +638,54 @@ on.
      is an alias of (({value})).
 --- content=(new_value)
      is an alias of (({value=})).
+
+=== Image
+
+This adds the following methods to (({item})).
+
+--- image_item
+
+And, this adds the following methods to (({channel})).
+
+--- image_favicon
+
+==== image_item
+
+You can use Dublin Core's methods, too.
+
+--- image_item.about
+--- image_item.about=
+
+--- image_item.resource
+--- image_item.resource=
+
+--- image_item.image_width
+--- image_item.image_width=
+
+--- image_item.width
+     is an alias of (({image_item.image_width})).
+--- image_item.width=
+     is an alias of (({image_item.image_width=})).
+
+--- image_item.image_height
+--- image_item.image_height=
+
+--- image_item.height
+     is an alias of (({image_item.image_height})).
+--- image_item.height=
+     is an alias of (({image_item.image_height=})).
+
+==== image_favicon
+
+You can use Dublin Core's methods, too.
+
+--- image_item.about
+--- image_item.about=
+
+--- image_item.image_size
+--- image_item.image_size=
+
+--- image_item.size
+     is an alias of (({image_item.image_size})).
+--- image_item.size=
+     is an alias of (({image_item.image_size=})).
