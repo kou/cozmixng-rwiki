@@ -2,7 +2,7 @@
 
 = Tutorial.en
 
-$Id: Tutorial.en 526 2004-12-05 04:56:07Z kou $
+$Id: Tutorial.en 23 2005-04-07 06:38:01Z kou $
 
 Sorry for my funny English :-(
 
@@ -43,6 +43,7 @@ You can include these items below:
   require 'rss/syndication'
   require 'rss/content'
   require 'rss/trackback'
+  require 'rss/image'
 
 You can use the ((<Dublin
 Core|URL:http://web.resource.org/rss/1.0/modules/dc/>))
@@ -50,8 +51,10 @@ module,
 ((<Syndication|URL:http://web.resource.org/rss/1.0/modules/syndication/>))
 module,
 ((<Content|URL:http://web.resource.org/rss/1.0/modules/content/>))
-module and
+module,
 ((<TrackBack|URL:http://madskills.com/public/xml/rss/module/trackback/>))
+module and
+((<Image|URL:http://web.resource.org/rss/1.0/modules/image/>))
 module if you require them.
 
 However, Content module is only support content:encoded.
@@ -122,9 +125,15 @@ TrackBack module.
     rss = RSS::Parser.parse(rss_source, false)
   end
 
-Some online RSS 2.0 feeds use the dublincore tags, despite the lack of a standard for dublincore in RSS 2.0. To use dublincore tags from such feeds, rss/dublincore/2.0 is required.
- require 'rss/dublincore/2.0'
-This is not included with the RSS Parser distributed with Ruby.
+Some online RSS 2.0 feeds use the dublincore tags, despite
+the lack of a standard for dublincore in RSS 2.0. To use
+dublincore tags from such feeds, rss/dublincore/2.0 is
+required.
+
+  require 'rss/dublincore/2.0'
+
+This is not included with the RSS Parser distributed with
+Ruby.
 
 === Handling of unknown elements.
 
@@ -178,7 +187,7 @@ example, a way of accessing item element that child element
 of rdf:RDF element is like below:
 
   rss = RSS::Parser.parse(rss_source)
-  rss.item # => /rdf:RDF/item; RSS::RDF::Item
+  rss.item # => /rdf:RDF/item[1]; RSS::RDF::Item
 
 A way of accessing the third item element is shown below. Not
 omitted arguments of reader is handled same as arguments
@@ -191,7 +200,7 @@ Plural of a child element name is a reader which get all
 children. A way of accessing all the item element is shown below.
 
   rss = RSS::Parser.parse(rss_source)
-  rss.items # => /rdf:RDF/item; [RSS::RDF::Item, ...]
+  rss.items # => an array of /rdf:RDF/item; [RSS::RDF::Item, ...]
 
 === writer
 
@@ -289,8 +298,7 @@ Parser can guess the type from those extensions.
 === Making RSS object
 
 If you want to make RSS object out of nothing, you can use
-RSS Maker. RSS Maker's API, however, is not fixed. I accepts
-any opinions for making the best API.
+RSS Maker.
 
 
 The usage is the following:
@@ -647,11 +655,48 @@ Let's rewrite above print_items to output UTF-8.
 Next, let's display items sorted with update time using date
 attribute of Dublin Core module.
 
-This library has accessor that name `dc_<element_name>' to
-access elements of Dublin Core module. By the way it has
-accessor that name `sy_<element_name>' to access elements of
-Syndication module and Content modules's one is
-`content_<element_name>'.
+This library has accessors that name `dc_<element_name>' to
+access an element of Dublin Core module which appears
+first. To access an array of elements, this library has
+accessors that name `dc_<plural_element_name>'. ((-The
+accessor name of dc:rights is dc_rightses. This is too
+strange. Please give me a good idea.-))
+
+You get an array of `an object which describe the element'
+instead of `a string which describe the content of element'
+when you access by plural form. This library has methods for
+getting `a string which describes the content of element'
+from `an object which describes the element'. Their names
+are (({content})) and (({value})) which is an alias of
+(({content})). And this library has methods for putting `a
+string which describes the content of element' to `an object
+which describes the element'. Their names are (({content=}))
+and (({value=})) which is an alias of (({content=})).
+
+  rss.channel.dc_title  # => `a string which describes the
+                        #     content of element'
+                        # (ex. "My site")
+
+  rss.channel.dc_titles # => an array of `an object which
+                        #    describes the element'
+                        # (ex. [DublinCoreTitle object, ...])
+
+  rss.channel.dc_titles.collect {|title| title.value}
+                        # => an array of `a string which
+                        #    describes the content of element'
+                        # (ex. ["My site", ...])
+
+  rss.channel.dc_titles.first.value == rss.channel.dc_title
+                        # => true
+  # more strict
+  first_title = rss.channel.dc_titles.first
+  first_title = first_title.value if first_title
+  first_title == rss.channel.dc_title
+                        # => true
+
+By the way it has accessor that name `sy_<element_name>' to
+access elements of Syndication module and Content modules's
+one is `content_<element_name>'.
 
 Required files are below:
 
