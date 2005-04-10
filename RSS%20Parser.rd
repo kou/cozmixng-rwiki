@@ -1,6 +1,6 @@
 = RSS Parser
 
-The latest version: 0.1.2
+The latest version: 0.1.3
 
 ((<BTS|URL:/~kagemai/?project=rss;action=top>))(Japanese only)
 
