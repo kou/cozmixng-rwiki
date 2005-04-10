@@ -2,7 +2,7 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 526 2004-12-05 04:56:07Z kou $
+$Id: Tutorial.ja 23 2005-04-07 06:38:01Z kou $
 
 == require
 
@@ -56,6 +56,10 @@ RSS 2.0を扱う場合は
 
   require 'rss/trackback'
 
+や
+
+  require 'rss/image'
+
 も記述してください。これらは、それぞれ((<Dublin
 Core|URL:http://web.resource.org/rss/1.0/modules/dc/>))モジュー
 ル、
@@ -64,6 +68,8 @@ Core|URL:http://web.resource.org/rss/1.0/modules/dc/>))モジュー
 ((<Content|URL:http://web.resource.org/rss/1.0/modules/content/>))
 モジュール，
 ((<TrackBack|URL:http://madskills.com/public/xml/rss/module/trackback/>))
+モジュール，
+((<Image|URL:http://web.resource.org/rss/1.0/modules/image/>))
 モジュールを使用可能にします。
 
 ただし，Contentモジュールはcontent:encodedしかサポートしていません．
@@ -294,9 +300,7 @@ RSSのルート要素（(({RSS::RDF}))または(({RSS::Rss}))）オブジェ
 === RSSオブジェクトを作る
 
 既存のRSSをパースせずに，一から新しくRSSを作成するにはRSS
-Makerが便利です．ただし，RSS MakerのAPIはまだ確定したわけで
-はありません．よりよいAPIにするために，意見を受け付けていま
-す．
+Makerが便利です．
 
 
 以下のように使います．
@@ -655,11 +659,41 @@ RSS::UnknownConversionMethodError例外が発生します。
 次はDublin Coreモジュールのdate属性を使って更新順にitemを表
 示してみましょう。
 
-Dublin Coreモジュールの要素にアクセスするには「dc_要素名」と
-いうアクセサが用意されています。ちなみにSyndicationモジュー
-ルの要素にアクセスするには「sy_要素名」というアクセサが，
-Contentモジュールの要素にアクセスするには「content_要素名」
-というアクセサが用意されています。
+最初に現れたDublin Coreモジュールの要素にアクセスするには
+「dc_要素名」というアクセサが用意されています。全ての要素の
+配列にアクセスするには「dc_要素の複数形」((-dc:rightsは
+dc_rightsesという風になっていて気に入っていません．だれか良
+い案を下さい．-))とします．
+
+複数形でアクセスした場合は「要素の内容を表す文字列」ではなく，
+「要素を表すオブジェクト」の配列が返ります．「要素を表すオブ
+ジェクト」から「要素の内容を表す文字列」を取得するには
+(({content}))メソッドやその別名である(({value}))メソッドを利
+用します．「要素の内容を表す文字列」を設定するには
+(({content=}))メソッドやその別名である(({value=}))メソッドを
+利用します．
+
+  rss.channel.dc_title  # => 「要素の内容を表す文字列」
+                        # （"My site"など）
+
+  rss.channel.dc_titles # => 「要素を表すオブジェクト」の配列
+                        # （[DublinCoreTitleオブジェクト, ...]）
+
+  rss.channel.dc_titles.collect {|title| title.value}
+                        # => 「要素の内容を表す文字列」の配列
+                        # （["My site", ...]など）
+
+  rss.channel.dc_titles.first.value == rss.channel.dc_title
+                        # => true
+  # 厳密にはこう
+  first_title = rss.channel.dc_titles.first
+  first_title = first_title.value if first_title
+  first_title == rss.channel.dc_title
+                        # => true
+
+ちなみにSyndicationモジュールの要素にアクセスするには「sy_要
+素名」というアクセサが，Contentモジュールの要素にアクセスす
+るには「content_要素名」というアクセサが用意されています。
 
 requireするのは以下のものです。
 
