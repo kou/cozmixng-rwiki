@@ -1,5 +1,15 @@
 = kou::メモ
 
+  * CVSからSubversionへ変換．いらないファイルの履歴は削除する．
+
+      % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSリポジトリのパス
+      % svndumpfilter exclude いらないファイルのプレフィックス < repos.dump > repos-filtered.dump
+
+    例:
+
+      % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSREPOS/rd
+      % svndumpfilter exclude trunk/navi.rd < repos.dump >! repos-filtered.dump
+
   * [ToDo] [RSS Parser] 0.1.3をリリースする．
 
   * [ToDo] [Subversion] commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．
