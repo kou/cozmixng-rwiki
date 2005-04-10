@@ -2,7 +2,7 @@
 
 = Reference.ja
 
-$Id: Reference.ja 521 2004-11-28 07:36:24Z kou $
+$Id: Reference.ja 23 2005-04-07 06:38:01Z kou $
 
 RSS Makerのリファレンスです．
 
@@ -484,6 +484,70 @@ RSS 0.91/2.0の場合は(({title}))，(({description}))，
 以下のメソッドを(({maker.channel}))，(({maker.image}))，
 (({item}))，(({maker.textinput}))に追加します．
 
+RSS Makerは0.1.3より複数のDublin Coreの要素をサポートしまし
+た．そのため，Dublin Core周りのAPIが変更されましたが，0.1.2
+以前のAPIも互換性のために残されているので0.1.2以前のために作
+成されたスクリプトも動作するはずです．
+
+--- dc_titles.new_title
+     新しく<dc:title>要素を追加し，それを返します．
+
+     値を設定するには(({dc_titles.new_title.value=}))や，(({value=}))
+     の別名である(({dc_titles.new_title.content=}))を利用でき
+     ます．
+
+     現在設定している値を取得するには(({value}))や(({value}))
+     の別名である(({content}))を利用できます．
+
+--- dc_descriptions.new_description
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_creators.new_creator
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_subjects.new_subject
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_publishers.new_publisher
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_contributors.new_contributor
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_types.new_type
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_formats.new_format
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_identifiers.new_identifier
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_sources.new_source
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_languages.new_language
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_relations.new_relation
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_coverages.new_coverage
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+--- dc_rightses.new_rightses
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+     ((*FIXME*)): rightsesというのはどうもおかしいので，良い
+     名前に関する意見を下さい．
+
+--- dc_dates.new_date
+     使用方法は(({dc_titles.new_title}))と同様です．
+
+
+互換性のために，1番初めに現れるDublin Coreの要素を操作する以
+下のメソッドも追加します．
+
 --- dc_title
 --- dc_title=(value)
 
@@ -554,7 +618,7 @@ RSS 0.91/2.0の場合は(({title}))，(({description}))，
 
 --- trackback_abouts
 
-=== trackback_abouts
+==== trackback_abouts
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
@@ -564,7 +628,7 @@ RSS 0.91/2.0の場合は(({title}))，(({description}))，
      新しく(({about}))を作成し，返します．作成された
      (({about}))は(({about}))リストの最後に追加されています．
 
-==== about
++ about
 
 (({about}))は(({trackback_abouts.new_about}))で作成されたオブジェク
 トとします．
@@ -581,3 +645,54 @@ RSS 0.91/2.0の場合は(({title}))，(({description}))，
     (({value}))の別名です．
 --- content=(new_value)
     (({value=}))の別名です．
+
+=== Image
+
+以下のメソッドを(({item}))に追加します．
+
+--- image_item
+
+また，以下のメソッドを(({channel}))に追加します．
+
+--- image_favicon
+
+==== image_item
+
+Dublin Coreのメソッドも使えます．
+
+--- image_item.about
+--- image_item.about=
+
+--- image_item.resource
+--- image_item.resource=
+
+--- image_item.image_width
+--- image_item.image_width=
+
+--- image_item.width
+     (({image_item.image_width}))の別名です．
+--- image_item.width=
+     (({image_item.image_width=}))の別名です．
+
+--- image_item.image_height
+--- image_item.image_height=
+
+--- image_item.height
+     (({image_item.image_height}))の別名です．
+--- image_item.height=
+     (({image_item.image_height=}))の別名です．
+
+==== image_favicon
+
+Dublin Coreのメソッドも使えます．
+
+--- image_item.about
+--- image_item.about=
+
+--- image_item.image_size
+--- image_item.image_size=
+
+--- image_item.size
+     (({image_item.image_size}))の別名です．
+--- image_item.size=
+     (({image_item.image_size=}))の別名です．
