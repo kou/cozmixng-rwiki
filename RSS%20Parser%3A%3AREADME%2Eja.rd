@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 494 2004-11-03 06:15:01Z kou $
+$Id: README.ja 23 2005-04-07 06:38:01Z kou $
 
 ((*0.0.6まではruby 1.8での動作がruby 1.6の動作に比べて10倍遅
 いです．ruby 1.8で使う場合は0.0.7以降を使ってください．*))
@@ -63,7 +63,7 @@ rubyのCVS HEADにも入っています．
 
 ((<URL:http://www.cozmixng.org/~kou/download/rss.tar.gz>))
 
-  % svn co http://www.cozmixng.org/repos/ruby/rss/trunk rss
+  % svn co http://www.cozmixng.org/repos/rss/trunk rss
 
 == インストール
 
@@ -86,10 +86,18 @@ sample/tdiary_pluginの下にあるrss-recent.rbをtDiaryのプラグ
 
 --- rss_recent(url, max=5, cache_time=3600)
 
-((|url|))にあるRSSをパースして最初に現れた項目のうち最大
-((|max|))項目を表示します。RSSをパースした結果は
-((|cache_time|))秒キャッシュされます。
+     ((|url|))にあるRSSをパースして最初に現れた項目のうち最
+     大((|max|))項目を表示します。RSSをパースした結果は
+     ((|cache_time|))秒キャッシュされます。
 
-  * ((|url|)) : RSSのあるURL
-  * ((|max|)) : 表示する項目数
-  * ((|cache_time|)) : RSSをキャッシュしておく時間(秒)
+       * ((|url|)): RSSのあるURL
+       * ((|max|)): 表示する項目数
+       * ((|cache_time|)): RSSをキャッシュしておく時間(秒)
+
+(({rss_recent}))を制御する以下のオプションがあります．
+
+: @options['rss-recent.use-image-link']
+     
+   このオプションが(({nil}))または(({false}))でない場合，
+   /rdf:RDF/image/urlなど，リンク時に画像として使えるよう
+   な情報があればそれを使用します．
