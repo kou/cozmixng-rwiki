@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 494 2004-11-03 06:15:01Z kou $
+$Id: README.en 23 2005-04-07 06:38:01Z kou $
 
 ((*The performance of this library on ruby 1.8 is 10 times
 as slow as on ruby 1.6 until 0.0.6. Use 0.0.7 or later if
@@ -63,7 +63,7 @@ This library is included in CVS HEAD of ruby.
 
 ((<URL:http://www.cozmixng.org/~kou/download/rss.tar.gz>))
 
-  % svn co http://www.cozmixng.org/repos/ruby/rss/trunk rss
+  % svn co http://www.cozmixng.org/repos/rss/trunk rss
 
 == Install
 
@@ -84,10 +84,18 @@ You can use below method if you install this plugin.
 
 --- rss_recent(url, max=5, cache_time=3600)
 
-This parses RSS that is ((|url|)) and display top ((|max|))
-items. Result of parsing RSS is cached over ((|cache_time|))
-seconds.
+     This parses RSS that is ((|url|)) and display top ((|max|))
+     items. Result of parsing RSS is cached over
+     ((|cache_time|)) seconds.
 
-  * ((|url|)) : URL that specify the RSS
-  * ((|max|)) : The number of the maximum display items
-  * ((|cache_time|)) : Time to cash the RSS(second)
+       * ((|url|)) : URL that specify the RSS
+       * ((|max|)) : The number of the maximum display items
+       * ((|cache_time|)) : Time to cash the RSS(second)
+
+There is the following option for controlling (({rss_recent})).
+
+: @options['rss-recent.use-image-link']
+     
+   If the option is not (({nil})) or (({false})),
+   (({rss_recent})) uses a image as link if
+   /rdf:RDF/image/url and so on are available.
