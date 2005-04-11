@@ -10,7 +10,7 @@
       % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSREPOS/rd
       % svndumpfilter exclude trunk/navi.rd < repos.dump >! repos-filtered.dump
 
-  * [ToDo] [RSS Parser] 0.1.3をリリースする．
+  * [ToDo] [RSS Parser] (('del:0.1.3をリリースする．'))
 
   * [ToDo] [Subversion] commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．
 
