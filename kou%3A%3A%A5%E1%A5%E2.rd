@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [RSS Parser] Dublin Coreの文字コード変換周りがバグっている．．．converterを伝搬していない感じ．
+
   * CVSからSubversionへ変換．いらないファイルの履歴は削除する．
 
       % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSリポジトリのパス
