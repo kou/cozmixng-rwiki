@@ -1,6 +1,8 @@
 = kou::メモ
 
   * [RSS Parser] Dublin Coreの文字コード変換周りがバグっている．．．converterを伝搬していない感じ．
+    
+    RSS::Element#childrenをextensibleにしないと．
 
   * CVSからSubversionへ変換．いらないファイルの履歴は削除する．
 
