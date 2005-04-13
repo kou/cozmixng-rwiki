@@ -6,6 +6,8 @@
     
     RSS::Element#childrenをextensibleにしないと．
 
+    こんなこと↑せずに修正．
+
   * CVSからSubversionへ変換．いらないファイルの履歴は削除する．
 
       % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSリポジトリのパス
