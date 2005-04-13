@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [Subversion] ようやくHACKINGを((<翻訳|URL:http://pub.cozmixng.org/~kou/text/HACKING.ja>))し終わった．1週間くらいかかった気がする．．．
+
   * [RSS Parser] Dublin Coreの文字コード変換周りがバグっている．．．converterを伝搬していない感じ．
     
     RSS::Element#childrenをextensibleにしないと．
