@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<Ajax を使った 日本語 IME|URL:http://chasen.org/~taku/software/ajax/ime/>))
+
   * [Subversion] ようやくHACKINGを((<翻訳|URL:http://pub.cozmixng.org/~kou/text/HACKING.ja>))し終わった．1週間くらいかかった気がする．．．
 
   * [RSS Parser] Dublin Coreの文字コード変換周りがバグっている．．．converterを伝搬していない感じ．
