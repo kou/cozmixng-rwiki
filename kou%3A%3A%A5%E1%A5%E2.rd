@@ -24,7 +24,7 @@
 
   * [ToDo] [RSS Parser] (('del:0.1.3をリリースする．'))
 
-  * [ToDo] [Subversion] commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．
+  * [ToDo] [Subversion] (('del:commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．'))
 
   * [ToDo] [RSS Parser]
     * (('del:Dublin Core周りのドキュメントを更新する．'))
