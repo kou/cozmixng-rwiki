@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<K2Y|URL:http://pub.cozmixng.org/~kou/ajax/k2y>))
+
   * Ignore entries under copied directories.
 
   * ((<Ajax を使った 日本語 IME|URL:http://chasen.org/~taku/software/ajax/ime/>))
