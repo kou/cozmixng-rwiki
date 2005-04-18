@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 563 2005-02-28 00:43:34Z kou $
+$Id: README.en 567 2005-04-18 14:31:11Z kou $
 
 == Name
 
@@ -112,4 +112,4 @@ Note the following things if you use TrueType font.
 == Thanks
 
   * Markus: He sent me a bug report.
-
+  * Frank: He sent me a bug report.
