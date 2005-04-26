@@ -1,5 +1,15 @@
 = kou::メモ
 
+  * [ToDo][できれば] Flash挿入用のReaderMacroを作る。
+
+  * [ToDo] MLを作る。
+
+  * [ToDo][できれば] スペルチェック機能をつける。
+
+  * [ToDo] 起動時に{Reader,Writer}Macroページをパースする。
+
+  * [ToDo] 画像置場を作る．ネタは思い浮かんだ。
+
   * ((<K2Y|URL:http://pub.cozmixng.org/~kou/ajax/k2y>))
 
   * Ignore entries under copied directories.
@@ -39,11 +49,9 @@
 
   * [RSS Parser] ようやく複数のDublinCoreの要素（？）を扱えるようになった．
 
-  * [ToDo] 画像置場を作る．
+  * [ToDo] (('del:表も作りやすく．'))
 
-  * [ToDo] 表も作りやすく．
-
-  * [ToDo] ブラウザ上で簡単にルビをふれるようなインターフェイスを作る．MecabだかChaSenとAjaxを使った日本語変換デモをどこかで見たなぁ．
+  * [ToDo] (('del:ブラウザ上で簡単にルビをふれるようなインターフェイスを作る．MecabだかChaSenとAjaxを使った日本語変換デモをどこかで見たなぁ．'))
 
   * [Mozilla][風博士] Ctrl+スクロールで1ページ単位でスクロールさせるには((<URL:about:config>))で
 
