@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * がびーん．藤じゃなくて東だった．．．
+
   * [ToDo][できれば] Flash挿入用のReaderMacroを作る。
 
   * [ToDo] MLを作る。
