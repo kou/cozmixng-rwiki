@@ -4,11 +4,11 @@
 
   * [ToDo][できれば] Flash挿入用のReaderMacroを作る。
 
-  * [ToDo] MLを作る。
+  * [ToDo] (('del:MLを作る。'))
 
   * [ToDo][できれば] スペルチェック機能をつける。
 
-  * [ToDo] 起動時に{Reader,Writer}Macroページをパースする。
+  * [ToDo] ちゃんとやってるみたい: (('del:起動時に{Reader,Writer}Macroページをパースする。'))
 
   * [ToDo] 画像置場を作る．ネタは思い浮かんだ。
 
