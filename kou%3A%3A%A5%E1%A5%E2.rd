@@ -14,7 +14,7 @@
 
   * [ToDo] ちゃんとやってるみたい: (('del:起動時に{Reader,Writer}Macroページをパースする。'))
 
-  * [ToDo] 画像置場を作る．ネタは思い浮かんだ。
+  * [ToDo] ネタはボツ．画像アップロードをサポートした: (('del:画像置場を作る．ネタは思い浮かんだ。'))
 
   * ((<K2Y|URL:http://pub.cozmixng.org/~kou/ajax/k2y>))
 
