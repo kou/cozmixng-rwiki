@@ -1,5 +1,9 @@
 = kou::メモ
 
+  * ロボット（e-SocietyRobot(http://www.yama.info.waseda.ac.jp/~yamana/es/)）がWiLiKiのコンテンツを収集しにくると結構Load Averageがあがるなぁ．拒否した方が良いかしら．
+
+    でも，あがっても誰かが困る程ロボット以外からのアクセスは無いし，別にいっか．
+
   * 自動でimgのnameを集めてSET_DHTMLに登録できるようにしたら素敵だろうなぁ．
 
   * ispell -a -m
