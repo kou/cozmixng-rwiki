@@ -1,5 +1,9 @@
 = kou::メモ
 
+  * 新pub構築は5.4が出てからにしようかしら．
+
+  * [FreeBSD] HDDのコピー: ((<FreeBSD QandA 1859|URL:http://www.jp.freebsd.org/QandA/HTML/1859.html>))
+
   * ロボット（e-SocietyRobot(http://www.yama.info.waseda.ac.jp/~yamana/es/)）がWiLiKiのコンテンツを収集しにくると結構Load Averageがあがるなぁ．拒否した方が良いかしら．
 
     でも，あがっても誰かが困る程ロボット以外からのアクセスは無いし，別にいっか．
