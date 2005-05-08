@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [RSS Parser][ToDo] 0.1.4リリース．preview出てからの方が良いかなぁ．
+
   * 新pub構築は5.4が出てからにしようかしら．
 
   * [FreeBSD] HDDのコピー: ((<FreeBSD QandA 1859|URL:http://www.jp.freebsd.org/QandA/HTML/1859.html>))
