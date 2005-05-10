@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [Gallery Administrator][ToDo] RSS Makerを使うように変更する．
+
   * [RSS Parser][ToDo] 0.1.4リリース．preview出てからの方が良いかなぁ．
 
   * 新pub構築は5.4が出てからにしようかしら．
