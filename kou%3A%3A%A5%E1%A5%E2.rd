@@ -1,5 +1,32 @@
 = kou::メモ
 
+  * [Samba] エンコーディング．後で実験．
+
+    * UTF-8を利用
+
+        dos charset = CP932
+        unix charset = UTF-8
+        display charset = UTF-8
+
+    * EUCを利用
+
+        doc charset = CP932
+        unix charset = EUCJP-MS
+        display charset = EUCJP-MS
+
+    * SJISを利用
+
+        doc charset = CP932
+        unix charset = CP932
+        display charset = CP932
+
+    * HEXとCAP
+
+        doc charset = CP932
+        unix charset = CP932
+        display charset = CP932
+        vfs object = cap # or hex
+
   * [Gallery Administrator][ToDo] RSS Makerを使うように変更する．
 
   * [RSS Parser][ToDo] 0.1.4リリース．preview出てからの方が良いかなぁ．
