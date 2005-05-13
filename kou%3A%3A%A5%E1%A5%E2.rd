@@ -1,5 +1,11 @@
 = kou::メモ
 
+  * ImageMagickがバグっている．
+
+      % convert /tmp/a.jpg /tmp/a%x.jpg
+
+    で/tmp/a0.jpgができる．「%」の扱いが怪しい．
+
   * [Samba] エンコーディング．後で実験．
 
     * UTF-8を利用
