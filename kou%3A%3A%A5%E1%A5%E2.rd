@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [WikiLink] dc:rightsの情報も入れる．
+
   * ImageMagickがバグっている．
 
       % convert /tmp/a.jpg /tmp/a%x.jpg
