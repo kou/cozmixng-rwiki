@@ -19,7 +19,22 @@ wwwとstreamingに読み込みのみで/usr/localとそのサブディレクトリもエクスポートした
 
   /usr/local -ro -alldirs www streaming
 
-再起動する．
+/etc/exportsを再読み込み．
+
+  % sudo kill -HUP `cat /var/run/mountd.pid`
+
+以下じゃダメなので注意！
+
+  % sudo env - /etc/rc.d/mountd restart
+
+とか
+
+  % sudo env - /etc/rc.d/mountd reload
+
+
+== exportsの状況を確認
+
+  % showmount -e [hostname]
 
 == 再マウントする
 
