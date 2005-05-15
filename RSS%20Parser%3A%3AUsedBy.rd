@@ -18,3 +18,6 @@ RSS Parser is used by ...
   * ((<GalleryAdministrator>))
 
   * ((<ココログナビ カテゴリ別新着|URL:http://www.cocolog-nifty.com/>)) ((<証拠|URL:http://staff.cocolog-nifty.com/room/2004/02/post_6.html>))
+
+  * ((<RRSSMM|URL:http://tamo.tdiary.net/20050513.html#p01>))
+
