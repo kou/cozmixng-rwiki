@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 23 2005-04-07 06:38:01Z kou $
+$Id: README.en 28 2005-04-30 08:27:46Z kou $
 
 ((*The performance of this library on ruby 1.8 is 10 times
 as slow as on ruby 1.6 until 0.0.6. Use 0.0.7 or later if
@@ -31,7 +31,7 @@ more strictly. So I am asking for test cases.
 
 Send mail that To field is cozdev@cozmixng.quickml.com , Cc
 field is kou@cozmixng.org and Subject and Body contain
-somthig to
+something to
 ((<"cozdev@cozmixng.quickml.com"|URL:mailto:cozdev@cozmixng.quickml.com?cc=kou@cozmixng.org&subject=Join!>)).
 
 Note that this mailing list's main language is Japanese. But
@@ -40,8 +40,8 @@ English mail is welcome too.
 == What's this?
 
 This library can parse ((<RSS(RDF Site Summary)
-1.0|URL:http://web.resource.org/rss/1.0/>)), RSS 0.9x/2.0 with
-validation (or non validation).
+1.0|URL:http://web.resource.org/rss/1.0/>)), RSS 0.9x/2.0
+excluding 0.90 with validation (or non validation).
 
 This library contains a
 ((<tDiary|URL:http://www.tdiary.org/>))'s plugin that
