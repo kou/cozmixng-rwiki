@@ -2,9 +2,13 @@
 
 = Tutorial.en
 
-$Id: Tutorial.en 23 2005-04-07 06:38:01Z kou $
+$Id: Tutorial.en 28 2005-04-30 08:27:46Z kou $
 
 Sorry for my funny English :-(
+
+== Note
+
+RSS Parser supports RSS 0.9x/1.0/2.0 excluding 0.90. Sorry.
 
 == require
 
