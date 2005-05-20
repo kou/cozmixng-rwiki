@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 23 2005-04-07 06:38:01Z kou $
+$Id: README.ja 28 2005-04-30 08:27:46Z kou $
 
 ((*0.0.6まではruby 1.8での動作がruby 1.6の動作に比べて10倍遅
 いです．ruby 1.8で使う場合は0.0.7以降を使ってください．*))
@@ -40,8 +40,9 @@ Ruby's
 == なにこれ？
 
 ((<RSS(RDF Site Summary)
-1.0|URL:http://web.resource.org/rss/1.0/>)), RSS 0.9x/2.0を
-妥当性検証(バリデーション)付き(あるいは無し)でパースします。
+1.0|URL:http://web.resource.org/rss/1.0/>)), RSS 0.9x/2.0 
+（0.90を除く）を妥当性検証（バリデーション）付き（あるいは無
+し）でパースします。
 
 サンプルとして，RSSを取得してその内容を表示する
 ((<tDiary|URL:http://www.tdiary.org/>))のプラグインが付いて
