@@ -2,7 +2,12 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 23 2005-04-07 06:38:01Z kou $
+$Id: Tutorial.ja 28 2005-04-30 08:27:46Z kou $
+
+== 注意
+
+RSS ParserはRSS 0.9x/1.0/2.0をサポートしていますが，RSS 0.90
+はサポートしてません．ごめんなさい．
 
 == require
 
