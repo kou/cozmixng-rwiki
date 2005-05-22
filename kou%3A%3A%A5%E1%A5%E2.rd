@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * HDDを認識しないときは，BIOSの設定を確認．
+
   * [WikiLink] dc:rightsの情報も入れる．
 
   * ImageMagickがバグっている．
