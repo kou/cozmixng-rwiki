@@ -1,5 +1,13 @@
 = kou::メモ
 
+  * [風博士] Mozilla/Firefoxの設定UIを使う．
+
+    (1) スマートブックマークを編集してchrome:でGoogleに飛ばないようにする．
+
+    (2) Mozillaなら((<URL:chrome://communicator/content/pref/pref.xul>))にアクセスする．
+
+        Firefoxなら((<URL:chrome://browser/content/pref/pref.xul>))にアクセスする．
+
   * HDDを認識しないときは，BIOSの設定を確認．
 
   * [WikiLink] dc:rightsの情報も入れる．
