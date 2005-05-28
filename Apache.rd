@@ -51,6 +51,11 @@ Digest認証用のファイルを作る
 
   -config /etc/ssl/openssl.cnf
 
+ちなみに，req -subjectを使えばreq -new設定した値を見ることができる．
+
+  % openssl req -subject \
+      -in /usr/local/etc/apache2/ssl.crt/server.csr
+
 もしなかったら，認証局を作る．あるいは((<CAcert|URL:http://www.cacert.org/>))を利用する．
   % cd /usr/local/share/ca
   % sudo sh /usr/src/crypto/openssl/apps/CA.sh -newca
