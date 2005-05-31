@@ -10,7 +10,11 @@ Logical Volume Manager.
 これを/backupとしてマウントして使いたい．
 ただ，今後/backupのサイズを増量したくなるかもしれない．
 
-== パーティションの作成
+== 基本
+
+LVM領域を作成する方法．
+
+=== パーティションの作成
 
 まず，cfdiskなどで/dev/sda1と/dev/sda2にわける（普通のパーティション）．
 ふたつにわける理由は特にない．
@@ -18,7 +22,7 @@ Logical Volume Manager.
 
 それぞれのパーティションのタイプはLinux LVMにしておく．
 
-== 物理ボリュームの作成
+=== 物理ボリュームの作成
 
 今わけたパーティションを使って物理ボリュームを作成する．
 
@@ -34,7 +38,7 @@ Logical Volume Manager.
   % sudo pvscan
   % sudo pvdisplay
 
-== ボリュームグループの作成
+=== ボリュームグループの作成
 
 複数の物理ボリュームをまとめてボリュームグループを作成する．
 
@@ -53,7 +57,7 @@ Logical Volume Manager.
 
   % sudo vgrename /dev/data /dev/data2
 
-== 論理ボリュームの作成
+=== 論理ボリュームの作成
 
 いよいよ，実際にパーティションのように使える論理ボリュームを作成する．
 
@@ -66,7 +70,7 @@ Logical Volume Manager.
   % sudo lvscan
   % sudo lvdisplay
 
-== 論理ボリュームのフォーマット
+=== 論理ボリュームのフォーマット
 
 パーティションと同じようにmkfsで論理ボリュームをフォーマットする．
 
@@ -80,6 +84,38 @@ Logical Volume Manager.
 /etc/fstabにこんなのを書いておいてもよいだろう．
 
   /dev/data/backup       /backup            ext3    defaults        0       2
+
+== 管理
+
+サイズを拡張したりなど．
+
+=== 論理ボリュームを拡張
+
+lvextendを使って拡張できる．
+
+「data」ボリュームグループ内の「backup」論理ボリュームを10GB拡張する場合は以下のようにする．
+
+  % sudo lvextend -L+10G /dev/data/backup
+
+ただ，領域は拡張されてもファイルシステムは拡張されていないのでext2resizeなどでファイルシステムも拡張する必要がある．
+
+  % sudo umount /backup
+  % sudo ext2resize /dev/data/backup
+
+ext2resizeにはデバイス名の後にサイズを指定することもできるが，省略すると最大サイズまで拡張してくれるので，今回は省略した．
+
+=== ボリュームグループを拡張
+
+vgextendを使って拡張できる．
+
+まず，ボリュームグループに加えたい物理ボリュームを作成する．
+
+  % sudo pvcreate /dev/sda3
+
+これを「data」ボリュームグループに加えたい場合は以下のようにする．
+
+  % sudo vgextend data /dev/sda3
+
 
 == 参考URL
 
