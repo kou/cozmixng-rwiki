@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<asin:B00009PJON>))
+
   * [風博士] Mozilla/Firefoxの設定UIを使う．
 
     (1) スマートブックマークを編集してchrome:でGoogleに飛ばないようにする．
