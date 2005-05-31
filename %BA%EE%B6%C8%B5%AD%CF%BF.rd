@@ -32,3 +32,4 @@
   * ((<QuickML>))
   * ((<Mailgraph>))
   * ((<VNC>))
+  * ((<LVM>))
