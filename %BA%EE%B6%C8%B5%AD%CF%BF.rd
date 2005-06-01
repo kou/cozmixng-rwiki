@@ -33,3 +33,4 @@
   * ((<Mailgraph>))
   * ((<VNC>))
   * ((<LVM>))
+  * ((<exim>))
