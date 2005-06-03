@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 99 2004-11-21 14:18:18Z kou $
+# $Id: rabbit.rd 141 2005-05-23 09:33:06Z kou $
 
 = Rabbit
 
@@ -48,6 +48,7 @@
   * オフスクリーンでのスクリーンショット作成
   * PS/PDF出力（品質は微妙）
   * 国際化されたメッセージ
+  * 表
 
 = できないこと
 
@@ -181,6 +182,16 @@ mimeTeXを呼び出す
 
 : うさぎ
    Rabbit
+
+= 表は？
+
+  # RT
+  caption = 表のサンプル
+
+  みだし1, みだし2
+
+  内容1, 内容2
+  長ーーーーーい内容3, 長ーーーーーーーーーーーーーーーーーーい内容4
 
 = テーマの書き方
 
