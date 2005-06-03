@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 127 2005-02-12 06:11:32Z kou $
+$Id: README.en 154 2005-06-03 05:31:14Z kou $
 
 == Name
 
@@ -95,7 +95,7 @@ libraries on Windows.
   * ((<RAA:rdtool>))
   * Ruby/GTK2 in ((<RAA:ruby-gnome2>))
 
-=== Suggested programs
+=== Suggested programs/libraries
 
   * mimeTeX (for writing TeX in RD)
   * gs (for reading EPS)
@@ -104,6 +104,12 @@ libraries on Windows.
     PS/PDF)
   * Ruby/RSVG in ((<RAA:ruby-gnome2>)) (for beautiful scaling
     SVG)
+  * ((<RAA:ruby-gettext>)) (for displaying localized messages)
+
+=== Included libraries
+
+  * ((<RAA:rttool>)) altered: same as including ((<RAA:rwiki>)).
+  * SOAP interface of ((<RAA:rwiki>)).
 
 == Download
 
@@ -556,3 +562,4 @@ page from XXX.rd.
   * sode: He wrote cool rabbit.
   * Kazuhiko: He sent me many bug reports. He makes a
     presentation with Rabbit.
+  * noritada: He sent me a bug report for document.
