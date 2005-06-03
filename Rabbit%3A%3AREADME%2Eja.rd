@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 127 2005-02-12 06:11:32Z kou $
+$Id: README.ja 154 2005-06-03 05:31:14Z kou $
 
 == 名前
 
@@ -109,6 +109,14 @@ Windowsでの依存ライブラリのインストールは
     （PS/PDFで出力するために必要）
   * ((<RAA:ruby-gnome2>))の中のRuby/RSVG
     （SVGを綺麗に拡大縮小するために必要）
+  * ((<RAA:ruby-gettext>))（国際化されたメッセージを表示する
+    ために必要）
+
+=== 含まれているもの
+
+  * ((<RAA:rttool>))改: ((<RAA:rwiki>))に含まれているものと
+    同じもの
+  * ((<RAA:rwiki>))のSOAPインターフェイス
 
 == 入手方法
 
@@ -162,7 +170,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 : -T, --type
    入力ソースの種類を指定します．
 
-   入力ソースの種類は rwiki, file, argf（デフォルト）, uri 
+   入力ソースの種類は rwiki, file（デフォルト）, argf, uri 
    のいずれかを指定します。
 
    : argf
@@ -453,7 +461,7 @@ inline verbatimとして記述します．詳しくはsample/rabbit.rdを見
   end
 
 ((|heads|))というように複数形になっているのは，((|heads|))は
-タイトル（見出し，head line）が0個以上含んでいるからです．
+タイトル（見出し，head line）を0個以上含んでいるからです．
 
 === プロパティ
 
@@ -583,3 +591,5 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
   * sodeさん: かっこいい兎を書いてくれました．
   * かずひこさん: いろいろバグ報告をしてくれました．Rabbitを
     使ってプレゼンしてくれます．
+  * noritadaさん: ドキュメントに関するバグ報告をしてくれまし
+    た．
