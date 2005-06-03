@@ -12,6 +12,22 @@ The latest version: 0.0.8(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
+印刷出力:
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_0.0.8.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_0.0.8.pdf>))/
+
+印刷出力（一覧）:
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_index_0.0.8.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_index_0.0.8.pdf>))/
+
+Printed output: 
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_0.0.8.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_0.0.8.pdf>))
+
+Printed output (index):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_index_0.0.8.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_index_0.0.8.pdf>))
+
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
   * ((<README.en|Rabbit::README.en>))
