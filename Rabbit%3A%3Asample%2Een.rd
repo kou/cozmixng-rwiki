@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 99 2004-11-21 14:18:18Z kou $
+# $Id: rabbit_en.rd 141 2005-05-23 09:33:06Z kou $
 
 = Rabbit(en)
 
@@ -48,6 +48,7 @@ A presentation tool
   * screenshot on the off screen
   * PS/PDF output (but quality is ...)
   * Internationalized message
+  * Table
 
 = Not available
 
@@ -180,6 +181,16 @@ What about?
 
 : USAGI
    Rabbit
+
+= Table
+
+  # RT
+  caption = Sample of table
+
+  Heading 1, Heading 2
+
+  content 1, content 2
+  very long content 3, veeeery loooooooooooooooooooooooooooong content 4
 
 = How to write theme
 
