@@ -86,14 +86,13 @@ ToDoとかストーリーカードが使えるらしい。
 
 == tDiary
 
-  * tDiaryのバージョンを1.5.3にあげたら((<TOP|URL:/>))のtDiaryのファイルが壊れていたのが顕在化した。2003/02以前はダメだったので/usr/local/var/tdiary/backup以下に移動。その際手違いで2003/02のデータを消してしまいました。ごめんなさい。 2003/03/14 - ((<kou>))
+テーマの更新．
 
-    * 1.5.3にあげたら市川さんの日記も見れなくなったので1.5.2に戻した。
-        % cd /usr/local/share/tdiary/
-        % sudo cvs up -r Release-1_5_2
-
-    * ((<1.5.3にバージョンアップしたらエラーが出ました - そんなときは|URL:http://tdiary-users.sourceforge.jp/cgi-bin/wiki.cgi?1%2E5%2E3%A4%CB%A5%D0%A1%BC%A5%B8%A5%E7%A5%F3%A5%A2%A5%C3%A5%D7%A4%B7%A4%BF%A4%E9%A5%A8%A5%E9%A1%BC%A4%AC%BD%D0%A4%DE%A4%B7%A4%BF>))だって。ということで1.5.3に移行！
-
+  % cd /usr/local/share/tdiary
+  % sudo cvs up
+  % cd theme
+  % for x in *; do [ $x != "CVS" -a -L $x ] && sudo rm $x; done
+  % for x in ../theme2/*; do [ `basename $x` != "CVS" ] && sudo ln -fs $x ./; done
 
 == 影舞
 
