@@ -1,6 +1,7 @@
 = GalleryAdministrator
 
-Latest version: 0.0.7
+
+The latest version: 0.0.8(((<download|URL:http://www.cozmixng.org/~kou/download/gallery-0.0.8.tar.gz>)))
 
 ((<Sample|URL:http://pub.cozmixng.org/~gallery/>))
 
