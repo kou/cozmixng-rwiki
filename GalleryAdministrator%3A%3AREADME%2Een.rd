@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 460 2004-09-12 09:13:02Z kou $
+$Id: README.en 574 2005-05-20 13:56:34Z kou $
 
 == Author
 
@@ -151,3 +151,9 @@ Use sample/initgallery.rb
 Specify `--verbosity' 3 if you want to see update status.
 
   % initgallery.rb --config-file /path/to/gallery.conf --lang .en --verbosity 3
+
+== Thanks
+
+  * OBATA: He gives me many bug reports and some
+    patches. Thanks!
+
