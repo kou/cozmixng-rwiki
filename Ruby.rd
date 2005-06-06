@@ -91,8 +91,8 @@ ToDoとかストーリーカードが使えるらしい。
   % cd /usr/local/share/tdiary
   % sudo cvs up
   % cd theme
-  % for x in *; do [ $x != "CVS" -a -L $x ] && sudo rm $x; done
-  % for x in ../theme2/*; do [ `basename $x` != "CVS" ] && sudo ln -fs $x ./; done
+  % sudo sh -c 'for x in *; do [ $x != "CVS" -a -L $x ] && rm $x; done'
+  % sudo sh -c 'for x in ../theme2/*; do [ `basename $x` != "CVS" ] && ln -fs $x ./; done'
 
 == 影舞
 
