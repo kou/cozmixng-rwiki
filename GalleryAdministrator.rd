@@ -7,6 +7,8 @@ The latest version: 0.0.8(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 ((<BTS|URL:/~kagemai/?project=gallery;action=top>))(Japanese only)
 
+((<pkgsrc|URL:http://cvs.sourceforge.net/viewcvs.py/pkgsrc-wip/wip/ruby-GalleryAdministrator/>))
+
   * ((<README.en|GalleryAdministrator::README.en>))
   * ((<README.ja|GalleryAdministrator::README.ja>))
 
