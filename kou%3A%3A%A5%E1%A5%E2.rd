@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * @pubのためのセカンダリの設定がおかしいなぁ．
+
   * ((<asin:B00009PJON>))
 
   * [風博士] Mozilla/Firefoxの設定UIを使う．
