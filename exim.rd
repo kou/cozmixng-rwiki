@@ -28,3 +28,18 @@ real-#{ユーザ名}+XXX@...にも対応させるなら/etc/exim4/cond.d/router/400_exim4-con
     local_part_suffix_optional
     check_local_user
     ...
+
+== 指定したアドレスを特定のホストに転送する
+
+/etc/exim4/hubbed_hostsに以下のように記述する．
+
+  example.com: mail.example.com
+
+ワイルドカードとして「*」が使える．
+
+ということで，XXX@example.comもXXX@YYY.example.comもすべてmail.example.comに転送したい場合は以下のようにする．
+
+  example.com: mail.example.com
+  *.example.com: mail.example.com
+
+右側の欄（mail.example.comが書いている欄）にはホスト名ではなくて，IPアドレスを書くこともできる．
