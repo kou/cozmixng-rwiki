@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 299 2004-09-28 14:53:41Z kou $
+$Id: README.ja 335 2005-06-14 03:33:03Z kou $
 
 == 作者
 
@@ -12,9 +12,9 @@ Kouhei Sutou <kou@cozmixng.org>
 
 GPL or BSD License
 
-== メーリングリスト
+== 注意
 
-((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
+Gauche 0.8.3以前では動きません．
 
 == なにこれ？
 
@@ -28,6 +28,10 @@ GaUnitはGaucheで実装されたUnit Testing Frameworkです．おまけ
 == 読めねぇよ
 
 「ごにっと」とかはどうでしょう？
+
+== メーリングリスト
+
+((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
 == 入手方法
 
