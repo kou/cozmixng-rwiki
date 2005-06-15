@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 299 2004-09-28 14:53:41Z kou $
+$Id: README.en 335 2005-06-14 03:33:03Z kou $
 
 ((*I'm not good in English. Please fix.*))
 
@@ -14,15 +14,9 @@ Kouhei Sutou <kou@cozmixng.org>
 
 GPL or BSD License
 
-== Mailing list
+== Caution
 
-Send mail that To field is cozdev@cozmixng.quickml.com , Cc
-field is kou@cozmixng.org and Subject and Body contain
-somthig to
-((<"cozdev@cozmixng.quickml.com"|URL:mailto:cozdev@cozmixng.quickml.com?cc=kou@cozmixng.org&subject=Join!>)).
-
-Note that this mailing list's main language is Japanese. But
-English mail is welcome too.
+This doesn't work on Gauche <=0.8.3.
 
 == What's this?
 
@@ -35,6 +29,16 @@ is similar program.
 == How to pronounce?
 
 What about `go-ni-tto'?
+
+== Mailing list
+
+Send mail that To field is cozdev@cozmixng.quickml.com , Cc
+field is kou@cozmixng.org and Subject and Body contain
+somthig to
+((<"cozdev@cozmixng.quickml.com"|URL:mailto:cozdev@cozmixng.quickml.com?cc=kou@cozmixng.org&subject=Join!>)).
+
+Note that this mailing list's main language is Japanese. But
+English mail is welcome too.
 
 == Get
 
