@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * [Subversion][ToDo] "temporarily", not "temporally".
+
   * [風博士] ((<ローカルファイルのパスを補完|URL:http://pub.cozmixng.org/~kou/diff/kazehakase-file-completion.diff>)): inline-completeionと組み合わせるとだいぶしあわせに．MLへは少し使ってみてから．
 
   * ホームユースにはanacron．
