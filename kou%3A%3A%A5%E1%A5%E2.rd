@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * Hikiがプラグインエラーのときにエスケープが足りない。 ((<パッチ|URL:http://pub.cozmixng.org/~kou/diff/hiki-escape-exception-message.diff>))
+
   * assert-in-delta, assert-not-*を作ろう．
 
   * [Subversion][ToDo] (('del:"temporarily", not "temporally".'))
