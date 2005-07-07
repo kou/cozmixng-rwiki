@@ -1,5 +1,10 @@
 = kou::メモ
 
+  * アップデートではまる．．．
+    * amavisd-newが起動スクリプトを/usr/local/etc/rc.d/じゃなくて/etc/rc.d/以下にインストールするのはなぜだ！？
+    * coulier-authlib-userdb見付けられなかった．．．
+    * 絶対/usr/local/libexec/courier-imap/{imap,pop3}d.rcはバグっていると思う．
+
   * Hikiがプラグインエラーのときにエスケープが足りない。 ((<パッチ|URL:http://pub.cozmixng.org/~kou/diff/hiki-escape-exception-message.diff>))
 
   * assert-in-delta, assert-not-*を作ろう．
