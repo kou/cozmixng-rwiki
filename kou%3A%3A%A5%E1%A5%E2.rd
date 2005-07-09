@@ -4,6 +4,8 @@
 
     ((<"222.10.18.29: Priscilla/0.10 (http://kiyoya.comthy.org/priscilla/)"|URL:http://kiyoya.comthy.org/priscilla/>))
 
+    うざいから拒否した．リダイレクトに対応していないのかなぁ．
+
   * アップデートではまる．．．
     * amavisd-newが起動スクリプトを/usr/local/etc/rc.d/じゃなくて/etc/rc.d/以下にインストールするのはなぜだ！？
     * coulier-authlib-userdb見付けられなかった．．．
