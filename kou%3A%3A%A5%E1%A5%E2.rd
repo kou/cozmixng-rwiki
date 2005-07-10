@@ -2,6 +2,8 @@
 
   * [ToDo] 8/5
 
+  * なんかこのRWiki重くなってるなぁ．なんでだろう．
+
   * なんだこいつ？行儀悪いなぁ．拒否しよっかなぁ。
 
     ((<"222.10.18.29: Priscilla/0.10 (http://kiyoya.comthy.org/priscilla/)"|URL:http://kiyoya.comthy.org/priscilla/>))
