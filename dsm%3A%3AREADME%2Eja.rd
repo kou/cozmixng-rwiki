@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 180 2004-06-20 12:25:58Z kou $
+$Id: README.ja 343 2005-07-15 08:03:46Z kou $
 
 == 作者
 
@@ -20,8 +20,8 @@ GPL or BSD License
 
 == なにこれ？
 
-((<marshal|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=marshal>))
-を用いたサーバ/クライアント方式の簡易分散Schemeライブラリで
+((<msm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=msm>))
+を用いたサーバ／クライアント方式の簡易分散Schemeライブラリで
 す．
 
 以下のような機能があります．
@@ -35,6 +35,18 @@ GPL or BSD License
 以下のような機能はありません．
 
   * リモートの手続き／マクロをローカルで適用する．
+
+以下のような機能を実装したいです．
+
+  * 参照オブジェクトの受渡し．
+  * リモート手続きの呼び出しがピンポンしたときにエラーが発生
+    してもきちんとエラーを転送する（test/dsm-server-conf.scm
+    のerror-procedure-listの"error-proc2"にパスする）．
+
+== 依存ライブラリ
+
+  * ((<Gauche|URL:http://www.shiro.dreamhost.com/scheme/gauche/>)) >= 0.8.4
+  * ((<msm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=msm>))
 
 == 入手方法
 
@@ -55,18 +67,19 @@ GPL or BSD License
 
 dsmはオブジェクトを以下のように扱います．
 
-  * read/writeできるオブジェクトはそのオブジェクトのコピーが
-    渡される．
-  * read/writeできないオブジェクトはそのオブジェクトの参照が
-    渡される．
+  * (({read}))/(({write}))できるオブジェクトはそのオブジェク
+    トのコピーが渡される．
+  * (({read}))/(({write}))できないオブジェクトはそのオブジェ
+    クトの参照が渡される．
 
 例として，以下のようなサーバ／クライアントを考えます．
 
-サーバ: "/map"というマウントポイントにmap手続きをマウントし
-ている．
+サーバ: (({"/map"}))というマウントポイントに(({map}))手続き
+をマウントしている．
 
-クライアント: "/map"にマウントされているオブジェクト(map手続
-き)に(lambda (x) (+ 10 x))と'(1 2)という引数を適用する．
+クライアント: (({"/map"}))にマウントされているオブジェクト
+((({map}))手続き)に(({(lambda (x) (+ 10 x))}))と(({(1 2)}))
+という引数を適用する．
 
   (let ((server-map ("/map"にマウントされたオブジェクトを取得する手続き)))
     (server-map (lambda (x) (+ 10 x))
@@ -97,7 +110,7 @@ dsmはオブジェクトを以下のように扱います．
   |             | ---------------------------->   |       |
   |             |                                 |       |
   |             | (lambda (x) (+ 10 x))の参照と   |       |
-  |             | 引数として1を渡し，             |       |
+  |             | 引数として2を渡し，             |       |
   |             | 適用してもらうように要求        |       |
   |             | <----------------------------   |       |
   |             |                                 |       |
@@ -133,7 +146,7 @@ dsmはオブジェクトを以下のように扱います．
   (use dsm.client)
 
   (define (main arg)
-    (let ((client (connect-dsm-server "dsmp://localhost:6789")))
+    (let ((client (dsm-connect-server "dsmp://localhost:6789")))
       (print ((client "/plus") 1 2))
       (let ((x 10))
         (print ((client "/map") (lambda (elem) (+ elem x))
