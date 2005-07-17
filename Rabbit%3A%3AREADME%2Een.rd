@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 154 2005-06-03 05:31:14Z kou $
+$Id: README.en 188 2005-07-15 11:05:12Z kou $
 
 == Name
 
@@ -33,11 +33,25 @@ MoMo
 
 === Images (2)
 
-USAGI.
+* USAGI (in Kanji)
 
-(cool rabbit)
+  cool rabbit.
+
+* USAGI (in Hiragana)
+
+  pretty rabbit.
+
+* KAME
+
+  pretty turtle.
 
 sode <sodetaka@kono.cis.iwate-u.ac.jp>
+
+=== Images (3)
+
+Flags.
+
+gan <shinsato@kono.cis.iwate-u.ac.jp>
 
 === Mode for xyzzy
 
@@ -559,7 +573,9 @@ page from XXX.rd.
     --margin. He makes a presentation with Rabbit.
   * Vincent: He helps Rabbit works on Max OS X. He makes
     french messages. 
-  * sode: He wrote cool rabbit.
+  * sode: He wrote cool rabbit, pretty rabbit and pretty
+    turtle.
   * Kazuhiko: He sent me many bug reports. He makes a
     presentation with Rabbit.
   * noritada: He sent me a bug report for document.
+  * gan: He wrote some flags.
