@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 141 2005-05-23 09:33:06Z kou $
+# $Id: rabbit.rd 175 2005-06-30 08:30:27Z kou $
 
 = Rabbit
 
@@ -253,6 +253,9 @@ mimeTeXを呼び出す
 
 : アイコン化
    z
+
+: キャッシュ作成
+   c
 
 = おわり
 
