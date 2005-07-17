@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 141 2005-05-23 09:33:06Z kou $
+# $Id: rabbit_en.rd 175 2005-06-30 08:30:27Z kou $
 
 = Rabbit(en)
 
@@ -252,6 +252,9 @@ Ahh, I'll set up more better documents.
 
 : Iconify
    z
+
+: Cache all slides
+   c
 
 = Finish
 
