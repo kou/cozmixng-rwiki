@@ -10,15 +10,16 @@
   * svn_dav.h: Code related to WebDAV/DeltaV usage in Subversion
   * svn_delta.h: Delta-parsing
   * svn_diff.h: Contextual diffing
-  * svn_error.h: Common exception handling for Subversion
-  * svn_error_codes.h: Subversion error codes
+  * o: svn_error.h: Common exception handling for Subversion
+  * o: svn_error_codes.h: Subversion error codes
   * svn_fs.h: Interface to the Subversion filesystem
   * svn_hash.h: Dumping and reading hash tables to/from files
   * svn_io.h: General file I/O for Subversion
   * svn_md5.h: Converting and comparing MD5 checksums
+  * o: svn_nls.h: Support functions for NLS programs
   * svn_opt.h: Option and argument parsing for Subversion command lines
   * svn_path.h: A path manipulation library
-  * svn_pools.h: APR pool management for Subversion
+  * o: svn_pools.h: APR pool management for Subversion
   * svn_props.h: Subversion properties
   * svn_quoprint.h: Quoted-printable encoding and decoding functions
   * svn_ra.h: Repository Access
@@ -30,7 +31,7 @@
   * svn_time.h: Time/date utilities
   * svn_types.h: Subversion's data types
   * svn_utf.h: UTF-8 conversion routines
-  * svn_version.h: Version information
+  * \/: svn_version.h: Version information
   * svn_wc.h: The Subversion Working Copy Library
   * svn_xml.h: XML code shared by various Subversion libraries
 
