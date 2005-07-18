@@ -1,6 +1,6 @@
 = esm
 
-Latest version: 0.0.3
+The latest version: 0.0.4(((<download|URL:http://www.cozmixng.org/~kou/download/esm-0.0.4.tar.gz>)))
 
 ((<BTS|URL:/~kagemai/?project=esm;action=top>))(Japanese only)
 
@@ -13,6 +13,3 @@ Latest version: 0.0.3
 == Comments
 
 == コメント
-
-Gauche 0.8で動かなくなっているようです。--fuyuki
-  * Gauche 0.8で動くようにした0.0.3をリリースしました．[2004-06-13] - ((<kou>))
