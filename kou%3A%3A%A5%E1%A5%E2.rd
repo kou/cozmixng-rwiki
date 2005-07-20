@@ -2,6 +2,8 @@
 
   * [ToDo] 8/5
 
+  * 後で見る: ((<Setup the SAMBA mini memo.|URL:http://karappi.minidns.net/karappi/sargememo/sambamemo.html>))
+
   * なんかこのRWiki重くなってるなぁ．なんでだろう．
 
   * なんだこいつ？行儀悪いなぁ．拒否しよっかなぁ。
