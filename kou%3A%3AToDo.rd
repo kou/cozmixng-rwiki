@@ -55,6 +55,7 @@
 * ((<GalleryAdministrator>))（というか，RubyPhoto）の高速化．
 * RWikiのnaviのborderを百分率でも指定できるようにする．例えば，上位30%（つまり，borderは（下から）70%）はヘッダに表示とか．
 * Rabbit: Thread -> Gtkのtimeout
+* Rabbit: SOAPインターフェイス
 
 == pending
 * ((<wsm>))でgoshがSEGVるのを追う．
