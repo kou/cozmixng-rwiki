@@ -2,6 +2,10 @@
 
   * [ToDo] 8/5
 
+  * またこいつか．うざい．拒否した．
+
+    ((<"59.135.109.157: Priscilla/0.10 (http://kiyoya.comthy.org/priscilla/)"|URL:http://kiyoya.comthy.org/priscilla/>))
+
   * 後で見る: ((<Setup the SAMBA mini memo.|URL:http://karappi.minidns.net/karappi/sargememo/sambamemo.html>))
 
   * なんかこのRWiki重くなってるなぁ．なんでだろう．
