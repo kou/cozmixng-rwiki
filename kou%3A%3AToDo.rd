@@ -1,7 +1,13 @@
 = kou::ToDo
 
 * svn: いらないのもあるだろうけど，とりあえずリストアップしておく．
-  * svn_auth.h: Subversion's authentication system
+  * \/: svn_auth.h: Subversion's authentication system
+    * svn_auth_open
+    * svn_auth_set_parameter
+    * svn_auth_get_parameter
+    * x: svn_auth_first_credentials
+    * x: svn_auth_next_credentials
+    * x: svn_auth_save_credentials
   * -: svn_base64.h: Base64 encoding and decoding functions
   * svn_client.h: Public interface for libsvn_client
   * -: svn_cmdline.h: Support functions for command line programs
@@ -32,7 +38,10 @@
   * svn_types.h: Subversion's data types
   * svn_utf.h: UTF-8 conversion routines
   * \/: svn_version.h: Version information
-    * svn_ver_check_list
+    * svn_ver_compatible
+    * svn_ver_equal
+    * svn_subr_version
+    * \/: svn_ver_check_list
   * svn_wc.h: The Subversion Working Copy Library
   * -: svn_xml.h: XML code shared by various Subversion libraries
 
