@@ -5,9 +5,9 @@
     * svn_auth_open
     * svn_auth_set_parameter
     * svn_auth_get_parameter
-    * x: svn_auth_first_credentials
-    * x: svn_auth_next_credentials
-    * x: svn_auth_save_credentials
+    * \/: svn_auth_first_credentials
+    * \/: svn_auth_next_credentials
+    * \/: svn_auth_save_credentials
   * -: svn_base64.h: Base64 encoding and decoding functions
   * svn_client.h: Public interface for libsvn_client
   * -: svn_cmdline.h: Support functions for command line programs
