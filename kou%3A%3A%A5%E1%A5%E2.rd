@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * simulated_height
+
   * コンソールでGdkPixmapは使えないのか？
 
   * またこいつか．うざい．拒否した．
