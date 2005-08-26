@@ -1,5 +1,9 @@
 = kou::メモ
 
+  * FreeBSDでのWEPの設定．
+
+      % sudo /sbin/ifconfig インターフェイス名 wepmode on weptxkey 1 wepkey 1:WEPのKEY
+
   * simulated_height
 
   * コンソールでGdkPixmapは使えないのか？
