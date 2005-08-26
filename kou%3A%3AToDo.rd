@@ -23,7 +23,7 @@
   * svn_io.h: General file I/O for Subversion
   * -: svn_md5.h: Converting and comparing MD5 checksums
   * o: svn_nls.h: Support functions for NLS programs
-  * svn_opt.h: Option and argument parsing for Subversion command lines
+  * -: svn_opt.h: Option and argument parsing for Subversion command lines
   * -: svn_path.h: A path manipulation library
   * o: svn_pools.h: APR pool management for Subversion
   * svn_props.h: Subversion properties
@@ -32,11 +32,11 @@
   * -: svn_ra_svn.h: Libsvn_ra_svn functions used by the server
   * svn_repos.h: Tools built on top of the filesystem
   * -: svn_sorts.h: All sorts of sorts
-  * svn_string.h: Counted-length strings for Subversion, plus some C string goodies
+  * -: svn_string.h: Counted-length strings for Subversion, plus some C string goodies
   * -: svn_subst.h: Data substitution (keywords and EOL style)
   * svn_time.h: Time/date utilities
-  * svn_types.h: Subversion's data types
-  * svn_utf.h: UTF-8 conversion routines
+  * -: svn_types.h: Subversion's data types
+  * -: svn_utf.h: UTF-8 conversion routines
   * \/: svn_version.h: Version information
     * svn_ver_compatible
     * svn_ver_equal
