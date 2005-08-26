@@ -15,7 +15,7 @@
   * -: svn_ctype.h: Character classification routines
   * -: svn_dav.h: Code related to WebDAV/DeltaV usage in Subversion
   * svn_delta.h: Delta-parsing
-  * svn_diff.h: Contextual diffing
+  * o: svn_diff.h: Contextual diffing
   * o: svn_error.h: Common exception handling for Subversion
   * o: svn_error_codes.h: Subversion error codes
   * svn_fs.h: Interface to the Subversion filesystem
