@@ -9,9 +9,9 @@
     * \/: svn_auth_next_credentials
     * \/: svn_auth_save_credentials
   * -: svn_base64.h: Base64 encoding and decoding functions
-  * svn_client.h: Public interface for libsvn_client
+  * o: svn_client.h: Public interface for libsvn_client
   * -: svn_cmdline.h: Support functions for command line programs
-  * svn_config.h: Accessing SVN configuration files
+  * o: svn_config.h: Accessing SVN configuration files
   * -: svn_ctype.h: Character classification routines
   * -: svn_dav.h: Code related to WebDAV/DeltaV usage in Subversion
   * svn_delta.h: Delta-parsing
