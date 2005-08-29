@@ -1,8 +1,14 @@
 = kou::メモ
 
+  * wsmのスナップショットが壊れている．．．
+
   * FreeBSDでのWEPの設定．
 
       % sudo /sbin/ifconfig インターフェイス名 wepmode on weptxkey 1 wepkey 1:WEPのKEY
+
+    /boot/loader.conf
+
+      wlan_wep_load="YES"
 
   * simulated_height
 
