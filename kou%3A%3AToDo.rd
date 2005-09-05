@@ -10,7 +10,6 @@
   * ブラウザの入力フォームを用意する．
   * もちろん，dRubyで直接叩いてもよし．
 * uim-rabbitを作る
-* Rabbitに角が丸い四角を書くAPIを用意する．
 
 * ((<Gauche>))の((<SWIG>))対応．
   * -> これやってたりしますか？ qt bindingが欲しいのでswigを使おうかなと思ってここを見つけました．((<ねる|URL:http://www.soraneko.com/~nel/>))
