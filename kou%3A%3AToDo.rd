@@ -1,6 +1,5 @@
 = kou::ToDo
 
-* Rabbitのenscript対応．
 * Rabbitの画像表示用HTML出力対応．
 * Rabbitに3分ハッキング的なテーマを追加．
 * Rabbitにユーザからのリアルタイム御意見インターフェイスをつける．
