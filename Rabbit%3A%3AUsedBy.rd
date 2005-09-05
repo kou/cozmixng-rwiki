@@ -12,4 +12,5 @@ Rabbit is used by ...  (dispense with the Mr. and Mrs., sorry)
   [((<4|URL:http://kazuhiko.tdiary.net/20050326.html#p03>))]
   [((<5|URL:http://wiki.fdiary.net/kazuhiko/?lc2005-bof>))]
   [((<6|URL:http://kazuhiko.tdiary.net/20050603.html#p02>))]
-* ((<URL:http://kakutani.com/articles/xpmatsuri2005/>))
+* かくたに
+  * ((<URL:http://kakutani.com/articles/xpmatsuri2005/>))
