@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 175 2005-06-30 08:30:27Z kou $
+# $Id: rabbit_en.rd 257 2005-09-07 09:37:16Z kou $
 
 = Rabbit(en)
 
@@ -70,7 +70,9 @@ A presentation tool
 = Save slides
 
   * can save slides as image
-    * organizing screenshots is work of other tools
+  * can save simple HTML for viewing images
+  * but ...
+    * organizing screenshots beautifully is the work of other tools
     * ((<RAA:gallery>)), zphoto and so on
 
 = What about image?
@@ -113,7 +115,7 @@ You can use relative size.
 
 = Mathematical expressions?
 
-call mimeTeX
+call Tgif or mimeTeX
 
   # TeX
   # keep_ratio = true
@@ -220,7 +222,7 @@ Ahh, I'll set up more better documents.
 = Key bindings (presentation)
 
 : Toggle full screen
-   F5, F10
+   F5, F10, F11
 
 : Toggle index mode
    i
