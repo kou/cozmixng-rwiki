@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 188 2005-07-15 11:05:12Z kou $
+$Id: README.en 256 2005-09-07 06:32:04Z kou $
 
 == Name
 
@@ -37,9 +37,9 @@ MoMo
 
   cool rabbit.
 
-* USAGI (in Hiragana)
-
-  pretty rabbit.
+# * USAGI (in Hiragana)
+#
+#   pretty running rabbit.
 
 * KAME
 
@@ -61,7 +61,11 @@ Mr. MIYAMUKO
 
 == Licence
 
-Ruby's
+Ruby's (expected files under lib/rabbit/tgif.rb)
+
+The files under lib/rabbit/tgif.rb is the
+same licence of
+((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)).
 
 If you want to get PSD file of mascot character, tell
 program author. I'll ask images author.
@@ -119,6 +123,7 @@ libraries on Windows.
   * Ruby/RSVG in ((<RAA:ruby-gnome2>)) (for beautiful scaling
     SVG)
   * ((<RAA:ruby-gettext>)) (for displaying localized messages)
+  * ((<RAA:htree>))
 
 === Included libraries
 
@@ -246,6 +251,19 @@ with the following.
 
      The encoding of #{page name} is same as RWiki's one.
 
+   : memory
+
+     Manage the source on the memory. In this type, the
+     source can be modified by dRuby/SOAP/... interface.
+     
+     You can set initial source by specify file name.
+
+     Example (without initial source):
+       % rabbit --type memory
+
+     Example (with initial source):
+       % rabbit --type memory file.rd
+
 : -e, --encoding
    Specifies encoding of the input source.
    
@@ -267,6 +285,47 @@ with the following.
 : -S, --size
    Specifies the width and height of window.
 
+: -s, --save-as-image
+   Saves each slide as image and exit.
+
+: -i, --saved-image-type
+   Specifies image type when saves.
+   
+   For example, png (default), jpeg and so on.
+
+: -b, --saved-image-basename
+   Specifies base name of saved image. Saved image is 
+   "#{base name}#{page number}.#{extension}".
+   
+   Default is title of slide.
+   
+   If encoding of your file system isn't UTF-8 and saved
+   filename is UTF-8, you may need to setup environment
+   variable such as LANG and G_FILENAME_ENCODING.
+
+: --output-html
+   Specifies whether Rabbit generates HTML or not for
+   viewing saved slides.
+   
+   Default is off.
+
+: -p, --print
+   Prints slide and exit. You can print to file or directory
+   send printer by using --output-filename.
+   
+   But the quality is not good.
+
+: -o, --output-filename
+   Specifies printed file name. Printed format is decided by
+   extension. Printed format is PostScript when extension is
+   .ps, is PDF when extension is .pdf and is PostScript when
+   extension is other.
+   
+   You can send the output formatted by PostScript to the
+   program by specifying "|program-name".
+   
+   Default is "#{title of slide}.ps".
+
 : --paper-width
    Specifies the width of paper when printing. The unit of
    width of paper is inch.
@@ -285,47 +344,12 @@ with the following.
    
    Default is the size of landscape A4.
 
-: -s, --save-as-image
-   Saves each page as image and exit.
-
-: -i, --saved-image-type
-   Specifies image type when saves.
-   
-   For example, png (default), jpeg and so on.
-
-: -b, --saved-image-basename
-   Specifies base name of saved image. Saved image is 
-   "#{base name}#{page number}.#{extension}".
-   
-   Default is title of slide.
-   
-   If encoding of your file system isn't UTF-8 and saved
-   filename is UTF-8, you may need to setup environment
-   variable such as LANG and G_FILENAME_ENCODING.
-
-: -p, --print
-   Prints slide and exit. You can print to file or directory
-   send printer by using --output-filename.
-   
-   But the quality is not good.
-
-: -o, --ourput-filename
-   Specifies printed file name. Printed format is decided by
-   extension. Printed format is PostScript when extension is
-   .ps, is PDF when extension is .pdf and is PostScript when
-   extension is other.
-   
-   You can send the output formatted by PostScript to the
-   program by specifying "|program-name".
-   
-   Default is "#{title of slide}.ps".
-
 : --slides-per-page
    Specifies slides per page.
    
    Default is 1.
 
-: --margin, --*-margin
+: --margin, --margin-*
    Specifies margin of slide when slides per margin is
    greater than 1.
     
@@ -333,7 +357,7 @@ with the following.
    page. But the algorithm is not good when slides per page
    is except 2 or 8.
 
-: --page-margin, --*-page-margin
+: --page-margin, --page-margin-*
    Specifies page margin when printing.
    
    Default is 0.
@@ -348,17 +372,66 @@ with the following.
    Default is /usr/local/share/locale/, 
    /usr/share/locale/ and so on.
 
-: --log-type
+: --logger-type
    Specifies how display error log. If you specify `gui',
-   error log is displayed. You should be specify --log-type
+   error log is displayed. You should be specify --logger-type
    option because error may be occurred when parsing options
    of rabbit.
 
-     % rabbit --log-type gui ...
+     % rabbit --logger-type gui ...
    
    Default is stderr which output log to standard error
    output.
 
+: --use-druby [BOOL]
+   Specifies whether to use dRuby interface.
+
+   Default is true.
+
+: --druby-uri [URI]
+   Specifies dRuby interface URI.
+
+   Default is druby://:10101.
+
+: --output-druby-uri [BOOL]
+   Specifies whether to output dRuby interface URI.
+
+   Default is false.
+
+: --use-soap [BOOL]
+   Specifies whether to use SOAP interface.
+
+   Default is false.
+
+: --soap-host [HOST]
+   Specifies SOAP interface host.
+
+   Default is 0.0.0.0.
+
+: --soap-port [PORT]
+   Specifies SOAP interface port.
+
+   Default is 10103.
+
+: --use-xmlrpc [BOOL]
+   Specifies whether to use XML-RPC interface.
+
+   Default is false.
+
+: --xmlrpc-host [HOST]
+   Specifies XML-RPC interface host.
+
+   Default is 0.0.0.0.
+
+: --xmlrpc-port [PORT]
+   Specifies XML-RPC interface port.
+
+   Default is 10104.
+
+: --server [BOOL]
+   Specifies whether to run as server.
+   
+   Default is false.
 
 == How to write
 
@@ -576,6 +649,10 @@ page from XXX.rd.
   * sode: He wrote cool rabbit, pretty rabbit and pretty
     turtle.
   * Kazuhiko: He sent me many bug reports. He makes a
-    presentation with Rabbit.
+    presentation with Rabbit. He gives me an idea for theme
+    design.
   * noritada: He sent me a bug report for document.
   * gan: He wrote some flags.
+  * KAKUTANI: He sent me a bug report for document. He makes
+    a presentation with Rabbit. He gives me an idea for theme
+    design.
