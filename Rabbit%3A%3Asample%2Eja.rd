@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 175 2005-06-30 08:30:27Z kou $
+# $Id: rabbit.rd 257 2005-09-07 09:37:16Z kou $
 
 = Rabbit
 
@@ -50,6 +50,11 @@
   * 国際化されたメッセージ
   * 表
 
+= まだまだある
+
+  * ソースの色付け
+  * おもしろテーマ
+
 = できないこと
 
   * スライドに落書き
@@ -69,9 +74,11 @@
 
 = スライド保存
 
-  * スライドをイメージとして保存できる
+  * スライドを画像として保存
+  * スライド表示用のシンプルなHTMLも出力
+  * でも．．．
     * 画像を綺麗に並べるのは他のツールの仕事
-    * ((<RAA:gallery>))とかzphotoとかとかとかとかとかとか
+    * ((<RAA:gallery>))とかzphotoとかとか
 
 = 画像は？
 
@@ -113,13 +120,14 @@
 
 = 数式は？
 
-mimeTeXを呼び出す
+Tgif又はmimeTeXを呼び出す
 
   # TeX
   # keep_ratio = true
   # relative_width = 80
   
   \Large f(x)=\Bigint_{-\infty}^x~e^{-t^2}dt
+
 
 = 汚いじゃん
 
@@ -147,8 +155,19 @@ mimeTeXを呼び出す
 
 どう？
 
-  こんな
-  かんじに
+  # こんなかんじに
+  def なり
+    ますよ
+  end
+
+どう？
+
+= 色がつくかも
+
+どう？
+
+  # enscript ruby
+  # こんなかんじに
   def なり
     ますよ
   end
@@ -177,7 +196,7 @@ mimeTeXを呼び出す
 : Rabbit
    うさぎ
 
-   : Turtle
+   : Tortoise
       かめ
 
 : うさぎ
@@ -221,7 +240,7 @@ mimeTeXを呼び出す
 = キーバインド（本番）
 
 : フルスクリーン切替え
-   F5, F10
+   F5, F10, F11
 
 : 一覧モード切替え
    i
