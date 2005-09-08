@@ -8,7 +8,7 @@
 
 キャッチコピー（案）: 「RubyでできてるRabbitです」
 
-The latest version: 0.0.9(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.0.9.tar.gz>)))
+The latest version: 0.1.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.1.0.tar.gz>)))
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
