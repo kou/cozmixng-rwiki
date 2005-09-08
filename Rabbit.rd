@@ -8,6 +8,24 @@
 
 キャッチコピー（案）: 「RubyでできてるRabbitです」
 
+バナー始めました．
+
+      # image
+      # src = http://www.cozmixng.org/repos/rabbit/trunk/sample/banner_pink.png
+      # description = バナー（ピンク）
+
+     # image
+     # src = http://www.cozmixng.org/repos/rabbit/trunk/sample/banner_blue.png
+     # description = バナー（青）
+
+    # image
+    # src = http://www.cozmixng.org/repos/rabbit/trunk/sample/banner_green.png
+    # description = バナー（緑）
+
+  # image
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/sample/banner_heads.png
+  # description = バナー（あたま）
+
 The latest version: 0.1.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.1.0.tar.gz>)))
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
