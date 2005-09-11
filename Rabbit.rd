@@ -64,3 +64,9 @@ Printed output (index) (0.1.0):
 == Comments
 
 == コメント
+
+  * Re: ((<2005年09月の雑感|URL:http://homepage1.nifty.com/markey/memo/200509.html#091003>))
+    ((---out-html tで出力できていたらRabbitのバグです-))
+
+    --output-html [true|false]と指定します．READMEに追記しておきますね．
+
