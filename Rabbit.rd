@@ -70,3 +70,4 @@ Printed output (index) (0.1.0):
 
     --output-html [true|false]と指定します．READMEに追記しておきますね．
 
+    何も指定しなかった場合に入力待ちになるのはsample/lightning-talk.rdが--output-htmlの引数として扱われて，ソースファイル名が何も指定されていないと判断されたからです．この場合は標準入力からソースを受け付けるので入力待ちになります．
