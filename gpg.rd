@@ -26,6 +26,26 @@ GnuPGシステムのメインプログラム．
 
 "Kouhei Sutou <kou@cozmixng.org>"じゃなくて"kou@cozminxg.org"だけでいいのかもしれないけど，よくわからない．
 
+== 鍵をキーサーバに登録する
+
+まず，自分の公開鍵の名前を調べる．
+
+  % gpg --fingerprint kou@cozmixng.org
+  pub   1024D/1C837F31 2004-06-11
+                   指紋 = 7714 A383 F6F7 3E2D 9828  791D 1742 3F64 1C83 7F31
+  uid                  Kouhei Sutou <kou@cozmixng.org>
+  sub   1024g/C0E70A35 2004-06-11
+
+この出力の((%pub  1024D/1C837F31%))の((*1C837F31*))の部分が名前になる．
+
+名前がわかったらキーサーバに鍵をアップロードする．
+
+  % gpg --send-keys 1C837F31
+
+しばらくして手元の鍵を更新してみて，自分の鍵が見付かれば登録は成功している．
+
+  % gpg --refresh-keys
+
 == メールを署名する．
 
 Mewの場合は，draftモードで，C-cC-sで署名出来る．このとき，鍵を作成した時に指定したパスフレーズを聞かれる．
