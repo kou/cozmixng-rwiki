@@ -46,6 +46,14 @@ GnuPGシステムのメインプログラム．
 
   % gpg --refresh-keys
 
+デフォルトで使用されるキーサーバは~/.gnupg/gpg.confに例えば以下のように書いてある．
+
+  keyserver hkp://subkeys.pgp.net
+
+これを変更する場合は--keyserverで指定できる．
+
+  % gpg --keyserver hkp://keys.exapmle.com --send-keys 1C837F31
+
 == メールを署名する．
 
 Mewの場合は，draftモードで，C-cC-sで署名出来る．このとき，鍵を作成した時に指定したパスフレーズを聞かれる．
