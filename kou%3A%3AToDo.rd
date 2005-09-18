@@ -7,7 +7,6 @@
 * テーママージのundo．
 * マウスドラッグでスライド入れ換え．
 * Cairo対応．
-* 横向きPixmap．
 * uim-rabbitを作る
 
 * ((<Gauche>))の((<SWIG>))対応．
