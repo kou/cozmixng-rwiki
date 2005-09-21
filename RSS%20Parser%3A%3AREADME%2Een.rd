@@ -99,3 +99,10 @@ There is the following option for controlling (({rss_recent})).
    If the option is not (({nil})) or (({false})),
    (({rss_recent})) uses a image as link if
    /rdf:RDF/image/url and so on are available.
+
+== Thanks
+
+  * Kazuhiko: He sent me many bug reports.
+  * Tomoaki: He sent me a bug report of documents.
+  * Chris Lee: He sent me a bug report.
+  * Ronald Pijnacker: He sent me a bug report.
