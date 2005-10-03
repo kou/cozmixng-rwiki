@@ -80,18 +80,16 @@ SASLによる認証を有効にする
   smtpd_sasl_security_options = noanonymous
   broken_sasl_auth_clients = yes
 
-STARTTLSを使えるようにする(Mewだと使えない)．ここで，秘密鍵と証明書は(((<Courier-IMAP>))の時と同じように)同一ファイルになっているものとする．
-まぁ，((<Courier-IMAP>))の時に作ったpop3d.pemとかimapd.pemをコピーして
-使うとよいだろう．
+STARTTLSを使えるようにする(Mewだと使えない)．秘密鍵と証明書は(((<Apache>))の時と同じように)作った．
 
   smtpd_tls_cert_file = /usr/local/etc/postfix/certs/smtpd.pem
-  smtpd_tls_key_file = $smtpd_tls_cert_file
+  smtpd_tls_key_file = /usr/local/etc/postfix/certs/smtpd.key
   smtpd_use_tls = yes 
   smtpd_tls_session_cache_database = sdbm:/usr/local/etc/postfix/smtpd_scache
 
 キャッシュ用のファイルを作る
 
-  % sudo /usr/local/etc/postfix/smtpd_scache.{dir,pag}
+  % sudo touch /usr/local/etc/postfix/smtpd_scache.{dir,pag}
 
 SMTP AUTHが成功したクライアントは許可する(permit_sasl_authenticatedを追加)．
 
