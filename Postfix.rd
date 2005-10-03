@@ -40,6 +40,22 @@ SMTP AUTHдЄд╣дыд┐дсд╦SASL v2дт╗╚дидыдшджд╦д╖д╞дкдпбед╩д╬д╟cyrus-sasl2дЄедеєе╣е╚б
 
   % sudo postalias /etc/aliases
 
+== IPv6дт═°═╤д╣ды
+
+inet_protocolsд╦═°═╤д╣дыIPд╬╝я╬рдЄ╗╪─ъд╣дыбе
+
+░╩▓╝д╬дшджд╦д╖д╞дкдпд╚═°═╤▓─╟╜д╩дщд╨IPv4д╚IPv6дЄ═°═╤д╣дыбе
+
+  inet_protocols = all
+
+IPv4д└д▒═°═╤д╖д┐дд╛ь╣чд╧░╩▓╝д╬дшджд╦╜ёдпбе
+
+  inet_protocols = ipv4
+
+IPv6д└д▒═°═╤д╖д┐дд╛ь╣чд╧░╩▓╝д╬дшджд╦╜ёдпбе
+
+  inet_protocols = ipv6
+
 == (A)POP before SMTPд╬└▀─ъ
 
 ((<Qpopper>))дЄ╗╚д├д╞ддд┐д╚днд╧д│дьдЄ╗╚д├д╞ддд┐бед╩д╝д╩дщQpopperдм((<DRAC>))дЄ╗╚дид┐длдщбе
