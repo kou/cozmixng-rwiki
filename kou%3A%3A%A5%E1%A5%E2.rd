@@ -1,5 +1,13 @@
 = kou::メモ
 
+  * [Debian] 後で実験．
+
+      # blockquote
+      # cite = http://lists.debian.or.jp/debian-devel/200510/msg00002.html
+      # title = [debian-devel:16306] Re: debuginfo
+        * DEB_BUILD_OPTIONSにnostrip付けてリビルドすればデバッグ情報残るよ
+        * rulesのdh_stripにフラグ付ければdbgパッケージできるよ
+
   * SOC終了！
 
   * wsmのスナップショットが壊れている．．．
