@@ -56,6 +56,10 @@ IPv6だけ利用したい場合は以下のように書く．
 
   inet_protocols = ipv6
 
+両方有効にしたい場合は以下のように書く．
+
+  inet_protocols = ipv4, ipv6
+
 == (A)POP before SMTPの設定
 
 ((<Qpopper>))を使っていたときはこれを使っていた．なぜならQpopperが((<DRAC>))を使えたから．
