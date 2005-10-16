@@ -1,10 +1,5 @@
 = kou::ToDo
 
-* rcairo: setup.rbを3.4.0に．
-* rcairo: ディレクトリ構成を見直し．
-* rcairo: sample/以下のgtkcairoのサンプルを削除．
-* rcairo: language bindignsに対応．
-
 * コメントをスライドに対応付け．
 * コメントを保存．
 * テーマをカテゴリ化．
