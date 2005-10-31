@@ -50,7 +50,7 @@
   * やまだあきらさん（Debianのパッケージ作成）
     * ((<\ay diary|URL:http://arika.org/diary/>))
   * 小林さん
-    * ((<Log|http://dolphin.c.u-tokyo.ac.jp/~nori1/w/index.cgi?cmd=view;name=Log>))
+    * ((<Log|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/index.cgi?cmd=view;name=Log>))
 
 # KOF2005後
 
