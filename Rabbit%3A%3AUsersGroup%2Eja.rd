@@ -60,7 +60,8 @@
     * ((<雄也の?日坊主日記|URL:http://www.j96.org/~yuya/d/>))
   * babie
     * ((<遅レス。|URL:http://d.hatena.ne.jp/babie/20051029#p2>))
-
+  * 咳
+    * ((<I like Ruby|URL:http://www.druby.org>))
   * ...
 
 == 参加しようかなぁな人達
