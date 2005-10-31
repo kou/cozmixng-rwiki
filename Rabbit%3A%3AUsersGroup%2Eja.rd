@@ -41,14 +41,15 @@
 
 # LLDN後
 
-  * かくたにさん（もっともRabbitを使いこないしているユーザの一人／広報担当（？））
-    * ((<角谷HTML化計画|URL:http://kakutani.com/>))
+  * ((<かくたに|URL:http://kakutani.com/>))さん（もっともRabbitを使いこないしているユーザの一人／広報担当（？））
+    * ((<『ビルドツールを知ろう』|URL:http://kakutani.com/articles/esm-tokyo-study/buildtool/>))
+    * ((<『self.wake_up :from => "The Matrix"』|URL:http://kakutani.com/articles/xpmatsuri2005/>))
   * 助田さん
     * ((<雑記帳|URL:http://homepage1.nifty.com/markey/>))
   * 岩井さん（Vineのパッケージ作成）
   * atzmさん（Gentooのパッケージ作成）
   * やまだあきらさん（Debianのパッケージ作成）
-    * ((<\ay diary|URL:http://arika.org/diary/>))
+    * ((<?ay diary|URL:http://arika.org/diary/>))
   * 小林さん
     * ((<Log|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/index.cgi?cmd=view;name=Log>))
 
