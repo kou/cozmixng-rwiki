@@ -60,6 +60,8 @@ Printed output (index) (0.1.0):
   * ((<CanRabbit.ja|Rabbit::CanRabbit.ja>))
   * ((<UsedBy|Rabbit::UsedBy>))
   * ((<CommentedBy|Rabbit::CommentedBy>))
+  * ((<UsersGroup.en|Rabbit::UsersGroup.en>))
+  * ((<UsersGroup.ja|Rabbit::UsersGroup.ja>))
 
 == Comments
 
