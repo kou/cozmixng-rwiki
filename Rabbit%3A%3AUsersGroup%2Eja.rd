@@ -42,6 +42,7 @@
 # LLDN後
 
   * ((<かくたに|URL:http://kakutani.com/>))さん（もっともRabbitを使いこないしているユーザの一人／広報担当（？））
+    * 中長期的な目標としてパッチを投げられるようになりたいです。
     * ((<『ビルドツールを知ろう』|URL:http://kakutani.com/articles/esm-tokyo-study/buildtool/>))
     * ((<『self.wake_up :from => "The Matrix"』|URL:http://kakutani.com/articles/xpmatsuri2005/>))
   * 助田さん
