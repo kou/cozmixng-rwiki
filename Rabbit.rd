@@ -62,6 +62,7 @@ Printed output (index) (0.1.0):
   * ((<CommentedBy|Rabbit::CommentedBy>))
   * ((<UsersGroup.en|Rabbit::UsersGroup.en>))
   * ((<UsersGroup.ja|Rabbit::UsersGroup.ja>))
+  * ((<ToDo|Rabbit::ToDo>))
 
 == Comments
 
