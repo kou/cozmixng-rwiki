@@ -30,6 +30,8 @@
 
 シャイな人も多いと思うので，Rabbitへの要望やバグ報告などを行う自分のサイトへのリンクも付けておくとよいと思います．
 
+((<参加者の最近|http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))
+
   * kou（一人目のRabbitユーザ）
   * みやむこさん（Rabbitの共同開発者の一人）
   * zundaさん（もっとも古いRabbitユーザの一人）
