@@ -35,7 +35,7 @@
   * zundaさん（もっとも古いRabbitユーザの一人）
     * ((<おまぬけ活動日誌|URL:http://zunda.freeshell.org/d/>))
   * oxyさん（もっとも古いRabbitユーザの一人）
-    * ((<PRoxy Diary(2005-10-30)|URL:http://mono.kmc.gr.jp/~oxy/d/>))
+    * ((<PRoxy Diary|URL:http://mono.kmc.gr.jp/~oxy/d/>))
     * rd側を更新したのをすぐにrabbitが認識してくれるのは嬉しいのですが、今の実装だと処理が遅すぎるので、現在見えているページだけを優先的に更新して、他のページは裏でやってくれると嬉しいです。Full Screen時も同様。
   * かずひこさん
     （もっとも古いRabbitユーザの一人／Momongaのパッケージ作成／もっともRabbitを宣伝してくれるユーザの一人）
