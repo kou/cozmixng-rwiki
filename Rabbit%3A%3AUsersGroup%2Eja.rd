@@ -66,6 +66,7 @@
   * 咳
     * ((<I like Ruby|URL:http://www.druby.org>))
   * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))
+  * おぎのさん
   * ...
 
 == 参加しようかなぁな人達
