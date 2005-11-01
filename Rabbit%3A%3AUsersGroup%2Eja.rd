@@ -31,18 +31,19 @@
 シャイな人も多いと思うので，Rabbitへの要望やバグ報告などを行う自分のサイトへのリンクも付けておくとよいと思います．
 
   * kou（一人目のRabbitユーザ）
+  * みやむこさん（Rabbitの共同開発者の一人）
   * zundaさん（もっとも古いRabbitユーザの一人）
     * ((<おまぬけ活動日誌|URL:http://zunda.freeshell.org/d/>))
   * oxyさん（もっとも古いRabbitユーザの一人）
     * ((<PRoxy Diary(2005-10-30)|URL:http://mono.kmc.gr.jp/~oxy/d/>))
     * rd側を更新したのをすぐにrabbitが認識してくれるのは嬉しいのですが、今の実装だと処理が遅すぎるので、現在見えているページだけを優先的に更新して、他のページは裏でやってくれると嬉しいです。Full Screen時も同様。
   * かずひこさん
-    （もっとも古いRabbitユーザの一人／Momongaのパッケージ作成／広報担当（？））
+    （もっとも古いRabbitユーザの一人／Momongaのパッケージ作成／もっともRabbitを宣伝してくれるユーザの一人）
     * ((<ふぇみにん日記|URL:http://kazuhiko.tdiary.net/>))
 
 # LLDN後
 
-  * ((<かくたに|URL:http://kakutani.com/>))さん（もっともRabbitを使いこないしているユーザの一人／広報担当（？））
+  * ((<かくたに|URL:http://kakutani.com/>))さん（もっともRabbitを使いこないしているユーザの一人／もっともRabbitを宣伝してくれるユーザの一人）
     * 中長期的な目標としてパッチを投げられるようになりたいです。
     * ((<『ビルドツールを知ろう』|URL:http://kakutani.com/articles/esm-tokyo-study/buildtool/>))
     * ((<『self.wake_up :from => "The Matrix"』|URL:http://kakutani.com/articles/xpmatsuri2005/>))
