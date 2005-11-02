@@ -69,6 +69,7 @@
     * ((<I like Ruby|URL:http://www.druby.org>))
   * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))
   * おぎのさん
+  * ((<向井|URL:http://www.jmuk.org/d/>))
   * ...
 
 == 参加しようかなぁな人達
