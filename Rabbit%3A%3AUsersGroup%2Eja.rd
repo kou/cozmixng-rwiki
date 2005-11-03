@@ -1,6 +1,6 @@
 = Rabbit::UsersGroup.ja
 
-らびっとゆーざずぐるーぷ「ショッカー」
+らびっとゆーざーずぐるーぷ「ショッカー」
 
 == 参加条件
 
@@ -67,7 +67,7 @@
     * ((<遅レス。|URL:http://d.hatena.ne.jp/babie/20051029#p2>))
   * 咳
     * ((<I like Ruby|URL:http://www.druby.org>))
-  * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))
+  * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))（もっともRabbitを宣伝してくれるユーザの一人）
   * おぎのさん
   * ((<向井|URL:http://www.jmuk.org/d/>))
   * ...
