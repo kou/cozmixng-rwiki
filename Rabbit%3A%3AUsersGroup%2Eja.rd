@@ -1,6 +1,6 @@
 = Rabbit::UsersGroup.ja
 
-らびっとゆーざーずぐるーぷ「ショッカー」
+らびっとゆーざずぐるーぷ「ショッカー」
 
 == 参加条件
 
@@ -56,7 +56,7 @@
   * atzmさん（Gentooのパッケージ作成）
   * やまだあきらさん（Debianのパッケージ作成）
     * ((<?ay diary|URL:http://arika.org/diary/>))
-  * 小林さん
+  * 小林さん（Rabbitの共同開発者の一人）
     * ((<Log|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/index.cgi?cmd=view;name=Log>))
 
 # KOF2005後
