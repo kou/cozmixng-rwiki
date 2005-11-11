@@ -68,6 +68,7 @@
   * 咳
     * ((<I like Ruby|URL:http://www.druby.org>))
   * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))（もっともRabbitを宣伝してくれるユーザの一人）
+    * ((<『刺激を受けた5冊』|URL://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
   * おぎのさん
   * ((<向井|URL:http://www.jmuk.org/d/>))
   * ...
