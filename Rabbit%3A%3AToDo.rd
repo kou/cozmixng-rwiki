@@ -4,6 +4,8 @@
 
 * cairo化
 * Gtk::ItemFactory -> Gtk::UIManager
+* サウンドのサポート．
+  * 残りXX分になったら蛍の光が流れるテーマの作成．
 
 == Pending
 
