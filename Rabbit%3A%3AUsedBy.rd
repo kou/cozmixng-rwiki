@@ -18,3 +18,5 @@ Rabbitは以下の人達に使ってもらっています．
   * ((<『self.wake_up :from => "The Matrix"』|URL:http://kakutani.com/articles/xpmatsuri2005/>))
 * コウイチ(koic)さん
   * ((<『刺激を受けた5冊』|URL://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
+* 小林
+  * ((<『Debian Weekly News翻訳フロー』|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/?cmd=view;name=TokyoDebianMeeting20051112DWN>))
