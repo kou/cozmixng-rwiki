@@ -2,11 +2,14 @@
 
 アムウェイを調べてみる．
 
-((<GoogleでAmwayを検索してみる|URL:http://www.google.co.jp/search?q=amway&num=100&hl=ja&lr=lang_ja&sa=X&oi=lrtip8>))
+((<Googleで「Amway」を検索してみる|URL:http://www.google.co.jp/search?q=amway&num=100&hl=ja&lr=lang_ja&sa=X&oi=lrtip8>))
+
+((<Googleで「Amway 5大化粧品」を検索してみる|URL:http://www.google.co.jp/search?num=100&hl=ja&q=amway+5%E5%A4%A7%E5%8C%96%E7%B2%A7%E5%93%81&btnG=Google+%E6%A4%9C%E7%B4%A2&lr=lang_ja>))
+  * それっぽいのがないなぁ．
 
 == Amwayの日本の会社について
 
-  * ((<amway.co.jp: 日本アムウェイ | 貸借対照表|URL:http://www.amway.co.jp/company/balancesheet.jsp>))
+  * ((<貸借対照表|URL:http://www.amway.co.jp/company/balancesheet.jsp>))
     * 平成16年11月11日に決算期を8月から12月に変更したから第6期営業年度（平成16年9月1日〜平成16年12月31日）は4カ月になっているんだって．
 
 == Skeptic's Dictionary: アムウェイ
@@ -60,6 +63,6 @@
 
 == Amway現象を語る掲示板
 
-((<アムウェイ現象を語る会議室|URL:http://www.hanbai.com/discuss/discuss.cgi?id=amway&mode=tree&page=1&sort=1>))
+((<アムウェイ現象を語る会議室|URL:http://hanbai.com/discuss/discuss.cgi?id=amway&stat=1&info=1>))
 
 今（2005-11-22）でも動いている．
