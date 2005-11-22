@@ -9,6 +9,12 @@
 
 新しく見付けたのは上に追加していくことにしよう！
 
+== アムウェイ討論掲示板過去ログ　悪徳商法お断り！！
+
+((<URL:http://www.marin21.com/akutoku/ambbs-log/>))
+
+2000年の分しかなくて内容が古くなっているかもしれない．
+
 == アムウェイ問題研究所
 
 ((<URL:http://homepage1.nifty.com/marin/amway/>))
