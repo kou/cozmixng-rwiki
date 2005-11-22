@@ -19,4 +19,4 @@ Rabbitは以下の人達に使ってもらっています．
 * コウイチ(koic)さん
   * ((<『刺激を受けた5冊』|URL://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
 * 小林
-  * ((<『Debian Weekly News翻訳フロー』|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/?cmd=view;name=TokyoDebianMeeting20051112DWN>))
+  * 『Debian Weekly News翻訳フロー』 [((<付随情報つき|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/?cmd=view;name=TokyoDebianMeeting20051112DWN>))] [((<スライドのみ|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w-images/TokyoDebianMeeting/20051112DWN/>))]
