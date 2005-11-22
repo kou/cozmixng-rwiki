@@ -7,6 +7,7 @@ Matz日記にツッコミを入れた事はありません（念のため）．
   * ((<kou::読書>))
   * ((<kou::メモ>))
   * ((<kou::ToDo>))
+  * ((<Amway>))
   * ((<WebApplicationFramework>))
   * ((<日本語プログラミング>))
   * ((<GTK>))
