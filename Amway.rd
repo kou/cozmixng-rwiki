@@ -2,39 +2,30 @@
 
 アムウェイを調べてみる．
 
-((<Googleで「Amway」を検索してみる|URL:http://www.google.co.jp/search?q=amway&num=100&hl=ja&lr=lang_ja&sa=X&oi=lrtip8>))
+((<Googleで「amway」を検索してみる|URL:http://www.google.co.jp/search?q=amway&num=100&hl=ja&lr=lang_ja&sa=X&oi=lrtip8>))
 
-((<Googleで「Amway 5大化粧品」を検索してみる|URL:http://www.google.co.jp/search?num=100&hl=ja&q=amway+5%E5%A4%A7%E5%8C%96%E7%B2%A7%E5%93%81&btnG=Google+%E6%A4%9C%E7%B4%A2&lr=lang_ja>))
+((<Googleで「amway 5大化粧品」を検索してみる|URL:http://www.google.co.jp/search?num=100&hl=ja&q=amway+5%E5%A4%A7%E5%8C%96%E7%B2%A7%E5%93%81&btnG=Google+%E6%A4%9C%E7%B4%A2&lr=lang_ja>))
   * それっぽいのがないなぁ．
+
+新しく見付けたのは上に追加していくことにしよう！
+
+== アムウェイ問題研究所
+
+((<URL:http://homepage1.nifty.com/marin/amway/>))
+
+アムウェイ商品のデモに対する考察．
+  * 洗剤の比較: 普通の洗剤も希釈するべきなのにしていないとか，白く濁るのは乳化作用という普通の化学反応だとか．
+
+== Amway現象を語る掲示板
+
+((<アムウェイ現象を語る会議室|URL:http://hanbai.com/discuss/discuss.cgi?id=amway&stat=1&info=1>))
+
+今（2005-11-22）でも動いている．
 
 == Amwayの日本の会社について
 
   * ((<貸借対照表|URL:http://www.amway.co.jp/company/balancesheet.jsp>))
     * 平成16年11月11日に決算期を8月から12月に変更したから第6期営業年度（平成16年9月1日〜平成16年12月31日）は4カ月になっているんだって．
-
-== Skeptic's Dictionary: アムウェイ
-
-((<URL:http://www.genpaku.org/skepticj/amway.html>))
-
-要約．
-
-  * 1998年の英語の記事の翻訳．
-  * マルチ商法．
-    * ((<Skeptic's Dictionary: multi-level marketing|URL:http://www.genpaku.org/skepticj/mlm.html>))
-    * 同じサイトによる解説．
-    * 商品の販売よりも販売員の勧誘を強調する商法
-  * （アメリカでは）合法的なピラミッド組織．
-    * 合法的なピラミッド組織と，非合法なピラミッド組織（いわゆるねずみ講）との違いは，実際に商品が流通しているかどうからしい．
-    * Amwayではピラミッド組織になっていて自分より下のピラミッドを増やしていけばいくほど自分の儲けは増えるというのはねずみ講と同じシステムだが，実際に商品を流通させているのが異なる．
-  * （商品を普通に販売して）儲かる可能性はほとんどない．
-    * 自分で買ったりするからトントンか少し儲ける程度．
-    * セミナーとかで紹介される人はほんの一部．
-    * 儲からないじゃんと指摘されると，「そんなにすぐに儲けれるわけがない」などという．
-    * 儲からないのはモチベーションとか十分に働いていないからだと思う．
-
-私感．
-
-  * セミナーに参加するとだんだんマインドコントロールされていくのかなぁ．
 
 == うえのはるきのほめぱげ
 
@@ -61,8 +52,26 @@
   * ((<哲さんのスピーチ集|URL:http://home.intercity.or.jp/users/ytera/ueno/tetu001.html>))
     * 目の前でこんな風に「それはアムウエイや！！」と連呼されたらその気になっちゃうのかなぁ．
 
-== Amway現象を語る掲示板
+== Skeptic's Dictionary: アムウェイ
 
-((<アムウェイ現象を語る会議室|URL:http://hanbai.com/discuss/discuss.cgi?id=amway&stat=1&info=1>))
+((<URL:http://www.genpaku.org/skepticj/amway.html>))
 
-今（2005-11-22）でも動いている．
+要約．
+
+  * 1998年の英語の記事の翻訳．
+  * マルチ商法．
+    * ((<Skeptic's Dictionary: multi-level marketing|URL:http://www.genpaku.org/skepticj/mlm.html>))
+    * 同じサイトによる解説．
+    * 商品の販売よりも販売員の勧誘を強調する商法
+  * （アメリカでは）合法的なピラミッド組織．
+    * 合法的なピラミッド組織と，非合法なピラミッド組織（いわゆるねずみ講）との違いは，実際に商品が流通しているかどうからしい．
+    * Amwayではピラミッド組織になっていて自分より下のピラミッドを増やしていけばいくほど自分の儲けは増えるというのはねずみ講と同じシステムだが，実際に商品を流通させているのが異なる．
+  * （商品を普通に販売して）儲かる可能性はほとんどない．
+    * 自分で買ったりするからトントンか少し儲ける程度．
+    * セミナーとかで紹介される人はほんの一部．
+    * 儲からないじゃんと指摘されると，「そんなにすぐに儲けれるわけがない」などという．
+    * 儲からないのはモチベーションとか十分に働いていないからだと思う．
+
+私感．
+
+  * セミナーに参加するとだんだんマインドコントロールされていくのかなぁ．
