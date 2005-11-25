@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 567 2005-04-18 14:31:11Z kou $
+$Id: README.ja 622 2005-11-25 05:33:11Z kou $
 
 == 名前
 
@@ -57,7 +57,14 @@ GDChartもこれらを利用してコンパイルされている必要があります．
 もし，インクルードパスを追加したければ以下のようにしてくださ
 い．
 
-  % ruby setup.rb config -- -Iパス1 -Iパス2 ...
+  % ruby setup.rb config -- --with-opt-include=パス1:パス2:...
+
+もし，ライブラリパスを追加したければ以下のようにしてください．
+
+  % ruby setup.rb config -- --with-opt-lib=path1:path2:...
+
+--with-opt-includeと--with-opt-libオプションは同時に指定する
+ことができます．
 
 あとはいつも通りです．
 
