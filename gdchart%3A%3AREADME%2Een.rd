@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 567 2005-04-18 14:31:11Z kou $
+$Id: README.en 622 2005-11-25 05:33:11Z kou $
 
 == Name
 
@@ -60,7 +60,14 @@ GDChart is compiled with following, too.
 
 If you want to add include path, type like the following.
 
-  % ruby setup.rb config -- -Ipath1 -Ipath2 ...
+  % ruby setup.rb config -- --with-opt-include=path1:path2:...
+
+If you want to add library path, type like the following.
+
+  % ruby setup.rb config -- --with-opt-lib=path1:path2:...
+
+You can specify both of --with-opt-include and
+--with-opt-lib options.
 
 And rest is same as alway.
 
