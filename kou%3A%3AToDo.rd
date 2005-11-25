@@ -1,5 +1,8 @@
 = kou::ToDo
 
+* RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
+* RSS Parser: 例外にタグ／属性のURI情報も加える．
+
 * コメントをスライドに対応付け．
 * コメントを保存．
 * マージして作ったテーマを保存．
