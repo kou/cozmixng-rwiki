@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 256 2005-09-07 06:32:04Z kou $
+$Id: README.ja 390 2005-11-29 02:12:05Z kou $
 
 == 名前
 
@@ -25,10 +25,14 @@ Kouhei Sutou <kou@cozmixng.org>
 
 === 画像（1）
 
-マスコットキャラクタLavie（ラヴィ）((-語感はRabbitから，スペ
-ルはフランス語のla vieからとりました．-))とRabbitのロゴ
+* マスコットキャラクタLavie（ラヴィ）((-語感はRabbitから，スペ
+  ルはフランス語のla vieからとりました．-))とRabbitのロゴ
 
-カワイイ方のうさぎです．
+  カワイイ方のうさぎです．
+
+* バナー
+
+  カワイイバナーです．
 
 モモ
 
@@ -54,6 +58,20 @@ sode <sodetaka@kono.cis.iwate-u.ac.jp>
 
 gan <shinsato@kono.cis.iwate-u.ac.jp>
 
+=== 画像（4）
+
+* ピンクのRabbitのロゴ
+
+* ピンクのRubyのロゴ
+
+* うさたろう
+
+* かめたろう
+
+* たぬ・きたろう（たぬさん）
+
+うさっち
+
 === xyzzy用モード
 
 misc/xyzzy/
@@ -62,11 +80,13 @@ misc/xyzzy/
 
 == ライセンス
 
-プログラム，画像ともにRuby's （lib/rabbit/tgif.rbを除く）
+プログラム，画像ともにRuby's（lib/rabbit/tgif.rbを除く）です．
+詳しくはCOPYINGまたはCOPYING.jaを見てください．
 
 ただし，lib/rabbit/tgif.rbは
 ((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)) 
-と同じライセンスになります．
+と同じライセンスになります．詳しくはCOPYING-TGIFTOOLSまたは
+COPYING-TGIFTOOLS.jaを見てください．
 
 マスコットキャラクタのPSDファイルが欲しい人はプログラム作者
 に連絡してください．画像作者に相談してみます．
@@ -161,6 +181,11 @@ Windowsの場合はinstall.batを実行してもインストールできます．
 ディレクトリで以下のようにします．
 
   % rabbit sample/rabbit-implementation.rd
+
+ただし，いくつかのサンプルは，テーマがsample/rabbit/theme以
+下にあるためトップからではうまく表示できないかもしれません．
+サンプルの実行は sample ディレクトリに入ってするとよいでしょ
+う．
 
 WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 ドロップしてもよいです．
@@ -289,7 +314,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 : -e, --encoding
    入力ソースのエンコーディングを指定します．
    
-   デフォルトはUTF-8です．
+   指定しなかった場合は自動検出を試みます．
 
 : -f, --full-screen
    フルスクリーンモードで起動します．
@@ -326,7 +351,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    に，ファイル名がUTF-8で保存される場合は，環境変数LANGとか
    G_FILENAME_ENCODINGとかを設定するとよいかもしれません．
 
-: --output-html
+: --output-html, --no-output-html
    保存されたスライドを表示するHTMLを生成するかどうかを指定
    します．
    
@@ -404,7 +429,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    デフォルトはstderrで標準エラー出力に表示されます．
 
-: --use-druby [BOOL]
+: --use-druby, --no-use-druby
    dRubyインターフェイスを使うかどうかを指定します．
 
    デフォルトでは使います．
@@ -414,12 +439,12 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトではdruby://:10101です．
 
-: --output-druby-uri [BOOL]
+: --output-druby-uri, --no-output-druby-uri
    dRubyインターフェイスのURIを表示するかどうかを指定します．
 
    デフォルトでは表示しません．
 
-: --use-soap [BOOL]
+: --use-soap, --no-use-soap
    SOAPインターフェイスを使うかどうかを指定します．
 
    デフォルトでは使いません．
@@ -434,7 +459,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトでは10103です．
 
-: --use-xmlrpc [BOOL]
+: --use-xmlrpc, --no-use-xmlrpc
    XML-RPCインターフェイスを使うかどうかを指定します．
 
    デフォルトでは使いません．
@@ -449,10 +474,22 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトでは10104です．
 
-: --server [BOOL]
+: --server, --no-server
    サーバとして起動するかを指定します．
    
    デフォルトではサーバとして起動しません．
+
+: --comment-source [FILE]
+   初期コメント用ソースのファイル名を指定します．
+   
+   デフォルトではRabbitが提供する初期コメント用ソースが使わ
+   れます．
+
+: --comment-encoding [ENCODING]
+   初期コメント用ソースのエンコーディングを指定します．
+
+   指定しなかった場合は自動検出を試みます．
+
 
 == Rabbit用RDの書き方
 
@@ -670,7 +707,8 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
 
 == 感謝
 
-  * モモさん: かわいいうさぎなどを書いてくれました．
+  * モモさん: かわいいうさぎとかかわいいバナーなどを書いてく
+    れました．
   * みやむこさん: xyzzy用のrabbitモードを書いてくれました．
     Windowsまわりでいろいろ助けてくれます．
   * zundaさん: EPSの扱いを修正してくれました．--marginの指定
@@ -687,5 +725,12 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
     た．
   * ganちゃん: 旗を書いてくれました．
   * かくたにさん: ドキュメントに関するバグ報告をしてくれまし
-    た．Rabbitを使ってプレゼンしてくれます．テーマデザインの
-    アイディアをくれました．
+    た．Rabbitを使ってプレゼンしてくれます．テーマデザインや
+    機能拡張のアイディアをくれました．
+  * atzmさん: Gentoo用のパッケージ（*.ebuild）を作ってくれま
+    した．
+  * やまだあきらさん: Debian用のパッケージ（*.deb）を作って
+    くれました．
+  * うさっちさん: ロゴとかたろうシリーズなどを書いてくれまし
+    た．
+
