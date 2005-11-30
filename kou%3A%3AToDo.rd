@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* RWiki: fix typo: maneger -> manager
+
 * Rabbitのポリシーをまとめる
   * プレゼン的にやっちゃだめなことをやると汚く見えるように．
     * 文字の大きさが大きめ（ぐだぐだ書かないように）
