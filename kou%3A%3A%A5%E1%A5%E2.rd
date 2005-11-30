@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * IPP request failed with status XXXはlibgnomecupsが出している．LOG_DOMAINつけろよ．．．
+
   * [Debian] 後で実験．
 
       # blockquote
