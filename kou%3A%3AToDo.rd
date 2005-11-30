@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* Rabbit: 画像タイプとして*.obj(Tgif)をサポート
+
 * RWiki: fix typo: maneger -> manager
 
 * Rabbitのポリシーをまとめる
