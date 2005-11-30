@@ -128,7 +128,7 @@ po/#{LANG}/rabbit.po by the following.
 
 == Dependency libraries
 
-See ((<INSTALL.win32.en>)) if you install dependency
+See ((<Rabbit::INSTALL.win32.en>)) if you install dependency
 libraries on Windows.
 
   * ((<RAA:rdtool>))
