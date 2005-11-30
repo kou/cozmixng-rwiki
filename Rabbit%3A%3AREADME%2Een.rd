@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 256 2005-09-07 06:32:04Z kou $
+$Id: README.en 390 2005-11-29 02:12:05Z kou $
 
 == Name
 
@@ -24,10 +24,15 @@ Kouhei Sutou <kou@cozmixng.org>
 
 === Images (1)
 
-Lavie (mascot) ((-Lavie's sense of language is from Rabbit
-and spell is from `la vie' in French.-)) and Rabbit logos.
+* Lavie (mascot) ((-Lavie's sense of language is from Rabbit
+  and spell is from `la vie' in French.-)) and Rabbit logos.
 
-(pretty rabbit)
+  (pretty rabbit)
+
+* Banner
+
+  (pretty banner)
+
 
 MoMo
 
@@ -53,6 +58,20 @@ Flags.
 
 gan <shinsato@kono.cis.iwate-u.ac.jp>
 
+=== Images (4)
+
+* Rabbit pink logo
+
+* Ruby pink logo
+
+* USA-TARO
+
+* KAME-TARO
+
+* TANU-KITARO (TANU-san)
+
+usatti
+
 === Mode for xyzzy
 
 misc/xyzzy
@@ -61,11 +80,13 @@ Mr. MIYAMUKO
 
 == Licence
 
-Ruby's (expected files under lib/rabbit/tgif.rb)
+Ruby's (except files under lib/rabbit/tgif.rb). For more
+information see COPYING.
 
 The files under lib/rabbit/tgif.rb is the
 same licence of
 ((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)).
+For more information see COPYING-TGIFTOOLS.
 
 If you want to get PSD file of mascot character, tell
 program author. I'll ask images author.
@@ -107,7 +128,7 @@ po/#{LANG}/rabbit.po by the following.
 
 == Dependency libraries
 
-See ((<Rabbit::INSTALL.win32.en>)) if you install dependency
+See ((<INSTALL.win32.en>)) if you install dependency
 libraries on Windows.
 
   * ((<RAA:rdtool>))
@@ -159,6 +180,11 @@ or ...
 Type the following if you want to run sample/rabbit_en.rd.
 
   % rabbit --type file sample/rabbit_en.rd
+
+However, some samples use themes in sample/rabbit/theme and
+are not displayed correctly when run from the top directory.
+You would be better off running samples in the sample
+directory.
 
 If you are Windows user, you can drag and drop RD file to
 bin/rabbit.bat.
@@ -267,7 +293,7 @@ with the following.
 : -e, --encoding
    Specifies encoding of the input source.
    
-   Default is UTF-8.
+   Default is auto-detect.
 
 : -f, --full-screen
    Invoked with full screen mode.
@@ -303,7 +329,7 @@ with the following.
    filename is UTF-8, you may need to setup environment
    variable such as LANG and G_FILENAME_ENCODING.
 
-: --output-html
+: --output-html, --no-output-html
    Specifies whether Rabbit generates HTML or not for
    viewing saved slides.
    
@@ -383,25 +409,25 @@ with the following.
    Default is stderr which output log to standard error
    output.
 
-: --use-druby [BOOL]
+: --use-druby, --no-use-druby
    Specifies whether to use dRuby interface.
 
-   Default is true.
+   Default is use.
 
 : --druby-uri [URI]
    Specifies dRuby interface URI.
 
    Default is druby://:10101.
 
-: --output-druby-uri [BOOL]
+: --output-druby-uri, --no-output-druby-uri
    Specifies whether to output dRuby interface URI.
 
-   Default is false.
+   Default is not output.
 
-: --use-soap [BOOL]
+: --use-soap, --no-use-soap
    Specifies whether to use SOAP interface.
 
-   Default is false.
+   Default is not use.
 
 : --soap-host [HOST]
    Specifies SOAP interface host.
@@ -413,10 +439,10 @@ with the following.
 
    Default is 10103.
 
-: --use-xmlrpc [BOOL]
+: --use-xmlrpc, --no-use-xmlrpc
    Specifies whether to use XML-RPC interface.
 
-   Default is false.
+   Default is not use.
 
 : --xmlrpc-host [HOST]
    Specifies XML-RPC interface host.
@@ -428,10 +454,20 @@ with the following.
 
    Default is 10104.
 
-: --server [BOOL]
+: --server, --no-server
    Specifies whether to run as server.
    
-   Default is false.
+   Default is not server.
+
+: --comment-source [FILE]
+   Specifies initial comment source file name.
+   
+   Default is simple comment source provided by system.
+
+: --comment-encoding [ENCODING]
+   Specifies comment source encoding.
+
+   Default is auto-detect.
 
 == How to write
 
@@ -639,7 +675,7 @@ page from XXX.rd.
 
 == Thanks
 
-  * MoMo: She wrote some pretty images.
+  * MoMo: She drow some pretty images.
   * MIYAMUKO: He wrote rabbit mode for xyzzy. He helps
     Rabbit works on Windows.
   * zunda: He fixed EPS handling. He gives me an advise for
@@ -654,5 +690,8 @@ page from XXX.rd.
   * noritada: He sent me a bug report for document.
   * gan: He wrote some flags.
   * KAKUTANI: He sent me a bug report for document. He makes
-    a presentation with Rabbit. He gives me an idea for theme
-    design.
+    a presentation with Rabbit. He gives me an idea for new
+    features and theme design.
+  * atzm: He makes Gentoo package (*.ebuild).
+  * akira yamada: He makes Debian package (*.deb).
+  * usatti: She drow some logos and taro series images.
