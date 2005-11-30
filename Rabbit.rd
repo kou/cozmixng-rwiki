@@ -26,27 +26,27 @@
   # src = http://www.cozmixng.org/repos/rabbit/trunk/lib/rabbit/theme/rabbit-images/rabbit-banner-heads.png
   # description = バナー（あたま）
 
-The latest version: 0.2.9(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.2.9.tar.gz>)))
+The latest version: 0.3.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.3.0.tar.gz>)))
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
 
 
-印刷出力(0.1.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_0.1.0.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_0.1.0.pdf>))
+印刷出力(0.3.0):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.3.0.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.3.0.pdf>))
 
-印刷出力（一覧）(0.1.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_index_0.1.0.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_index_0.1.0.pdf>))
+印刷出力（一覧）(0.3.0):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.3.0.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.3.0.pdf>))
 
-Printed output(0.1.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_0.1.0.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_0.1.0.pdf>))
+Printed output(0.3.0):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.3.0.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.3.0.pdf>))
 
-Printed output (index) (0.1.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_index_0.1.0.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit_en_index_0.1.0.pdf>))
+Printed output (index) (0.3.0):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.3.0.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.3.0.pdf>))
 
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
@@ -67,10 +67,3 @@ Printed output (index) (0.1.0):
 == Comments
 
 == コメント
-
-  * Re: ((<2005年09月の雑感|URL:http://homepage1.nifty.com/markey/memo/200509.html#091003>))
-    ((---out-html tで出力できていたらRabbitのバグです-))
-
-    --output-html [true|false]と指定します．READMEに追記しておきますね．
-
-    何も指定しなかった場合に入力待ちになるのはsample/lightning-talk.rdが--output-htmlの引数として扱われて，ソースファイル名が何も指定されていないと判断されたからです．この場合は標準入力からソースを受け付けるので入力待ちになります．
