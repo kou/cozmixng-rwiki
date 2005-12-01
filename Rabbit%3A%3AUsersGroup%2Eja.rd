@@ -1,6 +1,7 @@
 = Rabbit::UsersGroup.ja
 
 らびっとゆーざずぐるーぷ「ショッカー」
+((<ML(rabbit-shockers)|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
 
 == 参加条件
 
@@ -30,6 +31,15 @@
 == 参加者
 
 シャイな人も多いと思うので，Rabbitへの要望やバグ報告などを行う自分のサイトへのリンクも付けておくとよいと思います．
+
+気が向いたら((<rabbit-shockers ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
+(QuickML)にも入るとよいと思います．
+
+  To: rabbit-shockers@ml.cozmixng.org
+  Cc: kou@cozmixng.org
+  Subject: イー（とかなんかそんなん）
+  
+  何か一言（今までなんラビットしたとかなんかそんなん）
 
 ((<参加者の最近|URL:http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))
 
