@@ -33,7 +33,7 @@
 シャイな人も多いと思うので，Rabbitへの要望やバグ報告などを行う自分のサイトへのリンクも付けておくとよいと思います．
 
 気が向いたら((<rabbit-shockers ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
-(((<QuickML|URL:http://quickml.com/>)))にも入るとよいと思います．
+（((<QuickML|URL:http://quickml.com/>))を使用）にも入るとよいと思います．
 
   To: rabbit-shockers@ml.cozmixng.org
   Cc: kou@cozmixng.org
