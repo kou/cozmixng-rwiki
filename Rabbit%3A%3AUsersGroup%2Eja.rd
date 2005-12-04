@@ -81,6 +81,8 @@
     * ((<『刺激を受けた5冊』|URL://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
   * おぎのさん
   * ((<向井|URL:http://www.jmuk.org/d/>))
+  * kdmsnrさん
+    * ((<capsctrldays|URL:http://capsctrl.que.jp/kdmsnr/diary/>))
   * ...
 
 == 参加しようかなぁな人達
