@@ -31,6 +31,7 @@
 == 参加者
 
 シャイな人も多いと思うので，Rabbitへの要望やバグ報告などを行う自分のサイトへのリンクも付けておくとよいと思います．
+（((<参加者の最近|URL:http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))）
 
 気が向いたら((<rabbit-shockers ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
 （((<QuickML|URL:http://quickml.com/>))を使用）にも入るとよいと思います．
@@ -40,8 +41,6 @@
   Subject: イー（とかなんかそんなん）
   
   何か一言（今までなんラビットしたとかなんかそんなん）
-
-((<参加者の最近|URL:http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))
 
   * kou（一人目のRabbitユーザ）
   * みやむこさん（Rabbitの共同開発者の一人）
@@ -55,7 +54,7 @@
 
 # LLDN後
 
-  * ((<かくたに|URL:http://kakutani.com/>))さん（もっともRabbitを使いこないしているユーザの一人／もっともRabbitを宣伝してくれるユーザの一人）
+  * ((<かくたに|URL:http://kakutani.com/>))さん（((*ショッカー代表*))／もっともRabbitを使いこないしているユーザの一人／もっともRabbitを宣伝してくれるユーザの一人）
     * 中長期的な目標としてパッチを投げられるようになりたいです。
     * ((<『ビルドツールを知ろう』|URL:http://kakutani.com/articles/esm-tokyo-study/buildtool/>))
     * ((<『self.wake_up :from => "The Matrix"』|URL:http://kakutani.com/articles/xpmatsuri2005/>))
