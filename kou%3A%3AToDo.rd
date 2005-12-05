@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* Rabbit: テーマドキュメントブラウザに編集インターフェイスを追加．
+* Rabbit: テーマドキュメントブラウザで，画像テーマ（なんかいい名前考えよう）の場合は画像一覧を表示．
 * Rabbit: 画像タイプとして*.obj(Tgif)をサポート
 
 * RWiki: fix typo: maneger -> manager
