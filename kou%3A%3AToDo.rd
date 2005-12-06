@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* RSS Parser: AtomがRFC化（((<rfc:4287>))）したのでサポートする．
+
 * Svn: Rabbit:r428のコミットメールのSubjectが変．
 
 * Rabbit: テーマドキュメントブラウザに編集インターフェイスを追加．
