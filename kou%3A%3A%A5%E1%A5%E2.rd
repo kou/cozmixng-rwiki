@@ -1,5 +1,46 @@
 = kou::メモ
 
+  * フリクリ
+    * flip clock
+
+        # blockquote
+        n. 1 安物の時計．2 転じて，見た目だけで役に立たないたとえ．
+
+    * fool'ish clev'er・ness
+
+        # blockquote
+        一見利口そうに見えて実は愚かな考え．バカの浅知恵．
+
+    * flim'sy claim
+
+        # blockquote
+        n. 冷やかし半分の苦情．悪質な苦情の常習者．
+
+    * flight'y clip'per
+
+        # blockquote
+        n. 1 快速帆船．2 軽率な人．不似合いな職業に就いた人物の蔑称．
+
+    * flint cleav'er
+
+        # blockquote
+        n 打製石器の一種．肉裂き包丁．
+
+    * Flem'ing, Clem'ent
+
+        # blockquote
+        《人名》19世紀の心理学者．少年期の自我形成についての研究で知られる．
+
+    * flec'tion cli'mate
+
+        # blockquote
+        n. 1 変わりやすい天候． 2 気分屋の感想．聞く値打ちのない意見．
+
+    * fleecy clew
+
+        # blockquote
+        もつれた毛糸玉．混乱が必定であることを示す慣用句．
+
   * IPP request failed with status XXXはlibgnomecupsが出している．LOG_DOMAINつけろよ．．．
 
   * [Debian] 後で実験．
