@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* Svn: prop-change-email.rbを作る．
+
 * RSS Parser: AtomがRFC化（((<rfc:4287>))）したのでサポートする．
 
 * Rabbit: テーマドキュメントブラウザに編集インターフェイスを追加．
