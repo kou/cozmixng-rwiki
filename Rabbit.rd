@@ -1,7 +1,7 @@
 = Rabbit
 
   # image
-  # src = http://www.cozmixng.org/repos/rabbit/trunk/lib/rabbit/theme/rabbit-images/lavie-with-logo.png
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/lavie-with-logo.png
   # title = Lavie
   # description = マスコット
   # class = right
@@ -11,19 +11,19 @@
 バナー始めました．
 
       # image
-      # src = http://www.cozmixng.org/repos/rabbit/trunk/lib/rabbit/theme/rabbit-images/rabbit-banner-pink.png
+      # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-pink.png
       # description = バナー（ピンク）
 
      # image
-     # src = http://www.cozmixng.org/repos/rabbit/trunk/lib/rabbit/theme/rabbit-images/rabbit-banner-blue.png
+     # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-blue.png
      # description = バナー（青）
 
     # image
-    # src = http://www.cozmixng.org/repos/rabbit/trunk/lib/rabbit/theme/rabbit-images/rabbit-banner-green.png
+    # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-green.png
     # description = バナー（緑）
 
   # image
-  # src = http://www.cozmixng.org/repos/rabbit/trunk/lib/rabbit/theme/rabbit-images/rabbit-banner-heads.png
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-heads.png
   # description = バナー（あたま）
 
 The latest version: 0.3.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.3.0.tar.gz>)))
