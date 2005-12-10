@@ -2,7 +2,7 @@
 
 * RWiki: moveを作る．
 * RWiki: テンプレートを作る．
-* RWiki: ブックマークレットを作る．
+* RWiki: 追加用ブックマークレットを作る．
 
 * Svn: prop-change-email.rbを作る．
 
