@@ -1,5 +1,9 @@
 = kou::ToDo
 
+* RWiki: moveを作る．
+* RWiki: テンプレートを作る．
+* RWiki: ブックマークレットを作る．
+
 * Svn: prop-change-email.rbを作る．
 
 * RSS Parser: AtomがRFC化（((<rfc:4287>))）したのでサポートする．
