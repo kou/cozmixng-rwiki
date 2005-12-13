@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 343 2005-07-15 08:03:46Z kou $
+$Id: README.ja 359 2005-12-13 04:03:52Z kou $
 
 == 作者
 
@@ -11,6 +11,10 @@ Kouhei Sutou <kou@cozmixng.org>
 == ライセンス
 
 GPL or BSD License
+
+== 注意
+
+以前のバージョンはGauche 0.8.6以降では動きません．
 
 == メーリングリスト
 
