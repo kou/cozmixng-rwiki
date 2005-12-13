@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 335 2005-06-14 03:33:03Z kou $
+$Id: README.ja 357 2005-12-13 04:02:06Z kou $
 
 == 作者
 
@@ -14,7 +14,7 @@ GPL or BSD License
 
 == 注意
 
-Gauche 0.8.3以前では動きません．
+Gauche 0.8.6用です．Gauche 0.8.3以前では動きません．
 
 == なにこれ？
 
@@ -163,6 +163,18 @@ GaUnitは以下に示すテストをするための手続きを用意しています．
     
     (({(equal? expected actual)}))が#tを返せば成功します．
 
+--- assert-not-equal(expected actual [message])
+    
+    (({(not (equal? expected actual))}))が#tを返せば成功します．
+
+--- assert-null(actual [message])
+    
+    (({(null? actual)}))が#tを返せば成功します．
+
+--- assert-not-null(actual [message])
+    
+    (({(not (null? actual))}))が#tを返せば成功します．
+
 --- assert-true(actual [message])
     
     ((|actual|))が#tならば成功します．
@@ -222,6 +234,27 @@ GaUnitは以下に示すテストをするための手続きを用意しています．
     (({(receive actual (productor) (equal? expected
     actual))}))が真を返せば成功します．
     
+--- assert-in-delta(expected delta actual [message])
+    
+    (({(<= (- expected delta) actual (+ expected delta))}))
+    が真を返せば成功します．
+    
+--- assert-output(expected thunk [message])
+    
+    (({(equal? expected (with-output-to-string thunk))}))が
+    真を返せば成功します．つまり，((|expected|))と
+    (({(thunk)}))の出力結果が等しければ成功します．
+    
+    もし，((|expected|))に正規表現を指定していた場合は
+    (({(rxmatch expected (with-output-to-string thunk))}))が
+    #f以外を返せば成功します．つまり，(({(trunk)}))の出力結
+    果が((|expected|))にマッチすれば成功します．
+
+--- assert-match(expected actual [message])
+    
+    (({(rxmatch expected actual)}))が#f以外を返せば成功しま
+    す．
+
 ==== 必要最小限
 
 GaUnitは以下の手続きを用意しています．
