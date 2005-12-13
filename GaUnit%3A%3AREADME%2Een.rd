@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 335 2005-06-14 03:33:03Z kou $
+$Id: README.en 357 2005-12-13 04:02:06Z kou $
 
 ((*I'm not good in English. Please fix.*))
 
@@ -16,7 +16,7 @@ GPL or BSD License
 
 == Caution
 
-This doesn't work on Gauche <=0.8.3.
+This is for Gauche 0.8.6. This doesn't work on Gauche <= 0.8.3.
 
 == What's this?
 
@@ -163,6 +163,18 @@ is a procedure test result is passed to the procedure.
     
     It succeeds when (({(equal? expected actual)})) is #t.
 
+--- assert-not-equal(expected actual [message])
+    
+    It succeeds when (({(not (equal? expected actual))})) is #t.
+
+--- assert-null(actual [message])
+    
+    It succeeds when (({(null? actual)})) is #t.
+
+--- assert-not-null(actual [message])
+    
+    It succeeds when (({(not (null? actual))})) is #t.
+
 --- assert-true(actual [message])
     
     It succeeds when ((|actual|)) is #t.
@@ -219,6 +231,29 @@ is a procedure test result is passed to the procedure.
     
     It succeeds when (({(receive actual (productor) (equal?
     expected actual))})) is #t.
+    
+--- assert-in-delta(expected delta actual [message])
+    
+    It succeeds when (({(<= (- expected delta) actual (+
+    expected delta))})) is #t.
+    
+--- assert-output(expected thunk [message])
+    
+    It succeeds when (({(equal? expected
+    (with-output-to-string thunk))})) is #t. In other words,
+    it succeeds when ((|expected|)) equals the output of
+    (({(thunk)})).
+    
+    If ((|expected|)) is regular expression, it succeeds
+    when (({(rxmatch expected (with-output-to-string
+    thunk))})) is not #f. In other words, it succeeds when
+    the output of (({(tunk)})) is matched with
+    ((|expected|)).
+
+--- assert-match(expected actual [message])
+    
+    It succeeds when (({(rxmatch expected actual)})) is not
+    #f.
     
 ====  Requisite minimum
 
