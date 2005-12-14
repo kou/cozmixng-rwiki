@@ -6,14 +6,18 @@ Apache関係の作業記録です。
 
 /usr/local/etc/pkgtools.confのMAKE_ARGSに以下を追加．
 
-  'www/apache2' => [
+  'www/apache*' => [
     'WITH_SUEXEC_MODULES=yes',
     'WITH_SSL_MODULES=yes',
    ],
 
-www/apache2をインストール
+www/apache22をインストール
 
   % sudo /usr/local/sbin/portupgrade -NRr apache
+
+www/apache20からwww/apache22にアップデートする場合は以下のようにする．
+
+  % sudo nice -20 /usr/local/sbin/portupgrade -NRr -o www/apache22 apache
 
 == Digest認証を使う
 
@@ -97,3 +101,17 @@ Digest認証用のファイルを作る
   </VirtualHost>
 
 バーチャルホストの実行ユーザ／グループを変更するにはSuexecUserGroupを指定する．古いApacheで指定できたUserとGroupは使用できない．
+
+== httpreadyがない
+
+Apache 2.2.xを起動させると以下のようにwarningが出る場合がある．
+
+  [warn] (2)No such file or directory: Failed to enable the 'httpready' Accept Filter
+
+この場合は以下のようにすればよい．
+
+  % sudo kldload accf_http.ko
+
+毎回起動した毎に呼び出すのは面倒なので/boot/loader.confに以下を追加．
+
+  accf_http_load="YES"
