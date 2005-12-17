@@ -82,6 +82,10 @@
   * ((<向井|URL:http://www.jmuk.org/d/>))
   * kdmsnrさん（もっともRabbitを宣伝してくれるユーザの一人）
     * ((<capsctrldays|URL:http://capsctrl.que.jp/kdmsnr/diary/>))
+
+# オブジェクト倶楽部 2005クリスマスイベント後
+  * 西川さん
+    * ((<トウフ日記|URL:http://d.hatena.ne.jp/nskj77/>))
   * ...
 
 == 参加しようかなぁな人達
