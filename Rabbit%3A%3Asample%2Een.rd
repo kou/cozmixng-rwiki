@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 257 2005-09-07 09:37:16Z kou $
+# $Id: rabbit_en.rd 488 2005-12-30 09:32:57Z kou $
 
 = Rabbit(en)
 
@@ -39,21 +39,29 @@ A presentation tool
   * mathematical characters (('&Sigma;'))(('&sum;sub:i=0'))
   * display image
   * auto reload modified source
-  * reload theme
 
 = More available things
 
+  * reload theme
   * auto generation of index page
   * right click menu
   * screenshot on the off screen
   * PS/PDF output (but quality is ...)
+
+= More more ...
+
   * Internationalized message
   * Table
+  * colorize source
+  * funny themes
+  * graffiti on the slide
+
+= More more more ...
+
+  * inline image
 
 = Not available
 
-  * graffiti on the slide
-  * inline image
   * organize screenshots
   * jump to the link
 
@@ -61,6 +69,7 @@ A presentation tool
 
   * handle sound
   * handle 3D (I wish there were a library of X3D)
+    * now OpenGL is supported
 
 = Call on
 
@@ -140,6 +149,13 @@ call Tgif or mimeTeX
   # keep_ratio = true
   # relative_height = 100
 
+= Tgif is OK, too
+
+  # image
+  # src = rabbit-balloon.obj
+  # keep_ratio = true
+  # relative_height = 100
+
 = Wrap word
 
 looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
@@ -148,6 +164,19 @@ looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong
 
 What about?
 
+  like
+  this
+  def It's
+    OK?
+  end
+
+What about?
+
+= May be added color
+
+What about?
+
+  # enscript ruby
   like
   this
   def It's
@@ -201,25 +230,29 @@ What about?
 
 Ahh, I'll set up more better documents.
 
-= Key bindings (basic)
+= Key (basic)
 
 : Quit
    q, Esc
-: Next page
-   n, f, j, l, Spc, Ret, Tab, +, вн, вк, left click and so on.
-: Previous page
-   p, b, k, h, BS, Del, -, вм, вл, center click and so on.
 
-= Key bindings (convenience)
+: Next page
+   n, f, j, l, Spc, Ret, Tab, +, (('&DownArrow;')),
+   (('&RightArrow;')), left click, ...
+
+: Previous page
+   p, b, k, h, BS, Del, -, (('&UpArrow;')),
+   (('&LeftArrow;')), center click, ...
+
+= Key (convenience)
 
 : Go to title page
    a, 0, <, Home
 : Go to n page
    1-9. +Ctrl is +10, +Alt is +20
 : Go to last page
-   e, >, End
+   e, $, >, End
 
-= Key bindings (presentation)
+= Key (presentation)
 
 : Toggle full screen
    F5, F10, F11
@@ -227,10 +260,10 @@ Ahh, I'll set up more better documents.
 : Toggle index mode
    i
 
-: Go to specified page in index mode
+: Go to the page in index mode
    double click
 
-= Key bindings (feature)
+= Key (feature)
 
 : Screenshot
    save each page as image
@@ -242,7 +275,7 @@ Ahh, I'll set up more better documents.
 
    Ctrl+p
 
-= Key binding (draw)
+= Key (draw)
 
 : Redraw
    Ctrl+l
@@ -250,7 +283,18 @@ Ahh, I'll set up more better documents.
 : Reload theme
    t, r
 
-= Key binding (etc)
+: Reset slide adjustment
+   Alt+a
+
+= Key (hole)
+
+: Expand hole
+   E
+
+: Narrow hole
+   N
+
+= Key (etc)
 
 : Iconify
    z
