@@ -26,27 +26,27 @@
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-heads.png
   # description = バナー（あたま）
 
-The latest version: 0.3.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.3.0.tar.gz>)))
+The latest version: 0.3.1(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.3.1.tar.gz>)))
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
 
 
-印刷出力(0.3.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.3.0.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.3.0.pdf>))
+印刷出力(0.3.1):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.3.1.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.3.1.pdf>))
 
-印刷出力（一覧）(0.3.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.3.0.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.3.0.pdf>))
+印刷出力（一覧）(0.3.1):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.3.1.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.3.1.pdf>))
 
-Printed output(0.3.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.3.0.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.3.0.pdf>))
+Printed output(0.3.1):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.3.1.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.3.1.pdf>))
 
-Printed output (index) (0.3.0):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.3.0.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.3.0.pdf>))
+Printed output (index) (0.3.1):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.3.1.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.3.1.pdf>))
 
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
