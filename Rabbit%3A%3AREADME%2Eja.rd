@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 390 2005-11-29 02:12:05Z kou $
+$Id: README.ja 486 2005-12-30 09:31:33Z kou $
 
 == 名前
 
@@ -70,6 +70,8 @@ gan <shinsato@kono.cis.iwate-u.ac.jp>
 
 * たぬ・きたろう（たぬさん）
 
+* ゆきだるたろう（ゆきだるさん）
+
 うさっち
 
 === xyzzy用モード
@@ -133,7 +135,7 @@ RSS|URL:http://www.cozmixng.org/rss/rabbit.rdf>))で確認でき
 == 依存ライブラリ
 
 Windowsでの依存ライブラリのインストールは
-((<Rabbit::INSTALL.win32.ja>))を参考にしてください．
+((<INSTALL.win32.ja>))を参考にしてください．
 
   * ((<RAA:rdtool>))
   * ((<RAA:ruby-gnome2>))の中のRuby/GTK2
@@ -316,8 +318,15 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    指定しなかった場合は自動検出を試みます．
 
-: -f, --full-screen
-   フルスクリーンモードで起動します．
+: -f, --full-screen, --no-f, --no-full-screen
+   フルスクリーンモードで起動するかどうかを指定します．
+   
+   デフォルトではフルスクリーンモードにはなりません．
+
+: --index-mode, --no-index-mode
+   一覧モードで起動するかどうかを指定します．
+   
+   デフォルトでは一覧モードにはなりません．
 
 : -w, --width
    ウィンドウの幅を指定します．
@@ -413,7 +422,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    ます．Rabbitをシステムにインストールせずに使う場合は
    Rabbitのトップディレクトリで以下のようにします．
 
-     % bin/rabbit --locale-dir data/locale --type file sample/rabbit.rd
+     % ruby -I./lib bin/rabbit --locale-dir data/locale sample/rabbit.rd
    
    デフォルトでは/usr/local/share/locale/や
    /usr/share/locale/あたりが使われます．
