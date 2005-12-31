@@ -135,7 +135,7 @@ RSS|URL:http://www.cozmixng.org/rss/rabbit.rdf>))で確認でき
 == 依存ライブラリ
 
 Windowsでの依存ライブラリのインストールは
-((<INSTALL.win32.ja>))を参考にしてください．
+((<Rabbit::INSTALL.win32.ja>))を参考にしてください．
 
   * ((<RAA:rdtool>))
   * ((<RAA:ruby-gnome2>))の中のRuby/GTK2
