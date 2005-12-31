@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 390 2005-11-29 02:12:05Z kou $
+$Id: README.en 486 2005-12-30 09:31:33Z kou $
 
 == Name
 
@@ -70,6 +70,8 @@ gan <shinsato@kono.cis.iwate-u.ac.jp>
 
 * TANU-KITARO (TANU-san)
 
+* YUKIDARU-TARO (YUKIDARU-san)
+
 usatti
 
 === Mode for xyzzy
@@ -128,7 +130,7 @@ po/#{LANG}/rabbit.po by the following.
 
 == Dependency libraries
 
-See ((<Rabbit::INSTALL.win32.en>)) if you install dependency
+See ((<INSTALL.win32.en>)) if you install dependency
 libraries on Windows.
 
   * ((<RAA:rdtool>))
@@ -295,8 +297,15 @@ with the following.
    
    Default is auto-detect.
 
-: -f, --full-screen
-   Invoked with full screen mode.
+: -f, --full-screen, --no-f, --no-full-screen
+   Specifies whether Rabbit is invoked with full screen mode.
+
+   Default is no.
+
+: --index-mode, --no-index-mode
+   Specifies whether Rabbit is invoked with index mode.
+
+   Default is no.
 
 : -w, --width
    Specifies the width of window.
