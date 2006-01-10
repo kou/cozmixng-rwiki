@@ -88,6 +88,8 @@
     * ((<トウフ日記|URL:http://d.hatena.ne.jp/nskj77/>))
   * 畠山さん
     * ((<ちくわプログラマの作業履歴@はてな|URL:http://d.hatena.ne.jp/thata/>))
+  * dotさん
+    * ((<dot.diary|URL:http://blog.prebyte.jp/>))
   * ...
 
 == 参加しようかなぁな人達
