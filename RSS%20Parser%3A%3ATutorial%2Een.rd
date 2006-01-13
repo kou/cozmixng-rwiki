@@ -413,7 +413,7 @@ You can write like the following:
 If you want to sort the entries by those published date, you
 need to add the following:
 
-  maker.items.sort = true
+  maker.items.do_sort = true
 
 And you can write like the following:
 
@@ -425,7 +425,7 @@ And you can write like the following:
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -453,7 +453,7 @@ You can write like the following:
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -486,7 +486,7 @@ You can write like the following:
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -524,7 +524,7 @@ You can write like the following:
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -559,7 +559,7 @@ argument of (({RSS::Maker.make})) like the following:
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
