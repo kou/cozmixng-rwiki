@@ -416,7 +416,7 @@ Makerが便利です．
 
 もし，更新日が新しい順に並び替えたければ
 
-  maker.items.sort = true
+  maker.items.do_sort = true
 
 を追加し，以下のようにします．
 
@@ -428,7 +428,7 @@ Makerが便利です．
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -456,7 +456,7 @@ Makerが便利です．
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -489,7 +489,7 @@ Makerが便利です．
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -527,7 +527,7 @@ xml-stylesheetを追加したい場合は以下のようにします．
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
@@ -562,7 +562,7 @@ xml-stylesheetを追加したい場合は以下のようにします．
     maker.channel.description = "Example Site"
     maker.channel.link = "http://example.com/"
 
-    maker.items.sort = true
+    maker.items.do_sort = true
 
     item = maker.items.new_item
     item.link = "http://example.com/article.html"
