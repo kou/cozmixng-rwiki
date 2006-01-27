@@ -2,35 +2,86 @@
 
 = INSTALL.win32.en
 
-$Id: INSTALL.win32.en 83 2004-10-21 14:06:21Z kou $
+$Id: INSTALL.win32.en 500 2006-01-11 05:33:37Z miyamuko $
 
 == Install Ruby
 
-Use ((<One-Click Ruby Installer
-|URL:http://rubyforge.org/projects/rubyinstaller/>))
+Install ruby 1.8.4.
+
+: ruby-1.8.4-i386-mswin32.zip
+   ((<URL:ftp://ftp.ruby-lang.org/pub/ruby/binaries/mswin32/ruby-1.8.4-i386-mswin32.zip>))
 
 == Install RDTool
 
-Copy extracted files of the following archive to the
-directory which is installed ruby.
-* ((<URL:http://ftp.ruby-lang.org/pub/ruby/binaries/mingw/1.8/ext/rdtool-0.6.14-i386-mingw32-1.8.tar.gz>))
+Install ((<RAA:rdtool>)).
+
+Extract the following archive and execute setup.rb to install.
+
+: rdtool-0.6.20.tar.gz
+   ((<URL:http://www.moonwolf.com/ruby/archive/rdtool-0.6.20.tar.gz>))
 
 == Install Ruby/GTK2
 
-Execute install.rb to install.
+Extract the following archive and execute install.rb to install.
 
-: ruby-gtk2-0.10.0-2-i386-msvcrt-1.8.zip
-    * ((<URL:http://prdownloads.sourceforge.net/ruby-gnome2/ruby-gtk2-0.10.0-2-i386-msvcrt-1.8.zip?download>))
+: ruby-gtk2-0.14.1-1-i386-msvcrt-1.zip
+   ((<URL:http://prdownloads.sourceforge.net/ruby-gnome2/ruby-gtk2-0.14.1-1-i386-msvcrt-1.zip>))
 
 == Install GTK+ 2
 
 Install GTK+ 2 package of GLADE for Windows.
 
-: gtk+-win32-aio-2.4-rc15
-    * ((<URL:http://gladewin32.sourceforge.net/modules.php?name=Downloads&d_op=getit&lid=43>))
+: gtk-win32-2.8.8-rc2.exe
+   ((<URL:http://gladewin32.sourceforge.net/modules/wfdownloads/visit.php?lid=95>))
 
 == Install Rabbit!!
 
 Execute install.bat.
+
+
+== Support EPS format
+
+(1) Install AFPL Ghostscript for Win32.
+
+    : gs853w32.exe
+        ((<URL:ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs853/gs853w32.exe>))
+
+(2) Add <Ghostscript Install Path>/gs/gs8.53/bin to the PATH environment variable.
+
+== Support source code highlighting
+
+(1) Install Enscript.
+
+    : enscript-1.6.3-9-bin.exe
+        ((<URL:http://sourceforge.net/project/showfiles.php?group_id=23617&package_id=16960>))
+
+(2) Add <Enscript Install Path>/bin to the PATH environment variable.
+
+(3) You may need to obtain ruby.st for Ruby syntax highlighting.
+
+      > cd <Enscript Install Path>/share/enscript/hl
+      > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewcvs.cgi/*checkout*/support/ruby.st').read" > ruby.st
+
+(4) Install ((<RAA:htree>)).
+
+    Extract the following archive and execute install.rb to install.
+
+    : htree.tar.gz
+        ((<URL:http://cvs.m17n.org/viewcvs/ruby/htree.tar.gz>))
+
+(5) Extract the following archive and execute setup.rb to install.
+
+    : Iconv for One Click Installer
+        ((<URL:http://www.dave.burt.id.au/ruby/iconv.zip>))
+
+== Use rabrick
+
+Install ((<RAA:div>)).
+
+Extract the following archive and execute install.rb to install.
+
+: div-1.3.2.tar.gz
+   ((<URL:http://www2a.biglobe.ne.jp/~seki/ruby/div-1.3.2.tar.gz>))
+
 
 Sorry for having long steps.
