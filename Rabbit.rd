@@ -50,6 +50,8 @@ Printed output (index) (0.3.1):
 
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
+  * ((<FAQ.en|Rabbit::FAQ.en>)): not yet...
+  * ((<FAQ.ja|Rabbit::FAQ.ja>))
   * ((<README.en|Rabbit::README.en>))
   * ((<README.ja|Rabbit::README.ja>))
   * ((<INSTALL.win32.en|Rabbit::INSTALL.win32.en>))
