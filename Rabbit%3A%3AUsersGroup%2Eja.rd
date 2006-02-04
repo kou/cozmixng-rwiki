@@ -90,6 +90,8 @@
     * ((<ちくわプログラマの作業履歴@はてな|URL:http://d.hatena.ne.jp/thata/>))
   * dotさん
     * ((<dot.diary|URL:http://blog.prebyte.jp/>))
+  * 田中さん
+    * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
   * ...
 
 == 参加しようかなぁな人達
