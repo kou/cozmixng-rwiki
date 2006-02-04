@@ -22,7 +22,7 @@ title-background-colorテーマを使います．
 
 色ではなくて，画像を指定したいときはtitle-background-imageテーマを使います．
 
-((*注意: 0.3.0まではtitle-background-imageではなくて，title-backgroundという名前でした．*))
+((*注意: 0.3.1まではtitle-background-imageではなくて，title-backgroundという名前でした．*))
 
 以下は背景にマスコットキャラクタ「ラビィ」を指定する例です．
 
