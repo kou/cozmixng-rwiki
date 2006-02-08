@@ -2,17 +2,18 @@
 
 = INSTALL.win32.ja
 
-$Id: INSTALL.win32.ja 500 2006-01-11 05:33:37Z miyamuko $
+$Id: INSTALL.win32.ja 560 2006-02-08 01:49:43Z kou $
 
 Windows上でRabbitを実行するのは大変です．以下を参考にして頑
 張ってください．
 
 == Ruby 本体のインストール
 
-ruby 1.8.4 のインストール。
+ruby 1.8.4 のインストール。One-Click Installerを使うのが楽
+((-まだpreview3だけど，大丈夫でしょう．-))．
 
-: ruby-1.8.4-i386-mswin32.zip
-   ((<URL:ftp://ftp.ruby-lang.org/pub/ruby/binaries/mswin32/ruby-1.8.4-i386-mswin32.zip>))
+: ruby184-16p3.exe
+   ((<URL:http://rubyforge.org/frs/download.php/8338/ruby184-16p3.exe>))
 
 == RDTool のインストール
 
@@ -71,11 +72,6 @@ install.bat を実行してください。
 
     : htree.tar.gz
         ((<URL:http://cvs.m17n.org/viewcvs/ruby/htree.tar.gz>))
-
-(5) アーカイブを展開して，setup.rb を実行してインストールする。
-
-    : Iconv for One Click Installer
-        ((<URL:http://www.dave.burt.id.au/ruby/iconv.zip>))
 
 == rabrick を使う
 
