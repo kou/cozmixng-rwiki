@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 488 2005-12-30 09:32:57Z kou $
+# $Id: rabbit_en.rd 549 2006-02-07 04:37:31Z kou $
 
 = Rabbit(en)
 
@@ -58,11 +58,12 @@ A presentation tool
 
 = More more more ...
 
-  * inline image
+  * organize screenshots
+  * mouse gesture
 
 = Not available
 
-  * organize screenshots
+  * inline image
   * jump to the link
 
 = ToDo
