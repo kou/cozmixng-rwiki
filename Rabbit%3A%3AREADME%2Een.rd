@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 486 2005-12-30 09:31:33Z kou $
+$Id: README.en 550 2006-02-07 05:38:07Z kou $
 
 == Name
 
@@ -11,6 +11,14 @@ Rabbit
 == What's this?
 
 This is an application to do presentation with RD document.
+
+There are some features which are different from other
+presentation tools:
+
+  * To define slide look, use Ruby.
+  * There are many keyboard interfaces.
+  * This supports mouse gesture.
+  * and more...
 
 == Screenshots
 
@@ -80,6 +88,11 @@ misc/xyzzy
 
 Mr. MIYAMUKO
 
+== Co-Authors
+
+  * Mr. MIYAMUKO
+  * Mr. noritada
+
 == Licence
 
 Ruby's (except files under lib/rabbit/tgif.rb). For more
@@ -130,7 +143,7 @@ po/#{LANG}/rabbit.po by the following.
 
 == Dependency libraries
 
-See ((<Rabbit::INSTALL.win32.en>)) if you install dependency
+See ((<INSTALL.win32.en>)) if you install dependency
 libraries on Windows.
 
   * ((<RAA:rdtool>))
@@ -704,3 +717,5 @@ page from XXX.rd.
   * atzm: He makes Gentoo package (*.ebuild).
   * akira yamada: He makes Debian package (*.deb).
   * usatti: She drow some logos and taro series images.
+  * dot: He helps installation on Windows.
+  * tanaka: He checks operations on Windows.
