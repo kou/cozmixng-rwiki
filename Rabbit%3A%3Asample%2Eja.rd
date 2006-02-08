@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 488 2005-12-30 09:32:57Z kou $
+# $Id: rabbit.rd 549 2006-02-07 04:37:31Z kou $
 
 = Rabbit
 
@@ -59,6 +59,7 @@
 = まだまだまだある
 
   * スクリーンショットの整形
+  * マウスジェスチャ
 
 = できないこと
 
