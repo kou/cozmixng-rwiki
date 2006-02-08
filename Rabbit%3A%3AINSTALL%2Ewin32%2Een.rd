@@ -2,14 +2,14 @@
 
 = INSTALL.win32.en
 
-$Id: INSTALL.win32.en 500 2006-01-11 05:33:37Z miyamuko $
+$Id: INSTALL.win32.en 560 2006-02-08 01:49:43Z kou $
 
 == Install Ruby
 
-Install ruby 1.8.4.
+Install ruby 1.8.4. Use One-Click Installer for convenience.
 
-: ruby-1.8.4-i386-mswin32.zip
-   ((<URL:ftp://ftp.ruby-lang.org/pub/ruby/binaries/mswin32/ruby-1.8.4-i386-mswin32.zip>))
+: ruby184-16p3.exe
+   ((<URL:http://rubyforge.org/frs/download.php/8338/ruby184-16p3.exe>))
 
 == Install RDTool
 
@@ -68,11 +68,6 @@ Execute install.bat.
 
     : htree.tar.gz
         ((<URL:http://cvs.m17n.org/viewcvs/ruby/htree.tar.gz>))
-
-(5) Extract the following archive and execute setup.rb to install.
-
-    : Iconv for One Click Installer
-        ((<URL:http://www.dave.burt.id.au/ruby/iconv.zip>))
 
 == Use rabrick
 
