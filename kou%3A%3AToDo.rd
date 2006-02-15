@@ -1,7 +1,5 @@
 = kou::ToDo
 
-* cozmixng.orgドメイン更新
-
 * RWiki: moveを作る．
 * RWiki: テンプレートを作る．
 * RWiki: 追加用ブックマークレットを作る．
