@@ -6,3 +6,5 @@
 
   * ((<"Gauche/PGPLOT">))
   * ((<"Gauche/MPICH">))
+  * ((<ContractR>))
+  * ((<ContractG>))
