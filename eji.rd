@@ -5,3 +5,4 @@
 == 作ったもの
 
   * ((<"Gauche/PGPLOT">))
+  * ((<"Gauche/MPICH">))
