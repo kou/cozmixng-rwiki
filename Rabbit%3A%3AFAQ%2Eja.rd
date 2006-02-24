@@ -6,6 +6,18 @@
 
 答え...
 
+== 特定のスライドだけプロパティを変えたい時は？
+
+例えば以下は "Redhanded" を含むスライドのフォントをイタリックに変更します。
+ match Slide do |slides| 
+   slides.each do |slide| 
+     if slide.match?(/Redhanded/) 
+       slide.prop_set("style", "italic") 
+     end 
+   end 
+ end 
+
+
 == 改行をするには？
 
 以下のように書きます．
