@@ -52,3 +52,22 @@ title-background-colorテーマを使います．
 
   @title_background_image = "lavie.png"
   include_theme("title-background-image")
+
+=== スライドの背景を指定するには？
+
+例えば，背景を赤くしたい場合は以下のようにします．
+
+  set_background("red")
+
+背景色の指定には(({#RRGGBB}))形式も使えます．以下の例も背景を赤くします．
+
+  set_background("#ff0000")
+
+色ではなくて，画像を指定したいときはslide-background-imageテーマを使います．
+
+((*注意: 0.3.2まではslide-background-imageではなくて，slide-backgroundという名前でした．*))
+
+以下は背景にマスコットキャラクタ「ラビィ」を指定する例です．
+
+  @slide_background_image = "lavie.png"
+  include_theme("slide-background-image")
