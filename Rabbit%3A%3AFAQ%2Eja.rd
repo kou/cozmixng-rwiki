@@ -6,6 +6,71 @@
 
 答え...
 
+== 高橋メソッドスライドの中に普通のスライドを混ぜたいときは？
+
+高橋メソッド用のテーマはRabbitではlightning-talkと呼ばれています．
+
+通常，高橋メソッドのみを使ったスライドを作成する場合は以下のように「lightning-talk」テーマを使います．
+
+  = タイトル
+  : author
+     オレ
+  : theme
+     lightning-talk # <= こんな感じ
+
+  = オレは
+
+  = オレだ
+
+もし，高橋メソッドを使ったスライドだけではなく，箇条書きなどを使った「普通の」スライドを混ぜたい場合はこれではうまくいきません．なぜなら，「lightning-talk」テーマは箇条書きなどの見栄え定義を持たないからです．
+
+これを解決するには，テーマを混ぜます．実は，「ligntning-talk」と混ざったテーマが標準でいくつか用意されています．例えば，「rabbit」テーマと「lignting-talk」テーマを混ぜた「lightning-rabbit」です．このテーマを使うと以下のように，高橋メソッドを使ったスライドと普通の「rabbit」テーマのスライドを混ぜることができます．
+
+  = タイトル
+  : author
+     オレ
+  : theme
+     lightning-rabbit
+
+  = オレは
+
+  = ．．．
+
+    * ．．．
+    * ．．．
+    * ．．．
+
+  = オレだ
+
+「lightning-rabbit」テーマは以下のようにとても小さなテーマです．
+
+  # enscript ruby
+  include_theme("rabbit")       # (1)
+
+  @lightning_talk_proc_name = "lightning-rabbit"
+  @lightning_talk_as_large_as_possible = true
+  include_theme("lightning-talk-toolkit")
+
+  match(Slide) do |slides|
+    slides.each do |slide|
+      if slide.lightning_talk?  # (2)
+        slide.lightning_talk    # (3)
+      end
+    end
+  end
+
+作戦は，以下のようになっています．
+
+  (1) ベースとなるテーマを適用する．（(1)の部分）
+  (2) lightning-talk用のスライドだけ（(2)の部分）
+      見栄えをlightning-talk用の見栄え定義で上書きする．（(3)の部分）
+
+これを応用すれば，簡単にちょっとだけ高橋メソッドを使ったプレゼンテーションを行うことができます．注意点は「((*slide.lightning_talkは最後に！*))」ということです．これは，既存の見栄えを上書きするという作戦を用いているためです．
+
+ちなみに，(({slide.lightning_talk}))の別名として(({slide.takahashi}))が，(({slide.lightning_talk?}))の別名として(({slide.takahashi?}))が用意されています．
+
+Happy Rabbitting!
+
 == 特定のスライドだけプロパティを変えたい時は？
 
 例えば以下は "Redhanded" を含むスライドのフォントをイタリックに変更します。
@@ -65,7 +130,7 @@ title-background-colorテーマを使います．
   @title_background_image = "lavie.png"
   include_theme("title-background-image")
 
-=== スライドの背景を指定するには？
+== スライドの背景を指定するには？
 
 例えば，背景を赤くしたい場合は以下のようにします．
 
