@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [svn] svn switch
+
   * [svn] 開発方針
 
     trunkで追加修正していき，リリースできそうと思ったらbranchesにtrunkの内容をコピー．
