@@ -8,3 +8,7 @@
   * ((<"Gauche/MPICH">))
   * ((<ContractR>))
   * ((<ContractG>))
+
+== ¤½¤ÎÂ¾
+
+  * ((<eji::memo>))
