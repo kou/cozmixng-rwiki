@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [Gauche] gc-stat
+
   * [svn] svn switch
 
   * [svn] ³«È¯Êý¿Ë
