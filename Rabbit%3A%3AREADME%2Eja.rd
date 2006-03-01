@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 550 2006-02-07 05:38:07Z kou $
+$Id: README.ja 634 2006-02-24 12:22:38Z kou $
 
 == 名前
 
@@ -46,10 +46,6 @@ Kouhei Sutou <kou@cozmixng.org>
 
   カッコいい方のうさぎです．
 
-# * うさぎ
-#
-#   走っているカワイイうさぎです．
-
 * かめ
 
   カワイイかめです．
@@ -78,6 +74,16 @@ gan <shinsato@kono.cis.iwate-u.ac.jp>
 
 うさっち
 
+=== 画像（5）
+
+* ゆきうさ
+
+  和服うさぎ少女です．
+
+朝比奈 理乃（あさひな　りの）
+
+((<URL:http://littleblue.chu.jp/>))
+
 === xyzzy用モード
 
 misc/xyzzy/
@@ -88,6 +94,14 @@ misc/xyzzy/
 
   * みやむこさん
   * noritadaさん
+
+== 著作権
+
+コードの著作権はそれぞれのコードを書いたものにあります．つま
+り，コミットされたコードの著作権はそのコミッタにあり，パッチ
+のコードの著作権はそのパッチ作者にあります．
+
+画像の著作権は上述の作者にあります．
 
 == ライセンス
 
@@ -144,7 +158,7 @@ RSS|URL:http://www.cozmixng.org/rss/rabbit.rdf>))で確認でき
 == 依存ライブラリ
 
 Windowsでの依存ライブラリのインストールは
-((<Rabbit::INSTALL.win32.ja>))を参考にしてください．
+((<INSTALL.win32.ja>))を参考にしてください．
 
   * ((<RAA:rdtool>))
   * ((<RAA:ruby-gnome2>))の中のRuby/GTK2
@@ -754,3 +768,5 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
   * dotさん: Windowsのインストールについてアドバイスしてくれ
     ました．
   * 田中さん: Windowsで動作確認してくれました．
+  * 朝比奈さん: かわいいうさぎ少女を書いてくれました．
+
