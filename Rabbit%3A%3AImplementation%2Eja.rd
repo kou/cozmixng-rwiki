@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit-implementation.rd 
-# $Id: rabbit-implementation.rd 176 2005-06-30 08:35:41Z kou $
+# $Id: rabbit-implementation.rd 283 2005-10-21 09:25:07Z kou $
 
 = Rabbit§Œº¬¡ı
 
@@ -126,7 +126,7 @@
 # # width = 100
 # # height = 100
 # # relative_width = 100
- # relative_height = 70
+ # relative_height = 100
 
 = …¡≤Ë
 
