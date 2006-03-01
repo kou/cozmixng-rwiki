@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 549 2006-02-07 04:37:31Z kou $
+# $Id: rabbit.rd 654 2006-02-26 14:45:27Z kou $
 
 = Rabbit
 
@@ -46,18 +46,18 @@
   * Indexページの自動生成
   * 右クリックメニュー
   * オフスクリーンでのスクリーンショット作成
-  * PS/PDF出力（品質は微妙）
+  * 国際化されたメッセージ
 
 = まだまだある
 
-  * 国際化されたメッセージ
+  * PS/PDF出力((-品質は微妙-))
   * 表
   * ソースの色付け
   * おもしろテーマ
-  * スライドに落書き
 
 = まだまだまだある
 
+  * スライドに落書き
   * スクリーンショットの整形
   * マウスジェスチャ
 
@@ -94,7 +94,6 @@
       # image
       # src = lavie.png
       # caption = Lavie
-      # keep_ratio = true
       # width = 100
       # height = 100
 #      # normalized_width = 50
@@ -109,7 +108,6 @@
   # image
   # src = usagi.png
   # caption = 兎
-  # keep_ratio = true
 #  # normalized_width = 50
 #  # normalized_height = 50
 #  # relative_width = 100
@@ -125,16 +123,36 @@
 
 = 数式は？
 
-Tgif又はmimeTeXを呼び出す
+  * 書式はTeX（っぽい）
+  * バックエンド
+    * LaTeX
+    * Tgif
+    * mimeTeX
 
-  # TeX
-  # keep_ratio = true
+= LaTeX
+
+  # LaTeX
   # relative_width = 80
-  
+
+  $f(x)=\displaystyle\int_{-\infty}^x~e^{-t^2}dt$
+
+  \LaTeX
+
+= Tgif
+
+  # Tgif
+  # relative_width = 80
+
+  large f(x)=int {-infty} x~e^{-t^2}dt
+
+= mimeTeX
+
+  # mimeTeX
+  # relative_width = 80
+
   \Large f(x)=\Bigint_{-\infty}^x~e^{-t^2}dt
 
-
-= 汚いじゃん
+= あるいはEPSを使う
 
   * あらかじめEPSを作っておく
 
@@ -142,21 +160,30 @@ Tgif又はmimeTeXを呼び出す
 
   # image
   # src = equation.eps
-  # keep_ratio = true
   # relative_width = 80
 
 = SVGでもOK
 
   # image
   # src = spiral.svg
-  # keep_ratio = true
   # relative_height = 100
 
 = TgifでもOK
 
   # image
   # src = rabbit-balloon.obj
-  # keep_ratio = true
+  # relative_height = 100
+
+= DiaでもOK
+
+  # image
+  # src = rabbit.dia
+  # relative_width = 90
+
+= GIMPでもOK
+
+  # image
+  # src = rabbit.xcf
   # relative_height = 100
 
 = 折り返し
@@ -260,7 +287,7 @@ Tgif又はmimeTeXを呼び出す
 : 一覧モード切替え
    i
 
-: 一覧モードで指定したページへ移動
+: 一覧モードからページ移動
    ダブルクリック
 
 = キーバインド（機能）
