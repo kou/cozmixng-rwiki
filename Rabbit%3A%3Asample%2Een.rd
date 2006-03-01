@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 549 2006-02-07 04:37:31Z kou $
+# $Id: rabbit_en.rd 654 2006-02-26 14:45:27Z kou $
 
 = Rabbit(en)
 
@@ -46,18 +46,18 @@ A presentation tool
   * auto generation of index page
   * right click menu
   * screenshot on the off screen
-  * PS/PDF output (but quality is ...)
+  * Internationalized message
 
 = More more ...
 
-  * Internationalized message
+  * PS/PDF output ((-but quality is ...-))
   * Table
   * colorize source
   * funny themes
-  * graffiti on the slide
 
 = More more more ...
 
+  * graffiti on the slide
   * organize screenshots
   * mouse gesture
 
@@ -125,15 +125,36 @@ You can use relative size.
 
 = Mathematical expressions?
 
-call Tgif or mimeTeX
+  * TeX (like) format
+  * backends
+    * LaTeX
+    * Tgif
+    * mimeTeX
 
-  # TeX
-  # keep_ratio = true
+= LaTeX
+
+  # LaTeX
   # relative_width = 80
-  
+
+  $f(x)=\displaystyle\int_{-\infty}^x~e^{-t^2}dt$
+
+  \LaTeX
+
+= Tgif
+
+  # Tgif
+  # relative_width = 80
+
+  large f(x)=int {-infty} x~e^{-t^2}dt
+
+= mimeTeX
+
+  # mimeTeX
+  # relative_width = 80
+
   \Large f(x)=\Bigint_{-\infty}^x~e^{-t^2}dt
 
-= It's dirty
+= Or use EPS
 
   * set up EPS before presentation
     * but need gs
@@ -155,6 +176,18 @@ call Tgif or mimeTeX
   # image
   # src = rabbit-balloon.obj
   # keep_ratio = true
+  # relative_height = 100
+
+= Dia is OK, too
+
+  # image
+  # src = rabbit.dia
+  # relative_width = 90
+
+= GIMP is OK, too
+
+  # image
+  # src = rabbit.xcf
   # relative_height = 100
 
 = Wrap word
