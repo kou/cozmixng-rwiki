@@ -9,7 +9,7 @@
 * rabbit-model.el
 * 一覧モードでもHTML出力できるように．
 * viライクな検索インターフェイスのサポート．
-* GIMPサポート
+* platexサポート
 
 == Pending
 
