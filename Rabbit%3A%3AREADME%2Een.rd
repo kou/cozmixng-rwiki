@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 550 2006-02-07 05:38:07Z kou $
+$Id: README.en 634 2006-02-24 12:22:38Z kou $
 
 == Name
 
@@ -50,10 +50,6 @@ MoMo
 
   cool rabbit.
 
-# * USAGI (in Hiragana)
-#
-#   pretty running rabbit.
-
 * KAME
 
   pretty turtle.
@@ -82,6 +78,16 @@ gan <shinsato@kono.cis.iwate-u.ac.jp>
 
 usatti
 
+=== Images (5)
+
+* YUKI-USA
+
+  pretty rabbit girl in Japanese dress.
+
+asahina
+
+((<URL:http://littleblue.chu.jp/>))
+
 === Mode for xyzzy
 
 misc/xyzzy
@@ -92,6 +98,14 @@ Mr. MIYAMUKO
 
   * Mr. MIYAMUKO
   * Mr. noritada
+
+== Copyright
+
+The code author has copyright of the source code. That is
+the committer has copyright of committed code and the patch
+author has copyrights of the patch code.
+
+The above image author has copyright of his/her images.
 
 == Licence
 
@@ -143,7 +157,7 @@ po/#{LANG}/rabbit.po by the following.
 
 == Dependency libraries
 
-See ((<Rabbit::INSTALL.win32.en>)) if you install dependency
+See ((<INSTALL.win32.en>)) if you install dependency
 libraries on Windows.
 
   * ((<RAA:rdtool>))
@@ -719,3 +733,4 @@ page from XXX.rd.
   * usatti: She drow some logos and taro series images.
   * dot: He helps installation on Windows.
   * tanaka: He checks operations on Windows.
+  * asahina: She draws a pretty rabbit girl.
