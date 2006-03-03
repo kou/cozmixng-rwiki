@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [DI] ((<Inversion of Control コンテナと Dependency Injection パターン|URL:http://kakutani.com/trans/fowler/injection.html>))
+
   * [その他] Dependency Injection
 
     Gaucheで実装するとこんな感じか?
