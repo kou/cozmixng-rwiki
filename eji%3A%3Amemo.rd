@@ -17,7 +17,7 @@
 
     * »²¹Í
 
-      * ((<TestDepInjRb|URL:http://onestepback.org/cgi-bin/osbwiki.pl?DependencyInjectionCode/TestDepInjRb>))
+      * ((<TestDepInjRb|URL:http://onestepback.org/cgi-bin/osbwiki.pl?DependencyInjectionCode/DepInjRb>))
 
   * [Gauche] gc-stat
 
