@@ -9,6 +9,7 @@
 * rabbit-model.el
 * viライクな検索インターフェイスのサポート．
 * platexサポート
+* SilverCityサポート
 
 == Pending
 
