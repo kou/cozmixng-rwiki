@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): ソースコードをハイライト．
+
   * ((<Feed Icons|URL:http://feedicons.com/>))
 
   * [風博士] キーアクセラレータやジェスチャ変更画面で，アクション名だけじゃなくてラベルも表示する．
