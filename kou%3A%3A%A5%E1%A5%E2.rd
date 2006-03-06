@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<Quick reStructuredText|URL:http://docutils.sourceforge.net/docs/user/rst/quickref.html>))
+
   * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): ソースコードをハイライト．
 
   * ((<Feed Icons|URL:http://feedicons.com/>))
