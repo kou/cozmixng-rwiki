@@ -1,5 +1,9 @@
 = eji::memo
 
+  * [Gauche] ((<c-wrapper|URL:http://homepage.mac.com/naoki.koguro/prog/c-wrapper/index-j.html>))
+
+    これ凄いなぁ
+
   * [DI] ((<Inversion of Control コンテナと Dependency Injection パターン|URL:http://kakutani.com/trans/fowler/injection.html>))
 
   * [その他] Dependency Injection
