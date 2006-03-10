@@ -1,5 +1,25 @@
 = eji::memo
 
+  * [Scheme] 継続での注意
+
+    hoge.scmに
+
+     #enscript scheme
+     (define cont #f)
+     (call/cc (lambda (k) (set! cont k)))
+
+    とやって他のところから読み込むと
+
+     gosh> (load "hoge.scm")
+     #t
+     gosh> (cont '*)
+     *** IO-CLOSED-ERROR: I/O attempted on closed port: #<iport(closed) /home/koji/work/hoge.scm   0x8129c38>
+     Stack Trace:
+
+    となりエラーになる．継続にloadの後処理が含まれているため．
+
+    トップレベルで継続使ったことなかったからこれは知らなかった．
+
   * [Gauche] ((<c-wrapper|URL:http://homepage.mac.com/naoki.koguro/prog/c-wrapper/index-j.html>))
 
     これ凄いなぁ
