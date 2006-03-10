@@ -2,73 +2,14 @@
 
 = README.ja
 
-$Id: README.ja 239 2004-07-27 17:08:28Z kou $
+$Id: README.ja 367 2006-03-10 07:45:02Z kou $
 
-== ºî¼Ô
+== Âºî¼”
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== ¥é¥¤¥»¥ó¥¹
-
+== Â¥é¥¤Â¥Â»Â¥ó¥¹Š
 GPL or BSD License
 
-== ¥á¡¼¥ê¥ó¥°¥ê¥¹¥È
-
-((<COZMIXNG RWiki - Ï¢ÍíÀè
-|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))
-¤ò¸æÍ÷²¼¤µ¤¤¡¥
-
-== ¤Ê¤Ë¤³¤ì¡©
-
-Gauche¤Î¤¿¤á¤ÎXML-RPC¥¯¥é¥¤¥¢¥ó¥È¥é¥¤¥Ö¥é¥ê¤Ç¤¹¡¥
-
-°Ê²¼¤Î¤è¤¦¤Êµ¡Ç½¤Ï¤¢¤ê¤Þ¤»¤ó¡¥
-
-  * multiCall¤È¤«¤¤¤í¤¤¤í
-
-== Æþ¼êÊýË¡
-
-((<URL:http://www.cozmixng.org/~kou/download/xsm.tar.gz>))
-
-  % svn co http://www.cozmixng.org/repos/gauche/xsm/trunk xsm
-
-== ¥¤¥ó¥¹¥È¡¼¥ë
-
-  # gosh install/install.scm
-
-== »È¤¤Êý
-
-sample/calc_client.scm¤ò¸«¤Æ¤¯¤À¤µ¤¤¡¥
-
-== ¥Þ¥Ã¥Ô¥ó¥°
-
-XML-RPC¤Ç¤Î·¿¤È¡¤Scheme¾å¤Ç¤Î·¿¡Ê¥¯¥é¥¹¡Ë¤ò°Ê²¼¤Î¤è¤¦¤Ë¥Þ¥Ã
-¥Ô¥ó¥°¤·¤Þ¤¹¡¥
-
-: int
-   ((|<integer>|))
-
-: boolean
-   ((|<boolean>|))
-
-: string
-   ((|<string>|))
-
-: double
-   ((|<double>|))
-
-: dateTime.iso8601
-   ((|<date>|))
-
-: base64
-   ((|<string>|))
-   
-   Scheme¤Î¥ª¥Ö¥¸¥§¥¯¥È¤òXML-RPC¤Îbase64·¿¤È¤¹¤ë¾ì¹ç¤Ï¡¤
-   (({make-base64-encoded-string}))¼êÂ³¤­¤ò»È¤Ã¤Æ¡¤Ê¸»úÎó¤ò
-   ((|<base64>|))·¿¤ËÊÑ´¹¤·¤Æ¤¯¤À¤µ¤¤¡¥
-
-: struct
-   ((|<hash-table>|))
-
-: array
-   ((|<vector>|))
+== Â¥á¡¼Â¥ê¥³Â¥Â°Â¥ê¥¹Â¥ÈŠ
+((<COZMIXNG RWiki - Ï¢Í­
