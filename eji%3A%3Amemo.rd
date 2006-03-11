@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [その他] ((<偉人ブログ|URL:http://erai.jugem.jp/>))
+
   * [Scheme] 継続での注意
 
     hoge.scmに
