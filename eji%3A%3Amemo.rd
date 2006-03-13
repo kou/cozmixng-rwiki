@@ -1,5 +1,9 @@
 = eji::memo
 
+  * [Haskell] ((<hs-plugins|URL:http://www.cse.unsw.edu.au/~dons/hs-plugins/>))
+
+    Haskell版evalかな?
+
   * [その他] テスト
 
     テストをするための環境はパッケージに入れない．開発する人が使いユーザは使わないから．
