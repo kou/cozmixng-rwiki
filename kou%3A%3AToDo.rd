@@ -24,7 +24,6 @@
 * マージして作ったテーマを保存．
 * テーママージのundo．
 * マウスドラッグでスライド入れ換え．
-* Cairo対応．
 * uim-rabbitを作る
 
 * ((<Gauche>))の((<SWIG>))対応．
@@ -34,10 +33,7 @@
 * RWikiのrt2rwiki-libのInlineParserをどうにかする．
 * ((<Ruby>))で実装されたRelax NGバリデータを作る/探す
 * RWikiのRD2RWikiVisitor#default_ext_*をrwiki/rd/ext/以下のクラスに移動してはどうかと提案する．
-* ゼミのネタを考える．
-  * 関数型make
-  * ((<Self Tutorial|URL:http://research.sun.com/research/self/release_4.0/Self-4.0/Tutorial/>))
-  * アスペクト指向
+* ((<Self Tutorial|URL:http://research.sun.com/research/self/release_4.0/Self-4.0/Tutorial/>))
 * GaucheとGTK+ のプログレスバーとタイムアウトとかについてまとめる．
 * Metacityとgconftool-2についてまとめる．オプション: -R, --set, --type
 * WiLiKi:kouを整理する
