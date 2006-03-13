@@ -2,7 +2,7 @@
 
   * [svn] svn copy
    
-     以下のようにやってもr-0.1の実態はtrunkと同じ．trunkを修正してから別になる．
+    以下のようにやってもr-0.1の実態はtrunkと同じ．trunkを修正してから別になる．
 
      svn copy http://www.hoge.org/repos/foo/trunk http://www.hoge.org/repos/foo/tags/r-0.1
 
