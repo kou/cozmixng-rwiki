@@ -1,5 +1,12 @@
 = eji::memo
 
+  * [svn] svn copy
+   
+     以下のようにやってもr-0.1の実態はtrunkと同じ．trunkを修正してから別になる．
+
+     svn copy http://www.hoge.org/repos/foo/trunk http://www.hoge.org/repos/foo/tags/r-0.1
+
+
   * [その他] ((<偉人ブログ|URL:http://erai.jugem.jp/>))
 
   * [Scheme] 継続での注意
