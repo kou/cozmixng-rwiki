@@ -2,7 +2,7 @@
 
   * [Gauche] derefって何だろ?
 
-    apply-objectとか使ってSmalltalkっぽいスタイルになるけどこれじゃ使えないだろうな．
+    object-applyとか使ってSmalltalkっぽいスタイルになるけどこれじゃ使えないだろうな．
 
      #enscript scheme
      (define-class <message-passing-meta> (<class>)
@@ -36,7 +36,7 @@
 
       (define hoge (make <hoge> :b foo))
 
-      (hoge :b) ;=> aho
+      (hoge :b) ;=> foo
       (hoge :b :a) ;=> 0
     
 
