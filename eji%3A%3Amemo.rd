@@ -1,5 +1,45 @@
 = eji::memo
 
+  * [Gauche] derefって何だろ?
+
+    apply-objectとか使ってSmalltalkっぽいスタイルになるけどこれじゃ使えないだろうな．
+
+     #enscript scheme
+     (define-class <message-passing-meta> (<class>)
+       ())
+
+     (define-method make ((klass <message-passing-meta>) . initargs)
+       (let* ((obj (next-method))
+               (klass-name (class-name (class-of obj))))
+          (eval `(define-method object-apply ((obj ,klass-name) . slots)
+                    (cond ((null? slots)
+                             obj)
+                           ((null? (cdr slots))
+                            (ref obj (string->symbol (x->string (car slots)))))
+                           (else
+                             (apply (ref obj (string->symbol (x->string (car slots))))
+                                     (cdr slots)))))
+                 (current-module))
+          obj))
+      
+      (define-class <foo> ()
+        ((a :init-value 0))
+        :metaclass <message-passing-meta>)
+      
+      (define-class <hoge> ()
+        ((b :init-keyword :b))
+        :metaclass <message-passing-meta>)
+
+      (define foo (make <foo>))
+
+      (foo :a) ;=> 0
+
+      (define hoge (make <hoge> :b foo))
+
+      (hoge :b) ;=> aho
+      (hoge :b :a) ;=> 0
+    
+
   * [Gauche] 特異メソッド
 
     こんな感じの特異メソッドが定義できたらうれしいかも
