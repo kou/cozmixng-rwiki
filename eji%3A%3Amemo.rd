@@ -1,5 +1,14 @@
 = eji::memo
 
+  * [Gauche] '[' ']'の使い道
+
+    こんな感じでもいいかも
+
+     #enscript scheme
+      (ref (ref (ref hoge 'a) 'b) 'c)
+        ↓
+      ([hoge] :a :b :c)
+
   * [Gauche] derefって何だろ?
 
     object-applyとか使ってSmalltalkっぽいスタイルになるけどこれじゃ使えないだろうな．
