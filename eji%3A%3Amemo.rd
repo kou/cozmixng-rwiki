@@ -1,5 +1,19 @@
 = eji::memo
 
+  * [Gauche] 特異メソッド
+
+    こんな感じの特異メソッドが定義できたらうれしいかも
+
+     #enscript scheme
+     (define-method hoge ((a :equal? obj) b)
+       ...)
+     
+     (define-method foo ((x :>= 0)))
+        ...)
+   
+
+      
+
   * [Haskell] ((<hs-plugins|URL:http://www.cse.unsw.edu.au/~dons/hs-plugins/>))
 
     Haskell版evalかな?
