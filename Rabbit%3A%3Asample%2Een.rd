@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 654 2006-02-26 14:45:27Z kou $
+# $Id: rabbit_en.rd 707 2006-03-16 03:08:21Z kou $
 
 = Rabbit(en)
 
@@ -38,26 +38,29 @@ A presentation tool
   * sub(('sub:script')) and super(('sup:script'))
   * mathematical characters (('&Sigma;'))(('&sum;sub:i=0'))
   * display image
-  * auto reload modified source
 
 = More available things
 
+  * auto reload modified source
   * reload theme
   * auto generation of index page
   * right click menu
-  * screenshot on the off screen
-  * Internationalized message
 
 = More more ...
 
+  * screenshot on the off screen
+  * Internationalized message
   * PS/PDF output ((-but quality is ...-))
-  * Table
-  * colorize source
-  * funny themes
 
 = More more more ...
 
+  * Table
+  * colorize source
+  * funny themes
   * graffiti on the slide
+
+= More(('sup:4')) ...
+
   * organize screenshots
   * mouse gesture
 
@@ -145,7 +148,7 @@ You can use relative size.
   # Tgif
   # relative_width = 80
 
-  large f(x)=int {-infty} x~e^{-t^2}dt
+  large f(x)=int {-infty} x~e^{-t^2}d t
 
 = mimeTeX
 
