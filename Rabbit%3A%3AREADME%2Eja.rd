@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 634 2006-02-24 12:22:38Z kou $
+$Id: README.ja 692 2006-03-06 14:40:47Z kou $
 
 == 名前
 
@@ -175,6 +175,7 @@ Windowsでの依存ライブラリのインストールは
   * ((<RAA:ruby-gettext>))（国際化されたメッセージを表示する
     ために必要）
   * ((<RAA:htree>))
+  * ((<Migemo|URL:http://0xcc.net/migemo/>))
 
 === 含まれているもの
 
@@ -224,19 +225,19 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
 === オプション
 
-: -t, --theme
+: -t, --theme=THEME
    テーマを指定します．
 
-: -I, --include
+: -I, --include=PATH
    ロードパスを追加します．ロードパスはテーマの検索などにも
    使用されます．
 
-: -B, --base
+: -B, --base=BASE
    入力ソース中の相対パス（例えば画像へのパス）を解決するた
    めのURIまたはパスを指定します．省略した場合は入力ソースの
    種類に応じて自動的に決定されます．
 
-: -T, --type
+: -T, --type=TYPE
    入力ソースの種類を指定します．
 
    入力ソースの種類は rwiki, file（デフォルト）, argf, uri 
@@ -336,7 +337,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
      例（初期ソースあり）:
        % rabbit --type memory file.rd
 
-: -e, --encoding
+: -e, --encoding=ENCODING
    入力ソースのエンコーディングを指定します．
    
    指定しなかった場合は自動検出を試みます．
@@ -351,28 +352,28 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    デフォルトでは一覧モードにはなりません．
 
-: -w, --width
+: -w, --width=WIDTH
    ウィンドウの幅を指定します．
    
    デフォルトは800です．
    
-: -h, --height
+: -h, --height=HEIGHT
    ウィンドウの高さを指定します．
 
    デフォルトは600です．
    
-: -S, --size
+: -S, --size=WIDTH,HEIGHT
    ウィンドウの高さと幅を指定します．
 
 : -s, --save-as-image
    各スライドを画像として保存し，終了します．
 
-: -i, --saved-image-type
+: -i, --saved-image-type=TYPE
    保存される画像の種類を指定します．
    
    例えば，png（デフォルト）とかjpegとか．
 
-: -b, --saved-image-basename
+: -b, --saved-image-base-name=BASE_NAME
    保存される画像のファイルのベース名を指定します．保存され
    る画像の名前は"#{ベース名}#{ページ番号}.#{拡張子}"となり
    ます．
@@ -389,6 +390,12 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    デフォルトでは生成しません．
 
+: --output-index-html, --no-output-index-html
+   保存されたスライドのサムネイルを表示するHTMLを生成するか
+   どうかを指定します．
+   
+   デフォルトでは生成しません．
+
 : -p, --print
    スライドを印刷し，終了します．--output-filenameを指定する
    ことによりファイルに印刷したり，プリンタに直接印刷するこ
@@ -396,7 +403,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    ただし，現在のところ，あまり品質はよくありません．
 
-: -o, --output-filename
+: -o, --output-filename=FILENAME
    印刷ファイル名を指定します．印刷フォーマットは拡張子によ
    り決定します．拡張子が.psの場合はPostScript形式で，.pdfの
    場合はPDF形式で出力します．それ以外の場合はPostScript形式
@@ -407,40 +414,40 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    デフォルトは"#{スライドのタイトル}.ps"です．
 
-: --paper-width
+: --paper-width=WIDTH
    印刷時の用紙幅を指定します．用紙幅の単位はinchです．
    
    デフォルトは横置きA4の幅です．
    
-: --paper-height
+: --paper-height=HEIGHT
    印刷時の用紙の高さを指定します．用紙の高さの単位はinchです．
 
    デフォルトは横置きA4の高さです．
    
-: --paper-size
+: --paper-size=WIDTH,HEIGHT
    印刷時の用紙の高さと幅を指定します．用紙の高さと幅の単位
    はinchです．
    
    デフォルトは横置きA4です．
 
-: --slides-per-page
+: --slides-per-page=SLIDES
     1ページに何枚のスライドを入れて印刷するかを指定します．
     
     デフォルトは1枚です．
 
-: --margin, --margin-*
+: --margin={全部|上下,左右|上,左右,した|上,右,下,左}, --margin-*=MARGIN
     1ページに複数枚のスライドを印刷する時のスライドの周りの
     余白を指定します．
     
     デフォルトではスライドの枚数に応じて調節しますが，2枚と8
     枚以外の時はあまりうまくありません．
 
-: --page-margin, --page-margin-*
+: --page-margin={全部|上下,左右|上,左右,した|上,右,下,左}, --page-margin-*=MARGIN
     印刷時のページの余白を指定します．
     
     デフォルトでは余白はとられません．
 
-: --locale-dir
+: --locale-dir=DIR
    ロケール用データ（*.mo）を置くためのディレクトリを指定し
    ます．Rabbitをシステムにインストールせずに使う場合は
    Rabbitのトップディレクトリで以下のようにします．
@@ -450,7 +457,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    デフォルトでは/usr/local/share/locale/や
    /usr/share/locale/あたりが使われます．
 
-: --logger-type
+: --logger-type=TYPE
    エラーログをどのように出力するかを指定します．guiを指定す
    るとエラーログはダイアログボックスに表示されます．rabbit
    の起動オプションを解析するときにエラーが起こることもある
@@ -466,7 +473,7 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトでは使います．
 
-: --druby-uri [URI]
+: --druby-uri=URI
    dRubyインターフェイスのURIを指定します．
 
    デフォルトではdruby://:10101です．
@@ -481,12 +488,12 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトでは使いません．
 
-: --soap-host [HOST]
+: --soap-host=HOST
    SOAPインターフェイスのホストを指定します．
 
    デフォルトでは0.0.0.0です．
 
-: --soap-port [PORT]
+: --soap-port=PORT
    SOAPインターフェイスのポートを指定します．
 
    デフォルトでは10103です．
@@ -496,12 +503,12 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトでは使いません．
 
-: --xmlrpc-host [HOST]
+: --xmlrpc-host=HOST
    XML-RPCインターフェイスのホストを指定します．
 
    デフォルトでは0.0.0.0です．
 
-: --xmlrpc-port [PORT]
+: --xmlrpc-port=PORT
    XML-RPCインターフェイスのポートを指定します．
 
    デフォルトでは10104です．
@@ -511,16 +518,38 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
    
    デフォルトではサーバとして起動しません．
 
-: --comment-source [FILE]
+: --public-level=LEVEL
+   外部インターフェイス（dRuby/XML-RPC/SOAP経由）にRabbitの
+   機能をどのくらい公開するかを指定します．公開レベルは
+   strict, move, read-size, change-size, size, read-source,
+   change-source, source, allから選びます．後ろに挙げた公開
+   レベルほど多くの機能を公開します．
+
+   デフォルトではstrictです．
+
+: --comment-source=FILE
    初期コメント用ソースのファイル名を指定します．
    
    デフォルトではRabbitが提供する初期コメント用ソースが使わ
    れます．
 
-: --comment-encoding [ENCODING]
+: --comment-encoding=ENCODING
    初期コメント用ソースのエンコーディングを指定します．
 
    指定しなかった場合は自動検出を試みます．
+
+: --migemo-dictionary-search-path=PATH1,PATH2,...
+   Migemoの静的辞書の検索パスを指定します．検索パスは
+   --migemo-dictionary-nameで指定した静的辞書があるディレク
+   トリか，静的辞書のパスを指定します．コンマで区切って複数
+   のパスを指定することができます．
+
+   デフォルトは/usr/local/share, /usr/shareです．
+
+: --migemo-dictionary-name=NAME
+   Migemoの静的辞書名を指定します．
+
+   デフォルトはmigemo-dictです．
 
 
 == Rabbit用RDの書き方
