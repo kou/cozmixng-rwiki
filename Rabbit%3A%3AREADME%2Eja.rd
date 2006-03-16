@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 692 2006-03-06 14:40:47Z kou $
+$Id: README.ja 713 2006-03-16 13:26:03Z kou $
 
 == 名前
 
@@ -176,6 +176,10 @@ Windowsでの依存ライブラリのインストールは
     ために必要）
   * ((<RAA:htree>))
   * ((<Migemo|URL:http://0xcc.net/migemo/>))
+  * LaTeX
+  * Tgif
+  * Dia
+  * GIMP
 
 === 含まれているもの
 
