@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 692 2006-03-06 14:40:47Z kou $
+$Id: README.en 713 2006-03-16 13:26:03Z kou $
 
 == Name
 
@@ -175,6 +175,10 @@ libraries on Windows.
   * ((<RAA:ruby-gettext>)) (for displaying localized messages)
   * ((<RAA:htree>))
   * ((<Migemo|URL:http://0xcc.net/migemo/>))
+  * LaTeX
+  * Tgif
+  * Dia
+  * GIMP
 
 === Included libraries
 
@@ -749,7 +753,7 @@ page from XXX.rd.
   * zunda: He fixed EPS handling. He gives me an advise for
     --margin. He makes a presentation with Rabbit.
   * Vincent: He helps Rabbit works on Max OS X. He makes
-    french messages. 
+    french messages.
   * sode: He wrote cool rabbit, pretty rabbit and pretty
     turtle.
   * Kazuhiko: He sent me many bug reports. He makes a
