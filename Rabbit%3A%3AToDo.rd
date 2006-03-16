@@ -10,6 +10,7 @@
 * viライクな検索インターフェイスのサポート．
 * platexサポート
 * SilverCityサポート
+  * ((<CodeRay|URL:http://rd.cycnus.de/coderay/>))の方がよいかも．
 
 == Pending
 
