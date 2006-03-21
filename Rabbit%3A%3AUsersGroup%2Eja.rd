@@ -92,6 +92,8 @@
     * ((<dot.diary|URL:http://blog.prebyte.jp/>))
   * 田中さん
     * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
+  * 武田くん
+    * ((<tk's hiki|URL:http://www.kono.cis.iwate-u.ac.jp/~hiki/tk/>))
   * ...
 
 == 参加しようかなぁな人達
