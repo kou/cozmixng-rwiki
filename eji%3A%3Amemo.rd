@@ -1,5 +1,26 @@
 = eji::memo
 
+  * [Gauche] EQLスペシャライザ(?)っぽいもの
+
+    欲しかったのでVMいじって作ってみた。
+
+    ♯まだ汚いからパッチは作ってないけど...
+
+     #enscript scheme
+     gosh> (define-method div (x (y := 0))
+               (error "inf"))
+
+     gosh>(define-method div (x y)
+             (/ x y))
+
+     gosh> (div 4 2)
+     2
+     gosh> (div 1 0)
+     *** ERROR: inf
+     Stack Trace:
+     _____________
+     gosh>
+
   * [その他] ライセンス
 
     いちいちライブラリのライセンスを調べるの面倒だから調べてくれるやつが欲しい。
