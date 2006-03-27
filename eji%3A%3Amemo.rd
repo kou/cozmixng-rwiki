@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [ぷ] ((<Error handling|URL:http://www.objectarchitects.de/arcus/cookbook/exhandling/index.htm>))
+
   * [svn] CVSレポジトリ
 
     CVSで管理されているやつをSubversionを使っていじりたいときってどうすんだろ?
