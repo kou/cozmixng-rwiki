@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<プレゼン道入門|URL:http://nova.planet.sci.kobe-u.ac.jp/~matsuda/review/PLAIN99.html>))
+
   * ((<Quick reStructuredText|URL:http://docutils.sourceforge.net/docs/user/rst/quickref.html>))
 
   * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): ソースコードをハイライト．
