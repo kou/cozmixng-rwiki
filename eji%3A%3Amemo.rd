@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [Rails] ((<Rails Recipes|asin:0977616606>))
+
   * [ぷ] デバッグ
 
     * ((<萌えるデバッグ手法な話|URL:http://www.nomuraz.com/denpa/prog002.htm#IDPROG0012>))
