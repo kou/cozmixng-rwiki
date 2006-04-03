@@ -1,6 +1,6 @@
 = eji::memo
 
-  * [Rails] ((<Rails Recipes|asin:0977616606>))
+  * [Rails] ((<Rails Recipes|URL:http://www.amazon.co.jp/exec/obidos/ASIN/0977616606/250-3179170-4147428>))
 
   * [ぷ] デバッグ
 
