@@ -3,7 +3,7 @@
   * [萌] 嗜好
 
     * ((<初等ロリータ指向(×嗜好)プログラミング|URL:http://www.entis.jp/doc/lolita_programing/lolita1.html>))
-    * ((<ロリータ指向(×嗜好)プログラミング|URL:http://www.entis.jp/doc/lolita_programing/lolita2.html>))
+    * ((<ロリータ指向(×嗜好)プログラミング中級基本編|URL:http://www.entis.jp/doc/lolita_programing/lolita2.html>))
 
   * [Rails] ((<Rails Recipes|URL:http://www.amazon.co.jp/exec/obidos/ASIN/0977616606/250-3179170-4147428>))
 
