@@ -1,5 +1,11 @@
 = eji::memo
 
+  * [ぷ] デバッグ
+
+    * ((<萌えるデバッグ手法な話|URL:http://www.nomuraz.com/denpa/prog002.htm#IDPROG0012>))
+    * ((<萌えるデバッグ: または私は如何にして心配するのを止めてSchemeを愛するようになったか|URL:http://hiratch.net/blog/archives/2005/12/000058.html>))
+
+
   * [ぷ] ((<Error handling|URL:http://www.objectarchitects.de/arcus/cookbook/exhandling/index.htm>))
 
   * [svn] CVSレポジトリ
