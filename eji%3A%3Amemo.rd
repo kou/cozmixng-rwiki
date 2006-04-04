@@ -8,7 +8,7 @@
     * ((<美人プログラミングスタイル by Java|URL:http://www.okisoft.co.jp/esc/go/style0.html>))
 
 
-  * [Rails] ((<Rails Recipes|URL:http://www.amazon.co.jp/exec/obidos/ASIN/0977616606/250-3179170-4147428>))
+  * [Rails] ((<Rails Recipes|asin:0977616606>))
 
   * [ぷ] デバッグ
 
