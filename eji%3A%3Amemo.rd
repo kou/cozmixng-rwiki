@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [ぷ] ((<Logowiki|URL:http://www.logowiki.net/>))
+
   * [萌] いろいろ
 
     * ((<初等ロリータ指向(×嗜好)プログラミング|URL:http://www.entis.jp/doc/lolita_programing/lolita1.html>))
