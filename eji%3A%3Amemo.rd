@@ -1,5 +1,13 @@
 = eji::memo
 
+  * [Rails] with svn
+
+    * ((<subversionでRailsアプリを管理|URL:http://wiki.rails2u.com/subversion%E3%81%A7Rails%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E7%AE%A1%E7%90%86>))
+
+    * ((<HowtoUseRailsWithSubversion|URL:http://wiki.rubyonrails.com/rails/pages/HowtoUseRailsWithSubversion>))
+
+
+
   * [ぷ] ((<Logowiki|URL:http://www.logowiki.net/>))
 
   * [萌] いろいろ
