@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<The Summer of Code 2006|URL:http://google-code-updates.blogspot.com/2006/04/summer-of-code-2006.html>))
+
   * ((<プレゼン道入門|URL:http://nova.planet.sci.kobe-u.ac.jp/~matsuda/review/PLAIN99.html>))
 
   * ((<Quick reStructuredText|URL:http://docutils.sourceforge.net/docs/user/rst/quickref.html>))
