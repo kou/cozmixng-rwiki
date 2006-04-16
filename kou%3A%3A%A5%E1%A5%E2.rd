@@ -1,5 +1,10 @@
 = kou::メモ
 
+  * [Skype] とりあえずUSB接続のウェブカメラ（30万画素，しょぼいヘッドセットつき）を買ってきた．1980円．さすがアキバ．
+
+      % lsusb | grep Logitech
+      Bus 001 Device 009: ID 046d:08f0 Logitech, Inc. QuickCam Messenger
+
   * ((<The Summer of Code 2006|URL:http://google-code-updates.blogspot.com/2006/04/summer-of-code-2006.html>))
 
   * ((<プレゼン道入門|URL:http://nova.planet.sci.kobe-u.ac.jp/~matsuda/review/PLAIN99.html>))
