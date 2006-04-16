@@ -1,5 +1,9 @@
 = eji::memo
 
+  * [検索] ((<windows Live|URL:http://www.live.com/>))
+
+    これでサーベイが楽になればいいけど。
+
   * [Rails] with svn
 
     * ((<subversionでRailsアプリを管理|URL:http://wiki.rails2u.com/subversion%E3%81%A7Rails%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E7%AE%A1%E7%90%86>))
