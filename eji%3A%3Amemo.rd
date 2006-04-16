@@ -1,6 +1,6 @@
 = eji::memo
 
-  * [検索] ((<windows Live|URL:http://www.live.com/>))
+  * [検索] ((<Windows Live|URL:http://www.live.com/>))
 
     これでサーベイが楽になればいいけど。
 
