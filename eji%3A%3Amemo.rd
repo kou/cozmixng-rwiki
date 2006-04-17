@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [その他] ((<URL:http://www.plusminus.ru/>))
+
   * [検索] ((<Windows Live|URL:http://www.live.com/>))
 
     これでサーベイが楽になればいいけど。
