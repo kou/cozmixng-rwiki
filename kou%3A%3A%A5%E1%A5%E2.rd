@@ -5,6 +5,21 @@
       % lsusb | grep Logitech
       Bus 001 Device 009: ID 046d:08f0 Logitech, Inc. QuickCam Messenger
 
+    動かすためには((<ドライバ|URL:http://qce-ga.sourceforge.net/>))（Debianではqc-usb-source）をインストールする必要がある．だけど，オフィシャルなやつだと対応していない．
+
+    なので，((<Quickcam Messenger & Communicate driver for Linux|URL:http://home.mag.cx/messenger/>))を使う（このページはオフィシャルページからもリンクされている）．
+
+    インストールするにはアーカイブの中にある．make allしてmake installするだけ．ただし，make allするときにカーネルのヘッダファイルがあるディレクトリを指定すること．
+
+      % make all LINUX_DIR=/usr/src/linux-headers-`uname -r`
+      % sudo make install
+
+    自分でmakeするんじゃなくて，インストールスクリプトを使うこともできる．このときはUSBを指しておいた方がよいかも．
+
+      % sudo ./quickcam.sh
+
+    ドライバをインストールしたら，あとはUSBを抜き差しでもすれば認識されるはず．テストはgqcamとかgnomemeeting（Ekiga?）でも使えばOK．
+
   * ((<The Summer of Code 2006|URL:http://google-code-updates.blogspot.com/2006/04/summer-of-code-2006.html>))
 
   * ((<プレゼン道入門|URL:http://nova.planet.sci.kobe-u.ac.jp/~matsuda/review/PLAIN99.html>))
