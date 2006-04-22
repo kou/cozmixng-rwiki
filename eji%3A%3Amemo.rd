@@ -1,5 +1,7 @@
 = eji::memo
 
+  * [ぷ] ((<FLOPS 2006|URL:http://nicosia.is.s.u-tokyo.ac.jp/FLOPS2006/>))
+
   * [その他] ((<URL:http://www.plusminus.ru/>))
 
   * [検索] ((<Windows Live|URL:http://www.live.com/>))
