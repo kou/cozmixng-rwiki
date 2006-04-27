@@ -94,6 +94,8 @@
     * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
   * 武田くん
     * ((<tk's hiki|URL:http://www.kono.cis.iwate-u.ac.jp/~hiki/tk/>))
+  * 木村さん
+    * ((<きりかノート:URL:http://kimuraw.txt-nifty.com/d/>))
   * ...
 
 == 参加しようかなぁな人達
