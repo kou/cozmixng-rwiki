@@ -94,7 +94,7 @@
     * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
   * 武田くん
     * ((<tk's hiki|URL:http://www.kono.cis.iwate-u.ac.jp/~hiki/tk/>))
-  * 木村さん
+  * 木村さん（DarwinPortsのパッケージ作成）
     * ((<きりかノート|URL:http://kimuraw.txt-nifty.com/d/>))
   * ...
 
