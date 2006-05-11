@@ -11,6 +11,7 @@
 * platexサポート
 * SilverCityサポート
   * ((<CodeRay|URL:http://rd.cycnus.de/coderay/>))の方がよいかも．
+* ((<Poppler|URL:http://poppler.freedesktop.org/>))サポート．
 
 == Pending
 
