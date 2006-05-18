@@ -72,4 +72,4 @@ Printed output (index) (0.4.0):
 
 == コメント
   * 「るびま」に角谷さんとkouくん登場  ((<URL:http://jp.rubyist.net/magazine/?0014-Hotlinks>))
-    * 適当なとこに移動してください。- [[akapy]]
+    * 適当なとこに移動してください。- akapy
