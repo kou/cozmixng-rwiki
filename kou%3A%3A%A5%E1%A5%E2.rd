@@ -1,5 +1,9 @@
 = kou::メモ
 
+  * iTunesでも聞けるようにAACにエンコーディング + MP4コンテナに入れる．
+
+      % faac -w -o output.m4a source.wav
+
   * [Debian] module-assistantすごい便利！
 
   * ((<開発抽象化レイヤ - The Joel on Software Translation Project|URL:http://local.joelonsoftware.com/mediawiki/index.php/%E9%96%8B%E7%99%BA%E6%8A%BD%E8%B1%A1%E5%8C%96%E3%83%AC%E3%82%A4%E3%83%A4>))
