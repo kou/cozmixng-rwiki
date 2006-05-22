@@ -20,3 +20,5 @@ Rabbitは以下の人達に使ってもらっています．
   * ((<『刺激を受けた5冊』|URL://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
 * 小林
   * 『Debian Weekly News翻訳フロー』 [((<付随情報つき|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/?cmd=view;name=TokyoDebianMeeting20051112DWN>))] [((<スライドのみ|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w-images/TokyoDebianMeeting/20051112DWN/>))]
+* 向井
+  * 『RHG読書会 - モナドについていろいろ』[((<スライド|URL:http://www.city5.org/rhg_200605/>))][((<RDファイル|URL:http://www.city5.org/rhg2006_05.rd>))]
