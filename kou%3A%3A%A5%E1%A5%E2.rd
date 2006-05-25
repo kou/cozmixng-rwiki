@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<TinyMCE Javascript Content Editor|URL:http://tinymce.moxiecode.com/>))
+
   * ((<Istanbul|URL:http://live.gnome.org/Istanbul>))
 
   * iTunesでも聞けるようにAACにエンコーディング + MP4コンテナに入れる．
