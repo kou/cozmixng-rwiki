@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<Istanbul|URL:http://live.gnome.org/Istanbul>))
+
   * iTunesでも聞けるようにAACにエンコーディング + MP4コンテナに入れる．
 
       % faac -w -o output.m4a source.wav
