@@ -80,6 +80,7 @@
     * ((<『刺激を受けた5冊』|URL://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
   * おぎのさん
   * ((<向井|URL:http://www.jmuk.org/d/>))
+    * ((<"RHG 読書会 モナドについていろいろ"|URL:http://www.city5.org/rhg_200605/>))
   * kdmsnrさん（もっともRabbitを宣伝してくれるユーザの一人）
     * ((<capsctrldays|URL:http://capsctrl.que.jp/kdmsnr/diary/>))
 
