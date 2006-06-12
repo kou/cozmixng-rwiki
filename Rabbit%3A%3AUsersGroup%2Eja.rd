@@ -106,6 +106,8 @@
     * ((<帰ってきた今日のなんでやねん|URL:http://kitaj.no-ip.com/tdiary/>))
   * Yuguiさん
     * ((<ratio - rational - irrational @ IDM|URL:http://idm.s9.xrea.com/ratio/>))
+  * なかださん
+    * ((<A Strolling Programmer|URL:http://www.rubyist.net/~nobu/t/>))
   * ...
 
 == 参加しようかなぁな人達
