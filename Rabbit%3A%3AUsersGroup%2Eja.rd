@@ -85,6 +85,7 @@
     * ((<capsctrldays|URL:http://capsctrl.que.jp/kdmsnr/diary/>))
 
 # オブジェクト倶楽部 2005クリスマスイベント後
+
   * 西川さん
     * ((<トウフ日記|URL:http://d.hatena.ne.jp/nskj77/>))
   * 畠山さん
@@ -98,6 +99,13 @@
     * ((<tk's hiki|URL:http://www.kono.cis.iwate-u.ac.jp/~hiki/tk/>))
   * 木村さん（DarwinPortsのパッケージ作成）
     * ((<きりかノート|URL:http://kimuraw.txt-nifty.com/d/>))
+
+# RubyKaigi 2006後
+
+  * kitajさん
+    * ((<帰ってきた今日のなんでやねん|URL:http://kitaj.no-ip.com/tdiary/>))
+  * Yuguiさん
+    * ((<ratio - rational - irrational @ IDM|URL:http://idm.s9.xrea.com/ratio/>))
   * ...
 
 == 参加しようかなぁな人達
