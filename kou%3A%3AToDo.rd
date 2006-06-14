@@ -1,6 +1,6 @@
 = kou::ToDo
 
-* Svn: svn/wc.rbのAPIからbatonを削除．
+* Svn: コールバックにはrb_protect()を使う。
 
 * RWiki: テンプレートを作る．
 * RWiki: 追加用ブックマークレットを作る．
