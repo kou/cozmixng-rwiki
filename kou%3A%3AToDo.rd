@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* RSS Maker: ((<ruby-talk:197284>))のnew_itemにブロックを使うのがかっこいいからパクる．rss.to_xmlはsetup_makerを使えばできるんじゃないかなぁ．
+
 * Svn: コールバックにはrb_protect()を使う。
 
 * RWiki: テンプレートを作る．
