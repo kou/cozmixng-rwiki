@@ -1,6 +1,6 @@
 = kou::ToDo
 
-* RSS Maker: ((<ruby-talk:197284>))のnew_itemにブロックを使うのがかっこいいからパクる．rss.to_xmlはsetup_makerを使えばできるんじゃないかなぁ．
+* RSS Maker: Atomをサポート。
 
 * Svn: コールバックにはrb_protect()を使う。
 
@@ -8,8 +8,6 @@
 * RWiki: 追加用ブックマークレットを作る．
 
 * Svn: prop-change-email.rbを作る．
-
-* RSS Parser: AtomがRFC化（((<rfc:4287>))）したのでサポートする．
 
 * Rabbit: テーマドキュメントブラウザに編集インターフェイスを追加．
 
