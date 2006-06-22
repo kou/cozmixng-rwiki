@@ -2,16 +2,15 @@
 
 == Comming
 
+* デュアルディスプレイ用に、スライドへのコメントとか前後のスライドとか残り時間を表示するウィンドウを出したり隠したりする機能。
 * サウンドのサポート．
   * 残りXX分になったら蛍の光が流れるテーマの作成．
 * テーママネージャで検索できるように．
 * キーバインドをもっとスマートに．
-* rabbit-model.el
 * viライクな検索インターフェイスのサポート．
 * platexサポート
 * SilverCityサポート
   * ((<CodeRay|URL:http://rd.cycnus.de/coderay/>))の方がよいかも．
-* ((<Poppler|URL:http://poppler.freedesktop.org/>))サポート．
 
 == Pending
 
@@ -19,6 +18,8 @@
 
 == Done
 
+* [r747] (('del:((<Poppler|URL:http://poppler.freedesktop.org/>))サポート．'))
+* [r721] (('del:rabbit-model.el')) by 武田くん
 * [r676] (('del:一覧モードでもHTML出力できるように．'))
 * [r654] (('del:GIMPサポート'))
 * [r584] (('del:Migemoサポート'))
