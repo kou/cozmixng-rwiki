@@ -61,7 +61,7 @@ install.bat を実行してください。
 
 (2) <Enscript のインストール先>/bin に PATH を通す。
 
-(3) ruby コードを色づけする場合は、以下のコマンドで ruby.st もインストールする。
+(3) ruby コードを色づけする場合は、以下のコマンドで ruby.st もインストールする。((-http://rubyforge.org/cgi-bin/viewvc.cgi/support/ruby.st?view=coじゃないかな?-))
 
       > cd <Enscript のインストール先>\share\enscript\hl
       > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewcvs.cgi/*checkout*/support/ruby.st').read" > ruby.st
