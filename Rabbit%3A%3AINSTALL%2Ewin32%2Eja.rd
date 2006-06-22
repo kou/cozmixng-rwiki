@@ -33,7 +33,7 @@ ruby 1.8.4 のインストール。One-Click Installerを使うのが楽
 
 == GTK+ 2のインストール
 
-GLADE for Windows の GTK+ 2 パッケージをインストールする。
+GLADE for Windows の GTK+ 2 パッケージをインストールする。((-「プロシージャ エントリポイント libiconv_set_relocation_prefix がダイナミック リンク ライブラリ iconv.dll から見つかりませんでした。」問題を回避するには、ruby付属のiconv.dllを削除/リネームするしかない?-))
 
 : gtk-win32-2.8.8-rc2.exe
    ((<URL:http://gladewin32.sourceforge.net/modules/wfdownloads/visit.php?lid=95>))
