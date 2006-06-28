@@ -36,7 +36,7 @@ HTTPでcg-cloneできるように、~/public_html/以下に作る。
 
 今回は
 
-  % cg-clone http://pub.cozmixng.org/~kou/git/cairo/.git
+  % cg-clone http://pub.cozmixng.org/~kou/git/cairo/.git cairo-combined
 
 できるようにする。
 
