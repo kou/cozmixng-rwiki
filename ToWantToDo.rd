@@ -2,7 +2,9 @@
 
 == story-card
 
-* ((<TWTD006>)) empty item
+* ((<TWTD007>)) empty item
+
+* ((<TWTD006>))
 
 * ((<TWTD005>))
 
