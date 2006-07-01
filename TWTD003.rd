@@ -7,7 +7,7 @@ rcairo 1.2.0のリリース
 * 種類: story
 * イテレーション: 1
 * サイン: ((<kou>))
-* 状態: open
+* 状態: close
 * 見積: 0 / 0
 
 == description
