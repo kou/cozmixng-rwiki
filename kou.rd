@@ -1,5 +1,7 @@
 = kou
 
+((<ToWantToDo>))
+
 COZMIXNGいいだしっぺ．
 Matz日記にツッコミを入れた事はありません（念のため）．
 
