@@ -5,12 +5,14 @@ GtkTransparentの提案
 == status
 
 * 種類: story
-* イテレーション: 
+* イテレーション: 1
 * サイン: ((<kou>))
 * 状態: open
 * 見積: 0 / 0
 
 == description
+
+gtk-develにメールを書く。
 
 == test
 
