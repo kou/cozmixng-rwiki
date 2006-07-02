@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 713 2006-03-16 13:26:03Z kou $
+$Id: README.ja 768 2006-06-12 12:33:07Z kou $
 
 == 名前
 
@@ -80,6 +80,10 @@ gan <shinsato@kono.cis.iwate-u.ac.jp>
 
   和服うさぎ少女です．
 
+* アリス
+
+  青いドレスの少女です．
+
 朝比奈 理乃（あさひな　りの）
 
 ((<URL:http://littleblue.chu.jp/>))
@@ -90,10 +94,17 @@ misc/xyzzy/
 
 みやむこさん
 
+=== Emacs用モード
+
+misc/emacs/
+
+武田くん
+
 == 共同開発者
 
   * みやむこさん
   * noritadaさん
+  * 武田くん
 
 == 著作権
 
@@ -105,13 +116,18 @@ misc/xyzzy/
 
 == ライセンス
 
-プログラム，画像ともにRuby's（lib/rabbit/tgif.rbを除く）です．
-詳しくはCOPYINGまたはCOPYING.jaを見てください．
+プログラム，画像ともにRuby's（lib/rabbit/tgif.rbと
+lib/rabbit/div/prototype.jsを除く）です．詳しくはCOPYINGまた
+はCOPYING.jaを見てください．
 
-ただし，lib/rabbit/tgif.rbは
+lib/rabbit/tgif.rbは
 ((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)) 
 と同じライセンスになります．詳しくはCOPYING-TGIFTOOLSまたは
 COPYING-TGIFTOOLS.jaを見てください．
+
+lib/rabbit/div/prototype.jsはMITスタイルのライセンスになります．
+詳しくは((<Prototype JavaScript
+Framework|URL:http://prototype.conio.net/>))を見てください．
 
 マスコットキャラクタのPSDファイルが欲しい人はプログラム作者
 に連絡してください．画像作者に相談してみます．
@@ -555,6 +571,10 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトはmigemo-dictです．
 
+: --use-gl, --no-use-gl
+   もし可能であればOpenGLを使うかどうかを指定します．
+
+   デフォルトでは使いません．
 
 == Rabbit用RDの書き方
 
@@ -789,9 +809,12 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
   * noritadaさん: ドキュメントに関するバグ報告をしてくれまし
     た．
   * ganちゃん: 旗を書いてくれました．
-  * かくたにさん: ドキュメントに関するバグ報告をしてくれまし
-    た．Rabbitを使ってプレゼンしてくれます．テーマデザインや
-    機能拡張のアイディアをくれました．
+  * かくたにさん:
+    * ドキュメントに関するバグ報告をしてくれました．
+    * Rabbitを使ってプレゼンしてくれます．
+    * テーマデザインや機能拡張のアイディアをくれました．
+    * HTML出力に関するバグを修正するパッチをくれました．
+    * Mac OS X(Intel)用のパッケージを作ってくれました．
   * atzmさん: Gentoo用のパッケージ（*.ebuild）を作ってくれま
     した．
   * やまだあきらさん: Debian用のパッケージ（*.deb）を作って
@@ -801,5 +824,11 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
   * dotさん: Windowsのインストールについてアドバイスしてくれ
     ました．
   * 田中さん: Windowsで動作確認してくれました．
-  * 朝比奈さん: かわいいうさぎ少女を書いてくれました．
-
+  * 朝比奈さん: かわいいうさぎ少女とかアリスを書いてくれまし
+    た．
+  * 西川さん: FAQページの名前を考えてくれました．動作報告を
+    してくれます．
+  * 武田くん: Emacs用のrabbitモードを書いてくれました．
+  * 木村さん: Mac OS X用のパッケージを作ってくれました．
+  * kitajさん: Windowsへのインストール方法の間違いを指摘して
+    くれました．
