@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 707 2006-03-16 03:08:21Z kou $
+# $Id: rabbit.rd 719 2006-03-18 09:57:09Z kou $
 
 = Rabbit
 
@@ -323,6 +323,17 @@
 
 : 穴を狭める
    N
+
+= キーバインド（検索）
+
+: 次を検索
+   C-s, /
+
+: 前を検索
+   C-r, ?
+
+: 検索終了
+   C-g
 
 = キーバインド（その他）
 
