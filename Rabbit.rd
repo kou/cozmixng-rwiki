@@ -50,16 +50,25 @@ Printed output (index) (0.4.2):
 
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
+== ドキュメント/Documents
+
   * ((<FAQ.en|Rabbit::FAQ.en>)): not yet...
   * ((<FAQ.ja|Rabbit::FAQ.ja>))
   * ((<README.en|Rabbit::README.en>))
   * ((<README.ja|Rabbit::README.ja>))
   * ((<INSTALL.win32.en|Rabbit::INSTALL.win32.en>))
   * ((<INSTALL.win32.ja|Rabbit::INSTALL.win32.ja>))
+  * ((<rabbit-mode.el::README.ja>))
+
+== サンプル/Samples
+
   * ((<sample.en|Rabbit::sample.en>))
   * ((<sample.ja|Rabbit::sample.ja>))
   * ((<Implementation.ja|Rabbit::Implementation.ja>))
   * ((<CanRabbit.ja|Rabbit::CanRabbit.ja>))
+
+== その他/Others
+
   * ((<UsedBy|Rabbit::UsedBy>))
   * ((<CommentedBy|Rabbit::CommentedBy>))
   * ((<UsersGroup.en|Rabbit::UsersGroup.en>))
