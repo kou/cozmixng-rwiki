@@ -2,18 +2,17 @@
 
 = INSTALL.win32.ja
 
-$Id: INSTALL.win32.ja 560 2006-02-08 01:49:43Z kou $
+$Id: INSTALL.win32.ja 774 2006-07-02 02:49:18Z kou $
 
 Windows上でRabbitを実行するのは大変です．以下を参考にして頑
 張ってください．
 
 == Ruby 本体のインストール
 
-ruby 1.8.4 のインストール。One-Click Installerを使うのが楽
-((-まだpreview3だけど，大丈夫でしょう．-))．
+ruby 1.8.4 のインストール。One-Click Installerを使うのが楽．
 
-: ruby184-16p3.exe
-   ((<URL:http://rubyforge.org/frs/download.php/8338/ruby184-16p3.exe>))
+: ruby184-17_rc2.exe
+   ((<URL:http://rubyforge.org/frs/download.php/10286/ruby184-17_rc2.exe>))
 
 == RDTool のインストール
 
@@ -28,15 +27,15 @@ ruby 1.8.4 のインストール。One-Click Installerを使うのが楽
 
 アーカイブを展開して，install.rb を実行してインストールする。
 
-: ruby-gtk2-0.14.1-1-i386-msvcrt-1.zip
-   ((<URL:http://prdownloads.sourceforge.net/ruby-gnome2/ruby-gtk2-0.14.1-1-i386-msvcrt-1.zip>))
+: ruby-gtk2-0.15.0-1-i386-msvcrt-1.zip
+   ((<URL:http://prdownloads.sourceforge.net/ruby-gnome2/ruby-gtk2-0.15.0-1-i386-msvcrt-1.zip>))
 
 == GTK+ 2のインストール
 
-GLADE for Windows の GTK+ 2 パッケージをインストールする。((-「プロシージャ エントリポイント libiconv_set_relocation_prefix がダイナミック リンク ライブラリ iconv.dll から見つかりませんでした。」問題を回避するには、ruby付属のiconv.dllを削除/リネームするしかない?-))
+GLADE for Windows の GTK+ 2 パッケージをインストールする。
 
-: gtk-win32-2.8.8-rc2.exe
-   ((<URL:http://gladewin32.sourceforge.net/modules/wfdownloads/visit.php?lid=95>))
+: gtk-win32-2.8.18-rc1.exe
+   ((<URL:http://gladewin32.sourceforge.net/modules/wfdownloads/visit.php?lid=102>))
 
 == Rabbit のインストール
 
@@ -61,10 +60,10 @@ install.bat を実行してください。
 
 (2) <Enscript のインストール先>/bin に PATH を通す。
 
-(3) ruby コードを色づけする場合は、以下のコマンドで ruby.st もインストールする。((-http://rubyforge.org/cgi-bin/viewvc.cgi/support/ruby.st?view=coじゃないかな?-))
+(3) ruby コードを色づけする場合は、以下のコマンドで ruby.st もインストールする。
 
       > cd <Enscript のインストール先>\share\enscript\hl
-      > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewcvs.cgi/*checkout*/support/ruby.st').read" > ruby.st
+      > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewvc.cgi/support/ruby.st?view=co').read" > ruby.st
 
 (4) ((<RAA:htree>)) をインストールする。
 
