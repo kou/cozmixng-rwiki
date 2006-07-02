@@ -2,14 +2,14 @@
 
 = INSTALL.win32.en
 
-$Id: INSTALL.win32.en 560 2006-02-08 01:49:43Z kou $
+$Id: INSTALL.win32.en 774 2006-07-02 02:49:18Z kou $
 
 == Install Ruby
 
 Install ruby 1.8.4. Use One-Click Installer for convenience.
 
-: ruby184-16p3.exe
-   ((<URL:http://rubyforge.org/frs/download.php/8338/ruby184-16p3.exe>))
+: ruby184-17_rc2.exe
+   ((<URL:http://rubyforge.org/frs/download.php/10286/ruby184-17_rc2.exe>))
 
 == Install RDTool
 
@@ -24,15 +24,15 @@ Extract the following archive and execute setup.rb to install.
 
 Extract the following archive and execute install.rb to install.
 
-: ruby-gtk2-0.14.1-1-i386-msvcrt-1.zip
-   ((<URL:http://prdownloads.sourceforge.net/ruby-gnome2/ruby-gtk2-0.14.1-1-i386-msvcrt-1.zip>))
+: ruby-gtk2-0.15.0-1-i386-msvcrt-1.zip
+   ((<URL:http://prdownloads.sourceforge.net/ruby-gnome2/ruby-gtk2-0.15.0-1-i386-msvcrt-1.zip>))
 
 == Install GTK+ 2
 
 Install GTK+ 2 package of GLADE for Windows.
 
-: gtk-win32-2.8.8-rc2.exe
-   ((<URL:http://gladewin32.sourceforge.net/modules/wfdownloads/visit.php?lid=95>))
+: gtk-win32-2.8.18-rc1.exe
+   ((<URL:http://gladewin32.sourceforge.net/modules/wfdownloads/visit.php?lid=102>))
 
 == Install Rabbit!!
 
@@ -60,7 +60,7 @@ Execute install.bat.
 (3) You may need to obtain ruby.st for Ruby syntax highlighting.
 
       > cd <Enscript Install Path>/share/enscript/hl
-      > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewcvs.cgi/*checkout*/support/ruby.st').read" > ruby.st
+      > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewvc.cgi/support/ruby.st?view=co').read" > ruby.st
 
 (4) Install ((<RAA:htree>)).
 
