@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 713 2006-03-16 13:26:03Z kou $
+$Id: README.en 768 2006-06-12 12:33:07Z kou $
 
 == Name
 
@@ -84,20 +84,31 @@ usatti
 
   pretty rabbit girl in Japanese dress.
 
+* Alice
+
+  pretty girl in blue dress.
+
 asahina
 
 ((<URL:http://littleblue.chu.jp/>))
 
 === Mode for xyzzy
 
-misc/xyzzy
+misc/xyzzy/
 
 Mr. MIYAMUKO
+
+=== Mode for Emacs
+
+misc/emacs/
+
+Atsushi Takeda
 
 == Co-Authors
 
   * Mr. MIYAMUKO
   * Mr. noritada
+  * Atsushi Takeda
 
 == Copyright
 
@@ -109,13 +120,17 @@ The above image author has copyright of his/her images.
 
 == Licence
 
-Ruby's (except files under lib/rabbit/tgif.rb). For more
-information see COPYING.
+Ruby's (except lib/rabbit/tgif.rb and
+lib/rabbit/div/prototype.js). For more information see
+COPYING.
 
-The files under lib/rabbit/tgif.rb is the
-same licence of
+lib/rabbit/tgif.rb is the same licence of
 ((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)).
 For more information see COPYING-TGIFTOOLS.
+
+lib/rabbit/div/prototype.js is MIT-style licence. For more
+information see ((<Prototype JavaScript
+Framework|URL:http://prototype.conio.net/>)).
 
 If you want to get PSD file of mascot character, tell
 program author. I'll ask images author.
@@ -540,6 +555,10 @@ with the following.
 
    Default is migemo-dict.
 
+: --use-gl, --no-use-gl
+   Specifies whether to use OpenGL if available.
+
+   Default is not use.
 
 == How to write
 
@@ -761,12 +780,21 @@ page from XXX.rd.
     design.
   * noritada: He sent me a bug report for document.
   * gan: He wrote some flags.
-  * KAKUTANI: He sent me a bug report for document. He makes
-    a presentation with Rabbit. He gives me an idea for new
-    features and theme design.
+  * KAKUTANI:
+    * He sent me a bug report for document.
+    * He makes a presentation with Rabbit.
+    * He gives me an idea for new features and theme design.
+    * He gives me a patch to fix a bug related HTML
+      generation.
+    * He makes Mac OS X (Intel) package.
   * atzm: He makes Gentoo package (*.ebuild).
   * akira yamada: He makes Debian package (*.deb).
   * usatti: She drow some logos and taro series images.
   * dot: He helps installation on Windows.
   * tanaka: He checks operations on Windows.
-  * asahina: She draws a pretty rabbit girl.
+  * asahina: She draws a pretty rabbit girl and Alice.
+  * nskj77: He gave a name to FAQ page. He sends action
+    reporting and some bug reports.
+  * Atsushi Takeda: He wrote rabbit mode for Emacs.
+  * kimura wataru: He makes Mac OS X package.
+  * kitaj: He points out minor miss in INSTALL.win32.en.
