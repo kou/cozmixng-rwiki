@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 707 2006-03-16 03:08:21Z kou $
+# $Id: rabbit_en.rd 719 2006-03-18 09:57:09Z kou $
 
 = Rabbit(en)
 
@@ -330,6 +330,17 @@ Ahh, I'll set up more better documents.
 
 : Narrow hole
    N
+
+= Key (search)
+
+: Search forward
+   C-s, /
+
+: Search backward
+   C-r, ?
+
+: Quit search
+   C-g
 
 = Key (etc)
 
