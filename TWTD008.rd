@@ -7,12 +7,12 @@ www.cozmixng.orgの証明書の更新
 * 種類: story
 * イテレーション: 1
 * サイン: ((<kou>))
-* 状態: open
-* 見積: 1 / 0
+* 状態: close
+* 見積: 1 / 1
 
 == description
 
-タイムリミットは7/12。
+タイムリミットは7/13。
 
 == test
 
@@ -22,4 +22,5 @@ www.cozmixng.orgの証明書の更新
 == history
 
 * 2006-07-01 kou: open
+* 2006-07-02 kou: close
 
