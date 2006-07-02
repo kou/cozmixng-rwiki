@@ -26,7 +26,7 @@
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-heads.png
   # description = バナー（あたま）
 
-The latest version: 0.4.1(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.4.1.tar.gz>)))
+The latest version: 0.4.2(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.4.2.tar.gz>)))
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
