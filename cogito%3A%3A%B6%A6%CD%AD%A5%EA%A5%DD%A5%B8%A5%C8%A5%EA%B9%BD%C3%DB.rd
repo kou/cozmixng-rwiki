@@ -46,7 +46,7 @@ Debianの話．
   % cd work/project0
   % cg-init
 
-共有リポジトリをoriginブランチとして登録する．
+共有リポジトリをoriginブランチとして登録する．共有リポジトリがあるサーバのIPアドレスが192.168.0.123だったら以下のようになる．
 
   % cg-branch-add origin git+ssh://192.168.0.123/home/git/repos/project0
 
