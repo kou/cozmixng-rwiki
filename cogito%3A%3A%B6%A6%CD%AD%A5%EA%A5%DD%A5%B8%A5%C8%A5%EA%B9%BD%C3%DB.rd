@@ -50,6 +50,10 @@ Debianの話．
 
   % cg-branch-add origin git+ssh://192.168.0.123/home/git/repos/project0
 
+ユーザ名を指定して接続するには以下のようになる．
+
+  % cg-branch-add origin git+ssh://user@192.168.0.123/home/git/repos/project0
+
 あとは，originブランチにcg-pushすればOK．
 
   % cg-push
