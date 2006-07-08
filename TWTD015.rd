@@ -5,7 +5,7 @@ GTK+ 2.10のGtkPrintOperationのバインディングの実装
 == status
 
 * 種類: story
-* イテレーション: 
+* イテレーション: 1
 * サイン: ((<kou>))
 * 状態: open
 * 見積: 0 / 0
