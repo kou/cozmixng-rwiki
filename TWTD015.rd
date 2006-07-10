@@ -7,7 +7,7 @@ GTK+ 2.10のGtkPrintOperationのバインディングの実装
 * 種類: story
 * イテレーション: 1
 * サイン: ((<kou>))
-* 状態: open
+* 状態: close
 * 見積: 0 / 0
 
 == description
@@ -20,4 +20,4 @@ GTK+ 2.10のGtkPrintOperationのバインディングの実装
 == history
 
 * 2006-07-04 kou: open
-
+* 2006-07-10 kou: close
