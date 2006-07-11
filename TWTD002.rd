@@ -7,7 +7,7 @@ GtkTransparentの提案
 * 種類: story
 * イテレーション: 1
 * サイン: ((<kou>))
-* 状態: open
+* 状態: close
 * 見積: 0 / 0
 
 == description
@@ -22,4 +22,5 @@ gtk-develにメールを書く。
 == history
 
 * 2006-07-01 kou: open
+* 2006-07-11 kou: close
 
