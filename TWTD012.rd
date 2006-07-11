@@ -7,7 +7,7 @@ GtkTransparent用リポジトリの作成
 * 種類: task
 * イテレーション: 1
 * サイン: ((<kou>))
-* 状態: open
+* 状態: close
 * 見積: 0 / 0
 
 == description
@@ -20,4 +20,5 @@ GtkTransparent用リポジトリの作成
 == history
 
 * 2006-07-02 kou: open
+* 2006-07-02 kou: close
 
