@@ -4,9 +4,14 @@
 
 == 画像
 
-これでどうだ((<img:(('http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))>))。
+* これでどうだ((<img:(('http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))>))。
+* これでどうだ(('img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))。
+* (('img:http://cozmixng.sgk.iwate-u.ac.jp/icons/world1.png'))
 
-これはどうだ((<"img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png">))。
+* これはどうだ((<"img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png">))。
+* これはどうだ(("img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png"))。
+
+((<(('img:http://pub.cozmixng.org/~akapy/getfirefox_large2.png'))|URL:http://getfirefox.jp/>))
 
 == 表
 
