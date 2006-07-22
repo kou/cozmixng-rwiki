@@ -1,6 +1,8 @@
 = GW-US54GXS
 
-PLANEXのUSBアダプタ((<GW-US54GXS|URL:http://www.planex.co.jp/product/wireless/gw-us54gxs.shtml>))をDebian GNU/Linux上でアクセスポイントとして動作させる設定。
+PLANEXのUSBアダプタ
+((<GW-US54GXS|URL:http://www.planex.co.jp/product/wireless/gw-us54gxs.shtml>))
+をDebian GNU/Linux上でアクセスポイント兼ルータとして動作させる設定。
 
 USB IDはこんな感じ。
 
@@ -17,7 +19,9 @@ USB IDはこんな感じ。
 
 ((<URL:http://zd1211.ath.cx/>))にあるZD1211というドライバを使う。
 
-ただ、最新版(r83)ではGW-US54GXSは正式にサポートされていないので、ソースを持ってきて少しいじる。ということで、最新版を持ってくる。
+ただ、最新版(r83)ではGW-US54GXSは正式にサポートされていない
+ので、ソースを持ってきて少しいじる。ということで、最新版を持っ
+てくる。
 
   % svn co http://zd1211.ath.cx/repos/trunk zd1211
 
@@ -80,6 +84,7 @@ USB IDはこんな感じ。
       pre-up /etc/init.d/dhcp stop
       post-up iwpriv wlan0 set_mac_mode 1
       post-up /etc/init.d/dhcp start
+      post-up /etc/init.d/bind restart
 
 wireless_keyに設定する
 
@@ -89,7 +94,35 @@ wireless_keyに設定する
 
   % ruby -e '26.times {|i| print "%X" % rand(16); print "-" if (i % 4) == 3}; puts'
 
+=== IPマスカレードの設定
+
+設定．
+
+  % sudo /sbin/iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
+
+確認．
+
+  % sudo /sbin/iptables -t nat -L
+  ...
+  Chain POSTROUTING (policy ACCEPT)
+  target     prot opt source               destination
+  ...
+  MASQUERADE  all  --  192.168.1.0/24       anywhere
+  ...
+
+これでよかったら保存．
+
+  % sudo /etc/init.d/iptables save active
+
+おまけ: 削除の仕方．
+
+  % sudo /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
+
 === DHCPサーバの設定
+
+とりあえず，インストール．
+
+  % sudo aptitude -V -r install dhcp
 
 /etc/dhcpd.confに以下のようなやつを書く。
 
@@ -106,4 +139,22 @@ wireless_keyに設定する
 
 === DNSサーバの設定
 
-...
+インストールするだけでOK．
+
+  % sudo aptitude -V -r install bind
+
+== 動作
+
+手順はこんな感じ．
+
+  * 無線LANアダプタを挿す
+  * インターフェイスを有効にする
+
+      % sudo /sbin/ifup wlan0
+
+  * 使う
+  * インターフェイスを無効にする
+
+      % sudo /sbin/ifdown wlan0
+
+  * 無線LANアダプタを抜く
