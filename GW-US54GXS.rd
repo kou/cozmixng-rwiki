@@ -68,6 +68,13 @@ USB IDはこんな感じ。
 
 == 設定
 
+=== カーネルモジュールの設定
+
+/etc/modulesに以下を追加。
+
+  zd1211b
+  iptable_nat
+
 === インターフェイスの設定
 
 /etc/network/interfacesにこんなのを書く。
@@ -118,6 +125,12 @@ wireless_keyに設定する
 
   % sudo /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
 
+=== パケットフォワーディングの設定
+
+/etc/network/optionsに以下を追加。
+
+  ip_forward=yes
+
 === DHCPサーバの設定
 
 とりあえず，インストール．
@@ -136,6 +149,14 @@ wireless_keyに設定する
        default-lease-time 6000;
        max-lease-time 72000;
   }
+
+/etc/default/dhcpの
+
+  INTERFACES="..."
+
+にwlan0を加える。
+
+  INTERFACES="... wlan0"
 
 === DNSサーバの設定
 
