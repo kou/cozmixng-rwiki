@@ -68,6 +68,10 @@ USB IDはこんな感じ。
 
 == 設定
 
+必要なパッケージをインストールする．
+
+  % sudo aptitude -V -r install wireless-tools zd1211-firmware
+
 === カーネルモジュールの設定
 
 /etc/modulesに以下を追加。
