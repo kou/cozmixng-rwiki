@@ -93,10 +93,12 @@ USB IDはこんな感じ。
       wireless_essid local-wireless
       wireless_mode master
       wireless_key XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XX
+      pre-up /sbin/iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
       pre-up /etc/init.d/dhcp stop
       post-up iwpriv wlan0 set_mac_mode 1
       post-up /etc/init.d/dhcp start
       post-up /etc/init.d/bind restart
+      post-up /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
 
 wireless_keyに設定する
 
@@ -106,35 +108,15 @@ wireless_keyに設定する
 
   % ruby -e '26.times {|i| print "%X" % rand(16); print "-" if (i % 4) == 3}; puts'
 
-=== IPマスカレードの設定
-
-設定．
-
-  % sudo /sbin/iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
-
-確認．
-
-  % sudo /sbin/iptables -t nat -L
-  ...
-  Chain POSTROUTING (policy ACCEPT)
-  target     prot opt source               destination
-  ...
-  MASQUERADE  all  --  192.168.1.0/24       anywhere
-  ...
-
-これでよかったら保存．
-
-  % sudo /etc/init.d/iptables save active
-
-おまけ: 削除の仕方．
-
-  % sudo /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
-
 === パケットフォワーディングの設定
 
 /etc/network/optionsに以下を追加。
 
   ip_forward=yes
+
+有効にする．
+
+  % sudo /etc/init.d/networking restart
 
 === DHCPサーバの設定
 
