@@ -220,3 +220,31 @@ Mewなら
   disable_mime_output_conversion = yes
 
 8bitってまだお行儀悪いのかしら．
+
+
+== Rgrey
+
+スパムをほとんど拒否できるという((<Rgrey - S25R + greylisting|URL:http://k2net.hakuba.jp/rgrey/>))の設定をする。パスを変えた以外は同じ。
+
+/usr/local/etc/postfix/main.cfを編集。
+
+  smtpd_restriction_classes =
+      check_greylist
+
+  check_greylist = check_policy_service inet:60000
+
+  smtpd_recipient_restrictions =
+      ...
+      check_client_access regexp:/usr/local/etc/postfix/check_client_fqdn
+
+/usr/local/etc/postfix/check_client_fqdnを作る。
+
+  /^unknown$/                                  check_greylist
+  /^[^\.]*[0-9][^0-9\.]+[0-9]/                 check_greylist
+  /^[^\.]*[0-9]{5}/                            check_greylist
+  /^([^\.]+\.)?[0-9][^\.]*\.[^\.]+\..+\.[a-z]/ check_greylist
+  /^[^\.]*[0-9]\.[^\.]*[0-9]-[0-9]/            check_greylist
+  /^[^\.]*[0-9]\.[^\.]*[0-9]\.[^\.]+\..+\./    check_greylist
+  /^(dhcp|dialup|ppp|adsl)[^\.]*[0-9]/         check_greylist
+
+これは、データベース扱いにしていないので、postmapはしなくてもいい。
