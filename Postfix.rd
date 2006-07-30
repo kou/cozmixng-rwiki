@@ -226,16 +226,27 @@ Mewなら
 
 スパムをほとんど拒否できるという((<Rgrey - S25R + greylisting|URL:http://k2net.hakuba.jp/rgrey/>))の設定をする。パスを変えた以外は同じ。
 
-/usr/local/etc/postfix/main.cfを編集。
+まず、Postfix用のGreylistの実装であるPostgreyをインストールする。
+
+  % sudo /usr/local/sbin/portupgrade -NRr postgrey
+
+/usr/local/etc/postfix/master.cfを編集し、必要なときにPostgreyがUNIXドメインソケットで起動するようにする。
+
+  policy  unix  -       n       n       -       -       spawn
+    user=postgrey argv=/usr/local/sbin/postgrey --group=postgrey --unix=/var/db/postgrey/postgrey.sock --dbdir=/var/db/postgrey/
+
+/usr/local/etc/postfix/main.cfを編集し、Postgreyを使うようにする。
 
   smtpd_restriction_classes =
       check_greylist
 
-  check_greylist = check_policy_service inet:60000
+  check_greylist = check_policy_service unix:/var/db/postgrey/postgrey.sock
 
   smtpd_recipient_restrictions =
       ...
+      reject_unauth_destination
       check_client_access regexp:/usr/local/etc/postfix/check_client_fqdn
+      ...
 
 /usr/local/etc/postfix/check_client_fqdnを作る。
 
