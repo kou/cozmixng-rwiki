@@ -230,23 +230,26 @@ Mewなら
 
   % sudo /usr/local/sbin/portupgrade -NRr postgrey
 
-/usr/local/etc/postfix/master.cfを編集し、必要なときにPostgreyがUNIXドメインソケットで起動するようにする。
+/etc/rc.confに以下を追加してPostgreyを起動するようにする。
 
-  policy  unix  -       n       n       -       -       spawn
-    user=postgrey argv=/usr/local/sbin/postgrey --group=postgrey --unix=/var/db/postgrey/postgrey.sock --dbdir=/var/db/postgrey/
+  postgrey_enable="YES"
+
+Postgreyを起動する。
+
+  % sudo /usr/local/etc/rc.d/postgre start
 
 /usr/local/etc/postfix/main.cfを編集し、Postgreyを使うようにする。
 
   smtpd_restriction_classes =
       check_greylist
 
-  check_greylist = check_policy_service unix:/var/db/postgrey/postgrey.sock
+  check_greylist = check_policy_service inet:10023
 
   smtpd_recipient_restrictions =
-      ...
-      reject_unauth_destination
       check_client_access regexp:/usr/local/etc/postfix/check_client_fqdn
       ...
+
+  policy_time_limit = 3600
 
 /usr/local/etc/postfix/check_client_fqdnを作る。
 
