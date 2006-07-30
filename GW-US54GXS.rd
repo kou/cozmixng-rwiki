@@ -95,10 +95,11 @@ USB IDはこんな感じ。
       wireless_key XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XX
       pre-up /sbin/iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
       pre-up /etc/init.d/dhcp stop
+      pre-up /etc/init.d/bind stop
       post-up iwpriv wlan0 set_mac_mode 1
       post-up /etc/init.d/dhcp start
-      post-up /etc/init.d/bind restart
-      post-up /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
+      post-up /etc/init.d/bind start
+      post-down /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
 
 wireless_keyに設定する
 
