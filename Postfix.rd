@@ -248,3 +248,7 @@ Mewなら
   /^(dhcp|dialup|ppp|adsl)[^\.]*[0-9]/         check_greylist
 
 これは、データベース扱いにしていないので、postmapはしなくてもいい。
+
+あとは、設定を再読み込みする。
+
+  % sudo /usr/local/etc/rc.d/postfix.sh reload
