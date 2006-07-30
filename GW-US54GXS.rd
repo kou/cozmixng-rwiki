@@ -119,6 +119,10 @@ wireless_keyに設定する
 
   % sudo /etc/init.d/networking restart
 
+IPマスカレードを使うので、iptablesをインストールする。
+
+  % sudo aptitude -V -r install iptables
+
 === DHCPサーバの設定
 
 とりあえず，インストール．
