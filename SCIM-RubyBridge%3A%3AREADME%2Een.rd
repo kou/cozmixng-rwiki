@@ -30,7 +30,7 @@ write an IM engine for SCIM by Ruby.
 == Dependency libraries
 
   * ((<SCIM|URL:http://www.scim-im.org/>))
-  * ((<scim|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=scim)):
+  * ((<scim|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=scim>)):
     A Ruby bindings for SCIM
 
 == Get
