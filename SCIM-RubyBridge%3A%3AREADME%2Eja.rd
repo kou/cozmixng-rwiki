@@ -30,7 +30,7 @@ Rubyで書けるようにするための，SCIM用IMエンジンです．
 == 依存ライブラリ
 
   * ((<SCIM|URL:http://www.scim-im.org/>))
-  * ((<scim|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=scim)):
+  * ((<scim|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=scim>)):
     SCIMのRubyバインディング
 
 == 入手方法
