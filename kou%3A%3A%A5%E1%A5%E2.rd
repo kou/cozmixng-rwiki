@@ -1,5 +1,11 @@
 = kou::メモ
 
+  * Xでデュアルディスプレイしてみた．参考になったところ．
+
+    * ((<Xinerama on a laptop with Intel GMA950 - Ubuntu Forums|URL:http://www.ubuntuforums.org/showthread.php?p=1432453>))
+    * ((<Xinerama HowTo|URL:http://ubuntuforums.org/showthread.php?t=221174>))
+
+
   * ((<TinyMCE Javascript Content Editor|URL:http://tinymce.moxiecode.com/>))
 
   * ((<Istanbul|URL:http://live.gnome.org/Istanbul>))
