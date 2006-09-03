@@ -788,6 +788,7 @@ page from XXX.rd.
       generation.
     * He makes Mac OS X (Intel) package.
   * atzm: He makes Gentoo package (*.ebuild).
+    * ACCEPT_KEYWORDS=~x86 FEATURES="digest" emerge rabbit
   * akira yamada: He makes Debian package (*.deb).
   * usatti: She drow some logos and taro series images.
   * dot: He helps installation on Windows.
