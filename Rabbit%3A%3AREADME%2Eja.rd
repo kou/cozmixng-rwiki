@@ -817,6 +817,8 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
     * Mac OS X(Intel)用のパッケージを作ってくれました．
   * atzmさん: Gentoo用のパッケージ（*.ebuild）を作ってくれま
     した．
+    * ACCEPT_KEYWORDS=~x86 FEATURES="digest" emerge rabbit
+      でマージされます。
   * やまだあきらさん: Debian用のパッケージ（*.deb）を作って
     くれました．
   * うさっちさん: ロゴとか，たろうシリーズなどを書いてくれま
