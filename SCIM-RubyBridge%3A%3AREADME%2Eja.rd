@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 20 2004-11-05 12:05:36Z kou $
+$Id: README.ja 16 2006-09-05 02:55:33Z kou $
 
 == 名前
 
@@ -14,7 +14,7 @@ Kouhei Sutou <kou@cozmixng.org>
 
 == ライセンス
 
-GPL
+Ruby'sまたはLGPL
 
 == メーリングリスト
 
@@ -24,14 +24,16 @@ GPL
 
 == なにこれ？
 
+((<SCIM|URL:http://www.scim-im.org/>))のRubyバインディングと
 ((<SCIM|URL:http://www.scim-im.org/>))のためのIMエンジンを
-Rubyで書けるようにするための，SCIM用IMエンジンです．
+Rubyで書けるようにするための，SCIM用IMエンジンです．RubyとC
+のインターフェイスは((<SWIG|URL:http://www.swig.org/>))で生
+成しています．
 
 == 依存ライブラリ
 
   * ((<SCIM|URL:http://www.scim-im.org/>))
-  * ((<scim|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=scim>)):
-    SCIMのRubyバインディング
+  * ((<SWIG|URL:http://www.swig.org/>))
 
 == 入手方法
 
@@ -53,3 +55,5 @@ Rubyで書けるようにするための，SCIM用IMエンジンです．
 
   * Ruby: 入力されたテキストをRubyの式として評価し，その結果
     を変換結果とするIMエンジン
+
+== 感謝
