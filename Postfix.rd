@@ -247,7 +247,6 @@ Postgreyを起動する。
 
   smtpd_recipient_restrictions =
       permit_sasl_authenticated
-      permit_auth_destination
       check_client_access regexp:/usr/local/etc/postfix/check_client_fqdn
       ...
 
