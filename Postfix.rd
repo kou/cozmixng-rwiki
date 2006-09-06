@@ -246,6 +246,8 @@ Postgreyを起動する。
   check_greylist = check_policy_service inet:10023
 
   smtpd_recipient_restrictions =
+      permit_sasl_authenticated
+      permit_auth_destination
       check_client_access regexp:/usr/local/etc/postfix/check_client_fqdn
       ...
 
