@@ -100,9 +100,24 @@ There is the following option for controlling (({rss_recent})).
    (({rss_recent})) uses a image as link if
    /rdf:RDF/image/url and so on are available.
 
+== FAQ
+
+=== I want to parse RSS 0.90
+
+Sometimes RSS 0.90 can be treated as RSS 1.0. If you need to
+parse an RSS 0.90 feed try to run the following:
+
+  def rss090_to_rss10(feed)
+    feed.sub(%r{xmlns=(['"])http://my.netscape.com/rdf/simple/0.9/\1},
+             'xmlns="http://purl.org/rss/1.0/"')
+  end
+  rss = RSS::Parser.parse(rss090_to_rss10(feed), false)
+
 == Thanks
 
   * Kazuhiko: He sent me many bug reports.
   * Tomoaki: He sent me a bug report of documents.
   * Chris Lee: He sent me a bug report.
   * Ronald Pijnacker: He sent me a bug report.
+  * Christian W. Zuckschwerdt: He gave me an advice for
+    treating RSS 0.90.
