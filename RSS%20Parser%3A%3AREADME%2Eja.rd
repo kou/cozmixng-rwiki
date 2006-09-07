@@ -103,9 +103,25 @@ sample/tdiary_pluginの下にあるrss-recent.rbをtDiaryのプラグ
    /rdf:RDF/image/urlなど，リンク時に画像として使えるよう
    な情報があればそれを使用します．
 
+== FAQ
+
+=== RSS 0.90をパースしたい
+
+RSS 0.90はRSS 1.0として扱えることもあります．もし，RSS 0.90
+をパースしたい場合は，以下のようにRSS 1.0としてパースするこ
+とが出来ます．
+
+  def rss090_to_rss10(feed)
+    feed.sub(%r{xmlns=(['"])http://my.netscape.com/rdf/simple/0.9/\1},
+             'xmlns="http://purl.org/rss/1.0/"')
+  end
+  rss = RSS::Parser.parse(rss090_to_rss10(feed), false)
+
 == 感謝
 
   * かずひこさん: いろいろバグを報告してくれました．
   * 秋山智朗さん: ドキュメントのバグを報告してくれました．
   * Chris Leeさん: バグを報告してくれました．
   * Ronald Pijnackerさん: バグを報告してくれました．
+  * Christian W. Zuckschwerdtさん: RSS 0.90の扱いについてア
+    ドバイスしてくれました．
