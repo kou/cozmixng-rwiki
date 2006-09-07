@@ -1,1 +1,13 @@
-= COZMIXNG RWiki  ようこそ，((&lt;COZMIXNG&gt;))へ．   == 目次    * ((&lt;参加者&gt;))   * ((&lt;活動&gt;))   * ((&lt;ToWantToDo&gt;))   * ((&lt;作業記録&gt;))   * ((&lt;連絡先&gt;))   * ((&lt;リンク&gt;))   * ((&lt;ヘルプ|help&gt;)) 
+= COZMIXNG RWiki
+
+ようこそ，((<COZMIXNG>))へ．
+ 
+== 目次
+
+  * ((<参加者>))
+  * ((<活動>))
+  * ((<ToWantToDo>))
+  * ((<作業記録>))
+  * ((<連絡先>))
+  * ((<リンク>))
+  * ((<ヘルプ|help>))
