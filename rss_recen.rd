@@ -1,2 +1,0 @@
-Hi this is a very informative site! It's nice on the whole but it seems that the navigation system is a little bit confusing. 
- <a href="http://creditss.by.ru">Автокредит</a>  <a href="http://razors.by.ru/forums0.html">бритвы</a>  [url]http://coffees.by.ru/forums0.html[/url]  [url]http://leaflets.boom.ru[/url]  [url=http://butter.by.ru/forums0.html]маслмоторное[/url]  [url=http://leaflets.boom.ru/forums0.html]разносчилистовок[/url]  http://gloves-knitted.boom.ru  http://teapot-2006.by.ru/forums0.html
