@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<Stu Nicholls | CSSplay | Cross Browser Multi Page Photograph Gallery|URL:http://www.cssplay.co.uk/menu/lightbox.html>))
+
   * Xでデュアルディスプレイしてみた．参考になったところ．
 
     * ((<Xinerama on a laptop with Intel GMA950 - Ubuntu Forums|URL:http://www.ubuntuforums.org/showthread.php?p=1432453>))
@@ -475,7 +477,7 @@
 
       user_pref("mozilla.widget.raise-on-setfocus", false);
 
-    と書けば幸せになれるらしい．
+    と書けば幸せにな&#12394;&#65533;譴襪蕕靴ぁ&#12353;&#65533;
 
   * [e-moriokaコミュニティ] 会員登録しないとMLに参加できないのか．参加するには各団体の管理者にメールだってさ．閉じてるなぁというかそのくらい自動化しようよというか．
 
