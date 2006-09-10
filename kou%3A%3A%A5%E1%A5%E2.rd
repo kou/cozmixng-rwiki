@@ -1,6 +1,6 @@
 = kou::メモ
 
-  * ((<Stu Nicholls | CSSplay | Cross Browser Multi Page Photograph Gallery|URL:http://www.cssplay.co.uk/menu/lightbox.html>))
+  * ((<Cross Browser Multi Page Photograph Gallery|URL:http://www.cssplay.co.uk/menu/lightbox.html>))
 
   * Xでデュアルディスプレイしてみた．参考になったところ．
 
@@ -422,7 +422,7 @@
 
   * [JXTA] むむん？MLに入っています？？？
     * やば，やらかしたのばれちゃいましたか。 - osaru
-    * いろいろ訳があるんすよー。 - osaru
+    * いろい&#12356;&#65533;輒&#36626;&#65533;があるんすよー。 - osaru
 
   * [Debian] アップデートしたらアップデートが失敗していてEmacsの初期化がうまく動かないようになってしまった．．．これじゃ何もできないよぅ．
 
@@ -477,7 +477,7 @@
 
       user_pref("mozilla.widget.raise-on-setfocus", false);
 
-    と書けば幸せにな&#12394;&#65533;譴襪蕕靴ぁ&#12353;&#65533;
+    と書けば幸せになれるらしい．
 
   * [e-moriokaコミュニティ] 会員登録しないとMLに参加できないのか．参加するには各団体の管理者にメールだってさ．閉じてるなぁというかそのくらい自動化しようよというか．
 
