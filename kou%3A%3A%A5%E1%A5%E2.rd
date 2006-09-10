@@ -46,7 +46,7 @@
 
   * ((<Quick reStructuredText|URL:http://docutils.sourceforge.net/docs/user/rst/quickref.html>))
 
-  * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): ソースコードをハイライト．
+  * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): ソースコードをハイライト
 
   * ((<Feed Icons|URL:http://feedicons.com/>))
 
@@ -422,7 +422,7 @@
 
   * [JXTA] むむん？MLに入っています？？？
     * やば，やらかしたのばれちゃいましたか。 - osaru
-    * いろい&#12356;&#65533;輒&#36626;&#65533;があるんすよー。 - osaru
+    * いろいろ訳があるんすよー。 - osaru
 
   * [Debian] アップデートしたらアップデートが失敗していてEmacsの初期化がうまく動かないようになってしまった．．．これじゃ何もできないよぅ．
 
