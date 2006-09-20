@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ((<「OpenGLを使ってJavaでも3Dを楽しもう」：ITpro|URL:http://itpro.nikkeibp.co.jp/article/COLUMN/20060703/242298/>))
+
   * ((<Cross Browser Multi Page Photograph Gallery|URL:http://www.cssplay.co.uk/menu/lightbox.html>))
 
   * Xでデュアルディスプレイしてみた．参考になったところ．
