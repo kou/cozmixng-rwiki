@@ -1,2 +1,0 @@
-Hello! Great site keep it up! Thank you! 
- <a href="http://download-free-ringtone-wav.sotdiha.com">download free ringtone wav</a>  <a href="http://country-style-furniture.rubite.net">country style furniture</a>  [url]http://victorian-style-furniture.sotdiha.com[/url]  [url]http://restrest.by.ru[/url]  [url=http://sports-betting-news.zamesto.net]sports betting news[/url]  [url=http://download-free-ringtone-wav.yaproveru.com]download free ringtone wav[/url]  http://bankk.by.ru  http://device-roofing.by.ru
