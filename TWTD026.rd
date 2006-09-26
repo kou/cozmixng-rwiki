@@ -7,7 +7,7 @@
 * 種類: task
 * イテレーション: 2
 * サイン: ((<kou>))
-* 状態: open
+* 状態: close
 * 見積: 0 / 0
 
 == description
@@ -20,4 +20,5 @@
 == history
 
 * 2006-07-21 kou: open
+* 2006-09-26 kou: close
 
