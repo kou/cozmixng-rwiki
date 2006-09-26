@@ -7,7 +7,7 @@
 * 種類: story
 * イテレーション: 2
 * サイン: ((<kou>))
-* 状態: open
+* 状態: close
 * 見積: 0 / 0
 
 == description
@@ -20,4 +20,4 @@
 == history
 
 * 2006-07-01 kou: open
-
+* 2006-09-26 kou: close
