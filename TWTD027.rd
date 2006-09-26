@@ -5,7 +5,7 @@ SubversionのRubyバインディングを最新のRuby-GetTextに対応させる
 == status
 
 * 種類: task
-* イテレーション: 
+* イテレーション: 3
 * サイン: ((<kou>))
 * 状態: close
 * 見積: 0 / 0
