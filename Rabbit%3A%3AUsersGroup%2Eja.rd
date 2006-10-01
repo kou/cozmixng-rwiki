@@ -110,7 +110,7 @@
     * ((<A Strolling Programmer|URL:http://www.rubyist.net/~nobu/t/>))
 
   * あかぴさん
-      * ((<あかぴのChangeLogメモ / 2006-09-30|URL:http://pub.cozmixng.org/~akapy/ChangeLogMemo/2006-09-30.html>)) 
+      * ((<あかぴのChangeLogメモ|URL:http://pub.cozmixng.org/~akapy/ChangeLogMemo/>)) 
 
   * ...
 
