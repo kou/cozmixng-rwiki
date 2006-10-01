@@ -108,6 +108,10 @@
     * ((<ratio - rational - irrational @ IDM|URL:http://idm.s9.xrea.com/ratio/>))
   * なかださん
     * ((<A Strolling Programmer|URL:http://www.rubyist.net/~nobu/t/>))
+
+  * あかぴさん
+      * ((<あかぴのChangeLogメモ / 2006-09-30|URL:http://pub.cozmixng.org/~akapy/ChangeLogMemo/2006-09-30.html>)) 
+
   * ...
 
 == 参加しようかなぁな人達
@@ -117,5 +121,3 @@
 この人達の要望の方が高い優先度になったりします．
 
   * ...
-  * あかぴ
-    * MagicPointはちょっとだけ使ったことがあるような気がするけど。関係ないか。。
