@@ -156,6 +156,7 @@ Test::Unitを拡張する．
 
 使いかたはこんな感じ
 
+  # enscript ruby
   class SomeTest < Test::Unit::TestCase
     priority :must
     def test_必ず実行されるテスト
