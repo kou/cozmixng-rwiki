@@ -116,7 +116,7 @@ Test::Unitを拡張する．
       end
 
       class TestSuite
-        @@priority_mode = true
+        @@priority_mode = false
 
         class << self
           def priority_mode=(bool)
