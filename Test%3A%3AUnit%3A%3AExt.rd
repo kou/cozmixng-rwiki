@@ -37,7 +37,7 @@ Test::Unitを拡張する．
 == テストに優先度をつける
 
 参考: あれ？iTunesのレートみたいにしてテストを回すみたいなの
-がdruby.orgにあった気がしたんだけどなぁ．
+がdruby.orgにあった気がした&#12383;&#65533;鵑世韻匹覆　&#12288;&#65533;
 
   # enscript ruby
   require 'test/unit'
@@ -106,7 +106,7 @@ Test::Unitを拡張する．
           end
 
           def run_priority_low?(test_name)
-            rand > 1
+            rand > 0.75
           end
         end
 
