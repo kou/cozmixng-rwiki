@@ -37,10 +37,10 @@ Test::Unitを拡張する．
 == テストに優先度をつける
 
 参考: あれ？iTunesのレートみたいにしてテストを回すみたいなの
-がdruby.orgにあった気がした&#12383;&#65533;鵑世韻匹覆　&#12288;&#65533;
+がdruby.orgにあった気がしたんだけどなぁ．
 
   # enscript ruby
-  require 'test/unit'
+  require "test/unit"
 
   module Test
     module Unit
@@ -116,7 +116,8 @@ Test::Unitを拡張する．
       end
 
       class TestSuite
-        @@priority_mode = false
+        @@priority_mode = true
+
         class << self
           def priority_mode=(bool)
             @@priority_mode = bool
@@ -125,14 +126,18 @@ Test::Unitを拡張する．
 
         alias_method :original_run, :run
         def run(*args, &block)
-          apply_priority if @@priority_mode
+          priority_mode = @@priority_mode
+          if priority_mode
+            @original_tests = @tests
+            apply_priority
+          end
           original_run(*args, &block)
+        ensure
+          @tests = @original_tests if priority_mode
         end
 
         def apply_priority
-          @original_tests ||= nil
-          @original_tests, @tests = @tests, @original_tests
-          @tests = @original_tests.reject {|test| !test.need_to_run?}
+          @tests = @tests.reject {|test| !test.need_to_run?}
         end
 
         def need_to_run?
