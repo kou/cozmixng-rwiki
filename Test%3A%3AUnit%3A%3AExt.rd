@@ -39,17 +39,17 @@ Test::Unitを拡張する．
   # enscript ruby
   require "test/unit"
 
+  require "fileutils"
+
   module Test
     module Unit
       class TestCase
         class << self
           def inherited(sub)
             super
-            sub.class_eval(<<-EOC, __FILE__, __LINE__ + 1)
-              @priority_initialized = true
-              @priority_table = {}
-              priority :normal
-  EOC
+            sub.instance_variable_set("@priority_initialized", true)
+            sub.instance_variable_set("@priority_table", {})
+            sub.priority :normal
           end
 
           def method_added(name)
@@ -111,7 +111,35 @@ Test::Unitを拡張する．
         end
 
         def need_to_run?
-          self.class.need_to_run?(@method_name)
+          !previous_test_success? or self.class.need_to_run?(@method_name)
+        end
+
+        alias_method :original_run, :run
+        def run(result, &block)
+          original_run(result, &block)
+        ensure
+          if passed?
+            FileUtils.rm_f(not_passed_file)
+          else
+            FileUtils.touch(not_passed_file)
+          end
+        end
+
+        private
+        def previous_test_success?
+          not File.exist?(not_passed_file)
+        end
+
+        def result_dir
+          dir = File.join(File.dirname($0), ".test-result",
+                          self.class.name, @method_name)
+          dir = File.expand_path(dir)
+          FileUtils.mkdir_p(dir)
+          dir
+        end
+
+        def not_passed_file
+          File.join(result_dir, "not-passed")
         end
       end
 
