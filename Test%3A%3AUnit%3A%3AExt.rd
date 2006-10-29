@@ -2,7 +2,10 @@
 
 Test::Unitを拡張する．
 
+
 == ^C-cで止めても結果を表示
+
+最新版は((<こっち|URL:http://www.cozmixng.org/repos/rwiki/trunk/test/test-unit-ext/always-show-result.rb>))
 
   # enscript ruby
   require "test/unit/ui/testrunnermediator"
@@ -36,6 +39,8 @@ Test::Unitを拡張する．
 
 == テストに優先度をつける
 
+最新版は((<こっち|URL:http://www.cozmixng.org/repos/rwiki/trunk/test/test-unit-ext/priority.rb>))
+
   # enscript ruby
   require "test/unit"
 
@@ -50,6 +55,16 @@ Test::Unitを拡張する．
             sub.instance_variable_set("@priority_initialized", true)
             sub.instance_variable_set("@priority_table", {})
             sub.priority :normal
+          end
+
+          def include(*args)
+            args.reverse_each do |mod|
+              super(mod)
+              next unless defined?(@priority_initialized)
+              mod.instance_methods(false).each do |name|
+                set_priority(name)
+              end
+            end
           end
 
           def method_added(name)
