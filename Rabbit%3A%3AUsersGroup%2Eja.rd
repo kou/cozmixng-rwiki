@@ -112,6 +112,12 @@
   * あかぴさん
       * ((<あかぴのChangeLogメモ|URL:http://pub.cozmixng.org/~akapy/ChangeLogMemo/cat_rabbit.html>)) 
 
+  * moroさん
+    * ((<moroの日記|URL:http://d.hatena.ne.jp/moro/>))
+
+  * ささださん
+    * ((<DA|URL:http://www.atdot.net/~ko1/diary/>))
+
   * ...
 
 == 参加しようかなぁな人達
