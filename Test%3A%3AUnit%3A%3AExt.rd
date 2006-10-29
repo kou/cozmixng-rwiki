@@ -56,18 +56,18 @@ Test::Unitを拡張する．
             set_priority(name) if defined?(@priority_initialized)
           end
 
-	  def priority(name, *tests)
-	    unless private_methods.include?(priority_check_method_name(name))
-	      raise ArgumentError, "unknown priority: #{name}"
-	    end
-	    if tests.empty?
-	      @current_priority = name
-	    else
-	      tests.each do |test|
-		set_priority(test, name)
-	      end
-	    end
-	  end
+          def priority(name, *tests)
+            unless private_methods.include?(priority_check_method_name(name))
+              raise ArgumentError, "unknown priority: #{name}"
+            end
+            if tests.empty?
+              @current_priority = name
+            else
+              tests.each do |test|
+                set_priority(test, name)
+              end
+            end
+          end
 
           def need_to_run?(test_name)
             normalized_test_name = normalize_test_name(test_name)
