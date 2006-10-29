@@ -36,9 +36,6 @@ Test::Unitを拡張する．
 
 == テストに優先度をつける
 
-参考: あれ？iTunesのレートみたいにしてテストを回すみたいなの
-がdruby.orgにあった気がしたんだけどなぁ．
-
   # enscript ruby
   require "test/unit"
 
@@ -59,15 +56,18 @@ Test::Unitを拡張する．
             set_priority(name) if defined?(@priority_initialized)
           end
 
-          def priority(name, *tests)
-            unless private_methods.include?(priority_check_method_name(name))
-              raise ArgumentError, "unknown priority: #{name}"
-            end
-            @current_priority = name
-            tests.each do |test|
-              set_priority(test)
-            end
-          end
+	  def priority(name, *tests)
+	    unless private_methods.include?(priority_check_method_name(name))
+	      raise ArgumentError, "unknown priority: #{name}"
+	    end
+	    if tests.empty?
+	      @current_priority = name
+	    else
+	      tests.each do |test|
+		set_priority(test, name)
+	      end
+	    end
+	  end
 
           def need_to_run?(test_name)
             normalized_test_name = normalize_test_name(test_name)
