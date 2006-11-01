@@ -1,3 +1,3 @@
 = Rabbit::FAQ.en
 
-gjvklgyikmn, 
+Comming soon ...?
