@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 768 2006-06-12 12:33:07Z kou $
+$Id: README.ja 832 2006-11-03 02:10:43Z kou $
 
 == 名前
 
@@ -218,6 +218,14 @@ Windowsでの依存ライブラリのインストールは
   # ruby setup.rb
 
 Windowsの場合はinstall.batを実行してもインストールできます．
+
+=== Gentoo (Portage)
+
+これでインストールできるようです．
+
+  % sudo env ACCEPT_KEYWORDS=~x86 FEATURES="digest" emerge rabbit
+
+((%% sudo emerge rabbit%))だけじゃだめなのかなぁ．
 
 == 使い方
 
@@ -780,15 +788,10 @@ Markup|URL:http://developer.gnome.org/doc/API/2.4/pango/PangoMarkupFormat.html>)
 
 === 1ページに複数枚のスライドが入ったPDFを作る
 
-以下のものを用意してください．
-
-  * ps2pdf
-
 XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
 作成する手順は以下の通りです．
 
-  % rabbit -p --slides-per-page 8 -o XXX.ps XXX.rd
-  % ps2pdf XXX.ps
+  % rabbit -p --slides-per-page 8 -o XXX_multi.pdf XXX.rd
 
 == 感謝
 
@@ -817,8 +820,6 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
     * Mac OS X(Intel)用のパッケージを作ってくれました．
   * atzmさん: Gentoo用のパッケージ（*.ebuild）を作ってくれま
     した．
-    * ACCEPT_KEYWORDS=~x86 FEATURES="digest" emerge rabbit
-      でマージされます。
   * やまだあきらさん: Debian用のパッケージ（*.deb）を作って
     くれました．
   * うさっちさん: ロゴとか，たろうシリーズなどを書いてくれま
@@ -834,3 +835,4 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
   * 木村さん: Mac OS X用のパッケージを作ってくれました．
   * kitajさん: Windowsへのインストール方法の間違いを指摘して
     くれました．
+  * あかぴさん: emergeについてのドキュメントを書いてくれました．
