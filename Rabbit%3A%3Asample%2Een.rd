@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 719 2006-03-18 09:57:09Z kou $
+# $Id: rabbit_en.rd 831 2006-11-02 15:36:41Z kou $
 
 = Rabbit(en)
 
@@ -63,6 +63,8 @@ A presentation tool
 
   * organize screenshots
   * mouse gesture
+  * spotlight
+  * magnifier
 
 = Not available
 
@@ -84,9 +86,6 @@ A presentation tool
 
   * can save slides as image
   * can save simple HTML for viewing images
-  * but ...
-    * organizing screenshots beautifully is the work of other tools
-    * ((<RAA:gallery>)), zphoto and so on
 
 = What about image?
 
@@ -258,7 +257,7 @@ What about?
   Heading 1, Heading 2
 
   content 1, content 2
-  very long content 3, veeeery loooooooooooooooooooooooooooong content 4
+  very long content 3, veeeery looooooooooooooooooooooong content 4
 
 = How to write theme
 
@@ -269,9 +268,6 @@ Ahh, I'll set up more better documents.
 
 = Key (basic)
 
-: Quit
-   q, Esc
-
 : Next page
    n, f, j, l, Spc, Ret, Tab, +, (('&DownArrow;')),
    (('&RightArrow;')), left click, ...
@@ -279,6 +275,11 @@ Ahh, I'll set up more better documents.
 : Previous page
    p, b, k, h, BS, Del, -, (('&UpArrow;')),
    (('&LeftArrow;')), center click, ...
+
+= Key (basic2)
+
+: Quit
+   q, Esc
 
 = Key (convenience)
 
@@ -297,7 +298,7 @@ Ahh, I'll set up more better documents.
 : Toggle index mode
    i
 
-: Go to the page in index mode
+: Go to the page
    double click
 
 = Key (feature)
@@ -349,6 +350,9 @@ Ahh, I'll set up more better documents.
 
 : Cache all slides
    c
+
+: Toggle information window
+   I
 
 = Finish
 
