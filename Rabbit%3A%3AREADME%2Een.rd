@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 768 2006-06-12 12:33:07Z kou $
+$Id: README.en 832 2006-11-03 02:10:43Z kou $
 
 == Name
 
@@ -215,6 +215,12 @@ The old repository is here.
   # ruby setup.rb
 
 Execute install.bat if you are on Windows.
+
+=== Gentoo (Portage)
+
+  % sudo env ACCEPT_KEYWORDS=~x86 FEATURES="digest" emerge rabbit
+
+((%% sudo emerge rabbit%)) only isn't enough???
 
 == Usage
 
@@ -754,15 +760,10 @@ The `default' theme has more code. Please see it.
 
 === To make a PDF which has some slides per page
 
-You need the following:
-
-  * ps2pdf
-
 For example, we make XXX_multi.pdf which has 8 slides per
 page from XXX.rd.
 
-  % rabbit -p --slides-per-page 8 -o XXX.ps XXX.rd
-  % ps2pdf XXX.ps
+  % rabbit -p --slides-per-page 8 -o XXX_multi.pdf XXX.rd
 
 == Thanks
 
@@ -788,7 +789,6 @@ page from XXX.rd.
       generation.
     * He makes Mac OS X (Intel) package.
   * atzm: He makes Gentoo package (*.ebuild).
-    * ACCEPT_KEYWORDS=~x86 FEATURES="digest" emerge rabbit
   * akira yamada: He makes Debian package (*.deb).
   * usatti: She drow some logos and taro series images.
   * dot: He helps installation on Windows.
@@ -798,4 +798,5 @@ page from XXX.rd.
     reporting and some bug reports.
   * Atsushi Takeda: He wrote rabbit mode for Emacs.
   * kimura wataru: He makes Mac OS X package.
-  * kitaj: He points out minor miss in INSTALL.win32.en.
+  * kitaj: He pointed out minor miss in INSTALL.win32.en.
+  * akapy: He wrote a document for emerge.
