@@ -1,2 +1,0 @@
-The difference between what we do and what we are capable of doing would suffice to solve most of the world's problems. 
- <a href="http://work-shoes.pifko.pl">timberland work shoes</a>  <a href="http://migraine-vintage.vserpi.com">migraine vintage</a>  [url]http://ocular-migraine.voinu.com[/url]  [url]http://abdominal-migraine.singova.org[/url]  [url=http://migraine-silent-symptom.vstaet.com]migraine silent symptom[/url]  [url=http://insurance-mortgage.pochta.ru]страхованирсьфкмяЉ/url]  http://discount-rug.pantyhose-net.com  http://home-migraine-remedy.idemna.com
