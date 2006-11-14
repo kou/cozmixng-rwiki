@@ -1,3 +1,0 @@
-Hi, nice site!
-<a href="http://bedding.viptemplates.com/bedding-ensemble-fleur-ribbon.html" title = "bedding ensemble fleur ribbon">bedding ensemble fleur ribbon</a><a href="http://bedding.viptemplates.com/discount-camouflage-bedding.html" title = "discount camouflage bedding">discount camouflage bedding</a><a href="http://bedding.viptemplates.com/bedding-charlotte-claiborne-liz.html" title = "bedding charlotte claiborne liz">bedding charlotte claiborne liz</a>
-http://bedding.viptemplates.com/bedding-linen-waukegan.htmlhttp://bedding.viptemplates.com/cool-bedding-for-teen-girl.htmlhttp://bedding.viptemplates.com/discontinued-child-bedding.htmlhttp://bedding.viptemplates.com/bath-bed-bedding-beyond-sheet.html
