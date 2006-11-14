@@ -11,6 +11,7 @@
 * platexサポート
 * SilverCityサポート
   * ((<CodeRay|URL:http://rd.cycnus.de/coderay/>))の方がよいかも．
+* MeCabで賢い折り返し．
 
 == Pending
 
