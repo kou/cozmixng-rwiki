@@ -1,0 +1,2 @@
+The difference between what we do and what we are capable of doing would suffice to solve most of the world's problems. 
+ <a href="http://shortlink.co.uk/f5n">kremlin putins revolution rising russia vladimir</a>  <a href="http://shortlink.co.uk/f0d">WebMD - Better Information. Better Health</a>  [url]http://shortlink.co.uk/exe[/url]  [url]http://20six.co.uk/dallascrane[/url]  [url=http://shortlink.co.uk/ext]Country homespun curtains[/url]  [url=http://shortlink.co.uk/ex5]Hgtv kitchen design[/url]  http://shortlink.co.uk/f3o  http://shortlink.co.uk/ex6
