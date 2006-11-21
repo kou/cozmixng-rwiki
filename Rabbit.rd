@@ -6,8 +6,44 @@
   # description = マスコット
   # class = right
 
-キャッチコピー（案）: 「RubyでできてるRabbitです」
+== Rabbitとは
+Rabbitは、RDで書かれた文書をもとにプレゼンテーションを行うソフトウェアです．
 
+RDはRuby Documentの略で、素の状態でも読み書きしやすいようにデザインされたテキストの書式です．Wikiに近い書きかたなので比較的簡単に理解できます．RDの書式については
+((<こちら|URL:http://www9.ocn.ne.jp/~ymt/ruby/rd.html>))
+をご覧ください．
+
+Rabbitのアーカイブは3.5MBほどあるのでコンパイルに時間がかかると思われるかもしれませんが、
+ほとんどはスクリプトとデータなのでインストールは短時間で済みます．
+
+== スクリーンショット
+((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
+
+== ダウンロード
+The latest version: 0.5.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.0.tar.gz>)))
+
+== インストールに必要なもの
+*ruby-gtk2 (多くのディストリビューションではパッケージが用意されています)
+*((<rdtool|URL:http://raa.ruby-lang.org/cache/rdtool/>)) (おそらくパッケージが用意されていないので、手動でインストールしてください)
+
+== インストール方法
+1. ruby-gtk2 をインストール
+
+2. rdtool をインストール
+ # ruby setup.rb
+
+3. Rabbit をインストール
+ # ruby setup.rb
+
+== 試しに使ってみる
+ $ cd sample
+ $ rabbit lightning-talk.rd
+右クリックをするとコンテキストメニューが現れるので、そこから各種の操作を行ってください．
+
+== キャッチコピー（案）
+「RubyでできてるRabbitです」
+
+== バナー
 バナー始めました．
 
       # image
@@ -26,12 +62,7 @@
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-heads.png
   # description = バナー（あたま）
 
-The latest version: 0.5.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.0.tar.gz>)))
-
-((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
-
-
-
+== 各種出力
 印刷出力(0.5.0):
 ((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.0.ps>)) /
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.0.pdf>))
@@ -48,6 +79,7 @@ Printed output (index) (0.5.0):
 ((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.0.ps>))/
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.0.pdf>))
 
+== BTS
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
 == ドキュメント/Documents
