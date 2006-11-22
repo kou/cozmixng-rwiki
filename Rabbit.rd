@@ -7,6 +7,7 @@
   # class = right
 
 == Rabbit¤È¤Ï/What is Rabbit?
+
 Rabbit¤Ï¡¢RD¤Ç½ñ¤«¤ì¤¿Ê¸½ñ¤ò¤â¤È¤Ë¥×¥ì¥¼¥ó¥Æ¡¼¥·¥ç¥ó¤ò¹Ô¤¦¥½¥Õ¥È¥¦¥§¥¢¤Ç¤¹¡¥
 
 RD¤ÏRuby Document¤ÎÎ¬¤Ç¡¢ÁÇ¤Î¾õÂÖ¤Ç¤âÆÉ¤ß½ñ¤­¤·¤ä¤¹¤¤¤è¤¦¤Ë¥Ç¥¶¥¤¥ó¤µ¤ì¤¿¥Æ¥­¥¹¥È¤Î½ñ¼°¤Ç¤¹¡¥Wiki¤Ë¶á¤¤½ñ¤­¤«¤¿¤Ê¤Î¤ÇÈæ³ÓÅª´ÊÃ±¤ËÍý²ò¤Ç¤­¤Þ¤¹¡¥RD¤Î½ñ¼°¤Ë¤Ä¤¤¤Æ¤Ï
@@ -17,33 +18,39 @@ Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤
 ¤Û¤È¤ó¤É¤Ï¥¹¥¯¥ê¥×¥È¤È¥Ç¡¼¥¿¤Ê¤Î¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤ÏÃ»»þ´Ö¤ÇºÑ¤ß¤Þ¤¹¡¥
 
 == ¥¹¥¯¥ê¡¼¥ó¥·¥ç¥Ã¥È/Screenshot
+
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
 == ¥À¥¦¥ó¥í¡¼¥É/Download
+
 The latest version: 0.5.0(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.0.tar.gz>)))
 
 == ¥¤¥ó¥¹¥È¡¼¥ë¤ËÉ¬Í×¤Ê¤â¤Î/Requirements
-*ruby-gtk2 (Â¿¤¯¤Î¥Ç¥£¥¹¥È¥ê¥Ó¥å¡¼¥·¥ç¥ó¤Ç¤Ï¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Þ¤¹)
-*((<rdtool|URL:http://raa.ruby-lang.org/cache/rdtool/>)) (¤ª¤½¤é¤¯¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢¼êÆ°¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¯¤À¤µ¤¤)
+
+  * ruby-gtk2 (Â¿¤¯¤Î¥Ç¥£¥¹¥È¥ê¥Ó¥å¡¼¥·¥ç¥ó¤Ç¤Ï¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Þ¤¹)
+  * ((<rdtool|URL:http://raa.ruby-lang.org/cache/rdtool/>)) (¤ª¤½¤é¤¯¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢¼êÆ°¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¯¤À¤µ¤¤)
 
 == ¥¤¥ó¥¹¥È¡¼¥ëÊýË¡/Installation
-1. ruby-gtk2 ¤ò¥¤¥ó¥¹¥È¡¼¥ë
 
-2. rdtool ¤ò¥¤¥ó¥¹¥È¡¼¥ë
- # ruby setup.rb
+  1. ruby-gtk2 ¤ò¥¤¥ó¥¹¥È¡¼¥ë
+  2. rdtool ¤ò¥¤¥ó¥¹¥È¡¼¥ë
+       # ruby setup.rb
+  3. Rabbit ¤ò¥¤¥ó¥¹¥È¡¼¥ë
+       # ruby setup.rb
 
-3. Rabbit ¤ò¥¤¥ó¥¹¥È¡¼¥ë
- # ruby setup.rb
+== »î¤·¤Ë»È¤Ã¤Æ¤ß¤ë/Try it
 
-== »î¤·¤Ë»È¤Ã¤Æ¤ß¤ë/Test it
- $ cd sample
- $ rabbit lightning-talk.rd
+  $ cd sample
+  $ rabbit lightning-talk.rd
+
 ±¦¥¯¥ê¥Ã¥¯¤ò¤¹¤ë¤È¥³¥ó¥Æ¥­¥¹¥È¥á¥Ë¥å¡¼¤¬¸½¤ì¤ë¤Î¤Ç¡¢¤½¤³¤«¤é³Æ¼ï¤ÎÁàºî¤ò¹Ô¤Ã¤Æ¤¯¤À¤µ¤¤¡¥
 
 == ¥­¥ã¥Ã¥Á¥³¥Ô¡¼¡Ê°Æ¡Ë/Promo word
+
 ¡ÖRuby¤Ç¤Ç¤­¤Æ¤ëRabbit¤Ç¤¹¡×
 
 == ¥Ð¥Ê¡¼/Banner
+
 ¥Ð¥Ê¡¼»Ï¤á¤Þ¤·¤¿¡¥
 
       # image
@@ -63,6 +70,7 @@ The latest version: 0.5.0(((<download|URL:http://www.cozmixng.org/~kou/download/
   # description = ¥Ð¥Ê¡¼¡Ê¤¢¤¿¤Þ¡Ë
 
 == °õºþ½ÐÎÏ/Printed output
+
 °õºþ½ÐÎÏ(0.5.0):
 ((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.0.ps>)) /
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.0.pdf>))
@@ -80,6 +88,7 @@ Printed output (index) (0.5.0):
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.0.pdf>))
 
 == BTS
+
 ((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
 
 == ¥É¥­¥å¥á¥ó¥È/Documents
@@ -110,5 +119,6 @@ Printed output (index) (0.5.0):
   * ((<ToDo|Rabbit::ToDo>))
 
 == ¥³¥á¥ó¥È/Comments
+
   * ¡Ö¤ë¤Ó¤Þ¡×¤Ë³ÑÃ«¤µ¤ó¤Èkou¤¯¤óÅÐ¾ì  ((<URL:http://jp.rubyist.net/magazine/?0014-Hotlinks>))
     * Å¬Åö¤Ê¤È¤³¤Ë°ÜÆ°¤·¤Æ¤¯¤À¤µ¤¤¡£- akapy
