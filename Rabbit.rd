@@ -10,6 +10,11 @@
 
 Rabbit¤Ï¡¢RD¤Ç½ñ¤«¤ì¤¿Ê¸½ñ¤ò¤â¤È¤Ë¥×¥ì¥¼¥ó¥Æ¡¼¥·¥ç¥ó¤ò¹Ô¤¦¥½¥Õ¥È¥¦¥§¥¢¤Ç¤¹¡¥
 
+Rabbit is a presentation software. It shows RD (Ruby Document) files beautifully.
+Rabbit is rather big (3.5MB), but you can install it quickly (Rabbit is written in Ruby).
+See ((<README.en|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit%3A%3AREADME.en>))
+for more information.
+
 RD¤ÏRuby Document¤ÎÎ¬¤Ç¡¢ÁÇ¤Î¾õÂÖ¤Ç¤âÆÉ¤ß½ñ¤­¤·¤ä¤¹¤¤¤è¤¦¤Ë¥Ç¥¶¥¤¥ó¤µ¤ì¤¿¥Æ¥­¥¹¥È¤Î½ñ¼°¤Ç¤¹¡¥Wiki¤Ë¶á¤¤½ñ¤­¤«¤¿¤Ê¤Î¤ÇÈæ³ÓÅª´ÊÃ±¤ËÍý²ò¤Ç¤­¤Þ¤¹¡¥RD¤Î½ñ¼°¤Ë¤Ä¤¤¤Æ¤Ï
 ((<¤³¤Á¤é|URL:http://www9.ocn.ne.jp/~ymt/ruby/rd.html>))
 ¤ò¤´Í÷¤¯¤À¤µ¤¤¡¥
@@ -17,7 +22,7 @@ RD¤ÏRuby Document¤ÎÎ¬¤Ç¡¢ÁÇ¤Î¾õÂÖ¤Ç¤âÆÉ¤ß½ñ¤­¤·¤ä¤¹¤¤¤è¤¦¤Ë¥Ç¥¶¥¤¥ó¤µ¤ì¤¿¥Æ¥­¥¹¥
 Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤Þ¤»¤ó¤¬¡¢
 ¤Û¤È¤ó¤É¤Ï¥¹¥¯¥ê¥×¥È¤È¥Ç¡¼¥¿¤Ê¤Î¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤ÏÃ»»þ´Ö¤ÇºÑ¤ß¤Þ¤¹¡¥
 
-== ¥¹¥¯¥ê¡¼¥ó¥·¥ç¥Ã¥È/Screenshot
+== ¥¹¥¯¥ê¡¼¥ó¥·¥ç¥Ã¥È/Screenshots
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
@@ -27,7 +32,7 @@ The latest version: 0.5.0(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == ¥¤¥ó¥¹¥È¡¼¥ë¤ËÉ¬Í×¤Ê¤â¤Î/Requirements
 
-  * ruby-gtk2 (Â¿¤¯¤Î¥Ç¥£¥¹¥È¥ê¥Ó¥å¡¼¥·¥ç¥ó¤Ç¤Ï¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Þ¤¹)
+  * ruby-gtk2 (Â¿¤¯¤Î¥Ç¥£¥¹¥È¥ê¥Ó¥å¡¼¥·¥ç¥ó¤Ç¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Þ¤¹)
   * ((<rdtool|URL:http://raa.ruby-lang.org/cache/rdtool/>)) (¤ª¤½¤é¤¯¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢¼êÆ°¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¯¤À¤µ¤¤)
 
 == ¥¤¥ó¥¹¥È¡¼¥ëÊýË¡/Installation
