@@ -1,5 +1,13 @@
-Topic-starter of the rights, this acknowledgement there is here is this sites -
-  [url=http://chameleon-tiki.maptools.org/tiki-download_wiki_attachment.php?attId=330]amoxicillin[/url]   
-   <a href="http://chameleon-tiki.maptools.org/tiki-download_wiki_attachment.php?attId=330">amoxicillin</a>  
-   http://chameleon-tiki.maptools.org/tiki-download_wiki_attachment.php?attId=330  
-Thanks!
+= COZMIXNG RWiki
+
+ようこそ，((<COZMIXNG>))へ．
+ 
+== 目次
+
+  * ((<参加者>))
+  * ((<活動>))
+  * ((<ToWantToDo>))
+  * ((<作業記録>))
+  * ((<連絡先>))
+  * ((<リンク>))
+  * ((<ヘルプ|help>))
