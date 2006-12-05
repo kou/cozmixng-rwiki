@@ -1,1 +1,13 @@
-Buy Xenical, Xenical Weight Loss, Cheap Xenical, Cheapest Xenical, Xenical Onl
+= COZMIXNG RWiki
+
+ようこそ，((<COZMIXNG>))へ．
+ 
+== 目次
+
+  * ((<参加者>))
+  * ((<活動>))
+  * ((<ToWantToDo>))
+  * ((<作業記録>))
+  * ((<連絡先>))
+  * ((<リンク>))
+  * ((<ヘルプ|help>))
