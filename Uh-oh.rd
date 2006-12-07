@@ -1,1 +1,0 @@
-Keep up the outstanding work and thank you.  &lt;a href=http://anxiety.altavistacanada.info/champagne.html&gt;Champagne&lt;/a&gt; pizdadirka 
