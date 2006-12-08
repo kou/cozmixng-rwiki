@@ -114,9 +114,11 @@
 
   * moroさん
     * ((<moroの日記|URL:http://d.hatena.ne.jp/moro/>))
-
   * ささださん
     * ((<DA|URL:http://www.atdot.net/~ko1/diary/>))
+
+  * 佐々木さん
+    * ((<徒然|URL:http://orchid.ep.sci.hokudai.ac.jp/~uwabami/diary/>))
 
   * ...
 
