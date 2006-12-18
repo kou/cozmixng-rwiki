@@ -120,6 +120,9 @@
   * 佐々木さん
     * ((<徒然|URL:http://orchid.ep.sci.hokudai.ac.jp/~uwabami/diary/>))
 
+  * znzさん
+    * ((<%!zt! diary|URL:http://znz.s1.xrea.com/t/>))
+
   * ...
 
 == 参加しようかなぁな人達
