@@ -1,5 +1,0 @@
-= list
-
-beri
-
-cvsfwheiewfrdiwqdeqejeqbg
