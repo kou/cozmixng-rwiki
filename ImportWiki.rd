@@ -1,26 +1,4 @@
-<A href=" http://shrinkurl.us/1iA ">Amateur porn movie</A>
-<A href=" http://shrinkurl.us/zar ">Home porn movie</A>
-<A href=" http://shrinkurl.us/06n ">Free porn movie online</A>
-<A href=" http://shrinkurl.us/4EZ ">Video porn gratis</A>
-<A href=" http://shrinkurl.us/0l4 ">Video porn gratuite</A>
-<A href=" http://shrinkurl.us/7ey ">Free porn video clip</A>
-<A href=" http://shrinkurl.us/0Gz ">Free gay porn video</A>
-<A href=" http://shrinkurl.us/1Dx ">Free lesbian porn video</A>
-<A href=" http://shrinkurl.us/0Bw ">Amateur porn video</A>
-<A href=" http://shrinkurl.us/0vb ">Homemade porn video</A>
-<A href=" http://shrinkurl.us/0Tn ">Free teen porn video</A>
-<A href=" http://shrinkurl.us/BUl ">Porn sex video</A>
-<A href=" http://shrinkurl.us/8Ik ">Gay porn video</A>
-<A href=" http://shrinkurl.us/52Y ">Home video porn</A>
-<A href=" http://shrinkurl.us/1fU ">Free porn video sample</A>
-<A href=" http://shrinkurl.us/xlR ">Free porn video download</A>
-<A href=" http://shrinkurl.us/0Sg ">Britney spears porn video</A>
-<A href=" http://shrinkurl.us/1xc ">Teen porn video</A>
-<A href=" http://shrinkurl.us/bUy ">Free black porn video</A>
-<A href=" http://shrinkurl.us/1Qq ">Free full length porn video</A>
-<A href=" http://shrinkurl.us/0HR ">Free amateur porn video</A>
-<A href=" http://shrinkurl.us/P8Q ">Paris hilton porn video</A>
-<A href=" http://shrinkurl.us/1ur ">Lesbian porn video</A>
-<A href=" http://shrinkurl.us/iUL ">Free online porn video</A>
-<A href=" http://shrinkurl.us/fLu ">Free porn star video</A>
-<A href=" http://shrinkurl.us/1k6 ">mature porn video Porn star video</A>
+== エントリー
+
+* WiLiKi : COZMIXNG : euc-jp : http://www.cozmixng.org/~wiliki/
+* RWiki : COZMIXNG : euc-jp : http://www.cozmixng.org/~rwiki/rw-soap-server.rb
