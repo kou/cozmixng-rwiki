@@ -1,5 +1,9 @@
 = kou::ToDo
 
+* rcairo: 表のサポート
+* rcairo: グラフのサポート
+* rcairo: バーコードのサポート
+
 * RSS Maker: Atomをサポート。
 
 * Svn: コールバックにはrb_protect()を使う。
