@@ -94,7 +94,7 @@ Printed output (index) (0.5.0):
 
 == BTS
 
-((<BTS|URL:/retro/))
+((<BTS|URL:/retro/>))
 
 == ドキュメント/Documents
 
