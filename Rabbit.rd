@@ -94,7 +94,7 @@ Printed output (index) (0.5.0):
 
 == BTS
 
-((<BTS|URL:/~kagemai/?project=rabbit;action=top>))(Japanese only)
+((<BTS|URL:/retro/))
 
 == ドキュメント/Documents
 
