@@ -91,6 +91,10 @@ SASLによる認証を有効にする
 
   smtpd_sasl_auth_enable = yes
 
+SASL用のドメインの設定
+
+  smtpd_sasl_local_domain = $mydomain
+
 匿名による認証，平文による認証を許可しない
 
   smtpd_sasl_security_options = noanonymous, noplaintext
@@ -171,13 +175,13 @@ Mewなら
 
 (1) main.cfに以下を追加
 
-  virtual_maps = hash:/usr/local/etc/postfix/vmaps
-  virtual_mailbox_base = /home/mailuser
-  virtual_mailbox_maps = hash:/usr/local/etc/postfix/vmailbox
-  virtual_mailbox_domains = hash:/usr/local/etc/postfix/vmaildomains
-  virtual_minimum_uid = 10000
-  virtual_uid_maps = static:10000
-  virtual_gid_maps = static:10000
+      virtual_maps = hash:/usr/local/etc/postfix/vmaps
+      virtual_mailbox_base = /home/mailuser
+      virtual_mailbox_maps = hash:/usr/local/etc/postfix/vmailbox
+      virtual_mailbox_domains = hash:/usr/local/etc/postfix/vmaildomains
+      virtual_minimum_uid = 10000
+      virtual_uid_maps = static:10000
+      virtual_gid_maps = static:10000
 
 (2) uid, gidともに10000のmailuserというユーザを作成
 
