@@ -14,5 +14,7 @@
 
 認証データベースを作成
 
-  % sudo saslpasswd2 -c -u `sudo postconf -h myhostname` kou
+  % sudo saslpasswd2 -c -u `sudo postconf -h mydomain` kou
   % sudo chown postfix:postfix /usr/local/etc/sasldb2.db
+
+mydomainの部分はPostfixのsmtpd_sasl_local_domainで指定したやつに合わせる．
