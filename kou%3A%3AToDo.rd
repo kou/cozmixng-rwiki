@@ -4,7 +4,7 @@
 * rcairo: グラフのサポート
 * rcairo: バーコードのサポート
 
-* RSS Maker: Atomをサポート。
+* RSS Maker: atom:entryのみのAtomをサポート。
 
 * Svn: コールバックにはrb_protect()を使う。
 
