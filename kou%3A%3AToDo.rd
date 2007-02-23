@@ -2,7 +2,6 @@
 
 * gnome-terminal: 起動時のデフォルトジオメトリを指定するオプション
 * gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
-* gnome-terminal: next_tab, prev_tabでサイクルするオプション
 
 * rcairo: 表のサポート
 * rcairo: グラフのサポート
