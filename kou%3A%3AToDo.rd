@@ -25,7 +25,7 @@
 
 * RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
 * RSS Parser: 例外にタグ／属性のURI情報も加える．
-* RSS Parser: RSS 2.0 with dublin core/content moduleサポート
+* RSS Parser: RSS 2.0 with content moduleサポート
 
 * コメントをスライドに対応付け．
 * コメントを保存．
