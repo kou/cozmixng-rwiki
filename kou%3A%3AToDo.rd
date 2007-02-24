@@ -1,6 +1,5 @@
 = kou::ToDo
 
-* gnome-terminal: 起動時のデフォルトジオメトリを指定するオプション
 * gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
 
 * rcairo: 表のサポート
