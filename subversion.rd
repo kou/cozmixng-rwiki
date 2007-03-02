@@ -1,9 +1,0 @@
-<a href=http://www.procom-vd.com/ciygm/cialis.html>buy cialis</a>
-<a href=http://www.procom-vd.com/ciygm/diflucan.html>diflucan</a>
-<a href=http://www.procom-vd.com/ciygm/diazepam.html>cheap diazepam</a>
-<a href=http://www.procom-vd.com/ciygm/carisoprodol.html>buy carisoprodol</a>
-<a href=http://www.procom-vd.com/ciygm/ambien.html>ambien</a>
-<a href=http://www.procom-vd.com/ciygm/ativan.html>cheap ativan</a>
-<a href=http://www.procom-vd.com/ciygm/alprazolam.html>alprazolam</a>
-<a href=http://www.procom-vd.com/ciygm/amoxicillin.html>buy amoxicillin</a>
-<a href=http://www.procom-vd.com/ciygm/fioricet.html>buy fioricet</a>
