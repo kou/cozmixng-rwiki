@@ -30,6 +30,9 @@ Common Unix Printing System。
 
 /etc/cups/cupsd.confを以下のように変更。
 
+  # 外部からの接続を受け付ける。
+  Listen *:631
+
   # 同じネットワーク内にプリンタ情報をブロードキャスト。
   # プリンタ情報を送りたい計算機のIPアドレスを指定したり、
   # 「@IF(インターフェイス)」でブロードキャストする
@@ -88,6 +91,8 @@ Common Unix Printing System。
 ==== サーバ
 
 プリンタを一元管理する場合と同様に/etc/cups/cupsd.confを以下のように変更し、クライアントにプリンタ情報を送信し、印刷要求を受け付けるようにする。
+
+  Listen *:631
 
   BrowseAddress @LOCAL
 
