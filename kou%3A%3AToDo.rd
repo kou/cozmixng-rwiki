@@ -6,8 +6,6 @@
 * rcairo: グラフのサポート
 * rcairo: バーコードのサポート
 
-* RSS Maker: atom:entryのみのAtomをサポート。
-
 * Svn: コールバックにはrb_protect()を使う。
 
 * RWiki: テンプレートを作る．
