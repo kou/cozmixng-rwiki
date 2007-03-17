@@ -2,12 +2,12 @@
 
 = Reference.ja
 
-$Id: Reference.ja 23 2005-04-07 06:38:01Z kou $
+$Id: Reference.ja 247 2007-03-17 08:11:06Z kou $
 
 RSS Makerのリファレンスです．
 
-RSS ParserのAPIはRSSの要素を知っていれば使えるはずなので省略
-します．ごめんなさい．
+RSS ParserのAPIはRSS/Atomの要素を知っていれば使えるはずなので
+省略します．ごめんなさい．
 
 == 注意
 
@@ -18,8 +18,13 @@ Rubyの伝統的な(({Class#instance_method}))や
 
   obj.meth
 
-また，以下に表れる(({maker}))は(({RSS::Maker.make}))に渡した
-ブロックへの引数名とします．つまり，以下のようにした時の
+0.1.7のAtomサポートによりいくつか参照系のAPIが変更されていま
+す。代入系のAPIは互換性が残っています（互換性が失われていた場
+合はバグです）。0.1.6までは参照系のAPIを使うことはほとんどな
+かったと思うので影響は少ないのではないかと思います。
+
+以下に現れる(({maker}))は(({RSS::Maker.make}))に渡したブロッ
+クへの引数名とします．つまり，以下のようにした時の
 (({maker}))ということです．
 
   RSS::Maker.make(...) do |maker|
@@ -29,16 +34,74 @@ Rubyの伝統的な(({Class#instance_method}))や
 --- RSS::Maker.make(version, &block)
      ((|version|))には(({"1.0"}))または(({"0.9"}))または
      (({"0.91"}))または(({"2.0"}))を指定します．(({"0.9"}))
-     と(({"0.91"}))は同じであることに注意してください．
-     
+     と(({"0.91"}))は同じであることに注意してください．バー
+     ジョン番号の前に(({"rss"}))をつけてこのように指定するこ
+     とも出来ます:
+     (({"rss1.0"}))/(({"rss2.0"}))/(({"rss0.9"}))/(({"rss0.91"}))
+
+     Atomフィード文書を生成する場合は
+     (({"atom"}))/(({"atom:feed"}))/(({"atom1.0"}))/(({"atom1.0:feed"}))
+     を指定してください。
+
+     Atomエントリ文書を生成する場合は
+     (({"atom:entry"}))/(({"atom1.0:entry"}))を指定してください。
+
      ((|block|))を実行したあとの(({maker}))オブジェクトから
      RSSオブジェクトを生成して返します．
 
+== モデル
+
+いくつかのオブジェクトは共通のAPIを持っています。
+
+=== AtomTextConstruct
+
+Atomのサポートにより、(({maker.channel.title}))などは単なる
+テキストだけではなく、タグづけされたテキストやXML要素を指定
+できるようになりました。それらは以下のようなメソッドを持ちま
+す。
+
+--- type
+     内容の種類を返します。
+--- type=(value)
+     ((|value|))はtext/html/xhtmlのいずれかを指定します。
+
+--- content
+     種類がtext/htmlの場合の内容を返します。
+--- content=(value)
+     種類がtext/htmlの場合の内容を設定します。
+
+--- xml_content
+     種類がxhtmlの場合の内容を返します。
+--- xml_content=(value)
+     種類がxhtmlの場合の内容を設定します。文字列または
+     RSS::XML::Elementで指定します。あるいは、それらの配列で
+     指定することも出来ます。
+
+--- xhtml
+     (({xml_content}))の別名です。
+--- xhtml=(value)
+     (({xml_content=}))の別名です。
+
+=== AtomPersonConstruct
+
+Atomのサポートにより、人を表現するモデルが導入されました。そ
+れは以下のようなメソッドを持ちます。
+
+--- name
+--- name=(value)
+
+--- uri
+--- uri=(value)
+
+--- email
+--- email=(value)
+
 == maker
 
-RSSのルート要素を生成するオブジェクトです．
+RSS/Atomのルート要素を生成するオブジェクトです．
 
-(({maker.channel}))を適切に設定しなければRSSは生成されません．
+(({maker.channel}))または(({maker.items}))を適切に設定しなけ
+ればRSS/Atomは生成されません．
 
 --- maker.version
      作成するXMLのバージョンを返します．
@@ -61,21 +124,28 @@ RSSのルート要素を生成するオブジェクトです．
 --- maker.standalone=(value)
      作成するXMLのstandaloneを設定します．
 
+--- maker.feed_version
+     作成するフィードのバージョンを返します．
+
 --- maker.rss_version
-     作成するRSSのバージョンを返します．
+     (({maker.feed_version}))の別名です。
 
 --- maker.xml_stylesheets
      (({xml_stylesheet}))を管理するオブジェクトを返します．
      
 --- maker.channel
-     channel要素を生成するオブジェクトを返します．
+     channel要素を生成するオブジェクトを返します．Atomフィー
+     ド文書ではatom:feed要素を生成します。
      
 --- maker.image
-     image要素を生成するオブジェクトを返します．
+     image要素を生成するオブジェクトを返します．Atomフィー
+     ド文書ではatom:feed/atom:logo要素を生成します。
      
 --- maker.items
      item要素を生成するオブジェクトを管理するオブジェクトを
-     返します．
+     返します．Atomフィード文書ではatom:feed/atom:entry要素
+     に対応します。Atomエントリ文書では最初のitemのみが使用
+     されます。
      
 --- maker.textinput
      textinput要素を生成するオブジェクトを返します．
@@ -84,12 +154,19 @@ RSSのルート要素を生成するオブジェクトです．
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- maker.xml_stylesheets.new_xml_stylesheet
      新しく(({xml_stylesheet}))を作成し，返します．作成された
      (({xml_stylesheet}))は(({xml_stylesheet}))リストの最後
-     に追加されています．
+     に追加されています．ブロックを指定した以下のような使い
+     かたを推奨します．
+
+       maker.xml_stylesheets.new_xml_stylesheet do |xss|
+         xss.XXX = XXX
+         ...
+       end
 
 ==== xml_stylesheet
 
@@ -119,9 +196,11 @@ RSSのルート要素を生成するオブジェクトです．
 --- xml_stylesheet.alternate
 --- xml_stylesheet.alternate=(value)
 
-=== maker.channel
+== maker.channel
 
-channel要素の値を設定します．
+channel要素の値を設定します．Atomフィード文書の場合は
+atom:feed要素に対応します。Atomエントリ文書の場合はいくつか
+の値がデフォルト値として利用されます。
 
 RSS 1.0を生成する場合は(({about}))，(({title}))，(({link}))，
 (({description}))を設定しなければいけません．
@@ -132,28 +211,56 @@ RSS 0.91を生成する場合は(({title}))，(({link}))，
 RSS 2.0を生成する場合は(({title}))，(({link}))，
 (({description}))を設定しなければいけません．
 
-(({maker.channel}))になんらかの値を設定しておきながら，上記
-の(({maker.channel}))が要求する値を設定していない場合は
-(({RSS::NotSetError}))例外が発生します．どの値も設定していな
-い場合は例外は発生しません．
+Atomフィード文書を生成する場合は(({title}))、(({updated}))、
+(({id}))を設定しなければいけません。もし、maker.items中のど
+のitemも(({author}))を設定しない場合は(({author}))を設定しな
+ければいけません。
+
+上記の(({maker.channel}))が要求する値を設定していない場合は
+(({RSS::NotSetError}))例外が発生します．
+
+説明がないメソッドは単なるアクセサです。
 
 --- maker.channel.about
 --- maker.channel.about=(value)
 
 --- maker.channel.title
+     (({title}))を返します。0.1.6以前はStringかnilでした。
 --- maker.channel.title=(value)
+     (({title.content}))に((|value|))を設定します。
 
+--- maker.channel.links
+     (({links}))を返します。
 --- maker.channel.link
+     (({links}))の最初の要素の(({href}))を返します。
+     (({links}))が空の場合は(({nil}))を返します。
 --- maker.channel.link=(value)
+     (({links}))の最初の要素の(({href}))に((|value|))を設定
+     します。(({links}))が空の場合は(({links.new_link}))で新
+     しく作成し、(({href}))を設定します。
 
 --- maker.channel.description
+     (({description}))を返します。0.1.6以前はStringかnilでした。
 --- maker.channel.description=(value)
+     (({description.content}))に((|value|))を設定します。
+
+--- maker.channel.subtitle
+     (({maker.channel.description}))の別名です．
+--- maker.channel.subtitle=(value)
+     (({maker.channel.description=}))の別名です．
 
 --- maker.channel.language
 --- maker.channel.language=(value)
 
 --- maker.channel.copyright
+     (({copyright}))を返します。0.1.6以前はStringかnilでした。
 --- maker.channel.copyright=(value)
+     (({copyright.content}))に((|value|))を設定します。
+
+--- maker.channel.rights
+     (({maker.channel.copyright}))の別名です．
+--- maker.channel.rights=(value)
+     (({maker.channel.copyright=}))の別名です．
 
 --- maker.channel.managingEditor
 --- maker.channel.managingEditor=(value)
@@ -172,15 +279,21 @@ RSS 2.0を生成する場合は(({title}))，(({link}))，
 
 --- maker.channel.pubDate
      (({maker.channel.date}))の別名です．
-
 --- maker.channel.pubDate=(value)
+     (({maker.channel.date=}))の別名です．
+
+--- maker.channel.updated
+     (({maker.channel.date}))の別名です．
+--- maker.channel.updated=(value)
      (({maker.channel.date=}))の別名です．
 
 --- maker.channel.lastBuildDate
 --- maker.channel.lastBuildDate=(value)
 
 --- maker.channel.generator
+     (({generator}))を返します。
 --- maker.channel.generator=(value)
+     (({generator.content}))に((|value|))を設定します。
 
 --- maker.channel.ttl
 --- maker.channel.ttl=(value)
@@ -197,20 +310,133 @@ RSS 2.0を生成する場合は(({title}))，(({link}))，
 --- maker.channel.skipHours
      (({skipHours}))を返します．
 
-==== maker.channel.categories
+--- maker.channel.authors
+     (({authors}))を返します。
+--- maker.channel.author
+     (({authors}))の最初の要素の(({name}))を返します。
+     (({authors}))が空の場合は(({nil}))を返します。
+--- maker.channel.author=(value)
+     (({authors}))の最初の要素の(({name}))に((|value|))を設定
+     します。(({authors}))が空の場合は(({authors.new_author}))で新
+     しく作成し、(({name}))を設定します。
+
+--- maker.channel.contributors
+     (({contributors}))を返します。
+--- maker.channel.contibutor
+     (({contibutors}))の最初の要素の(({name}))を返します。
+     (({contibutors}))が空の場合は(({nil}))を返します。
+--- maker.channel.contibutor=(value)
+     (({contibutors}))の最初の要素の(({name}))に((|value|))を設定
+     します。(({contibutors}))が空の場合は
+     (({contibutors.new_contibutor}))で新しく作成し、
+     (({name}))を設定します。
+
+--- maker.channel.icon
+     (({maker.channel.image_favicon.about}))の別名です．
+--- maker.channel.icon=(value)
+     (({maker.channel.image_favicon.about=}))の別名です．
+
+--- maker.channel.logo
+     (({maker.image.url}))の別名です．
+--- maker.channel.logo=(value)
+     (({maker.image.url=}))の別名です．
+
+=== maker.channel.title
+
+AtomTextConstructを参照してください。
+
+RSSを生成するときは(({content}))しか利用されません。
+
+=== maker.channel.links
+
+(({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
+(({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
+
+--- maker.channel.links.new_link
+     新しく(({link}))を作成し，返します．作成された
+     (({link}))は(({link}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       maker.channel.links.new_link do |link|
+         link.XXX = XXX
+         ...
+       end
+
+==== link
+
+(({link}))は(({maker.channel.links.new_link}))で作成されたオ
+ブジェクトとします．
+
+(({href}))を指定する必要があります．
+
+--- link.href
+--- link.href=(value)
+
+--- link.rel
+--- link.rel=(value)
+
+--- link.type
+--- link.type=(value)
+
+--- link.hreflang
+--- link.hreflang=(value)
+
+--- link.title
+--- link.title=(value)
+
+--- link.length
+--- link.length=(value)
+
+=== maker.channel.description
+
+AtomTextConstructを参照してください。
+
+RSSを生成するときは(({content}))しか利用されません。
+
+=== maker.channel.copyright
+
+AtomTextConstructを参照してください。
+
+RSSを生成するときは(({content}))しか利用されません。
+
+=== maker.channel.generator
+
+RSS 2.0/Atomフィード文書を生成するときに利用されます。
+
+RSS 2.0を生成するときは(({content}))しか利用されません。
+
+--- maker.channel.generator.uri
+--- maker.channel.generator.uri=(value)
+
+--- maker.channel.generator.version
+--- maker.channel.generator.version=(value)
+
+--- maker.channel.generator.content
+--- maker.channel.generator.content=(value)
+
+=== maker.channel.categories
 
 RSS 2.0を生成するときだけ利用されます．
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- maker.channel.categories.new_category
      新しく(({category}))を作成し，返します．作成された
      (({category}))は(({category}))リストの最後
-     に追加されています．
+     に追加されています．ブロックを指定した以下のような使い
+     かたを推奨します．
 
-+ category
+       maker.channel.categories.new_category do |category|
+         category.XXX = XXX
+         ...
+       end
+
+==== category
 
 (({category}))は
 (({maker.channel.categories.new_category}))で作成されたオ
@@ -224,7 +450,7 @@ RSS 2.0を生成するときだけ利用されます．
 --- category.content
 --- category.content=(value)
 
-==== maker.channel.cloud
+=== maker.channel.cloud
 
 RSS 2.0を生成するときだけ利用されます．
 
@@ -245,20 +471,27 @@ RSS 2.0を生成するときだけ利用されます．
 --- maker.channel.cloud.protocol
 --- maker.channel.cloud.protocol=(value)
 
-==== maker.channel.skipDays
+=== maker.channel.skipDays
 
 RSS 0.91/2.0を生成するときだけ利用されます．
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- maker.channel.skipDays.new_day
      新しく(({day}))を作成し，返します．作成された
      (({day}))は(({day}))リストの最後
-     に追加されています．
+     に追加されています．ブロックを指定した以下のような使い
+     かたを推奨します．
 
-+ day
+       maker.channel.skipDays.new_day do |day|
+         day.XXX = XXX
+         ...
+       end
+
+==== day
 
 (({day}))は
 (({maker.channel.skipDays.new_day}))で作成されたオ
@@ -269,20 +502,27 @@ RSS 0.91/2.0を生成するときだけ利用されます．
 --- day.content
 --- day.content=(value)
 
-==== maker.channel.skipHours
+=== maker.channel.skipHours
 
 RSS 0.91/2.0を生成するときだけ利用されます．
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- maker.channel.skipHours.new_hour
      新しく(({hour}))を作成し，返します．作成された
      (({hour}))は(({hour}))リストの最後
-     に追加されています．
+     に追加されています．ブロックを指定した以下のような使い
+     かたを推奨します．
 
-+ hour
+       maker.channel.skipHours.new_hour do |hour|
+         hour.XXX = XXX
+         ...
+       end
+
+==== hour
 
 (({hour}))は
 (({maker.channel.skipHours.new_hour}))で作成されたオ
@@ -293,7 +533,53 @@ RSS 0.91/2.0を生成するときだけ利用されます．
 --- hour.content
 --- hour.content=(value)
 
-=== maker.image
+=== maker.channel.authors
+
+Atomを生成するときだけ利用されます．
+
+(({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
+(({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
+
+--- maker.channel.authors.new_author
+     新しく(({author}))を作成し，返します．作成された
+     (({author}))は(({author}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       maker.channel.authors.new_author do |author|
+         author.XXX = XXX
+         ...
+       end
+
+==== author
+
+AtomPersonConstructを参照してください。
+
+=== maker.channel.contributors
+
+Atomを生成するときだけ利用されます．
+
+(({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
+(({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
+
+--- maker.channel.contributors.new_contributor
+     新しく(({contributor}))を作成し，返します．作成された
+     (({contributor}))は(({contributor}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       maker.channel.contributors.new_contributor do |contributor|
+         contributor.XXX = XXX
+         ...
+       end
+
+==== contributor
+
+AtomPersonConstructを参照してください。
+
+== maker.image
 
 RSS 1.0の場合は(({url}))，(({title}))，
 (({maker.channel.link}))，(({maker.channel}))が適切に設定さ
@@ -301,6 +587,9 @@ RSS 1.0の場合は(({url}))，(({title}))，
 
 RSS 0.91/2.0の場合は(({url}))，(({title}))，
 (({maker.channel.link}))が適切に設定されている必要があります．
+
+Atomフィードの場合は(({url}))が適切に設定されている必要があり
+ます．
 
 --- maker.image.title
 --- maker.image.title=(value)
@@ -317,15 +606,22 @@ RSS 0.91/2.0の場合は(({url}))，(({title}))，
 --- maker.image.description
 --- maker.image.description=(value)
 
-=== maker.items
+== maker.items
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- maker.items.new_item
      新しく(({item}))を作成し，返します．作成された
      (({item}))は(({item}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       maker.items.new_item do |item|
+         item.XXX = XXX
+         ...
+       end
 
 --- maker.items.do_sort
      現在の(({do_sort}))の値を取得します．デフォルトでは
@@ -344,7 +640,7 @@ RSS 0.91/2.0の場合は(({url}))，(({title}))，
      出力する(({item}))の数の最大値を設定します．
 
 
-==== item
+=== item
 
 (({item}))は(({maker.items.new_item}))で作成されたオブジェク
 トとします．
@@ -355,37 +651,190 @@ RSS 1.0/0.91の場合は(({title}))，(({link}))を設定する必要があ
 RSS 2.0の場合は(({title}))または(({description}))を設定する
 必要があります．
 
+Atomフィードの場合は(({id}))、(({title}))、(({updated}))を設
+定する必要があります。(({id}))が設定されていない場合は
+(({link}))を利用します。
+
+Atomエントリの場合は(({id}))、(({title}))、(({updated}))、一
+人以上の(({authors}))を設定する必要があります。(({id}))が設定
+されていない場合は(({link}))を利用します。(({authors}))が一
+人も設定されていない場合は(({maker.channel.authors}))を利用
+します。
 
 --- item.title
+     (({title}))を返します。0.1.6以前はStringかnilでした。
 --- item.title=(value)
+     (({title.content}))に((|value|))を設定します。
 
+--- item.links
+     (({links}))を返します。
 --- item.link
+     (({title}))を返します。0.1.6以前はStringかnilでした。
+--- item.title=(value)
+     (({title.content}))に((|value|))を設定します。
+
+--- item.links
+     (({links}))を返します。
+--- item.link
+     (({links}))の最初の要素の(({href}))を返します。
+     (({links}))が空の場合は(({nil}))を返します。
 --- item.link=(value)
+     (({links}))の最初の要素の(({href}))に((|value|))を設定
+     します。(({links}))が空の場合は(({links.new_link}))で新
+     しく作成し、(({href}))を設定します。
 
 --- item.description
+     (({description}))を返します。0.1.6以前はStringかnilでした。
 --- item.description=(value)
+     (({description.content}))に((|value|))を設定します。
+
+--- item.summary
+     (({item.description}))の別名です。
+--- item.summary=(value)
+     (({item.description=}))の別名です。
 
 --- item.date
 --- item.date=(value)
 
 --- item.pubDate
      (({item.date}))の別名です．
-
 --- item.pubDate=(value)
      (({item.date=}))の別名です．
 
+--- item.updated
+     (({item.date}))の別名です．
+--- item.updated=(value)
+     (({item.date=}))の別名です．
+
+--- item.authors
+     (({authors}))を返します。
 --- item.author
+     (({authors}))の最初の要素の(({name}))を返します。
+     (({authors}))が空の場合は(({nil}))を返します。
 --- item.author=(value)
+     (({authors}))の最初の要素の(({name}))に((|value|))を設定
+     します。(({authors}))が空の場合は(({authors.new_author}))で新
+     しく作成し、(({name}))を設定します。
+
+--- item.contibutors
+     (({contibutors}))を返します。
+--- item.contibutor
+     (({contibutors}))の最初の要素の(({name}))を返します。
+     (({contibutors}))が空の場合は(({nil}))を返します。
+--- item.contibutor=(value)
+     (({contibutors}))の最初の要素の(({name}))に((|value|))を設定
+     します。(({contibutors}))が空の場合は
+     (({contibutors.new_contibutor}))で新しく作成し、
+     (({name}))を設定します。
 
 --- item.comments
 --- item.comments=(value)
 
 --- item.guid
+     (({guid}))を返します。
 --- item.enclosure
+     (({enclosure}))を返します。
 --- item.source
+     (({source}))を返します。
 --- item.categories
+     (({categories}))を返します。
 
-+ item.guid
+--- item.rights
+     (({rights}))を返します。0.1.6以前はStringかnilでした。
+--- item.rights=(value)
+     (({rights.content}))に((|value|))を設定します。
+
+--- item.content
+     (({content}))を返します。
+
+--- item.id
+--- item.id=(value)
+
+--- item.published
+--- item.published=(value)
+
+==== item.title
+
+AtomTextConstructを参照してください。
+
+RSSを生成するときは(({content}))しか利用されません。
+
+==== item.links
+
+RSS 2.0/Atomを生成するときに利用されます．
+
+(({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
+(({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
+
+--- item.links.new_link
+     新しく(({link}))を作成し，返します．作成された
+     (({link}))は(({link}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       item.links.new_link do |link|
+         link.XXX = XXX
+         ...
+       end
+
+     (({item.links.new_link}))が作成する(({link}))は
+     (({maker.channel.links.new_link}))が作成する
+     (({link}))と同じAPIを持ちます．
+
+==== item.description
+
+AtomTextConstructを参照してください。
+
+RSSを生成するときは(({content}))しか利用されません。
+
+==== item.authors
+
+RSS 2.0/Atomを生成するときに利用されます．
+
+(({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
+(({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
+
+--- item.authors.new_author
+     新しく(({author}))を作成し，返します．作成された
+     (({author}))は(({author}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       item.authors.new_author do |author|
+         author.XXX = XXX
+         ...
+       end
+
+     (({item.authors.new_author}))が作成する(({author}))は
+     (({maker.channel.authors.new_author}))が作成する
+     (({author}))と同じAPIを持ちます．
+
+==== item.contributors
+
+Atomを生成するときだけ利用されます．
+
+(({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
+(({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
+
+--- item.contributors.new_contributor
+     新しく(({contributor}))を作成し，返します．作成された
+     (({contributor}))は(({contributor}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       item.contributors.new_contributor do |contributor|
+         contributor.XXX = XXX
+         ...
+       end
+
+     (({item.contributors.new_contributor}))が作成する(({contributor}))は
+     (({maker.channel.contributors.new_contributor}))が作成する
+     (({contributor}))と同じAPIを持ちます．
+
+==== item.guid
 
 RSS 2.0を生成するときだけ利用されます．
 
@@ -397,7 +846,7 @@ RSS 2.0を生成するときだけ利用されます．
 --- item.guid.content
 --- item.guid.content=(value)
 
-+ item.enclosure
+==== item.enclosure
 
 RSS 2.0を生成するときだけ利用されます．
 
@@ -412,7 +861,7 @@ RSS 2.0を生成するときだけ利用されます．
 --- item.enclosure.type
 --- item.enclosure.type=(value)
 
-+ item.source
+==== item.source
 
 RSS 2.0を生成するときだけ利用されます．
 
@@ -424,25 +873,80 @@ RSS 2.0を生成するときだけ利用されます．
 --- item.source.content
 --- item.source.content=(value)
 
-+ item.categories
+==== item.categories
 
 RSS 2.0を生成するときだけ利用されます．
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- item.categories.new_category
      新しく(({category}))を作成し，返します．作成された
      (({category}))は(({category}))リストの最後
      に追加されています．
-     
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       item.categories.new_category do |category|
+         category.XXX = XXX
+         ...
+       end
+
      (({item.categories.new_category}))が作成する
      (({category}))は
      (({maker.channel.categories.new_category}))が作成する
      (({category}))と同じAPIを持ちます．
 
-=== maker.textinput
+==== item.rights
+
+AtomTextConstructを参照してください。
+
+RSSを生成するときは(({content}))しか利用されません。
+
+==== item.content
+
+Atomを生成するときのみ利用されます。
+
+--- type
+     内容の種類を返します。
+--- type=(value)
+     ((|value|))はtext、html、xhtmlまたはMIMEタイプを指定しま
+     す。
+
+--- src
+     種類がMIMEタイプのときの内容のIRIを返します。
+--- src=(value)
+     種類がMIMEタイプのときの内容のIRIを指定します。
+
+--- content
+     種類がtext、htmlあるいはXML用以外のMIMEタイプの場合の
+     内容を返します。
+--- content=(value)
+     種類がtext、htmlあるいはXML用以外のMIMEタイプの場合の内
+     容を設定します。Base64エンコーディングが必要なMIMEタイ
+     プの場合でもBase64エンコーディングを行った文字列を指定
+     する必要はありません。
+
+--- xml_content
+     種類がxhtmlあるいはXML用のMIMEタイプの場合の内容を返し
+     ます。
+--- xml_content=(value)
+     種類がxhtmlあるいはXML用のMIMEタイプの場合の内容を設定し
+     ます。文字列またはRSS::XML::Elementで指定します。あるい
+     は、それらの配列で指定することも出来ます。
+
+--- xhtml
+     (({xml_content}))の別名です。
+--- xhtml=(value)
+     (({xml_content=}))の別名です。
+
+--- xml
+     (({xml_content}))の別名です。
+--- xml=(value)
+     (({xml_content=}))の別名です。
+
+== maker.textinput
 
 RSS 1.0の場合は(({title}))，(({description}))，(({name}))，
 (({link}))，(({maker.channel}))を適切に設定する必要がありま
@@ -450,6 +954,8 @@ RSS 1.0の場合は(({title}))，(({description}))，(({name}))，
 
 RSS 0.91/2.0の場合は(({title}))，(({description}))，
 (({name}))，(({link}))を設定する必要があります．
+
+Atomでは利用されません。
 
 --- maker.textinput.title
 --- maker.textinput.title=(value)
@@ -491,6 +997,12 @@ RSS Makerは0.1.3より複数のDublin Coreの要素をサポートしまし
 
 --- dc_titles.new_title
      新しく<dc:title>要素を追加し，それを返します．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       dc_titles.new_title do |title|
+         title.XXX = XXX
+         ...
+       end
 
      値を設定するには(({dc_titles.new_title.value=}))や，(({value=}))
      の別名である(({dc_titles.new_title.content=}))を利用でき
@@ -535,11 +1047,11 @@ RSS Makerは0.1.3より複数のDublin Coreの要素をサポートしまし
 --- dc_coverages.new_coverage
      使用方法は(({dc_titles.new_title}))と同様です．
 
---- dc_rightses.new_rightses
+--- dc_rights_list.new_rights
      使用方法は(({dc_titles.new_title}))と同様です．
 
-     ((*FIXME*)): rightsesというのはどうもおかしいので，良い
-     名前に関する意見を下さい．
+--- dc_rightses.new_rights
+     (({dc_rights_list.new_rights}))の別名です。
 
 --- dc_dates.new_date
      使用方法は(({dc_titles.new_title}))と同様です．
@@ -622,11 +1134,18 @@ RSS Makerは0.1.3より複数のDublin Coreの要素をサポートしまし
 
 (({#<<}))，(({#[]}))，(({#[]=}))，(({#first}))，(({#last}))，
 (({#push}))，(({#pop}))，(({#shift}))，(({#unshift}))，
-(({#each}))など配列と同じメソッドも持ちます．
+(({#each}))、(({#size}))、(({#empty?}))、(({#clear}))、
+(({#replace}))など配列と同じメソッドも持ちます．
 
 --- trackback_abouts.new_about
      新しく(({about}))を作成し，返します．作成された
      (({about}))は(({about}))リストの最後に追加されています．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       trackback_abouts.new_about do |about|
+         about.XXX = XXX
+         ...
+       end
 
 + about
 
