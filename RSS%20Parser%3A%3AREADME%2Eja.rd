@@ -2,14 +2,11 @@
 
 = README.ja
 
-$Id: README.ja 43 2005-09-21 09:21:12Z kou $
-
-((*0.0.6まではruby 1.8での動作がruby 1.6の動作に比べて10倍遅
-いです．ruby 1.8で使う場合は0.0.7以降を使ってください．*))
+$Id: README.ja 247 2007-03-17 08:11:06Z kou $
 
 == 名前
 
-RSS Parser(Ruby/RSSはかぶるので使わない)
+RSS Parser
 
 == 作者
 
@@ -19,36 +16,24 @@ Kouhei Sutou <kou@cozmixng.org>
 
 Ruby's
 
-== お願い
+== 注意
 
-もう少し真面目にRSS 0.9x/2.0をパースしようと思います．そのた
-め，私はRSS 0.9x/2.0のテストケースを求めています．
-
-== メーリングリスト
-
-((<COZMIXNG RWiki - 連絡先
-|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))
-を御覧下さい．
-
-== バグトラッキングシステム
-
-ご意見ご要望不具合報告等は作者へのメール，上記のメーリングリ
-スト，RWikiへの書き込みまたは((<影舞
-|URL:http://www.cozmixng.org/~kagemai/?project=rss;action=top>))
-をご利用下さい．
+  * RSS Parser 0.1.7以降ではruby 1.8.2以降でないと動きません．
+  * AtomをサポートしているのはRSS Parser 0.1.7以降です．
+  * バージョンを重ねるごとにより厳密に動作するようになってい
+    ます。今までは#to_sでRSSが得られたものが空文字列が返るよ
+    うになっているかもしれません。その場合は#validateを呼ぶ
+    とどこが問題かわかるでしょう。
 
 == なにこれ？
 
 ((<RSS(RDF Site Summary)
-1.0|URL:http://web.resource.org/rss/1.0/>)), RSS 0.9x/2.0 
-（0.90を除く）を妥当性検証（バリデーション）付き（あるいは無
-し）でパースします。
+1.0|URL:http://web.resource.org/rss/1.0/>))，RSS 0.9x/2.0
+（0.90を除く），((<Atom
+1.0|URL:http://www.ietf.org/rfc/rfc4287.txt>))を妥当性検証
+（バリデーション）付き（あるいは無し）でパースします。
 
-サンプルとして，RSSを取得してその内容を表示する
-((<tDiary|URL:http://www.tdiary.org/>))のプラグインが付いて
-います。
-
-rubyのCVS HEADにも入っています．
+rubyの配布ファイルにも入っています．
 
 == 依存ライブラリ
 
@@ -76,33 +61,6 @@ rubyのCVS HEADにも入っています．
 
   # ruby setup.rb
 
-=== tDiaryにインストール
-
-sample/tdiary_pluginの下にあるrss-recent.rbをtDiaryのプラグ
-イン用のディレクトリにコピーしたりシンボリックリンクを張った
-りして下さい。
-
-このプラグインをインストールすると以下のメソッドが使えるよう
-になります。
-
---- rss_recent(url, max=5, cache_time=3600)
-
-     ((|url|))にあるRSSをパースして最初に現れた項目のうち最
-     大((|max|))項目を表示します。RSSをパースした結果は
-     ((|cache_time|))秒キャッシュされます。
-
-       * ((|url|)): RSSのあるURL
-       * ((|max|)): 表示する項目数
-       * ((|cache_time|)): RSSをキャッシュしておく時間(秒)
-
-(({rss_recent}))を制御する以下のオプションがあります．
-
-: @options['rss-recent.use-image-link']
-     
-   このオプションが(({nil}))または(({false}))でない場合，
-   /rdf:RDF/image/urlなど，リンク時に画像として使えるよう
-   な情報があればそれを使用します．
-
 == FAQ
 
 === RSS 0.90をパースしたい
@@ -123,5 +81,6 @@ RSS 0.90はRSS 1.0として扱えることもあります．もし，RSS 0.90
   * 秋山智朗さん: ドキュメントのバグを報告してくれました．
   * Chris Leeさん: バグを報告してくれました．
   * Ronald Pijnackerさん: バグを報告してくれました．
+  * 西山和広さん: ドキュメントのバグを報告してくれました．
   * Christian W. Zuckschwerdtさん: RSS 0.90の扱いについてア
     ドバイスしてくれました．
