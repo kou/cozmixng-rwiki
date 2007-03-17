@@ -3,8 +3,6 @@
 The latest version: 0.1.7
 (((<download|URL:http://www.cozmixng.org/~kou/download/rss-0.1.7.tar.gz>)))
 
-((<BTS|URL:/~kagemai/?project=rss;action=top>))(Japanese only)
-
   * ((<README.en|RSS Parser::README.en>))
   * ((<README.ja|RSS Parser::README.ja>))
   * ((<Tutorial.en|RSS Parser::Tutorial.en>))
