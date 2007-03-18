@@ -8,8 +8,6 @@
 
   * ((<"Gauche/PGPLOT">))
   * ((<"Gauche/MPICH">))
-  * ((<ContractR>))
-  * ((<ContractG>))
 
 == ¤½¤ÎÂ¾
 
