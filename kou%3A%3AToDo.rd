@@ -2,6 +2,7 @@
 
 * 風博士: collectors
 * 風博士: KzAppの初期化・終了処理とKzModuleをどうにか。
+* 風博士: Windows用ビルドのときは各種ファイルを.exeからの相対パスで検索するように。
 
 * ActiveSambaLdap: recommended_classes対応。
 
