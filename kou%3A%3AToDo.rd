@@ -1,6 +1,7 @@
 = kou::ToDo
 
 * 風博士: collectors
+* 風博士: KzAppの初期化・終了処理とKzModuleをどうにか。
 
 * ActiveSambaLdap: recommended_classes対応。
 
