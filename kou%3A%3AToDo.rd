@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* 風博士: collectors
+
 * ActiveSambaLdap: recommended_classes対応。
 
 * gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
