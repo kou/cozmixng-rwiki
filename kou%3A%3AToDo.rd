@@ -11,6 +11,7 @@
 * rcairo: 表のサポート
 * rcairo: グラフのサポート
 * rcairo: バーコードのサポート
+* rcairo: captchaのサポート
 
 * Svn: コールバックにはrb_protect()を使う。
 
