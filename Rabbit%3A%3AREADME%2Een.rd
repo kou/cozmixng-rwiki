@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 832 2006-11-03 02:10:43Z kou $
+$Id: README.en 858 2007-03-29 07:02:02Z kou $
 
 == Name
 
@@ -40,6 +40,7 @@ Kouhei Sutou <kou@cozmixng.org>
 * Banner
 
   (pretty banner)
+
 
 MoMo
 
@@ -205,10 +206,6 @@ libraries on Windows.
 
   % svn co http://www.cozmixng.org/repos/rabbit/trunk rabbit
 
-The old repository is here.
-
-  % svn co http://www.cozmixng.org/repos/ruby/rabbit/trunk rabbit
-
 == Install
 
   # ruby setup.rb
@@ -316,6 +313,7 @@ with the following.
        % rabbit --type uri /.../XXX.rd
      are same as
        % rabbit --type file /.../XXX.rd
+     
 
    : rwiki
 
@@ -654,6 +652,7 @@ page except title page.
     heads.prop_set("foreground", "red")
   end
 
+
 === Property
 
 You can set some properties by using
@@ -797,4 +796,3 @@ page from XXX.rd.
   * kimura wataru: He makes Mac OS X package.
   * kitaj: He pointed out minor miss in INSTALL.win32.en.
   * akapy: He wrote a document for emerge.
-
