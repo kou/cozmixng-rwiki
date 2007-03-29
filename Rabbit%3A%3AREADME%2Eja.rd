@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 832 2006-11-03 02:10:43Z kou $
+$Id: README.ja 858 2007-03-29 07:02:02Z kou $
 
 == 名前
 
@@ -208,10 +208,6 @@ Windowsでの依存ライブラリのインストールは
 ((<URL:http://www.cozmixng.org/~kou/download/rabbit.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/rabbit/trunk rabbit
-
-0.0.3より前のものはこちらです．
-
-  % svn co http://www.cozmixng.org/repos/ruby/rabbit/trunk rabbit
 
 == インストール
 
