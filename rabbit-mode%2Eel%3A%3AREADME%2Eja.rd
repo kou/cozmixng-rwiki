@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 790 2006-09-07 06:22:09Z tkdats $
+$Id: README.ja 848 2007-03-24 11:38:30Z tkdats $
 
 == rabbit-mode.el
 
@@ -69,9 +69,24 @@ Rabbitのメッセージはバッファ*Rabbit<ファイル名>*に出力されます．
 
 スライド名を入力します．
 
+=== rabbit-insert-items
+
+箇条書きの項目を挿入します．いまのところ一段の箇条書きしか入れられませ
+ん．
+
+箇条書きの項目を入力していき，空文字を入力すると終了します．
+
 === rabbit-delete-slide(C-c C-d)
 
 カーソル上のスライドを削除します．
+
+=== rabbit-copy-slide
+
+カーソル上のスライドをコピーします．
+
+=== rabbit-duplicate-slide
+
+カーソル上のスライドをコピーし，次のスライドとして挿入します．
 
 === rabbit-next-slide(M-n)
 
