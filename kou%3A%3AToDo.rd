@@ -3,8 +3,6 @@
 * 風博士: collectors
 * 風博士: Windows用ビルドのときは各種ファイルを.exeからの相対パスで検索するように。
 
-* ActiveSambaLdap: recommended_classes対応。
-
 * gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
 
 * rcairo: 表のサポート
