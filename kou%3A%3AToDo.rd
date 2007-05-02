@@ -1,5 +1,9 @@
 = kou::ToDo
 
+* RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
+
+* ActiveLdap: Net::LDAP対応
+
 * 風博士: collectors
 
 * gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
@@ -24,7 +28,6 @@
       * 一ページにたくさんの箇条書きを書けない
       * 一行に長々と文章を書けない（「○○した結果××となる」とか書いちゃダメ．「○○の結果は××」とか）
 
-* RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
 * RSS Parser: 例外にタグ／属性のURI情報も加える．
 * RSS Parser: RSS 2.0 with content moduleサポート
 
