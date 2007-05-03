@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* rcairo: Cairo::Path#move_to, line_to, curve_to, close
+
 * RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
 
 * ActiveLdap: Net::LDAP対応
