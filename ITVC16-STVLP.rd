@@ -42,6 +42,25 @@ tuner=17§œº´∆∞∏°Ω–§ÚÃµ∏˙§À§∑§∆Philips§Œ•¡•Â°º• §ÚÃ¿º®≈™§ÀªÿƒÍ§π§Î§»§§§¶§≥§»° §¿§
 
   /usr/src/linux-headers-`uname -r`/include/media/tuner.h
 
+•´°º•…§¨¿µæÔ§À«ßº±§µ§Ï§ø§´§œdmesg§«≥Œ«ß§π§Î°£
+
+¿µæÔ§À«ßº±§µ§Ï§øæÏπÁ§œ∞ ≤º§Œ§Ë§¶§À§∑§∆•¡•Â°º• §´§ÈMPEG2§Ú¿∏¿Æ§«§≠§Î°£
+
+  % cat /dev/video0 > /tmp/XXX.mpg
+
+∆‚Õ∆§œ∞ ≤º§Œ§Ë§¶§À§∑§∆≥Œ«ß§«§≠§Î°£
+
+  % xine /tmp/xxx.mpg
+
+§ø§¿§∑°¢∫ΩÕÚ°£
+
 == •∆•Ï•”§Ú¥—§Î
 
-MythTV§Ú•§•Û•π•»°º•Î§π§Î°£
+MythTV§Ú•§•Û•π•»°º•Î§π§Î°£§Ω§Œ§ø§·§À°¢∞ ≤º§Ú/etc/apt/sources.list§Àƒ…≤√§π§Î°£
+
+  deb http://www.debian-multimedia.org sid main
+  deb-src http://www.debian-multimedia.org sid main
+
+§Ω§∑§∆°¢•§•Û•π•»°º•Î°£
+
+  % sudo aptitude -V -r install mythtv
