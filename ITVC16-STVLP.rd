@@ -74,3 +74,5 @@ MythTVはMySQLを使うので、MythTV用のユーザを作成する。
 MythTVの設定プログラムを起動する。
 
   % mythtv-setup
+
+FIXME
