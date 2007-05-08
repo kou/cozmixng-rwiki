@@ -2,7 +2,6 @@
 
 * RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
 
-* ActiveLdap: Net::LDAP対応
 * ActiveLdap: act_as_tree
 
 * 風博士: collectors
