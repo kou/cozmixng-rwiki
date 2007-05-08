@@ -64,3 +64,13 @@ MythTVをインストールする。そのために、以下を/etc/apt/sources.listに追加する。
 そして、インストール。
 
   % sudo aptitude -V -r install mythtv
+
+MythTVはMySQLを使うので、MythTV用のユーザを作成する。
+
+  % mysql -u root
+  mysql> grant all on *.* to mythtv@localhost identified by 'mythtv';
+  mysql> exit
+
+MythTVの設定プログラムを起動する。
+
+  % mythtv-setup
