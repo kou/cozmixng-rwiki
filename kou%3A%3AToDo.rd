@@ -1,5 +1,8 @@
 = kou::ToDo
 
+* rcairo: create_similarのset_klassをもっとまじめにやる
+* Subversion: Svn::Core::PROP_XXXじゃなくて、:XXXというようにも書けるようにする。
+
 * RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
 
 * ActiveLdap: act_as_tree
