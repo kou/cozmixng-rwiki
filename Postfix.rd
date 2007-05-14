@@ -271,3 +271,13 @@ Postgreyを起動する。
 あとは、設定を再読み込みする。
 
   % sudo /usr/local/etc/rc.d/postfix.sh reload
+
+== submissionポート対応
+
+/usr/local/etc/postfix/master.cfに以下の行を追加。
+
+  submission   inet    n       -       n       -       -       smtpd
+
+設定ファイルを再読み込みする。
+
+  % sudo /usr/local/etc/rc.d/postfix.sh reload
