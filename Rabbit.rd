@@ -37,11 +37,11 @@ The latest version: 0.5.1(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == インストール方法/Installation
 
-  1. ruby-gtk2 をインストール
-  2. rdtool をインストール
-       # ruby setup.rb
-  3. Rabbit をインストール
-       # ruby setup.rb
+  (1) ruby-gtk2 をインストール
+  (2) rdtool をインストール
+        # ruby setup.rb
+  (3) Rabbit をインストール
+        # ruby setup.rb
 
 == 試しに使ってみる/Try it
 
@@ -94,7 +94,7 @@ Printed output (index) (0.5.1):
 
 == BTS
 
-((<BTS|URL:/retro/>))
+((<BTS|URL:/retro/projects/rabbit/>))
 
 == ドキュメント/Documents
 
