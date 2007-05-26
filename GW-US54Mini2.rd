@@ -1,6 +1,6 @@
 = GW-US54Mini2
 
-PLANEXのUSBアダプタ((<GW-US54Mini2|http://www.planex.co.jp/support/download/wireless/gw-us54mini2/>))をDebian GNU/Linux上で使う設定。
+PLANEXのUSBアダプタ((<GW-US54Mini2|URL:http://www.planex.co.jp/support/download/wireless/gw-us54mini2/>))をDebian GNU/Linux上で使う設定。
 
 USB IDはこんな感じ。
 
