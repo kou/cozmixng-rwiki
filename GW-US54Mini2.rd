@@ -12,7 +12,7 @@ USB IDはこんな感じ。
 
 == ドライバ
 
-((<rt2x00プロジェクト|http://rt2x00.serialmonkey.com/>))のrt73というモジュール（？ドライバ？）を使う。
+((<rt2x00プロジェクト|URL:http://rt2x00.serialmonkey.com/>))のrt73というモジュール（？ドライバ？）を使う。
 
 Debianにもrt73-sourceというパッケージがあってmodule-assistantを使えば以下のようにビルドできるんだけど、パッケージになっているやつは少し古くて2.6.21とかじゃビルドできない。
 
