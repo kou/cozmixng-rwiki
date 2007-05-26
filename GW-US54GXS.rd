@@ -89,9 +89,9 @@ USB IDはこんな感じ。
       netmask 255.255.255.0
       network 192.168.1.0
       broadcast 192.168.1.255
-      wireless_essid local-wireless
-      wireless_mode master
-      wireless_key XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XX
+      wireless-essid local-wireless
+      wireless-mode master
+      wireless-key XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XX
       pre-up /sbin/iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
       pre-up /etc/init.d/dhcp stop
       pre-up /etc/init.d/bind stop
