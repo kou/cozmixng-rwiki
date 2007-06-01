@@ -123,6 +123,9 @@
   * znzさん
     * ((<%!zt! diary|URL:http://znz.s1.xrea.com/t/>))
 
+  * おばたさん
+    * ((<Obache Watching|URL:http://www.lins.jp/~obata/diary/>))
+
   * ...
 
 == 参加しようかなぁな人達
