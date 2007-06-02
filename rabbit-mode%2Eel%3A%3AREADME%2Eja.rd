@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 848 2007-03-24 11:38:30Z tkdats $
+$Id: README.ja 868 2007-04-02 03:15:56Z tkdats $
 
 == rabbit-mode.el
 
@@ -15,38 +15,81 @@ Rabbitのソースファイル用のEmacsメジャーモードです．
   (autoload 'rabbit-mode "rabbit-mode" "major mode for Rabbit" t)
   (add-to-list 'auto-mode-alist '("\\.\\(rbt\\|rab\\)$" . rabbit-mode))
 
-== 関数
+== 目次
 
-関数名(デフォルトのキーバインド)と表記します．
+=== Rabbitの操作
+  * ((<rabbit-mode.el::EmacsからRabbitを起動する>))
 
-=== rabbit-run-rabbit(C-c C-r)
+=== 移動
+  * ((<rabbit-mode.el::次のスライドへ移動する>))
+  * ((<rabbit-mode.el::前のスライドへ移動する>))
 
-現在のバッファのファイルを引数としてEmacs上から
-Rabbitを起動します．
+=== 挿入
+  * ((<rabbit-mode.el::タイトルを挿入する>))
+  * ((<rabbit-mode.el::画像のテンプレートを挿入する>))
+  * ((<rabbit-mode.el::スライドを挿入する>))
+  * ((<rabbit-mode.el::箇条書きを挿入する>))
 
-Rabbitのメッセージはバッファ*Rabbit<ファイル名>*に出力されます．
+=== スライド操作
+  * ((<rabbit-mode.el::スライドを削除する>))
+  * ((<rabbit-mode.el::スライドをコピーする>))
+  * ((<rabbit-mode.el::スライドを複写する>))
 
-=== rabbit-insert-title-template(C-c C-t)
+=== 設定
+  * ((<rabbit-mode.el::画像テンプレートのデフォルトのサイズ指定方法を変える>))
+  * ((<rabbit-mode.el::rabbit-modeの変数>))
 
-タイトルのテンプレートの挿入します．
+== Rabbitの操作
+=== EmacsからRabbitを起動する
 
-プレゼンテーションのタイトルとメタデータを入力します．
-メタデータは省略可能です．
+rabbit-run-rabbitを実行します．デフォルトのキーバインドはC-c C-rです．
 
-関連する変数
+(('*'))Rabbit<ファイル名>*というバッファが作られ，Rabbitのメッセージが書き込
+まれます．
 
-* rabbit-author
-* rabbit-institution
-* rabbit-theme
+== 移動
+=== 次のスライドへ移動する
 
-=== rabbit-insert-image-template(C-c i)
+rabbit-next-slideを実行します．デフォルトのキーバインドはM-nです．
 
-画像のテンプレートの挿入します．
+=== 前のスライドへ移動する
 
-画像のファイル名，キャプション，サイズ指定の方法，サイズを
-入力します．
+rabbit-previous-slideを実行します．デフォルトのキーバインドはM-pです．
 
-ファイル名以外は省略可能です．
+== 挿入
+=== タイトルを挿入する
+
+rabbit-insert-title-templateを実行します．デフォルトのキーバインドは
+C-c C-tです．
+
+プレゼンテーションのタイトルとメタデータを入力します．デフォルトのメタ
+データを変数に設定可能です．設定できるメタデータは
+
+  * rabbit-author(著者)
+  * rabbit-institution(所属)
+  * rabbit-theme(テーマ)
+
+です．
+
+=== 画像のテンプレートを挿入する
+
+画像サイズは割合で指定するのが便利だと思いますので，割合指定がデフォル
+トになっています．
+
+==== 画像サイズを割合で指定する場合
+
+rabbit-insert-image-template-defaultを呼びます．デフォルトのキーバイン
+ドはC-c C-iです．
+
+画像ファイルのパス，キャプション，画像サイズの割合を入力します．ファイ
+ルパス以外は省略可能です．
+
+==== 画像サイズの指定方法も決める場合
+
+rabbit-insert-image-templateを呼びます．デフォルトのキーバインドはC-c iです．
+
+画像ファイルのパス，キャプション，サイズ指定の方法，サイズを入力します．
+ファイルパス以外は省略可能です．
 
 サイズ指定の方法は
 
@@ -54,92 +97,81 @@ Rabbitのメッセージはバッファ*Rabbit<ファイル名>*に出力されます．
 * normalized
 * pixel(幅と高さを指定)
 
-サイズ指定の方法省略した場合)，デフォルト(relative)を使います．
+から選びます．
 
-=== rabbit-insert-image-template-default(C-c C-i)
+=== スライドを挿入する
 
-デフォルト(relative)のサイズ指定の方法で画像のテンプレートを
-挿入します．
+rabbit-insert-slideを呼びます．デフォルトのキーバインドはC-c C-sです．
 
-画像のファイル名，キャプション，サイズを入力します．
+=== 箇条書きを挿入する
 
-=== rabbit-insert-slide(C-c C-s)
+rabbit-insert-itemsを呼びます．キーバインドは割り当てられていません．
 
-スライドを挿入します．
+項目を入力していき，空文字を入力すると修了します．
 
-スライド名を入力します．
+== スライド操作
+=== スライドを削除する
 
-=== rabbit-insert-items
+rabbit-delete-slideを実行します．デフォルトのキーバインドはC-c C-dです．
 
-箇条書きの項目を挿入します．いまのところ一段の箇条書きしか入れられませ
-ん．
+=== スライドをコピーする
 
-箇条書きの項目を入力していき，空文字を入力すると終了します．
+rabbit-copy-slideを実行します．キーバインドは割り当てられていません．
 
-=== rabbit-delete-slide(C-c C-d)
+現在のスライドがキルリングに保存されます．
 
-カーソル上のスライドを削除します．
+=== スライドを複写する
 
-=== rabbit-copy-slide
+rabbit-duplicate-slideを実行します．キーバインドは割り当てられていません．
 
-カーソル上のスライドをコピーします．
+現在のスライドのコピーを，次のスライドとして挿入します．現在のスライド
+の内容を少しだけ変えたい場合に便利です．
 
-=== rabbit-duplicate-slide
+=== 画像テンプレートのデフォルトのサイズ指定方法を変える
 
-カーソル上のスライドをコピーし，次のスライドとして挿入します．
+変数rabbit-default-image-size-unitにサイズ指定方法をセットします．デフォ
+ルトは"relative"です．
 
-=== rabbit-next-slide(M-n)
-
-次のスライドへ移動します．
-
-=== rabbit-previous-slide(M-p)
-
-前のスライドへ移動します．
+有効な値
+  * "relative"
+  * "normalized"
+  * "pixel"
 
 == 変数
 
-変数名(デフォルト値)と記述します．
+: rabbit-command
 
-=== rabbit-command(rabbit)
+   Rabbitの起動コマンドです(デフォルトは"rabbit")．
 
-rabbitの起動コマンドです．
+: rabbit-author
 
-関連する関数
+   著者名です．タイトルページのテンプレートで使われます(デフォルトはnil)．
 
-* rabbit-run-rabbit
+: rabbit-institution
 
-=== rabbit-author(nil)
+   著者の所属です．タイトルページのテンプレートで使われます(デフォルトはnil)．
 
-タイトルに表示される作者名です．
+: rabbit-theme
 
-関連する関数
+   プレゼンテーションのテーマです(デフォルトは"rabbit")．
 
-* rabbit-insert-title-template
+: rabbit-default-image-size-unit
 
-=== rabbit-institution(nil)
+   画像ファイルのテンプレート挿入で使われるデフォルトのサイズ
+   指定方法です(デフォルトは"relative")．
 
-タイトルに表示される所属です
+: Faces
 
-関連する関数
+   rabbit-modeの各faceです．
 
-* rabbit-insert-title-template
-
-=== rabbit-theme(rabbit)
-
-コマンドでテーマが指定されなかったときに使われるテーマです．
-
-=== Faces
-
-rabbit-modeのfaceです．
-
-* rabbit-heading-face
-* rabbit-emphasis-face
-* rabbit-verbatim-face
-* rabbit-term-face
-* rabbit-footnote-face
-* rabbit-link-face
-* rabbit-code-face
-* rabbit-description-face
-* rabbit-keyboard-face
-* rabbit-variable-face
-* rabbit-comment-face
+     * rabbit-heading-face
+     * rabbit-emphasis-face
+     * rabbit-verbatim-face
+     * rabbit-term-face
+     * rabbit-footnote-face
+     * rabbit-link-face
+     * rabbit-code-face
+     * rabbit-description-face
+     * rabbit-keyboard-face
+     * rabbit-variable-face
+     * rabbit-comment-face
