@@ -18,26 +18,26 @@ Rabbitのソースファイル用のEmacsメジャーモードです．
 == 目次
 
 === Rabbitの操作
-  * ((<rabbit-mode.el::EmacsからRabbitを起動する>))
+  * ((<rabbit-mode.el::README.ja/EmacsからRabbitを起動する>))
 
 === 移動
-  * ((<rabbit-mode.el::次のスライドへ移動する>))
-  * ((<rabbit-mode.el::前のスライドへ移動する>))
+  * ((<rabbit-mode.el::README.ja/次のスライドへ移動する>))
+  * ((<rabbit-mode.el::README.ja/前のスライドへ移動する>))
 
 === 挿入
-  * ((<rabbit-mode.el::タイトルを挿入する>))
-  * ((<rabbit-mode.el::画像のテンプレートを挿入する>))
-  * ((<rabbit-mode.el::スライドを挿入する>))
-  * ((<rabbit-mode.el::箇条書きを挿入する>))
+  * ((<rabbit-mode.el::README.ja/タイトルを挿入する>))
+  * ((<rabbit-mode.el::README.ja/画像のテンプレートを挿入する>))
+  * ((<rabbit-mode.el::README.ja/スライドを挿入する>))
+  * ((<rabbit-mode.el::README.ja/箇条書きを挿入する>))
 
 === スライド操作
-  * ((<rabbit-mode.el::スライドを削除する>))
-  * ((<rabbit-mode.el::スライドをコピーする>))
-  * ((<rabbit-mode.el::スライドを複写する>))
+  * ((<rabbit-mode.el::README.ja/スライドを削除する>))
+  * ((<rabbit-mode.el::README.ja/スライドをコピーする>))
+  * ((<rabbit-mode.el::README.ja/スライドを複写する>))
 
 === 設定
-  * ((<rabbit-mode.el::画像テンプレートのデフォルトのサイズ指定方法を変える>))
-  * ((<rabbit-mode.el::rabbit-modeの変数>))
+  * ((<rabbit-mode.el::README.ja/画像テンプレートのデフォルトのサイズ指定方法を変える>))
+  * ((<rabbit-mode.el::README.ja/rabbit-modeの変数>))
 
 == Rabbitの操作
 === EmacsからRabbitを起動する
