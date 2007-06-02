@@ -104,6 +104,7 @@ Printed output (index) (0.5.2):
   * ((<README.ja|Rabbit::README.ja>))
   * ((<INSTALL.win32.en|Rabbit::INSTALL.win32.en>))
   * ((<INSTALL.win32.ja|Rabbit::INSTALL.win32.ja>))
+  * ((<INSTALL.macosx-macports.ja>|Rabbit::INSTALL.macosx-macports.ja>))
   * ((<rabbit-mode.el::README.ja>))
 
 == サンプル/Samples
