@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 830 2006-11-02 15:33:47Z kou $
+# $Id: rabbit.rd 863 2007-03-29 08:22:11Z kou $
 
 = Rabbit
 
@@ -65,6 +65,11 @@
   * マウスジェスチャ
   * スポットライト
   * 虫眼鏡
+
+= まだ(('sup:5'))ある
+
+  * PDFビューワ
+    * RDだけではなくPDFも読み込める
 
 = できないこと
 
