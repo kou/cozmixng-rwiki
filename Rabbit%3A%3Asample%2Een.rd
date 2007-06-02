@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 831 2006-11-02 15:36:41Z kou $
+# $Id: rabbit_en.rd 863 2007-03-29 08:22:11Z kou $
 
 = Rabbit(en)
 
@@ -65,6 +65,11 @@ A presentation tool
   * mouse gesture
   * spotlight
   * magnifier
+
+= More(('sup:5')) ...
+
+  * PDF viewer
+    * can read not only RD but also PDF
 
 = Not available
 
