@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 858 2007-03-29 07:02:02Z kou $
+$Id: README.en 878 2007-06-01 14:19:44Z kou $
 
 == Name
 
@@ -796,3 +796,4 @@ page from XXX.rd.
   * kimura wataru: He makes Mac OS X package.
   * kitaj: He pointed out minor miss in INSTALL.win32.en.
   * akapy: He wrote a document for emerge.
+  * OBATA Akio: He makes pkgsrc package.
