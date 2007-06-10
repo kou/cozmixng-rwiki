@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* rcairo: ページサイズを"A4"とか:a4と指定できるようにする。
+
 * Rabbit: cairoを使っているときでも背景画像を指定したらタイル状にする。
 
 * Subversion: Svn::Core::PROP_XXXじゃなくて、:XXXというようにも書けるようにする。
