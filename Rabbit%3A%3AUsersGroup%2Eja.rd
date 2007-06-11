@@ -116,13 +116,10 @@
     * ((<moroの日記|URL:http://d.hatena.ne.jp/moro/>))
   * ささださん
     * ((<DA|URL:http://www.atdot.net/~ko1/diary/>))
-
   * 佐々木さん
     * ((<徒然|URL:http://orchid.ep.sci.hokudai.ac.jp/~uwabami/diary/>))
-
   * znzさん
     * ((<%!zt! diary|URL:http://znz.s1.xrea.com/t/>))
-
   * おばたさん
     * ((<Obache Watching|URL:http://www.lins.jp/~obata/diary/>))
 
@@ -130,9 +127,10 @@
 
   * わたなべひろふみ
     * ((<Just another Ruby porter,|URL:http://jarp.does.notwork.org/diary/>))
-
   * なかむら(う)さん
     * ((<丁稚な日々|URL:http://www.garbagecollect.jp/~usa/d/>))
+  * むとうまさおさん
+    * ((<よたらぼ|URL:http://www.yotabanana.com/lab/>))
 
   * ...
 
