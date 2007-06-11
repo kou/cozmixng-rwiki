@@ -126,6 +126,14 @@
   * おばたさん
     * ((<Obache Watching|URL:http://www.lins.jp/~obata/diary/>))
 
+# RubyKaigi2007
+
+  * わたなべひろふみ
+    * ((<Just another Ruby porter,|URL:http://jarp.does.notwork.org/diary/>))
+
+  * なかむら(う)さん
+    * ((<丁稚な日々|URL:http://www.garbagecollect.jp/~usa/d/>))
+
   * ...
 
 == 参加しようかなぁな人達
