@@ -26,7 +26,7 @@ ruby 1.8.6 のインストール。One-Click Installerを使うのが楽．
 == Ruby/GTK2のインストール
 
 以下のURLを参考にしてRuby/GTK2(GTK2入り)の最新版をインストールする。
-  <URL:http://ruby-gnome2.sourceforge.jp/ja/hiki.cgi?%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB%A5%AC%A5%A4%A5%C9+Windows%CA%D4>
+  ((<URL:http://ruby-gnome2.sourceforge.jp/ja/hiki.cgi?%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB%A5%AC%A5%A4%A5%C9+Windows%CA%D4>))
 
 == Rabbit のインストール
 
