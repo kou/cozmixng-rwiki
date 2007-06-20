@@ -132,6 +132,10 @@
   * むとうまさおさん
     * ((<よたらぼ|URL:http://www.yotabanana.com/lab/>))
 
+# RubyKaigi2007後
+
+  * ただただし
+    * ((<ただのにっき|URL:http://sho.tdiary.net/>))
   * ...
 
 == 参加しようかなぁな人達
