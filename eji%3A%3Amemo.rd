@@ -1,7 +1,3 @@
-このページを表示させようとするとRWikiが固まっちゃうから一時的にコメントアウト。
-
-ごめんなさい。
-=end
 = eji::memo
 
   * [ぷ] ((<FLOPS 2006|URL:http://nicosia.is.s.u-tokyo.ac.jp/FLOPS2006/>))
