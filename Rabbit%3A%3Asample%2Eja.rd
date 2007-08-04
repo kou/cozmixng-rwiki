@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 863 2007-03-29 08:22:11Z kou $
+# $Id: rabbit.rd 926 2007-06-17 10:20:16Z kou $
 
 = Rabbit
 
@@ -50,7 +50,7 @@
 
   * オフスクリーンでのスクリーンショット作成
   * 国際化されたメッセージ
-  * PS/PDF出力((-品質は微妙-))
+  * PS/PDF出力
 
 = まだまだまだある
 
@@ -70,6 +70,8 @@
 
   * PDFビューワ
     * RDだけではなくPDFも読み込める
+  * Wiki記法サポート
+    * RDだけではなくWiki記法でも書ける
 
 = できないこと
 
