@@ -136,6 +136,8 @@
 
   * ただただし
     * ((<ただのにっき|URL:http://sho.tdiary.net/>))
+  * 前田さん
+    * ((<Jounal in Time|URL:http://shugo.net/jit/>))
   * ...
 
 == 参加しようかなぁな人達
