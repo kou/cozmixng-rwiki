@@ -28,7 +28,7 @@ Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤
 
 == ¥À¥¦¥ó¥í¡¼¥É/Download
 
-The latest version: 0.5.2(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.2.tar.gz>)))
+The latest version: 0.5.3(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.3.tar.gz>)))
 
 == ¥¤¥ó¥¹¥È¡¼¥ë¤ËÉ¬Í×¤Ê¤â¤Î/Requirements
 
@@ -76,21 +76,21 @@ The latest version: 0.5.2(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == °õºþ½ÐÎÏ/Printed output
 
-°õºþ½ÐÎÏ(0.5.2):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.2.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.2.pdf>))
+°õºþ½ÐÎÏ(0.5.3):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.3.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.3.pdf>))
 
-°õºþ½ÐÎÏ¡Ê°ìÍ÷¡Ë(0.5.2):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.5.2.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.5.2.pdf>))
+°õºþ½ÐÎÏ¡Ê°ìÍ÷¡Ë(0.5.3):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.5.3.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.5.3.pdf>))
 
-Printed output(0.5.2):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.5.2.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.5.2.pdf>))
+Printed output(0.5.3):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.5.3.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.5.3.pdf>))
 
-Printed output (index) (0.5.2):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.2.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.2.pdf>))
+Printed output (index) (0.5.3):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.3.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.3.pdf>))
 
 == BTS
 
