@@ -2,7 +2,7 @@
 
 = INSTALL.win32.ja
 
-$Id: INSTALL.win32.ja 774 2006-07-02 02:49:18Z kou $
+$Id: INSTALL.win32.ja 929 2007-06-18 10:47:31Z kou $
 
 Windows上でRabbitを実行するのは大変です．以下を参考にして頑
 張ってください．
@@ -25,14 +25,14 @@ ruby 1.8.6 のインストール。One-Click Installerを使うのが楽．
 
 == Ruby/GTK2のインストール
 
-以下のURLを参考にしてRuby/GTK2(GTK2入り)の最新版をインストールする。
+以下のURLを参考にしてRuby/GTK2(GTK2入り)の最新版をインストー
+ルする。
 
 ((<URL:http://ruby-gnome2.sourceforge.jp/ja/hiki.cgi?%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB%A5%AC%A5%A4%A5%C9+Windows%CA%D4>))
 
 == Rabbit のインストール
 
 install.bat を実行してください。
-
 
 == EPS を表示する
 
