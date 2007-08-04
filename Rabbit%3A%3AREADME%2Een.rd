@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 878 2007-06-01 14:19:44Z kou $
+$Id: README.en 965 2007-07-09 12:54:27Z kou $
 
 == Name
 
@@ -182,9 +182,6 @@ libraries on Windows.
 
   * mimeTeX (for writing TeX in RD)
   * gs (for reading EPS)
-  * libgnomeprint >= 2.8 (for outputting PS/PDF)
-  * Ruby/GnomePrint in ((<RAA:ruby-gnome2>)) (for outputting
-    PS/PDF)
   * Ruby/RSVG in ((<RAA:ruby-gnome2>)) (for beautiful scaling
     SVG)
   * ((<RAA:ruby-gettext>)) (for displaying localized messages)
@@ -194,6 +191,7 @@ libraries on Windows.
   * Tgif
   * Dia
   * GIMP
+  * HikiDoc
 
 === Included libraries
 
@@ -628,6 +626,9 @@ You can use it but should not use it in presentation.
 You specify look and feel of the slide regardless of RD.
 This is the theme.
 
+There is a slide for benchmarking your theme. It's
+sample/theme-bench_en.rab.
+
 === Where does place a theme?
 
 A theme is searched by using ruby's $LOAD_PATH. If you make
@@ -766,8 +767,11 @@ page from XXX.rd.
   * MoMo: She drow some pretty images.
   * MIYAMUKO: He wrote rabbit mode for xyzzy. He helps
     Rabbit works on Windows.
-  * zunda: He fixed EPS handling. He gives me an advise for
-    --margin. He makes a presentation with Rabbit.
+  * zunda:
+    * He fixed EPS handling.
+    * He gives me an advise for --margin.
+    * He makes a presentation with Rabbit.
+    * He updates INSTALL.win32.ja.
   * Vincent: He helps Rabbit works on Max OS X. He makes
     french messages.
   * sode: He wrote cool rabbit, pretty rabbit and pretty
@@ -785,7 +789,9 @@ page from XXX.rd.
       generation.
     * He makes Mac OS X (Intel) package.
   * atzm: He makes Gentoo package (*.ebuild).
-  * akira yamada: He makes Debian package (*.deb).
+  * akira yamada:
+    * He makes Debian package (*.deb).
+    * He reports some bugs and also fixes them.
   * usatti: She drow some logos and taro series images.
   * dot: He helps installation on Windows.
   * tanaka: He checks operations on Windows.
@@ -797,3 +803,14 @@ page from XXX.rd.
   * kitaj: He pointed out minor miss in INSTALL.win32.en.
   * akapy: He wrote a document for emerge.
   * OBATA Akio: He makes pkgsrc package.
+  * Masao Mutoh:
+    * He makes a presentation with Rabbit.
+    * He updates INSTALL.win32.ja.
+  * TADA Tadashi:
+    * He makes a presentation with Rabbit.
+    * He contributes his themes.
+    * He gives an idea that Rabbit provides a slide for
+      benchmarking your theme.
+  * Shugo Maeda:
+    * He makes a presentation with Rabbit.
+    * He reports a bug.
