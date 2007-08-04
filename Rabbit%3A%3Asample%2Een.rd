@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 863 2007-03-29 08:22:11Z kou $
+# $Id: rabbit_en.rd 926 2007-06-17 10:20:16Z kou $
 
 = Rabbit(en)
 
@@ -70,6 +70,8 @@ A presentation tool
 
   * PDF viewer
     * can read not only RD but also PDF
+  * Wiki notation
+    * can write with Wiki notation
 
 = Not available
 
