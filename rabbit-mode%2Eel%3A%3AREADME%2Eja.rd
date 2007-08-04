@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 883 2007-06-02 07:16:45Z kou $
+$Id: README.ja 892 2007-06-04 03:43:48Z kou $
 
 == rabbit-mode.el
 
