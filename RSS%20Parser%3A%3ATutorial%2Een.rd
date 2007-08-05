@@ -2,7 +2,7 @@
 
 = Tutorial.en
 
-$Id: Tutorial.en 239 2007-03-11 05:11:47Z kou $
+$Id: Tutorial.en 305 2007-08-04 05:07:22Z kou $
 
 Sorry for my funny English :-(
 
@@ -10,9 +10,8 @@ Sorry for my funny English :-(
 
 RSS Parser supports RSS 0.9x/1.0/2.0 excluding 0.90. Sorry.
 
-Atom supporting is since 0.1.7. To support Atom, RSS Maker's
-API is changed a bit. So, ruby 1.8.x will not include RSS
-Parser which supports Atom.
+If you want to handle Atom and/or Podcast module (itunes:XXX
+element), use 0.1.8 or later.
 
 == require
 
