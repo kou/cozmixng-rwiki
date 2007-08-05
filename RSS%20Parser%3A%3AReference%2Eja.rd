@@ -2,7 +2,7 @@
 
 = Reference.ja
 
-$Id: Reference.ja 247 2007-03-17 08:11:06Z kou $
+$Id: Reference.ja 305 2007-08-04 05:07:22Z kou $
 
 RSS Makerのリファレンスです．
 
@@ -17,11 +17,6 @@ Rubyの伝統的な(({Class#instance_method}))や
 ンスメソッド(({meth}))を示すために以下のように書きます．
 
   obj.meth
-
-0.1.7のAtomサポートによりいくつか参照系のAPIが変更されていま
-す。代入系のAPIは互換性が残っています（互換性が失われていた場
-合はバグです）。0.1.6までは参照系のAPIを使うことはほとんどな
-かったと思うので影響は少ないのではないかと思います。
 
 以下に現れる(({maker}))は(({RSS::Maker.make}))に渡したブロッ
 クへの引数名とします．つまり，以下のようにした時の
@@ -225,7 +220,9 @@ Atomフィード文書を生成する場合は(({title}))、(({updated}))、
 --- maker.channel.about=(value)
 
 --- maker.channel.title
-     (({title}))を返します。0.1.6以前はStringかnilでした。
+     (({title.content}))を返します。0.1.6以前と同じ挙動です。
+--- maker.channel.title {|title| ...}
+     ブロックに(({title}))を渡します。
 --- maker.channel.title=(value)
      (({title.content}))に((|value|))を設定します。
 
@@ -240,7 +237,9 @@ Atomフィード文書を生成する場合は(({title}))、(({updated}))、
      しく作成し、(({href}))を設定します。
 
 --- maker.channel.description
-     (({description}))を返します。0.1.6以前はStringかnilでした。
+     (({description.content}))を返します。0.1.6以前と同じ挙動です。
+--- maker.channel.description {|description| ...}
+     ブロックに(({description}))を渡します。
 --- maker.channel.description=(value)
      (({description.content}))に((|value|))を設定します。
 
@@ -253,11 +252,14 @@ Atomフィード文書を生成する場合は(({title}))、(({updated}))、
 --- maker.channel.language=(value)
 
 --- maker.channel.copyright
-     (({copyright}))を返します。0.1.6以前はStringかnilでした。
+     (({copyright.content}))を返します。0.1.6以前と同じ挙動です。
+--- maker.channel.copyright {|copyright| ...}
+     ブロックに(({copyright}))を渡します。
 --- maker.channel.copyright=(value)
      (({copyright.content}))に((|value|))を設定します。
 
 --- maker.channel.rights
+--- maker.channel.rights {|rights| ...}
      (({maker.channel.copyright}))の別名です．
 --- maker.channel.rights=(value)
      (({maker.channel.copyright=}))の別名です．
@@ -291,7 +293,9 @@ Atomフィード文書を生成する場合は(({title}))、(({updated}))、
 --- maker.channel.lastBuildDate=(value)
 
 --- maker.channel.generator
-     (({generator}))を返します。
+     (({generator.content}))を返します。
+--- maker.channel.generator {|generator| ...}
+     ブロックに(({generator}))を渡します。
 --- maker.channel.generator=(value)
      (({generator.content}))に((|value|))を設定します。
 
@@ -662,7 +666,9 @@ Atomエントリの場合は(({id}))、(({title}))、(({updated}))、一
 します。
 
 --- item.title
-     (({title}))を返します。0.1.6以前はStringかnilでした。
+     (({title.content}))を返します。0.1.6以前と同じ挙動です。
+--- item.title {|title| ...}
+     ブロックに(({title}))を渡します。
 --- item.title=(value)
      (({title.content}))に((|value|))を設定します。
 
@@ -684,11 +690,14 @@ Atomエントリの場合は(({id}))、(({title}))、(({updated}))、一
      しく作成し、(({href}))を設定します。
 
 --- item.description
-     (({description}))を返します。0.1.6以前はStringかnilでした。
+     (({description.content}))を返します。0.1.6以前と同じ挙動です。
+--- item.description {|description| ....}
+     ブロック(({description}))を渡します。
 --- item.description=(value)
      (({description.content}))に((|value|))を設定します。
 
 --- item.summary
+--- item.summary {|summary| ...}
      (({item.description}))の別名です。
 --- item.summary=(value)
      (({item.description=}))の別名です。
@@ -740,7 +749,9 @@ Atomエントリの場合は(({id}))、(({title}))、(({updated}))、一
      (({categories}))を返します。
 
 --- item.rights
-     (({rights}))を返します。0.1.6以前はStringかnilでした。
+     (({rights.content}))を返します。0.1.6以前と同じ挙動です。
+--- item.rights {|rights| ...}
+     ブロックに(({rights}))を渡します。
 --- item.rights=(value)
      (({rights.content}))に((|value|))を設定します。
 
@@ -977,6 +988,8 @@ Atomでは利用されません。
   * Dublin Core
   * Syndication
   * TrackBack
+  * Image
+  * ITunes
 
 === Content
 
@@ -1215,3 +1228,143 @@ Dublin Coreのメソッドも使えます．
      (({image_item.image_size}))の別名です．
 --- image_item.size=
      (({image_item.image_size=}))の別名です．
+
+=== ITunes
+
+Podcast用の情報を生成します。RSS 2.0を生成する場合のみ利用さ
+れます。
+
+以下のメソッドを(({channel}))に追加します．
+
+--- itunes_author
+--- itunes_author=
+
+--- itunes_block
+--- itunes_block=
+
+--- itunes_block?
+     (({itunes_block}))が(({"yes"}))または(({true}))のときに
+     (({true}))を返します。大文字小文字は区別されません。
+
+--- itunes_categories
+
+--- itunes_image
+
+--- itunes_explicit
+--- itunes_explicit=
+
+--- itunes_explicit?
+     (({itunes_explicit}))が(({"yes"}))または(({true}))のときに
+     (({true}))を返し、(({"clean"}))または(({false}))のとき
+     に(({false}))を返し、それ以外のときに(({nil}))を返しま
+     す。大文字小文字は区別されません。
+
+--- itunes_keywords
+--- itunes_keywords=(keywords)
+     ((|keywords|))は配列またはCSV形式の文字列で指定します。
+
+--- itunes_new_feed_url
+--- itunes_new_feed_url=
+
+--- itunes_owner
+
+--- itunes_subtitle
+--- itunes_subtitle=
+
+--- itunes_summary
+--- itunes_summary=
+
+以下のメソッドを(({item}))に追加します．
+
+--- itunes_author
+--- itunes_author=
+
+--- itunes_block
+--- itunes_block=
+
+--- itunes_block?
+     (({itunes_block}))が(({"yes"}))または(({true}))のときに
+     (({true}))を返します。大文字小文字は区別されません。
+
+--- itunes_duration
+--- itunes_duration=
+
+--- itunes_duration {|itunes_duration| ...}
+     ブロックに(({itunes_duration}))を渡します。
+
+--- itunes_explicit
+--- itunes_explicit=
+
+--- itunes_explicit?
+     (({itunes_explicit}))が(({"yes"}))または(({true}))のときに
+     (({true}))を返し、(({"clean"}))または(({false}))のとき
+     に(({false}))を返し、それ以外のときに(({nil}))を返しま
+     す。大文字小文字は区別されません。
+
+--- itunes_keywords
+--- itunes_keywords=(keywords)
+     ((|keywords|))は配列またはCSV形式の文字列で指定します。
+
+--- itunes_subtitle
+--- itunes_subtitle=
+
+--- itunes_summary
+--- itunes_summary=
+
+==== itunes_categories
+
+--- itunes_categories.new_category
+
+     新しく<itunes:category>要素を追加し，それを返します．
+     ブロックを指定した以下のような使いかたを推奨します．
+
+       itunes_categories.new_category do |category|
+         category.text = CATEGORY_NAME
+         ...
+       end
+
+     値を設定するには(({itunes_category.text=}))を使います。
+
+     現在設定している値を取得するには
+     (({itunes_category.text}))を使います。
+
+     サブカテゴリを指定するには
+     (({itunes_category.new_category.text=}))とします。
+
++ itunes_category
+
+--- itunes_category.text
+--- itunes_category.text=
+     カテゴリ名を取得・指定します。
+
+--- itunes_category.new_category
+     サブカテゴリを指定します。使用方法は
+     (({itunes_categories.new_category}))と同様です。
+
+==== itunes_owner
+
+--- itunes_owner.itunes_name
+--- itunes_owner.itunes_name=
+
+--- itunes_owner.itunes_email
+--- itunes_owner.itunes_email=
+
+==== itunes_duration
+
+--- itunes_duration.content
+--- itunes_duration.content=(content)
+     次のどれかの形式で再生時間を指定します。（H: 時間, M:
+     分, S: 秒）
+       * HH:MM:SS
+       * H:MM:SS
+       * MM:SS
+       * M:SS
+
+--- itunes_duration.hour
+--- itunes_duration.hour=
+
+--- itunes_duration.minute
+--- itunes_duration.minute=
+
+--- itunes_duration.second
+--- itunes_duration.second=
