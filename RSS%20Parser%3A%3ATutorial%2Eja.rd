@@ -2,16 +2,15 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 247 2007-03-17 08:11:06Z kou $
+$Id: Tutorial.ja 305 2007-08-04 05:07:22Z kou $
 
 == 注意
 
 RSS ParserはRSS 0.9x/1.0/2.0をサポートしていますが，RSS 0.90
 はサポートしてません．ごめんなさい．
 
-AtomのサポートはRSS Parser 0.1.7からです．Atomをサポートする
-ためにRSS MakerのAPIが少し変わっています．そのため，ruby
-1.8.xにはAtomをサポートしたRSS Parserは含まれないと思います．
+Atom・Podcast用モジュール（itunes:XXX要素）を使いたい場合は
+0.1.8以降を使ってください。
 
 == require
 
