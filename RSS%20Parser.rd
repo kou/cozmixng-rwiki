@@ -1,7 +1,7 @@
 = RSS Parser
 
-The latest version: 0.1.7
-(((<download|URL:http://www.cozmixng.org/~kou/download/rss-0.1.7.tar.gz>)))
+The latest version: 0.1.8
+(((<download|URL:http://www.cozmixng.org/~kou/download/rss-0.1.8.tar.gz>)))
 
   * ((<README.en|RSS Parser::README.en>))
   * ((<README.ja|RSS Parser::README.ja>))
