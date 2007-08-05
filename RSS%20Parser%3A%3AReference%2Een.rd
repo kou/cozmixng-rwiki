@@ -2,7 +2,7 @@
 
 = Reference.en
 
-$Id: Reference.en 246 2007-03-17 08:08:51Z kou $
+$Id: Reference.en 305 2007-08-04 05:07:22Z kou $
 
 This is a reference of RSS Maker.
 
@@ -18,12 +18,6 @@ use the same notation of code. In fact, I write the
 following when I show instance method (({meth})) of (({obj})):
 
   obj.meth
-
-Since 0.1.7, some reader APIs are changed to support
-Atom. There is backward compatibility for writer API. (It's
-a bug if writer API doesn't have backward compatibility.) It
-seems that there are small effect of this change because
-most user doesn't user reader APIs until 0.1.6.
 
 A (({maker})) which is appeared in the following is
 block argument name of (({RSS::Maker.make})). That is, the
@@ -226,7 +220,10 @@ just an accessor.
 --- maker.channel.about=(value)
 
 --- maker.channel.title
-     Returns (({title})). It was a String or nil before 0.1.7.
+     Returns (({title.content})). It's same behavior as
+     0.1.6 or earlier.
+--- maker.channel.title {|title| ...}
+     Pass ((|title|)) to the given block.
 --- maker.channel.title=(value)
      Sets (({title.content})) as ((|value|)).
 
@@ -241,7 +238,10 @@ just an accessor.
      (({link})) by (({links.new_link})) and sets (({href})).
 
 --- maker.channel.description
-     Returns (({description})). It was a String or nil before 0.1.7.
+     Returns (({description.content})). It's same behavior as
+     0.1.6 or earlier.
+--- maker.channel.description {|description| ...}
+     Pass ((|description|)) to the given block.
 --- maker.channel.description=(value)
      Sets (({description.content})) as ((|value|)).
 
@@ -254,11 +254,15 @@ just an accessor.
 --- maker.channel.language=(value)
 
 --- maker.channel.copyright
-     Returns (({copyright})). It was a String or nil before 0.1.7.
+     Returns (({copyright.content})). It's same behavior as
+     0.1.6 or earlier.
+--- maker.channel.copyright {|copyright| ...}
+     Pass ((|copyright|)) to the given block.
 --- maker.channel.copyright=(value)
      Sets (({copyright.content})) as ((|value|)).
 
 --- maker.channel.rights
+--- maker.channel.rights {|rights| ...}
      Is an alias of (({maker.channel.copyright})).
 --- maker.channel.rights=(value)
      Is an alias of (({maker.channel.copyright=})).
@@ -292,7 +296,9 @@ just an accessor.
 --- maker.channel.lastBuildDate=(value)
 
 --- maker.channel.generator
-     Returns (({generator})).
+     Returns (({generator.content})).
+--- maker.channel.generator {|generator| ...}
+     Pass ((|generator|)) to the given block.
 --- maker.channel.generator=(value)
      Sets (({generator.content})) as ((|value|)).
 
@@ -663,7 +669,10 @@ not specified, (({link})) is used. If there are no
 (({authors})), (({maker.channel.authors})) are used.
 
 --- item.title
-     Returns (({title})). It was a String or nil before 0.1.7.
+     Returns (({title.content})). It's same behavior as
+     0.1.6 or earlier.
+--- item.title {|title ...}
+     Pass ((|title|)) to the given block.
 --- item.title=(value)
      Sets (({title.content})) as ((|value|)).
 
@@ -678,11 +687,15 @@ not specified, (({link})) is used. If there are no
      (({link})) by (({links.new_link})) and sets (({href})).
 
 --- item.description
-     Returns (({description})). It was a String or nil before 0.1.7.
+     Returns (({description.content})). It's same behavior as
+     0.1.6 or earlier.
+--- item.description {|description| ...}
+     Pass ((|description|)) to the given block.
 --- item.description=(value)
      Sets (({description.content})) as ((|value|)).
 
 --- item.summary
+--- item.summary {|summary| ...}
      Is an alias of (({item.description})).
 --- item.summary=(value)
      Is an alias of (({item.description=})).
@@ -735,7 +748,10 @@ not specified, (({link})) is used. If there are no
      Returns (({categories})).
 
 --- item.rights
-     Returns (({rights})). It was a String or nil before 0.1.7.
+     Returns (({rights.content})). It's same behavior as
+     0.1.6 or earlier.
+--- item.rights {|rights ...}
+     Pass ((|rights|)) to the given block.
 --- item.rights=(value)
      Sets (({rights.content})) as ((|value|)).
 
@@ -975,6 +991,8 @@ The following modules are available.
   * Dublin Core
   * Syndication
   * TrackBack
+  * Image
+  * ITunes
 
 === Content
 
@@ -1005,7 +1023,7 @@ work.
      You can use (({dc_titles.new_title.value=})) and
      (({dc_titles.new_title.content=})) which is an alias of
      (({value=})) for modifying the value of this.
-    
+
      You can use (({value})) and (({content})) which is an
      alias of (({value})) for getting the value of this.
 
@@ -1214,3 +1232,144 @@ You can use Dublin Core's methods, too.
      Is an alias of (({image_item.image_size})).
 --- image_item.size=
      Is an alias of (({image_item.image_size=})).
+
+=== ITunes
+
+This module is for Podcast. This module is used only to make
+RSS 2.0.
+
+This module adds the following methods to (({channel})).
+
+--- itunes_author
+--- itunes_author=
+
+--- itunes_block
+--- itunes_block=
+
+--- itunes_block?
+     Returns (({true})) if (({itunes_block})) is (({"yes"}))
+     or (({true})). (case insensitive)
+
+--- itunes_categories
+
+--- itunes_image
+
+--- itunes_explicit
+--- itunes_explicit=
+
+--- itunes_explicit?
+     Returns (({true})) if (({itunes_explicit})) is
+     (({"yes"})) or (({true})), (({false})) if
+     (({itunes_explicit})) is (({"clean"})) or (({false})),
+     otherwise (({nil})). (case insensitive)
+
+--- itunes_keywords
+--- itunes_keywords=(keywords)
+     ((|keywords|)) should be Array of keyword or String as CSV.
+
+--- itunes_new_feed_url
+--- itunes_new_feed_url=
+
+--- itunes_owner
+
+--- itunes_subtitle
+--- itunes_subtitle=
+
+--- itunes_summary
+--- itunes_summary=
+
+And, adds the following methods to (({item})).
+
+--- itunes_author
+--- itunes_author=
+
+--- itunes_block
+--- itunes_block=
+
+--- itunes_block?
+     Returns (({true})) if (({itunes_block})) is (({"yes"}))
+     or (({true})). (case insensitive)
+
+--- itunes_duration
+--- itunes_duration=
+
+--- itunes_duration {|itunes_duration| ...}
+     Passes (({itunes_duration})) to the given block.
+
+--- itunes_explicit
+--- itunes_explicit=
+
+--- itunes_explicit?
+     Returns (({true})) if (({itunes_explicit})) is
+     (({"yes"})) or (({true})), (({false})) if
+     (({itunes_explicit})) is (({"clean"})) or (({false})),
+     otherwise (({nil})). (case insensitive)
+
+--- itunes_keywords
+--- itunes_keywords=(keywords)
+     ((|keywords|)) should be Array of keyword or String as CSV.
+
+--- itunes_subtitle
+--- itunes_subtitle=
+
+--- itunes_summary
+--- itunes_summary=
+
+==== itunes_categories
+
+--- itunes_categories.new_category
+
+     Adds new <itunes:category> element then returns it. Using with
+     block style is recommended like the following:
+
+       itunes_categories.new_category do |category|
+         category.text = CATEGORY_NAME
+         ...
+       end
+
+     You can use (({itunes_category.text=})) for modifying
+     the value of this.
+
+     You can use (({itunes_category.text})) for getting the
+     value of this.
+
+     You can use (({itunes_category.new_category.text=}))
+     for adding a sub category.
+
++ itunes_category
+
+--- itunes_category.text
+--- itunes_category.text=
+     Sets/gets category name.
+
+--- itunes_category.new_category
+     Adds a new sub category. The usage is same as
+     (({itunes_categories.new_category})).
+
+==== itunes_owner
+
+--- itunes_owner.itunes_name
+--- itunes_owner.itunes_name=
+
+--- itunes_owner.itunes_email
+--- itunes_owner.itunes_email=
+
+==== itunes_duration
+
+--- itunes_duration.content
+--- itunes_duration.content=(content)
+     Sets duration time as the following format (H: hour, M:
+     minute, S: second):
+       * HH:MM:SS
+       * H:MM:SS
+       * MM:SS
+       * M:SS
+
+--- itunes_duration.hour
+--- itunes_duration.hour=
+
+--- itunes_duration.minute
+--- itunes_duration.minute=
+
+--- itunes_duration.second
+--- itunes_duration.second=
