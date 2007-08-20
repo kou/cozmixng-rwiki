@@ -138,6 +138,8 @@
     * ((<ただのにっき|URL:http://sho.tdiary.net/>))
   * 前田さん
     * ((<Jounal in Time|URL:http://shugo.net/jit/>))
+  * だんさん
+    * ((<Jewel-mmo 開発日記|URL:http://dgames.jp/dan/>)) 
   * ...
 
 == 参加しようかなぁな人達
