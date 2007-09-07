@@ -102,7 +102,7 @@ MythTVの設定プログラムを起動する。
 
     * キャプチャーカード設定: カードタイプ
 
-      MPEG-2エンコーダーカード(CX23416GYC-STVLP, GVMVP/RX
+      MPEG-2エンコーダーカード(CX23416GYC-STVLP, GV-MVP/RX)
 
   * 3. ビデオソース: ビデオソース
 
@@ -110,7 +110,7 @@ MythTVの設定プログラムを起動する。
 
     * ビデオソース設定: ビデオソース名
 
-      TV（任意）
+      TV-Japan（任意）
 
     * ビデオソース設定: Listings grabber
 
@@ -128,12 +128,27 @@ MythTVの設定プログラムを起動する。
 
     * ソースを入力に接続: ビデオソース
 
-      TV（3.で設定したテレビのビデオソースを指定）
+      TV-Japan（3.で設定したテレビのビデオソースを指定）
 
 
 一度終了。チャンネルを更新していないので終了時に問題を修正しますか？とか聞かれるが、修正しないで終了する。
+
+一通り設定が終わったので、サーバmythtv-backendを起動する。
+
+  % sudo /etc/init.d/mythtv-backend start
 
 手動で番組表を更新。
 
   % mythfilldatabase
 
+以上で設定終了。（もしかしたら↑に--manualオプションをつけて明示的にチャンネルを指定しないといけないかもしれない。）
+
+== TVを観る
+
+  % mythfrontend
+
+== 番組表を定期的に更新
+
+  % crontab -e
+  @daily nice -20 /usr/bin/mythfilldatabase
+  %
