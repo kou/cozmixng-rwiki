@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 305 2007-08-04 05:07:22Z kou $
+$Id: README.en 314 2007-08-13 14:57:07Z kou $
 
 == Name
 
@@ -83,3 +83,4 @@ parse an RSS 0.90 feed try to run the following:
   * Kazuhiro NISHIYAMA: He sent me a bug report of documents.
   * Christian W. Zuckschwerdt: He gave me an advice for
     treating RSS 0.90.
+  * Takuo Yonezawa: He sent me a bug report.
