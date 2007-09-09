@@ -4,71 +4,71 @@
 
 $Id: README.ja 314 2007-08-13 14:57:07Z kou $
 
-== 名前
+== ̾��
 
 RSS Parser
 
-== 作者
+== ���
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== ライセンス
+== �饤����
 
 Ruby's
 
-== 注意
+== ����
 
-  * RSS Parser 0.1.7以降ではruby 1.8.2以降でないと動きません．
-  * Atom・Podcast用の要素を扱いたい場合はRSS Parser 0.1.8以
-    降を使ってください。
-  * バージョンを重ねるごとにより厳密に動作するようになってい
-    ます。今までは#to_sでRSSが得られたものが空文字列が返るよ
-    うになっているかもしれません。その場合は#validateを呼ぶ
-    とどこが問題かわかるでしょう。
+  * RSS Parser 0.1.7�ʹߤǤ�ruby 1.8.2�ʹߤǤʤ���ư���ޤ���
+  * Atom��Podcast�Ѥ����Ǥ򰷤���������RSS Parser 0.1.8��
+    �ߤ�ȤäƤ���������
+  * �С�������Ťͤ뤴�Ȥˤ�긷̩��ư���褦�ˤʤäƤ�
+    �ޤ������ޤǤ�#to_s��RSS������줿��Τ���ʸ�����֤��
+    ���ˤʤäƤ��뤫�⤷��ޤ��󡣤��ξ���#validate��Ƥ�
+    �Ȥɤ������꤫�狼��Ǥ��礦��
 
-== なにこれ？
+== �ʤˤ��졩
 
 ((<RSS(RDF Site Summary)
-1.0|URL:http://web.resource.org/rss/1.0/>))，RSS 0.9x/2.0
-（0.90を除く），((<Atom
-1.0|URL:http://www.ietf.org/rfc/rfc4287.txt>))を妥当性検証
-（バリデーション）付き（あるいは無し）でパースします。
+1.0|URL:http://web.resource.org/rss/1.0/>))��RSS 0.9x/2.0
+��0.90������ˡ�((<Atom
+1.0|URL:http://www.ietf.org/rfc/rfc4287.txt>))������������
+�ʥХ�ǡ��������դ��ʤ��뤤��̵���ˤǥѡ������ޤ���
 
-rubyの配布ファイルにも入っています．
+ruby�����ۥե�����ˤ����äƤ��ޤ���
 
-== 依存ライブラリ
+== ��¸�饤�֥��
 
-  * XMLプロセサ(((<RAA:REXML>))2.5.0以上または
-    ((<RAA:xmlscan>))または((<RAA:xmlparser>)))
+  * XML�ץ�����(((<RAA:REXML>))2.5.0�ʾ�ޤ���
+    ((<RAA:xmlscan>))�ޤ���((<RAA:xmlparser>)))
 
-=== あればいいライブラリ
+=== ����Ф����饤�֥��
 
-  * Iconvバインディング
+  * Iconv�Х���ǥ���
   * ((<RAA:Uconv>))
 
-== 入手方法
+== ������ˡ
 
 ((<URL:http://www.cozmixng.org/~kou/download/rss.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/rss/trunk rss
 
-== インストール
+== ���󥹥ȡ���
 
   % ruby setup.rb config
   % ruby setup.rb setup
   # ruby setup.rb install
 
-あるいは
+���뤤��
 
   # ruby setup.rb
 
 == FAQ
 
-=== RSS 0.90をパースしたい
+=== RSS 0.90��ѡ���������
 
-RSS 0.90はRSS 1.0として扱えることもあります．もし，RSS 0.90
-をパースしたい場合は，以下のようにRSS 1.0としてパースするこ
-とが出来ます．
+RSS 0.90��RSS 1.0�Ȥ��ư����뤳�Ȥ⤢��ޤ����⤷��RSS 0.90
+��ѡ������������ϡ��ʲ��Τ褦��RSS 1.0�Ȥ��ƥѡ������뤳
+�Ȥ�����ޤ���
 
   def rss090_to_rss10(feed)
     feed.sub(%r{xmlns=(['"])http://my.netscape.com/rdf/simple/0.9/\1},
@@ -76,13 +76,13 @@ RSS 0.90はRSS 1.0として扱えることもあります．もし，RSS 0.90
   end
   rss = RSS::Parser.parse(rss090_to_rss10(feed), false)
 
-== 感謝
+== ����
 
-  * かずひこさん: いろいろバグを報告してくれました．
-  * 秋山智朗さん: ドキュメントのバグを報告してくれました．
-  * Chris Leeさん: バグを報告してくれました．
-  * Ronald Pijnackerさん: バグを報告してくれました．
-  * 西山和広さん: ドキュメントのバグを報告してくれました．
-  * Christian W. Zuckschwerdtさん: RSS 0.90の扱いについてア
-    ドバイスしてくれました．
-  * 米澤拓央さん: バグを報告してくれました。
+  * �����Ҥ�����: ���������Х�����𤷤Ƥ���ޤ�����
+  * ������ϯ����: �ɥ�����ȤΥХ�����𤷤Ƥ���ޤ�����
+  * Chris Lee����: �Х�����𤷤Ƥ���ޤ�����
+  * Ronald Pijnacker����: �Х�����𤷤Ƥ���ޤ�����
+  * �����¹�����: �ɥ�����ȤΥХ�����𤷤Ƥ���ޤ�����
+  * Christian W. Zuckschwerdt����: RSS 0.90�ΰ����ˤĤ��ƥ�
+    �ɥХ������Ƥ���ޤ�����
+  * ��߷�������: �Х�����𤷤Ƥ���ޤ�����
