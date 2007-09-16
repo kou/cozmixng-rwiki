@@ -2,7 +2,7 @@
 
 = Tutorial.en
 
-$Id: Tutorial.en 305 2007-08-04 05:07:22Z kou $
+$Id: Tutorial.en 325 2007-09-09 10:18:31Z kou $
 
 Sorry for my funny English :-(
 
@@ -12,6 +12,9 @@ RSS Parser supports RSS 0.9x/1.0/2.0 excluding 0.90. Sorry.
 
 If you want to handle Atom and/or Podcast module (itunes:XXX
 element), use 0.1.8 or later.
+
+If you want to handle Slash module (slash:XXX element), use
+0.2.0 or later.
 
 == require
 
