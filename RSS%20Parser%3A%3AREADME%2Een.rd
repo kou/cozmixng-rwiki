@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 314 2007-08-13 14:57:07Z kou $
+$Id: README.en 325 2007-09-09 10:18:31Z kou $
 
 == Name
 
@@ -21,6 +21,7 @@ Ruby's
   * RSS Parser 0.1.7 or later requires ruby 1.8.2 or later.
   * Use RSS Parser 0.1.8 or later to handle Atom and Podcast
     related elements.
+  * Use RSS Parser 0.2.0 or later to use Slash module.
   * RSS Parser works more strictly in each upgrade. You may
     get empty string by #to_s even if you got RSS
     string. You will find problems by calling #validate.
