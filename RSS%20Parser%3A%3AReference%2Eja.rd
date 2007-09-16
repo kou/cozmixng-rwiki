@@ -2,7 +2,7 @@
 
 = Reference.ja
 
-$Id: Reference.ja 305 2007-08-04 05:07:22Z kou $
+$Id: Reference.ja 325 2007-09-09 10:18:31Z kou $
 
 RSS Makerのリファレンスです．
 
@@ -990,6 +990,7 @@ Atomでは利用されません。
   * TrackBack
   * Image
   * ITunes
+  * Slash
 
 === Content
 
@@ -1368,3 +1369,32 @@ Podcast用の情報を生成します。RSS 2.0を生成する場合のみ利用さ
 
 --- itunes_duration.second
 --- itunes_duration.second=
+
+=== Slash
+
+以下のメソッドを(({item}))に追加します。
+
+--- slash_section
+--- slash_section=(value)
+
+--- slash_department
+--- slash_department=(value)
+
+--- slash_comments
+--- slash_comments=(value)
+
+--- slash_hit_parade
+
+     slash:hit_paradeの値を整数の配列で返します。コンマ区切り
+     の整数の文字列ではないので注意してください。
+
+--- slash_hit_parade=(value)
+
+     ((|value|))はコンマ区切りの整数の文字列でも整数の配列で
+     もどちらでもかまいません。
+
+--- slash_hit_parades
+     slash_hit_paradeの別名です。
+
+--- slash_hit_parades=(value)
+     slash_hit_parade=の別名です。
