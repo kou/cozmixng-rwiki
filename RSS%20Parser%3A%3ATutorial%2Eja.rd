@@ -2,7 +2,7 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 305 2007-08-04 05:07:22Z kou $
+$Id: Tutorial.ja 325 2007-09-09 10:18:31Z kou $
 
 == 注意
 
@@ -11,6 +11,9 @@ RSS ParserはRSS 0.9x/1.0/2.0をサポートしていますが，RSS 0.90
 
 Atom・Podcast用モジュール（itunes:XXX要素）を使いたい場合は
 0.1.8以降を使ってください。
+
+Slashモジュール（slash:XXX要素）を使いたい場合は0.2.0以降を
+使ってください。
 
 == require
 
