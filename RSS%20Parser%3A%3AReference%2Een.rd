@@ -2,7 +2,7 @@
 
 = Reference.en
 
-$Id: Reference.en 305 2007-08-04 05:07:22Z kou $
+$Id: Reference.en 326 2007-09-09 10:19:31Z kou $
 
 This is a reference of RSS Maker.
 
@@ -993,6 +993,7 @@ The following modules are available.
   * TrackBack
   * Image
   * ITunes
+  * Slash
 
 === Content
 
@@ -1373,3 +1374,33 @@ And, adds the following methods to (({item})).
 
 --- itunes_duration.second
 --- itunes_duration.second=
+
+=== Slash
+
+This adds the following methods to (({item})).
+
+--- slash_section
+--- slash_section=(value)
+
+--- slash_department
+--- slash_department=(value)
+
+--- slash_comments
+--- slash_comments=(value)
+
+--- slash_hit_parade
+
+     returns a value of slash:hit_parade as an array of
+     integer or nil. Note that this doesn't return
+     comma-separated string.
+
+--- slash_hit_parade=(value)
+
+     ((|value|)) can be a comma-separated integers as string
+     or an integer array.
+
+--- slash_hit_parades
+     is an alias of slash_hit_parade.
+
+--- slash_hit_parades=(value)
+     is an alias of slash_hit_parade=.
