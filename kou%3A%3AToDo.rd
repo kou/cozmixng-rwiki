@@ -21,10 +21,6 @@
 
 * Subversion: Svn::Core::PROP_XXXじゃなくて、:XXXというようにも書けるようにする。
 
-* RSS Parser: ((<Podcast|URL:http://phobos.apple.com/static/iTunesRSS.html>))対応
-
-* ActiveLdap: act_as_tree
-
 * 風博士: collectors
 
 * gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
