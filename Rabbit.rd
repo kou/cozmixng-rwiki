@@ -26,6 +26,10 @@ Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
+== ¥¹¥¯¥ê¡¼¥ó¥­¥ã¥¹¥È/Screencasts
+
+((<URL:http://pub.cozmixng.org/~kou/archives/rabbit/movies/>))
+
 == ¥À¥¦¥ó¥í¡¼¥É/Download
 
 The latest version: 0.5.3(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.3.tar.gz>)))
