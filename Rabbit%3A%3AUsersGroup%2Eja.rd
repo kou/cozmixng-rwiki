@@ -117,7 +117,7 @@
   * ささださん
     * ((<DA|URL:http://www.atdot.net/~ko1/diary/>))
   * 佐々木さん
-    * ((<徒然|URL:http://orchid.ep.sci.hokudai.ac.jp/~uwabami/diary/>))
+    * ((<平衡点 -- equilibrium point --|URL:http://d.hatena.ne.jp/sasakyh/>))
   * znzさん
     * ((<%!zt! diary|URL:http://znz.s1.xrea.com/t/>))
   * おばたさん
