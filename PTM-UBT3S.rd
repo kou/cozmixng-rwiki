@@ -3,6 +3,8 @@
 Debian GNU/LinuxをUSB接続のBluetoothアダプタPTM-UBT3Sを使ってP902iSのAudio Sinkにしたい。
 けど、まだ無理という話。
 
+少し違うんだけど、((<"HOWTO/AudioDevices"|URL:http://wiki.bluez.org/wiki/HOWTO/AudioDevices>))も参考になるかもね。
+
 == Bluetoothの設定
 
 USB IDはこんな感じ。
