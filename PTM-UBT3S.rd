@@ -98,3 +98,28 @@ audio/以下でmake installするとインストールされるファイルが足りない。具体的には以
      ]
 
 == 接続設定
+
+P902iSはBluetooth機器に接続する時は必ず認証をする必要があるみたい。
+
+ということで、optionsのsecurityをautoにして、passkeyをそれっぽいのにする。
+
+  options {
+          ...
+          security auto;
+          ...
+          passkey "secret";
+  }
+
+これでP902iSのBluetoothの接続機器リストでサーチして登録できるようになる。
+
+でも、その勢いでオーディオサービスにつなごうとしてもすぐに切れてしまう。これは、bluetoothd-audio-serviceにつなごうとしてそのときの認証に失敗するから。（機器を登録する時はhcidに対して認証をしようとして、↑のpasskeyを使って認証をする。）
+
+bluetoothd-audio-serviceはorg.bluez.Database.RequestAuthorizationで認証をしようとする。これはhcidが公開しているAPI(?)で、この中ではデフォルトの認証エージェントで認証しようとする。hcid.confのpasskeyを使ってくれないのが嫌な感じ。
+
+デフォルトの認証エージェントはデフォルトでは設定されていないので認証が必ず失敗する。デフォルトの認証エージェントは以下で設定できるようなんだけど、XXXにどんな値を設定したらよいのかわからん。
+
+  % sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez org.bluez.Security.RegisterDefaultAuthorizationAgent string:XXX
+
+ちなみに、dbus-api.txtにはAuthorizationAgentがexperimentalみたいなことが書かれていた。
+
+ということで、まだゴールには到達していませんとさ。
