@@ -28,6 +28,7 @@ COZMIXNGいいだしっぺ．
   * ((<CUPS>))
   * ((<ITVC16-STVLP>))
   * ((<GW-US54Mini2>))
+  * ((<PTM-UBT3S>))
 
 == 小物
 
