@@ -1,13 +1,5 @@
 = Cutter
 
-The latest version: 0.0.2
+SF.netに移動しました。
 
-  * ((<README.en|Cutter::README.en>))
-  * ((<README.ja|Cutter::README.ja>))
-  * ((<Tutorial.ja|Cutter::Tutorial.ja>))
-
-== Comments
-
-== コメント
-
-* 結局SFの方を使うことにしました
+((<URL:http://sf.net/projects/cutter/>))
