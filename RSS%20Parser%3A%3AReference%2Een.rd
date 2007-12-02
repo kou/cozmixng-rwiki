@@ -2,7 +2,7 @@
 
 = Reference.en
 
-$Id: Reference.en 326 2007-09-09 10:19:31Z kou $
+$Id: Reference.en 341 2007-12-02 06:07:26Z kou $
 
 This is a reference of RSS Maker.
 
@@ -1253,7 +1253,17 @@ This module adds the following methods to (({channel})).
 
 --- itunes_categories
 
+--- new_itunes_category(text=nil)
+     Adds new <itunes:category> element then returns
+     it. ((|text|)) is set to (({itunes_category.text})).
+     The created <itunes:category> is appended to
+     (({itunes_categories})).
+
+     It's convenience rather than
+     (({itunes_categories.new_category})).
+
 --- itunes_image
+--- itunes_image=
 
 --- itunes_explicit
 --- itunes_explicit=
