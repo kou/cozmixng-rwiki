@@ -2,7 +2,7 @@
 
 = Reference.ja
 
-$Id: Reference.ja 325 2007-09-09 10:18:31Z kou $
+$Id: Reference.ja 341 2007-12-02 06:07:26Z kou $
 
 RSS Makerのリファレンスです．
 
@@ -1249,7 +1249,16 @@ Podcast用の情報を生成します。RSS 2.0を生成する場合のみ利用さ
 
 --- itunes_categories
 
+--- new_itunes_category(text=nil)
+     新しく(({itunes_category}))を作成し、返します。
+     ((|text|))は(({itunes_category.text}))に設定されます。
+     (({itunes_category}))は(({itunes_categories}))リストの最
+     後に追加されています。
+
+     (({itunes_categories.new_category}))よりも便利です。
+
 --- itunes_image
+--- itunes_image=
 
 --- itunes_explicit
 --- itunes_explicit=
