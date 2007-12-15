@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 965 2007-07-09 12:54:27Z kou $
+$Id: README.ja 1001 2007-11-06 13:31:40Z kou $
 
 == 名前
 
@@ -116,14 +116,8 @@ misc/emacs/
 
 == ライセンス
 
-プログラム，画像ともにRuby's（lib/rabbit/tgif.rbと
-lib/rabbit/div/prototype.jsを除く）です．詳しくはCOPYINGまた
+プログラム，画像ともにRuby'sです．詳しくはCOPYINGまた
 はCOPYING.jaを見てください．
-
-lib/rabbit/tgif.rbは
-((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)) 
-と同じライセンスになります．詳しくはCOPYING-TGIFTOOLSまたは
-COPYING-TGIFTOOLS.jaを見てください．
 
 lib/rabbit/div/prototype.jsはMITスタイルのライセンスになります．
 詳しくは((<Prototype JavaScript
@@ -578,6 +572,11 @@ WindowsユーザならRDファイルをbin/rabbit.batにドラッグアンド
 
    デフォルトでは使いません．
 
+: --show-native-window-id, --no-show-native-window-id
+   もし可能であればウィンドウIDを表示するかどうかを指定します．
+
+   デフォルトでは表示しません。
+
 == Rabbit用RDの書き方
 
 基本的に((<RAA:rwiki>))のスライド拡張と同じです．具体的な
@@ -834,10 +833,16 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
     してくれます．
   * 武田くん: Emacs用のrabbitモードを書いてくれました．
   * 木村さん: Mac OS X用のパッケージを作ってくれました．
-  * kitajさん: Windowsへのインストール方法の間違いを指摘して
-    くれました．
+  * kitajさん:
+    * Rabbitを使ってプレゼンしてくれます。
+    * Windowsのインストールドキュメントを修正してくれます。
+    * テーマを改良してくれます。
   * あかぴさん: emergeについてのドキュメントを書いてくれました．
-  * おばたさん: pkgsrc用のパッケージを作ってくれました。
+  * おばたさん:
+    * pkgsrc用のパッケージを作ってくれました。
+    * Rabbitを使ってプレゼンしてくれます。
+    * バグ報告をし、修正もしてくれます。
+    * たくさんデバッグしてくれます。
   * むとうさん:
     * Rabbitを使ってプレゼンしてくれます。
     * Windowsへのインストール用ドキュメントを更新してくれま
@@ -849,4 +854,4 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）を
   * 前田さん:
     * Rabbitを使ってプレゼンしてくれます。
     * プレゼンの中でこっそりバグレポートをしてくれました。
-
+  * 中井さん: 不具合を報告してくれます。
