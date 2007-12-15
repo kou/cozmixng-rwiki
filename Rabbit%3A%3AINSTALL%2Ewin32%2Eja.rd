@@ -2,7 +2,7 @@
 
 = INSTALL.win32.ja
 
-$Id: INSTALL.win32.ja 929 2007-06-18 10:47:31Z kou $
+$Id: INSTALL.win32.ja 970 2007-08-08 12:25:17Z kou $
 
 Windows上でRabbitを実行するのは大変です．以下を参考にして頑
 張ってください．
