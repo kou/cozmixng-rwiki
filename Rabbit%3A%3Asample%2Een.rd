@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 926 2007-06-17 10:20:16Z kou $
+# $Id: rabbit_en.rd 1012 2007-11-13 11:42:24Z kou $
 
 = Rabbit(en)
 
@@ -137,7 +137,6 @@ You can use relative size.
   * TeX (like) format
   * backends
     * LaTeX
-    * Tgif
     * mimeTeX
 
 = LaTeX
@@ -148,13 +147,6 @@ You can use relative size.
   $f(x)=\displaystyle\int_{-\infty}^x~e^{-t^2}dt$
 
   \LaTeX
-
-= Tgif
-
-  # Tgif
-  # relative_width = 80
-
-  large f(x)=int {-infty} x~e^{-t^2}d t
 
 = mimeTeX
 
@@ -177,13 +169,6 @@ You can use relative size.
 
   # image
   # src = spiral.svg
-  # keep_ratio = true
-  # relative_height = 100
-
-= Tgif is OK, too
-
-  # image
-  # src = rabbit-balloon.obj
   # keep_ratio = true
   # relative_height = 100
 
@@ -227,6 +212,13 @@ What about?
   end
 
 What about?
+
+= Quotation with title
+
+  # blockquote
+  # title = The Matrix
+  You take the ((*red pill*)), you stay in Wonderland and 
+  I show you how deep the ((*rabbit-hole*)) goes.
 
 = Itemization
 
