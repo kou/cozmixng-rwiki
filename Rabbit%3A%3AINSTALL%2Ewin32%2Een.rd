@@ -2,7 +2,7 @@
 
 = INSTALL.win32.en
 
-$Id: INSTALL.win32.en 929 2007-06-18 10:47:31Z kou $
+$Id: INSTALL.win32.en 971 2007-08-08 12:43:06Z kou $
 
 == Install Ruby
 
@@ -52,7 +52,7 @@ Execute install.bat.
 (3) You may need to obtain ruby.st for Ruby syntax highlighting.
 
       > cd <Enscript Install Path>/share/enscript/hl
-      > ruby -ropen-uri -e "puts open('http://rubyforge.org/cgi-bin/viewvc.cgi/support/ruby.st?view=co').read" > ruby.st
+      > ruby -ropen-uri -e "puts open('http://viewvc.rubyforge.mmmultiworks.com/cgi/viewvc.cgi/trunk/support/ruby.st?root=support&view=co').read" > ruby.st
 
 (4) Install ((<RAA:htree>)).
 
