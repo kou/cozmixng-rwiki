@@ -1,6 +1,6 @@
 = INSTALL.macosx-macports.ja
 
-$Id: INSTALL.macosx-macports.ja 892 2007-06-04 03:43:48Z kou $
+$Id: INSTALL.macosx-macports.ja 1019 2007-11-15 14:16:16Z kimuraw $
 
 Mac OS X のパッケージ管理システムのひとつである、MacPorts を利用して
 Rabbit をインストール、利用する手順について説明します。
@@ -22,6 +22,7 @@ Subversion は、MacPorts のインストール後に
 
 としてインストールするか、((<URL:http://metissian.com/projects/macosx/subversion/>))
 で公開されているバイナリパッケージを利用してインストールするのが簡単です。
+また、Mac OS X 10.5 (Leopard) では、Subversion がインストールされていますので、自分で用意する必要はありません。
 
 == MacPorts のインストール
 
@@ -77,8 +78,8 @@ MacPorts の公式サイト ((<URL:http://www.macports.org/>)) からダウンロード、
 
   ~% sudo port install rb-rabbit
 
-glib や Gnome がインストールされていないときは、これらのインストールのために
-かなりの時間がかかります。
+glib や Gtk2 がインストールされていないときは、これらのインストールのために
+ある程度の時間がかかります。
 
 他にも以下の port をインストールするとよいでしょう。
 
@@ -93,6 +94,15 @@ glib や Gnome がインストールされていないときは、これらのインストールのために
 注) Ruby-GetText-Package が、すでに RubyGems からインストールされているときは
 rb-gettext のインストールは不要です。
 
+Rabbit のデフォルトの rb-gnome では、only_gtk2 というバリアントを指定して
+インストールされます。RSVG など、Ruby/Gnome の他の機能を利用したい場合には
+
+  ~% sudo port install rb-gnome -only_gtk2
+
+とすることで、Ruby/Gnome のすべてのライブラリを利用することができます。
+ただし、この場合は依存パッケージが多いために、数時間インストールに時間が
+かかります。
+
 == X11 環境に関する Tips
 
 一般的な PC-UNIX 環境とは異なり、Mac OS X ではウィンドウシステムとして X を
@@ -102,21 +112,6 @@ rb-gettext のインストールは不要です。
 
 X11.app が起動していなければ、rabbit は実行できません。X11.app は 
 /システム/ユーティリティ/X11.app にあります。
-
-=== フォントの設定
-
-X11 で Mac OS X に付属するフォントを利用できるようにするために、
-/opt/local/etc/fonts/local.conf ファイルを以下の内容で作成します。
-
-  <?xml version="1.0"?>
-  <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-  <fontconfig>
-    <dir>/Library/Fonts</dir>
-    <dir>/Network/Library/Fonts</dir>
-    <dir>/System/Library/Fonts</dir>
-    <dir>/usr/local/share/fonts</dir>
-    <dir>/opt/local/share/fonts</dir>
-  </fontconfig>
 
 === DISPLAY 環境変数
 
