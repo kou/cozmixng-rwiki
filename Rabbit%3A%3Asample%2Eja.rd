@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 926 2007-06-17 10:20:16Z kou $
+# $Id: rabbit.rd 1012 2007-11-13 11:42:24Z kou $
 
 = Rabbit
 
@@ -135,7 +135,6 @@
   * 書式はTeX（っぽい）
   * バックエンド
     * LaTeX
-    * Tgif
     * mimeTeX
 
 = LaTeX
@@ -146,13 +145,6 @@
   $f(x)=\displaystyle\int_{-\infty}^x~e^{-t^2}dt$
 
   \LaTeX
-
-= Tgif
-
-  # Tgif
-  # relative_width = 80
-
-  large f(x)=int {-infty} x~e^{-t^2}d t
 
 = mimeTeX
 
@@ -175,12 +167,6 @@
 
   # image
   # src = spiral.svg
-  # relative_height = 100
-
-= TgifでもOK
-
-  # image
-  # src = rabbit-balloon.obj
   # relative_height = 100
 
 = DiaでもOK
@@ -221,6 +207,13 @@
   end
 
 どう？
+
+= 引用
+
+  # blockquote
+  # title = The Matrix
+  You take the ((*red pill*)), you stay in Wonderland and 
+  I show you how deep the ((*rabbit-hole*)) goes.
 
 = 箇条書きは？
 
