@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 965 2007-07-09 12:54:27Z kou $
+$Id: README.en 1001 2007-11-06 13:31:40Z kou $
 
 == Name
 
@@ -120,13 +120,7 @@ The above image author has copyright of his/her images.
 
 == Licence
 
-Ruby's (except lib/rabbit/tgif.rb and
-lib/rabbit/div/prototype.js). For more information see
-COPYING.
-
-lib/rabbit/tgif.rb is the same licence of
-((<Tgiftools|URL:http://homepage2.nifty.com/aito/tgiftools/>)).
-For more information see COPYING-TGIFTOOLS.
+Ruby's. For more information see COPYING.
 
 lib/rabbit/div/prototype.js is MIT-style licence. For more
 information see ((<Prototype JavaScript
@@ -560,6 +554,11 @@ with the following.
 
    Default is not use.
 
+: --show-native-window-id, --no-show-native-window-id
+   Specifies whether show window ID if available.
+
+   Default is not show.
+
 == How to write
 
 See sample/rabbit_en.rd.
@@ -800,9 +799,16 @@ page from XXX.rd.
     reporting and some bug reports.
   * Atsushi Takeda: He wrote rabbit mode for Emacs.
   * kimura wataru: He makes Mac OS X package.
-  * kitaj: He pointed out minor miss in INSTALL.win32.en.
+  * kitaj:
+    * He makes a presentation with Rabbit.
+    * He improved INSTALL.win32.en.
+    * He improved a theme.
   * akapy: He wrote a document for emerge.
-  * OBATA Akio: He makes pkgsrc package.
+  * OBATA Akio:
+    * He makes pkgsrc package.
+    * He makes a presentation with Rabbit.
+    * He reports some bugs and also fixes them.
+    * He debugs many problems.
   * Masao Mutoh:
     * He makes a presentation with Rabbit.
     * He updates INSTALL.win32.ja.
@@ -814,3 +820,4 @@ page from XXX.rd.
   * Shugo Maeda:
     * He makes a presentation with Rabbit.
     * He reports a bug.
+  * JunichiNakai: He reports a bug.
