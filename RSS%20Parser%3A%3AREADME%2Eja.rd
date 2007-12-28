@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 334 2007-11-02 12:02:11Z kou $
+$Id: README.ja 349 2007-12-27 07:59:52Z kou $
 
 == 名前
 
@@ -91,3 +91,4 @@ RSS 0.90はRSS 1.0として扱えることもあります．もし，RSS 0.90
   * Sam Lownさん: RSS 2.0でcontent:encodedを使うことについて
     書かれた文書を教えてくれました。
     ((<URL:http://www.rssboard.org/rss-profile>))
+  * Ray Chenさん: バグを報告してくれました。
