@@ -2,7 +2,7 @@
 
 Debianでの話。
 
-PXEブートをサポートするため、BOOTP対応のDHCPサーバの設定。
+((PXE>))でネットワークブートするためのBOOTP対応のDHCPサーバの設定。
 
 == インストール
 
@@ -43,4 +43,4 @@ PXEブートをサポートするため、BOOTP対応のDHCPサーバの設定。
 
 rangeのdynamic-bootpがポイント。
 
-
+pxelinux.0はPXE対応のブートローダ。
