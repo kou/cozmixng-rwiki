@@ -36,4 +36,6 @@
   * ((<exim>))
   * ((<CVSup>))
   * ((<Nessus>))
-  * ((<DHCP>))
+  * ((<PXE>))
+    * ((<DHCP>))
+    * ((<TFTP>))
