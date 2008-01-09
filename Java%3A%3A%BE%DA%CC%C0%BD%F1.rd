@@ -37,3 +37,6 @@ keystore¤È¤¤¤¦¾ÚÌÀ½ñ¤Î¥Ç¡¼¥¿¥Ù¡¼¥¹¤ËÅÐÏ¿¤¹¤ëÉ¬Í×¤¬¤¢¤ë¡£keystore¤Î´ÉÍý¤Ïkeytool¤
   % sudo keytool -import -alias local-server -file /tmp/server.crt -trustcacerts -noprompt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts
 
 ¤Á¤Ê¤ß¤Ë¥·¥¹¥Æ¥à¤Îkeystore¤Î¥Ñ¥¹¥ï¡¼¥É¤Ï¥Ç¥Õ¥©¥ë¥È¤Ç¤Ï¡Öchangeit¡×¤Ç¡¢¥Õ¥¡¥¤¥ë¤Ï$JRE_ROOT/lib/security/cacerts¤Ë¤¢¤ë¡£
+
+
+¤¦¡¼¤ó¡¢¥·¥¹¥Æ¥à¤Î¤ä¤Ä¤ËÅÐÏ¿¤·¤Ê¤¤¤È¥À¥á¤Ã¤Ý¤¤¡£
