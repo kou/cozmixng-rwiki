@@ -29,6 +29,7 @@ COZMIXNGいいだしっぺ．
   * ((<ITVC16-STVLP>))
   * ((<GW-US54Mini2>))
   * ((<PTM-UBT3S>))
+  * ((<Java>))
 
 == 小物
 
