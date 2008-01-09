@@ -26,9 +26,7 @@ keystore¤È¤¤¤¦¾ÚÌÀ½ñ¤Î¥Ç¡¼¥¿¥Ù¡¼¥¹¤ËÅÐÏ¿¤¹¤ëÉ¬Í×¤¬¤¢¤ë¡£keystore¤Î´ÉÍý¤Ïkeytool¤
 
 == »ÈÍÑ
 
-¤¢¤È¤ÏÉáÄÌ¤Ë¥×¥í¥°¥é¥à¤ò¼Â¹Ô¤¹¤ì¤Ð¤è¤¤¡£
-
-¤À¤á¤Ê¤éjava¤Îµ¯Æ°¥ª¥×¥·¥ç¥ó¤Ë¡Ö-Djavax.net.ssl.trustStore=$HOME/.keystore¡×¤ò»ØÄê¤·¤Æ¤ß¤ë¡£
+¤¢¤È¤Ïjava¤Îµ¯Æ°¥ª¥×¥·¥ç¥ó¤Ë¡Ö-Djavax.net.ssl.trustStore=$HOME/.keystore¡×¤ò»ØÄê¤·¤Æµ¯Æ°¤¹¤ì¤Ð¤è¤¤¡£
 
   % java -Djavax.net.ssl.trustStore=$HOME/.keystore" ...
 
@@ -37,3 +35,5 @@ keystore¤È¤¤¤¦¾ÚÌÀ½ñ¤Î¥Ç¡¼¥¿¥Ù¡¼¥¹¤ËÅÐÏ¿¤¹¤ëÉ¬Í×¤¬¤¢¤ë¡£keystore¤Î´ÉÍý¤Ïkeytool¤
   % sudo keytool -import -alias local-server -file /tmp/server.crt -trustcacerts -noprompt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts
 
 ¤Á¤Ê¤ß¤Ë¥·¥¹¥Æ¥à¤Îkeystore¤Î¥Ñ¥¹¥ï¡¼¥É¤Ï¥Ç¥Õ¥©¥ë¥È¤Ç¤Ï¡Öchangeit¡×¤Ç¡¢¥Õ¥¡¥¤¥ë¤Ï$JAVA_HOME/jre/lib/security/cacerts¤Ë¤¢¤ë¡£
+
+¤³¤¦¤¹¤ì¤Ð-D...¤Ï»ØÄê¤·¤Ê¤¯¤Æ¤âÎÉ¤¤¡£
