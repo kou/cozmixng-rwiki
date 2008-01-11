@@ -29,7 +29,11 @@ COZMIXNGいいだしっぺ．
   * ((<ITVC16-STVLP>))
   * ((<GW-US54Mini2>))
   * ((<PTM-UBT3S>))
+  * ((<PXE>))
+    * ((<DHCP>))
+    * ((<TFTP>))
   * ((<Java>))
+  * ((<Synergy>))
 
 == 小物
 
