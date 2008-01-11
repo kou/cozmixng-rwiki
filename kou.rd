@@ -34,6 +34,7 @@ COZMIXNGいいだしっぺ．
     * ((<TFTP>))
   * ((<Java>))
   * ((<Synergy>))
+  * ((<RubyCocoa>))
 
 == 小物
 
