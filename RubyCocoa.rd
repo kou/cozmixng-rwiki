@@ -10,6 +10,7 @@
 ちなみに、これを使ってCairo::QuartzSurfaceを作るならこう。
 
   # enscript ruby
+  require 'osx/cocoa'
   require 'cairo'
 
   cg = OSX::NSGraphicsContext.currentContext.graphicsPort
