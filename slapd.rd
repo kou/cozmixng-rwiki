@@ -21,3 +21,25 @@ TLSをサポートするためには以下を設定ファイルに追加して再起動する。
   % sudo c_rehash .
 
 最後のc_rehashを忘れないこと。
+
+=== クライアント側の設定
+
+↑は自前証明書なので、これを使ってTLSを使うにはクライアント側に証明書を登録しないといけない。（あるいは証明書の確認（？）を適当にやる）
+
+  ldap-client% sudo mkdir -p /etc/ldap/certs
+  ldap-client% scp ldap-server:/etc/ldap/certs/server.crt /tmp/
+  ldap-client% cd /etc/ldap/certs
+  ldap-client% mv /tmp/server.crt ./
+  ldap-client% sudo c_rehash .
+
+最後のc_rehashを忘れないこと。
+
+デフォルトで/etc/ldap/certs/にある証明書を使うようにする。
+
+/etc/ldap/ldap.conf:
+  TLS_CACERTDIR /etc/ldap/certs
+
+ちなみに、証明書の確認（？）を適当にするならこう。
+
+/etc/ldap/ldap.conf:
+  TLS_REQCERT never
