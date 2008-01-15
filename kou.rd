@@ -35,6 +35,7 @@ COZMIXNGいいだしっぺ．
   * ((<Java>))
   * ((<Synergy>))
   * ((<RubyCocoa>))
+  * ((<slapd>))
 
 == 小物
 
