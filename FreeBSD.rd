@@ -151,3 +151,13 @@ FreeBSDはVMのページングアルゴリズムの都合上，メインメモリの2倍以上SWAPがないと力
 === 確認
 
   % /usr/sbin/pstat -s
+
+== msk(4)が動かなくなる
+
+RELENG_7に入ったmsk(4)を使っていてネットワークに負荷をかけると/var/log/messagesに以下のようなログを吐きつづけてネットワークが使えなくなる時の対処法。
+
+  kernel: msk0: watchdog timeout (missed Tx interrupts) -- recovering
+
+/bool/loader.confに以下を追加して再起動。
+
+  hw.msk.msi_disable="1"
