@@ -22,6 +22,16 @@ MySQL§ÀSERÕ—§Œ•«°º•ø•Ÿ°º•πser§Ú∫Ó¿Æ§π§Î°£§≥§Œ§ø§·§Àser_mysql.sh§»§§§¶•∑•ß•Î•π•Ø•
   creating database ser ...
   Enter password: <- MySQL§Œroot§Œ•—•π•Ô°º•…§Ú∆˛Œœ
 
+SIP•µ°º•–§«ª»§¶•…•·•§•ÛÃæ§œ/etc/hosts§ÀΩÒ§§§∆§™§Ø§≥§»°£•«•–•√•∞•‚°º•…§«µØ∆∞§π§Î§»º´ ¨§Œ•…•·•§•ÛÃæ§»§∑§∆ª»§√§∆§§§Î•…•·•§•ÛÃæ§Ú§ﬂ§Î§≥§»§¨§«§≠§Î°£
+
+  % sudo /usr/local/sbin/ser -d -D 
+  Listening on
+  ...
+  Aliases:
+  ... §≥§Œ√Ê§ÀSIP•µ°º•–§«ª»§¶•…•·•§•ÛÃæ§¨§¢§Î§≥§»
+  ^C
+  %
+
 ∫∆ΩÈ¥¸≤Ω§π§Î§»§≠§œcreate§∏§„§ §Ø§∆reinit§Úª»§¶°£
 
   % sudo /usr/local/sbin/ser_mysql.sh reinit
@@ -161,21 +171,43 @@ sip.cozmixng.org§Œ…Ù ¨§œser_mysql.sh§«ªÿƒÍ§∑§ø•…•·•§•ÛÃæ°£
 
 === Ekiga
 
+ ‘Ω∏¢™•¢•´•¶•Û•»°£
+
+: •¢•´•¶•Û•»Ãæ
+   kou° π•§≠§ §‚§Œ°À
+
+: •◊•Ì•»•≥•Î
+   SIP
+
+: •Ï•∏•π•»•È
+   sip.cozmixng.org° ser_mysql.sh§«ªÿƒÍ§∑§ø•…•·•§•ÛÃæ°À
+
+: Ãæ¡∞
+   kou° serctl add§∑§ø§»§≠§Œ@§Ë§Í¡∞§Œ…Ù ¨°À
+
+: •—•π•Ô°º•…
+   MY-SECRET° serctl add§∑§ø§»§≠§À¿ﬂƒÍ§∑§ø•—•π•Ô°º•…°À
+
+¿ﬂƒÍ§∑§ø§È•¢•´•¶•Û•»∞ÏÕ˜≤ËÃÃ§Œ∞Ï»÷∫∏§À§¢§Î°÷A°◊§»§§§¶∏´Ω–§∑§¨§ƒ§§§øŒÛ§À•¡•ß•√•Ø§Ú∆˛§Ï§Î°£¿Æ∏˘§π§Î§»•·•§•Û≤ËÃÃ§Œ°÷≈–œø∫—§ﬂ§Œ•¢•´•¶•Û•»øÙ: n°◊§Œ°÷n°◊§Œ…Ù ¨§¨1§À§ §Î°£
+
+•∆•π•»§Œ§ø§·§À°¢Ekiga§œ§≥§Œ§ﬁ§ﬁ§ƒ§ §§§«§™§Ø°£
 
 === KPhone
 
 ∫«ΩÈ§ŒµØ∆∞ª˛§ÀΩ–§Î§‰§ƒ§Œ¿ﬂƒÍ(File->Identity)
 
 : Full Name
-   º´ ¨§ŒÃæ¡∞§Ú§§§Ï§Î(Œ„: Kouhei Sutou)
+   Test User° º´ ¨§ŒÃæ¡∞°À
 : User Part of SIP URL
-   ªÿƒÍ§µ§Ï§ø•Ê°º•∂Ãæ(Œ„: kou)
+   test° serctl add§∑§ø§»§≠§Œ@§Ë§Í§‚¡∞§Œ…Ù ¨°À
 : Host Part of SIP URL
-   SIP•µ°º•–(•Î°º•ø°©)§ŒURL(Œ„: sip.cozmixng.org)
+   sip.cozmixng.org° ser_mysql.sh§«ªÿƒÍ§∑§ø•…•·•§•ÛÃæ°À
 : Authentication Username (optional)
-   ªÿƒÍ§µ§Ï§ø•Ê°º•∂Ãæ(Œ„: kou)
+   test° æ Œ¨≤ƒ«Ω°£serctl add§∑§ø§»§≠§Œ@§Ë§Í§‚¡∞§Œ…Ù ¨°À
 
 ≈≈œ√§Ú§´§±§Î§À§œFile->New Call§À§§§√§∆Dial
 
 : Remote:
    ¡ÍºÍ§Œ•¢•…•Ï•π(Œ„: kou@sip.cozmixng.org)
+
+§≥§Ï§«Ekiga§Œ ˝§«≈≈œ√§Œ∏∆§”Ω–§∑≤ª§¨§ §√§ø§È¿Æ∏˘°£
