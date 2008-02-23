@@ -137,19 +137,19 @@ auth_dbのdb_urlはusrlocのdb_urlと同じ書式。
 
   # _
   # Uncomment this if you want to use digest authentication
-  #			if (!www_authorize("iptel.org", "subscriber")) {
-  #				www_challenge("iptel.org", "0");
-  #				break;
-  #			};
+  #                        if (!www_authorize("iptel.org", "subscriber")) {
+  #                                www_challenge("iptel.org", "0");
+  #                                break;
+  #                        };
 
 ↓
 
   # _
   # Uncomment this if you want to use digest authentication
-			if (!www_authorize("sip.cozmixng.org", "subscriber")) {
-				www_challenge("sip.cozmixng.org", "0");
-				break;
-			};
+                          if (!www_authorize("sip.cozmixng.org", "subscriber")) {
+                                  www_challenge("sip.cozmixng.org", "0");
+                                  break;
+                          };
 
 sip.cozmixng.orgの部分はser_mysql.shで指定したドメイン名。
 
