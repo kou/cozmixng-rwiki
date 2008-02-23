@@ -1,34 +1,166 @@
 = SIP Express Router
 
+SIPサーバ。
+
 SIP Express Router (ser) is a high-performance, configurable, free SIP ( RFC3261 ) server . It can act as registrar, proxy or redirect server.
 
 == インストール
 
-  % sudo portupgrade -N ser
+ユーザ管理にはMySQLを使うのでmysql-serverも入れる。
+
+  % sudo portupgrade -NRr ser mysql-server
+
+== 初期設定
+
+MySQLにSER用のデータベースserを作成する。このためにser_mysql.shというシェルスクリプトが用意されている。
+
+  % sudo /usr/local/sbin/ser_mysql.sh create
+  MySql password for root: <- MySQLのrootのパスワードを入力
+  Enter password: <- MySQLのrootのパスワードを入力
+  Domain (realm) for the default user 'admin': sip.cozmixng.org <- SIPサーバで使うドメイン名を入力
+  
+  creating database ser ...
+  Enter password: <- MySQLのrootのパスワードを入力
+
+再初期化するときはcreateじゃなくてreinitを使う。
+
+  % sudo /usr/local/sbin/ser_mysql.sh reinit
+
+ser_mysql.shで作成されたデータベースserにアクセスするためのMySQLのユーザを作成する。ここではserユーザでSECRETというパスワードにする。
+
+  % sudo -u mysql -H mysql -u root
+  mysql> GRANT ALL ON ser.* TO ser@localhost IDENTIFIED BY 'SECRET';
+
+== ユーザ登録
+
+ユーザ登録にはserctlを使う。SIPアドレスがkou@sip.cozmixng.org（sip.cozmixng.orgはser_mysql.sh createで指定したドメイン名）でパスワードがMY-SECRETでメールアドレスがkou@cozmixng.orgなユーザは以下のように登録する。
+
+  % sudo /usr/local/sbin/serctl add kou@sip.cozmixng.org MY-SECRET kou@cozmixng.org
+  MySql password: <- MySQLのserユーザのパスワード、↑の例だとSECRETを入力
+
+削除はSIPアドレスだけを指定する。
+
+  % sudo /usr/local/sbin/serctl rm kou@sip.cozmixng.org
+
+あとで接続テストをするので、もうひとつユーザを作っておく。
+
+  % sudo /usr/local/sbin/serctl add test@sip.cozmixng.org TEST-SECRET test@cozmixng.org
 
 == 設定
 
-以下のようなser.shを/usr/local/etc/rc.dに置く
+まず、/etc/rc.confにser_enable="YES"を追加する。
 
-  #!/bin/sh
-  PATH=/bin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
-  SIP_DOMAIN=sip.cozmixng.org
-  
-  export PATH SIP_DOMAIN
-  
-  /usr/local/sbin/serctl $@
+続いてSERの設定。
 
-/usr/local/etc/ser/ser.cfgを書き換える．
+MySQLにあるデータを使うように/usr/local/etc/ser/ser.cfgを書き換える。
 
-  if (uri==myself) {
+まず、MySQL用のモジュールを読み込む。
 
-を
+  # _
+  # Uncomment this if you want to use SQL database
+  #loadmodule "/usr/local/lib/ser/modules/mysql.so"
 
-  if (uri==myself || uri=~"^sip:([^@]*@)?sip.cozmixng.org$") {
+↓
 
-にする．
+  # _
+  # Uncomment this if you want to use SQL database
+  loadmodule "/usr/local/lib/ser/modules/mysql.so"
+
+認証用のモジュールも読み込む。
+
+  # _
+  # Uncomment this if you want digest authentication
+  # mysql.so must be loaded !
+  #loadmodule "/usr/local/lib/ser/modules/auth.so"
+  #loadmodule "/usr/local/lib/ser/modules/auth_db.so"
+
+↓
+
+  # _
+  # Uncomment this if you want digest authentication
+  # mysql.so must be loaded !
+  loadmodule "/usr/local/lib/ser/modules/auth.so"
+  loadmodule "/usr/local/lib/ser/modules/auth_db.so"
+
+ユーザの位置情報（ログインしたユーザがどのIPアドレスを持っているかとか）をメモリ上じゃなくて、データベースに保存するようにする。（db_modeが0だとメモリ上だけで、1か2だとデータベースにも書き出して、次回起動時に復元する。2は0のときみたいにメモリ上にもデータを持つから遅くならない。）
+
+  modparam("usrloc", "db_mode",   0)
+ 
+  # Uncomment this if you want to use SQL database 
+  # for persistent storage and comment the previous line
+  #modparam("usrloc", "db_mode", 2)
+
+↓
+
+  # _
+  #modparam("usrloc", "db_mode",   0)
+
+  # Uncomment this if you want to use SQL database 
+  # for persistent storage and comment the previous line
+  modparam("usrloc", "db_mode", 2)
+
+  modparam("usrloc", "db_url", "mysql://ser:SECRET@localhost/ser")
+
+db_urlの「ser:SECRET」の部分は「ユーザ名:パスワード」で、localhostで動いているMySQLのデータベースserに接続するために使われる。
+
+認証まわりのモジュールauth_dbの設定もする。
+
+  # _
+  # -- auth params --
+  # Uncomment if you are using auth module
+  #
+  #modparam("auth_db", "calculate_ha1", yes)
+  #
+  # If you set "calculate_ha1" parameter to yes (which true in this config), 
+  # uncomment also the following parameter)
+  #
+  #modparam("auth_db", "password_column", "password")
+
+↓
+
+  # _
+  # -- auth params --
+  # Uncomment if you are using auth module
+  #
+  modparam("auth_db", "calculate_ha1", yes)
+  #
+  # If you set "calculate_ha1" parameter to yes (which true in this config), 
+  # uncomment also the following parameter)
+  #
+  modparam("auth_db", "password_column", "password")
+
+  modparam("auth_db", "db_url", "mysql://ser:SECRET@localhost/ser")
+
+auth_dbのdb_urlはusrlocのdb_urlと同じ書式。
+
+最後に、実際に認証を行う設定をする。
+
+  # _
+  # Uncomment this if you want to use digest authentication
+  #			if (!www_authorize("iptel.org", "subscriber")) {
+  #				www_challenge("iptel.org", "0");
+  #				break;
+  #			};
+
+↓
+
+  # _
+  # Uncomment this if you want to use digest authentication
+			if (!www_authorize("sip.cozmixng.org", "subscriber")) {
+				www_challenge("sip.cozmixng.org", "0");
+				break;
+			};
+
+sip.cozmixng.orgの部分はser_mysql.shで指定したドメイン名。
+
+== 起動
+
+  % sudo /usr/local/etc/rc.d/ser start
 
 == クライアントの設定
+
+=== Ekiga
+
 
 === KPhone
 
