@@ -1,6 +1,6 @@
 = INSTALL.macosx-macports.en
 
-$Id: INSTALL.macosx-macports.en 1055 2008-02-03 12:32:57Z kimuraw $
+$Id: INSTALL.macosx-macports.en 1060 2008-02-04 21:43:20Z kou $
 
 This document describes how to install Rabbit with MacPorts and how to use
 Rabbit on Mac OS X.
@@ -12,8 +12,8 @@ The following programs are needed.
 * Xcode Tools (from Xcode Tools DVD or ADC)
 * X11 (from Mac OS X System DVD)
 * Subversion
-** from MacPorts (sudo port install subversion)
-** from ((<URL:http://metissian.com/projects/macosx/subversion/>))
+  * from MacPorts (sudo port install subversion)
+  * from ((<URL:http://metissian.com/projects/macosx/subversion/>))
 
 Remember to select "X11 SDK" at installing Xcode Tools.
 
