@@ -1,6 +1,6 @@
 = INSTALL.macosx-macports.ja
 
-$Id: INSTALL.macosx-macports.ja 1019 2007-11-15 14:16:16Z kimuraw $
+$Id: INSTALL.macosx-macports.ja 1056 2008-02-03 12:36:30Z kimuraw $
 
 Mac OS X のパッケージ管理システムのひとつである、MacPorts を利用して
 Rabbit をインストール、利用する手順について説明します。
@@ -111,7 +111,7 @@ Rabbit のデフォルトの rb-gnome では、only_gtk2 というバリアントを指定して
 === X11.app を起動する
 
 X11.app が起動していなければ、rabbit は実行できません。X11.app は 
-/システム/ユーティリティ/X11.app にあります。
+/アプリケーション/ユーティリティ/X11.app にあります。
 
 === DISPLAY 環境変数
 
@@ -122,18 +122,18 @@ X11 上で動作する Rabbit を利用するためには、DISPLAY 環境変数が設定されて
 
 == Rabbit をバージョンアップする
 
-最新の Portfile を Subversion リポジトリから入手したうえで、port upgrade 
-コマンドにより、Rabbit を最新のバージョンに更新することができます。
+port sync コマンドで Portfile を Subversion リポジトリと同期したうえで、
+port upgrade コマンドにより、Rabbit を最新のバージョンに更新することが
+できます。
 
-  ~% cd dports
-  ~/dports% svn update
-  ~/dports% sudo port upgrade rb-rabbit
+  ~% sudo port sync
+  ~% sudo port upgrade rb-rabbit
 
 Rabbit だけをバージョンアップしたいときは、-n オプションを指定します。この
 オプションの指定により、関連するソフトウェアは更新せずに Rabbit だけを更新
 することができます。
   
-  ~/dports% sudo port -n upgrade rb-rabbit
+  ~% sudo port -n upgrade rb-rabbit
 
 
 == 連絡先
