@@ -43,7 +43,7 @@
     何か一言（今までなんラビットしたとかなんかそんなん）
 
   * kou（一人目のRabbitユーザ）
-  * みやむこさん（Rabbitの共同開発者の一人）
+  * みやむこさん（Rabbitの共同開発者の一人。rabbit-mode.lの作者）
   * zundaさん（もっとも古いRabbitユーザの一人）
     * ((<おまぬけ活動日誌|URL:http://zunda.freeshell.org/d/>))
   * oxyさん（もっとも古いRabbitユーザの一人）
@@ -94,7 +94,7 @@
     * ((<dot.diary|URL:http://blog.prebyte.jp/>))
   * 田中さん
     * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
-  * 武田くん
+  * 武田くん（rabbit-mode.el作者）
   * 木村さん（DarwinPortsのパッケージ作成）
     * ((<きりかノート|URL:http://kimuraw.txt-nifty.com/d/>))
 
