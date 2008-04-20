@@ -1,5 +1,7 @@
 = kou::ToDo
 
+* ((<GaUnit>))にもっとSchemeっぽいAPIをつける。
+
 * Rabbit: rabbit-launcherを作る（作ってもらう）。
   * Rabbitを起動するGUIアプリケーション。主にWindowsユーザ用。
   * RDをドラッグするとRabbitを起動。
