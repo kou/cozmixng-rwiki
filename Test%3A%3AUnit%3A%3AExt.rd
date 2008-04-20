@@ -2,6 +2,8 @@
 
 Test::Unitを拡張する．
 
+((<RubyForgeに移動|URL:http://test-unit-ext.rubyforge.org/>))した。
+
 
 == ^C-cで止めても結果を表示
 
