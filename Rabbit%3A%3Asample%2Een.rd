@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit_en.rd 
-# $Id: rabbit_en.rd 1012 2007-11-13 11:42:24Z kou $
+# $Id: rabbit_en.rd 1080 2008-04-21 13:03:17Z kou $
 
 = Rabbit(en)
 
@@ -72,6 +72,15 @@ A presentation tool
     * can read not only RD but also PDF
   * Wiki notation
     * can write with Wiki notation
+
+= More(('sup:6')) ...
+
+  * pause
+      # wait
+        * not visible
+        * visible with the above item
+  * (('wait'))visible in the next step
+  * (('wait'))visible in the last step
 
 = Not available
 
