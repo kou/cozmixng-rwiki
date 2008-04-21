@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1001 2007-11-06 13:31:40Z kou $
+$Id: README.en 1068 2008-03-12 13:34:31Z kou $
 
 == Name
 
@@ -189,7 +189,6 @@ libraries on Windows.
 
 === Included libraries
 
-  * ((<RAA:rttool>)) altered: same as including ((<RAA:rwiki>)).
   * SOAP interface of ((<RAA:rwiki>)).
 
 == Download
