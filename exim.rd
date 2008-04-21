@@ -43,3 +43,13 @@ real-#{ユーザ名}+XXX@...にも対応させるなら/etc/exim4/cond.d/router/400_exim4-con
   *.example.com: mail.example.com
 
 右側の欄（mail.example.comが書いている欄）にはホスト名ではなくて，IPアドレスを書くこともできる．
+
+== スマートホストで接続する先のポート番号を変える
+
+スマートホストにメールを中継する時にサブミッションポート(587)を利用するには/etc/exim4/update-exim4.conf.confのdc_smarthostが以下のようになるようにすればよい。
+
+  dc_smarthost='mail.example.com::587'
+
+ということで、以下のようにeximの設定をするときにそれっぽい質問にそれっぽく答えること。
+
+  % sudo dpkg-reconfigure exim4-config
