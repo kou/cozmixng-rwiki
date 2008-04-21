@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 1012 2007-11-13 11:42:24Z kou $
+# $Id: rabbit.rd 1080 2008-04-21 13:03:17Z kou $
 
 = Rabbit
 
@@ -72,6 +72,15 @@
     * RDだけではなくPDFも読み込める
   * Wiki記法サポート
     * RDだけではなくWiki記法でも書ける
+
+= まだ(('sup:6'))ある
+
+  * ポーズ
+      # wait
+        * まだ見えない
+        * まとめて見える
+  * (('wait'))次に見える
+  * (('wait'))最後に見える
 
 = できないこと
 
