@@ -39,6 +39,11 @@ TLSをサポートするためには以下を設定ファイルに追加して再起動する。
 /etc/ldap/ldap.conf:
   TLS_CACERTDIR /etc/ldap/certs
 
+OpenLDAPがTLSのバックエンドとしてGnuTLSを利用している場合はTLS_CACERTDIRが使えないのでTLS_CACERTでファイルを指定する。
+
+/etc/ldap/ldap.conf:
+  TLS_CACERT /etc/ldap/certs/server.crt
+
 ちなみに、証明書の確認（？）を適当にするならこう。
 
 /etc/ldap/ldap.conf:
