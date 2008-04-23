@@ -18,6 +18,7 @@
   * 頑張るならenscriptとかも入れちゃう。
   * WindowsインストーラちっくなUI。
   * GnomeDruid使える？
+    * Gtk::Assistantになってる！
 
 * Subversion: Svn::Core::PROP_XXXじゃなくて、:XXXというようにも書けるようにする。
 
