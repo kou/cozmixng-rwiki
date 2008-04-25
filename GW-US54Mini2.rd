@@ -12,57 +12,11 @@ USB IDはこんな感じ。
 
 == ドライバ
 
-((<rt2x00プロジェクト|URL:http://rt2x00.serialmonkey.com/>))のrt73というモジュール（？ドライバ？）を使う。
+2.6.24だとカーネル本体に取り込まれていた。
 
-Debianにもrt73-sourceというパッケージがあってmodule-assistantを使えば以下のようにビルドできるんだけど、パッケージになっているやつは少し古くて2.6.21とかじゃビルドできない。
+ただし、ファームウェアは別途用意しないといけない。
 
-  % m-a a-i rt73
-
-ということで、CVSのやつを使う。
-
-  % cvs -z3 -d:pserver:anonymous@rt2400.cvs.sourceforge.net:/cvsroot/rt2400 co -P -d rt73 source/rt73
-
-ビルドは簡単。
-
-  % cd rt73
-  % make
-  % sudo make install
-
-もう少し使い勝手を良くするならこんなパッチを当てておくといいかも。
-
-  # enscript diffu
-  Index: rtmp_info.c
-  ===================================================================
-  RCS file: /cvsroot/rt2400/source/rt73/Module/rtmp_info.c,v
-  retrieving revision 1.24
-  diff -u -p -r1.24 rtmp_info.c
-  --- rtmp_info.c 14 May 2007 04:33:46 -0000      1.24
-  +++ rtmp_info.c 26 May 2007 12:34:10 -0000
-  @@ -875,8 +875,8 @@ int rt_ioctl_siwessid(struct net_device 
-          ULONG           Length;
-
-       //check if the interface is down
-  -    if (pAdapter->RTUSBCmdThr_pid < 0)
-  -        return -ENETDOWN;
-  +/*     if (pAdapter->RTUSBCmdThr_pid < 0) */
-  +/*         return -ENETDOWN; */
-
-       memset(&Ssid, 0, sizeof(NDIS_802_11_SSID));
-
-  @@ -1100,8 +1100,8 @@ int rt_ioctl_siwencode(struct net_device
-          CHAR    kid = 0;
-
-       //check if the interface is down
-  -    if (pAdapter->RTUSBCmdThr_pid < 0)
-  -        return -ENETDOWN;
-  +/*     if (pAdapter->RTUSBCmdThr_pid < 0) */
-  +/*         return -ENETDOWN; */
-
-          memset(&WepKey, 0, sizeof(WepKey));
-
-インターフェイスがupしていなくてもessidとkeyを設定できるようにしている。downしているかどうかを明示的にチェックしているけど、チェックしないとなにか問題があるのかしら。
-
-=== ファームウェア
+== ファームウェア
 
 ((<ライセンスを確認|URL:http://rt2x00.serialmonkey.com/wiki/index.php?title=Firmware_license>))してrt73の((<ファームウェアをダウンロード|URL:http://www.ralinktech.com.tw/data/RT71W_Firmware_V1.8.zip>))する。((-.zipの中にもライセンスが入っている。-))
 
