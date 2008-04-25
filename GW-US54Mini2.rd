@@ -62,6 +62,15 @@ Debian¤Ë¤ârt73-source¤È¤¤¤¦¥Ñ¥Ã¥±¡¼¥¸¤¬¤¢¤Ã¤Æmodule-assistant¤ò»È¤¨¤Ð°Ê²¼¤Î¤è¤¦¤
 
 ¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤¬up¤·¤Æ¤¤¤Ê¤¯¤Æ¤âessid¤Èkey¤òÀßÄê¤Ç¤­¤ë¤è¤¦¤Ë¤·¤Æ¤¤¤ë¡£down¤·¤Æ¤¤¤ë¤«¤É¤¦¤«¤òÌÀ¼¨Åª¤Ë¥Á¥§¥Ã¥¯¤·¤Æ¤¤¤ë¤±¤É¡¢¥Á¥§¥Ã¥¯¤·¤Ê¤¤¤È¤Ê¤Ë¤«ÌäÂê¤¬¤¢¤ë¤Î¤«¤·¤é¡£
 
+=== ¥Õ¥¡¡¼¥à¥¦¥§¥¢
+
+((<¥é¥¤¥»¥ó¥¹¤ò³ÎÇ§|http://rt2x00.serialmonkey.com/wiki/index.php?title=Firmware_license>))¤·¤Ært73¤Î((<¥Õ¥¡¡¼¥à¥¦¥§¥¢¤ò¥À¥¦¥ó¥í¡¼¥É|http://www.ralinktech.com.tw/data/RT71W_Firmware_V1.8.zip>))¤¹¤ë¡£((-.zip¤ÎÃæ¤Ë¤â¥é¥¤¥»¥ó¥¹¤¬Æþ¤Ã¤Æ¤¤¤ë¡£-))
+
+.zip¤ÎÃæ¤Îrt73.bin¤¬¥Õ¥¡¡¼¥à¥¦¥§¥¢¤Ê¤Î¤Ç¡¢¤½¤ì¤ò/lib/firmware/¤Ë¥³¥Ô¡¼¤¹¤ë¡£
+
+  % unzip RT71W_Firmware_V1.8.zip
+  % sudo cp RT71W_Firmware_V1.8/rt73.bin /lib/firmware/
+
 == ÀßÄê
 
 /etc/network/interfaces¤Ë¤³¤ó¤Ê¤Î¤ò½ñ¤¯¡£
