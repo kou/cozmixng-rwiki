@@ -116,13 +116,16 @@ wireless_keyに設定する
 
 === パケットフォワーディングの設定
 
-/etc/network/optionsに以下を追加。
+/etc/sysctl.d/forwardingという以下のような内容のファイルを作成。
 
-  ip_forward=yes
+  net.ipv4.ip_forward=1
+  net.ipv6.conf.all.forwarding=1
 
-有効にする．
+/etc/sysctl.confのやつのコメントを外してもいいけど、アップデートのときに上書きする？とか聞かれることになるのでこっちの方が楽そう。
 
-  % sudo /etc/init.d/networking restart
+有効にする。
+
+  % sudo /etc/init.d/procps restart
 
 IPマスカレードを使うので、iptablesをインストールする。
 
