@@ -29,6 +29,7 @@
 * rcairo: 表のサポート
 * rcairo: グラフのサポート
 * rcairo: バーコードのサポート
+  * とりあえずBarby::CairoOutputterを作って送っておいた。将来的にはQRコードもサポートされるっぽいし。
 * rcairo: captchaのサポート
 
 * Svn: コールバックにはrb_protect()を使う。
