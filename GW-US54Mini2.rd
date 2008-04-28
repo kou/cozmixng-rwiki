@@ -33,8 +33,3 @@ USB IDはこんな感じ。
   iface wlan0 inet dhcp
       wireless-essid your-essid
       wireless-key XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XX
-
-パッチを当てていれば挿しただけで動く。当てていなければ挿したあとに手動でifup/ifdownしなおす。
-
-  % sudo /sbin/ifdown wlan0
-  % sudo /sbin/ifup wlan0
