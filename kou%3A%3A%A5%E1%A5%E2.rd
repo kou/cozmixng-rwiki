@@ -1,6 +1,6 @@
 = kou::メモ
 
-  * [2008-04-29] {www,share,streaming}: STABLE_6 -> STABLE_7.
+  * [2008-04-29] {www,share,streaming}: 6.2-STABLE -> 7.0-STABLE.
 
   * ((<「OpenGLを使ってJavaでも3Dを楽しもう」：ITpro|URL:http://itpro.nikkeibp.co.jp/article/COLUMN/20060703/242298/>))
 
