@@ -36,6 +36,7 @@ COZMIXNGいいだしっぺ．
   * ((<Synergy>))
   * ((<RubyCocoa>))
   * ((<slapd>))
+  * ((<MacBook>))
 
 == 小物
 
