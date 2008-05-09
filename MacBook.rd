@@ -2,6 +2,8 @@
 
 MacBook上で動いているDebia GNU/Linuxについて。
 
+キーボードの「n」が入力されないときがある。
+
 == タッチパッドの設定
 
 基本的には((<MacBook - Debian Wiki|URL:http://wiki.debian.org/MacBook>))に書いてあるとおりで、以下のように変更。
