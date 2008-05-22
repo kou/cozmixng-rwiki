@@ -1,0 +1,6 @@
+Owned by KiN.MT | DeLeTeTurk.Com | 
+
+DostLarim ;
+Mirach | SaYKo | bLueMoRe | byFeLAket | Extasy-SP | DarkWork | Casanova | WebPoLice | Inter_Coliq | Inf@z | Rockman | IstanbLue | Hack_Lif3 ve T DeLeTeTurk.Com | D.D.T | AiLesi...
+
+Fuck You TurkSecurity.Us Ananizi Sikim SiberBeLa - Raqe - RapciSeLo...
