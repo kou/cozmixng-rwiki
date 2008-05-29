@@ -20,4 +20,4 @@ RSS Parser 0.1.6のリリース
 == history
 
 * 2006-07-01 kou: open
-
+* 2008-05-30 TEST: NG
