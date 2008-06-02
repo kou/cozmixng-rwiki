@@ -5,6 +5,8 @@ The latest version: 0.1.3
 
 # ((<BTS|URL:/~kagemai/?project=gaunit;action=top>))(Japanese only)
 
+  * ((<NEWS.en|GaUnit::NEWS.en>))
+  * ((<NEWS.ja|GaUnit::NEWS.ja>))
   * ((<README.en|GaUnit::README.en>))
   * ((<README.ja|GaUnit::README.ja>))
 #  * ((<Tutorial.en|GaUnit::Tutorial.en>))
