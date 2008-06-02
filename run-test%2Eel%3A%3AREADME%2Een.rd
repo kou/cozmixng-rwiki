@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 2 2008-06-02 08:28:05Z  $
+$Id: README.en 4 2008-06-02 23:51:41Z  $
 
 == Name
 
@@ -91,6 +91,14 @@ runs test in new frame. I advice you it is good when you run
 test at the first.
 
 Happy testing!!
+
+== Key bindings
+
+: C-cC-t
+   Runs test.
+
+: C-cT
+   Runs test. A test result is showed in a new frame.
 
 == Customize variables
 
