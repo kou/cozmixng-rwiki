@@ -8,4 +8,3 @@ GaUnit is used by ...
   * ((<dsm>))
   * ((<esm>))
   * ((<wsm>))
-  * ((<uim|URL:http://uim.freedesktop.org/>))
