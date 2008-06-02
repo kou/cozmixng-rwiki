@@ -2,25 +2,19 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 288 2004-08-17 07:02:28Z kou $
-
-テストファーストってなかなかできないよねぇ．
+$Id: Tutorial.ja 440 2008-06-02 07:03:17Z kou $
 
 == 基本
 
-GaUnitを使ったユニットテストでは
+GaUnitを使った単体テストではテストをtest.unit.test-caseを継
+承したモジュール内に書きます。
 
-最初に
-
-  (use test.unit)
-
-を書きます．
-
-テストは
-
-  (use test.unit)
-
-の後に書きます．
+  (define-module test-your-module
+    (extend test.unit.test-case)
+    (use your-module))
+  (select-module test-your-module)
+  ...
+  (provide "test-your-module")
 
 == 下準備
 
@@ -49,24 +43,10 @@ run-test.scm（test/run-test.scm）をコピーしてもよいでしょう．
 
   (add-load-path "./lib")
 
-  (use gauche.interactive)
-  (use file.util)
   (use test.unit)
 
-  (if (and (symbol-bound? 'main)
-           (not (symbol-bound? '_main)))
-    (define _main main))
-
-  (define (main args)
-    (let ((dir (sys-dirname (car args))))
-      (for-each (lambda (test-script)
-                  (load (string-join (list dir test-script) "/")))
-                (directory-list dir
-                                :filter (lambda (x)
-                                          (rxmatch #/^test-.+\.scm$/ x))))
-      (if (symbol-bound? '_main)
-        (_main `(,(car args) "-vp" ,@(cdr args)))
-        (run-all-test))))
+  (define base-dir (sys-dirname *program-name*))
+  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
 run-test.scmには実行権を付けておきます．
 
@@ -88,10 +68,13 @@ run-test.scmには実行権を付けておきます．
 
 まず，テストファイルtest/test-symdiff.scmを作成します．
 
-  #!/usr/bin/env gosh
+  (define-module test.test-symdiff
+    (extend test.unit.test-case))
+  (select-module test.test-symdiff)
 
-  (use test.unit)
   (require "symdiff")
+
+  (provide "test/test-symdiff")
 
 C-cTでテストを実行してみましょう．C-cTには新しいフレームを作
 成してそのフレーム内にテスト結果を表示するようにしてテスト
@@ -110,13 +93,8 @@ run-test.elを使っていない場合はsymdiffディレクトリで以下のよ
 
 以下のようになるはずです．
 
-  *** ERROR: cannot find file "symdiff.scm" in *load-path* (... 省略)
-  Stack Trace:
-  _______________________________________
-    0  (%require feature)
-          At line 52 of "/usr/local/share/gauche/0.8/lib/gauche-init.scm"
-    1  (for-each (lambda (test-script) (load (string-join (list dir test- ...
-          At line 15 of "././test/run-test.scm"
+  gosh: "error": Compile Error: cannot find file "symdiff.scm" in *load-path* (... 省略)
+  "./test/test-symdiff.scm":1:(define-module test.test-symdiff (ex ...
 
 失敗しました．ソースファイルを作っていないのにrequireしてい
 るから当然ですね．
@@ -153,43 +131,50 @@ run-test.elを使っていない場合はsymdiffディレクトリで以下のよ
 テストファーストプログラミング(テスト駆動開発?)ではテストを
 書くことによってインターフェイスの設計をします．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    #f)
+
+最後に#fを書いているのは末尾再帰の最適化を抑制して、スタック
+トレースを取得できるようにするためです。
 
 ちなみに，テストは
 
-  (use test.unit)
+  (select-module test.test-symdiff)
 
-の後に書きます．
+と
+
+  (provide "test/test-symdiff")
+
+の間に書きます．
 
 つまり，テストファイル全体は以下のようになります．
 
-  #/usr/bin/env gosh
+  (define-module test.test-symdiff
+    (extend test.unit.test-case))
+  (select-module test.test-symdiff)
 
-  (use test.unit)
   (require "symdiff")
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    #f)
+
+  (provide "test/test-symdiff")
 
 C-cC-tで実行してみましょう．
 
-  ./test/test-symdiff.scm:8: (deriv 1 'x)
-  Error occured in base test
+  E
+
+    1) Error: test-base
   *** ERROR: unbound variable: deriv
-  Stack Trace:
-  _______________________________________
-    0  (deriv 1 'x)
-          At line 8 of "./test/test-symdiff.scm"
-    1  (assert-equal 0 (deriv 1 'x))
-          At line 8 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
-  .
+  ./test/test-symdiff.scm:7: (deriv 1 'x)
+  ./test/test-symdiff.scm:7: (assert-equal 0 (deriv 1 'x))
+
+  Finished in 2.6e-5 seconds
+
+  1 tests, 0 assertions, 0 successes, 0 failures, 1 errors
+  0.0% passed
 
 エラーになりました．記号微分をする手続きderivを定義していな
 いので当然ですね．
@@ -197,8 +182,7 @@ C-cC-tで実行してみましょう．
 ちなみに，C-x`でテストが失敗した箇所にジャンプできます．今回
 の場合だと，test/test-symdiff.scmの以下の行にジャンプします．
 
-     (assert-equal 0 (deriv 1 'x))))
-
+     (assert-equal 0 (deriv 1 'x))
 
 それでは，テストをパスするために，ソースファイル
 lib/symdiff.scmにderivを定義しましょう．
@@ -222,18 +206,20 @@ lib/symdiff.scmにderivを定義しましょう．
 
 こんな感じになるでしょう．
 
-  - Start test suite Default test suite
-  -- Start test case Symbolic Differentiation
-  .
+  - (test suite) Default test suite:
+  -- (test case) test.test-symdiff:
+  --- (test) test-base: .
+
+  Finished in 6.4e-5 seconds
 
   1 tests, 1 assertions, 1 successes, 0 failures, 0 errors
-  Testing time: 2.83e-4
+  100.0% passed
 
 もし，
 ((<Gauche-gtk|URL:http://www.shiro.dreamhost.com/scheme/index-j.html#libs>))
 がインストールされていれば，以下のようにtest/run-test.scmを
 起動することによってグラフィカルにテスト結果を表示することが
-できます．
+できます．（((*今はできません*))）
 
  [symdiff]% test/run-test.scm -ug
 
@@ -257,17 +243,23 @@ C-lとかを押すとテストファイルを読み込み直してからテストを実
 ですね．これは，先程出てきたdefine-test-caseの中に書くのでテ
 ストファイルには以下のように書かれます．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))
-     (assert-equal 1 (deriv 'x 'x))))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    #f)
 
 C-cC-tで実行してみましょう．
 
   F
+
+    1) Failure: test-base
+  expected: <1>
+   but was: <0>
+
+  diff:
+  - 1
+  + 0
   ./test/test-symdiff.scm:9: (assert-equal 1 (deriv 'x 'x))
-   expected:<1>
-    but was:<0> in base test
 
 失敗しましたね．エラーではないですよ．失敗です．(deriv 'x
 'x)が1を返すはずなのに0を返しているからです．
@@ -299,29 +291,18 @@ make-sumは足し算を表現するリストを返すことにしましょう．
 make-sumは最初に示した簡約規則には含まれていないので，別のテ
 ストにしましょうか．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))
-     (assert-equal 1 (deriv 'x 'x)))
-    ("sum test"
-     (assert-equal '(+ 1 x) (make-sum 1 'x))))
+  (define (test-sum)
+    (assert-equal '(+ 1 x) (make-sum 1 'x))
+    #f)
 
 では，C-cC-tでテストを実行しましょう．
 
-  .E
-  ./test/test-symdiff.scm:11: (make-sum 1 'x)
-  Error occured in sum test
+  E.
+
+    1) Error: test-sum
   *** ERROR: unbound variable: make-sum
-  Stack Trace:
-  _______________________________________
-    0  (make-sum 1 'x)
-          At line 11 of "./test/test-symdiff.scm"
-    1  (assert-equal '(+ 1 x) (make-sum 1 'x))
-          At line 11 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:13: (make-sum 1 'x)
+  ./test/test-symdiff.scm:13: (assert-equal '(+ 1 x) (make-sum 1 'x))
 
 エラーが出ました．make-sumを定義していないので当然ですね．
 
@@ -342,25 +323,28 @@ C-cC-tでテストを実行します．
                           (deriv 'x 'x))
                 (deriv (make-sum 1 'x) 'x))
 
-これは，"base test"の方にいれておきましょう．
+これは，test-baseの方にいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))
-     (assert-equal 1 (deriv 'x 'x))
-     (assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x)))
-    ("sum test"
-     (assert-equal '(+ 1 x) (make-sum 1 'x))))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    (assert-equal (make-sum (deriv 1 'x)
+                            (deriv 'x 'x))
+                  (deriv (make-sum 1 'x) 'x))
+    #f)
 
 C-cC-tでテストしましょう．
 
-  F
+  F.
+
+    1) Failure: test-base
+  expected: <(+ 0 1)>
+   but was: <0>
+
+  diff:
+  - (+ 0 1)
+  + 0
   ./test/test-symdiff.scm:10: (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))
-   expected:<(+ 0 1)>
-    but was:<0> in base test
-  .
 
 失敗しましたね．derivに微分の足し算の場合の処理を加えていな
 いので当然ですね．
@@ -370,42 +354,40 @@ C-cC-tでテストしましょう．
 
   (assert-true (sum? (make-sum 1 'x)))
 
-これは，"sum test"の方に加えておきましょう．
+これは，test-sumの方に加えておきましょう．
 
-sum?ができるまでは先程のderivのテストを実行しないようにして
-おきましょう．こういうときはコメントアウトするのではなくて，
-先頭に'（クォート）を付けると便利です．
+sum?ができるまでは先程のderivのテストに保留マークを付けておき
+ましょう。こういうときに使うのがpendです。
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))
-     (assert-equal 1 (deriv 'x 'x))
-     '(assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x)))
-    ("sum test"
-     (assert-equal '(+ 1 x) (make-sum 1 'x))
-     (assert-true (sum? (make-sum 1 'x)))))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    (pend "deriv doesn't support make-sum yet"
+          (lambda ()
+            (assert-equal (make-sum (deriv 1 'x)
+                                    (deriv 'x 'x))
+                          (deriv (make-sum 1 'x) 'x))))
+    #f)
 
+  (define (test-sum)
+    (assert-equal '(+ 1 x) (make-sum 1 'x))
+    (assert-true (sum? (make-sum 1 'x)))
+    #f)
 
 それではC-cC-tでテストしましょう．
 
-  .E
-  ./test/test-symdiff.scm:15: (sum? (make-sum 1 'x))
-  Error occured in sum test
-  *** ERROR: unbound variable: sum?
-  Stack Trace:
-  _______________________________________
-    0  (sum? (make-sum 1 'x))
-          At line 15 of "./test/test-symdiff.scm"
-    1  (assert-true (sum? (make-sum 1 'x)))
-          At line 15 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  PE
 
-sum?が未定義であるエラーが報告されました．それでは，
+    1) Pending: test-base
+  deriv doesn't support make-sum yet
+  ./test/test-symdiff.scm:10: (pend "make-sum isn't implemented yet" (lambda () (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))))
+
+    2) Error: test-sum
+  *** ERROR: unbound variable: sum?
+  ./test/test-symdiff.scm:19: (assert-true (sum? (make-sum 1 'x)))
+
+make-sumのテストを保留にしていることと、sum?が未定義なのでエ
+ラーになっていることが報告されました。それでは，
 lib/symdiff.scmにsum?を定義しましょう．
 
   (define (sum? exp)
@@ -413,54 +395,67 @@ lib/symdiff.scmにsum?を定義しましょう．
 
 C-cC-tでテストを実行しましょう．
 
-  ..
+  .P
 
-成功しましたね．
+    1) Pending: test-base
+  deriv doesn't support make-sum yet
+  ./test/test-symdiff.scm:10: (pend "deriv doesn't support make-sum yet" (lambda () (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))))
 
-それでは，先程無効にしたderivのテストを，先頭の'（クォート）
-をとって有効にしましょう．
+エラーがなくなりましたね。
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...
-     (assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x)))
-    ("sum test"
-     ...))
+それでは、先程保留にしておいたderivのテストを有効にしましょう。
+
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    (assert-equal (make-sum (deriv 1 'x)
+                            (deriv 'x 'x))
+                  (deriv (make-sum 1 'x) 'x))))
+    #f)
 
 
 それでは，C-cC-tでテストを実行しましょう．
 
-  F
+  .F
+
+    1) Failure: test-base
+  expected: <(+ 0 1)>
+   but was: <0>
+
+  diff:
+  - (+ 0 1)
+  + 0
   ./test/test-symdiff.scm:10: (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))
-   expected:<(+ 0 1)>
-    but was:<0> in base test
   .
 
 あいかわらず失敗しますね．それでは，derivを定義しなおしましょ
 う．
 
-といきたいところですが，d(u+v)/dx = du/dx + dv/dxという定義
-を見ると，make-sumで作った足し算（d(u+v)の(u+v)のところ）を
-（uとvに）分解する必要がありそうです．ということで，もう一度，
-derivのテストをクォートしてmake-sumで作ったオブジェクトのセ
-レクタを作ることにしましょう．
+といきたいところですが，d(u+v)/dx = du/dx + dv/dxという定義を
+見ると，make-sumで作った足し算（d(u+v)の(u+v)のところ）を（u
+とvに）分解する必要がありそうです．ということで，もう一度，
+derivのテストを保留にしてmake-sumで作ったオブジェクトのセレク
+タを作ることにしましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...
-     '(assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x)))
-    ("sum test"
-     ...))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    (pend "deriv doesn't support make-sum yet"
+          (lambda ()
+            (assert-equal (make-sum (deriv 1 'x)
+                                    (deriv 'x 'x))
+                          (deriv (make-sum 1 'x) 'x))))
+    #f)
 
 ソースを書き換えたのでC-cC-tでテストしておきましょう．
 
-  ..
+  P.
 
-きちんとパスしますね．
+    1) Pending: test-base
+  deriv doesn't support make-sum yet
+  ./test/test-symdiff.scm:10: (pend "deriv doesn't support make-sum yet" (lambda () (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))))
+
+きちんと保留になっていますね．
 
 それではセレクタを作っていきましょう．足し算の最初の項を取り
 出すやつはaddend，二番目の項を取り出すやつはaugendとしましょ
@@ -471,7 +466,7 @@ addendとaugendのテストは以下のようになります．
   (assert-equal 1 (addend (make-sum 1 'x)))
   (assert-equal 'x (augend (make-sum 1 'x)))
 
-これは，"sum test"の方に加えておきましょう．
+これは，test-sumの方に加えておきましょう．
 
   (define-test-case "Symbolic Differentiation"
     ("base test"
@@ -486,28 +481,23 @@ addendとaugendのテストは以下のようになります．
 
 それではC-cC-tでテストを実行します．
 
-  .E
-  ./test/test-symdiff.scm:16: (addend (make-sum 1 'x))
-  Error occured in sum test
+  EP
+
+    1) Error: test-sum
   *** ERROR: unbound variable: addend
-  Stack Trace:
-  _______________________________________
-    0  (addend (make-sum 1 'x))
-          At line 16 of "./test/test-symdiff.scm"
-    1  (assert-equal 1 (addend (make-sum 1 'x)))
-          At line 16 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:20: (assert-equal 1 (addend (make-sum 1 'x)))
+
+    2) Pending: test-base
+  deriv doesn't support make-sum yet
+  ./test/test-symdiff.scm:10: (pend "deriv doesn't support make-sum yet" (lambda () (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))))
 
 addedを定義していないのでエラーが起きましたね．
 
-ここで，"sum test"でエラーが起きても"base test"が実行されて
-いることに注意してください（テスト中にエラーが発生したことを
-示すEとテストがパスしたことを示す.（ドット）が出ていますね）．
-GaUnitでは，各テストで起こったエラーが他のテストに影響を及ぼ
-すことはありません．
+ここで，test-sumでエラーが起きてもtest-baseが実行されているこ
+とに注意してください（テスト中にエラーが発生したことを示すEと
+テストを保留したことを示すPが出ていますね）．GaUnitでは，各テ
+ストで起こったエラーが他のテストに影響を及ぼすことはありませ
+ん．
 
 ただし，同じテスト内でエラーが発生した場合（addendを使った
 assert-equal）はそれ以降（augendを使ったassert-equal）は実行
@@ -523,28 +513,36 @@ assert-equal）はそれ以降（augendを使ったassert-equal）は実行
 
 C-cC-tでテストを実行しましょう．
 
-  ..
+  .P
 
-成功しましたね．
+    1) Pending: test-base
+  deriv doesn't support make-sum yet
+  ./test/test-symdiff.scm:10: (pend "deriv doesn't support make-sum yet" (lambda () (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))))
+
+成功して、保留だけになりましたね．
 
 今度こそderivのテストを実行しましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...
-     (assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x)))
-    ("sum test"
-     ...))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    (assert-equal (make-sum (deriv 1 'x)
+                            (deriv 'x 'x))
+                  (deriv (make-sum 1 'x) 'x))
+    #f)
 
 C-cC-tでテストを実行すると以下のようになりますね．
 
-  F
+  F.
+
+    1) Failure: test-base
+  expected: <(+ 0 1)>
+   but was: <0>
+
+  diff:
+  - (+ 0 1)
+  + 0
   ./test/test-symdiff.scm:10: (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-sum 1 'x) 'x))
-   expected:<(+ 0 1)>
-    but was:<0> in base test
-  .
 
 それでは，derivを定義しなおしましょう．
 
@@ -575,37 +573,17 @@ make-productは掛け算を表現するリストを返すことにしましょう．
 
 make-productは掛け算用のテストにしましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))
-     (assert-equal 1 (deriv 'x 'x))
-     (assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x)))
-    ("sum test"
-     (assert-equal '(+ 1 x) (make-sum 1 'x))
-     (assert-true (sum? (make-sum 1 'x)))
-     (assert-equal 1 (addend (make-sum 1 'x)))
-     (assert-equal 'x (augend (make-sum 1 'x))))
-    ("product test"
-     (assert-equal '(* 1 x) (make-product 1 'x))))
+  (define (test-product)
+    (assert-equal '(* 1 x) (make-product 1 'x))
+    #f)
 
 それでは，C-cC-tでテストを実行しましょう．
 
-  ..E
-  ./test/test-symdiff.scm:19: (make-product 1 'x)
-  Error occured in product test
+  E..
+
+    1) Error: test-product
   *** ERROR: unbound variable: make-product
-  Stack Trace:
-  _______________________________________
-    0  (make-product 1 'x)
-          At line 19 of "./test/test-symdiff.scm"
-    1  (assert-equal '(* 1 x) (make-product 1 'x))
-          At line 19 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:23: (assert-equal '(* 1 x) (make-product 1 'x))
 
 make-productが定義されていないのでエラーが起きました．
 
@@ -626,33 +604,20 @@ product?を作りましょう．product?のテストは以下のようになりま
 
   (assert-true (product? (make-product 1 'x)))
 
-これは，"product test"の方に加えておきましょう．
+これは，test-productに加えておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...)
-    ("sum test"
-     ...)
-    ("product test"
-     ...
-     (assert-true (product? (make-product 1 'x)))))
+  (define (test-product)
+    (assert-equal '(* 1 x) (make-product 1 'x))
+    (assert-true (product? (make-product 1 'x)))
+    #f)
 
 それでは，C-cC-tでテストを実行しましょう．
 
-  ..E
-  ./test/test-symdiff.scm:20: (product? (make-product 1 'x))
-  Error occured in product test
+  .E.
+
+    1) Error: test-product
   *** ERROR: unbound variable: product?
-  Stack Trace:
-  _______________________________________
-    0  (product? (make-product 1 'x))
-          At line 20 of "./test/test-symdiff.scm"
-    1  (assert-true (product? (make-product 1 'x)))
-          At line 20 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:24: (assert-true (product? (make-product 1 'x)))
 
 product?が定義されていないのでエラーが起きました．
 
@@ -675,34 +640,22 @@ multiplierとmultiplicandのテストは以下のようになります．
   (assert-equal 1 (multiplier (make-product 1 'x)))
   (assert-equal 'x (multiplicand (make-product 1 'x)))
 
-これは，"product test"にいれておきましょう．
+これは，test-productにいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...)
-    ("sum test"
-     ...)
-    ("product test"
-     ...
-     (assert-equal 1 (multiplier (make-product 1 'x)))
-     (assert-equal 'x (multiplicand (make-product 1 'x)))))
+  (define (test-product)
+    (assert-equal '(* 1 x) (make-product 1 'x))
+    (assert-true (product? (make-product 1 'x)))
+    (assert-equal 1 (multiplier (make-product 1 'x)))
+    (assert-equal 'x (multiplicand (make-product 1 'x)))
+    #f)
 
 それでは，C-cC-tテストを実行します．
 
-  ..E
-  ./test/test-symdiff.scm:21: (multiplier (make-product 1 'x))
-  Error occured in product test
+  E..
+
+    1) Error: test-product
   *** ERROR: unbound variable: multiplier
-  Stack Trace:
-  _______________________________________
-    0  (multiplier (make-product 1 'x))
-          At line 21 of "./test/test-symdiff.scm"
-    1  (assert-equal 1 (multiplier (make-product 1 'x)))
-          At line 21 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:25: (assert-equal 1 (multiplier (make-product 1 'x)))
 
 multiplierが未定義のためエラーになりました．
 
@@ -728,26 +681,31 @@ multiplierが未定義のためエラーになりました．
                           (make-product (deriv 1 'x) 'x))
                 (deriv (make-product 1 'x) 'x)))
 
-これは，"base test"に加えておきましょう．
+これは，test-baseに加えておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...
-     (assert-equal (make-sum (make-product 1 (deriv 'x 'x))
-                             (make-product (deriv 1 'x) 'x))
-                   (deriv (make-product 1 'x) 'x)))
-    ("sum test"
-     ...)
-    ("product test"
-     ...))
+  (define (test-base)
+    (assert-equal 0 (deriv 1 'x))
+    (assert-equal 1 (deriv 'x 'x))
+    (assert-equal (make-sum (deriv 1 'x)
+                            (deriv 'x 'x))
+                  (deriv (make-sum 1 'x) 'x))
+    (assert-equal (make-sum (make-product 1 (deriv 'x 'x))
+                            (make-product (deriv 1 'x) 'x))
+                  (deriv (make-product 1 'x) 'x))
+    #f)
 
 C-cC-tでテストを実行しましょう．
 
-  F
+  ..F
+
+    1) Failure: test-base
+  expected: <(+ (* 1 1) (* 0 x))>
+   but was: <0>
+
+  diff:
+  - (+ (* 1 1) (* 0 x))
+  + 0
   ./test/test-symdiff.scm:13: (assert-equal (make-sum (make-product 1 (deriv 'x 'x)) (make-product (deriv 1 'x) 'x)) (deriv (make-product 1 'x) 'x))
-   expected:<(+ (* 1 1) (* 0 x))>
-    but was:<0> in base test
-  ..
 
 失敗しましたね．derivに微分の掛け算の場合の処理を加えていな
 いので当然ですね．
@@ -788,49 +746,21 @@ same-variable?のテストは以下のようになります．
   (assert-false (same-variable? 'x 'y))
   (assert-false (same-variable? 'x 1))
 
-これは，"variable test"にいれておきましょう．
+これは，test-variableにいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     (assert-equal 0 (deriv 1 'x))
-     (assert-equal 1 (deriv 'x 'x))
-     (assert-equal (make-sum (deriv 1 'x)
-                             (deriv 'x 'x))
-                   (deriv (make-sum 1 'x) 'x))
-     (assert-equal (make-sum (make-product 1 (deriv 'x 'x))
-                             (make-product (deriv 1 'x) 'x))
-                   (deriv (make-product 1 'x) 'x)))
-    ("sum test"
-     (assert-equal '(+ 1 x) (make-sum 1 'x))
-     (assert-true (sum? (make-sum 1 'x)))
-     (assert-equal 1 (addend (make-sum 1 'x)))
-     (assert-equal 'x (augend (make-sum 1 'x))))
-    ("product test"
-     (assert-equal '(* 1 x) (make-product 1 'x))
-     (assert-true (product? (make-product 1 'x)))
-     (assert-equal 1 (multiplier (make-product 1 'x)))
-     (assert-equal 'x (multiplicand (make-product 1 'x))))
-    ("variable test"
-     (assert-true (same-variable? 'x 'x))
-     (assert-false (same-variable? 'x 'y))
-     (assert-false (same-variable? 'x 1))))
+(define (test-variable)
+  (assert-true (same-variable? 'x 'x))
+  (assert-false (same-variable? 'x 'y))
+  (assert-false (same-variable? 'x 1))
+  #f)
 
 それでは，C-cC-tでテストを実行しましょう．
 
   ...E
-  ./test/test-symdiff.scm:27: (same-variable? 'x 'x)
-  Error occured in variable test
+
+    1) Error: test-variable
   *** ERROR: unbound variable: same-variable?
-  Stack Trace:
-  _______________________________________
-    0  (same-variable? 'x 'x)
-          At line 27 of "./test/test-symdiff.scm"
-    1  (assert-true (same-variable? 'x 'x))
-          At line 27 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:33: (assert-true (same-variable? 'x 'x))
 
 same-variable?が定義されていないのでエラーになりました．
 same-variable?を定義しましょう．
@@ -849,38 +779,23 @@ same-variable?を定義しましょう．
   (assert-true (variable? 'x))
   (assert-false (variable? 1))
 
-これは，"variable test"にいれておきましょう．
+これは，test-variableにいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ("base test"
-     ...)
-    ("sum test"
-     ...)
-    ("product test"
-     ...)
-    ("variable test"
-     ...
-     (assert-true (variable? 'x))
-     (assert-false (variable? 1))))
+  (define (test-variable)
+    (assert-true (variable? 'x))
+    (assert-false (variable? 1))
+    (assert-true (same-variable? 'x 'x))
+    (assert-false (same-variable? 'x 'y))
+    (assert-false (same-variable? 'x 1))
+    #f)
 
 それではC-cC-tでテストしてみましょう．
 
-  ...E
-  ./lib/symdiff.scm:38: (variable? exp1)
-  Error occured in variable test
+  .E..
+
+    1) Error: test-variable
   *** ERROR: unbound variable: variable?
-  Stack Trace:
-  _______________________________________
-    0  (variable? exp1)
-          At line 38 of "./lib/symdiff.scm"
-    1  (same-variable? 'x 'x)
-          At line 27 of "./test/test-symdiff.scm"
-    2  (assert-true (same-variable? 'x 'x))
-          At line 27 of "./test/test-symdiff.scm"
-    3  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    4  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  ./test/test-symdiff.scm:33: (assert-true (variable? 'x))
 
 variable?を定義していないのでエラーが起きました．variable?を
 定義しましょう．
@@ -924,7 +839,7 @@ C-cC-tでテストを実行しましょう．
 
 のcがxではない変数の場合のテストをしていませんでした．
 
-"base test"に以下のようなテストを追加しましょう．
+test-baseに以下のようなテストを追加しましょう．
 
   (assert-equal 0 (deriv 'y 'x))
 
@@ -945,25 +860,31 @@ C-cC-tでテストを実行しましょう．
 
    (assert-equal (make-sum (make-product 4 'x) 1)
                  (deriv (make-sum (make-product 2 (make-product 'x 'x))
-                                  (make-product 'x 3))
-                        'x))))
+                                  (make-sum 'x 3))
+                        'x))
 
-これは，"more test"としておきましょう．
+これは，test-complexとしておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("more test"
-     (assert-equal (make-sum (make-product 4 'x) 1)
-                   (deriv (make-sum (make-product 2 (make-product 'x 'x))
-                                    (make-sum 'x 3))
-                          'x))))
+  (define (test-complex)
+    (assert-equal (make-sum (make-product 4 'x) 1)
+                  (deriv (make-sum (make-product 2 (make-product 'x 'x))
+                                   (make-sum 'x 3))
+                         'x))
+    #f)
 
 テストしてみましょう．
 
-  ....F
-  ./test/test-symdiff.scm:34: (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))
-   expected:<(+ (* 4 x) 1)>
-    but was:<(+ (+ (* 2 (+ (* x 1) (* 1 x))) (* 0 (* x x))) (+ 1 0))> in more test
+  ...F.
+
+    1) Failure: test-complex
+  expected: <(+ (* 4 x) 1)>
+   but was: <(+ (+ (* 2 (+ (* x 1) (* 1 x))) (* 0 (* x x))) (+ (* x 0) (* 1 3)))>
+
+  diff:
+  - (+ (* 4 x) 1)
+  + (+ (+ (* 2 (+ (* x 1) (* 1 x))) (* 0 (* x x)))
+  +    (+ (* x 0) (* 1 3)))
+  ./test/test-symdiff.scm:42: (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))
 
 失敗しますね．
 
@@ -977,22 +898,27 @@ C-cC-tでテストを実行しましょう．
   * x * 0 = 0
   * 数値 * 数値 = 数値の掛け算
 
-とりあえず，先程足したテストをクォートしておいて，簡約化の方
+とりあえず，先程足したテストを保留にしておいて，簡約化の方
 から手を付けましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("more test"
-     '(assert-equal (make-sum (make-product 4 'x) 1)
-                   (deriv (make-sum (make-product 2 (make-product 'x 'x))
-                                    (make-sum 'x 3))
-                          'x))))
+  (define (test-complex)
+    (pend "need more work"
+          (lambda ()
+            (assert-equal (make-sum (make-product 4 'x) 1)
+                          (deriv (make-sum (make-product 2 (make-product 'x 'x))
+                                           (make-product 'x 3))
+                                 'x))))
+    #f)
 
 C-cC-tでテストしておきましょう．
 
-  .....
+  ....P
 
-パスしますね．
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+保留になっていますね。
 
 ==== make-sum
 
@@ -1001,19 +927,28 @@ C-cC-tでテストしておきましょう．
 
   (assert-equal 'x (make-sum 'x 0))
 
-これは，"sum reduce"というテストにしましょうか．
+これは，test-sum-reduceというテストにしましょうか．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("sum reduce"
-     (assert-equal 'x (make-sum 'x 0))))
+  (define (test-sum-reduce)
+    (assert-equal 'x (make-sum 'x 0))
+    #f)
 
 C-cC-tでテストを実行します．
 
-  .....F
-  ./test/test-symdiff.scm:39: (assert-equal 'x (make-sum 'x 0))
-   expected:<x>
-    but was:<(+ x 0)> in sum reduce
+  ..F.P.
+
+    1) Failure: test-sum-reduce
+  expected: <x>
+   but was: <(+ x 0)>
+
+  diff:
+  - x
+  + (+ x 0)
+  ./test/test-symdiff.scm:51: (assert-equal 'x (make-sum 'x 0))
+
+    2) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 失敗しますね．それでは，make-sumを書き換えましょう．
 
@@ -1024,129 +959,103 @@ C-cC-tでテストを実行します．
 
 C-cC-tでテストしてみましょう．
 
-  E
-  ./test/test-symdiff.scm:12: (make-sum 1 'x)
-  Error occured in base test
-  *** ERROR: real number required: x
-  Stack Trace:
-  _______________________________________
-    0  (make-sum 1 'x)
-          At line 12 of "./test/test-symdiff.scm"
-    1  (deriv (make-sum 1 'x) 'x)
-          At line 12 of "./test/test-symdiff.scm"
-    2  (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-s ...
-          At line 10 of "./test/test-symdiff.scm"
-    3  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    4  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
-  （省略）
+  E..EEP
+
+    1) Error: test-sum-reduce
+  *** ERROR: Number required, but got x
+  ./test/test-symdiff.scm:51: (assert-equal 'x (make-sum 'x 0))
+  ...（省略）
 
 make-sumの引数には数値以外も指定される可能性があるので=を使
-用するのはまずいですね．ということで，=number?を使うことにし
-ましょう．=number?のテストは以下の通りです．
+用するのはまずいですね．ということで，number=?を使うことにし
+ましょう．number=?のテストは以下の通りです．
 
-  (assert-true (=number? 1 1))
-  (assert-false (=number? 1 'x))
+  (assert-true (number=? 1 1))
+  (assert-false (number=? 1 'x))
 
-これは"sum reduce"に加えておきましょう．ついでにmake-sumのテ
-ストはクォートしておきます．
+これはtest-sum-reduceに加えておきましょう．ついでにmake-sumの
+テストはクォートしておきます．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("sum reduce"
-     '(assert-equal 'x (make-sum 'x 0))
-     (assert-true (=number? 1 1))
-     (assert-false (=number? 1 'x))))
+  (define (test-sum-reduce)
+    (assert-true (number=? 1 1))
+    (assert-false (number=? 1 'x))
+    (assert-equal 'x (make-sum 'x 0))
+    #f)
 
 C-cC-tでテストします．
 
-  （省略）
-  ./test/test-symdiff.scm:40: (=number? 1 1)
-  Error occured in sum reduce
-  *** ERROR: unbound variable: =number?
-  Stack Trace:
-  _______________________________________
-    0  (=number? 1 1)
-          At line 40 of "./test/test-symdiff.scm"
-    1  (assert-true (=number? 1 1))
-          At line 40 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
+  .EE.EP
+  ...（省略）
+    2) Error: test-sum-reduce
+  *** ERROR: unbound variable: number=?
+  ./test/test-symdiff.scm:51: (assert-true (number=? 1 1))
+  ...（省略）
 
-このエラーは=number?が未定義だからですね．=number?を定義しま
+このエラーはnumber=?が未定義だからですね．number=?を定義しま
 しょう．
 
-  (define (=number? exp1 exp2)
+  (define (number=? exp1 exp2)
     (and (number? exp1)
          (number? exp2)
          (= exp1 exp2)))
 
 C-cC-tでテストを実行しましょう．
 
-  E
-  ./test/test-symdiff.scm:12: (make-sum 1 'x)
-  Error occured in base test
-  *** ERROR: real number required: x
-  Stack Trace:
-  _______________________________________
-    0  (make-sum 1 'x)
-          At line 12 of "./test/test-symdiff.scm"
-    1  (deriv (make-sum 1 'x) 'x)
-          At line 12 of "./test/test-symdiff.scm"
-    2  (assert-equal (make-sum (deriv 1 'x) (deriv 'x 'x)) (deriv (make-s ...
-          At line 10 of "./test/test-symdiff.scm"
-    3  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    4  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
-  （省略）
+  EEE.P.
+  ...（省略）
+    3) Error: test-sum-reduce
+  *** ERROR: Number required, but got x
+  ./test/test-symdiff.scm:53: (assert-equal 'x (make-sum 'x 0))
+  ...（省略）
 
-先程の=number?が未定義というエラーが無くなりました．それでは，
-make-sum の = を =number?に書き換えましょう．
+先程のnumber=?が未定義というエラーが無くなりました．それでは，
+make-sum の = を number=?に書き換えましょう．
 
   (define (make-sum exp1 exp2)
-    (cond ((=number? exp1 0) exp2)
-          ((=number? exp2 0) exp1)
+    (cond ((number=? exp1 0) exp2)
+          ((number=? exp2 0) exp1)
           (else (list '+ exp1 exp2))))
-
-ついでに，"sum reduce"でクォートしておいたmake-sumのクォート
-も外しましょう．
-
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("sum reduce"
-     (assert-equal 'x (make-sum 'x 0))
-     (assert-true (=number? 1 1))
-     (assert-false (=number? 1 'x))))
 
 それではC-cC-tでテストをしましょう．
 
-  ......
+  ..P...
 
-パスしましたね．
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+エラーがなくなって、make-sumのテストもパスしましたね．
 
 次は，"数値 + 数値 = 数値の足し算"となるようにmake-sumを変更
 しましょう．テストはこうなります．
 
   (assert-equal 3 (make-sum 1 2))
 
-これは"sum reduce"いれておきましょう．
+これはtest-sum-reduceいれておきましょう．
 
-(define-test-case "Symbolic Differentiation"
-  ...
-  ("sum reduce"
-   ...
-   (assert-equal 3 (make-sum 1 2))))
+  (define (test-sum-reduce)
+    (assert-true (number=? 1 1))
+    (assert-false (number=? 1 'x))
+    (assert-equal 'x (make-sum 'x 0))
+    (assert-equal 3 (make-sum 1 2))
+    #f)
 
 C-cC-tでテストを実行します．
 
-  .....F
-  ./test/test-symdiff.scm:42: (assert-equal 3 (make-sum 1 2))
-   expected:<3>
-    but was:<(+ 1 2)> in sum reduce
+  .FP...
+
+    1) Failure: test-sum-reduce
+  expected: <3>
+   but was: <(+ 1 2)>
+
+  diff:
+  - 3
+  + (+ 1 2)
+  ./test/test-symdiff.scm:54: (assert-equal 3 (make-sum 1 2))
+
+    2) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 失敗しましたね．それでは，make-sumを書き換えましょう．
 
@@ -1159,9 +1068,13 @@ C-cC-tでテストを実行します．
 
 C-cC-tでテストしてみましょう．
 
-  ......
+  ....P.
 
-パスしましたね．
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+追加したテストはパスしましたね．
 
 ==== make-product
 
@@ -1171,19 +1084,28 @@ C-cC-tでテストしてみましょう．
 
   (assert-equal 'x (make-product 'x 1))
 
-これは"product reduce"にいれておきましょう．
+これはtest-product-reduceにいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product reduce"
-     (assert-equal 'x (make-product 'x 1))))
+  (define (test-product-reduce)
+    (assert-equal 'x (make-product 'x 1))
+    #f)
 
 それでは，C-cC-tでテストしましょう．
 
-  ......F
-  ./test/test-symdiff.scm:44: (assert-equal 'x (make-product 'x 1))
-   expected:<x>
-    but was:<(* x 1)> in product reduce
+  .F..P..
+
+    1) Failure: test-product-reduce
+  expected: <x>
+   but was: <(* x 1)>
+
+  diff:
+  - x
+  + (* x 1)
+  ./test/test-symdiff.scm:58: (assert-equal 'x (make-product 'x 1))
+
+    2) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 失敗しました．それでは，make-productを書き換えましょう．
 
@@ -1194,151 +1116,166 @@ C-cC-tでテストしてみましょう．
 
 それではC-cC-tでテストしましょう．
 
-  F
-  ./test/test-symdiff.scm:13: (assert-equal (make-sum (make-product 1 (deriv 'x 'x)) (make-product (deriv 1 'x) 'x)) (deriv (make-product 1 'x) 'x))
-   expected:<(+ 1 (* 0 x))>
-    but was:<1> in base test
-  .F
-  ./test/test-symdiff.scm:23: (assert-equal '(* 1 x) (make-product 1 'x))
-   expected:<(* 1 x)>
-    but was:<x> in product test
-  F
-  ./test/test-symdiff.scm:24: (assert-true (product? (make-product 1 'x)))
-   expected:<#t>
-    but was:<#f> in product test
-  E
-  ./test/test-symdiff.scm:25: (multiplier (make-product 1 'x))
-  Error occured in product test
-  *** ERROR: pair required, but got x
-  Stack Trace:
-  _______________________________________
-    0  (multiplier (make-product 1 'x))
-          At line 25 of "./test/test-symdiff.scm"
-    1  (assert-equal 1 (multiplier (make-product 1 'x)))
-          At line 25 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
-  ....
+  F..FP..
 
-今のテストはパスしますが，
+    1) Failure: test-base
+  expected: <(+ 1 (* 0 x))>
+   but was: <1>
+
+  diff:
+  - (+ 1 (* 0 x))
+  + 1
+  ./test/test-symdiff.scm:13: (assert-equal (make-sum (make-product 1 (deriv 'x 'x)) (make-product (deriv 1 'x) 'x)) (deriv (make-product 1 'x) 'x))
+
+    2) Failure: test-product
+  expected: <(* 1 x)>
+   but was: <x>
+
+  diff:
+  - (* 1 x)
+  + x
+  ./test/test-symdiff.scm:27: (assert-equal '(* 1 x) (make-product 1 'x))
+
+    3) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:42: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+今のテストはパスしますが、このテストが失敗します。
 
   (assert-equal (make-sum (make-product 1 (deriv 'x 'x))
                           (make-product (deriv 1 'x) 'x))
                 (deriv (make-product 1 'x) 'x)))
 
-では，(+ 1 (* 0 x))になるはずが，1になっていて失敗しています．
-とりあえず，これは，残りの簡約化の規則
+(+ 1 (* 0 x))になるはずが1になっているからです。とりあえず，
+これは，残りの簡約化の規則
 
   * x * 0 = 0
   * 数値 * 数値 = 数値の掛け算
 
 を実装すれば解決しそうなので放置しましょう．
 
-一方"product test"の
+また、test-productのこのテストも失敗します。
 
   (assert-equal '(* 1 x) (make-product 1 'x))
 
-では，(* 1 x)になるはずが，1になっていて失敗しています．これ
-は，今加えたテスト
+これは、(* 1 x)になるはずが1になっているからです。このテスト
+は、今回加えたテスト
 
   (assert-equal 'x (make-product 'x 1))
 
 と同じことをしているので，変更するか削除しましょう．今回は，
 1が特別なケースなので，削除しないで，2に変更しましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product test"
-     (assert-equal '(* 2 x) (make-product 2 'x))
-     ...)
-    ...)
+  (define (test-product)
+    (assert-equal '(* 2 x) (make-product 2 'x))
+    (assert-true (product? (make-product 1 'x)))
+    (assert-equal 1 (multiplier (make-product 1 'x)))
+    (assert-equal 'x (multiplicand (make-product 1 'x)))
+    #f)
 
 機能拡張のためにテストを変更することもあります．
 
-同じく，"product test"の
+それではC-cC-tでテストを実行します。
+
+  ..FP..F
+
+    1) Failure: test-product
+  expected: <#t>
+   but was: <#f>
+
+  diff:
+  - #t
+  + #f
+  ./test/test-symdiff.scm:28: (assert-true (product? (make-product 1 'x)))
+  ...（省略）
+
+新しい失敗はtest-productのこの部分です。
 
   (assert-true (product? (make-product 1 'x)))
 
-では，#tになるはずが#fになっていて失敗しています．これも先程
-と同じ様に1が特別なケースになったからです．そこで，テストを
-変更します．
+このテストでは#tになるはずが#fになっていて失敗しています．こ
+れも先程と同じ様に1が特別なケースになったからです．そこで，
+テストを変更します．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product test"
-     ...
-     (assert-true (product? (make-product 2 'x)))
-     (assert-false (product? (make-product 1 'x)))
-     ...)
-    ...)
+  (define (test-product)
+    (assert-equal '(* 2 x) (make-product 2 'x))
+    (assert-true (product? (make-product 2 'x)))
+    (assert-false (product? (make-product 1 'x)))
+    (assert-equal 1 (multiplier (make-product 1 'x)))
+    (assert-equal 'x (multiplicand (make-product 1 'x)))
+    #f)
 
 1の場合はproduct?が#fになるというテストを加えておきました．
 
-こちらも同じく"product test"の
+それではC-cC-tでテストを実行します。
+
+  F..E.P.
+  ...（省略）
+    2) Error: test-product
+  *** ERROR: pair required, but got x
+  ./test/test-symdiff.scm:30: (assert-equal 1 (multiplier (make-product 1 'x)))
+  ...（省略）
+
+このエラーはtest-productのこの部分です。
 
   (assert-equal 1 (multiplier (make-product 1 'x)))
 
-では，(make-product 1 'x)の返り値が1となっているのに，
-multiplierはproduct(リスト)を要求していてエラーになっていま
+このテストでは(make-product 1 'x)の返り値が1となっているのに，
+multiplierはproduct（リスト）を要求していてエラーになっていま
 す．これも，1が特別な場合だからです．テストを変更しましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product test"
-     ...
-     (assert-equal 2 (multiplier (make-product 2 'x))))
-    ...)
+  (define (test-product)
+    (assert-equal '(* 2 x) (make-product 2 'x))
+    (assert-true (product? (make-product 2 'x)))
+    (assert-false (product? (make-product 1 'x)))
+    (assert-equal 2 (multiplier (make-product 2 'x)))
+    (assert-equal 'x (multiplicand (make-product 1 'x)))
+    #f)
 
 それでは，C-cC-tでテストを実行しましょう．
 
-  F
-  ./test/test-symdiff.scm:13: (assert-equal (make-sum (make-product 1 (deriv 'x 'x)) (make-product (deriv 1 'x) 'x)) (deriv (make-product 1 'x) 'x))
-   expected:<(+ 1 (* 0 x))>
-    but was:<1> in base test
-  .E
-  ./test/test-symdiff.scm:27: (multiplicand (make-product 1 'x))
-  Error occured in product test
+  E....PF
+  ...（省略）
+    1) Error: test-product
   *** ERROR: pair required, but got x
-  Stack Trace:
-  _______________________________________
-    0  (multiplicand (make-product 1 'x))
-          At line 27 of "./test/test-symdiff.scm"
-    1  (assert-equal 'x (multiplicand (make-product 1 'x)))
-          At line 27 of "./test/test-symdiff.scm"
-    2  (#<id 0x826ddd0 gauche.parameter::let> ((#<id 0x826b3b0 gauche.par ...
-          [unknown location]
-    3  (let ((counter (make <real-time-counter>))) (with-time-counter cou ...
-          At line 247 of "/home/kono/kou/local/share/gauche/site/lib/test/unit/base.scm"
-  ....
+  ./test/test-symdiff.scm:31: (assert-equal 'x (multiplicand (make-product 1 'x)))
+  ...（省略）
 
-先程変更したテスト以外は全て合格しましたが，1つエラーが増え
-ました．"product test"の
+このエラーはtest-productのこの部分です。
 
   (assert-equal 'x (multiplicand (make-product 1 'x)))
 
-です．これは，先程の
+これは，先程のテスト
 
   (assert-equal 1 (multiplier (make-product 1 'x)))
 
 と同じ様に1が特別な場合だから起こりました．そこで，1を使わな
 いようにテストを変更します．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product test"
-     ...
-     (assert-equal 'x (multiplicand (make-product 2 'x))))
-    ...)
+  (define (test-product)
+    (assert-equal '(* 2 x) (make-product 2 'x))
+    (assert-true (product? (make-product 2 'x)))
+    (assert-false (product? (make-product 1 'x)))
+    (assert-equal 2 (multiplier (make-product 2 'x)))
+    (assert-equal 'x (multiplicand (make-product 2 'x)))
+    #f)
 
 それではテストを実行しましょう．
 
-  F
+  .....PF
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+    2) Failure: test-base
+  expected: <(+ 1 (* 0 x))>
+   but was: <1>
+
+  diff:
+  - (+ 1 (* 0 x))
+  + 1
   ./test/test-symdiff.scm:13: (assert-equal (make-sum (make-product 1 (deriv 'x 'x)) (make-product (deriv 1 'x) 'x)) (deriv (make-product 1 'x) 'x))
-   expected:<(+ 1 (* 0 x))>
-    but was:<1> in base test
-  ......
 
 失敗があって気持ち悪いですが，残りの簡約化でパスするはずなの
 でよしとします．
@@ -1348,24 +1285,26 @@ multiplierはproduct(リスト)を要求していてエラーになっていま
 
   (assert-equal 0 (make-product 'x 0))
 
-これは，"product reduce"にいれましょう．
+これは，test-product-reduceにいれましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product reduce"
-     ...
-     (assert-equal 0 (make-product 'x 0))))
+  (define (test-product-reduce)
+    (assert-equal 'x (make-product 'x 1))
+    (assert-equal 0 (make-product 'x 0))
+    #f)
 
 それではC-cC-tでテストを起動しましょう．
 
-  F
-  ./test/test-symdiff.scm:13: (assert-equal (make-sum (make-product 1 (deriv 'x 'x)) (make-product (deriv 1 'x) 'x)) (deriv (make-product 1 'x) 'x))
-   expected:<(+ 1 (* 0 x))>
-    but was:<1> in base test
-  .....F
-  ./test/test-symdiff.scm:46: (assert-equal 0 (make-product 'x 0))
-   expected:<0>
-    but was:<(* x 0)> in product reduce
+  ....FPF
+
+    1) Failure: test-product-reduce
+  expected: <0>
+   but was: <(* x 0)>
+
+  diff:
+  - 0
+  + (* x 0)
+  ./test/test-symdiff.scm:60: (assert-equal 0 (make-product 'x 0))
+  ...（省略）
 
 予想通り失敗しました．それでは，実装しましょう．
 
@@ -1377,7 +1316,11 @@ multiplierはproduct(リスト)を要求していてエラーになっていま
 
 C-cC-tでテストを実行します．
 
-  .......
+  ...P...
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 先程残しておいた失敗も今の変更でパスするようになりました．よ
 かったですね．
@@ -1387,20 +1330,30 @@ C-cC-tでテストを実行します．
 
   (assert-equal 6 (make-product 2 3))
 
-これは，"product reduce"にいれておきましょう．
+これは，test-product-reduceにいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product reduce"
-     ...
-     (assert-equal 6 (make-product 2 3))))
+  (define (test-product-reduce)
+    (assert-equal 'x (make-product 'x 1))
+    (assert-equal 0 (make-product 'x 0))
+    (assert-equal 6 (make-product 2 3))
+    #f)
 
 それでは，C-cC-tでテストを実行します．
 
-  ......F
-  ./test/test-symdiff.scm:47: (assert-equal 6 (make-product 2 3))
-   expected:<6>
-    but was:<(* 2 3)> in product reduce
+  .P...F.
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+    2) Failure: test-product-reduce
+  expected: <6>
+   but was: <(* 2 3)>
+
+  diff:
+  - 6
+  + (* 2 3)
+  ./test/test-symdiff.scm:61: (assert-equal 6 (make-product 2 3))
 
 失敗しました．それでは，実装しましょう．
 
@@ -1414,28 +1367,35 @@ C-cC-tでテストを実行します．
 
 それでは，C-cC-tでテストしましょう．
 
-  .......
+  ...P...
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 パスしました．
 
-そろそろクォートしていたテストを戻してみましょう
+そろそろ保留にしていたテストを戻してみましょう
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("more test"
-     (assert-equal (make-sum (make-product 4 'x) 1)
-                   (deriv (make-sum (make-product 2 (make-product 'x 'x))
-                                    (make-sum 'x 3))
-                          'x)))
-    ...)
+  (define (test-complex)
+    (assert-equal (make-sum (make-product 4 'x) 1)
+                  (deriv (make-sum (make-product 2 (make-product 'x 'x))
+                                   (make-sum 'x 3))
+                         'x))
+    #f)
 
 それではC-cC-tでテストを実行してみましょう．
 
-  ....F
-  ./test/test-symdiff.scm:35: (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))
-   expected:<(+ (* 4 x) 1)>
-    but was:<(+ (* 2 (+ x x)) 1)> in more test
-  ..
+  F......
+
+    1) Failure: test-complex
+  expected: <(+ (* 4 x) 1)>
+   but was: <(+ (* 2 (+ x x)) 1)>
+
+  diff:
+  - (+ (* 4 x) 1)
+  + (+ (* 2 (+ x x)) 1)
+  ./test/test-symdiff.scm:43: (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))
 
 パスしませんね．テスト結果をみると
 
@@ -1444,22 +1404,27 @@ C-cC-tでテストを実行します．
 
 という規則を追加するとよさそうです．
 
-とりあえず，また，クォートしておきましょう．
+とりあえず，また，保留にしておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("more test"
-     '(assert-equal (make-sum (make-product 4 'x) 1)
-                   (deriv (make-sum (make-product 2 (make-product 'x 'x))
-                                    (make-sum 'x 3))
-                          'x)))
-    ...)
+  (define (test-complex)
+    (pend "need more work"
+          (lambda ()
+            (assert-equal (make-sum (make-product 4 'x) 1)
+                          (deriv (make-sum (make-product 2 (make-product 'x 'x))
+                                           (make-product 'x 3))
+                                 'x))))
+    #f)
 
 C-cC-tでテストを実行してみます．
 
-  .......
+  .P.....
 
-パスしますね．
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+
+保留になりましたね。
 
 それでは，まず，ax + bx = (a + b) * xから実装してみましょう．
 テストは以下のようになります．
@@ -1467,23 +1432,33 @@ C-cC-tでテストを実行してみます．
   (assert-equal '(* 5 x) (make-sum (make-product 3 'x)
                                    (make-product 2 'x)))
 
-これは，"sum reduce"にいれておきましょう．
+これは，test-sum-reduceにいれておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("sum reduce"
-     ...
-     (assert-equal '(* 5 x) (make-sum (make-product 3 'x)
-                                      (make-product 2 'x))))
-    ...)
+  (define (test-sum-reduce)
+    (assert-true (number=? 1 1))
+    (assert-false (number=? 1 'x))
+    (assert-equal 'x (make-sum 'x 0))
+    (assert-equal 3 (make-sum 1 2))
+    (assert-equal '(* 5 x) (make-sum (make-product 3 'x)
+                                     (make-product 2 'x)))
+    #f)
 
 C-cC-tでテストを実行します．
 
-  .....F
-  ./test/test-symdiff.scm:44: (assert-equal '(* 5 x) (make-sum (make-product 3 'x) (make-product 2 'x)))
-   expected:<(* 5 x)>
-    but was:<(+ (* 3 x) (* 2 x))> in sum reduce
-  .
+  P.F....
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
+
+    2) Failure: test-sum-reduce
+  expected: <(* 5 x)>
+   but was: <(+ (* 3 x) (* 2 x))>
+
+  diff:
+  - (* 5 x)
+  + (+ (* 3 x) (* 2 x))
+  ./test/test-symdiff.scm:56: (assert-equal '(* 5 x) (make-sum (make-product 3 'x) (make-product 2 'x)))
 
 失敗します．それでは，実装しましょう．
 
@@ -1534,7 +1509,11 @@ C-cC-tでテストを実行します．
 
 C-cC-tでテストしてみましょう．
 
-  .......
+  .....P.
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 パスしましたね．
 
@@ -1547,39 +1526,53 @@ C-cC-tでテストしてみましょう．
 
   (assert-equal '(* 2 x) (make-sum 'x 'x))
 
-これは，"sum reduce"に加えましょう．
+これは，test-sum-reduceに加えましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("sum reduce"
-     ...
-     (assert-equal '(* 2 x) (make-sum 'x 'x)))
-    ...)
+  (define (test-sum-reduce)
+    (assert-true (number=? 1 1))
+    (assert-false (number=? 1 'x))
+    (assert-equal 'x (make-sum 'x 0))
+    (assert-equal 3 (make-sum 1 2))
+    (assert-equal '(* 5 x) (make-sum (make-product 3 'x)
+                                     (make-product 2 'x)))
+    (assert-equal '(* 2 x) (make-sum 'x 'x))
+    #f)
 
 C-cC-tでテストを実行します．
 
+  .F...P.
 
-  .....F
-  ./test/test-symdiff.scm:46: (assert-equal '(* 2 x) (make-sum 'x 'x))
-   expected:<(* 2 x)>
-    but was:<(+ x x)> in sum reduce
-  .
+    1) Failure: test-sum-reduce
+  expected: <(* 2 x)>
+   but was: <(+ x x)>
+
+  diff:
+  - (* 2 x)
+  + (+ x x)
+  ./test/test-symdiff.scm:58: (assert-equal '(* 2 x) (make-sum 'x 'x))
+
+    2) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 失敗しますね．それでは，実装しましょう．長いのでcondのところ
 だけ示します．same-variable?がある節を追加しました．
 
-  (cond ((=number? exp1 0) exp2)
-        ((=number? exp2 0) exp1)
+  (cond ((number=? exp1 0) exp2)
+        ((number=? exp2 0) exp1)
         ((and (number? exp1) (number? exp2))
          (+ exp1 exp2))
         ((same-variable? exp1 exp2)
          (make-product 2 exp1))
-        (else
-         ...))
+        (else ...))
 
 C-cC-tでテストを実行します．
 
-  .......
+  ....P..
+
+    1) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 パスしました．
 
@@ -1591,26 +1584,36 @@ cは数値か変数）を実装しましょう．テストは以下のようになりま
 
 これは，"product reduce"に加えておきましょう．
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("product reduce"
-     ...
-     (assert-equal '(* 9 x) (make-product 3 (make-product 3 'x))))
-    ...)
+  (define (test-product-reduce)
+    (assert-equal 'x (make-product 'x 1))
+    (assert-equal 0 (make-product 'x 0))
+    (assert-equal 6 (make-product 2 3))
+    (assert-equal '(* 9 x) (make-product 3 (make-product 3 'x)))
+    #f)
 
 C-cC-tでテストを実行します．
 
-  ......F
-  ./test/test-symdiff.scm:51: (assert-equal '(* 9 x) (make-product 3 (make-product 3 'x)))
-   expected:<(* 9 x)>
-    but was:<(* 3 (* 3 x))> in product reduce
+  .F...P.
+
+    1) Failure: test-product-reduce
+  expected: <(* 9 x)>
+   but was: <(* 3 (* 3 x))>
+
+  diff:
+  - (* 9 x)
+  + (* 3 (* 3 x))
+  ./test/test-symdiff.scm:65: (assert-equal '(* 9 x) (make-product 3 (make-product 3 'x)))
+
+    2) Pending: test-complex
+  need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
 失敗しました．それでは，実装しましょう．
 
   (define (make-product exp1 exp2)
-    (cond ((=number? exp1 1) exp2)
-          ((=number? exp2 1) exp1)
-          ((or (=number? exp1 0) (=number? exp2 0)) 0)
+    (cond ((number=? exp1 1) exp2)
+          ((number=? exp2 1) exp1)
+          ((or (number=? exp1 0) (number=? exp2 0)) 0)
           ((and (number? exp1) (number? exp2))
            (* exp1 exp2))
           (else
@@ -1627,38 +1630,42 @@ C-cC-tでテストを実行します．
                        (permutations (list exp1 exp2)))))
              (if (and ret (or (number? (multiplier (cadr ret)))
                               (number? (multiplicand (cadr ret)))))
-                 (let ((num (car ret))
-                       (mulier (multiplier (cadr ret)))
-                       (mulcand (multiplicand (cadr ret))))
-                   (if (and (number? mulier)
-                            (number? mulcand))
-                       (* num mulier mulcand)
-                       (apply make-product
-                              (if (number? mulier)
-                                  (list (* num mulier) mulcand)
-                                  (list (* num mulcand mulier))))))
-                 (list '* exp1 exp2))))))
+               (let ((num (car ret))
+                     (mulier (multiplier (cadr ret)))
+                     (mulcand (multiplicand (cadr ret))))
+                 (if (and (number? mulier)
+                          (number? mulcand))
+                   (* num mulier mulcand)
+                   (apply make-product
+                          (if (number? mulier)
+                            (list (* num mulier) mulcand)
+                            (list (* num mulcand mulier))))))
+               (list '* exp1 exp2))))))
 
 今回も順列を生成してしまいました．うーん，それにしても汚いで
 すね．
 
 ともあれ，C-cC-tでテストしてみましょう．
 
-  .......
+  ....F..
 
-パスしました．
+    1) Failure: test-complex
+  Pending thunk should not be passed: need more work
+  ./test/test-symdiff.scm:43: (pend "need more work" (lambda () (assert-equal (make-sum (make-product 4 'x) 1) (deriv (make-sum (make-product 2 (make-product 'x 'x)) (make-sum 'x 3)) 'x))))
 
-クォートして置いたテストを実行してみましょう．
+今追加したテストはパスして、保留にしていたテストが失敗になり
+ました。これはテストが失敗するから保留になるはずなのに成功し
+てしまった（意図していない挙動）からです。
 
-  (define-test-case "Symbolic Differentiation"
-    ...
-    ("more test"
-     (assert-equal (make-sum (make-product 4 'x) 1)
-                   (deriv (make-sum (make-product 2 (make-product 'x 'x))
-                                    (make-sum 'x 3))
-                          'x)))
-    ...)
+今回はこの段階ではこのテストもパスすることが意図した挙動なの
+で保留をはずします。
 
+  (define (test-complex)
+    (assert-equal (make-sum (make-product 4 'x) 1)
+                  (deriv (make-sum (make-product 2 (make-product 'x 'x))
+                                   (make-sum 'x 3))
+                         'x))
+    #f)
 
 C-cC-tでテストを実行します．
 
