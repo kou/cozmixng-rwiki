@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 357 2005-12-13 04:02:06Z kou $
+$Id: README.ja 441 2008-06-02 07:24:53Z kou $
 
 == 作者
 
@@ -14,7 +14,7 @@ GPL or BSD License
 
 == 注意
 
-Gauche 0.8.6用です．Gauche 0.8.3以前では動きません．
+Gauche 0.8.13用です。それより前で動くかどうかはわかりません。
 
 == なにこれ？
 
@@ -41,24 +41,54 @@ GaUnitはGaucheで実装されたUnit Testing Frameworkです．おまけ
 
 == インストール
 
-  # gosh install/install.scm
+  % sudo gosh install/install.scm
 
 == 使い方
 
-テストを定義したプログラムを用意します．
+テスト用のモジュールを定義したプログラムを用意します．
+
+  (define-module test-your-module
+    (extend test.unit.test-case)
+    (use your-module))
+  (select-module test-your-module)
+
+  (define (test-your-module-function1)
+    (assert-equal "Good!" (your-module-function1))
+    ...
+    #f)
+
+  (define (test-your-module-function2)
+    (assert-equal 29 (your-module-function2))
+    ...
+    #f)
+
+  (provide "test-your-module")
+
+'test-'から始まる関数が1つのテストとして実行されます。
+
+'-u test.unit'オプション付きでプログラムを実行します。GaUnit
+はtest.unitモジュールでテストを走らせる(({main}))手続きを提供
+しています。test.unitをuseすれば、(({main}))手続きを定義する
+必要はありません。
+
+  % gosh -u test.unit test-your-module.scm
+
+しかし、今後のために以下のようなテスト起動スクリプト
+run-test.scmを作成するとよいでしょう。
+
+run-test.scm:
+  #!/usr/bin/env gosh
+
+  (add-load-path ".")
 
   (use test.unit)
 
-  (define-test-suite ...)
-  とか
-  (define-test-case ...)
-  とか
+  (define base-dir (sys-dirname *program-name*))
+  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
-プログラムを実行します．GaUnitはテストを走らせる(({main}))手
-続きを提供しているので，(({main}))手続きを定義する必要はあり
-ません．
+以下のように実行します。
 
-  % gosh test-program.scm
+  % gosh run-test.scm
 
 === オプション
 
@@ -74,6 +104,8 @@ GaUnitが提供している(({main}))手続きはいくつかオプションを受
       トです．
 
    : g[tk]
+      ((*今は動きません。*))
+
       GTK+版のユーザインタフェースを使用します．以下のように
       キーバインドされています．これらのキーはCtrlやAltなど
       の修飾キーが付いていても動作します．つまり，lでもCtrl
@@ -143,7 +175,7 @@ GaUnitが提供している(({main}))手続きはいくつかオプションを受
 
 === リファレンス
 
-==== 表明(?)
+==== 表明他
 
 GaUnitは以下に示すテストをするための手続きを用意しています．
 
@@ -255,152 +287,16 @@ GaUnitは以下に示すテストをするための手続きを用意しています．
     (({(rxmatch expected actual)}))が#f以外を返せば成功しま
     す．
 
-==== 必要最小限
+--- pend(message [thunk])
 
-GaUnitは以下の手続きを用意しています．
+    このテストを保留にします。((|message|))が保留の理由にな
+    ります。もし、引数なしの関数((|thunk|))を指定していて、
+    その((|thunk|))を実行してもエラーが起きたり、表明が失敗
+    しない場合は、このテストは失敗します。これは、
+    ((|thunk|))の内容が問題があるから保留にしている、という
+    意図に反して((|thunk|))の内容に問題がなかったので失敗、
+    という考えに基づいています。
 
---- run-all-test(&keyword :ui)
-    
-    ((|define-test-case|)), ((|define-test-suite|))で定義されたテストを
-    実行します．
-    
-GaUnitは以下の構文を用意しています．
-
---- define-test-case
-    
-    テストケースを定義します．
-    
-      (define-test-case "テストケース名"
-        (setup テストが実行される前に実行される引数無しの手続き) ; 必要なら
-        (teardown テストが実行された後に実行される引数無しの手続き) ; 必要なら
-        ("テスト名"
-          (assertなんとか ...))
-        ...)
-
---- define-test-suite
-    
-    テストスイートを定義します．
-    
-      (define-test-suite "テストスイート名"
-        ("テストケース名"
-          (setup テストが実行される前に実行される引数無しの手続き) ; 必要なら
-          (teardown テストが実行された後に実行される引数無しの手続き) ; 必要なら
-          ("テスト名"
-            (assertなんとか)
-            ...)
-          ...)
-        ...)
-
-==== 必要なら
-
-GaUnitは以下の手続きを用意しています．
-
---- run(<test-suite> or <test-case> or <test> &keyword :ui)
-
-    テストを実行します．
-    
-    キーワード引数((|:ui|))を指定することによりテストを実行するユー
-    ザインターフェイスを変更できます．
-
-GaUnitは以下の構文を用意しています．
-
---- define-assertion
-    
-    assertion(表明?)を定義します．
-    
-      (define-assertion (表明名 引数 ...)
-        式の列:最後の式の値が成功か失敗か示す)
-    
-    ((|式の列|))の値が((|<assertion-failure>|))クラスのオブジェク
-    トなら失敗，それ以外なら成功を示します．詳しくは
-    lib/test/assertions.scmの((|define-assertion|))を使って定義さ
-    れているassertionを見てください．
-
---- make-test
-    
-    テストを作成します．
-
---- make-test-case
-    
-    テストケースを作成します．
-
---- make-test-suite
-    
-    テストスイートを作成します．
-
-
-また，(({define-test-case}))や(({make-test-case}))でテストケー
-スを作成する際，テストの前後に必ず実行される手続きを登録/削
-除する手続きがあります．
-
---- gaunit-add-default-setup-proc!(proc)
-    
-    引数無しの手続き((|proc|))を各テストが始まる前に実行する
-    手続きとして登録します．
-
---- gaunit-delete-default-setup-proc!(proc)
-    
-    (({gaunit-add-default-setup-proc!}))で登録した((|proc|))
-    を削除します．
-
---- gaunit-clear-default-setup-procs!
-    
-    (({gaunit-add-default-setup-proc!}))で登録した((|proc|))
-    をすべて削除します．
-
---- gaunit-add-default-teardown-proc!(proc)
-    
-    引数無しの手続き((|proc|))を各テストが終わった後に実行す
-    る手続きとして登録します．
-
---- gaunit-delete-default-teardown-proc!(proc)
-    
-    (({gaunit-add-default-teardown-proc!}))で登録した((|proc|))
-    を削除します．
-
---- gaunit-clear-default-teardown-procs!
-    
-    (({gaunit-add-default-teardown-proc!}))で登録した((|proc|))
-    をすべて削除します．
-
-(({gaunit-*-default-{setup,teardown}-*}))を使えば，
-(({define-test-case}))などで(({setup}))や(({teardown}))を指
-定せずに対応する手続きを登録することができます．例えば，以下
-のふたつの(({define-test-case}))は同じ動作をします．
-
-  (define-test-case "test case"
-    (setup (lambda () (print "setup")))
-    (teardown (lambda () (print "teardown")))
-    ("test1" ...)
-    ("test2" ...)
-    ...)
-
-  (gaunit-add-default-setup-proc! (lambda () (print "setup")))
-  (gaunit-add-default-teardown-proc! (lambda () (print "teardown")))
-  (define-test-case "test case"
-    ("test1" ...)
-    ("test2" ...)
-    ...)
-  (gaunit-clear-default-setup-procs!)
-  (gaunit-clear-default-teardown-procs!)
-
-(({gaunit-*-default-{setup,teardown}-*}))で登録した手続きが
-必要なくなった場合は，
-(({gaunit-clear-default-{setup,teardown}-procs!}))などで登録
-した手続きを削除することを忘れないでください．以下のように，
-独自のテストケース定義マクロを作成してもいいでしょう．
-
-  (define (*setup-proc*) ...)
-  (define (*teardown-proc*) ...)
-  (define-syntax define-my-test-case
-    (syntax-rules ()
-      ((_ arg ...)
-       (begin
-         (gaunit-add-default-setup-proc! *setup-proc*)
-         (gaunit-add-default-teardown-proc! *teardown-proc*)
-         (define-test-case arg ...)
-         (gaunit-delete-default-setup-proc! *setup-proc)
-         (gaunit-delete-default-teardown-proc! *teardown-proc*)))))
 
 == 付属品
 
@@ -432,25 +328,12 @@ run-test.elを使うための設定例です．
 
   #!/usr/bin/env gosh
 
-  (use file.util)
+  (add-load-path ".")
+
   (use test.unit)
 
-  (if (symbol-bound? 'main)
-      (define _main main))
-
-  (define (main args)
-    (let ((dir (sys-dirname (car args))))
-      (for-each (lambda (test-script)
-                  (print "loading " (string-join
-                                     (list dir test-script)
-                                     "/"))
-                  (load (string-join (list dir test-script) "/")))
-                (directory-list dir
-                                :filter (lambda (x)
-                                          (rxmatch #/^test-.+\.scm/ x))))
-      (if (symbol-bound? '_main)
-          (_main args)
-          (run-all-test))))
+  (define base-dir (sys-dirname *program-name*))
+  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
 
 で，testというディレクトリを作って，このrun-test.shあるいは
@@ -493,13 +376,14 @@ C-cT(run-test-in-new-frame)とやると，新しくフレームを作成し
 
 ==== カスタマイズ変数
 
-: run-test-file
-   テストを実行するスクリプトの拡張子を除いたファイル名です．
+: run-test-file-names
+   テストを実行するスクリプトの拡張子を除いたファイル名のリ
+   ストです．
    
-   デフォルト: "test/run-test"
+   デフォルト: ("test/run-test" "test/runner" "run-test")
 
 : run-test-suffixes
    run-test-fileに付加する拡張子のリストです．先頭の方にある拡張子程
    優先されます．
    
-   デフォルト: (".scm" ".rb" ".sh")
+   デフォルト: (".scm" ".rb" ".py" ".sh")
