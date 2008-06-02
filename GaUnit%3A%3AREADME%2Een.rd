@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 357 2005-12-13 04:02:06Z kou $
+$Id: README.en 441 2008-06-02 07:24:53Z kou $
 
 ((*I'm not good in English. Please fix.*))
 
@@ -16,7 +16,7 @@ GPL or BSD License
 
 == Caution
 
-This is for Gauche 0.8.6. This doesn't work on Gauche <= 0.8.3.
+This is for Gauche 0.8.13. This will not work on older Gauche.
 
 == What's this?
 
@@ -48,23 +48,52 @@ English mail is welcome too.
 
 == Install
 
-  # gosh install/install.scm
+  % sudo gosh install/install.scm
 
 == Usage
 
 Make the program that define some tests.
 
+  (define-module test-your-module
+    (extend test.unit.test-case)
+    (use your-module))
+  (select-module test-your-module)
+
+  (define (test-your-module-function1)
+    (assert-equal "Good!" (your-module-function1))
+    ...
+    #f)
+
+  (define (test-your-module-function2)
+    (assert-equal 29 (your-module-function2))
+    ...
+    #f)
+
+  (provide "test-your-module")
+
+Function start with 'test-' will be ran as a test.
+
+Execute the program with '-u test.unit' option. GaUnit
+exports (({main})) procedure that run test in test.unit
+module. So you don't need to define (({main})) procedure if
+you use test.unit.
+
+  % gosh -u test.unit test-your-module.scm
+
+It's better that you create a test runner script,
+run-test.scm:
+  #!/usr/bin/env gosh
+
+  (add-load-path ".")
+
   (use test.unit)
 
-  (define-test-suite ...)
-  or
-  (define-test-case ...)
+  (define base-dir (sys-dirname *program-name*))
+  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
-Execute the program. GaUnit exports (({main})) procedure
-that run test. So, you don't need define (({main}))
-procedure.
+You can run the script like the following:
 
-  % gosh test-program.scm
+  % gosh run-test.scm
 
 === Options
 
@@ -78,6 +107,8 @@ procedure.
       GaUnit uses text version user interface. It is default.
 
    : g[tk]
+      ((*NOT WORK FOR NOW*))
+
       GaUnit users GTK+ version user interface. It has
       following key bindings. Those bindings ignore prefix
       like Ctrl, Alt and so on. So you can use l, Ctrl + l
@@ -143,7 +174,7 @@ You can get verbose log if you type following.
 
 === Reference
 
-==== Assertions
+==== Assertions and so on
 
 GaUnit has some procedures to test.
 
@@ -254,151 +285,17 @@ is a procedure test result is passed to the procedure.
     
     It succeeds when (({(rxmatch expected actual)})) is not
     #f.
-    
-====  Requisite minimum
 
-GaUnit has following procedure.
+--- pend(message [thunk])
 
---- run-all-test(&keyword :ui)
-
-    It runs test which is defiend by (({define-test-case}))
-    or (({define-test-suite})).
-    
-GaUnit has following syntaxes.
-
---- define-test-case
-    
-    It defines test case.
-    
-      (define-test-case "name of test case"
-        (setup a-non-arity-procedure-which-is-evaled-before-each-test) ; if you need
-        (teardown a-non-arity-procedure-which-is-evaled-after-each-test) ; if you need
-        ("name of test"
-          (assert-foo ...))
-        ...)
-
---- define-test-suite
-    
-    It makes test suite.
-    
-      (define-test-suite "name of test suite"
-        ("name of test case"
-          (setup a-non-arity-procedure-which-is-evaled-before-each-test) ; if you need
-          (teardown a-non-arity-procedure-which-is-evaled-after-each-test) ; if you need
-          ("name-of-set"
-            (assert-foo ...)
-            ...)
-          ...)
-        ...)
-
-==== If you need
-
-GaUnit has following procedure.
-
---- run(<test-suite> or <test-case> or <test> &keyword :ui)
-
-    It runs test.
-    
-    You can change user interface by specifing keyword argument :ui.
-
-GaUnit has following syntaxes.
-
---- define-assertion
-    
-    It defines assertion.
-    
-      (define-assertion (name-of-assertion argument ...)
-        body:last expression show success or failure)
-    
-    If ((|body|)) returns an object of <assertion-failure>
-    class the test is failure otherwise success. See
-    lib/test/assertions.scm.
-
---- make-test
-    
-    It makes test.
-
---- make-test-case
-    
-    It makes test case.
-
---- make-test-suite
-    
-    It makes test suite.
-
-GaUnit has some procedures that add/delete a procedure that
-is invoked at before/after each test. A procedure that is
-added/deleted is used when
-(({define-test-case}))/(({make-test-case})) is invoked.
-
---- gaunit-add-default-setup-proc!(proc)
-    
-    It adds non-arity procedure ((|proc|)) as set up
-    procedure.
-
---- gaunit-delete-default-setup-proc!(proc)
-    
-    It deletes ((|proc|)) added by
-    (({gaunit-add-default-setup-proc!})).
-
---- gaunit-clear-default-setup-procs!
-    
-    It deletes all ((|proc|)) added by
-    (({gaunit-add-default-setup-proc!})).
-
---- gaunit-add-default-teardown-proc!(proc)
-    
-    It adds non-arity procedure ((|proc|)) as tear down
-    procedure.
-
---- gaunit-delete-default-teardown-proc!(proc)
-    
-    It deletes ((|proc|)) added by
-    (({gaunit-add-default-teardown-proc!})).
-
---- gaunit-clear-default-teardown-procs!
-    
-    It deletes all ((|proc|)) added by
-    (({gaunit-add-default-teardown-proc!})).
-
-You can added set up/tear down procedures by using
-(({gaunit-*-default-{setup,teardown}-*})) without specifing
-(({setup}))/(({teardown})) in (({define-test-case})) etc.
-For example, following (({define-test-case}))s work similar.
-
-  (define-test-case "test case"
-    (setup (lambda () (print "setup")))
-    (teardown (lambda () (print "teardown")))
-    ("test1" ...)
-    ("test2" ...)
-    ...)
-
-  (gaunit-add-default-setup-proc! (lambda () (print "setup")))
-  (gaunit-add-default-teardown-proc! (lambda () (print "teardown")))
-  (define-test-case "test case"
-    ("test1" ...)
-    ("test2" ...)
-    ...)
-  (gaunit-clear-default-setup-procs!)
-  (gaunit-clear-default-teardown-procs!)
-
-When some procedures added by
-(({gaunit-*-default-{setup,teardown}-*})) are not necessary,
-delete those procedures by
-(({gaunit-clear-default-{setup,teardown}-procs!})) etc. You
-can define new syntax that define test case like following.
-
-  (define (*setup-proc*) ...)
-  (define (*teardown-proc*) ...)
-  (define-syntax define-my-test-case
-    (syntax-rules ()
-      ((_ arg ...)
-       (begin
-         (gaunit-add-default-setup-proc! *setup-proc*)
-         (gaunit-add-default-teardown-proc! *teardown-proc*)
-         (define-test-case arg ...)
-         (gaunit-delete-default-setup-proc! *setup-proc)
-         (gaunit-delete-default-teardown-proc! *teardown-proc*)))))
+    It pends the test. ((|message|)) is the reason of
+    pending. If non-argument procedure ((|thunk|)) is
+    specified and evaluation of the ((|thunk|)) doesn't
+    cause an error or a failure, the test fails. Because it
+    assumes that you pend the test because a content of the
+    ((|thunk|)) has a problem. If a content of the
+    ((|thunk|)) doesn't have a problem, it's a problem. It
+    means a failure.
 
 == Accessory
 
@@ -415,26 +312,16 @@ Write following code in your .emacs.
   (setq load-path (cons directory-which-has-run-test{,-setting}.el load-path))
   (load "run-test-setting")
 
-Write run-test.scm which run test like below. 
+Write run-test.scm which run test like the below:
 
   #!/usr/bin/env gosh
 
-  (use file.util)
+  (add-load-path ".")
+
   (use test.unit)
 
-  (if (symbol-bound? 'main)
-      (define _main main))
-
-  (define (main args)
-    (let ((dir (sys-dirname (car args))))
-      (for-each (lambda (test-script)
-                  (load (string-join (list dir test-script) "/")))
-                (directory-list dir
-                                :filter (lambda (x)
-                                          (rxmatch #/^test-.+\.scm/ x))))
-      (if (symbol-bound? '_main)
-          (_main args)
-          (run-all-test))))
+  (define base-dir (sys-dirname *program-name*))
+  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
 
 Make a directory whose name is `test' and move run-test.scm to
@@ -475,13 +362,13 @@ Happy testing!!
 
 ==== Customize variables
 
-: run-test-file
-   Is is base name of file that runs test.
+: run-test-file-names
+   Is is a list of base name of file that runs test.
    
-   default: "test/run-test"
+   default: ("test/run-test" "test/runner" "run-test")
 
 : run-test-suffixes
    It is a list of suffix that is added to
-   ((|run-test-file|)). 
+   ((|run-test-file|)).
    
-   default: (".scm" ".rb" ".sh")
+   default: (".scm" ".rb" ".py" ".sh")
