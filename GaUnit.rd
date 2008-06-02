@@ -14,6 +14,14 @@ The latest version: 0.1.3
 #  * ((<ToDo.ja|GaUnit::ToDo.ja>))
   * ((<UsedBy|GaUnit::UsedBy>))
 
+== NOTE
+
+  * API is changed since 0.1.3. (old API is deprecated but still works)
+
+== 注
+
+  * 0.1.3からAPIが変わりました。（前のAPIも非推奨ですがまだ使えます。）
+
 == Comments
 
 == コメント
