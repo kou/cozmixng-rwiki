@@ -67,6 +67,7 @@ COZMIXNGいいだしっぺ．
   * ((<RD2TeX>))
   * ((<scim>))
   * ((<SCIM-RubyBridge>))
+  * ((<run-test.el>)) <- ((<GaUnit>))から分離
 
 # == 作りたい(るべき)もの
 
