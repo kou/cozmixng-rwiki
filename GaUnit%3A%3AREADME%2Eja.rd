@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 441 2008-06-02 07:24:53Z kou $
+$Id: README.ja 457 2008-06-04 00:21:29Z kou $
 
 == 作者
 
@@ -18,8 +18,7 @@ Gauche 0.8.13用です。それより前で動くかどうかはわかりません。
 
 == なにこれ？
 
-GaUnitはGaucheで実装されたUnit Testing Frameworkです．おまけ
-でテストの実行を支援するEmacs-Lispが付いています．
+GaUnitはGaucheで実装されたUnit Testing Frameworkです．
 
 同様のものに
 ((<SchemeUnit|URL:http://schematics.sourceforge.net/schemeunit.html>))
@@ -28,10 +27,6 @@ GaUnitはGaucheで実装されたUnit Testing Frameworkです．おまけ
 == 読めねぇよ
 
 「ごにっと」とかはどうでしょう？
-
-== メーリングリスト
-
-((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
 == 入手方法
 
@@ -296,94 +291,3 @@ GaUnitは以下に示すテストをするための手続きを用意しています．
     ((|thunk|))の内容が問題があるから保留にしている、という
     意図に反して((|thunk|))の内容に問題がなかったので失敗、
     という考えに基づいています。
-
-
-== 付属品
-
-以下のものが付属しています．
-
-=== run-test.el
-
-sample/site-lisp/run-test.elはEmacs上でのテストの実行を支援
-するEmacs-Lispです．sample/site-lisp/run-test-setting.elは
-run-test.elを使うための設定例です．
-
-使うには，まず，.emacsに以下を記述します．
-
-  (setq load-path (cons run-test{,-setting}.elがあるディレクトリ load-path))
-  (load "run-test-setting")
-
-テストを実行するスクリプトrun-test.shを書きます．例えば，こ
-んな感じです．
-
-  #!/bin/sh
-
-  for test in test/test-*.scm
-  do
-    echo "Running test $test..."
-    gosh $test
-  done
-
-あるいは，run-test.scmとしてこんな感じでもいいです．
-
-  #!/usr/bin/env gosh
-
-  (add-load-path ".")
-
-  (use test.unit)
-
-  (define base-dir (sys-dirname *program-name*))
-  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
-
-
-で，testというディレクトリを作って，このrun-test.shあるいは
-run-test.scmに実行権を付けておいておきます．
-
-テストファイルはtestというディレクトリ以下にtest-hoge.scmと
-いう名前で作っていきます．つまり，ディレクトリ構成は以下の様
-になります．
-
-  topdir --- test --- run-test.sh or run-test.scm
-                   |
-                   +- test-hoge.scm
-                   |
-                   .
-                   .
-                   .
-                   |
-                   +- test-fuga.scm
-
-テスト(run-test.scm)はtopdirで起動されます．つまり，
-
-  % test/run-test.sh
-
-というように起動されます．
-
-run-test.{sh,scm}を書くときはこのことに注意しましょう．
-
-設定はこれで終了です．
-
-topdir以下にいるときはC-cC-t(run-test)で
-topdir/test/run-test.shが実行できます．実行結果は*run-test*
-バッファに挿入されます．テストを実行して失敗/エラーがおきた
-らエラーが発生したassertionにC-x`でジャンプすることができます．
-
-C-cT(run-test-in-new-frame)とやると，新しくフレームを作成し
-てtopdir/test/run-test.shを実行します．最初にテストを走らせ
-る時に使うとよいでしょう．
-
-これで手軽に頻繁にテストを実行できますね．Happy testing!!
-
-==== カスタマイズ変数
-
-: run-test-file-names
-   テストを実行するスクリプトの拡張子を除いたファイル名のリ
-   ストです．
-   
-   デフォルト: ("test/run-test" "test/runner" "run-test")
-
-: run-test-suffixes
-   run-test-fileに付加する拡張子のリストです．先頭の方にある拡張子程
-   優先されます．
-   
-   デフォルト: (".scm" ".rb" ".py" ".sh")
