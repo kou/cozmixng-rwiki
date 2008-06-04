@@ -2,7 +2,7 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 440 2008-06-02 07:03:17Z kou $
+$Id: Tutorial.ja 450 2008-06-02 08:29:25Z kou $
 
 == 基本
 
@@ -18,10 +18,12 @@ GaUnitを使った単体テストではテストをtest.unit.test-caseを継
 
 == 下準備
 
-ここでは，付属のrun-test.elを使ってテストを起動するようにし
-ます．run-test.elの設定はREADME.jaに書いているのでそちらを参
-考にしてください．run-test.elを使わない場合は以下のsymdiffディ
-レクトリで以下のようにテストを起動してください．
+ここでは，
+((<run-test.el|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=run-test>))
+を使ってテストを起動するようにします．run-test.elの設定は
+README.jaに書いているのでそちらを参考にしてください．
+run-test.elを使わない場合は以下のsymdiffディレクトリで以下の
+ようにテストを起動してください．
 
   [symdiff]% test/run-test.scm
 
