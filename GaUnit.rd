@@ -16,11 +16,13 @@ The latest version: 0.1.4
 
 == NOTE
 
-  * API is changed since 0.1.4. (old API is deprecated but still works)
+  * API was changed since 0.1.3. (old API is deprecated but still works)
+  * ((<run-test.el>)) was separated as other package.
 
 == 注
 
-  * 0.1.4からAPIが変わりました。（前のAPIも非推奨ですがまだ使えます。）
+  * 0.1.3からAPIが変わりました。（前のAPIも非推奨ですがまだ使えます。）
+  * 0.1.4から((<run-test.el>))が別パッケージになりました。
 
 == Comments
 
