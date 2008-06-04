@@ -2,4 +2,4 @@
 
 SF.netに移動しました。
 
-((<URL:http://sf.net/projects/cutter/>))
+((<URL:http://cutter.sf.net/>))
