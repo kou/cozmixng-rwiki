@@ -1,7 +1,7 @@
 = GaUnit
 
-The latest version: 0.1.3
-(((<download|URL:http://www.cozmixng.org/~kou/download/gaunit-0.1.3.tar.gz>)))
+The latest version: 0.1.4
+(((<download|URL:http://www.cozmixng.org/~kou/download/gaunit-0.1.4.tar.gz>)))
 
 # ((<BTS|URL:/~kagemai/?project=gaunit;action=top>))(Japanese only)
 
@@ -16,11 +16,11 @@ The latest version: 0.1.3
 
 == NOTE
 
-  * API is changed since 0.1.3. (old API is deprecated but still works)
+  * API is changed since 0.1.4. (old API is deprecated but still works)
 
 == 注
 
-  * 0.1.3からAPIが変わりました。（前のAPIも非推奨ですがまだ使えます。）
+  * 0.1.4からAPIが変わりました。（前のAPIも非推奨ですがまだ使えます。）
 
 == Comments
 
