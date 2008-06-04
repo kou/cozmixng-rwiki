@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 441 2008-06-02 07:24:53Z kou $
+$Id: README.en 457 2008-06-04 00:21:29Z kou $
 
 ((*I'm not good in English. Please fix.*))
 
@@ -20,8 +20,7 @@ This is for Gauche 0.8.13. This will not work on older Gauche.
 
 == What's this?
 
-GaUnit is Unit Testing Framework for Gauche. This includes
-Emacs-Lisp which suports running tests.
+GaUnit is Unit Testing Framework for Gauche.
 
 ((<SchemeUnit|URL:http://schematics.sourceforge.net/schemeunit.html>))
 is similar program.
@@ -29,16 +28,6 @@ is similar program.
 == How to pronounce?
 
 What about `go-ni-tto'?
-
-== Mailing list
-
-Send mail that To field is cozdev@cozmixng.quickml.com , Cc
-field is kou@cozmixng.org and Subject and Body contain
-somthig to
-((<"cozdev@cozmixng.quickml.com"|URL:mailto:cozdev@cozmixng.quickml.com?cc=kou@cozmixng.org&subject=Join!>)).
-
-Note that this mailing list's main language is Japanese. But
-English mail is welcome too.
 
 == Get
 
@@ -296,79 +285,3 @@ is a procedure test result is passed to the procedure.
     ((|thunk|)) has a problem. If a content of the
     ((|thunk|)) doesn't have a problem, it's a problem. It
     means a failure.
-
-== Accessory
-
-It is included in the package.
-
-=== run-test.el
-
-sample/site-lisp/run-test.el is Emacs-Lisp for support
-running test in Emacs. sample/site-lisp/run-test-setting.el
-is Emacs-Lisp for setting run-test.el
-
-Write following code in your .emacs.
-
-  (setq load-path (cons directory-which-has-run-test{,-setting}.el load-path))
-  (load "run-test-setting")
-
-Write run-test.scm which run test like the below:
-
-  #!/usr/bin/env gosh
-
-  (add-load-path ".")
-
-  (use test.unit)
-
-  (define base-dir (sys-dirname *program-name*))
-  (for-each load (glob #`",|base-dir|/**/test-*.scm"))
-
-
-Make a directory whose name is `test' and move run-test.scm to
-the directory. Don't forget add execution authority to
-run-test.scm.
-
-Make some test files whose name is started in `test-' in the
-`test' directry. The organization of directory is following.
-
-  topdir --- test --- run-test.sh or run-test.scm
-                   |
-                   +- test-hoge.scm
-                   |
-                   .
-                   .
-                   .
-                   |
-                   +- test-fuga.scm
-
-A test (run-test.scm) is invoked in `topdir'. That is test
-is invoked following.
-
-  % test/run-test.scm
-
-Don't forget it when you write run-test.scm.
-
-Setup is finished.
-
-You can run test (topdir/test/run-test.scm) by C-cC-t
-(run-test) when you are in under `topdir' and jump to error
-assertion by C-x`.
-
-You can run test by C-cT(run-test-in-new-frame), too. It
-runs test in new frame. I advice you it is good when you run
-test at the first.
-
-Happy testing!!
-
-==== Customize variables
-
-: run-test-file-names
-   Is is a list of base name of file that runs test.
-   
-   default: ("test/run-test" "test/runner" "run-test")
-
-: run-test-suffixes
-   It is a list of suffix that is added to
-   ((|run-test-file|)).
-   
-   default: (".scm" ".rb" ".py" ".sh")
