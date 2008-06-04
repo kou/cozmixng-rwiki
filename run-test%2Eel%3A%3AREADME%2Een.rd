@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 4 2008-06-02 23:51:41Z  $
+$Id: README.en 5 2008-06-03 05:22:28Z  $
 
 == Name
 
@@ -28,7 +28,11 @@ An Emacs-Lisp which suports running tests.
 
 == Install
 
-  % sudo ...
+  % sudo ./install.sh
+
+== Uninstall
+
+  % sudo ./uninstall.sh
 
 == Usage
 
