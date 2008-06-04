@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 4 2008-06-02 23:51:41Z  $
+$Id: README.ja 5 2008-06-03 05:22:28Z  $
 
 == 名前
 
@@ -28,7 +28,11 @@ GPL
 
 == インストール
 
-  % sudo ...
+  % sudo ./install.sh
+
+== アンインストール
+
+  % sudo ./uninstall.sh
 
 == 使い方
 
