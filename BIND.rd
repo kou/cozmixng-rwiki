@@ -38,10 +38,10 @@ Sender Policy Framework。
 こういう前提:
 
   * ドメイン名はexample.com。（つまりメールアドレスはuser@example.com）
-  * メールサーバ（example.comのMXレコード）はmail.example.com
-  * example.comでIPアドレスが引ける（example.comのAレコードがある）
+  * メールサーバ（HELOで言うホスト名）はmail.example.com
+  * example.comでIPアドレスが引ける（example.comのAレコードがある。なければ@のところからaをとって↓のやつみたいにすればよい。）
 
-もしかしたらこれだけで十分かもしれない。
+でも、これだけで十分っぽい。（HELOのアドレスはチェックされない？）
 
   @ IN  TXT "v=spf1 mx ~all"
 
