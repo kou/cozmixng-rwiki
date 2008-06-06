@@ -45,4 +45,4 @@ Sender Policy Framework。
 
   @ IN  TXT "v=spf1 mx ~all"
 
-((<mailto:check-auth@verifier.port25.com>))にチェックしたいドメインからメールを送るとチェック結果が返ってくる。
+((<URL:mailto:check-auth@verifier.port25.com>))にチェックしたいドメインからメールを送るとチェック結果が返ってくる。
