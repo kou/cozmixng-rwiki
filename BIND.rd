@@ -20,3 +20,29 @@
       2001:2f8:c2:201::0/64;
     };
   };
+
+== SPF
+
+Sender Policy Framework。
+
+スパム対策の一つの方法。送信ドメインを認証することによりスパムかどうかを判断する。
+
+  * ドメイン管理者はSMTPの正当な送信ホストをDNSを使って宣言する。
+  * SMTPサーバは送信者のドメイン（など）をDNSから引き、正当なホストから送られたメールであるかどうかを確認する。
+
+ゾーンファイルに以下のような設定を追加することにより、前者の正当な送信ホストを宣言できる。
+
+  @ IN  TXT "v=spf1 a mx ~all"
+  mail IN TXT "v=spf1 a ~all"
+
+こういう前提:
+
+  * ドメイン名はexample.com。（つまりメールアドレスはuser@example.com）
+  * メールサーバ（example.comのMXレコード）はmail.example.com
+  * example.comでIPアドレスが引ける（example.comのAレコードがある）
+
+もしかしたらこれだけで十分かもしれない。
+
+  @ IN  TXT "v=spf1 mx ~all"
+
+((<mailto:check-auth@verifier.port25.com>))にチェックしたいドメインからメールを送るとチェック結果が返ってくる。
