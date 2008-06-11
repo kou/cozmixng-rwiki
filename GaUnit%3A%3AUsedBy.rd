@@ -8,3 +8,4 @@ GaUnit is used by ...
   * ((<dsm>))
   * ((<esm>))
   * ((<wsm>))
+  * ((<Senna|URL:http://qwik.jp/senna/>))
