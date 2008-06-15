@@ -36,3 +36,4 @@
   * ((<exim>))
   * ((<CVSup>))
   * ((<Nessus>))
+  * ((<PostgreSQL>))
