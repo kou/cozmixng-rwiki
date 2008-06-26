@@ -138,6 +138,17 @@
     * ((<Jounal in Time|URL:http://shugo.net/jit/>))
   * だんさん
     * ((<Jewel-mmo 開発日記|URL:http://dgames.jp/dan/>)) 
+
+# RubyKaigi2008後
+
+  * okkezさん
+    * ((<okkez weblog|URL:http://typo.okkez.net/>))
+  * Matzさん
+    * ((<Matzにっき|URL:http://www.rubyist.net/~matz/>))
+  * 高橋さん
+  * ToDo: NaClの人（2人）
+  * akaさん
+    * ((<FlexFrank|URL:http://flexfrank.net/>))
   * ...
 
 == 参加しようかなぁな人達
