@@ -1,7 +1,7 @@
 = GaUnit
 
-The latest version: 0.1.4
-(((<download|URL:http://www.cozmixng.org/~kou/download/gaunit-0.1.4.tar.gz>)))
+The latest version: 0.1.5
+(((<download|URL:http://www.cozmixng.org/~kou/download/gaunit-0.1.5.tar.gz>)))
 
 # ((<BTS|URL:/~kagemai/?project=gaunit;action=top>))(Japanese only)
 
@@ -22,7 +22,7 @@ The latest version: 0.1.4
 == 注
 
   * 0.1.3からAPIが変わりました。（前のAPIも非推奨ですがまだ使えます。）
-  * 0.1.4から((<run-test.el>))が別パッケージになりました。
+  * 0.1.5から((<run-test.el>))が別パッケージになりました。
 
 == Comments
 
