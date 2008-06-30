@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 457 2008-06-04 00:21:29Z kou $
+$Id: README.ja 460 2008-06-30 01:01:50Z kou $
 
 == 作者
 
@@ -278,9 +278,14 @@ GaUnitは以下に示すテストをするための手続きを用意しています．
     果が((|expected|))にマッチすれば成功します．
 
 --- assert-match(expected actual [message])
-    
+
     (({(rxmatch expected actual)}))が#f以外を返せば成功しま
     す．
+
+--- assert-not-match(expected actual [message])
+
+    (({(not (rxmatch expected actual))}))が#f以外を返せば成
+    功します。
 
 --- pend(message [thunk])
 
