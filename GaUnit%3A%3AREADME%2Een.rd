@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 457 2008-06-04 00:21:29Z kou $
+$Id: README.en 460 2008-06-30 01:01:50Z kou $
 
 ((*I'm not good in English. Please fix.*))
 
@@ -271,9 +271,14 @@ is a procedure test result is passed to the procedure.
     ((|expected|)).
 
 --- assert-match(expected actual [message])
-    
+
     It succeeds when (({(rxmatch expected actual)})) is not
     #f.
+
+--- assert-not-match(expected actual [message])
+
+    It succeeds when (({(not (rxmatch expected actual))}))
+    is not #f.
 
 --- pend(message [thunk])
 
