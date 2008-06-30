@@ -2,7 +2,14 @@
 
 = NEWS.en
 
-$Id: NEWS.en 456 2008-06-04 00:20:53Z kou $
+$Id: NEWS.en 465 2008-06-30 04:59:44Z kou $
+
+== Changes 0.1.5 from 0.1.4: 2008-06-30
+
+  * add assert-not-match
+  * support assert-* in setup/teardown
+  * improve result output
+  * support folded diff for horizontally long diff
 
 == Changes 0.1.4 from 0.1.3: 2008-06-02
 
