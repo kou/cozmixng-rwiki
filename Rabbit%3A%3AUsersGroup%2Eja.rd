@@ -77,7 +77,7 @@
   * 咳
     * ((<I like Ruby|URL:http://www.druby.org>))
   * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))（もっともRabbitを宣伝してくれるユーザの一人）
-    * ((<『刺激を受けた5冊』|URLhttp://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
+    * ((<『刺激を受けた5冊』|URL:http://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
   * おぎのさん
   * ((<向井|URL:http://www.jmuk.org/d/>))
     * ((<"RHG 読書会 モナドについていろいろ"|URL:http://www.city5.org/rhg_200605/>))
