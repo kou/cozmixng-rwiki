@@ -44,6 +44,8 @@ Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤
   # description = ÄÉ¤¤¤«¤±²°1
   # class = right
 
+ºÇ¿·¥Ð¡¼¥¸¥ç¥ó: 0.5.6(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.6.tar.gz>)))
+
 The latest version: 0.5.6(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.6.tar.gz>)))
 
 == ¥¤¥ó¥¹¥È¡¼¥ë¤ËÉ¬Í×¤Ê¤â¤Î/Requirements
