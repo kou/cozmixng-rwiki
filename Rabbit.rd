@@ -3,7 +3,7 @@
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/lavie-with-logo.png
   # title = Lavie
-  # description = ¥Þ¥¹¥³¥Ã¥È
+  # description = ¥Þ¥¹¥³¥Ã¥È¥­¥ã¥é¥¯¥¿¡¼
   # class = right
 
 == Rabbit¤È¤Ï/What is Rabbit?
@@ -24,6 +24,12 @@ Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤
 
 == ¥¹¥¯¥ê¡¼¥ó¥·¥ç¥Ã¥È/Screenshots
 
+  # image
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-usa-taro.png
+  # title = ¤¦¤µ¤¿¤í¤¦
+  # description = Áö¤ê²°1
+  # class = right
+
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
 == ¥¹¥¯¥ê¡¼¥ó¥­¥ã¥¹¥È/Screencasts
@@ -31,6 +37,12 @@ Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»þ´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤
 ((<URL:http://pub.cozmixng.org/~kou/archives/rabbit/movies/>))
 
 == ¥À¥¦¥ó¥í¡¼¥É/Download
+
+  # image
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-kame-taro.png
+  # title = ¤«¤á¤¿¤í¤¦
+  # description = ÄÉ¤¤¤«¤±²°1
+  # class = right
 
 The latest version: 0.5.6(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.6.tar.gz>)))
 
@@ -56,6 +68,12 @@ The latest version: 0.5.6(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == ¥­¥ã¥Ã¥Á¥³¥Ô¡¼¡Ê°Æ¡Ë/Promo word
 
+  # image
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/yukiusa.png
+  # title = ¤æ¤­¤¦¤µ
+  # description = ¥Þ¥¹¥³¥Ã¥È2
+  # class = right
+
 ¡ÖRuby¤Ç¤Ç¤­¤Æ¤ëRabbit¤Ç¤¹¡×
 
 == ¥Ð¥Ê¡¼/Banner
@@ -80,6 +98,12 @@ The latest version: 0.5.6(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == °õºþ½ÐÎÏ/Printed output
 
+  # image
+  # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-alice.png
+  # title = ¥¢¥ê¥¹
+  # description = Áö¤ê²°3
+  # class = right
+
 °õºþ½ÐÎÏ(0.5.6):
 ((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.6.ps>)) /
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.6.pdf>))
@@ -102,6 +126,12 @@ Printed output (index) (0.5.6):
 
 == ¥É¥­¥å¥á¥ó¥È/Documents
 
+ # image
+ # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-tanu-kitaro.png
+ # title = ¤¿¤Ì¤­¤¿¤í¤¦
+ # description = ¤á¤¯¤ê²°
+ # class = right
+
   * ((<FAQ.en|Rabbit::FAQ.en>)): not yet...
   * ((<FAQ.ja|Rabbit::FAQ.ja>))
   * ((<README.en|Rabbit::README.en>))
@@ -120,6 +150,12 @@ Printed output (index) (0.5.6):
   * ((<CanRabbit.ja|Rabbit::CanRabbit.ja>))
 
 == ¤½¤ÎÂ¾/Others
+
+ # image
+ # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-usagi.png
+ # title = ÅÆ
+ # description = Áö¤ê²°2
+ # class = right
 
   * ((<UsedBy|Rabbit::UsedBy>))
   * ((<CommentedBy|Rabbit::CommentedBy>))
