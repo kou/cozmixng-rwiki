@@ -107,20 +107,20 @@ The latest version: 0.5.7(((<download|URL:http://www.cozmixng.org/~kou/download/
   # class = right
 
 印刷出力(0.5.7):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.7.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_0.5.7.pdf>))
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.5.7.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.5.7.pdf>))
 
 印刷出力（一覧）(0.5.7):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.5.7.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_index_0.5.7.pdf>))
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.5.7.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.5.7.pdf>))
 
 Printed output(0.5.7):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.5.7.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_0.5.7.pdf>))
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-0.5.7.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-0.5.7.pdf>))
 
 Printed output (index) (0.5.7):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.7.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit_en_index_0.5.7.pdf>))
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-index-0.5.7.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-index-0.5.7.pdf>))
 
 == BTS
 
