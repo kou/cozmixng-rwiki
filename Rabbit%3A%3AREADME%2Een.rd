@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1068 2008-03-12 13:34:31Z kou $
+$Id: README.en 1140 2008-07-31 09:46:36Z kou $
 
 == Name
 
@@ -448,7 +448,7 @@ with the following.
    If you want to use Rabbit without installing to system,
    you can type the following in the top directory.
 
-     % ruby -I./lib bin/rabbit --locale-dir data/locale sample/rabbit_en.rd
+     % ruby -I./lib bin/rabbit --locale-dir data/locale sample/rabbit-en.rd
    
    Default is /usr/local/share/locale/, 
    /usr/share/locale/ and so on.
@@ -560,7 +560,7 @@ with the following.
 
 == How to write
 
-See sample/rabbit_en.rd.
+See sample/rabbit-en.rd.
 
 === Page
 
@@ -600,15 +600,15 @@ too. `theme" is the default theme of this slide.
 
 === Image
 
-Writes as verbatim block. See sample/rabbit_en.rd.
+Writes as verbatim block. See sample/rabbit-en.rd.
 
 === Entity reference
 
-Writes as inline verbatim. See sample/rabbit_en.rd.
+Writes as inline verbatim. See sample/rabbit-en.rd.
 
 === Sub/Superscript
 
-Writes as inline verbatim. See sample/rabbit_en.rd.
+Writes as inline verbatim. See sample/rabbit-en.rd.
 
 === Headline
 
@@ -625,7 +625,7 @@ You specify look and feel of the slide regardless of RD.
 This is the theme.
 
 There is a slide for benchmarking your theme. It's
-sample/theme-bench_en.rab.
+sample/theme-bench-en.rab.
 
 === Where does place a theme?
 
