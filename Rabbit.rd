@@ -153,11 +153,11 @@ Printed output (index) (0.5.7):
 
 == ¤½¤ÎÂ¾/Others
 
- # image
- # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-usagi.png
- # title = ÅÆ
- # description = Áö¤ê²°2
- # class = right
+    # image
+    # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-usagi.png
+    # title = ÅÆ
+    # description = Áö¤ê²°2
+    # class = right
 
   * ((<UsedBy|Rabbit::UsedBy>))
   * ((<CommentedBy|Rabbit::CommentedBy>))
