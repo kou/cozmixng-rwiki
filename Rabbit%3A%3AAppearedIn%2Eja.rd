@@ -9,4 +9,4 @@ Rabbitはこんなところに出没しました．
 == プレゼンテーション
 
   * ((<Rabbit2008 - 東京Ruby会議01|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/>))
-    (((<PDF|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/rabbit2008.pdf>))
+    (((<PDF|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/rabbit2008.pdf>)))
