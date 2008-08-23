@@ -128,11 +128,11 @@ Printed output (index) (0.5.7):
 
 == ドキュメント/Documents
 
- # image
- # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-tanu-kitaro.png
- # title = たぬきたろう
- # description = めくり屋
- # class = right
+   # image
+   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-tanu-kitaro.png
+   # title = たぬきたろう
+   # description = めくり屋
+   # class = right
 
   * ((<FAQ.en|Rabbit::FAQ.en>)): not yet...
   * ((<FAQ.ja|Rabbit::FAQ.ja>))
