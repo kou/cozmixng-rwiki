@@ -10,3 +10,4 @@ Rabbitはこんなところに出没しました．
 
   * ((<Rabbit2008 - 東京Ruby会議01|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/>))
     (((<PDF|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/rabbit2008.pdf>)))
+  * ((<Cutter - ITpro Challenge! 2008(PDF)|URL:http://www.clear-code.com/archives/itpro-challenge-2008-cutter.pdf>))
