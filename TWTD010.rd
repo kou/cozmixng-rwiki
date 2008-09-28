@@ -34,3 +34,4 @@ RWikiのsrcで生のリビジョンを見せないようにする。((<rwiki-devel:438>))
 * 2008-07-30 TEST: OK
 * 2008-08-08 TEST: NG
 * 2008-08-13 TEST: NG
+* 2008-09-28 TEST: NG
