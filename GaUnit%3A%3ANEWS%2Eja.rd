@@ -2,7 +2,17 @@
 
 = NEWS.ja
 
-$Id: NEWS.ja 465 2008-06-30 04:59:44Z kou $
+$Id: NEWS.ja 492 2008-10-22 12:15:00Z kou $
+
+== 0.1.5から0.1.6の変更点: 2008-10-22
+
+  * diff表示の改良
+  * assert-valid-moduleの追加
+  * 折り返しプログレス表示のサポート
+  * userモジュールでのテストをサポート
+  * gauche.test互換レイヤーの追加
+  * (extend test.unit.test-case)ではなく
+    (use test.unit.test-case)でも動作するように変更
 
 == 0.1.4から0.1.5の変更点: 2008-06-30
 
