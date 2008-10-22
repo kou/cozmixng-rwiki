@@ -1,7 +1,7 @@
 = GaUnit
 
-The latest version: 0.1.5
-(((<download|URL:http://www.cozmixng.org/~kou/download/gaunit-0.1.5.tar.gz>)))
+The latest version: 0.1.6
+(((<download|URL:http://www.cozmixng.org/~kou/download/gaunit-0.1.6.tar.gz>)))
 
 # ((<BTS|URL:/~kagemai/?project=gaunit;action=top>))(Japanese only)
 
