@@ -2,7 +2,17 @@
 
 = NEWS.en
 
-$Id: NEWS.en 465 2008-06-30 04:59:44Z kou $
+$Id: NEWS.en 492 2008-10-22 12:15:00Z kou $
+
+== Changes 0.1.6 from 0.1.5: 2008-10-22
+
+  * improve diff output
+  * add assert-valid-module
+  * support folded progress display
+  * support tests in user module
+  * add gauche.test compatible layer
+  * accept (use test.unit.test-case) too
+    note: before: (extend test.unit.test-case)
 
 == Changes 0.1.5 from 0.1.4: 2008-06-30
 
