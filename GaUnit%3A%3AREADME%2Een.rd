@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 460 2008-06-30 01:01:50Z kou $
+$Id: README.en 490 2008-10-22 11:51:35Z kou $
 
 ((*I'm not good in English. Please fix.*))
 
@@ -44,9 +44,12 @@ What about `go-ni-tto'?
 Make the program that define some tests.
 
   (define-module test-your-module
-    (extend test.unit.test-case)
+    (use test.unit.test-case)
     (use your-module))
   (select-module test-your-module)
+
+  (define (test-your-module)
+    (assert-valid-module 'your-module))
 
   (define (test-your-module-function1)
     (assert-equal "Good!" (your-module-function1))
@@ -279,6 +282,20 @@ is a procedure test result is passed to the procedure.
 
     It succeeds when (({(not (rxmatch expected actual))}))
     is not #f.
+
+--- assert-valid-module(module-or-module-name [message])
+
+    It succeeds when target module doesn't have any unresolvable
+    symbols. Target module is specified by <module> object
+    or module name as symbol. Here are unresolvable symbols:
+
+      * a symbol that is set to autoload but it can't be
+        resolved after load a module.
+      * a symbol that is exported but it is can't be
+        resolved in the module.
+      * a symbol that is referenced in procedures
+        in the toplevel scope in the module but it can't be
+        resolved in the module.
 
 --- pend(message [thunk])
 
