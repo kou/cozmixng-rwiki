@@ -2,15 +2,15 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 450 2008-06-02 08:29:25Z kou $
+$Id: Tutorial.ja 490 2008-10-22 11:51:35Z kou $
 
 == 基本
 
-GaUnitを使った単体テストではテストをtest.unit.test-caseを継
-承したモジュール内に書きます。
+GaUnitを使った単体テストではテストを(use
+test.unit.test-case)したモジュール内に書きます。
 
   (define-module test-your-module
-    (extend test.unit.test-case)
+    (use test.unit.test-case)
     (use your-module))
   (select-module test-your-module)
   ...
@@ -71,7 +71,7 @@ run-test.scmには実行権を付けておきます．
 まず，テストファイルtest/test-symdiff.scmを作成します．
 
   (define-module test.test-symdiff
-    (extend test.unit.test-case))
+    (use test.unit.test-case))
   (select-module test.test-symdiff)
 
   (require "symdiff")
@@ -153,7 +153,7 @@ run-test.elを使っていない場合はsymdiffディレクトリで以下のよ
 つまり，テストファイル全体は以下のようになります．
 
   (define-module test.test-symdiff
-    (extend test.unit.test-case))
+    (use test.unit.test-case))
   (select-module test.test-symdiff)
 
   (require "symdiff")
