@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 460 2008-06-30 01:01:50Z kou $
+$Id: README.ja 490 2008-10-22 11:51:35Z kou $
 
 == 作者
 
@@ -43,9 +43,12 @@ GaUnitはGaucheで実装されたUnit Testing Frameworkです．
 テスト用のモジュールを定義したプログラムを用意します．
 
   (define-module test-your-module
-    (extend test.unit.test-case)
+    (use test.unit.test-case)
     (use your-module))
   (select-module test-your-module)
+
+  (define (test-your-module)
+    (assert-valid-module 'your-module))
 
   (define (test-your-module-function1)
     (assert-equal "Good!" (your-module-function1))
@@ -286,6 +289,19 @@ GaUnitは以下に示すテストをするための手続きを用意しています．
 
     (({(not (rxmatch expected actual))}))が#f以外を返せば成
     功します。
+
+--- assert-valid-module(module-or-module-name [message])
+
+    モジュールが解決できないシンボルを持っていない場合は成功
+    します。モジュールは<module>オブジェクトあるいはシンボル
+    で名前で指定します。解決できないシンボルとは以下のシンボ
+    ルのことです。
+
+      * autoloadを設定しているがloadしても解決できないシンボ
+        ル
+      * exportしているがモジュール内では解決できないシンボル
+      * モジュールのトップレベルで定義された関数内で参照して
+        いるがモジュール内では解決できないシンボル
 
 --- pend(message [thunk])
 
