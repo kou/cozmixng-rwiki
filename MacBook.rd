@@ -1,6 +1,6 @@
 = MacBook
 
-MacBook上で動いているDebia GNU/Linuxについて。
+MacBook上で動いているDebian GNU/Linuxについて。
 
 キーボードの「n」が入力されないときがある。
 
@@ -58,3 +58,31 @@ MacBook上で動いているDebia GNU/Linuxについて。
           Option          "EdgeMotionMaxSpeed" "200"
           Option          "SHMConfig" "on"
   EndSection
+
+== プロジェクタへの出力
+
+MacBookの画面は1280x800だけど、普通のプロジェクタは1024x768で縦横の比率が違う。プレゼンのときはプロジェクタに映っている内容と同じものを画面にも映したい。でも、MacBookの解像度を1024x768にすると、頑張ってくれて、画面全体で1024x768の画面を表示してくれようとする。でも、そうすると画面が歪んでしまう。ということで、1024x768にしても1024x768の縦横の比率を変えずに表示する設定。
+
+  % xrandr --output LVDS --set PANEL_FITTING center --mode 1024x768
+
+PANEL_FITTINGプロパティの値をcenterにするのがポイント。デフォルトはfull_aspectで、この値だと画面に合わせるように縦横比を変更する。
+
+ちなみに、プロパティの値は以下のように確認できる。
+
+  % xrandr --properties
+
+ついでに、プロジェクタ（VGA）への表示を有効にする方法も書いておく。
+
+  % xrandr --output VGA --auto
+
+明示的に解像度を指定する場合は--modeを使う。
+
+  % xrandr --output VGA --mode 1024x768
+
+利用できる--modeの値は引数なしでxrandrを起動すると確認できる。
+
+  % xrandr
+
+プロジェクタ（VGA）への出力をやめる場合はこうする。
+
+  % xrandr --output VGA --off
