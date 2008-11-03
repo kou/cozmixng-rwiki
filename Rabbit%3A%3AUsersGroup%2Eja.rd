@@ -153,6 +153,9 @@
     * ((<検索エンジンの歴史的意義と未来|URL:http://qwik.jp/senna/publication.download/future-search.pdf>))
   * 末永さん
     * ((<グニャラくんのグニャグニャ備忘録@はてな|URL:http://d.hatena.ne.jp/tasukuchan/>))
+  * hsbtさん
+    * ((<HsbtDiary|URL:http://hsbt.org/diary/>))
+    * ((<わたしとtDiary|URL:http://www.slideshare.net/hsbt/sapporo-ruby-kaigi01-presentation>))  
   * ...
 
 == 参加しようかなぁな人達
