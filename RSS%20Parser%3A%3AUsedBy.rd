@@ -17,7 +17,7 @@ RSS Parser is used by ...
 
   * ((<GalleryAdministrator>))
 
-  * ((<¥³¥³¥í¥°¥Ê¥Ó ¥«¥Æ¥´¥êÊÌ¿·Ãå|URL:http://www.cocolog-nifty.com/>)) ((<¾Úµò|URL:http://staff.cocolog-nifty.com/room/2004/02/post_6.html>))
+  * ((<ã‚³ã‚³ãƒ­ã‚°ãƒŠãƒ“ ã‚«ãƒ†ã‚´ãƒªåˆ¥æ–°ç€|URL:http://www.cocolog-nifty.com/>)) ((<è¨¼æ‹ |URL:http://staff.cocolog-nifty.com/room/2004/02/post_6.html>))
 
   * ((<RRSSMM|URL:http://tamo.tdiary.net/20050513.html#p01>))
 

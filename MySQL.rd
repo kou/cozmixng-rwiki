@@ -1,32 +1,32 @@
 = MySQL
 
-MySQL´Ø·¸¤Îºî¶Èµ­Ï¿¤Ç¤¹¡£
+MySQLé–¢ä¿‚ã®ä½œæ¥­è¨˜éŒ²ã§ã™ã€‚
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo /usr/local/sbin/portupgrade -m "DB_DIR=/usr/local/var/db/mysql BUILD_OPTIMIZED=no" -N mysql-server
 
-== ÀßÄê
+== è¨­å®š
 
-DB¤Î½é´ü²½
+DBã®åˆæœŸåŒ–
 
   % sudo -u mysql mysql_install_db
 
-´ÉÍý¼Ô¥æ¡¼¥¶¤Î¥Ñ¥¹¥ï¡¼¥ÉÊÑ¹¹
+ç®¡ç†è€…ãƒ¦ãƒ¼ã‚¶ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰å¤‰æ›´
 
   % mysqladmin -u root password "PASSWORD"
 
-== »È¤¦
+== ä½¿ã†
 
-DB¤ÎºîÀ®
+DBã®ä½œæˆ
 
   % mysqladmin -u root -p create znz
 
-¥æ¡¼¥¶¤Î¥Ñ¥¹¥ï¡¼¥É¤òÀßÄê(¥æ¡¼¥¶¤ÎÅÐÏ¿¤È¤¤¤¦³µÇ°¤Ï¤Ê¤¤¤Î¤«¤Ê¤¡)¡¥
+ãƒ¦ãƒ¼ã‚¶ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’è¨­å®š(ãƒ¦ãƒ¼ã‚¶ã®ç™»éŒ²ã¨ã„ã†æ¦‚å¿µã¯ãªã„ã®ã‹ãªã)ï¼Ž
 
   % mysqladmin -u znz password "PASSWORD"
 
-¥æ¡¼¥¶¤Ë¸¢¸Â¤òÍ¿¤¨¤ë¡¥
+ãƒ¦ãƒ¼ã‚¶ã«æ¨©é™ã‚’ä¸Žãˆã‚‹ï¼Ž
 
   mysql> GRANT ALL ON znz.* TO znz@localhost;
 

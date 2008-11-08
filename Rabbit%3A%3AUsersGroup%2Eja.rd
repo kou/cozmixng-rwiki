@@ -1,167 +1,167 @@
 = Rabbit::UsersGroup.ja
 
-��ӤäȤ桼�������롼�ס֥���å�����
+らびっとゆーざずぐるーぷ「ショッカー」
 ((<ML(rabbit-shockers)|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
 
-== ���þ��
+== 参加条件
 
-�ʲ��ξ��Τɤ줫���������Ƥ��뤳�ȡ�
+以下の条件のどれかを満たしていること．
 
-  * �ץ쥼��ˤ����Rabbit��Ȥ�
-  * �ץ쥼���Rabbit��Ȥä����Ȥ�����
-  * �ץ쥼���Rabbit��Ȥ����ȻפäƤ��뤬���ץ쥼��򤹤뵡��̵���Τǰ��٤�Ȥä����Ȥ��ʤ���
-  * �ץ쥼��˻Ȥä�Rabbit�Υ��饤�ɤ��������((<Rabbit::UsedBy>))�˥�󥯤�ĥ�äƤ���
-  * Rabbit�ȼ��ε�ǽ�ʡ֤������Ȥ���פ��Rabbit hole�פʤɡˤ˶�̣������
-  * Rabbit�Υѥå���񤤤����Ȥ�����
-  * Rabbit�γ���񤤤����Ȥ�����
-  * Rabbit�Υơ��ޤ��ä����Ȥ�����
-  * Rabbit�ˤ��ץ쥼��򸫤ơ֤����פȸ��ˤ��Ƥ��ޤä����Ȥ�����
-  * Rabbit�򥫥å������Ȼפ�
-  * Rabbit�򥫥磻���Ȼפ�
-  * Rabbit�Υѥå��������äƤ���
-  * ���㥤�Ǥ���
-  * �֥���å����ߤ����פȸ���줿���Ȥ�����
+  * プレゼンには毎回Rabbitを使う
+  * プレゼンにRabbitを使ったことがある
+  * プレゼンにRabbitを使おうと思っているが、プレゼンをする機会が無いので一度も使ったことがない。
+  * プレゼンに使ったRabbitのスライドを公開し，((<Rabbit::UsedBy>))にリンクを張っている
+  * Rabbit独自の機能（「うさぎとかめ」や「Rabbit hole」など）に興味がある
+  * Rabbitのパッチを書いたことがある
+  * Rabbitの絵を書いたことがある
+  * Rabbitのテーマを作ったことがある
+  * Rabbitによるプレゼンを見て「おぉ」と口にしてしまったことがある
+  * Rabbitをカッコいいと思う
+  * Rabbitをカワイイと思う
+  * Rabbitのパッケージを作っている
+  * シャイである
+  * 「ショッカーみたい」と言われたことがある
 
-=== ���þ���
+=== 参加条件案
 
-���þ��˲ä�����褤�ΤǤϤʤ����Ȥ�����
+参加条件に加えたらよいのではないかという条件．
 
   * ...
 
-== ���ü�
+== 参加者
 
-���㥤�ʿͤ�¿���Ȼפ��Τǡ�Rabbit�ؤ���˾��Х����ʤɤ�Ԥ���ʬ�Υ����ȤؤΥ�󥯤��դ��Ƥ����Ȥ褤�Ȼפ��ޤ���
-��((<���üԤκǶ�|URL:http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))��
+シャイな人も多いと思うので，Rabbitへの要望やバグ報告などを行う自分のサイトへのリンクも付けておくとよいと思います．
+（((<参加者の最近|URL:http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))）
 
-������������((<rabbit-shockers ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
-��((<QuickML|URL:http://quickml.com/>))����ѡˤˤ�����Ȥ褤�Ȼפ��ޤ���
+気が向いたら((<rabbit-shockers ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
+（((<QuickML|URL:http://quickml.com/>))を使用）にも入るとよいと思います．
 
     To: rabbit-shockers@ml.cozmixng.org
     Cc: kou@cozmixng.org
-    Subject: �����ʤȤ��ʤ󤫤���ʤ��
+    Subject: イー（とかなんかそんなん）
     
-    ��������ʺ��ޤǤʤ��ӥåȤ����Ȥ��ʤ󤫤���ʤ��
+    何か一言（今までなんラビットしたとかなんかそんなん）
 
-  * kou�ʰ���ܤ�Rabbit�桼����
-  * �ߤ�ळ�����Rabbit�ζ�Ʊ��ȯ�Ԥΰ�͡�rabbit-mode.l�κ�ԡ�
-  * zunda����ʤ�äȤ�Ť�Rabbit�桼���ΰ�͡�
-    * ((<���ޤ̤���ư����|URL:http://zunda.freeshell.org/d/>))
-  * oxy����ʤ�äȤ�Ť�Rabbit�桼���ΰ�͡�
+  * kou（一人目のRabbitユーザ）
+  * みやむこさん（Rabbitの共同開発者の一人。rabbit-mode.lの作者）
+  * zundaさん（もっとも古いRabbitユーザの一人）
+    * ((<おまぬけ活動日誌|URL:http://zunda.freeshell.org/d/>))
+  * oxyさん（もっとも古いRabbitユーザの一人）
     * ((<PRoxy Diary|URL:http://mono.kmc.gr.jp/~oxy/d/>))
-  * �����Ҥ�����
-    �ʤ�äȤ�Ť�Rabbit�桼���ΰ�͡�Momonga�Υѥå�������������äȤ�Rabbit���������Ƥ����桼���ΰ�͡�
-    * ((<�դ��ߤˤ�����|URL:http://kazuhiko.tdiary.net/>))
+  * かずひこさん
+    （もっとも古いRabbitユーザの一人／Momongaのパッケージ作成／もっともRabbitを宣伝してくれるユーザの一人）
+    * ((<ふぇみにん日記|URL:http://kazuhiko.tdiary.net/>))
 
-# LLDN��
+# LLDN後
 
-  * ((<��������|URL:http://kakutani.com/>))�����((*����å�����ɽ*))����äȤ�Rabbit��Ȥ����ʤ����Ƥ���桼���ΰ�͡���äȤ�Rabbit���������Ƥ����桼���ΰ�͡�
-    * ��Ĺ��Ū����ɸ�Ȥ��ƥѥå����ꤲ����褦�ˤʤꤿ���Ǥ���
-    * ((<�إӥ�ɥġ�����Τ�����|URL:http://kakutani.com/articles/esm-tokyo-study/buildtool/>))
-    * ((<��self.wake_up :from => "The Matrix"��|URL:http://kakutani.com/articles/xpmatsuri2005/>))
-  * ���Ĥ���
-    * ((<����Ģ|URL:http://homepage1.nifty.com/markey/>))
-  * ��椵���Vine�Υѥå�����������
-  * atzm�����Gentoo�Υѥå�����������
-  * ��ޤ������餵���Debian�Υѥå�����������
+  * ((<かくたに|URL:http://kakutani.com/>))さん（((*ショッカー代表*))／もっともRabbitを使いこないしているユーザの一人／もっともRabbitを宣伝してくれるユーザの一人）
+    * 中長期的な目標としてパッチを投げられるようになりたいです。
+    * ((<『ビルドツールを知ろう』|URL:http://kakutani.com/articles/esm-tokyo-study/buildtool/>))
+    * ((<『self.wake_up :from => "The Matrix"』|URL:http://kakutani.com/articles/xpmatsuri2005/>))
+  * 助田さん
+    * ((<雑記帳|URL:http://homepage1.nifty.com/markey/>))
+  * 岩井さん（Vineのパッケージ作成）
+  * atzmさん（Gentooのパッケージ作成）
+  * やまだあきらさん（Debianのパッケージ作成）
     * ((<?ay diary|URL:http://arika.org/diary/>))
-  * ���Ӥ����Rabbit�ζ�Ʊ��ȯ�Ԥΰ�͡�
+  * 小林さん（Rabbitの共同開発者の一人）
     * ((<Log|URL:http://dolphin.c.u-tokyo.ac.jp/~nori1/w/index.cgi?cmd=view;name=Log>))
 
-# KOF2005��
+# KOF2005後
 
-  * zoe����
-  * ͺ�餵��
-    * ((<ͺ���?��˷������|URL:http://www.j96.org/~yuya/d/>))
+  * zoeさん
+  * 雄也さん
+    * ((<雄也の?日坊主日記|URL:http://www.j96.org/~yuya/d/>))
   * babie
-    * ((<�٥쥹��|URL:http://d.hatena.ne.jp/babie/20051029#p2>))
-  * ��
+    * ((<遅レス。|URL:http://d.hatena.ne.jp/babie/20051029#p2>))
+  * 咳
     * ((<I like Ruby|URL:http://www.druby.org>))
-  * ((<��������(koic)|URL:http://www.edit.ne.jp/~koic/>))�ʤ�äȤ�Rabbit���������Ƥ����桼���ΰ�͡�
-    * ((<�ػɷ�������5����|URL:http://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
-  * �����Τ���
-  * ((<����|URL:http://www.jmuk.org/d/>))
-    * ((<"RHG �ɽ�� ��ʥɤˤĤ��Ƥ�������"|URL:http://www.city5.org/rhg_200605/>))
-  * kdmsnr����ʤ�äȤ�Rabbit���������Ƥ����桼���ΰ�͡�
+  * ((<コウイチ(koic)|URL:http://www.edit.ne.jp/~koic/>))（もっともRabbitを宣伝してくれるユーザの一人）
+    * ((<『刺激を受けた5冊』|URL:http://www.edit.ne.jp/~koic/rabbits/without-ejb_13th/>))
+  * おぎのさん
+  * ((<向井|URL:http://www.jmuk.org/d/>))
+    * ((<"RHG 読書会 モナドについていろいろ"|URL:http://www.city5.org/rhg_200605/>))
+  * kdmsnrさん（もっともRabbitを宣伝してくれるユーザの一人）
     * ((<capsctrldays|URL:http://capsctrl.que.jp/kdmsnr/diary/>))
 
-# ���֥������ȶ���� 2005���ꥹ�ޥ����٥�ȸ�
+# オブジェクト倶楽部 2005クリスマスイベント後
 
-  * �����
-    * ((<�ȥ�������|URL:http://d.hatena.ne.jp/nskj77/>))
-  * ȫ������
-    * ((<������ץ�����ޤκ������@�ϤƤ�|URL:http://d.hatena.ne.jp/thata/>))
-  * dot����
+  * 西川さん
+    * ((<トウフ日記|URL:http://d.hatena.ne.jp/nskj77/>))
+  * 畠山さん
+    * ((<ちくわプログラマの作業履歴@はてな|URL:http://d.hatena.ne.jp/thata/>))
+  * dotさん
     * ((<dot.diary|URL:http://blog.prebyte.jp/>))
-  * ���椵��
+  * 田中さん
     * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
-  * ���Ĥ����rabbit-mode.el��ԡ�
-  * ��¼�����DarwinPorts�Υѥå�����������
-    * ((<���꤫�Ρ���|URL:http://kimuraw.txt-nifty.com/d/>))
+  * 武田くん（rabbit-mode.el作者）
+  * 木村さん（DarwinPortsのパッケージ作成）
+    * ((<きりかノート|URL:http://kimuraw.txt-nifty.com/d/>))
 
-# RubyKaigi 2006��
+# RubyKaigi 2006後
 
-  * kitaj����
-    * ((<���äƤ��������Τʤ�Ǥ�ͤ�|URL:http://kitaj.no-ip.com/tdiary/>))
-  * Yugui����
+  * kitajさん
+    * ((<帰ってきた今日のなんでやねん|URL:http://kitaj.no-ip.com/tdiary/>))
+  * Yuguiさん
     * ((<ratio - rational - irrational @ IDM|URL:http://idm.s9.xrea.com/ratio/>))
-  * �ʤ�������
+  * なかださん
     * ((<A Strolling Programmer|URL:http://www.rubyist.net/~nobu/t/>))
 
-  * �����Ԥ���
-      * ((<�����Ԥ�ChangeLog���|URL:http://pub.cozmixng.org/~akapy/ChangeLogMemo/cat_rabbit.html>)) 
+  * あかぴさん
+      * ((<あかぴのChangeLogメモ|URL:http://pub.cozmixng.org/~akapy/ChangeLogMemo/cat_rabbit.html>)) 
 
-  * moro����
-    * ((<moro������|URL:http://d.hatena.ne.jp/moro/>))
-  * ����������
+  * moroさん
+    * ((<moroの日記|URL:http://d.hatena.ne.jp/moro/>))
+  * ささださん
     * ((<DA|URL:http://www.atdot.net/~ko1/diary/>))
-  * �����ڤ���
-    * ((<ʿ���� -- equilibrium point --|URL:http://d.hatena.ne.jp/sasakyh/>))
-  * znz����
+  * 佐々木さん
+    * ((<平衡点 -- equilibrium point --|URL:http://d.hatena.ne.jp/sasakyh/>))
+  * znzさん
     * ((<%!zt! diary|URL:http://znz.s1.xrea.com/t/>))
-  * ���Ф�����
+  * おばたさん
     * ((<Obache Watching|URL:http://www.lins.jp/~obata/diary/>))
 
 # RubyKaigi2007
 
-  * �錄�ʤ٤Ҥ��դ�
+  * わたなべひろふみ
     * ((<Just another Ruby porter,|URL:http://jarp.does.notwork.org/diary/>))
-  * �ʤ����(��)����
-    * ((<���դ�����|URL:http://www.garbagecollect.jp/~usa/d/>))
-  * ��Ȥ��ޤ�������
-    * ((<�褿���|URL:http://www.yotabanana.com/lab/>))
+  * なかむら(う)さん
+    * ((<丁稚な日々|URL:http://www.garbagecollect.jp/~usa/d/>))
+  * むとうまさおさん
+    * ((<よたらぼ|URL:http://www.yotabanana.com/lab/>))
 
-# RubyKaigi2007��
+# RubyKaigi2007後
 
-  * ����������
-    * ((<�����Τˤä�|URL:http://sho.tdiary.net/>))
-  * ���Ĥ���
+  * ただただし
+    * ((<ただのにっき|URL:http://sho.tdiary.net/>))
+  * 前田さん
     * ((<Jounal in Time|URL:http://shugo.net/jit/>))
-  * ���󤵤�
-    * ((<Jewel-mmo ��ȯ����|URL:http://dgames.jp/dan/>)) 
+  * だんさん
+    * ((<Jewel-mmo 開発日記|URL:http://dgames.jp/dan/>)) 
 
-# RubyKaigi2008��
+# RubyKaigi2008後
 
-  * okkez����
+  * okkezさん
     * ((<okkez weblog|URL:http://typo.okkez.net/>))
-  * Matz����
-    * ((<Matz�ˤä�|URL:http://www.rubyist.net/~matz/>))
-  * �ⶶ����
-  * ToDo: NaCl�ο͡�2�͡�
-  * aka����
+  * Matzさん
+    * ((<Matzにっき|URL:http://www.rubyist.net/~matz/>))
+  * 高橋さん
+  * ToDo: NaClの人（2人）
+  * akaさん
     * ((<FlexFrank|URL:http://flexfrank.net/>))
-  * ������
-    * ((<�������󥸥�����Ū�յ���̤��|URL:http://qwik.jp/senna/publication.download/future-search.pdf>))
-  * ���ʤ���
-    * ((<���˥�餯��Υ��˥㥰�˥���˺Ͽ@�ϤƤ�|URL:http://d.hatena.ne.jp/tasukuchan/>))
-  * hsbt����
+  * 森さん
+    * ((<検索エンジンの歴史的意義と未来|URL:http://qwik.jp/senna/publication.download/future-search.pdf>))
+  * 末永さん
+    * ((<グニャラくんのグニャグニャ備忘録@はてな|URL:http://d.hatena.ne.jp/tasukuchan/>))
+  * hsbtさん
     * ((<HsbtDiary|URL:http://hsbt.org/diary/>))
-    * ((<�錄����tDiary|URL:http://www.slideshare.net/hsbt/sapporo-ruby-kaigi01-presentation>))  
+    * ((<わたしとtDiary|URL:http://www.slideshare.net/hsbt/sapporo-ruby-kaigi01-presentation>))  
   * ...
 
-== ���ä��褦���ʤ��ʿ�ã
+== 参加しようかなぁな人達
 
-���롼�פ˻��ä��褦���ȻפäƤ��뤱�ɡ������Ƨ���ڤ�ʤ���ã���Ĥ��Ǥ���˾��ո��ʤɰ���񤤤Ƥ���ȴ򤷤��Ǥ���
+グループに参加しようかと思っているけど，今一つ踏み切れない人達．ついでに要望や意見など一言書いてあると嬉しいです．
 
-���ο�ã����˾�������⤤ͥ���٤ˤʤä��ꤷ�ޤ���
+この人達の要望の方が高い優先度になったりします．
 
   * ...

@@ -1,18 +1,18 @@
 = eji
 
-���뷿����ī���Ǥ� :)
+冬夜型，夏朝型です :)
 
   * ((<eji::memo>))
 
-== ��ä����
+== 作ったもの
 
   * ((<"Gauche/PGPLOT">))
   * ((<"Gauche/MPICH">))
 
-== ����¾
+== その他
 
-  * ��ݥ��ȥ�ˤ���README�Ȥ���RWiki��ȿ�Ǥ�������������ɤǤ���Τ���?
+  * リポジトリにあるREADMEとかをRWikiに反映させたいんだけどできるのかな?
     * ((<URL:http://www.cozmixng.org/repos/rabbit/trunk/misc/update-rd.rb>))
     * ((<URL:http://www.cozmixng.org/repos/gauche/xsm/trunk/misc/update-rd.scm>))
-  * ViewCVS��Web�˸������Ƥ����ݥ��ȥ꤫�饽���������������ˡ��ʬ����ʤ����ġ��뤬����Τ�?
+  * ViewCVSでWebに公開しているリポジトリからソースを取得する方法が分からない．ツールがあるのか?
     * Download tarball

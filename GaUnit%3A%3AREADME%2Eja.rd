@@ -4,43 +4,43 @@
 
 $Id: README.ja 490 2008-10-22 11:51:35Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 GPL or BSD License
 
-== ����
+== 注意
 
-Gauche 0.8.13�ѤǤ�������������ư�����ɤ����Ϥ狼��ޤ���
+Gauche 0.8.13用です。それより前で動くかどうかはわかりません。
 
-== �ʤˤ��졩
+== なにこれ？
 
-GaUnit��Gauche�Ǽ������줿Unit Testing Framework�Ǥ���
+GaUnitはGaucheで実装されたUnit Testing Frameworkです．
 
-Ʊ�ͤΤ�Τ�
+同様のものに
 ((<SchemeUnit|URL:http://schematics.sourceforge.net/schemeunit.html>))
-������ޤ���
+があります．
 
-== �ɤ�ͤ���
+== 読めねぇよ
 
-�֤��ˤäȡפȤ��Ϥɤ��Ǥ��礦��
+「ごにっと」とかはどうでしょう？
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/gaunit.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/gauche/gaunit/trunk gaunit
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo gosh install/install.scm
 
-== �Ȥ���
+== 使い方
 
-�ƥ����ѤΥ⥸�塼�����������ץ��������Ѱդ��ޤ���
+テスト用のモジュールを定義したプログラムを用意します．
 
   (define-module test-your-module
     (use test.unit.test-case)
@@ -62,17 +62,17 @@ GaUnit��Gauche�Ǽ������줿Unit Testing Framework�Ǥ���
 
   (provide "test-your-module")
 
-'test-'����Ϥޤ�ؿ���1�ĤΥƥ��ȤȤ��Ƽ¹Ԥ���ޤ���
+'test-'から始まる関数が1つのテストとして実行されます。
 
-'-u test.unit'���ץ�����դ��ǥץ�������¹Ԥ��ޤ���GaUnit
-��test.unit�⥸�塼��ǥƥ��Ȥ����餻��(({main}))��³������
-���Ƥ��ޤ���test.unit��use����С�(({main}))��³�����������
-ɬ�פϤ���ޤ���
+'-u test.unit'オプション付きでプログラムを実行します。GaUnit
+はtest.unitモジュールでテストを走らせる(({main}))手続きを提供
+しています。test.unitをuseすれば、(({main}))手続きを定義する
+必要はありません。
 
   % gosh -u test.unit test-your-module.scm
 
-������������Τ���˰ʲ��Τ褦�ʥƥ��ȵ�ư������ץ�
-run-test.scm���������Ȥ褤�Ǥ��礦��
+しかし、今後のために以下のようなテスト起動スクリプト
+run-test.scmを作成するとよいでしょう。
 
 run-test.scm:
   #!/usr/bin/env gosh
@@ -84,160 +84,160 @@ run-test.scm:
   (define base-dir (sys-dirname *program-name*))
   (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
-�ʲ��Τ褦�˼¹Ԥ��ޤ���
+以下のように実行します。
 
   % gosh run-test.scm
 
-=== ���ץ����
+=== オプション
 
-GaUnit���󶡤��Ƥ���(({main}))��³���Ϥ����Ĥ����ץ������
-���դ��ޤ���
+GaUnitが提供している(({main}))手続きはいくつかオプションを受
+け付けます．
 
 : -uUI, --ui=UI
-   �ƥ��ȷ�̤�ɽ������桼�����󥿥ե���������ꤷ�ޤ���
-   ((|UI|))�ˤϰʲ��Τ�Τ�����Ǥ��ޤ���
+   テスト結果を表示するユーザインタフェースを指定します．
+   ((|UI|))には以下のものが指定できます．
 
    : t[ext]
-      �ƥ������ǤΥ桼�����󥿥ե���������Ѥ��ޤ����ǥե���
-      �ȤǤ���
+      テキスト版のユーザインタフェースを使用します．デフォル
+      トです．
 
    : g[tk]
-      ((*����ư���ޤ���*))
+      ((*今は動きません。*))
 
-      GTK+�ǤΥ桼�����󥿥ե���������Ѥ��ޤ����ʲ��Τ褦��
-      �����Х���ɤ���Ƥ��ޤ��������Υ�����Ctrl��Alt�ʤ�
-      �ν����������դ��Ƥ��Ƥ�ư��ޤ����Ĥޤꡤl�Ǥ�Ctrl
-      + l�Ǥ�Alt + l�Ǥ�ư��ޤ���
+      GTK+版のユーザインタフェースを使用します．以下のように
+      キーバインドされています．これらのキーはCtrlやAltなど
+      の修飾キーが付いていても動作します．つまり，lでもCtrl
+      + lでもAlt + lでも動作します．
       
       : l
-         Load�ܥ���򲡤��ޤ���
+         Loadボタンを押します．
       
       : r
-         Run�ܥ���򲡤��ޤ���
+         Runボタンを押します．
        
       : q, ESC
-         ��λ���ޤ���
+         終了します．
 
 
 : -vLEVEL, --vervose=LEVEL
-   �ƥ��ȷ�̤�ɤ����پܺ٤�ɽ�����뤫����ꤷ�ޤ������ߤ�
-   �Ȥ������ƥ������ǤΥ桼�����󥿥ե������ǤΤ߰�̣������
-   �ޤ���((|LEVEL|))�ˤϰʲ��Τ�Τ�����Ǥ��ޤ���
+   テスト結果をどの程度詳細に表示するかを指定します．現在の
+   ところ，テキスト版のユーザインタフェースでのみ意味があり
+   ます．((|LEVEL|))には以下のものが指定できます．
 
    : s[ilent]
-      �ƥ��Ȥ����Ԥ����Ȥ������뤤�ϥ��顼��ȯ�������Ȥ��Τ�
-      ���ξܺ٤�ɽ�����ޤ����ƥ��Ȥ����������Ȥ��Ϥʤˤ����
-      ���ޤ���
+      テストが失敗したとき，あるいはエラーが発生したときのみ
+      その詳細を表示します．テストが成功したときはなにも出力
+      しません．
 
    : p[rogress]
-      �ƥ��Ȥ����������Ȥ���"."�����Ϥ���ޤ�������ʳ���
-      silent��Ʊ���Ǥ���
+      テストが成功したときに"."が出力されます．それ以外は
+      silentと同じです．
 
    : n[ormal]
-      �ƥ��ȥ������Ȥμ¹Ի��ˤ��Υƥ��ȥ������Ȥ�̾����ɽ
-      �����ޤ����ޤ����ƥ��Ȥ�����ä��Ȥ��ˡ��ƥ��ȿ�����ɽ
-      ��������������ɽ���������Ԥ���ɽ���������顼�����ƥ���
-      �ˤ����ä����֤�ɽ�����ޤ�������ʳ���progress��Ʊ����
-      �����ǥե���ȤǤ���
+      テストスイートの実行時にそのテストスイートの名前を表
+      示します．また，テストが終わったときに，テスト数，全表
+      明数，成功した表明数，失敗した表明数，エラー数，テスト
+      にかかった時間を表示します．それ以外はprogressと同じで
+      す．デフォルトです．
 
    : v[erbose]
-      �ƥ��ȥ������μ¹Ի��ˤ��Υƥ��ȥ�������̾����ɽ������
-      ��������ʳ���normal��Ʊ���Ǥ���
+      テストケースの実行時にそのテストケースの名前を表示しま
+      す．それ以外はnormalと同じです．
 
 : -sREGEXP, --test-suite=REGEXP
 
-   ����ɽ��REGEXP�˥ޥå�����ƥ��ȥ�������̾����ĥƥ��ȥ�
-   �����ȤΤ߼¹Ԥ��ޤ���
+   正規表現REGEXPにマッチするテストスイート名を持つテストス
+   イートのみ実行します．
 
 : -cREGEXP, --test-case=REGEXP
 
-   ����ɽ��REGEXP�˥ޥå�����ƥ��ȥ�����̾����ĥƥ��ȥ���
-   ���Τ߼¹Ԥ��ޤ���
+   正規表現REGEXPにマッチするテストケース名を持つテストケー
+   スのみ実行します．
 
 : -tREGEXP, --test=REGEXP
 
-   ����ɽ��REGEXP�˥ޥå�����ƥ���̾����ĥƥ��ȤΤ߼¹Ԥ�
-   �ޤ���
+   正規表現REGEXPにマッチするテスト名を持つテストのみ実行し
+   ます．
 
 : -h, --help
-   ����ˡ��ɽ�����ƽ�λ���ޤ���
+   使用法を表示して終了します．
 
-�㤨�С��桼�����󥿥ե������Ȥ���GTK+�Ǥ�Ȥ�������аʲ���
-�褦�ˤ��ޤ���
+例えば，ユーザインタフェースとしてGTK+版を使いたければ以下の
+ようにします．
 
   % gosh test-program.scm -ug
 
-�ܺ٤ʥ�����ɽ����������аʲ��Τ褦�ˤ��ޤ���
+詳細なログを表示したければ以下のようにします．
 
   % gosh test-program.scm -vv
 
-=== ��ե����
+=== リファレンス
 
-==== ɽ��¾
+==== 表明他
 
-GaUnit�ϰʲ��˼����ƥ��Ȥ򤹤뤿��μ�³�����Ѱդ��Ƥ��ޤ���
+GaUnitは以下に示すテストをするための手続きを用意しています．
 
-((|[message]|))�ϥ��ץ����Ǥ������Ի��Υ�å������Ǥ���ʸ
-���󤫡�������ҤȤĤȤ��³������ꤷ�ޤ�����³���ξ��ϥ�
-���ȷ�̤������Ȥ����Ϥ���ޤ���
+((|[message]|))はオプションです．失敗時のメッセージである文
+字列か，引数をひとつとる手続きを指定します．手続きの場合はテ
+スト結果が引数として渡されます．
 
 --- fail([message])
     
-    ɬ�����Ԥ��ޤ���
+    必ず失敗します．
 
 --- assert(pred expected actual [message])
     
-    (({(pred expected actual)}))��#f�Ǥʤ��ʤ���������ޤ���
+    (({(pred expected actual)}))が#fでないならば成功します．
 
 --- assert-equal(expected actual [message])
     
-    (({(equal? expected actual)}))��#t���֤����������ޤ���
+    (({(equal? expected actual)}))が#tを返せば成功します．
 
 --- assert-not-equal(expected actual [message])
     
-    (({(not (equal? expected actual))}))��#t���֤����������ޤ���
+    (({(not (equal? expected actual))}))が#tを返せば成功します．
 
 --- assert-null(actual [message])
     
-    (({(null? actual)}))��#t���֤����������ޤ���
+    (({(null? actual)}))が#tを返せば成功します．
 
 --- assert-not-null(actual [message])
     
-    (({(not (null? actual))}))��#t���֤����������ޤ���
+    (({(not (null? actual))}))が#tを返せば成功します．
 
 --- assert-true(actual [message])
     
-    ((|actual|))��#t�ʤ���������ޤ���
+    ((|actual|))が#tならば成功します．
 
 --- assert-false(actual [message])
     
-    ((|actual|))��#f�ʤ���������ޤ���
+    ((|actual|))が#fならば成功します．
 
 --- assert-instance-of(expected-class object [message])
     
-    ((|object|))��((|expected-class|))�Υ��󥹥��󥹤Ǥ����
-    �������ޤ���
+    ((|object|))が((|expected-class|))のインスタンスであれば
+    成功します．
 
 --- assert-raise(expected-class thunk [message])
     
-    ((|thunk|))(����̵���μ�³��)��ǵ����ä��㳰��
-    ((|expected-class|))�Υ��󥹥��󥹤Ǥ�����������ޤ���
+    ((|thunk|))(引数無しの手続き)内で起こった例外が
+    ((|expected-class|))のインスタンスであれば成功します．
 
 --- assert-error(tunk [message])
     
-    ((|thunk|))(����̵���μ�³��)����㳰��ȯ��������������ޤ���
+    ((|thunk|))(引数無しの手続き)内で例外が発生すれば成功します．
 
 --- assert-each(assert-proc lst &keyword :apply-if-can :run-assert :prepare)
     
-    ((|assert-proc|))��((|lst|))�γ����Ǥ��Ф���Ŭ�Ѥ��ޤ���
+    ((|assert-proc|))を((|lst|))の各要素に対して適用します．
     
-    ((|lst|))�γ����Ǥ�((|prepare|))��Ŭ�Ѥ��졤
-    ((|run-assert|))�ˤ�ä�((|assert-proc|))��Ŭ�Ѥ���ޤ���
+    ((|lst|))の各要素は((|prepare|))に適用され，
+    ((|run-assert|))によって((|assert-proc|))に適用されます．
     
-    �⤷��((|prepare|))�����ͤ��ꥹ�Ȥ�((|apply-if-can|))��
-    #t(�ǥե����)�ʤ�((|assert-proc|))��((|apply|))����ޤ���
+    もし，((|prepare|))が返値がリストで((|apply-if-can|))が
+    #t(デフォルト)なら((|assert-proc|))に((|apply|))されます．
     
-    ���᡼���Ȥ��ƤϤ���ʴ����Ǥ���
+    イメージとしてはこんな感じです．
 
       (define (run-assert assert-proc args)
         (if (and (list? args) apply-if-can)
@@ -249,66 +249,66 @@ GaUnit�ϰʲ��˼����ƥ��Ȥ򤹤뤿��μ�³�����Ѱդ��Ƥ��ޤ���
 
 --- assert-macro(expanded form [message])
     
-    (({(equal? expanded (macroexpand form))}))�������֤����������ޤ���
+    (({(equal? expanded (macroexpand form))}))が真を返せば成功します．
     
 --- assert-macro1(expanded form [message])
     
-    (({(equal? expanded (macroexpand-1 form))}))�������֤����������ޤ���
+    (({(equal? expanded (macroexpand-1 form))}))が真を返せば成功します．
     
 --- assert-lset-equal(expected actual [message])
     
-    (({(lset= equal? expected actual)}))�������֤����������ޤ���
+    (({(lset= equal? expected actual)}))が真を返せば成功します．
     
 --- assert-values-equal(expected productor [message])
     
     (({(receive actual (productor) (equal? expected
-    actual))}))�������֤����������ޤ���
+    actual))}))が真を返せば成功します．
     
 --- assert-in-delta(expected delta actual [message])
     
     (({(<= (- expected delta) actual (+ expected delta))}))
-    �������֤����������ޤ���
+    が真を返せば成功します．
     
 --- assert-output(expected thunk [message])
     
-    (({(equal? expected (with-output-to-string thunk))}))��
-    �����֤����������ޤ����Ĥޤꡤ((|expected|))��
-    (({(thunk)}))�ν��Ϸ�̤�����������������ޤ���
+    (({(equal? expected (with-output-to-string thunk))}))が
+    真を返せば成功します．つまり，((|expected|))と
+    (({(thunk)}))の出力結果が等しければ成功します．
     
-    �⤷��((|expected|))������ɽ������ꤷ�Ƥ�������
-    (({(rxmatch expected (with-output-to-string thunk))}))��
-    #f�ʳ����֤����������ޤ����Ĥޤꡤ(({(trunk)}))�ν��Ϸ�
-    �̤�((|expected|))�˥ޥå�������������ޤ���
+    もし，((|expected|))に正規表現を指定していた場合は
+    (({(rxmatch expected (with-output-to-string thunk))}))が
+    #f以外を返せば成功します．つまり，(({(trunk)}))の出力結
+    果が((|expected|))にマッチすれば成功します．
 
 --- assert-match(expected actual [message])
 
-    (({(rxmatch expected actual)}))��#f�ʳ����֤�����������
-    ����
+    (({(rxmatch expected actual)}))が#f以外を返せば成功しま
+    す．
 
 --- assert-not-match(expected actual [message])
 
-    (({(not (rxmatch expected actual))}))��#f�ʳ����֤�����
-    �����ޤ���
+    (({(not (rxmatch expected actual))}))が#f以外を返せば成
+    功します。
 
 --- assert-valid-module(module-or-module-name [message])
 
-    �⥸�塼�뤬���Ǥ��ʤ�����ܥ����äƤ��ʤ���������
-    ���ޤ����⥸�塼���<module>���֥������Ȥ��뤤�ϥ���ܥ�
-    ��̾���ǻ��ꤷ�ޤ������Ǥ��ʤ�����ܥ�Ȥϰʲ��Υ����
-    ��Τ��ȤǤ���
+    モジュールが解決できないシンボルを持っていない場合は成功
+    します。モジュールは<module>オブジェクトあるいはシンボル
+    で名前で指定します。解決できないシンボルとは以下のシンボ
+    ルのことです。
 
-      * autoload�����ꤷ�Ƥ��뤬load���Ƥ���Ǥ��ʤ������
-        ��
-      * export���Ƥ��뤬�⥸�塼����Ǥϲ��Ǥ��ʤ�����ܥ�
-      * �⥸�塼��Υȥåץ�٥��������줿�ؿ���ǻ��Ȥ���
-        ���뤬�⥸�塼����Ǥϲ��Ǥ��ʤ�����ܥ�
+      * autoloadを設定しているがloadしても解決できないシンボ
+        ル
+      * exportしているがモジュール内では解決できないシンボル
+      * モジュールのトップレベルで定義された関数内で参照して
+        いるがモジュール内では解決できないシンボル
 
 --- pend(message [thunk])
 
-    ���Υƥ��Ȥ���α�ˤ��ޤ���((|message|))����α����ͳ�ˤ�
-    ��ޤ����⤷�������ʤ��δؿ�((|thunk|))����ꤷ�Ƥ��ơ�
-    ����((|thunk|))��¹Ԥ��Ƥ⥨�顼���������ꡢɽ��������
-    ���ʤ����ϡ����Υƥ��Ȥϼ��Ԥ��ޤ�������ϡ�
-    ((|thunk|))�����Ƥ����꤬���뤫����α�ˤ��Ƥ��롢�Ȥ���
-    �տޤ�ȿ����((|thunk|))�����Ƥ����꤬�ʤ��ä��ΤǼ��ԡ�
-    �Ȥ����ͤ��˴�Ť��Ƥ��ޤ���
+    このテストを保留にします。((|message|))が保留の理由にな
+    ります。もし、引数なしの関数((|thunk|))を指定していて、
+    その((|thunk|))を実行してもエラーが起きたり、表明が失敗
+    しない場合は、このテストは失敗します。これは、
+    ((|thunk|))の内容が問題があるから保留にしている、という
+    意図に反して((|thunk|))の内容に問題がなかったので失敗、
+    という考えに基づいています。

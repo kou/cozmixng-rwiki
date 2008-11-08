@@ -1,67 +1,67 @@
-= COZMIXNG����Ǯ��
+= COZMIXNGが今熱い
 
-= Ǯ���Τϲ���
+= 熱いのは何？
 
-  * COZMIXNG�κ���
+  * COZMIXNGの今後
 
-  * COZMIXNG�κ�
+  * COZMIXNGの今
 
-= COZMIXNG�κ���
+= COZMIXNGの今後
 
-  * COZMIXNG��ǧ�Τ��Ƥ�餦
-  * ��������Wiki��ȤäƤ�餦
-  * ��Ź��Wiki
-  * �ֵ���Wiki��Ƴ��
-  * ���ٷץ饤��
+  * COZMIXNGを認知してもらう
+  * 小学生にWikiを使ってもらう
+  * お店にWiki
+  * 講義にWikiを導入
+  * 温度計ライブ
 
-= COZMIXNG��ǧ�Τ��Ƥ�餦
+= COZMIXNGを認知してもらう
 
-  * �ݡ����륵���Ȥ���(((<���᡼����|URL:http://pub.cozmixng.org/~gallery/ichisawa/cozmixng.jpg.html.ja>)))
+  * ポータルサイトを作る(((<イメージ図|URL:http://pub.cozmixng.org/~gallery/ichisawa/cozmixng.jpg.html.ja>)))
 
-    * �������Ƥ�館��ڡ����ˤ���
+    * 毎日見てもらえるページにする
 
-    * ((<�����ι���������ʬ�����󥯽�
-      |URL:http://pub.cozmixng.org/~wikilink/>))((-����ƥʤϹ�����
-      �郎ʬ�����󥯽�-))
+    * ((<リンク先の更新状況が分かるリンク集
+      |URL:http://pub.cozmixng.org/~wikilink/>))((-アンテナは更新時
+      刻が分かるリンク集-))
 
-  * �Ŀͤ䥵�������������Ϥ����Τ˸����ߤǹ����
+  * 個人やサークル等小規模の団体に口コミで広める
 
-    * �椯�椯����ء��ԡ����ʤɤȵ��Ϥ����
+    * ゆくゆくは大学，市，県などと規模を拡大
 
-  * �������פǥǥ�
+  * 不来方祭でデモ
 
-= ��������Wiki��ȤäƤ�餦
+= 小学生にWikiを使ってもらう
 
-  * �ɤࡿ�񤯤����ʤΤ�ñ��
+  * 読む／書くだけなので単純
 
-  * Web�ڡ������ɤ��ΤȤ���ǧ����̵��
+  * Webページは読むものという認識が無い
 
-    * �桹����񹳤����ʤ���
+    * 我々より抵抗が少ない？
 
-= ��Ź��Wiki
+= お店にWiki
 
-  * ���̥Ρ��ȤΤ褦�ʴ�����Wiki�����ѤǤ��ʤ�����
+  * 雑談ノートのような感じでWikiを利用できないか？
 
   * ((<HikiFarm|URL:http://pub.cozmixng.org/~hiki/>))
 
-    * �ڡ����ǤϤʤ�Wiki�����
+    * ページではなくWikiを作れる
 
-= �ֵ���Wiki��Ƴ��
+= 講義にWikiを導入
 
-  * �����ع�����������������ǯ�٤���»�
+  * 岩手大学工学部鈴木先生が今年度から実施
 
-  * �������COZMIXNG�Υ����о��((<�ܹ�|URL:http://pub.cozmixng.org/~wiliki/wiliki.cgi>))(((<�����Ѥ�Wiki|URL:http://pub.cozmixng.org/~wiliki/group-2003.cgi>)))
+  * 後期からCOZMIXNGのサーバ上に((<移行|URL:http://pub.cozmixng.org/~wiliki/wiliki.cgi>))(((<学生用のWiki|URL:http://pub.cozmixng.org/~wiliki/group-2003.cgi>)))
 
-= ���ٷץ饤��
+= 温度計ライブ
 
-  * ���ٷפ�24���֥��ȥ꡼�ߥ�
+  * 温度計を24時間ストリーミング
 
-  * �ϰ�˺������������ӥ�
+  * 地域に根ざしたサービス
 
-  * ���ٷפˡ�((<��������>))�פΤ褦���ܰ����դ���
+  * 温度計に「((<←キケン>))」のような目印を付ける
 
-= COZMIXNG�κ�
+= COZMIXNGの今
 
-���ޤǺ�äƤ�����Τ������ƥ�ˡ�
+今まで作ってきたものがシステムに…
 
-((<���᡼����|URL:http://pub.cozmixng.org/~gallery/cozmixng/cozmixng_system.png.html.ja>))
+((<イメージ図|URL:http://pub.cozmixng.org/~gallery/cozmixng/cozmixng_system.png.html.ja>))

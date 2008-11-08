@@ -6,7 +6,7 @@ Latest version: 0.0.2
   * ((<Tutorial.ja|scratch::Tutorial.ja>))
   * ((<UsedBy|scratch::UsedBy>))
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ
 
-scratch/view/http.scm¤Î¡¢"esm-result*"¤Ï¡¢"esm-result"¤¬Àµ¤·¤¤¤Ç¤¹¤«¡©unbound variable¤È¸À¤ï¤ì¤Æ¤·¤Ş¤¤¤Ş¤¹¡£ -- nekoie
-  * esm-result*¤Ïesm-result¤Î¥Ş¥¯¥íÈÇ¤Ç¤¹¡¥((<esm>))¤Îtrunk¤Ë¤Ï´Ş¤Ş¤ì¤Æ¤¤¤Ş¤¹¡¥esm-0.0.1¤Ë¤Ï´Ş¤Ş¤ì¤Æ¤¤¤Ê¤¤¤Î¤Çº£Ìë¤Ë¤Ç¤âesm-0.0.2¤ò½Ğ¤·¤Æ¤ª¤­¤Ş¤¹¡¥ - ((<kou>))
+scratch/view/http.scmã®ã€"esm-result*"ã¯ã€"esm-result"ãŒæ­£ã—ã„ã§ã™ã‹ï¼Ÿunbound variableã¨è¨€ã‚ã‚Œã¦ã—ã¾ã„ã¾ã™ã€‚ -- nekoie
+  * esm-result*ã¯esm-resultã®ãƒã‚¯ãƒ­ç‰ˆã§ã™ï¼((<esm>))ã®trunkã«ã¯å«ã¾ã‚Œã¦ã„ã¾ã™ï¼esm-0.0.1ã«ã¯å«ã¾ã‚Œã¦ã„ãªã„ã®ã§ä»Šå¤œã«ã§ã‚‚esm-0.0.2ã‚’å‡ºã—ã¦ãŠãã¾ã™ï¼ - ((<kou>))

@@ -1,26 +1,26 @@
 = Mailgraph
 
-((<Postfix>))�Υ�������᡼���ή�̤򥰥�ղ����륽�եȥ�������
+((<Postfix>))のログからメールの流量をグラフ化するソフトウェア．
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo portupgrade -NRr mailgraph
 
-== ����
+== 設定
 
-/etc/rc.conf�˰ʲ����ɲá�
+/etc/rc.confに以下を追加．
 
   mailgraph_enable="YES"
   mailgraph_user="postfix"
   mailgraph_group="postfix"
 
-/usr/local/sbin/mailgraph.pl�ϡ�/var/log/maillog����᡼���ή�̤�((<RRDTool>))���Ȥ���ǡ������������롥�ǥե���Ȥ���www�桼�����¤�ư������������ȡ�/var/log/maillog��www�桼�����¤��ɤ߹��߲�ǽ�Ǥʤ���Ф����ʤ�������ϵ�����������
+/usr/local/sbin/mailgraph.plは，/var/log/maillogからメールの流量を((<RRDTool>))が使えるデータを生成する．デフォルトだとwwwユーザ権限で動くが，これだと，/var/log/maillogをwwwユーザ権限で読み込み可能でなければいけない．これは気持ち悪い．
 
-�Ȥ������Ȥǡ�postfix�桼�������롼�׸��¤�ư���褦�ˤ��ơ�/var/log/maillog�Υ��롼�פ��ѹ���
+ということで，postfixユーザ／グループ権限で動くようにして，/var/log/maillogのグループを変更．
 
   % sudo chgrp postfix /var/log/maillog
 
-�Ĥ��Ǥˡ�RRDTool�ѥǡ����ν�����/var/db/mailgraph�θ��¤��ѹ���
+ついでに，RRDTool用データの出力先/var/db/mailgraphの権限も変更．
 
   % sudo chown -R postfix:postfix /var/db/mailgraph
 

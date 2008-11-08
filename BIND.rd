@@ -1,16 +1,16 @@
 = BIND
 
-== �Ƶ�ư
+== 再起動
 
   % sudo env - PATH=/sbin:/usr/sbin:$PATH /etc/rc.d/named restart
 
-== Open DNS Server�ˤʤ�ʤ��褦�ˤ���
+== Open DNS Serverにならないようにする
 
-���줫������ѤǤ���DNS�����ФΤ��Ȥߤ�����
+だれからも利用できるDNSサーバのことみたい．
 
-�ʥǥ����ȥå�PC�Ȥ��ˤ��줫��DNS�����Фˤʤ�ʤ��¤�ϡ���ʬ�Υɥᥤ�����������Ф����Τǡ�¾�Υɥᥤ��Τ��Ȥޤ�������ɬ�פϤʤ���
+（デスクトップPCとか）だれかのDNSサーバにならない限りは，自分のドメインだけ答えればいいので，他のドメインのことまで答える必要はない．
 
-����Υͥåȥ���η׻����ˤ�������ʬ�Υɥᥤ������ǤϤʤ������ƤΥɥᥤ������������ꡥ
+特定のネットワークの計算機にだけ，自分のドメインだけではなく，全てのドメインに答える設定．
 
   options {
     allow-recursion {
@@ -23,26 +23,26 @@
 
 == SPF
 
-Sender Policy Framework��
+Sender Policy Framework。
 
-���ѥ��к��ΰ�Ĥ���ˡ�������ɥᥤ���ǧ�ڤ��뤳�Ȥˤ�ꥹ�ѥफ�ɤ�����Ƚ�Ǥ��롣
+スパム対策の一つの方法。送信ドメインを認証することによりスパムかどうかを判断する。
 
-  * �ɥᥤ������Ԥ�SMTP�������������ۥ��Ȥ�DNS��Ȥä�������롣
-  * SMTP�����Ф������ԤΥɥᥤ��ʤʤɡˤ�DNS��������������ʥۥ��Ȥ�������줿�᡼��Ǥ��뤫�ɤ������ǧ���롣
+  * ドメイン管理者はSMTPの正当な送信ホストをDNSを使って宣言する。
+  * SMTPサーバは送信者のドメイン（など）をDNSから引き、正当なホストから送られたメールであるかどうかを確認する。
 
-������ե�����˰ʲ��Τ褦��������ɲä��뤳�Ȥˤ�ꡢ���Ԥ������������ۥ��Ȥ�����Ǥ��롣
+ゾーンファイルに以下のような設定を追加することにより、前者の正当な送信ホストを宣言できる。
 
   @ IN  TXT "v=spf1 a mx ~all"
   mail IN TXT "v=spf1 a ~all"
 
-������������:
+こういう前提:
 
-  * �ɥᥤ��̾��example.com���ʤĤޤ�᡼�륢�ɥ쥹��user@example.com��
-  * �᡼�륵���С�HELO�Ǹ����ۥ���̾�ˤ�mail.example.com
-  * example.com��IP���ɥ쥹���������example.com��A�쥳���ɤ����롣�ʤ����@�ΤȤ�������a��ȤäƢ��Τ�Ĥߤ����ˤ���Ф褤����
+  * ドメイン名はexample.com。（つまりメールアドレスはuser@example.com）
+  * メールサーバ（HELOで言うホスト名）はmail.example.com
+  * example.comでIPアドレスが引ける（example.comのAレコードがある。なければ@のところからaをとって↓のやつみたいにすればよい。）
 
-�Ǥ⡢��������ǽ�ʬ�äݤ�����HELO�Υ��ɥ쥹�ϥ����å�����ʤ�����
+でも、これだけで十分っぽい。（HELOのアドレスはチェックされない？）
 
   @ IN  TXT "v=spf1 mx ~all"
 
-((<URL:mailto:check-auth@verifier.port25.com>))�˥����å��������ɥᥤ�󤫤�᡼�������ȥ����å���̤��֤äƤ��롣
+((<URL:mailto:check-auth@verifier.port25.com>))にチェックしたいドメインからメールを送るとチェック結果が返ってくる。

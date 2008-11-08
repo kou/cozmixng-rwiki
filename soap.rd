@@ -1,12 +1,12 @@
 = soap
 
-== ╔╗╔С╔х╔Й║╪
+== Ц┌╗Ц┐ЁЦ┐┬Ц┐╙Ц┐╪
 
-SOAP╔╣║╪╔п╓нURI╓Репо©║╔╫Я╪╟╓о
+SOAPЦ┌╣Ц┐╪Ц┐░Ц│╝URIЦ┌▓Г≥╩И▄╡О╪▌Ф⌡╦Е╪▐Ц│╞
 
-  [и╫╪╗л╬]:[URI]
+  [Х║╗Г╓╨Е░█]:[URI]
 
-╓х╓й╓К║╔и╫╪╗л╬╓Р╬йн╛╓╧╓К╓хURI╓╛и╫╪╗╓╣╓Л╓К║╔
+Ц│╗Ц│╙Ц┌▀О╪▌Х║╗Г╓╨Е░█Ц┌▓Г°│Г∙╔Ц│≥Ц┌▀Ц│╗URIЦ│▄Х║╗Г╓╨Ц│∙Ц┌▄Ц┌▀О╪▌
 
   * COZMIXNG : http://www.cozmixng.org/~rwiki/rw-soap-server.rb
   * PubCOZ : http://pub.cozmixng.org/~rwiki/rw-soap-server.rb

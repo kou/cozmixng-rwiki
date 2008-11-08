@@ -1,36 +1,36 @@
 = DHCP
 
-Debian�Ǥ��á�
+Debianでの話。
 
-((<PXE>))�ǥͥåȥ���֡��Ȥ��뤿���BOOTP�б���DHCP�����Ф����ꡣ
+((<PXE>))でネットワークブートするためのBOOTP対応のDHCPサーバの設定。
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo aptitude -V -r install dhcp3-server
 
-== ����
+== 設定
 
-�ʲ��Τ褦������Ȥ��롣
+以下のような設定とする。
 
-: �ͥåȥ��
+: ネットワーク
    192.168.0.0
 
-: �ǥե���ȥ����ȥ�����/�롼��
+: デフォルトゲートウェイ/ルータ
    192.168.0.1
 
-: DNS������
+: DNSサーバ
    192.168.0.2
 
-: �ɥᥤ��̾
+: ドメイン名
    local.net
 
-: ��������ϰ�
+: 割り当て範囲
    192.168.0.100 - 192.168.0.120
 
-: TFTP�ǥ���������ɤ���ե�����̾
+: TFTPでダウンロードするファイル名
    /pxelinux.0
 
-/etc/dhcp3/dhcpd.conf���ѹ����Τߡ�
+/etc/dhcp3/dhcpd.confの変更点のみ。
 
   option domain-name "local.net";
   option domain-name-servers 192.168.0.2;
@@ -41,6 +41,6 @@ Debian�Ǥ��á�
     option routers 192.168.0.1;
   }
 
-range��dynamic-bootp���ݥ���ȡ�
+rangeのdynamic-bootpがポイント。
 
-pxelinux.0��PXE�б��Υ֡��ȥ�������
+pxelinux.0はPXE対応のブートローダ。

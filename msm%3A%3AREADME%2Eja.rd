@@ -4,38 +4,38 @@
 
 $Id: README.ja 277 2004-08-12 09:17:25Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-mlambda�ϤҤ�ä�����
+mlambdaはひらっちさん
 <http://www.shiro.dreamhost.com/scheme/wiliki/wiliki.cgi?%a4%d2%a4%e9%a4%c3%a4%c1>
-�ˤ���ΤǤ���
+によるものです．
 
-== �饤����
+== ライセンス
 
 GPL or BSD License
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))�������������
+((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-�ʰ�marshal/unmarshal�饤�֥��Ǥ���
+簡易marshal/unmarshalライブラリです．
 
-ʸ�������ͤʤ�read/write�Ǥ��륪�֥������ȤϤ��Τޤ�
-read/write��Ȥä�marshal/unmarshal���ޤ�������³���ʤ�
-read/write�Ǥ��ʤ����֥������Ȥ�ID��Ĥ��ƥ����Ǵ�������
-�����ĤޤꡤƱ���ץ�������Ǥ�marshal/unmarshal�Ǥ��ޤ�����
-�ץ�������ۤ���marshal/unmarshal�ϤǤ��ޤ���
+文字列や数値などread/writeできるオブジェクトはそのまま
+read/writeを使ってmarshal/unmarshalしますが，手続きなど
+read/writeできないオブジェクトはIDをつけてメモリ上で管理しま
+す．つまり，同じプロセス内ではmarshal/unmarshalできますが，
+プロセスを越えてmarshal/unmarshalはできません．
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/msm.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/gauche/msm/trunk msm
 
-== ���󥹥ȡ���
+== インストール
 
   # gosh install/install.scm

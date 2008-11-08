@@ -2,13 +2,13 @@
 
 MTA
 
-== ���ɥ쥹��ĥ��Ȥ�
+== アドレス拡張を使う
 
-((<Postfix>))�Ǥ���
+((<Postfix>))でいう
 
   recipient_delimiter = +
 
-�򤹤�ˤϡ�/etc/exim4/cond.d/router/900_exim4-config_local_user��ʲ��Τ褦���ѹ����롥
+をするには，/etc/exim4/cond.d/router/900_exim4-config_local_userを以下のように変更する．
 
   local_user:
     ...
@@ -17,9 +17,9 @@ MTA
     check_local_user
     ...
 
-check_local_user�����������Τ��ݥ���ȡ�
+check_local_userの前に入れるのがポイント．
 
-real-#{�桼��̾}+XXX@...�ˤ��б�������ʤ�/etc/exim4/cond.d/router/400_exim4-config_system_aliases��Ʊ���褦���ѹ���
+real-#{ユーザ名}+XXX@...にも対応させるなら/etc/exim4/cond.d/router/400_exim4-config_system_aliasesも同じように変更．
 
   real_local:
     ...
@@ -29,27 +29,27 @@ real-#{�桼��̾}+XXX@...�ˤ��б�������ʤ�/etc/exim4/cond.d/router/400_exim4-con
     check_local_user
     ...
 
-== ���ꤷ�����ɥ쥹������Υۥ��Ȥ�ž������
+== 指定したアドレスを特定のホストに転送する
 
-/etc/exim4/hubbed_hosts�˰ʲ��Τ褦�˵��Ҥ��롥
+/etc/exim4/hubbed_hostsに以下のように記述する．
 
   example.com: mail.example.com
 
-�磻��ɥ����ɤȤ��ơ�*�פ��Ȥ��롥
+ワイルドカードとして「*」が使える．
 
-�Ȥ������Ȥǡ�XXX@example.com��XXX@YYY.example.com�⤹�٤�mail.example.com��ž�����������ϰʲ��Τ褦�ˤ��롥
+ということで，XXX@example.comもXXX@YYY.example.comもすべてmail.example.comに転送したい場合は以下のようにする．
 
   example.com: mail.example.com
   *.example.com: mail.example.com
 
-��¦�����mail.example.com���񤤤Ƥ�����ˤˤϥۥ���̾�ǤϤʤ��ơ�IP���ɥ쥹��񤯤��Ȥ�Ǥ��롥
+右側の欄（mail.example.comが書いている欄）にはホスト名ではなくて，IPアドレスを書くこともできる．
 
-== ���ޡ��ȥۥ��Ȥ���³������Υݡ����ֹ���Ѥ���
+== スマートホストで接続する先のポート番号を変える
 
-���ޡ��ȥۥ��Ȥ˥᡼�����Ѥ�����˥��֥ߥå����ݡ���(587)�����Ѥ���ˤ�/etc/exim4/update-exim4.conf.conf��dc_smarthost���ʲ��Τ褦�ˤʤ�褦�ˤ���Ф褤��
+スマートホストにメールを中継する時にサブミッションポート(587)を利用するには/etc/exim4/update-exim4.conf.confのdc_smarthostが以下のようになるようにすればよい。
 
   dc_smarthost='mail.example.com::587'
 
-�Ȥ������Ȥǡ��ʲ��Τ褦��exim������򤹤�Ȥ��ˤ���äݤ�����ˤ���äݤ������뤳�ȡ�
+ということで、以下のようにeximの設定をするときにそれっぽい質問にそれっぽく答えること。
 
   % sudo dpkg-reconfigure exim4-config

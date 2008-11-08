@@ -1,6 +1,6 @@
 = JavaScript
 
-== �ץ��ѥƥ����������
+== プロパティ一覧を出力
 
   for (m in o)
   {
@@ -10,7 +10,7 @@
      document.write("<br>");
   }
 
-== ���򤵤줿�ƥ�����(���ꥢ)�Υƥ����Ȥ��Ѵ�
+== 選択されたテキスト(エリア)のテキストを変換
 
 replace.html
 

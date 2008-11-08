@@ -1,39 +1,39 @@
 = GW-US54GXS
 
-PLANEX��USB�����ץ�
+PLANEXのUSBアダプタ
 ((<GW-US54GXS|URL:http://www.planex.co.jp/product/wireless/gw-us54gxs.shtml>))
-��Debian GNU/Linux��ǥ��������ݥ���ȷ�롼���Ȥ���ư��������ꡣ
+をDebian GNU/Linux上でアクセスポイント兼ルータとして動作させる設定。
 
-USB ID�Ϥ���ʴ�����
+USB IDはこんな感じ。
 
   % lsusb
   Bus 004 Device 001: ID 2019:5303
 
-�⤷�����������ݥ���Ȥˤ��ʤ��Ƥ�褤�ʤ餳��ǽ�ʬ���ʥɥ饤�Фϥ����ͥ����Τ����äƤ��롣��
+もし、アクセスポイントにしなくてもよいならこれで充分。（ドライバはカーネル本体に入っている。）
 
   % sudo aptitude -V -r install zd1211-firmware
 
-�������������ͥ����Τ����ä��ɥ饤�ФϢ���Ʊ����Τ���ʤ��ơ�����ʥ����ͥ�Υ�������ˤ����褦�ˡ��˽�ľ������Τǡ����������ݥ���Ȥˤʤ뵡ǽ�ʤɤ�̤��������ľ�����Τǥɥ饤��̾��zd1211rw�ˤʤäƤ��롣���ʤߤˡ����Υɥ饤�Фϳ�ȯ��λ��
+ただし、カーネル本体に入ったドライバは↓と同じものじゃなくて、↓を（カーネルのスタイルにあうように？）書き直したもので、アクセスポイントになる機能などが未実装。書き直したのでドライバ名はzd1211rwになっている。ちなみに、↓のドライバは開発終了。
 
-== ɬ�פʤ��
+== 必要なもの
 
-  * �ɥ饤��
-  * DHCP������
-  * DNS������
+  * ドライバ
+  * DHCPサーバ
+  * DNSサーバ
 
-=== �ɥ饤��
+=== ドライバ
 
-((<URL:http://zd1211.ath.cx/>))�ˤ���ZD1211�Ȥ����ɥ饤�Ф�Ȥ���
+((<URL:http://zd1211.ath.cx/>))にあるZD1211というドライバを使う。
 
-�������ǿ���(r83)�Ǥ�GW-US54GXS�������˥��ݡ��Ȥ���Ƥ��ʤ�
-�Τǡ�����������äƤ��ƾ��������롣�Ȥ������Ȥǡ��ǿ��Ǥ����
-�Ƥ��롣
+ただ、最新版(r83)ではGW-US54GXSは正式にサポートされていない
+ので、ソースを持ってきて少しいじる。ということで、最新版を持っ
+てくる。
 
   % svn co http://zd1211.ath.cx/repos/trunk zd1211
 
-== ����ѥ���
+== コンパイル
 
-�Ȥꤢ����������ʥѥå��򤢤Ƥ롣
+とりあえず、こんなパッチをあてる。
 
   # enscript diffu
   Index: src/zdusb.c
@@ -62,32 +62,32 @@ USB ID�Ϥ���ʴ�����
    SRC_DIR=src
    DEFINES=-D__KERNEL__ -DMODULE=1
 
-�����/tmp/zd1211-gw-us54gxs.diff�Ȥ�����¸�����ʤ餳�����롣
+これを/tmp/zd1211-gw-us54gxs.diffとかで保存したならこうする。
 
   % cd zd1211
   % patch -p0 < /tmp/zd1211-gw-us54gxs.diff
 
-���Ȥϡ�����ѥ��뤷�ƥ��󥹥ȡ��뤹�롣
+あとは、コンパイルしてインストールする。
 
   % make
   % sudo make install
 
-== ����
+== 設定
 
-ɬ�פʥѥå������򥤥󥹥ȡ��뤹�롥
+必要なパッケージをインストールする．
 
   % sudo aptitude -V -r install wireless-tools zd1211-firmware
 
-=== �����ͥ�⥸�塼�������
+=== カーネルモジュールの設定
 
-/etc/modules�˰ʲ����ɲá�
+/etc/modulesに以下を追加。
 
   zd1211b
   iptable_nat
 
-=== ���󥿡��ե�����������
+=== インターフェイスの設定
 
-/etc/network/interfaces�ˤ���ʤΤ�񤯡�
+/etc/network/interfacesにこんなのを書く。
 
   allow-hotplug wlan0
   iface wlan0 inet static
@@ -106,38 +106,38 @@ USB ID�Ϥ���ʴ�����
       post-up /etc/init.d/bind start
       post-down /sbin/iptables -t nat -D POSTROUTING -s 192.168.1.0/24 -j MASQUERADE
 
-wireless_key�����ꤹ��
+wireless_keyに設定する
 
   XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XX
 
-��16�ʤǽ񤯡�Ŭ���ʤ�ĤǤ����Τʤ餳��ʤ�Ǥ������Ǥ��롣
+は16進で書く。適当なやつでいいのならこんなんでも生成できる。
 
   % ruby -e '26.times {|i| print "%X" % rand(16); print "-" if (i % 4) == 3}; puts'
 
-=== �ѥ��åȥե���ǥ��󥰤�����
+=== パケットフォワーディングの設定
 
-/etc/sysctl.d/forwarding�Ȥ����ʲ��Τ褦�����ƤΥե�����������
+/etc/sysctl.d/forwardingという以下のような内容のファイルを作成。
 
   net.ipv4.ip_forward=1
   net.ipv6.conf.all.forwarding=1
 
-/etc/sysctl.conf�Τ�ĤΥ����Ȥ򳰤��Ƥ⤤�����ɡ����åץǡ��ȤΤȤ��˾�񤭤��롩�Ȥ�ʹ����뤳�Ȥˤʤ�ΤǤ��ä��������ڤ�����
+/etc/sysctl.confのやつのコメントを外してもいいけど、アップデートのときに上書きする？とか聞かれることになるのでこっちの方が楽そう。
 
-ͭ���ˤ��롣
+有効にする。
 
   % sudo /etc/init.d/procps restart
 
-IP�ޥ����졼�ɤ�Ȥ��Τǡ�iptables�򥤥󥹥ȡ��뤹�롣
+IPマスカレードを使うので、iptablesをインストールする。
 
   % sudo aptitude -V -r install iptables
 
-=== DHCP�����Ф�����
+=== DHCPサーバの設定
 
-�Ȥꤢ���������󥹥ȡ��롥
+とりあえず，インストール．
 
   % sudo aptitude -V -r install dhcp
 
-/etc/dhcpd.conf�˰ʲ��Τ褦�ʤ�Ĥ�񤯡�
+/etc/dhcpd.confに以下のようなやつを書く。
 
   subnet 192.168.1.0 netmask 255.255.255.0 {
        range 192.168.1.2 192.168.1.20;
@@ -150,32 +150,32 @@ IP�ޥ����졼�ɤ�Ȥ��Τǡ�iptables�򥤥󥹥ȡ��뤹�롣
        max-lease-time 72000;
   }
 
-/etc/default/dhcp��
+/etc/default/dhcpの
 
   INTERFACES="..."
 
-��wlan0��ä��롣
+にwlan0を加える。
 
   INTERFACES="... wlan0"
 
-=== DNS�����Ф�����
+=== DNSサーバの設定
 
-���󥹥ȡ��뤹�������OK��
+インストールするだけでOK．
 
   % sudo aptitude -V -r install bind
 
-== ư��
+== 動作
 
-���Ϥ���ʴ�����
+手順はこんな感じ．
 
-  * ̵��LAN�����ץ����ޤ�
-  * ���󥿡��ե�������ͭ���ˤ���
+  * 無線LANアダプタを挿す
+  * インターフェイスを有効にする
 
       % sudo /sbin/ifup wlan0
 
-  * �Ȥ�
-  * ���󥿡��ե�������̵���ˤ���
+  * 使う
+  * インターフェイスを無効にする
 
       % sudo /sbin/ifdown wlan0
 
-  * ̵��LAN�����ץ���ȴ��
+  * 無線LANアダプタを抜く

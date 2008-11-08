@@ -1,26 +1,26 @@
 = synclient
 
-X11��Synaptics TouchPad�ɥ饤�Ф�������ǧ�����ꡢ�ѹ������ꤹ�뤿��Υ桼�ƥ���ƥ���
+X11のSynaptics TouchPadドライバの設定を確認したり、変更したりするためのユーティリティ。
 
-== ��˥�
+== モニタ
 
-���äƤ�����ʬ���ɤΰ��֤ˤ��뤫�ʤɤ�ɽ�����롣
+触っている部分がどの位置にあるかなどを表示する。
 
   % syclient -m 1
 
-Edge�ξ������Ȥ��ʤɤ�������
+Edgeの場所を決めるときなどに便利。
 
-== ��ǧ
+== 確認
 
-���ߤ����������ɽ�����롣
+現在の設定一覧を表示する。
 
   % synclient -l
 
-== �ѹ�
+== 変更
 
-������ѹ����롣
+設定を変更する。
 
-  % synclient ̾��1=��1 ̾��2=��2 ...
+  % synclient 名前1=値1 名前2=値2 ...
 
-���ܻز������������ͭ���ˤ�����:
+二本指横スクロールを有効にする例:
   % synclient HorizTwoFingerScroll=true

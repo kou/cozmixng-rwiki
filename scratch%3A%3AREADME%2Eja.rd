@@ -4,76 +4,76 @@
 
 $Id: README.ja 197 2004-06-24 04:36:33Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 GPL or BSD License
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))�������������
+((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-Gauche�ѤΥ�����/���饤���������Web�١������ץꥱ��������
-�졼�����Ǥ������ߤ�HTTP��/phttpd�����֥�å���/�᡼����
-�⥸�塼�뤷������ޤ��󤬡������GUI�ġ��륭�å��ѤΥ⥸�塼
-����ɲä��褦�ȻפäƤ��ޤ���
+Gauche用のサーバ/クライアント方式Webベースアプリケーションフ
+レームワークです．現在はHTTP用/phttpdサーブレット用/メール用
+モジュールしかありませんが，将来はGUIツールキット用のモジュー
+ルも追加しようと思っています．
 
-�ʲ��Τ褦�ʵ�ǽ������ޤ���
+以下のような機能があります．
 
-  * ���å�������
-  * �桼������
-  * ���������̥ǡ�������
-  * ������������
-  * ���å����Υ����ॢ���ȴ���
-  * ��괹����ǽ�ʥ桼��/���å��������⥸�塼��
-  * CGI���饤����ȤΥ��ݡ���
-  * SMTP��ͳ�Υ��饤����ȤΥ��ݡ���
+  * セッション管理
+  * ユーザ管理
+  * スコープ別データ管理
+  * アクセス制御
+  * セッションのタイムアウト管理
+  * 取り換え可能なユーザ/セッション管理モジュール
+  * CGIクライアントのサポート
+  * SMTP経由のクライアントのサポート
   * ((<esm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=esm>))
-    �Υ��ݡ���
+    のサポート
 
-�ʲ��Τ褦�ʵ�ǽ�⤢��Ф����ʤȻפäƤ��ޤ���
+以下のような機能もあればいいなと思っています．
 
   * I18N
-  * �ץ饰����
-    * ���å��������ȥ桼��������ץ饰���󲽤������ʡ�
-  * esm�ʳ���(MVC��)View���ۻٱ�饤�֥��Υ��ݡ���
-  * ��������
-  * ���롼��(���뤤�����(role))�ˤ�륢����������
-  * �ޥ������åɥ�����
-    * ���ߡ�dsm��select�ǥ��饤����Ȥ�����׵��������Ƥ�
-      ��ΤǤ��ε�ǽ��ɬ�ܤǤϤʤ���
+  * プラグイン
+    * セッション管理とユーザ管理もプラグイン化したいな．
+  * esm以外の(MVCの)View構築支援ライブラリのサポート
+  * ログ出力
+  * グループ(あるいは役割(role))によるアクセス制御
+  * マルチスレッドセーフ
+    * 現在，dsmはselectでクライアントからの要求を処理してい
+      るのでこの機能は必須ではない．
 
-�ʲ��Τ褦�ʵ�ǽ�Ϥ��ۤɶ�̣������ޤ���
+以下のような機能はさほど興味がありません．
 
-  * �����֥�å���ε�ư/��λ
-    * �ץ�����������˰�ĥ����Ф�Ω�Ƥ�Ф����ΤǤϡ�
+  * サーブレット毎の起動/終了
+    * プロジェクト毎に一つサーバを立てればいいのでは？
 
-  * ����饤��ѥå�
-    * ����Υݡ��Ȥ�REPL����Ф��������ʤΤǴ�ñ�����ɡ�����
-      ��������Ȥ���������ݤ����顥
+  * オンラインパッチ
+    * 特定のポートでREPLすればいいだけなので簡単だけど，アク
+      セス制御とかすると面倒だから．
 
-== ��¸�饤�֥��
+== 依存ライブラリ
 
   * ((<esm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=esm>))
   * ((<dsm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=dsm>))
   * ((<marshal|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=marshal>))
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/scratch.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/gauche/scratch/trunk scratch
 
-== ���󥹥ȡ���
+== インストール
 
   # gosh install/install.scm
 
-== ��¤
+== 構造
 
   +------------+          +----------------------------------------------------+
   |            |   dsm    |                                                    |
@@ -81,8 +81,8 @@ Gauche�ѤΥ�����/���饤���������Web�١������ץꥱ��������
   |            |    id    |              id                session             |
   |            |  action  |             action             others              |
   |            |  others  |             others                                 |
-  |���饤�����|         scratch������         �����֥�å�        ���������  |
-  |   CGI��    |   dsm    |                                                    |
+  |クライアント|         scratchサーバ         サーブレット        アクション  |
+  |   CGI等    |   dsm    |                                                    |
   |            | <------  |            <------             <------             |
   |            |   header |             header              view-name          |
   |            |   result |             result                                 |
@@ -90,51 +90,51 @@ Gauche�ѤΥ�����/���饤���������Web�١������ץꥱ��������
   |            |          |                result |   | session                |
   |            |          |                       |   | others                 |
   |            |          |                       |   \/                       |
-  |            |          |                      �ӥ塼                        |
-  |            |          |                       esm��                        |
+  |            |          |                      ビュー                        |
+  |            |          |                       esm等                        |
   +------------+          +----------------------------------------------------+
 
-=== ���饤�����
+=== クライアント
 
-���ߡ����饤������ѥ饤�֥��Ȥ���CGI�ѤΥ饤�֥��Τ���
-�����Ƥ��ޤ������Υ饤�֥���Ȥ����Ȥˤ��CGI������ץȤ�
-�ʲ��Τ褦�˽񤯤����Ǥ褯�ʤ�ޤ���
+現在，クライアント用ライブラリとしてCGI用のライブラリのみ提
+供しています．このライブラリを使うことによりCGIスクリプトは
+以下のように書くだけでよくなります．
 
   #!/usr/local/bin/gosh
 
   (use scratch.client.cgi)
 
   (define (main args)
-    (scratch-cgi-main "dsmp://scratch�����Ф�ư���Ƥ���ۥ���̾:�ݡ����ֹ�"
-                      "�����֥�åȤΥޥ���ȥݥ����"))
+    (scratch-cgi-main "dsmp://scratchサーバが動いているホスト名:ポート番号"
+                      "サーブレットのマウントポイント"))
 
-=== scratch������
+=== scratchサーバ
 
-scratch�����Ф�URI�Ǽ��̤���ޤ�����äơ�scratch�����Ф��
-������Ȥ��ϰʲ��Τ褦�ˤʤ�ޤ���
+scratchサーバはURIで識別されます．よって，scratchサーバを作
+成するときは以下のようになります．
 
-  (make-scratch-server "dsmp://�ۥ���̾:�ݡ����ֹ�")
+  (make-scratch-server "dsmp://ホスト名:ポート番号")
 
-�ۥ���̾/�ݡ����ֹ�ϤȤ�˾�ά���뤳�Ȥ��Ǥ�����ά���줿��
-���"localhost"/0�ʶ����Ƥ���ݡ����ֹ��Ȥ��Ȥ�����̣�ˤ�
-���ꤷ����ΤȤߤʤ���ޤ��������<dsm-server>�ν���ͤ˰�¸
-���Ƥ��ޤ���
+ホスト名/ポート番号はともに省略することができ，省略された場
+合は"localhost"/0（空いているポート番号を使うという意味）を
+指定したものとみなされます．これは<dsm-server>の初期値に依存
+しています．
 
-scratch�����Фˤ�ʣ���Υ����֥�åȤ�ޥ���Ȥ��뤳�Ȥ��Ǥ�
-�ޤ����ƥ����֥�åȤϥޥ���ȥݥ���Ȥˤ�äƼ��̤���ޤ���
-scratch�����Ф˥����֥�åȤ�ޥ���Ȥ���Ȥ��ϰʲ��Τ褦��
-���ޤ���
+scratchサーバには複数のサーブレットをマウントすることができ
+ます．各サーブレットはマウントポイントによって識別されます．
+scratchサーバにサーブレットをマウントするときは以下のように
+します．
 
-  (add-mount-point! scratch������ "�ޥ���ȥݥ����" �����֥�å�)
+  (add-mount-point! scratchサーバ "マウントポイント" サーブレット)
 
-�ޥ���Ȥ��������Ǥ�scratch�����Фϥ��饤����Ȥ������³��
-�����դ��ޤ��󡥥��饤����Ȥ������³������դ��뤿��˰ʲ�
-�Τ褦�ˤ��ƥ��饤����Ȥ������³������դ���롼�פ������
-����
+マウントしただけではscratchサーバはクライアントからの接続を
+受け付けません．クライアントからの接続を受け付けるために以下
+のようにしてクライアントからの接続を受け付けるループに入りま
+す．
 
-  (start-scratch-server scratch������)
+  (start-scratch-server scratchサーバ)
 
-scratch�����Ф�ư���륹����ץȤϰʲ��Τ褦�ˤʤ�Ǥ��礦��
+scratchサーバを起動するスクリプトは以下のようになるでしょう．
 
   #!/usr/bin/env gosh
 
@@ -145,19 +145,19 @@ scratch�����Ф�ư���륹����ץȤϰʲ��Τ褦�ˤʤ�Ǥ��礦��
       (add-mount-point! server "/sample" (make-sample-servlet))
       (start-scratch-server server)))
 
-=== �����֥�å�
+=== サーブレット
 
-�����֥�åȤϥ��饤����Ȥ���Υꥯ�����Ȥ���Ŭ�ڤʥ�������
-���ƤӽФ��ޤ������������η�̤ˤ��Ŭ�ڤʥӥ塼��Ƥӽ�
-�������饤����Ȥ��֤��ޤ���
+サーブレットはクライアントからのリクエストから適切なアクショ
+ンを呼び出します．アクションの結果により適切なビューを呼び出
+し，クライアントに返します．
 
-�����֥�åȤˤϥ桼��������ǽ/�����������浡ǽ���Ȥ߹��ळ
-�Ȥ��Ǥ��ޤ����ǥե���ȤǤ��Ȥ߹��ޤ�Ƥ��ޤ���
+サーブレットにはユーザ管理機能/アクセス制御機能を組み込むこ
+とができます．デフォルトでは組み込まれていません．
 
-�����֥�åȤϤ��줾��⥸�塼�����äƤ��ޤ��������֥�å�
-�Υ⥸�塼��β��ˤϥ���������ӥ塼�����֤���ޤ���������
-��å��ѤΥǥ��쥯�ȥ깽���ϰʲ��Τ褦�ˤʤ�ޤ��������ǡ�����
-�֥�åȤΥ⥸�塼��̾��sample-servlet�Ȥ��ޤ���
+サーブレットはそれぞれモジュールを持っています．サーブレット
+のモジュールの下にはアクションやビューが配置されます．サーブ
+レット用のディレクトリ構成は以下のようになります．ここで，サー
+ブレットのモジュール名はsample-servletとします．
 
   . --+-- sample-servlet.scm
       |
@@ -167,8 +167,8 @@ scratch�����Ф�ư���륹����ץȤϰʲ��Τ褦�ˤʤ�Ǥ��礦��
                                       |
                                       +-- http --+-- *.esm
 
-sample-servlet.scm�ϥ����֥�åȤ�������뤿��˻Ȥ��ޤ�����
-���С��ʲ��Τ褦�ˤʤ�ޤ���
+sample-servlet.scmはサーブレットを作成するために使います．例
+えば，以下のようになります．
 
   (define-module sample-servlet
     (use scratch.servlet)
@@ -181,7 +181,7 @@ sample-servlet.scm�ϥ����֥�åȤ�������뤿��˻Ȥ��ޤ�����
 
   (provide "sample-servlet")
 
-�桼��������ǽ���Ȥ߹���ˤϰʲ��Τ褦�ˤ��ޤ���
+ユーザ管理機能を組み込むには以下のようにします．
 
   (define-module sample-servlet
     (use scratch.servlet)
@@ -197,7 +197,7 @@ sample-servlet.scm�ϥ����֥�åȤ�������뤿��˻Ȥ��ޤ�����
 
   (provide "sample-servlet")
 
-�����������浡ǽ���Ȥ߹���ˤϰʲ��Τ褦�ˤ��ޤ���
+アクセス制御機能を組み込むには以下のようにします．
 
   (define-module sample-servlet
     (use scratch.servlet)
@@ -215,18 +215,18 @@ sample-servlet.scm�ϥ����֥�åȤ�������뤿��˻Ȥ��ޤ�����
 
   (provide "sample-servlet")
 
-������Ǥϡ��ǥե���Ȥ����ƤΥ��������ϵ��ݤ�
-(:default-authoriy 'deny)��add-user�Ȥ�������������������
-�ƤΥ桼���˵���(:authority-map '((#t add-user)))���ޤ���
+この例では，デフォルトで全てのアクションは拒否し
+(:default-authoriy 'deny)，add-userというアクションだけは全
+てのユーザに許可(:authority-map '((#t add-user)))します．
 
-����Ǥϡ��ʲ��Τ褦������ˤ�����򼨤��ޤ���
+それでは，以下のような制御にする例を示します．
 
-  * �ǥե���Ȥ����ƤΥ������������
-  * guest�桼����reset�������������
-  * ���ƤΥ桼����admin�������������
-    * ��������master�桼���ˤ����ƤΥ������������
+  * デフォルトで全てのアクションを許可
+  * guestユーザはresetアクションを拒否
+  * 全てのユーザはadminアクションを拒否
+    * ただし，masterユーザには全てのアクションを許可
 
-�����Ǥϡ�:user-manager����ʬ���������ޤ���
+ここでは，:user-managerの部分だけ示します．
 
   (make <user-manager-file>
     :default-authority 'allow
@@ -234,18 +234,18 @@ sample-servlet.scm�ϥ����֥�åȤ�������뤿��˻Ȥ��ޤ�����
                      (master)
                      (#t admin)))
 
-sample-servlet.scm��ɬ�ܤǤϤ���ޤ��󤬡�����Ū�˥����֥��
-�Ȥ�������뤿����Ѥ���褦�ˤʤ�Ǥ��礦��
+sample-servlet.scmは必須ではありませんが，慣習的にサーブレッ
+トを作成するために用いるようになるでしょう．
 
-=== ���������
+=== アクション
 
-����������"�����֥�åȤΥ⥸�塼��̾.action"�Ȥ���̾����
-�⥸�塼���������ޤ���������Ǥ�sample-servlet�������֥��
-�ȤΥ⥸�塼��̾�ʤΤǥ��������Υ⥸�塼��̾��
-sample-servlet.action�ˤʤ�ޤ���
+アクションは"サーブレットのモジュール名.action"という名前の
+モジュールに定義します．この例ではsample-servletがサーブレッ
+トのモジュール名なのでアクションのモジュール名は
+sample-servlet.actionになります．
 
-����������������륹����ץ�sample-servlet/action.scm�ϰ�
-���Τ褦�ˤʤ�Ǥ��礦��
+アクションを定義するスクリプトsample-servlet/action.scmは以
+下のようになるでしょう．
 
   (define-module sample-servlet.action
     (use scratch.action)
@@ -253,30 +253,30 @@ sample-servlet.action�ˤʤ�ޤ���
     (export ...))
   (select-module sample-servlet.action)
 
-  �������������
+  アクションの定義
 
   (provide "sample-servlet/action")
 
-����������"do-"�ǻϤޤ��ѿ���«�����줿������̵����³���ǡ�
-���饤����Ȥ��֤��ӥ塼����ꤹ�륷��ܥ���֤��ޤ���������
-��åȤϥ��饤����Ȥ����׵ᤵ�줿�����������б�����"do- 
-���������"�Ȥ����ѿ���«�����줿��³����ƤӽФ��ޤ����⤷��
-"do-���������"�Ȥ����ѿ���export����Ƥ��ʤ����
-"do-default"��«������Ƥ����³����ƤӽФ��ޤ���
+アクションは"do-"で始まる変数に束縛された引数の無い手続きで，
+クライアントに返すビューを指定するシンボルを返します．サーブ
+レットはクライアントから要求されたアクションに対応する"do- 
+アクション"という変数に束縛された手続きを呼び出します．もし，
+"do-アクション"という変数がexportされていなければ
+"do-default"に束縛されている手続きを呼び出します．
 
-"do-xxx"��«�����줿��³���ϥ���������������Ƥ���⥸�塼
-���Ʊ���Ķ���ɾ������ޤ���
+"do-xxx"に束縛された手続きはアクションを定義しているモジュー
+ルと同じ環境で評価されます．
 
-=== �ӥ塼
+=== ビュー
 
-�ӥ塼��"�����֥�åȤΥ⥸�塼��̾.view.���饤��ȤΥ�����"
-�Ȥ���̾���Υ⥸�塼���������ޤ������饤����ȤΥ����פϥ�
-���ȥ����Ʊ���ˤʤ�ޤ����㤨�С����饤����Ȥ�CGI���Ȥ���
-��"http"�ˤʤ�ޤ�����äơ����饤����Ȥ�CGI����
-sample-servlet.view.http���ӥ塼�Υ⥸�塼��̾�ˤʤ�ޤ���
+ビューは"サーブレットのモジュール名.view.クライントのタイプ"
+という名前のモジュールに定義します．クライアントのタイプはプ
+ロトコルと同じになります．例えば，クライアントがCGIだとする
+と"http"になります．よって，クライアントがCGIだと
+sample-servlet.view.httpがビューのモジュール名になります．
 
-�ӥ塼��������륹����ץ�sample-servlet/view/http.scm�ϰʲ�
-�Τ褦�ˤʤ�Ǥ��礦��
+ビューを定義するスクリプトsample-servlet/view/http.scmは以下
+のようになるでしょう．
 
   (define-module sample-servlet.view.http
     (use esm.gauche)
@@ -286,95 +286,95 @@ sample-servlet.view.http���ӥ塼�Υ⥸�塼��̾�ˤʤ�ޤ���
     )
   (select-module sample-servlet.view.http)
 
-  �ӥ塼������������³��
+  ビューの定義や補助手続き
   
   (provide "sample-servlet/view/http")
 
-�ӥ塼�ϰ�����̵����³���ǥ��饤����ȤؤΥ쥹�ݥ󥹤��֤���
-�������饤����Ȥ�CGI�ξ���HTTP�Υܥǥ��Ȥʤ�ʸ������֤���
-����
+ビューは引数の無い手続きでクライアントへのレスポンスを返しま
+す．クライアントがCGIの場合はHTTPのボディとなる文字列を返しま
+す．
 
-�ӥ塼���֤���Τ�ʸ����Ǥ��뤳�Ȥ�¿���Ǥ������Τ��ᡤ
-scratch�Ǥ�esm�򥵥ݡ��Ȥ��Ƥ��ޤ���load-esm-files�ϰ����Ȥ�
-��Ϳ����줿glob(7)�Υѥ�����ˤ�äƥޥå������ե������esm 
-�ե�����Ȥ����ɤ߹��ߡ�S���˥���ѥ��뤵�줿esm�ե�������
-�Ԥ����³����������ޤ���������줿��³���ϳ�ĥ�Ҥ������
-esm�ե�����̾��Ʊ��̾���Υ���ܥ��«�����졤���Υ���ܥ��
-export����ޤ���
+ビューが返すものは文字列であることが多いです．そのため，
+scratchではesmをサポートしています．load-esm-filesは引数とし
+て与えられたglob(7)のパターンによってマッチしたファイルをesm 
+ファイルとして読み込み，S式にコンパイルされたesmファイルを実
+行する手続きを定義します．定義された手続きは拡張子を除いた
+esmファイル名と同じ名前のシンボルに束縛され，そのシンボルは
+exportされます．
 
-�㤨�С��ʲ��Τ褦��load-esm-files��ƤӽФ����Ȥ��ޤ���
+例えば，以下のようにload-esm-filesを呼び出したとします．
 
   (load-esm-files "sample-servlet/view/http/*.esm")
   
-�����ǡ�sample-servlet/view/http/�ʲ��˰ʲ��Τ褦�ʥե�����
-�����ä��Ȥ��ޤ���
+ここで，sample-servlet/view/http/以下に以下のようなファイル
+があったとします．
 
   * test.txt
   * main.esm
   * login.esm
 
-���ΤȤ���main.esm��login.esm��esm�ե�����Ȥ��ƥ���ѥ��뤵
-�졤���줾���¹Ԥ����³����main, login�Ȥ�������ܥ��«
-�����졤export����ޤ�����äơ�main.esm��esm�ե�����Ȥ���
-�¹Ԥ���ˤϰʲ��Τ褦�ˤ��ޤ���
+このとき，main.esmとlogin.esmがesmファイルとしてコンパイルさ
+れ，それぞれを実行する手続きはmain, loginというシンボルに束
+縛され，exportされます．よって，main.esmをesmファイルとして
+実行するには以下のようにします．
 
   (main)
 
-�����֥�åȤϥ���������֤�������ܥ뤬�ӥ塼�Υ⥸�塼��
-��export����Ƥ���Х���ܥ��«������Ƥ����³����ƤӽФ�
-�ޤ����⤷��export����Ƥ��ʤ����default-view�Ȥ�����³����
-�ƤӽФ��ޤ��������֥�åȤϥӥ塼�μ�³����ӥ塼�Υ⥸�塼
-�����ɾ�����ޤ���
+サーブレットはアクションが返したシンボルがビューのモジュール
+でexportされていればシンボルに束縛されている手続きを呼び出し
+ます．もし，exportされていなければdefault-viewという手続きを
+呼び出します．サーブレットはビューの手続きをビューのモジュー
+ル内で評価します．
 
-=== scratch����������ǡ���
+=== scratchが管理するデータ
 
-scratch�Ǵ�������ǡ����ˤ�3����Υ������פ�����ޤ���
+scratchで管理するデータには3種類のスコープがあります．
 
-  (1) �����֥�å�ñ��
+  (1) サーブレット単位
       
-      scratch�����Ф˥ޥ���Ȥ��줿�����֥�å���˻��ĥǡ�
-      ���Ǥ���Ʊ���ޥ���ȥݥ���ȤΥ����֥�å���ǥǡ�����
-      ��ͭ�Ǥ��ޤ���
+      scratchサーバにマウントされたサーブレット毎に持つデー
+      タです．同じマウントポイントのサーブレット内でデータを
+      共有できます．
       
-      ���������/�ӥ塼�Ǥ�get-servlet-value,
+      アクション/ビューではget-servlet-value,
       set-servlet-value!, delete-servlet-value!,
-      servlet-value-exists?�ǥ��������Ǥ��ޤ���
+      servlet-value-exists?でアクセスできます．
 
-  (1) ���å����ñ��
+  (1) セッション単位
       
-      ���å������˻��ĥǡ����Ǥ����桼���������Ϥ��Υ�����
-      �פ���¸����Ƥ��ޤ���
+      セッション毎に持つデータです．ユーザ情報等はこのスコー
+      プに保存されています．
       
-      ���������/�ӥ塼�Ǥ�get-value, set-value!,
-      delete-value!, value-exists?�ǥ��������Ǥ��ޤ���
+      アクション/ビューではget-value, set-value!,
+      delete-value!, value-exists?でアクセスできます．
 
-  (1) ��������ñ��
+  (1) サイクル単位
       
-      ���Υꥯ������/�쥹�ݥ���˻��ĥǡ����Ǥ���
+      一回のリクエスト/レスポンス毎に持つデータです．
       
-      ���������/�ӥ塼�Ǥ�get-cycle-value,
+      アクション/ビューではget-cycle-value,
       set-cycle-value!, delete-cycle-value!,
-      value-cycle-exists?�ǥ��������Ǥ��ޤ���
+      value-cycle-exists?でアクセスできます．
       
-=== ����¾�Υǡ���
+=== その他のデータ
 
-  (1) �쥹�ݥ󥹤Υ᥿����
+  (1) レスポンスのメタ情報
       
-      ���饤����Ȥ��֤��쥹�ݥ󥹰ʳ��˥쥹�ݥ󥹤Υ᥿����
-      ���Ϥ��������Ȥ�����ޤ���HTTP�Ǥϥإå��˴ؤ������
-      ����ˤ�����ޤ���scratch�Ǥϰ��Υꥯ������/�쥹�ݥ�
-      ��ñ�̤Υǡ����Ȥ��ƥ쥹�ݥ󥹤Υ᥿����򰷤��ޤ���
+      クライアントに返すレスポンス以外にレスポンスのメタ情報
+      も渡したいことがあります．HTTPではヘッダに関する情報が
+      それにあたります．scratchでは一回のリクエスト/レスポン
+      ス単位のデータとしてレスポンスのメタ情報を扱います．
       
-      �쥹�ݥ󥹤Υ᥿�����get-response-value,
+      レスポンスのメタ情報はget-response-value,
       set-response-value!, delete-response-value!,
-      value-response-exists?�ǥ��������Ǥ��ޤ�������������
-      ��ӥ塼�Ǥ⥢�������Ǥ��ޤ������쥹�ݥ󥹤Υ᥿�����
-      �ӥ塼��˰��������������Ǥϴ��Τ���٤��ǤϤ���ޤ�
-      ��
+      value-response-exists?でアクセスできます．アクションで
+      もビューでもアクセスできますが，レスポンスのメタ情報は
+      ビュー毎に扱い，アクションでは関知するべきではありませ
+      ん．
       
-      �㤨�С�HTTP�ǥ��饤����Ȥ�main�Ȥ��������������׵�
-      ����褦�˰�ư������ˤϰʲ��Τ褦�ʥӥ塼���������
-      export���ޤ���
+      例えば，HTTPでクライアントにmainというアクションを要求
+      するように移動させるには以下のようなビューを定義し，
+      exportします．
       
         (define (jump-to-main)
           (set-response-value! :location (href :action 'main))

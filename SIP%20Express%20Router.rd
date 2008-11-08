@@ -1,82 +1,82 @@
 = SIP Express Router
 
-SIP¥µ¡¼¥Ğ¡£
+SIPã‚µãƒ¼ãƒã€‚
 
 SIP Express Router (ser) is a high-performance, configurable, free SIP ( RFC3261 ) server . It can act as registrar, proxy or redirect server.
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
-¥æ¡¼¥¶´ÉÍı¤Ë¤ÏMySQL¤ò»È¤¦¤Î¤Çmysql-server¤âÆş¤ì¤ë¡£
+ãƒ¦ãƒ¼ã‚¶ç®¡ç†ã«ã¯MySQLã‚’ä½¿ã†ã®ã§mysql-serverã‚‚å…¥ã‚Œã‚‹ã€‚
 
   % sudo portupgrade -NRr ser mysql-server
 
-== ½é´üÀßÄê
+== åˆæœŸè¨­å®š
 
-MySQL¤ËSERÍÑ¤Î¥Ç¡¼¥¿¥Ù¡¼¥¹ser¤òºîÀ®¤¹¤ë¡£¤³¤Î¤¿¤á¤Ëser_mysql.sh¤È¤¤¤¦¥·¥§¥ë¥¹¥¯¥ê¥×¥È¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤ë¡£
+MySQLã«SERç”¨ã®ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹serã‚’ä½œæˆã™ã‚‹ã€‚ã“ã®ãŸã‚ã«ser_mysql.shã¨ã„ã†ã‚·ã‚§ãƒ«ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒç”¨æ„ã•ã‚Œã¦ã„ã‚‹ã€‚
 
   % sudo /usr/local/sbin/ser_mysql.sh create
-  MySql password for root: <- MySQL¤Îroot¤Î¥Ñ¥¹¥ï¡¼¥É¤òÆşÎÏ
-  Enter password: <- MySQL¤Îroot¤Î¥Ñ¥¹¥ï¡¼¥É¤òÆşÎÏ
-  Domain (realm) for the default user 'admin': sip.cozmixng.org <- SIP¥µ¡¼¥Ğ¤Ç»È¤¦¥É¥á¥¤¥óÌ¾¤òÆşÎÏ
+  MySql password for root: <- MySQLã®rootã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›
+  Enter password: <- MySQLã®rootã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›
+  Domain (realm) for the default user 'admin': sip.cozmixng.org <- SIPã‚µãƒ¼ãƒã§ä½¿ã†ãƒ‰ãƒ¡ã‚¤ãƒ³åã‚’å…¥åŠ›
   
   creating database ser ...
-  Enter password: <- MySQL¤Îroot¤Î¥Ñ¥¹¥ï¡¼¥É¤òÆşÎÏ
+  Enter password: <- MySQLã®rootã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›
 
-SIP¥µ¡¼¥Ğ¤Ç»È¤¦¥É¥á¥¤¥óÌ¾¤Ï/etc/hosts¤Ë½ñ¤¤¤Æ¤ª¤¯¤³¤È¡£¥Ç¥Ğ¥Ã¥°¥â¡¼¥É¤Çµ¯Æ°¤¹¤ë¤È¼«Ê¬¤Î¥É¥á¥¤¥óÌ¾¤È¤·¤Æ»È¤Ã¤Æ¤¤¤ë¥É¥á¥¤¥óÌ¾¤ò¤ß¤ë¤³¤È¤¬¤Ç¤­¤ë¡£
+SIPã‚µãƒ¼ãƒã§ä½¿ã†ãƒ‰ãƒ¡ã‚¤ãƒ³åã¯/etc/hostsã«æ›¸ã„ã¦ãŠãã“ã¨ã€‚ãƒ‡ãƒãƒƒã‚°ãƒ¢ãƒ¼ãƒ‰ã§èµ·å‹•ã™ã‚‹ã¨è‡ªåˆ†ã®ãƒ‰ãƒ¡ã‚¤ãƒ³åã¨ã—ã¦ä½¿ã£ã¦ã„ã‚‹ãƒ‰ãƒ¡ã‚¤ãƒ³åã‚’ã¿ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚
 
   % sudo /usr/local/sbin/ser -d -D 
   Listening on
   ...
   Aliases:
-  ... ¤³¤ÎÃæ¤ËSIP¥µ¡¼¥Ğ¤Ç»È¤¦¥É¥á¥¤¥óÌ¾¤¬¤¢¤ë¤³¤È
+  ... ã“ã®ä¸­ã«SIPã‚µãƒ¼ãƒã§ä½¿ã†ãƒ‰ãƒ¡ã‚¤ãƒ³åãŒã‚ã‚‹ã“ã¨
   ^C
   %
 
-ºÆ½é´ü²½¤¹¤ë¤È¤­¤Ïcreate¤¸¤ã¤Ê¤¯¤Æreinit¤ò»È¤¦¡£
+å†åˆæœŸåŒ–ã™ã‚‹ã¨ãã¯createã˜ã‚ƒãªãã¦reinitã‚’ä½¿ã†ã€‚
 
   % sudo /usr/local/sbin/ser_mysql.sh reinit
 
-ser_mysql.sh¤ÇºîÀ®¤µ¤ì¤¿¥Ç¡¼¥¿¥Ù¡¼¥¹ser¤Ë¥¢¥¯¥»¥¹¤¹¤ë¤¿¤á¤ÎMySQL¤Î¥æ¡¼¥¶¤òºîÀ®¤¹¤ë¡£¤³¤³¤Ç¤Ïser¥æ¡¼¥¶¤ÇSECRET¤È¤¤¤¦¥Ñ¥¹¥ï¡¼¥É¤Ë¤¹¤ë¡£
+ser_mysql.shã§ä½œæˆã•ã‚ŒãŸãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹serã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãŸã‚ã®MySQLã®ãƒ¦ãƒ¼ã‚¶ã‚’ä½œæˆã™ã‚‹ã€‚ã“ã“ã§ã¯serãƒ¦ãƒ¼ã‚¶ã§SECRETã¨ã„ã†ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã«ã™ã‚‹ã€‚
 
   % sudo -u mysql -H mysql -u root
   mysql> GRANT ALL ON ser.* TO ser@localhost IDENTIFIED BY 'SECRET';
 
-== ¥æ¡¼¥¶ÅĞÏ¿
+== ãƒ¦ãƒ¼ã‚¶ç™»éŒ²
 
-¥æ¡¼¥¶ÅĞÏ¿¤Ë¤Ïserctl¤ò»È¤¦¡£SIP¥¢¥É¥ì¥¹¤¬kou@sip.cozmixng.org¡Êsip.cozmixng.org¤Ïser_mysql.sh create¤Ç»ØÄê¤·¤¿¥É¥á¥¤¥óÌ¾¡Ë¤Ç¥Ñ¥¹¥ï¡¼¥É¤¬MY-SECRET¤Ç¥á¡¼¥ë¥¢¥É¥ì¥¹¤¬kou@cozmixng.org¤Ê¥æ¡¼¥¶¤Ï°Ê²¼¤Î¤è¤¦¤ËÅĞÏ¿¤¹¤ë¡£
+ãƒ¦ãƒ¼ã‚¶ç™»éŒ²ã«ã¯serctlã‚’ä½¿ã†ã€‚SIPã‚¢ãƒ‰ãƒ¬ã‚¹ãŒkou@sip.cozmixng.orgï¼ˆsip.cozmixng.orgã¯ser_mysql.sh createã§æŒ‡å®šã—ãŸãƒ‰ãƒ¡ã‚¤ãƒ³åï¼‰ã§ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒMY-SECRETã§ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ãŒkou@cozmixng.orgãªãƒ¦ãƒ¼ã‚¶ã¯ä»¥ä¸‹ã®ã‚ˆã†ã«ç™»éŒ²ã™ã‚‹ã€‚
 
   % sudo /usr/local/sbin/serctl add kou@sip.cozmixng.org MY-SECRET kou@cozmixng.org
-  MySql password: <- MySQL¤Îser¥æ¡¼¥¶¤Î¥Ñ¥¹¥ï¡¼¥É¡¢¢¬¤ÎÎã¤À¤ÈSECRET¤òÆşÎÏ
+  MySql password: <- MySQLã®serãƒ¦ãƒ¼ã‚¶ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã€â†‘ã®ä¾‹ã ã¨SECRETã‚’å…¥åŠ›
 
-ºï½ü¤ÏSIP¥¢¥É¥ì¥¹¤À¤±¤ò»ØÄê¤¹¤ë¡£
+å‰Šé™¤ã¯SIPã‚¢ãƒ‰ãƒ¬ã‚¹ã ã‘ã‚’æŒ‡å®šã™ã‚‹ã€‚
 
   % sudo /usr/local/sbin/serctl rm kou@sip.cozmixng.org
 
-¤¢¤È¤ÇÀÜÂ³¥Æ¥¹¥È¤ò¤¹¤ë¤Î¤Ç¡¢¤â¤¦¤Ò¤È¤Ä¥æ¡¼¥¶¤òºî¤Ã¤Æ¤ª¤¯¡£
+ã‚ã¨ã§æ¥ç¶šãƒ†ã‚¹ãƒˆã‚’ã™ã‚‹ã®ã§ã€ã‚‚ã†ã²ã¨ã¤ãƒ¦ãƒ¼ã‚¶ã‚’ä½œã£ã¦ãŠãã€‚
 
   % sudo /usr/local/sbin/serctl add test@sip.cozmixng.org TEST-SECRET test@cozmixng.org
 
-== ÀßÄê
+== è¨­å®š
 
-¤Ş¤º¡¢/etc/rc.conf¤Ëser_enable="YES"¤òÄÉ²Ã¤¹¤ë¡£
+ã¾ãšã€/etc/rc.confã«ser_enable="YES"ã‚’è¿½åŠ ã™ã‚‹ã€‚
 
-Â³¤¤¤ÆSER¤ÎÀßÄê¡£
+ç¶šã„ã¦SERã®è¨­å®šã€‚
 
-MySQL¤Ë¤¢¤ë¥Ç¡¼¥¿¤ò»È¤¦¤è¤¦¤Ë/usr/local/etc/ser/ser.cfg¤ò½ñ¤­´¹¤¨¤ë¡£
+MySQLã«ã‚ã‚‹ãƒ‡ãƒ¼ã‚¿ã‚’ä½¿ã†ã‚ˆã†ã«/usr/local/etc/ser/ser.cfgã‚’æ›¸ãæ›ãˆã‚‹ã€‚
 
-¤Ş¤º¡¢MySQLÍÑ¤Î¥â¥¸¥å¡¼¥ë¤òÆÉ¤ß¹ş¤à¡£
+ã¾ãšã€MySQLç”¨ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’èª­ã¿è¾¼ã‚€ã€‚
 
   # _
   # Uncomment this if you want to use SQL database
   #loadmodule "/usr/local/lib/ser/modules/mysql.so"
 
-¢­
+â†“
 
   # _
   # Uncomment this if you want to use SQL database
   loadmodule "/usr/local/lib/ser/modules/mysql.so"
 
-Ç§¾ÚÍÑ¤Î¥â¥¸¥å¡¼¥ë¤âÆÉ¤ß¹ş¤à¡£
+èªè¨¼ç”¨ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚‚èª­ã¿è¾¼ã‚€ã€‚
 
   # _
   # Uncomment this if you want digest authentication
@@ -84,7 +84,7 @@ MySQL¤Ë¤¢¤ë¥Ç¡¼¥¿¤ò»È¤¦¤è¤¦¤Ë/usr/local/etc/ser/ser.cfg¤ò½ñ¤­´¹¤¨¤ë¡£
   #loadmodule "/usr/local/lib/ser/modules/auth.so"
   #loadmodule "/usr/local/lib/ser/modules/auth_db.so"
 
-¢­
+â†“
 
   # _
   # Uncomment this if you want digest authentication
@@ -92,7 +92,7 @@ MySQL¤Ë¤¢¤ë¥Ç¡¼¥¿¤ò»È¤¦¤è¤¦¤Ë/usr/local/etc/ser/ser.cfg¤ò½ñ¤­´¹¤¨¤ë¡£
   loadmodule "/usr/local/lib/ser/modules/auth.so"
   loadmodule "/usr/local/lib/ser/modules/auth_db.so"
 
-¥æ¡¼¥¶¤Î°ÌÃÖ¾ğÊó¡Ê¥í¥°¥¤¥ó¤·¤¿¥æ¡¼¥¶¤¬¤É¤ÎIP¥¢¥É¥ì¥¹¤ò»ı¤Ã¤Æ¤¤¤ë¤«¤È¤«¡Ë¤ò¥á¥â¥ê¾å¤¸¤ã¤Ê¤¯¤Æ¡¢¥Ç¡¼¥¿¥Ù¡¼¥¹¤ËÊİÂ¸¤¹¤ë¤è¤¦¤Ë¤¹¤ë¡£¡Êdb_mode¤¬0¤À¤È¥á¥â¥ê¾å¤À¤±¤Ç¡¢1¤«2¤À¤È¥Ç¡¼¥¿¥Ù¡¼¥¹¤Ë¤â½ñ¤­½Ğ¤·¤Æ¡¢¼¡²óµ¯Æ°»ş¤ËÉü¸µ¤¹¤ë¡£2¤Ï0¤Î¤È¤­¤ß¤¿¤¤¤Ë¥á¥â¥ê¾å¤Ë¤â¥Ç¡¼¥¿¤ò»ı¤Ä¤«¤éÃÙ¤¯¤Ê¤é¤Ê¤¤¡£¡Ë
+ãƒ¦ãƒ¼ã‚¶ã®ä½ç½®æƒ…å ±ï¼ˆãƒ­ã‚°ã‚¤ãƒ³ã—ãŸãƒ¦ãƒ¼ã‚¶ãŒã©ã®IPã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’æŒã£ã¦ã„ã‚‹ã‹ã¨ã‹ï¼‰ã‚’ãƒ¡ãƒ¢ãƒªä¸Šã˜ã‚ƒãªãã¦ã€ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ä¿å­˜ã™ã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚ï¼ˆdb_modeãŒ0ã ã¨ãƒ¡ãƒ¢ãƒªä¸Šã ã‘ã§ã€1ã‹2ã ã¨ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ã‚‚æ›¸ãå‡ºã—ã¦ã€æ¬¡å›èµ·å‹•æ™‚ã«å¾©å…ƒã™ã‚‹ã€‚2ã¯0ã®ã¨ãã¿ãŸã„ã«ãƒ¡ãƒ¢ãƒªä¸Šã«ã‚‚ãƒ‡ãƒ¼ã‚¿ã‚’æŒã¤ã‹ã‚‰é…ããªã‚‰ãªã„ã€‚ï¼‰
 
   modparam("usrloc", "db_mode",   0)
  
@@ -100,7 +100,7 @@ MySQL¤Ë¤¢¤ë¥Ç¡¼¥¿¤ò»È¤¦¤è¤¦¤Ë/usr/local/etc/ser/ser.cfg¤ò½ñ¤­´¹¤¨¤ë¡£
   # for persistent storage and comment the previous line
   #modparam("usrloc", "db_mode", 2)
 
-¢­
+â†“
 
   # _
   #modparam("usrloc", "db_mode",   0)
@@ -111,9 +111,9 @@ MySQL¤Ë¤¢¤ë¥Ç¡¼¥¿¤ò»È¤¦¤è¤¦¤Ë/usr/local/etc/ser/ser.cfg¤ò½ñ¤­´¹¤¨¤ë¡£
 
   modparam("usrloc", "db_url", "mysql://ser:SECRET@localhost/ser")
 
-db_url¤Î¡Öser:SECRET¡×¤ÎÉôÊ¬¤Ï¡Ö¥æ¡¼¥¶Ì¾:¥Ñ¥¹¥ï¡¼¥É¡×¤Ç¡¢localhost¤ÇÆ°¤¤¤Æ¤¤¤ëMySQL¤Î¥Ç¡¼¥¿¥Ù¡¼¥¹ser¤ËÀÜÂ³¤¹¤ë¤¿¤á¤Ë»È¤ï¤ì¤ë¡£
+db_urlã®ã€Œser:SECRETã€ã®éƒ¨åˆ†ã¯ã€Œãƒ¦ãƒ¼ã‚¶å:ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã€ã§ã€localhostã§å‹•ã„ã¦ã„ã‚‹MySQLã®ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹serã«æ¥ç¶šã™ã‚‹ãŸã‚ã«ä½¿ã‚ã‚Œã‚‹ã€‚
 
-Ç§¾Ú¤Ş¤ï¤ê¤Î¥â¥¸¥å¡¼¥ëauth_db¤ÎÀßÄê¤â¤¹¤ë¡£
+èªè¨¼ã¾ã‚ã‚Šã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«auth_dbã®è¨­å®šã‚‚ã™ã‚‹ã€‚
 
   # _
   # -- auth params --
@@ -126,7 +126,7 @@ db_url¤Î¡Öser:SECRET¡×¤ÎÉôÊ¬¤Ï¡Ö¥æ¡¼¥¶Ì¾:¥Ñ¥¹¥ï¡¼¥É¡×¤Ç¡¢localhost¤ÇÆ°¤¤¤Æ¤¤¤ëMy
   #
   #modparam("auth_db", "password_column", "password")
 
-¢­
+â†“
 
   # _
   # -- auth params --
@@ -141,9 +141,9 @@ db_url¤Î¡Öser:SECRET¡×¤ÎÉôÊ¬¤Ï¡Ö¥æ¡¼¥¶Ì¾:¥Ñ¥¹¥ï¡¼¥É¡×¤Ç¡¢localhost¤ÇÆ°¤¤¤Æ¤¤¤ëMy
 
   modparam("auth_db", "db_url", "mysql://ser:SECRET@localhost/ser")
 
-auth_db¤Îdb_url¤Ïusrloc¤Îdb_url¤ÈÆ±¤¸½ñ¼°¡£
+auth_dbã®db_urlã¯usrlocã®db_urlã¨åŒã˜æ›¸å¼ã€‚
 
-ºÇ¸å¤Ë¡¢¼Âºİ¤ËÇ§¾Ú¤ò¹Ô¤¦ÀßÄê¤ò¤¹¤ë¡£
+æœ€å¾Œã«ã€å®Ÿéš›ã«èªè¨¼ã‚’è¡Œã†è¨­å®šã‚’ã™ã‚‹ã€‚
 
   # _
   # Uncomment this if you want to use digest authentication
@@ -152,7 +152,7 @@ auth_db¤Îdb_url¤Ïusrloc¤Îdb_url¤ÈÆ±¤¸½ñ¼°¡£
   #                                break;
   #                        };
 
-¢­
+â†“
 
   # _
   # Uncomment this if you want to use digest authentication
@@ -161,53 +161,53 @@ auth_db¤Îdb_url¤Ïusrloc¤Îdb_url¤ÈÆ±¤¸½ñ¼°¡£
                                   break;
                           };
 
-sip.cozmixng.org¤ÎÉôÊ¬¤Ïser_mysql.sh¤Ç»ØÄê¤·¤¿¥É¥á¥¤¥óÌ¾¡£
+sip.cozmixng.orgã®éƒ¨åˆ†ã¯ser_mysql.shã§æŒ‡å®šã—ãŸãƒ‰ãƒ¡ã‚¤ãƒ³åã€‚
 
-== µ¯Æ°
+== èµ·å‹•
 
   % sudo /usr/local/etc/rc.d/ser start
 
-== ¥¯¥é¥¤¥¢¥ó¥È¤ÎÀßÄê
+== ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®è¨­å®š
 
 === Ekiga
 
-ÊÔ½¸¢ª¥¢¥«¥¦¥ó¥È¡£
+ç·¨é›†â†’ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã€‚
 
-: ¥¢¥«¥¦¥ó¥ÈÌ¾
-   kou¡Ê¹¥¤­¤Ê¤â¤Î¡Ë
+: ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå
+   kouï¼ˆå¥½ããªã‚‚ã®ï¼‰
 
-: ¥×¥í¥È¥³¥ë
+: ãƒ—ãƒ­ãƒˆã‚³ãƒ«
    SIP
 
-: ¥ì¥¸¥¹¥È¥é
-   sip.cozmixng.org¡Êser_mysql.sh¤Ç»ØÄê¤·¤¿¥É¥á¥¤¥óÌ¾¡Ë
+: ãƒ¬ã‚¸ã‚¹ãƒˆãƒ©
+   sip.cozmixng.orgï¼ˆser_mysql.shã§æŒ‡å®šã—ãŸãƒ‰ãƒ¡ã‚¤ãƒ³åï¼‰
 
-: Ì¾Á°
-   kou¡Êserctl add¤·¤¿¤È¤­¤Î@¤è¤êÁ°¤ÎÉôÊ¬¡Ë
+: åå‰
+   kouï¼ˆserctl addã—ãŸã¨ãã®@ã‚ˆã‚Šå‰ã®éƒ¨åˆ†ï¼‰
 
-: ¥Ñ¥¹¥ï¡¼¥É
-   MY-SECRET¡Êserctl add¤·¤¿¤È¤­¤ËÀßÄê¤·¤¿¥Ñ¥¹¥ï¡¼¥É¡Ë
+: ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+   MY-SECRETï¼ˆserctl addã—ãŸã¨ãã«è¨­å®šã—ãŸãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼‰
 
-ÀßÄê¤·¤¿¤é¥¢¥«¥¦¥ó¥È°ìÍ÷²èÌÌ¤Î°ìÈÖº¸¤Ë¤¢¤ë¡ÖA¡×¤È¤¤¤¦¸«½Ğ¤·¤¬¤Ä¤¤¤¿Îó¤Ë¥Á¥§¥Ã¥¯¤òÆş¤ì¤ë¡£À®¸ù¤¹¤ë¤È¥á¥¤¥ó²èÌÌ¤Î¡ÖÅĞÏ¿ºÑ¤ß¤Î¥¢¥«¥¦¥ó¥È¿ô: n¡×¤Î¡Ön¡×¤ÎÉôÊ¬¤¬1¤Ë¤Ê¤ë¡£
+è¨­å®šã—ãŸã‚‰ã‚¢ã‚«ã‚¦ãƒ³ãƒˆä¸€è¦§ç”»é¢ã®ä¸€ç•ªå·¦ã«ã‚ã‚‹ã€ŒAã€ã¨ã„ã†è¦‹å‡ºã—ãŒã¤ã„ãŸåˆ—ã«ãƒã‚§ãƒƒã‚¯ã‚’å…¥ã‚Œã‚‹ã€‚æˆåŠŸã™ã‚‹ã¨ãƒ¡ã‚¤ãƒ³ç”»é¢ã®ã€Œç™»éŒ²æ¸ˆã¿ã®ã‚¢ã‚«ã‚¦ãƒ³ãƒˆæ•°: nã€ã®ã€Œnã€ã®éƒ¨åˆ†ãŒ1ã«ãªã‚‹ã€‚
 
-¥Æ¥¹¥È¤Î¤¿¤á¤Ë¡¢Ekiga¤Ï¤³¤Î¤Ş¤Ş¤Ä¤Ê¤¤¤Ç¤ª¤¯¡£
+ãƒ†ã‚¹ãƒˆã®ãŸã‚ã«ã€Ekigaã¯ã“ã®ã¾ã¾ã¤ãªã„ã§ãŠãã€‚
 
 === KPhone
 
-ºÇ½é¤Îµ¯Æ°»ş¤Ë½Ğ¤ë¤ä¤Ä¤ÎÀßÄê(File->Identity)
+æœ€åˆã®èµ·å‹•æ™‚ã«å‡ºã‚‹ã‚„ã¤ã®è¨­å®š(File->Identity)
 
 : Full Name
-   Test User¡Ê¼«Ê¬¤ÎÌ¾Á°¡Ë
+   Test Userï¼ˆè‡ªåˆ†ã®åå‰ï¼‰
 : User Part of SIP URL
-   test¡Êserctl add¤·¤¿¤È¤­¤Î@¤è¤ê¤âÁ°¤ÎÉôÊ¬¡Ë
+   testï¼ˆserctl addã—ãŸã¨ãã®@ã‚ˆã‚Šã‚‚å‰ã®éƒ¨åˆ†ï¼‰
 : Host Part of SIP URL
-   sip.cozmixng.org¡Êser_mysql.sh¤Ç»ØÄê¤·¤¿¥É¥á¥¤¥óÌ¾¡Ë
+   sip.cozmixng.orgï¼ˆser_mysql.shã§æŒ‡å®šã—ãŸãƒ‰ãƒ¡ã‚¤ãƒ³åï¼‰
 : Authentication Username (optional)
-   test¡Ê¾ÊÎ¬²ÄÇ½¡£serctl add¤·¤¿¤È¤­¤Î@¤è¤ê¤âÁ°¤ÎÉôÊ¬¡Ë
+   testï¼ˆçœç•¥å¯èƒ½ã€‚serctl addã—ãŸã¨ãã®@ã‚ˆã‚Šã‚‚å‰ã®éƒ¨åˆ†ï¼‰
 
-ÅÅÏÃ¤ò¤«¤±¤ë¤Ë¤ÏFile->New Call¤Ë¤¤¤Ã¤ÆDial
+é›»è©±ã‚’ã‹ã‘ã‚‹ã«ã¯File->New Callã«ã„ã£ã¦Dial
 
 : Remote:
-   Áê¼ê¤Î¥¢¥É¥ì¥¹(Îã: kou@sip.cozmixng.org)
+   ç›¸æ‰‹ã®ã‚¢ãƒ‰ãƒ¬ã‚¹(ä¾‹: kou@sip.cozmixng.org)
 
-¤³¤ì¤ÇEkiga¤ÎÊı¤ÇÅÅÏÃ¤Î¸Æ¤Ó½Ğ¤·²»¤¬¤Ê¤Ã¤¿¤éÀ®¸ù¡£
+ã“ã‚Œã§Ekigaã®æ–¹ã§é›»è©±ã®å‘¼ã³å‡ºã—éŸ³ãŒãªã£ãŸã‚‰æˆåŠŸã€‚

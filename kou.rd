@@ -2,21 +2,21 @@
 
 ((<ToWantToDo>))
 
-COZMIXNG���������äڡ�
-# Matz�����˥ĥå��ߤ����줿���Ϥ���ޤ����ǰ�Τ���ˡ�
-# ����Ƥ��ޤä��������Ǥ⡢�⤦���ʤ��������ϥ���
+COZMIXNGいいだしっぺ．
+# Matz日記にツッコミを入れた事はありません（念のため）．
+# 入れてしまった。。。でも、もうしない。。。ハズ。
 
   * ((<kou::Link>))
-  * ((<kou::�ɽ�>))
-  * ((<kou::���>))
+  * ((<kou::読書>))
+  * ((<kou::メモ>))
   * ((<kou::ToDo>))
   * ((<Amway>))
   * ((<WebApplicationFramework>))
-  * ((<���ܸ�ץ�����ߥ�>))
+  * ((<日本語プログラミング>))
   * ((<GTK>))
-  * ((<Ruby�Ǵؿ��ץ�����ߥ�>))
+  * ((<Rubyで関数プログラミング>))
 #  * ((<WiLiKi:COZMIXNG:kou>))
-  * ((<�ꥢ�륿���५����>))
+  * ((<リアルタイムカウンタ>))
   * ((<SWIG>))
   * ((<Self>))
   * ((<gpg>))
@@ -38,19 +38,19 @@ COZMIXNG���������äڡ�
   * ((<slapd>))
   * ((<MacBook>))
 
-== ��ʪ
+== 小物
 
   * ((<isary.rb>))
   * ((<svn-utils>))
   * ((<Test::Unit::Ext>))
 
-== �ץ���������
+== プロジェクト
 
   * ((<Pseudo Web Mail>))
-  * ((<RWiki��¤�ײ�>))
-  * ((<(('Ruby/RSS'))>)) => ((<RSS Parser>))���ѹ�
+  * ((<RWiki改造計画>))
+  * ((<(('Ruby/RSS'))>)) => ((<RSS Parser>))に変更
   * ((<GalleryAdministrator>))
-  * ((<ImportWiki�ײ�>))
+  * ((<ImportWiki計画>))
   * ((<RWiki Extension Kit>))
   * ((<Rabbit>))
   * ((<gdchart>))
@@ -58,7 +58,7 @@ COZMIXNG���������äڡ�
   * ((<GaUnit>))
   * ((<dsm>))
   * ((<scratch>))
-  * ((<marshal>)) => ((<msm>))���ѹ�
+  * ((<marshal>)) => ((<msm>))に変更
   * ((<wsm>))
   * ((<benchmark>))
   * ((<tsm>))
@@ -67,23 +67,23 @@ COZMIXNG���������äڡ�
   * ((<RD2TeX>))
   * ((<scim>))
   * ((<SCIM-RubyBridge>))
-  * ((<run-test.el>)) <- ((<GaUnit>))����ʬΥ
+  * ((<run-test.el>)) <- ((<GaUnit>))から分離
 
-# == ��ꤿ��(��٤�)���
+# == 作りたい(るべき)もの
 
 #  * ((<XML Validator for Ruby>))
 
-== Ĵ�٤��
+== 調べもの
 
-  * CVS��ͭ���ʥ����ΰ������������ˤϤɤ������餤����
+  * CVSで有効なタグの一覧を取得するにはどうしたらいい？
     
       % cvs status -v
 
-    �Ǥ�����ߤ�����
+    でいけるみたい．
 
-  * FreeBSD��XFree86 4�ǥޥ����κ����Υܥ����Ʊ�������ǿ���ܥ��󲡤��ˤʤ�����(Emurate3Buttons)�Ϥɤ�����Ф����Ρ�
+  * FreeBSDのXFree86 4でマウスの左右のボタンを同時押しで真中ボタン押しになる設定(Emurate3Buttons)はどうすればいいの？
 
-    * ����Ǥ����Τ����������������Ƥ���ߤ��������ɡ�(2003/03/24)
+    * これでいいのか？いちおうきいているみたいだけど。(2003/03/24)
         Section "InputDevice"
                 Identifier  "Mouse0"
                 Driver      "mouse"
@@ -92,14 +92,14 @@ COZMIXNG���������äڡ�
                 Option      "Emurate3Button" "true"
         EndSection
 
-  * zsh�ǥ��ְ�ȯ�ܤϰ���ɽ�������ˤ���ˤϤɤ������餤���Ρ����ϰ�ȯ�ܤ����䴰���䤬����䴰������㤦��
-    * �ǥե���Ȥ�ư���˾�ߤΤ�ΤΤ褦�˻פ��Ƥʤ�ʤ��ΤǤ�����zsh -Y (MENU_COMPLETE)�ˤʤäƤޤ��󤫡� -fuyuki
-    * ���������������꤬�Ȥ��������ޤ�����Ŭ�˲ᤴ����褦�ˤʤ�ޤ�����
+  * zshでタブ一発目は一覧表示だけにするにはどうしたらいいの？今は一発目から補完侯補が順に補完されちゃう。
+    * デフォルトの動作がお望みのもののように思えてならないのですが。zsh -Y (MENU_COMPLETE)になってませんか？ -fuyuki
+    * あ，本当だ．ありがとうございます．快適に過ごせるようになりました．
 
-== �ܤ�
+== ぼそ
 
-  * �����REXML API��ե���󥹤�REXML 2.4.2�Υ���ץ��դ�XPath�δؿ���ե���󥹤��Ϥ���ʤ�����excellent�ʥɥ�����Ȥ򤢤꤬�Ȥ��äƥ᡼���ĺ�������ܸ���ɤ�ʤ����ɽ�ʬ����ä��衤���äơ�((<���οͤΥڡ���|URL:http://www.lypanov.net/>))(���Ȼפ�)���ʤ�KDE�ץ��������Ȥ�Developer�ߤ�����(2003-05-05)
+  * 私家版REXML APIリファレンスかREXML 2.4.2のサンプル付きXPathの関数リファレンスかはしらないが，excellentなドキュメントをありがとうってメールを頂く．日本語は読めないけど充分役だったよ，だって．((<その人のページ|URL:http://www.lypanov.net/>))(だと思う)．なんかKDEプロジェクトのDeveloperみたい．(2003-05-05)
 
-  * REXML��Tutorial�������򤷤����餢�ʤ��Υ����Ȥ˺ܤ��ƤȤ����᡼���ĺ��(2003/03/06)���Τ�ʤ��ͤ���(���ѥ�ʳ���)�᡼����餦�ʤ�ƤϤ���ơ�
+  * REXMLのTutorialの和訳をしたからあなたのサイトに載せてというメールを頂く(2003/03/06)。知らない人から(スパム以外の)メールをもらうなんてはじめて。
 
-  * ���줷���Ĥ��Ǥ˥�륷���Υѥ�����Τ����������COZMIXNG��URI���ɲä��Ƥ�����2003/02/27
+  * 献血したついでにメルシーのパソコンのお気に入りにCOZMIXNGのURIを追加しておく。2003/02/27

@@ -1,12 +1,12 @@
-= kou::���
+= kou::メモ
 
   * [2008-04-29] {www,share,streaming}: 6.2-STABLE -> 7.0-STABLE.
 
-  * ((<��OpenGL��Ȥä�Java�Ǥ�3D��ڤ��⤦�ס�ITpro|URL:http://itpro.nikkeibp.co.jp/article/COLUMN/20060703/242298/>))
+  * ((<「OpenGLを使ってJavaでも3Dを楽しもう」：ITpro|URL:http://itpro.nikkeibp.co.jp/article/COLUMN/20060703/242298/>))
 
   * ((<Cross Browser Multi Page Photograph Gallery|URL:http://www.cssplay.co.uk/menu/lightbox.html>))
 
-  * X�ǥǥ奢��ǥ����ץ쥤���Ƥߤ������ͤˤʤä��Ȥ�����
+  * Xでデュアルディスプレイしてみた．参考になったところ．
 
     * ((<Xinerama on a laptop with Intel GMA950 - Ubuntu Forums|URL:http://www.ubuntuforums.org/showthread.php?p=1432453>))
     * ((<Xinerama HowTo|URL:http://ubuntuforums.org/showthread.php?t=221174>))
@@ -16,104 +16,104 @@
 
   * ((<Istanbul|URL:http://live.gnome.org/Istanbul>))
 
-  * iTunes�Ǥ�ʹ����褦��AAC�˥��󥳡��ǥ��� + MP4����ƥʤ�����롥
+  * iTunesでも聞けるようにAACにエンコーディング + MP4コンテナに入れる．
 
       % faac -w -o output.m4a source.wav
 
-  * [Debian] module-assistant������������
+  * [Debian] module-assistantすごい便利！
 
-  * ((<��ȯ��ݲ��쥤�� - The Joel on Software Translation Project|URL:http://local.joelonsoftware.com/mediawiki/index.php/%E9%96%8B%E7%99%BA%E6%8A%BD%E8%B1%A1%E5%8C%96%E3%83%AC%E3%82%A4%E3%83%A4>))
+  * ((<開発抽象化レイヤ - The Joel on Software Translation Project|URL:http://local.joelonsoftware.com/mediawiki/index.php/%E9%96%8B%E7%99%BA%E6%8A%BD%E8%B1%A1%E5%8C%96%E3%83%AC%E3%82%A4%E3%83%A4>))
 
-  * [Skype] �Ȥꤢ����USB��³�Υ����֥�����30�����ǡ�����ܤ��إåɥ��åȤĤ��ˤ���äƤ�����1980�ߡ������������С�
+  * [Skype] とりあえずUSB接続のウェブカメラ（30万画素，しょぼいヘッドセットつき）を買ってきた．1980円．さすがアキバ．
 
       % lsusb | grep Logitech
       Bus 001 Device 009: ID 046d:08f0 Logitech, Inc. QuickCam Messenger
 
-    ư��������ˤ�((<�ɥ饤��|URL:http://qce-ga.sourceforge.net/>))��Debian�Ǥ�qc-usb-source�ˤ򥤥󥹥ȡ��뤹��ɬ�פ����롥�����ɡ����ե������ʤ�Ĥ����б����Ƥ��ʤ���
+    動かすためには((<ドライバ|URL:http://qce-ga.sourceforge.net/>))（Debianではqc-usb-source）をインストールする必要がある．だけど，オフィシャルなやつだと対応していない．
 
-    �ʤΤǡ�((<Quickcam Messenger & Communicate driver for Linux|URL:http://home.mag.cx/messenger/>))��Ȥ��ʤ��Υڡ����ϥ��ե������ڡ���������󥯤���Ƥ���ˡ�
+    なので，((<Quickcam Messenger & Communicate driver for Linux|URL:http://home.mag.cx/messenger/>))を使う（このページはオフィシャルページからもリンクされている）．
 
-    ���󥹥ȡ��뤹��ˤϥ��������֤���ˤ��롥make all����make install�����������������make all����Ȥ��˥����ͥ�Υإå��ե����뤬����ǥ��쥯�ȥ����ꤹ�뤳�ȡ�
+    インストールするにはアーカイブの中にある．make allしてmake installするだけ．ただし，make allするときにカーネルのヘッダファイルがあるディレクトリを指定すること．
 
       % make all LINUX_DIR=/usr/src/linux-headers-`uname -r`
       % sudo make install
 
-    ��ʬ��make����󤸤�ʤ��ơ����󥹥ȡ��륹����ץȤ�Ȥ����Ȥ�Ǥ��롥���ΤȤ���USB��ؤ��Ƥ����������褤���⡥
+    自分でmakeするんじゃなくて，インストールスクリプトを使うこともできる．このときはUSBを指しておいた方がよいかも．
 
       % sudo ./quickcam.sh
 
-    �ɥ饤�Ф򥤥󥹥ȡ��뤷���顤���Ȥ�USB��ȴ�������Ǥ⤹���ǧ�������Ϥ����ƥ��Ȥ�gqcam�Ȥ�gnomemeeting��Ekiga?�ˤǤ�Ȥ���OK��
+    ドライバをインストールしたら，あとはUSBを抜き差しでもすれば認識されるはず．テストはgqcamとかgnomemeeting（Ekiga?）でも使えばOK．
 
   * ((<The Summer of Code 2006|URL:http://google-code-updates.blogspot.com/2006/04/summer-of-code-2006.html>))
 
-  * ((<�ץ쥼��ƻ����|URL:http://nova.planet.sci.kobe-u.ac.jp/~matsuda/review/PLAIN99.html>))
+  * ((<プレゼン道入門|URL:http://nova.planet.sci.kobe-u.ac.jp/~matsuda/review/PLAIN99.html>))
 
   * ((<Quick reStructuredText|URL:http://docutils.sourceforge.net/docs/user/rst/quickref.html>))
 
-  * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): �����������ɤ�ϥ��饤��
+  * ((<SilverCity|URL:http://silvercity.sourceforge.net/>)): ソースコードをハイライト
 
   * ((<Feed Icons|URL:http://feedicons.com/>))
 
-  * [�����] ������������졼���䥸���������ѹ����̤ǡ����������̾��������ʤ��ƥ�٥��ɽ�����롥
+  * [風博士] キーアクセラレータやジェスチャ変更画面で，アクション名だけじゃなくてラベルも表示する．
 
-  * �եꥯ��
+  * フリクリ
     * flip clock
 
         # blockquote
-        n. 1 ��ʪ�λ��ס�2 ž���ơ������ܤ��������Ω���ʤ����Ȥ���
+        n. 1 安物の時計．2 転じて，見た目だけで役に立たないたとえ．
 
-    * fool'ish clev'er��ness
+    * fool'ish clev'er・ness
 
         # blockquote
-        �츫���������˸����Ƽ¤϶򤫤ʹͤ����Х������ηá�
+        一見利口そうに見えて実は愚かな考え．バカの浅知恵．
 
     * flim'sy claim
 
         # blockquote
-        n. ��䤫��Ⱦʬ�ζ�𡥰����ʶ��ξｬ�ԡ�
+        n. 冷やかし半分の苦情．悪質な苦情の常習者．
 
     * flight'y clip'per
 
         # blockquote
-        n. 1 ��®������2 ��Ψ�ʿ͡��Ի��礤�ʿ��Ȥ˽�������ʪ���ξΡ�
+        n. 1 快速帆船．2 軽率な人．不似合いな職業に就いた人物の蔑称．
 
     * flint cleav'er
 
         # blockquote
-        n �����д�ΰ�������������
+        n 打製石器の一種．肉裂き包丁．
 
     * Flem'ing, Clem'ent
 
         # blockquote
-        �Կ�̾��19�����ο����ؼԡ���ǯ���μ�������ˤĤ��Ƥθ�����Τ��롥
+        《人名》19世紀の心理学者．少年期の自我形成についての研究で知られる．
 
     * flec'tion cli'mate
 
         # blockquote
-        n. 1 �Ѥ��䤹��ŷ���� 2 ��ʬ���δ��ۡ�ʹ�����Ǥ��Τʤ��ո���
+        n. 1 変わりやすい天候． 2 気分屋の感想．聞く値打ちのない意見．
 
     * fleecy clew
 
         # blockquote
-        ��Ĥ줿�ӻ�̡�����ɬ��Ǥ��뤳�Ȥ򼨤����Ѷ硥
+        もつれた毛糸玉．混乱が必定であることを示す慣用句．
 
-  * IPP request failed with status XXX��libgnomecups���Ф��Ƥ��롥LOG_DOMAIN�Ĥ����补����
+  * IPP request failed with status XXXはlibgnomecupsが出している．LOG_DOMAINつけろよ．．．
 
-  * [Debian] ��Ǽ¸���
+  * [Debian] 後で実験．
 
       # blockquote
       # cite = http://lists.debian.or.jp/debian-devel/200510/msg00002.html
       # title = [debian-devel:16306] Re: debuginfo
-        * DEB_BUILD_OPTIONS��nostrip�դ��ƥ�ӥ�ɤ���ХǥХå�����Ĥ��
-        * rules��dh_strip�˥ե饰�դ����dbg�ѥå������Ǥ����
+        * DEB_BUILD_OPTIONSにnostrip付けてリビルドすればデバッグ情報残るよ
+        * rulesのdh_stripにフラグ付ければdbgパッケージできるよ
 
-  * SOC��λ��
+  * SOC終了！
 
-  * wsm�Υ��ʥåץ���åȤ�����Ƥ��롥����
+  * wsmのスナップショットが壊れている．．．
 
-  * FreeBSD�Ǥ�WEP�����ꡥ
+  * FreeBSDでのWEPの設定．
 
-      % sudo /sbin/ifconfig ���󥿡��ե�����̾ wepmode on weptxkey 1 wepkey 1:WEP��KEY
+      % sudo /sbin/ifconfig インターフェイス名 wepmode on weptxkey 1 wepkey 1:WEPのKEY
 
     /boot/loader.conf
 
@@ -121,180 +121,180 @@
 
   * simulated_height
 
-  * ���󥽡����GdkPixmap�ϻȤ��ʤ��Τ���
+  * コンソールでGdkPixmapは使えないのか？
 
-  * �ޤ������Ĥ��������������ݤ�����
+  * またこいつか．うざい．拒否した．
 
     ((<"59.135.109.157: Priscilla/0.10 (http://kiyoya.comthy.org/priscilla/)"|URL:http://kiyoya.comthy.org/priscilla/>))
 
-  * ��Ǹ���: ((<Setup the SAMBA mini memo.|URL:http://karappi.minidns.net/karappi/sargememo/sambamemo.html>))
+  * 後で見る: ((<Setup the SAMBA mini memo.|URL:http://karappi.minidns.net/karappi/sargememo/sambamemo.html>))
 
-  * �ʤ󤫤���RWiki�Ť��ʤäƤ�ʤ����ʤ�Ǥ�������
+  * なんかこのRWiki重くなってるなぁ．なんでだろう．
 
-  * �ʤ�������ġ��Ե������ʤ������ݤ���ä��ʤ���
+  * なんだこいつ？行儀悪いなぁ．拒否しよっかなぁ。
 
     ((<"222.10.18.29: Priscilla/0.10 (http://kiyoya.comthy.org/priscilla/)"|URL:http://kiyoya.comthy.org/priscilla/>))
 
-    ������������ݤ�����������쥯�Ȥ��б����Ƥ��ʤ��Τ��ʤ���
+    うざいから拒否した．リダイレクトに対応していないのかなぁ．
 
-  * ���åץǡ��ȤǤϤޤ롥����
-    * amavisd-new����ư������ץȤ�/usr/local/etc/rc.d/����ʤ���/etc/rc.d/�ʲ��˥��󥹥ȡ��뤹��ΤϤʤ�������
-    * coulier-authlib-userdb���դ����ʤ��ä�������
-    * ����/usr/local/libexec/courier-imap/{imap,pop3}d.rc�ϥХ��äƤ���Ȼפ���
+  * アップデートではまる．．．
+    * amavisd-newが起動スクリプトを/usr/local/etc/rc.d/じゃなくて/etc/rc.d/以下にインストールするのはなぜだ！？
+    * coulier-authlib-userdb見付けられなかった．．．
+    * 絶対/usr/local/libexec/courier-imap/{imap,pop3}d.rcはバグっていると思う．
 
-  * Hiki���ץ饰���󥨥顼�ΤȤ��˥��������פ�­��ʤ��� ((<�ѥå�|URL:http://pub.cozmixng.org/~kou/diff/hiki-escape-exception-message.diff>))
+  * Hikiがプラグインエラーのときにエスケープが足りない。 ((<パッチ|URL:http://pub.cozmixng.org/~kou/diff/hiki-escape-exception-message.diff>))
 
-  * assert-in-delta, assert-not-*��������
+  * assert-in-delta, assert-not-*を作ろう．
 
   * [Subversion][ToDo] (('del:"temporarily", not "temporally".'))
 
-  * [�����] ((<��������ե�����Υѥ����䴰|URL:http://pub.cozmixng.org/~kou/diff/kazehakase-file-completion.diff>)): inline-completeion���Ȥ߹�碌��Ȥ����֤����碌�ˡ�ML�ؤϾ����ȤäƤߤƤ��顥
+  * [風博士] ((<ローカルファイルのパスを補完|URL:http://pub.cozmixng.org/~kou/diff/kazehakase-file-completion.diff>)): inline-completeionと組み合わせるとだいぶしあわせに．MLへは少し使ってみてから．
 
-  * �ۡ���桼���ˤ�anacron��
+  * ホームユースにはanacron．
 
-  * @pub�Τ���Υ������������꤬���������ʤ���
+  * @pubのためのセカンダリの設定がおかしいなぁ．
 
   * ((<asin:B00009PJON>))
 
-  * [�����] Mozilla/Firefox������UI��Ȥ���
+  * [風博士] Mozilla/Firefoxの設定UIを使う．
 
-    (1) ���ޡ��ȥ֥å��ޡ������Խ�����chrome:��Google�����Фʤ��褦�ˤ��롥
+    (1) スマートブックマークを編集してchrome:でGoogleに飛ばないようにする．
 
-    (2) Mozilla�ʤ�((<URL:chrome://communicator/content/pref/pref.xul>))�˥����������롥
+    (2) Mozillaなら((<URL:chrome://communicator/content/pref/pref.xul>))にアクセスする．
 
-        Firefox�ʤ�((<URL:chrome://browser/content/pref/pref.xul>))�˥����������롥
+        Firefoxなら((<URL:chrome://browser/content/pref/pref.xul>))にアクセスする．
 
-  * HDD��ǧ�����ʤ��Ȥ��ϡ�BIOS��������ǧ��
+  * HDDを認識しないときは，BIOSの設定を確認．
 
-  * [WikiLink] dc:rights�ξ��������롥
+  * [WikiLink] dc:rightsの情報も入れる．
 
-  * ImageMagick���Х��äƤ��롥
+  * ImageMagickがバグっている．
 
       % convert /tmp/a.jpg /tmp/a%x.jpg
 
-    ��/tmp/a0.jpg���Ǥ��롥��%�פΰ�������������
+    で/tmp/a0.jpgができる．「%」の扱いが怪しい．
 
-  * [Samba] ���󥳡��ǥ��󥰡���Ǽ¸���
+  * [Samba] エンコーディング．後で実験．
 
-    * UTF-8������
+    * UTF-8を利用
 
         dos charset = CP932
         unix charset = UTF-8
         display charset = UTF-8
 
-    * EUC������
+    * EUCを利用
 
         doc charset = CP932
         unix charset = EUCJP-MS
         display charset = EUCJP-MS
 
-    * SJIS������
+    * SJISを利用
 
         doc charset = CP932
         unix charset = CP932
         display charset = CP932
 
-    * HEX��CAP
+    * HEXとCAP
 
         doc charset = CP932
         unix charset = CP932
         display charset = CP932
         vfs object = cap # or hex
 
-  * [Gallery Administrator][ToDo] RSS Maker��Ȥ��褦���ѹ����롥
+  * [Gallery Administrator][ToDo] RSS Makerを使うように変更する．
 
-  * [RSS Parser][ToDo] 0.1.4��꡼����preview�ФƤ���������ɤ����ʤ���
+  * [RSS Parser][ToDo] 0.1.4リリース．preview出てからの方が良いかなぁ．
 
-  * ��pub���ۤ�5.4���ФƤ���ˤ��褦�����顥
+  * 新pub構築は5.4が出てからにしようかしら．
 
-  * [FreeBSD] HDD�Υ��ԡ�: ((<FreeBSD QandA 1859|URL:http://www.jp.freebsd.org/QandA/HTML/1859.html>))
+  * [FreeBSD] HDDのコピー: ((<FreeBSD QandA 1859|URL:http://www.jp.freebsd.org/QandA/HTML/1859.html>))
 
-  * ���ܥåȡ�e-SocietyRobot(http://www.yama.info.waseda.ac.jp/~yamana/es/)�ˤ�WiLiKi�Υ���ƥ�Ĥ�������ˤ���ȷ빽Load Average��������ʤ������ݤ��������ɤ������顥
+  * ロボット（e-SocietyRobot(http://www.yama.info.waseda.ac.jp/~yamana/es/)）がWiLiKiのコンテンツを収集しにくると結構Load Averageがあがるなぁ．拒否した方が良いかしら．
 
-    �Ǥ⡤�����äƤ�ï�������������ܥåȰʳ�����Υ���������̵�������̤ˤ��ä���
+    でも，あがっても誰かが困る程ロボット以外からのアクセスは無いし，別にいっか．
 
-  * ��ư��img��name�򽸤��SET_DHTML����Ͽ�Ǥ���褦�ˤ�������Ũ�������ʤ���
+  * 自動でimgのnameを集めてSET_DHTMLに登録できるようにしたら素敵だろうなぁ．
 
   * ispell -a -m
 
-  * [ToDo] (('del:�ޥ����ΰ�������ä����Υ��顼����ª���롥'))
+  * [ToDo] (('del:マクロの引数が違った時のエラーを捕捉する．'))
 
-  * ���ӡ���ƣ����ʤ�������ä�������
+  * がびーん．藤じゃなくて東だった．．．
 
-  * [ToDo][�Ǥ����] Flash�����Ѥ�ReaderMacro���롣
+  * [ToDo][できれば] Flash挿入用のReaderMacroを作る。
 
-  * [ToDo] (('del:ML���롣'))
+  * [ToDo] (('del:MLを作る。'))
 
-  * [ToDo][�Ǥ����] ���ڥ�����å���ǽ��Ĥ��롣
+  * [ToDo][できれば] スペルチェック機能をつける。
 
-  * [ToDo] �����Ȥ�äƤ�ߤ���: (('del:��ư����{Reader,Writer}Macro�ڡ�����ѡ������롣'))
+  * [ToDo] ちゃんとやってるみたい: (('del:起動時に{Reader,Writer}Macroページをパースする。'))
 
-  * [ToDo] �ͥ��ϥܥġ��������åץ����ɤ򥵥ݡ��Ȥ���: (('del:�����־���롥�ͥ��ϻפ��⤫�����'))
+  * [ToDo] ネタはボツ．画像アップロードをサポートした: (('del:画像置場を作る．ネタは思い浮かんだ。'))
 
   * ((<K2Y|URL:http://pub.cozmixng.org/~kou/ajax/k2y>))
 
   * Ignore entries under copied directories.
 
-  * ((<Ajax ��Ȥä� ���ܸ� IME|URL:http://chasen.org/~taku/software/ajax/ime/>))
+  * ((<Ajax を使った 日本語 IME|URL:http://chasen.org/~taku/software/ajax/ime/>))
 
-  * [Subversion] �褦�䤯HACKING��((<����|URL:http://pub.cozmixng.org/~kou/text/HACKING.ja>))������ä���1���֤��餤�����ä��������롥����
+  * [Subversion] ようやくHACKINGを((<翻訳|URL:http://pub.cozmixng.org/~kou/text/HACKING.ja>))し終わった．1週間くらいかかった気がする．．．
 
-  * [RSS Parser] Dublin Core��ʸ���������Ѵ����꤬�Х��äƤ��롥����converter�����¤��Ƥ��ʤ�������
+  * [RSS Parser] Dublin Coreの文字コード変換周りがバグっている．．．converterを伝搬していない感じ．
     
-    RSS::Element#children��extensible�ˤ��ʤ��ȡ�
+    RSS::Element#childrenをextensibleにしないと．
 
-    ����ʤ��Ȣ������˽�����
+    こんなこと↑せずに修正．
 
-  * CVS����Subversion���Ѵ�������ʤ��ե����������Ϻ�����롥
+  * CVSからSubversionへ変換．いらないファイルの履歴は削除する．
 
-      % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVS��ݥ��ȥ�Υѥ�
-      % svndumpfilter exclude ����ʤ��ե�����Υץ�ե��å��� < repos.dump > repos-filtered.dump
+      % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSリポジトリのパス
+      % svndumpfilter exclude いらないファイルのプレフィックス < repos.dump > repos-filtered.dump
 
-    ��:
+    例:
 
       % cvs2svn --dumpfile=repos.dump --dump-only --trunk-only --keywords-off CVSREPOS/rd
       % svndumpfilter exclude trunk/navi.rd < repos.dump >! repos-filtered.dump
 
-  * [ToDo] [RSS Parser] (('del:0.1.3���꡼�����롥'))
+  * [ToDo] [RSS Parser] (('del:0.1.3をリリースする．'))
 
-  * [ToDo] [Subversion] (('del:commit-email.rb�ǡ����ԡ���ǥ��쥯�ȥ�β��ˤ���ǥ��쥯�ȥ��ɲä��줿�ǥ��쥯�ȥ�Ȥ��ư���ʤ���̵�뤹��褦�ˤ��롥'))
+  * [ToDo] [Subversion] (('del:commit-email.rbで，コピー先ディレクトリの下にあるディレクトリ追加されたディレクトリとして扱わないで無視するようにする．'))
 
   * [ToDo] [RSS Parser]
-    * (('del:Dublin Core����Υɥ�����Ȥ򹹿����롥'))
-    * (('del:test/test_maker_dc.rb��ʣ����Dublin Core�򰷤��뤫�Υƥ��Ȥ��ɲä��롥'))
-    * (('del:ruby_1_8�˥ޡ������롥'))
+    * (('del:Dublin Core周りのドキュメントを更新する．'))
+    * (('del:test/test_maker_dc.rbに複数のDublin Coreを扱えるかのテストを追加する．'))
+    * (('del:ruby_1_8にマージする．'))
 
-  * [Ruby] 1.8.3 prevew���轵(12��)�äݤ��ߤ�����
+  * [Ruby] 1.8.3 prevewは来週(12日)っぽいみたい．
 
-  * [Subversion] 1.2.x��Ruby�Τ�Ĥ����ꤽ����RC1�ˤ����äƤ��뤷��
+  * [Subversion] 1.2.xにRubyのやつが入りそう．RC1には入っているし．
 
-  * [RSS Parser] �褦�䤯ʣ����DublinCore�����ǡʡ��ˤ򰷤���褦�ˤʤä���
+  * [RSS Parser] ようやく複数のDublinCoreの要素（？）を扱えるようになった．
 
-  * [ToDo] (('del:ɽ����䤹����'))
+  * [ToDo] (('del:表も作りやすく．'))
 
-  * [ToDo] (('del:�֥饦����Ǵ�ñ�˥�Ӥ�դ��褦�ʥ��󥿡��ե��������롥Mecab����ChaSen��Ajax��Ȥä����ܸ��Ѵ��ǥ��ɤ����Ǹ����ʤ���'))
+  * [ToDo] (('del:ブラウザ上で簡単にルビをふれるようなインターフェイスを作る．MecabだかChaSenとAjaxを使った日本語変換デモをどこかで見たなぁ．'))
 
-  * [Mozilla][�����] Ctrl+�����������1�ڡ���ñ�̤ǥ��������뤵����ˤ�((<URL:about:config>))��
+  * [Mozilla][風博士] Ctrl+スクロールで1ページ単位でスクロールさせるには((<URL:about:config>))で
 
       mousewheel.withcontrolkey.action
 
-    ��
+    を
 
       1
 
-    �ˤ���Ф褤��
+    にすればよい．
 
-  * ((<hown wiki - ��ʥ�|URL:http://howm.sourceforge.jp/cgi-bin/hiki/hiki.cgi?Monad>))
+  * ((<hown wiki - モナド|URL:http://howm.sourceforge.jp/cgi-bin/hiki/hiki.cgi?Monad>))
 
-  * [Subversion] Ruby�ط�����ʤ��Ȥ����˥ѥå������Ƥƥ��ߥåȤ���Ȥ���log message�˰ʲ��Τ褦�ʤ�Ĥ�񤯤���äơ�
+  * [Subversion] Ruby関係じゃないところにパッチを当ててコミットするときはlog messageに以下のようなやつを書くんだって．
 
       Approved by: XXX
 
-  * [Ruby][Subversion] trunk�˥ޡ������줿��
+  * [Ruby][Subversion] trunkにマージされた．
 
-  * [Ruby][Subversion] FreeBSD��������롥Svn::Context��notify_{func,baton}�����ꤷ�Ƥ��ʤ����顩libsvn_client/update.c:116�Ȥ�svn_wc_get_update_editor����������update_editor�����������ꤵ��Ƥ��ʤ��Τ����顥
+  * [Ruby][Subversion] FreeBSDだと落ちる．Svn::Contextにnotify_{func,baton}を設定していないから？libsvn_client/update.c:116とかsvn_wc_get_update_editorが怪しい．update_editorがちゃんと設定されていないのかしら．
 
-  * [CSS] �Ѥ�ݤ������IE�Ǥ�Gecko�Ǥ�ư����
+  * [CSS] 角を丸くする（IEでもGeckoでも動く）
 
     CSS:
 
@@ -340,7 +340,7 @@
         <span class="r3"></span>
         <span class="r4"></span>
       </span>
-      <p>����������</p>
+      <p>あいうえお</p>
       <span class="bottom">
         <span class="r4"></span>
         <span class="r3"></span>
@@ -349,57 +349,57 @@
       </span>
       </div> 
 
-  * ((<[debian-users:43271] Dell PowerEdge SC420��sarge�Υ��󥹥ȡ���|URL:http://lists.debian.or.jp/debian-users/200503/msg00128.html>))
+  * ((<[debian-users:43271] Dell PowerEdge SC420にsargeのインストール|URL:http://lists.debian.or.jp/debian-users/200503/msg00128.html>))
 
-  * [XSLT] xsltproc: ���ޥ�ɥ饤���XSLT�ץ�������
+  * [XSLT] xsltproc: コマンドラインのXSLTプロセサ．
 
-  * www�ΥХå����å����̤�150MB���ä���CSD�Υ�ݥ��ȥ��̵��̣�ˡˤǤ��������补����
+  * wwwのバックアップ容量が150MB減った．CSDのリポジトリ（無意味に）でかすぎだよ．．．
 
-  * ���ä����Τϸ��ˤ����ʤ������� XO
+  * いっちゃんのは見にいけない．．． XO
 
-  * [wsm][ToDo] ���ʥåץ���åȤΤ�ġ�
+  * [wsm][ToDo] スナップショットのやつ．
 
-      * done: �ۤäƥ�󥯤���������褦�ˤ�����(('del:������ѹ����벿�������饤����Ȥ�ACCEPT_LANGUAGE�Ϥ�����ʤ����顤JavaScript��Cookie�������ʤ���'))
-      * done: �ڡ����ǥ������ޥ����Ǥ���褦�ˤ����� (('del:�եå��Υ쥤�����ȡ����ɽ�������줿����������'))
-      * �ǽ����������ɽ����ꡥ�ڡ����ξ�����������˸����Ƥ������ɡ�����Ǥ⤢������ʤ���
-      * done: (('del:�Ǹ�˹�������Ƥ���ɤΤ��餤�ФäƤ��뤫��ɽ����ˡ�򸽺ߤλ��狼��ưŪ���Ѳ�����������JavaScript��Ȥ������ʤ��ʡ�JavaScript���Ȥ��ʤ��Ķ�����ɽ������ʤ��Ƥ����䡥���ξ����񤤤Ƥ��̣�ʤ�����'))
-      * done: (('del:���ʥ��󥹥᡼���񤯡�'))
-      * done: �̥ե�����˺�뤳�Ȥˤ�����esm�ϻȤ�ʤ���esm��Ȥ�����HTML�������󤸤㤦��(('del:JavaScript���̥ե�����ˤ����ۤ����������ʤ������䡤�ڡ�����˸�ͭ�ξ�����������������顤esm��ưŪ�˺�äơ��ڡ����������󤸤�ä������������ʡ��ƥ����Ȥʤ�����饵�����ʤ�Ƥ���ʵ��ˤʤ�ʤ�����������'))
-      * done: ������archive_type��tar�Ϻ����(('del:����������ɤμ����ѥ�᥿���夨����褦�ˤ��롥tar.gz����������tar�Ϥ���ʤ�����'))
+      * done: 黙ってリンクを生成するようにした．(('del:言語を変更する何か．クライアントのACCEPT_LANGUAGEはいじれないから，JavaScriptとCookieだろうなぁ．'))
+      * done: ページでカスタマイズできるようにした． (('del:フッタのレイアウト．著作権表示は入れたいだろう．'))
+      * 最終更新時刻の表示場所．ページの上の方がすぐに見えていいけど，邪魔でもあるんだよなぁ．
+      * done: (('del:最後に更新されてからどのくらい経っているかの表示方法を現在の時刻から動的に変化させたい．JavaScriptを使うしかないな．JavaScriptが使えない環境だと表示されなくていいや．嘘の情報を書いても意味ないし．'))
+      * done: (('del:アナウンスメールを書く．'))
+      * done: 別ファイルに作ることにした．esmは使わない．esmを使う場合はHTMLに埋め込んじゃう．(('del:JavaScriptは別ファイルにしたほうがいいかなぁ．いや，ページ毎に固有の状況があるだろうから，esmで動的に作って，ページに埋め込んじゃった方がいいかな．テキストなんだからサイズなんてそんな気になんないだろうし．'))
+      * done: キーはarchive_type，tarは削除．(('del:ダウンロードの種類をパラメタで代えられるようにする．tar.gzあるんだからtarはいらないか．'))
 
-  * [CGI] �����������
+  * [CGI] ダウンロード
 
        Content-Disposition: attachment; filename=XXX
 
   * [Debian] /etc/console-tools/remap
 
-  * [libtool] ��ͭ�饤�֥��γ�ĥ�Ҥ��ѹ�
+  * [libtool] 共有ライブラリの拡張子を変更
 
       % ./libtool --mode=link gcc -shrext .bundle ...
 
-    --mode=relink�ΤȤ��Ȥ��ˡ�--tag����ꤷ���ȸ����ơ������LINK-COMMAND��cc�λ���--tag����ꤷ�ʤ��Ƥ�LINK-COMMAND��gcc�Ȥ��ˤ���Ȥ��ޤ�ư����
+    --mode=relinkのときとかに，--tagを指定しろと言われて，さらにLINK-COMMANDがccの時は--tagを指定しなくてもLINK-COMMANDをgccとかにするとうまく動く．
 
-  * �롼���Ǥ�����
+  * ルータできた．
 
-    IPv6�Υѥ��å�ž����ͭ���ˤ��롥
+    IPv6のパケット転送を有効にする．
 
       % sudo sh -c "echo 1 > /proc/sys/net/ipv6/conf/all/forwarding"
 
-    DTCPC��ư�������ʲ���XXXX:XXXX:XXXX:XXXX::/64��DTCP�Ǥ��ä��ͥåȥ���ץ�ե��å�����
+    DTCPCを動かす．以下のXXXX:XXXX:XXXX:XXXX::/64はDTCPでもらったネットワークプレフィックス．
 
-    eth1��IPv6�Υ��ɥ쥹���ղá�
+    eth1にIPv6のアドレスを付加．
 
       % sudo ip addr add XXXX:XXXX:XXXX:XXXX::2/64 dev eth1
 
-    �����ͥåȥ���Υѥ��åȤ�eth1������褦�ˤ��롥
+    内部ネットワークのパケットはeth1に送るようにする．
 
       % sudo /sbin/ip route add XXXX:XXXX:XXXX:XXXX::/64 dev eth1
 
-    RA�򤹤륵����radvd�򥤥󥹥ȡ��롥
+    RAをするサーバradvdをインストール．
 
       % sudo apt-get -u --purge -V install radvd
 
-    /etc/radvd.conf�����
+    /etc/radvd.confを作成
 
       interface eth1
       {
@@ -412,31 +412,31 @@
          };
       };
 
-    radvd��ư��
+    radvdを起動．
 
       % sudo env - /etc/init.d/radvd restart
 
-  * USB NIC����äƤ������������ޤ�������ǧ�����롪��������
-    * �ʤ�����������ʤ��ä�&���꤬�Ȥ��������ڤ��ߤˤ��Ƥޤ��͡��� - osaru
-    * ������v�踦��18:30���ϤǤ�����16:30������������Ƥ���Ȼפ��ޤ��Τǡ�Ŭ���ʥ����ߥ󥰤�ʶ�����Ǥ��������� - osaru
+  * USB NICを買ってきた．おぉ，挿すだけで認識する！さすが．
+    * なんだか申し訳ないっす&ありがとう。明日楽しみにしてますねー。 - osaru
+    * 明日のv活研は18:30開始ですが、16:30頃から準備していると思いますので、適当なタイミングで紛れ込んでください。 - osaru
 
-  * CVS����Subversion�ˤ����鵯ư���֤���ѥ������������ä���
+  * CVSからSubversionにしたら起動時間も使用メモリも増えちゃった．
 
-  * radvd��Ω���夲�ʤ��ȥ���餷����
+  * radvdを立ち上げないとダメらしい．
 
-  * [JXTA] ����ML�����äƤ��ޤ�������
-    * ��С���餫�����ΤФ���㤤�ޤ������� - osaru
-    * ����������������󤹤衼�� - osaru
+  * [JXTA] むむん？MLに入っています？？？
+    * やば，やらかしたのばれちゃいましたか。 - osaru
+    * いろいろ訳があるんすよー。 - osaru
 
-  * [Debian] ���åץǡ��Ȥ����饢�åץǡ��Ȥ����Ԥ��Ƥ���Emacs�ν���������ޤ�ư���ʤ��褦�ˤʤäƤ��ޤä����������줸�㲿��Ǥ��ʤ��褥��
+  * [Debian] アップデートしたらアップデートが失敗していてEmacsの初期化がうまく動かないようになってしまった．．．これじゃ何もできないよぅ．
 
-  * [Ruby][FreeBSD] RWiki��Ƶ�ư�����褦�Ȥ��Ƥ�core���Ǥ��ƻ��Ǥ��ޤ���
+  * [Ruby][FreeBSD] RWikiを再起動させようとしてもcoreを吐いて死んでしまう．
 
-    ���á�RUBY_ENABLE_PTHREAD�Ȥ������ץ���������Ƥ뤸��󡥤����Ĥ���Ф��ޤ����������������顥
+    おっ，RUBY_ENABLE_PTHREADというオプションが増えてるじゃん．これをつければうまくいく．．．かしら．
 
-    ���䡤�ǥե���Ȥ�ͭ���ˤʤäƤ���ʡ��Ȥ������Ȥϡ��դ��ʤ��ȡ�no�ˤ���ȡˤ�����Τ���
+    いや，デフォルトで有効になっているな．ということは，付けないと（noにすると）いけるのか？
 
-    �ӥ󥴡�FreeBSD��pthread�äƷ�����
+    ビンゴ！FreeBSDのpthreadって嫌い！
 
   * [Ruby][Subversion]
 
@@ -451,40 +451,40 @@
                      err_file, self, @pool)
       end
 
-  * [�ɥᥤ��] 1ǯ������
+  * [ドメイン] 1年更新．
 
-  * [���ȥ꡼�ߥ�] �ե���������������椫��Ǥ�NegativeX��ʹ����褦�ˡ�exp��80�֤ˤĤʤ���streaming��8000�֤ˤĤʤ����褦��ư����褦�Ȼפä����ɽ���ʤ��ä��ʻ��֤��ʤ��Τǿ����ɤäƤ��ʤ��ˡ�Squid�äƥ���å���ʤ���С����ץ������äƽ����Τ����顥�褦�ϡ�ñ�ʤ�ǡ��������̤���Ruby�ǽ񤤤������ᤤ�����顥
-    * ��С����ץ������Ϻ�ä����Ȥ��ʤ����Ū���줫�⤷��ޤ��󤬡�acl �� no_cache ������Ȥä� URL �˴ޤޤ��ʸ����� dst ���ɥ쥹�ʤɤǥ���å����̵ͭ�����ꤷ���Ф�������ޤ���(�����������ȤǤʤ�?) - osaru
-    * �����������Ȥʤ�Ǥ��������ޤ������ʤ���Ǥ����Ȥ������Ȥǡ�����ˡ�Squid�������ǡ����������äƤ���Ǥʤ��ȥ��饤����Ȥ˥ǡ���������ʤ��󤸤�ʤ����פȼٿ䤷�Ƥ���櫓�Ǥ���
+  * [ストリーミング] ファイアウォールの中からでもNegativeXが聞けるように，expの80番につなげばstreamingの8000番につないだように動作させようと思ったけど出来なかった（時間がないので深く追っていない）．Squidってキャッシュなしリバースプロキシって出来るのかしら．ようは，単なるデータの素通し．Rubyで書いた方が早いかしら．
+    * リバースプロキシは作ったことがないんで的外れかもしれませんが，acl と no_cache だかを使って URL に含まれる文字列や dst アドレスなどでキャッシュの有無を設定した覚えがあります。(そういうことでない?) - osaru
+    * そういうことなんですが，うまくいかないんです．ということで，勝手に「Squidは全部データを受け取ってからでないとクライアントにデータを送らないんじゃないか」と邪推しているわけです．
 
-  * [DTCP] ((<�Ȥꤢ����ư�����|URL:http://www.cozmixng.org/repos/ruby/dtcpc/trunk/>))��
+  * [DTCP] ((<とりあえず動くもの|URL:http://www.cozmixng.org/repos/ruby/dtcpc/trunk/>))．
 
-  * [IPv6] �����٤ä���
+  * [IPv6] 亀が踊った！
 
-    Debian�ʤ�6in4tunnel�򥤥󥹥ȡ��뤷�ưʲ��Υ��ޥ�ɤǤ����롥
+    Debianなら6in4tunnelをインストールして以下のコマンドでいける．
 
-      % sudo /usr/sbin/6in4tunnel add device �ǥХ���̾ �롼����IPv4�Υ��ɥ쥹 ��ʬ��IPv6�Υ��ɥ쥹 2000::/3
+      % sudo /usr/sbin/6in4tunnel add device デバイス名 ルータのIPv4のアドレス 自分のIPv6のアドレス 2000::/3
 
-    : �ǥХ���̾
-        ������̾��
-    : �롼����IPv4�Υ��ɥ쥹
-        �����Ƥ��ä����
-    : ��ʬ��IPv6�Υ��ɥ쥹
-        �ͥåȥ��ñ�̤ǥ��ɥ쥹����äƤ����顤����κǸ��::1�Ȥ��դ���Ф褤��
+    : デバイス名
+        好きな名前
+    : ルータのIPv4のアドレス
+        教えてもらったやつ
+    : 自分のIPv6のアドレス
+        ネットワーク単位でアドレスをもらっていたら，それの最後に::1とか付ければよい．
 
-    * ����ǤȤ���Ǥ���v�踦��Hiki�ǷҤ�����������äȽ񤤤Ƥ����Ƥ�館��Ȥ��줷���ä��� - osaru
-      * DTCHC���ä��餽�����褦�ȻפäƤ��ޤ����⤦����ä��ԤäƤ��������͡�
+    * おめでとさんです。v活研のHikiで繋ぎ方をチョチョっと書いておいてもらえるとうれしいっす。 - osaru
+      * DTCHCを作ったらそうしようと思っています．もうちょっと待ってくださいね．
 
-  * [Ruby] ((<Year planner PDF generation in Python|URL:http://www.mechanicalcat.net/richard/log/Python/Year_planner_PDF_generation_in_Python>))��Ruby/GnomePrint�ǽ񤤤Ƥߤ褦��
+  * [Ruby] ((<Year planner PDF generation in Python|URL:http://www.mechanicalcat.net/richard/log/Python/Year_planner_PDF_generation_in_Python>))をRuby/GnomePrintで書いてみよう．
 
-  * [�����] ~/.kazehakase/mozilla/kazehakase/prefs.js��
+  * [風博士] ~/.kazehakase/mozilla/kazehakase/prefs.jsに
 
       user_pref("mozilla.widget.raise-on-setfocus", false);
 
-    �Ƚ񤱤й����ˤʤ��餷����
+    と書けば幸せになれるらしい．
 
-  * [e-morioka���ߥ�˥ƥ�] �����Ͽ���ʤ���ML�˻��äǤ��ʤ��Τ������ä���ˤϳ����Τδ����Ԥ˥᡼����äƤ����Ĥ��Ƥ�ʤ��Ȥ��������Τ��餤��ư�����褦��Ȥ�������
+  * [e-moriokaコミュニティ] 会員登録しないとMLに参加できないのか．参加するには各団体の管理者にメールだってさ．閉じてるなぁというかそのくらい自動化しようよというか．
 
-  * [Ruby][Subversion] Ruby Subversion binding��⤦����((<ͷ�ӽФ���|URL:http://pub.cozmixng.org/~kou/diff/>))��
+  * [Ruby][Subversion] Ruby Subversion bindingをもう一度((<遊び出した|URL:http://pub.cozmixng.org/~kou/diff/>))．
 
-  * ((<kou::���::-2004>))
+  * ((<kou::メモ::-2004>))

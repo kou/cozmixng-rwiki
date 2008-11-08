@@ -1,65 +1,65 @@
-= cogito::�Ŀͥ�ݥ��ȥ깽��
+= cogito::個人リポジトリ構築
 
-�����ȥ뤬�Ѥʵ������뤱�ɡ�����
+タイトルが変な気がするけど．．．
 
-git�Ǵ�������Ƥ���cairo�Υ�ݥ��ȥ��cogit�ǥ�����������ʬ�Υ�ݥ��ȥ�������������
+gitで管理されているcairoのリポジトリにcogitでアクセス。自分のリポジトリも公開したい。
 
-== ���ˤʤ��ݥ��ȥ����äƤ���
+== 元になるリポジトリを持ってくる
 
   % cg-clone git://git.cairographics.org/git/cairo
 
-== �ѹ�����
+== 変更する
 
-�ե�������ɲä�����硣
+ファイルを追加した場合。
 
   % cg-add XXX.c
 
-���̤��ѹ������饳�ߥåȤ��롣���Υ��ߥåȤϥ�������Υ�ݥ��ȥ�ؤΥ��ߥåȤˤʤ�Τǡ��ӥӤ�ɬ�פ�̵����
+一通り変更したらコミットする。このコミットはローカルのリポジトリへのコミットになるので、ビビる必要は無い。
 
-�����������ߥåȤ������˴Ķ��ѿ�GIT_AUTHOR_EMAIL��GIT_COMMITTER_EMAIL�����ꤷ�Ƥ������ۤ����褤��
+ただし、コミットする前に環境変数GIT_AUTHOR_EMAILとGIT_COMMITTER_EMAILを設定しておいたほうがよい。
 
-�ʲ��Τ褦�ʤ�Ĥ�~/.zshenv�ˤǤ�񤤤Ƥ�����
+以下のようなやつを~/.zshenvにでも書いておく。
 
   export EMAIL="kou@cozmixng.org"
   export GIT_AUTHOR_EMAIL="$EMAIL"
   export GIT_COMMITTER_EMAIL="$EMAIL"
 
-ɬ�פʤ�EDITOR�����ꤷ�Ƥ����Ȥ褤��
+必要ならEDITORも設定しておくとよい。
 
-���ߥåȤ�ñ��cg-commit��Ƥ֤�����
+コミットは単にcg-commitを呼ぶだけ。
 
   % cg-commit
 
-== ���������Ѱդ���
+== 公開場所を用意する
 
-�������餬���������Ѱա�
+ここからが公開する用意。
 
-HTTP��cg-clone�Ǥ���褦�ˡ�~/public_html/�ʲ��˺�롣
+HTTPでcg-cloneできるように、~/public_html/以下に作る。
 
-�����
+今回は
 
   % cg-clone http://pub.cozmixng.org/~kou/git/cairo/.git cairo-combined
 
-�Ǥ���褦�ˤ��롣
+できるようにする。
 
   % ssh pub.cozmixng.org
   pub% mkdir -p ~/public_html/git/cairo
   pub% cd ~/public_html/git/cairo
   pub% git-init-db
 
-== ����������Ͽ����
+== 公開場所を登録する
 
-cg-push�Ǹ������˼�ʬ�Υ�ݥ��ȥ������Ǥ���褦�ˤ��롣
+cg-pushで公開場所に自分のリポジトリを公開できるようにする。
 
-�ޤ����֥�����������롣�֥����ˤϼ�ʬ��̾�����դ���Τ����̤ߤ�����
+まず、ブランチを作成する。ブランチには自分の名前を付けるのが普通みたい。
 
-  % cd cg-clone�ǤȤäƤ�����ݥ��ȥ꤬����ǥ��쥯�ȥ�
+  % cd cg-cloneでとってきたリポジトリがあるディレクトリ
   % cg-branch-add kou git+ssh://pub.cozmixng.org/home/kou/public_html/git/cairo
 
-���ʤߤˡ��֥�����URI���ѹ�����ˤ�cg-branch-chg��Ȥ���
+ちなみに、ブランチのURIを変更するにはcg-branch-chgを使う。
 
   % cg-branch-chk kou git+ssh://XXX/....
 
-��������ˤ�cg-push�ǡ�cg-branch-add���դ���̾���Υ֥�������ꤹ�롣
+公開するにはcg-pushで、cg-branch-addで付けた名前のブランチを指定する。
 
   % cg-push kou

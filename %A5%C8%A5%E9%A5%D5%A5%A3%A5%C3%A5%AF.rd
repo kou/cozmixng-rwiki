@@ -1,12 +1,12 @@
-= �ȥ�ե��å�
+= トラフィック
 
-�ȥ�ե��å��ط��κ�ȵ�Ͽ�Ǥ���
+トラフィック関係の作業記録です。
 
 == MRTG
 
-((<����|URL:/mrtg/>))��ư���Ƥ��롥
+((<ここ|URL:/mrtg/>))で動いている．
 
-����ե������������ˡ(���community�Ϥդ��Ƥ�����)
+設定ファイルの生成方法(一応communityはふせておこう)
 
   % cfgmaker --global "WorkDir: /usr/local/var/www/data/mrtg" \
       --global "Language: eucjp" \
@@ -18,9 +18,9 @@
       HOGE@streaming.cozmixng.org \
       HOGE@160.29.167.2 > ~/mrtg.cfg
 
-LoadMIBs������Ƥ����ȡ�.1.3.6.1.4.1.2021.10.1.5.1����ʤ���laLoadInt.1�Ƚ񤯤��Ȥ��Ǥ���褦�ˤʤ롥
+LoadMIBsを入れておくと，.1.3.6.1.4.1.2021.10.1.5.1じゃなくてlaLoadInt.1と書くことができるようになる．
 
-����ե������/usr/local/var/www/mrtg.cfg���֤���mrtg����������HTML���֤��ǥ��쥯�ȥ��/usr/local/var/www/data/mrtg/�Ȥ��롥
+設定ファイルを/usr/local/var/www/mrtg.cfgに置き，mrtgで生成したHTMLを置くディレクトリは/usr/local/var/www/data/mrtg/とする．
 
   % sudo cp ~/mrtg.cfg /usr/local/var/www/mrtg.cfg
   % sudo crontab -u www -e
@@ -31,25 +31,25 @@ LoadMIBs������Ƥ����ȡ�.1.3.6.1.4.1.2021.10.1.5.1����ʤ���laLoadInt.1�Ƚ񤯤��
   % cd /usr/local/var/www/data/mrtg
   % sudo ln -s /usr/local/share/mrtg/ icons
 
-mrtg�Ȥ�indexmaker�ε�ư��
+mrtgとかindexmakerの起動を
 
   /usr/local/bin/mrtg ...
 
-�Ȥ��ˤ�����
+とかにせずに
 
   (cd /usr/local/bin; ./mrtg ...)
 
-�ˤ��Ƥ���Τϡ����Ԥ���perl��FindBin�����ޤ�ư���ʤ����顥
+にしているのは，前者だとperlのFindBinがうまく動かないから．
 
-���֤�www�桼����crontab���������ʤ���Ȼפ����Ǥ�ʤ�ǡ�HOME��/nonexistent���������ʤΤ���SHELL��/usr/sbin/nologin�����顩
+たぶん，wwwユーザのcrontabだからダメなんだと思う．でもなんで？HOMEが/nonexistentだからダメなのか？SHELLが/usr/sbin/nologinだから？
 
 == Analog
 
-  * Analog��((<�Ź����|URL:/analog/>))�ߤޤ����� - ((<kou>))
+  * Analogを((<仕込んで|URL:/analog/>))みました。 - ((<kou>))
 
-  * ����ե������/usr/local/etc/analog.cfg
+  * 設定ファイルは/usr/local/etc/analog.cfg
 
-  * ��ܤ����Ȥ����Ϥ�����ؤ�
+  * めぼしいところはここらへん
       FILEEXCLUDE "/~*"
       FILEEXCLUDE "/analog/*"
       LANGUAGE JAPANESE-UTF
@@ -75,18 +75,18 @@ mrtg�Ȥ�indexmaker�ε�ư��
       DNSLOCKFILE /usr/tmp/dnslock
       DNS WRITE
 
-  * cron��ư����
+  * cronで動かす
       10 5 * * *     /usr/local/bin/analog
 
-  * �Ŀͤ�Analog����������~/local/etc/analog.cfg���Ȥ���̾���μ�ʬ�Ѥ�����ե��������ʲ��Τ褦�˼¹Ԥ��Ʋ�������
+  * 個人でAnalogしたい場合は~/local/etc/analog.cfg等という名前の自分用の設定ファイルを作り以下のように実行して下さい。
       % analog -g~/local/etc/analog.cfg
 
-  * �ʲ���~/local/etc/analog.cfg����Ǥ���
+  * 以下は~/local/etc/analog.cfgの例です。
       OUTFILE /home/kou/public_html/analog/index.html
       FILEEXCLUDE *
       FILEINCLUDE /~kou/*
       FILEEXCLUDE /~kou/analog/*
       DNS READ
 
-  * ���Ȱʲ��Τ褦��Analog�����Ϥ���HTML�ե����뤬����ǥ��쥯�ȥ�(�����Ǥ�~kou/public_html/analog/)�˰ʲ��Τ褦��.htaccess��Ź���Ǥ����ȹ����ˤʤ�뤫�⤷��ޤ���(/analog/�ˤ�Ź���Ǥ���)��
+  * あと以下のようなAnalogが出力するHTMLファイルがあるディレクトリ(上の例では~kou/public_html/analog/)に以下のような.htaccessを仕込んでおくと幸せになれるかもしれません(/analog/にも仕込んである)。
       AddDefaultCharset UTF-8

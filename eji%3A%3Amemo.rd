@@ -1,51 +1,51 @@
 = eji::memo
 
-  * [��] ((<FLOPS 2006|URL:http://nicosia.is.s.u-tokyo.ac.jp/FLOPS2006/>))
+  * [ぷ] ((<FLOPS 2006|URL:http://nicosia.is.s.u-tokyo.ac.jp/FLOPS2006/>))
 
-  * [����¾] ((<URL:http://www.plusminus.ru/>))
+  * [その他] ((<URL:http://www.plusminus.ru/>))
 
-  * [����] ((<Windows Live|URL:http://www.live.com/>))
+  * [検索] ((<Windows Live|URL:http://www.live.com/>))
 
-    ����ǥ����٥����ڤˤʤ�Ф������ɡ�
+    これでサーベイが楽になればいいけど。
 
   * [Rails] with svn
 
-    * ((<subversion��Rails���ץ�����|URL:http://wiki.rails2u.com/subversion%E3%81%A7Rails%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E7%AE%A1%E7%90%86>))
+    * ((<subversionでRailsアプリを管理|URL:http://wiki.rails2u.com/subversion%E3%81%A7Rails%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E7%AE%A1%E7%90%86>))
 
     * ((<HowtoUseRailsWithSubversion|URL:http://wiki.rubyonrails.com/rails/pages/HowtoUseRailsWithSubversion>))
 
 
 
-  * [��] ((<Logowiki|URL:http://www.logowiki.net/>))
+  * [ぷ] ((<Logowiki|URL:http://www.logowiki.net/>))
 
-  * [˨] ��������
+  * [萌] いろいろ
 
-    * ((<�������꡼���ظ�(���Ϲ�)�ץ�����ߥ�|URL:http://www.entis.jp/doc/lolita_programing/lolita1.html>))
-    * ((<���꡼���ظ�(���Ϲ�)�ץ�����ߥ���������|URL:http://www.entis.jp/doc/lolita_programing/lolita2.html>))
+    * ((<初等ロリータ指向(×嗜好)プログラミング|URL:http://www.entis.jp/doc/lolita_programing/lolita1.html>))
+    * ((<ロリータ指向(×嗜好)プログラミング中級基本編|URL:http://www.entis.jp/doc/lolita_programing/lolita2.html>))
 
-    * ((<���ͥץ�����ߥ󥰥������� by Java|URL:http://www.okisoft.co.jp/esc/go/style0.html>))
+    * ((<美人プログラミングスタイル by Java|URL:http://www.okisoft.co.jp/esc/go/style0.html>))
 
 
   * [Rails] ((<Rails Recipes|asin:0977616606>))
 
-  * [��] �ǥХå�
+  * [ぷ] デバッグ
 
-    * ((<˨����ǥХå���ˡ����|URL:http://www.nomuraz.com/denpa/prog002.htm#IDPROG0012>))
-    * ((<˨����ǥХå�: �ޤ��ϻ��ǡ���ˤ��ƿ��ۤ���Τ�ߤ��Scheme�򰦤���褦�ˤʤä���|URL:http://hiratch.net/blog/archives/2005/12/000058.html>))
+    * ((<萌えるデバッグ手法な話|URL:http://www.nomuraz.com/denpa/prog002.htm#IDPROG0012>))
+    * ((<萌えるデバッグ: または私は如何にして心配するのを止めてSchemeを愛するようになったか|URL:http://hiratch.net/blog/archives/2005/12/000058.html>))
 
 
-  * [��] ((<Error handling|URL:http://www.objectarchitects.de/arcus/cookbook/exhandling/index.htm>))
+  * [ぷ] ((<Error handling|URL:http://www.objectarchitects.de/arcus/cookbook/exhandling/index.htm>))
 
-  * [svn] CVS��ݥ��ȥ�
+  * [svn] CVSレポジトリ
 
-    CVS�Ǵ�������Ƥ����Ĥ�Subversion��ȤäƤ����ꤿ���Ȥ��äƤɤ��������?
-    �ܲȤ����ǥС�����󥢥åפ��줿�鼫ʬ��svn��ݥ��ȥ�ˤ�ȿ�ǤǤ����餤���������...
+    CVSで管理されているやつをSubversionを使っていじりたいときってどうすんだろ?
+    本家の方でバージョンアップされたら自分のsvnレポジトリにも反映できたらいいんだけど...
 
-  * [Gauche] EQL���ڥ���饤��(?)�äݤ����
+  * [Gauche] EQLスペシャライザ(?)っぽいもの
 
-    �ߤ����ä��Τ�VM�����äƺ�äƤߤ���
+    欲しかったのでVMいじって作ってみた。
 
-    ���ޤ���������ѥå��Ϻ�äƤʤ�����...
+    ♯まだ汚いからパッチは作ってないけど...
 
      #enscript scheme
      gosh> (define-method div (x (y := 0))
@@ -62,34 +62,34 @@
      _____________
      gosh>
 
-  * [����¾] �饤����
+  * [その他] ライセンス
 
-    ���������饤�֥��Υ饤���󥹤�Ĵ�٤�����ݤ�����Ĵ�٤Ƥ�����Ĥ��ߤ�����
-    �饤���󥹤�ץ������ˤ��ƥ饤�֥�������Ȥ߹���Ф��������������ʤΤˤʡ�
+    いちいちライブラリのライセンスを調べるの面倒だから調べてくれるやつが欲しい。
+    ライセンスをプログラムにしてライブラリの中に組み込めばいろいろと便利なのにな．
 
-  * [Emacs] (({-=:--})) �Ѥʥ⡼��
+  * [Emacs] (({-=:--})) 変なモード
 
-    �����ɤ�񤤤Ƥ��ƥ���ѥ��뤷�褦�Ȥ�����ʸ�����������ʤ��ȤˤʤäƤ�����
-    �⡼�ɥ饤����ɤ��ߤƤߤ��¾�Υե�����Ȱ㤦���ʤ�������졩
+    コードを書いていてコンパイルしようとしたら文字がおかしなことになっていた。
+    モードラインを良くみてみると他のファイルと違う。なんだろこれ？
 
-     --:-- ������̾ ����¾
+     --:-- ソース名 その他
 
-     -=:-- ������̾ ����¾
+     -=:-- ソース名 その他
 
-    �ʤ��(({=}))�ˤʤäƤ���������
+    なんで(({=}))になっているんだろ？
 
-  * [Gauche] '[' ']'�λȤ�ƻ
+  * [Gauche] '[' ']'の使い道
 
-    ����ʴ����Ǥ⤤������
+    こんな感じでもいいかも
 
      #enscript scheme
       (ref (ref (ref hoge 'a) 'b) 'c)
-        ��
+        ↓
       ([hoge] :a :b :c)
 
-  * [Gauche] deref�äƲ�����?
+  * [Gauche] derefって何だろ?
 
-    object-apply�Ȥ��Ȥä�Smalltalk�äݤ���������ˤʤ뤱�ɤ��줸��Ȥ��ʤ��������ʡ�
+    object-applyとか使ってSmalltalkっぽいスタイルになるけどこれじゃ使えないだろうな．
 
      #enscript scheme
      (define-class <message-passing-meta> (<class>)
@@ -127,9 +127,9 @@
       (hoge :b :a) ;=> 0
     
 
-  * [Gauche] �ðۥ᥽�å�
+  * [Gauche] 特異メソッド
 
-    ����ʴ������ðۥ᥽�åɤ�����Ǥ����餦�줷������
+    こんな感じの特異メソッドが定義できたらうれしいかも
 
      #enscript scheme
      (define-method hoge ((a :equal? obj) b)
@@ -143,30 +143,30 @@
 
   * [Haskell] ((<hs-plugins|URL:http://www.cse.unsw.edu.au/~dons/hs-plugins/>))
 
-    Haskell��eval����?
+    Haskell版evalかな?
 
-  * [����¾] �ƥ���
+  * [その他] テスト
 
-    �ƥ��Ȥ򤹤뤿��δĶ��ϥѥå�����������ʤ�����ȯ����ͤ��Ȥ��桼���ϻȤ�ʤ����顥
+    テストをするための環境はパッケージに入れない．開発する人が使いユーザは使わないから．
 
   * [svn] svn copy
    
-    �ʲ��Τ褦�ˤ�äƤ�r-0.1�μ��֤�trunk��Ʊ����trunk�������Ƥ����̤ˤʤ롥
+    以下のようにやってもr-0.1の実態はtrunkと同じ．trunkを修正してから別になる．
 
      svn copy http://www.hoge.org/repos/foo/trunk http://www.hoge.org/repos/foo/tags/r-0.1
 
 
-  * [����¾] ((<�ο֥ͥ���|URL:http://erai.jugem.jp/>))
+  * [その他] ((<偉人ブログ|URL:http://erai.jugem.jp/>))
 
-  * [Scheme] ��³�Ǥ�����
+  * [Scheme] 継続での注意
 
-    hoge.scm��
+    hoge.scmに
 
      #enscript scheme
      (define cont #f)
      (call/cc (lambda (k) (set! cont k)))
 
-    �Ȥ�ä�¾�ΤȤ��������ɤ߹����
+    とやって他のところから読み込むと
 
      gosh> (load "hoge.scm")
      #t
@@ -174,19 +174,19 @@
      *** IO-CLOSED-ERROR: I/O attempted on closed port: #<iport(closed) /home/koji/work/hoge.scm   0x8129c38>
      Stack Trace:
 
-    �Ȥʤꥨ�顼�ˤʤ롥��³��load�θ�������ޤޤ�Ƥ��뤿�ᡥ
+    となりエラーになる．継続にloadの後処理が含まれているため．
 
-    �ȥåץ�٥�Ƿ�³�Ȥä����Ȥʤ��ä����餳����Τ�ʤ��ä���
+    トップレベルで継続使ったことなかったからこれは知らなかった．
 
   * [Gauche] ((<c-wrapper|URL:http://homepage.mac.com/naoki.koguro/prog/c-wrapper/index-j.html>))
 
-    ���������ʤ�
+    これ凄いなぁ
 
-  * [DI] ((<Inversion of Control ����ƥʤ� Dependency Injection �ѥ�����|URL:http://kakutani.com/trans/fowler/injection.html>))
+  * [DI] ((<Inversion of Control コンテナと Dependency Injection パターン|URL:http://kakutani.com/trans/fowler/injection.html>))
 
-  * [����¾] Dependency Injection
+  * [その他] Dependency Injection
 
-    Gauche�Ǽ�������Ȥ���ʴ�����?
+    Gaucheで実装するとこんな感じか?
 
      #enscript scheme
      (define-class <container> ()
@@ -199,7 +199,7 @@
                    ((hash-table-get (ref c 'fields) ,field-name) c))))
             (current-module)))
 
-    * ����
+    * 参考
 
       * ((<TestDepInjRb|URL:http://onestepback.org/cgi-bin/osbwiki.pl?DependencyInjectionCode/DepInjRb>))
 
@@ -207,11 +207,11 @@
 
   * [svn] svn switch
 
-  * [svn] ��ȯ����
+  * [svn] 開発方針
 
-    trunk���ɲý������Ƥ�������꡼���Ǥ������Ȼפä���branches��trunk�����Ƥ򥳥ԡ���
-    branches�ǥƥ��Ȥ��Ƥ⤦�ƥ��Ȥ�����ʬ��̵�����ʤȻפä���tags�˥��ԡ���
+    trunkで追加修正していき，リリースできそうと思ったらbranchesにtrunkの内容をコピー．
+    branchesでテストしてもうテストする部分が無いかなと思ったらtagsにコピー．
 
-    * ����
+    * 参考
 
-      ((<Subversion�ˤ��С���������|URL:http://subversion.bluegate.org/doc/book.html#svn.branchmerge.switchwc>))
+      ((<Subversionによるバージョン管理|URL:http://subversion.bluegate.org/doc/book.html#svn.branchmerge.switchwc>))

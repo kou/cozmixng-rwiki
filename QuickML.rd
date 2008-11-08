@@ -1,14 +1,14 @@
 = QuickML
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo nice -20 /usr/local/sbin/portupgrade -NRr quickml
 
-== ÀßÄê
+== è¨­å®š
 
-/usr/local/etc/quickmlrc.sample¤ò´ğ¤Ë/usr/local/etc/quickmlrc¤òºîÀ®¡¥
+/usr/local/etc/quickmlrc.sampleã‚’åŸºã«/usr/local/etc/quickmlrcã‚’ä½œæˆï¼
 
-ºÇÄã¸Â¤ÎÊÑ¹¹ÅÀ¤Ï°Ê²¼¤ÎÄÌ¤ê¡¥port¤ò10025¤Ë¤·¤Ê¤«¤Ã¤¿¤Î¤Ï((<Postfix>))¤¬¤â¤¦¤¹¤Ç¤Ë»È¤Ã¤Æ¤¤¤¿¤«¤é¡¥
+æœ€ä½é™ã®å¤‰æ›´ç‚¹ã¯ä»¥ä¸‹ã®é€šã‚Šï¼portã‚’10025ã«ã—ãªã‹ã£ãŸã®ã¯((<Postfix>))ãŒã‚‚ã†ã™ã§ã«ä½¿ã£ã¦ã„ãŸã‹ã‚‰ï¼
 
   # _
   :port => 20025,
@@ -16,52 +16,52 @@
   :smtp_host => 'localhost',
   :domain => 'ml.cozmixng.org',
 
-¸å¤Ï¡¤Å¬Åö¤Ë¡¥
+å¾Œã¯ï¼Œé©å½“ã«ï¼
 
-=== Postfix¤¬Å¾Á÷¤¹¤ëÀßÄê
+=== PostfixãŒè»¢é€ã™ã‚‹è¨­å®š
 
-XXX@ml.cozmxing.org°¸¤Î¥á¡¼¥ë¤È¡¤XXX@YYY.ml.cozmixng.org°¸¤Î¥á¡¼¥ë¤òQuickML¤ËÅ¾Á÷¤¹¤ë¤è¤¦¤Ë¡¤/usr/local/etc/postfix/transport¤Ë°Ê²¼¤òÄÉ²Ã¡¥
+XXX@ml.cozmxing.orgå®›ã®ãƒ¡ãƒ¼ãƒ«ã¨ï¼ŒXXX@YYY.ml.cozmixng.orgå®›ã®ãƒ¡ãƒ¼ãƒ«ã‚’QuickMLã«è»¢é€ã™ã‚‹ã‚ˆã†ã«ï¼Œ/usr/local/etc/postfix/transportã«ä»¥ä¸‹ã‚’è¿½åŠ ï¼
 
   ml.cozmixng.org smtp:[127.0.0.1:20025]
   .ml.cozmixng.org smtp:[127.0.0.1:20025]
 
-postmap¤òËº¤ì¤º¤Ë¡¥
+postmapã‚’å¿˜ã‚Œãšã«ï¼
 
   % sudo postmap /usr/local/etc/postfix/transport
 
-ºÆÆÉ¤ß¹ş¤ß¤âËº¤ì¤º¤Ë¡¥
+å†èª­ã¿è¾¼ã¿ã‚‚å¿˜ã‚Œãšã«ï¼
 
   % sudo env - /usr/local/etc/rc.d/postfix.sh reload
 
-== µ¯Æ°
+== èµ·å‹•
 
-/etc/rc.conf¤Ë°Ê²¼¤òÄÉ²Ã
+/etc/rc.confã«ä»¥ä¸‹ã‚’è¿½åŠ 
 
   quickml_enable="YES"
 
-µ¯Æ°¡¥
+èµ·å‹•ï¼
 
   % sudo env - /usr/local/etc/rc.d/quickml.sh start
 
 == quickml-analog
 
-QuickML¤Î¥í¥°¤òÆÉ¤ó¤Ç¥°¥é¥Õ²½¤·¤Æ¤¯¤ì¤ë¡¥
+QuickMLã®ãƒ­ã‚°ã‚’èª­ã‚“ã§ã‚°ãƒ©ãƒ•åŒ–ã—ã¦ãã‚Œã‚‹ï¼
 
-½ĞÎÏÍÑ¥Ç¥£¥ì¥¯¥È¥ê¤ÎºîÀ®¡¥
+å‡ºåŠ›ç”¨ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ä½œæˆï¼
 
   % sudo mkdir /usr/local/var/quickml-analog
   % sudo chown quickml:quickml /usr/local/var/quickml-analog
 
-((<Apache>))¤Ç¸ø³«¤¹¤ë¤è¤¦¤ËÀßÄê¡¥/usr/local/etc/apache2/httpd.conf¤Ë°Ê²¼¤òÄÉ²Ã¡¥
+((<Apache>))ã§å…¬é–‹ã™ã‚‹ã‚ˆã†ã«è¨­å®šï¼/usr/local/etc/apache2/httpd.confã«ä»¥ä¸‹ã‚’è¿½åŠ ï¼
 
   Alias /quickml /usr/local/var/quickml-analog
 
-quickml¥æ¡¼¥¶¤Îcrontab¤òÊÔ½¸¤·¤Æquickml-analog¤òÄê´üÅª¤ËÆ°¤«¤¹¤è¤¦¤Ë¤¹¤ë¡¥
+quickmlãƒ¦ãƒ¼ã‚¶ã®crontabã‚’ç·¨é›†ã—ã¦quickml-analogã‚’å®šæœŸçš„ã«å‹•ã‹ã™ã‚ˆã†ã«ã™ã‚‹ï¼
 
   % sudo -u quickml crontab -l
   50 5 * * *      /usr/local/bin/quickml-analog -i -o /usr/local/var/quickml-analog /var/log/quickml.log
 
-FreeBSD¤À¤Ègnuplot¤Î¹½Ê¸¤Ç¥¨¥é¡¼¤¬¤Ç¤ë¤Î¤Ç¥Ñ¥Ã¥Á¤òÅö¤Æ¤Æ¤ª¤¯¡¥
+FreeBSDã ã¨gnuplotã®æ§‹æ–‡ã§ã‚¨ãƒ©ãƒ¼ãŒã§ã‚‹ã®ã§ãƒ‘ãƒƒãƒã‚’å½“ã¦ã¦ãŠãï¼
 
   # enscript diffu
   --- /usr/ports/mail/quickml/work/quickml-0.7/quickml-analog     Fri Dec 10 12:41:57 2004

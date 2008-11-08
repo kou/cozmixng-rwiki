@@ -12,4 +12,4 @@ The latest version: 0.0.1
 
 == Comments
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

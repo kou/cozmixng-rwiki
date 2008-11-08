@@ -2,108 +2,108 @@
 
 = Pseudo Web Mail::README.ja
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 Ruby's
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����
-|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))�������������
+((<COZMIXNG RWiki - 連絡先
+|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-ά����PWM����̾��((*�������WebMail*))�ޤ���((*��WebMail*))��
-����ɤ�̾���罸��Ǥ���
+略してPWM．和名は((*いんちきWebMail*))または((*偽WebMail*))．
+より良い名前募集中です．
 
-�������������Τߤ�Web�᡼�륷���ƥ�Ǥ���SMTP��POP3��IMAP��
-���Ѥ���Web Mail�����ƥ�Ǥ�((*����ޤ���*))����äơ�Yahoo! 
-��HotMail���Τ褦��̵���᡼��Ȥ������Ѥ��뤳�ȤϽ���ޤ���
+ローカル配送のみのWebメールシステムです．SMTPやPOP3，IMAP等
+を用いたWeb Mailシステムでは((*ありません*))．よって、Yahoo! 
+やHotMail等のように無料メールとして利用することは出来ません．
 
-�������ꡤSMTP�����Ф�POP3��IMAP�����������Ѱդ���ɬ�פϤ�
-��ޤ��󡥤���ˡ�((<RAA:webrick>))�����󥹥ȡ��뤵��Ƥ���
-��Apache����HTTP�����Ф����Ѱդ���ɬ�פ⤢��ޤ���
+その代わり，SMTPサーバやPOP3，IMAPサーバ等を用意する必要はあ
+りません．さらに，((<RAA:webrick>))がインストールされてあれ
+ばApache等のHTTPサーバさえ用意する必要もありません．
 
-== ����
+== 概要
 
-  * ̵��
-  * �����(�桼��̾���ѥ���ɤ�����Ͽ����Ф����Ȥ���)
-  * �桼��̾�����ܸ줬�Ȥ���
-    * => �鿴�Ԥˤ䤵������
-  * �����˥᡼������뤳�ȤϽ���ʤ�(�����Ǵ���)
-    * => ���Ԥ��Ƥ⳰��(���󥿡��ͥåȤʤ�)�ؤαƶ������ʤ�
-      * => �鿴�Ԥˤ䤵������
-  * ������ֻ��Ѥ���ʤ���������Ȥϼ�ư���
-    * ˰������ۤä��餫���Ƥ����Ф���
-  * Ruby��dRuby���Ѥ��Ƥ���
+  * 無料
+  * お手軽(ユーザ名、パスワードだけ登録すればすぐ使える)
+  * ユーザ名に日本語が使える
+    * => 初心者にやさしい？
+  * 外部にメールを送ることは出来ない(内部で完結)
+    * => 失敗しても外部(インターネットなど)への影響が少ない
+      * => 初心者にやさしい？
+  * 一定期間使用されないアカウントは自動削除
+    * 飽きたらほったらかしておけばいい
+  * Ruby、dRubyを用いている
 
-== ��¸�饤�֥��
+== 依存ライブラリ
 
   * ((<RAA:drb>))
   * ((<RAA:erb>))
   * ((<RAA:div>))
   * ((<RAA:devel-logger>))
 
-=== ����Ф����饤�֥��
+=== あればいいライブラリ
 
   * ((<RAA:webrick>))
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/pwm.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/ruby/pwm/trunk pwm
 
-== ���󥹥ȡ���
+== インストール
 
   % ruby install.rb config
   % ruby install.rb setup
   # ruby install.rb install
 
-== ����
+== 設定
 
-=== CGI��
+=== CGI用
 
-  (1) site/pwm-config.rb��Ķ��ˤ��碌�����ꤹ�롣
-  (2) site/pwmd.rb��ư���롣
+  (1) site/pwm-config.rbを環境にあわせて設定する。
+  (2) site/pwmd.rbを起動する。
 
         % ruby -Ke pwmd.rb
 
-      daemontools��Ȥ��ȹ����ˤʤ�ޤ���
+      daemontoolsを使うと幸せになれます．
 
-  (3) interface/index.rb��sample/{pwm.css,pwm.js}��HTTP�ǥ�
-      �������Ǥ���ǥ��쥯�ȥ�˰�ư���롣
+  (3) interface/index.rbとsample/{pwm.css,pwm.js}をHTTPでア
+      クセスできるディレクトリに移動する。
 
-  (4) �֥饦����index.rb�˥����������롣
+  (4) ブラウザでindex.rbにアクセスする。
 
-=== Webrick��
+=== Webrick用
 
-  (1) site/pwm-config.rb��Ķ��ˤ��碌�����ꤹ�롣
+  (1) site/pwm-config.rbを環境にあわせて設定する。
 
-  (2) site/standalone-pwmd.rb��ư���롣
+  (2) site/standalone-pwmd.rbを起動する。
 
         % ruby -Ke standalone-pwmd.rb
 
-      daemontools��Ȥ��ȹ����ˤʤ�ޤ���
+      daemontoolsを使うと幸せになれます．
 
-  (3) sample/{pwm.css,pwm.js}��PWM::MOUNT_DIRECTORY�˰�ư���롥
+  (3) sample/{pwm.css,pwm.js}をPWM::MOUNT_DIRECTORYに移動する．
 
-  (4) �֥饦����http://yourhost:#{PWM::PORT}/pwm�˥����������롥
+  (4) ブラウザでhttp://yourhost:#{PWM::PORT}/pwmにアクセスする．
 
-== ������(���)
+== 使用例(提案)
 
-  * ��������ʤɤΥ�������ͥåȤ�
-    * => ��((<����������>))�ס���((<���롼�פ�����>))�פε�ǽ��Ȥ��д�
-      �ץ᡼��󥰥ꥹ�Ȥ�����롣��Ͱ�ͤ˥᡼�륢�ɥ쥹����
-      �ۤ���ɬ�פ�ʤ���
+  * 社内や学内などのローカルネットで
+    * => 「((<全員に送信>))」、「((<グループに送信>))」の機能を使えば簡
+      易メーリングリストが出来る。一人一人にメールアドレスを配
+      布する必要もない。
 
-  * ���󥿡��ͥåȾ�����֤���
-    * => ���Υ����о�Ǥη��֡�
-      * �̾�Υ᡼��Τ褦�˥��ߥ�˥��������ġ���Ȥ���
-        * => �᡼�륢�ɥ쥹��̵���Ƥ�Ȥ���(̵����Ͽ)
-      * ��������
-        * => ��ʬ�����äƤ������������֤⵭Ͽ�����Τ�����!?
+  * インターネット上に設置して
+    * => このサーバ上での形態。
+      * 通常のメールのようにコミュニケーションツールとして
+        * => メールアドレスが無くても使える(無料登録)
+      * メモ代わりに
+        * => 自分に送っておく。送信時間も記録されるので便利!?

@@ -14,4 +14,4 @@ The latest version: 0.2.3
 
 == Comments
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

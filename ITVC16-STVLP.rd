@@ -1,153 +1,153 @@
 = ITVC16-STVLP
 
-���ͻظ���TV���塼�ʥ�����
+玄人指向のTVチューナカード
 ((<ITVC16-STVLP|URL:http://www.kuroutoshikou.com/products/tvcuner/itvc16.html>))
-��Debian��ư�������ꡣ
+をDebianで動かす設定。
 
-lspci�Ǹ����Ȥ���ʤ�ġ�
+lspciで言うとこんなやつ。
 
   % lspci | grep iTVC16
   00:07.0 Multimedia video controller: Internext Compression Inc iTVC16 (CX23416) MPEG-2 Encoder (rev 01)
 
-== ���󥹥ȡ���
+== インストール
 
-�Ƕ�Υ����ͥ�ʾ��ʤ��Ȥ�2.6.22�ˤ��ȥ����ͥ��ivtv�⥸�塼�뤬�Ȥ߹��ޤ�Ƥ��롣
+最近のカーネル（少なくとも2.6.22）だとカーネルにivtvモジュールが組み込まれている。
 
-�����������ӥե����०�����򥤥󥹥ȡ��뤹��ɬ�פ����롣���Τ���ˡ��ʲ���/etc/apt/sources.list���ɲä��롣
+ただし、別途ファームウェアをインストールする必要がある。そのために、以下を/etc/apt/sources.listに追加する。
 
   deb http://www.hellion.org.uk/debian sid main
   deb-src http://www.hellion.org.uk/debian sid main
 
-�����ơ����󥹥ȡ��롣
+そして、インストール。
 
   % sudo aptitude -V -r install ivtv-firmware
 
-== ����
+== 設定
 
-�Ѱդ��Ǥ����Τǡ������ͥ�⥸�塼����ɤ߹��ࡣ
+用意ができたので、カーネルモジュールを読み込む。
 
-�ʲ��Τ褦�����Ƥ�/etc/modprobe.d/ivtv�������
+以下のような内容の/etc/modprobe.d/ivtvを作成。
 
   options ivtv cardtype=5 tuner=17
 
-cardtype=5�ϼ�ư���Ф�̵���ˤ���ITVC16-STVLP������Ū�˻��ꤹ��Ȥ������ȡ�
+cardtype=5は自動検出を無効にしてITVC16-STVLPを明示的に指定するということ。
 
-tuner=17�ϼ�ư���Ф�̵���ˤ���Philips�Υ��塼�ʤ�����Ū�˻��ꤹ��Ȥ������ȡʤ��Ȼפ��ˡ�
-���塼�ʤμ���ϰʲ��򸫤�Ф褤��
+tuner=17は自動検出を無効にしてPhilipsのチューナを明示的に指定するということ（だと思う）。
+チューナの種類は以下を見ればよい。
 
   /usr/src/linux-headers-`uname -r`/include/media/tuner.h
 
-�ɤ߹��ࡣ
+読み込む。
 
   % sudo modprobe -v ivtv
 
-�����ɤ������ǧ�����줿����dmesg�ǳ�ǧ���롣
+カードが正常に認識されたかはdmesgで確認する。
 
-�����ǧ�����줿���ϰʲ��Τ褦�ˤ��ƥ��塼�ʤ���MPEG2�������Ǥ��롣
+正常に認識された場合は以下のようにしてチューナからMPEG2を生成できる。
 
   % cat /dev/video0 > /tmp/XXX.mpg
 
-���Ƥϰʲ��Τ褦�ˤ��Ƴ�ǧ�Ǥ��롣
+内容は以下のようにして確認できる。
 
   % xine /tmp/xxx.mpg
 
-������������
+ただし、砂嵐。
 
-== MythTV�Υ��󥹥ȡ���
+== MythTVのインストール
 
-�ƥ�Ӥ�Ѥ뤿���MythTV��Ȥ���
+テレビを観るためにMythTVを使う。
 
-MythTV�򥤥󥹥ȡ��뤹�뤿��ˡ��ʲ���/etc/apt/sources.list���ɲä��롣
+MythTVをインストールするために、以下を/etc/apt/sources.listに追加する。
 
   deb http://www.debian-multimedia.org sid main
   deb-src http://www.debian-multimedia.org sid main
 
-�����ơ����󥹥ȡ��롣
+そして、インストール。
 
   % sudo aptitude -V -r install mythtv
 
-��ʬ��mythtv���롼�פ��ɲá�
+自分をmythtvグループに追加。
 
   % sudo adduser kou mythtv
 
-�ѹ���ȿ�Ǥ��뤿��˺ƥ�������
+変更を反映するために再ログイン。
 
-== MythTV������
+== MythTVの設定
 
-MythTV��MySQL��Ȥ��Τǡ�MythTV�ѤΥ桼����������롣
+MythTVはMySQLを使うので、MythTV用のユーザを作成する。
 
   % mysql -u root
   mysql> grant all on *.* to mythtv@localhost identified by 'mythtv';
   mysql> exit
 
-MythTV������ץ�������ư���롣
+MythTVの設定プログラムを起動する。
 
   % mythtv-setup --geometry 600x480
 
-�ʲ����������ơ��񤤤Ƥ��ʤ��Ȥ����Ϥ�����ʤ����ȡ��㤨�С�TV�ե����ޥåȤ�NTSC���顢�褫��Ȼפä�NTSC-JP�ˤ���ȤϤޤ롣
+以下、設定内容。書いていないところはいじらないこと。例えば、TVフォーマットをNTSCから、よかれと思ってNTSC-JPにするとはまる。
 
-���β��̤����ˤ�Esc��
+前の画面に戻るにはEsc。
 
   * Select your prefered language
 
     Nihongo
 
-  * 1. ����: �Хå�����ɤ�����: �����ͥ���ȿ��ơ��֥�
+  * 1. 一般: バックエンドの設定: チャンネル周波数テーブル
 
     japan-bcast
 
-  * 2. ����ץ��㡼������: ����ץ��㡼������
+  * 2. キャプチャーカード: キャプチャーカード
 
-    ��������ץ��㡼������
+    新規キャプチャーカード
 
-    * ����ץ��㡼����������: �����ɥ�����
+    * キャプチャーカード設定: カードタイプ
 
-      MPEG-2���󥳡�����������(CX23416GYC-STVLP, GV-MVP/RX)
+      MPEG-2エンコーダーカード(CX23416GYC-STVLP, GV-MVP/RX)
 
-  * 3. �ӥǥ�������: �ӥǥ�������
+  * 3. ビデオソース: ビデオソース
 
-    �����ӥǥ�������
+    新規ビデオソース
 
-    * �ӥǥ�����������: �ӥǥ�������̾
+    * ビデオソース設定: ビデオソース名
 
-      TV-Japan��Ǥ�ա�
+      TV-Japan（任意）
 
-    * �ӥǥ�����������: Listings grabber
+    * ビデオソース設定: Listings grabber
 
       Japan (xmltv)
 
-      �ϰ�ʤɤ򥿡��ߥʥ�����ꡣ
+      地域などをターミナルで設定。
 
-  * 4. ���Ϥȥ���������³: ������³
+  * 4. 入力とソースの接続: 入力接続
 
-    [MPEG: /dev/video0] (Tuner 1) -> (̵��)
+    [MPEG: /dev/video0] (Tuner 1) -> (無し)
 
-    * �����������Ϥ���³: ɽ��̾(Ǥ�ա�
+    * ソースを入力に接続: 表示名(任意）
 
       TV
 
-    * �����������Ϥ���³: �ӥǥ�������
+    * ソースを入力に接続: ビデオソース
 
-      TV-Japan��3.�����ꤷ���ƥ�ӤΥӥǥ�������������
+      TV-Japan（3.で設定したテレビのビデオソースを指定）
 
 
-���ٽ�λ�������ͥ�򹹿����Ƥ��ʤ��Τǽ�λ��������������ޤ������Ȥ�ʹ����뤬���������ʤ��ǽ�λ���롣
+一度終了。チャンネルを更新していないので終了時に問題を修正しますか？とか聞かれるが、修正しないで終了する。
 
-���̤����꤬����ä��Τǡ�������mythtv-backend��ư���롣
+一通り設定が終わったので、サーバmythtv-backendを起動する。
 
   % sudo /etc/init.d/mythtv-backend start
 
-��ư������ɽ�򹹿���
+手動で番組表を更新。
 
   % mythfilldatabase
 
-�ʾ�����꽪λ���ʤ⤷�������颬��--manual���ץ�����Ĥ�������Ū�˥����ͥ����ꤷ�ʤ��Ȥ����ʤ����⤷��ʤ�����
+以上で設定終了。（もしかしたら↑に--manualオプションをつけて明示的にチャンネルを指定しないといけないかもしれない。）
 
-== TV��Ѥ�
+== TVを観る
 
   % mythfrontend
 
-== ����ɽ�����Ū�˹���
+== 番組表を定期的に更新
 
   % crontab -e
   @daily nice -20 /usr/bin/mythfilldatabase

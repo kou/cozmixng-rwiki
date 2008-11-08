@@ -4,6 +4,6 @@ The latest version: 0.0.4(((<download|URL:http://www.cozmixng.org/~kou/download/
 
   * ((<README.ja|msm::README.ja>))
 
-== ฅณฅแฅ๓ฅศ
+== ใณใกใณใ
 
-((<marshal>))คซค้ฬพพฮสันนกฅ - ((<kou>))
+((<marshal>))ใใๅ็งฐๅคๆด๏ผ - ((<kou>))

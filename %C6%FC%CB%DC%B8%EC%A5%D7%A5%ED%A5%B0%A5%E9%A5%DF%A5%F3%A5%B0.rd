@@ -1,82 +1,82 @@
-= ���ܸ�ץ�����ߥ�
+= 日本語プログラミング
 
 == Java
 
-=== ������
+=== ソース
 
-�狼���
+わからん
 
-  // ���ܸ�.java
-  class ���ܸ�
+  // 日本語.java
+  class 日本語
   {
 
     public static void main(String[] args)
       {
-        �� ���� = new ��("����");
-        System.out.println(����.��������("����"));
+        人 山田 = new 人("山田");
+        System.out.println(山田.あいさつ("田中"));
        }
   }
 
-  class ��
+  class 人
   {
-    private String _̾��;
+    private String _名前;
 
-    public ��(String ̾��)
+    public 人(String 名前)
       {
-        _̾�� = ̾��;
+        _名前 = 名前;
       }
   
-    public String ��������(String ̾��)
+    public String あいさつ(String 名前)
       {
-        return("�ɤ��� " + ̾�� + "���󡤻��" + _̾�� + "�Ǥ���");
+        return("どうも " + 名前 + "さん，私は" + _名前 + "です．");
       }
   }
 
-=== �¹�
+=== 実行
 
-��������
+うごかん
 
-  % javac ���ܸ�.java
-  % java ���ܸ� # ¿ʬ�����ǥ��󥳡��ǥ��󥰤���ꤷ�ʤ��ƤϤ����ʤ���
+  % javac 日本語.java
+  % java 日本語 # 多分ここでエンコーディングを指定しなくてはいけない．
 
 == Gauche
 
-=== ������
+=== ソース
 
-  ;;; ���ܸ�.scm
-  (define (�������� ��ʬ ���)
-    (display #`"�ɤ���,|���|���󡤻��,|��ʬ|�Ǥ���")
+  ;;; 日本語.scm
+  (define (あいさつ 自分 相手)
+    (display #`"どうも,|相手|さん，私は,|自分|です．")
     (newline))
 
-  (�������� "����" "����")
+  (あいさつ "山田" "田中")
 
-=== �¹�
+=== 実行
 
-  % gosh ���ܸ�.scm
+  % gosh 日本語.scm
 
 == Ruby
 
-=== ������
+=== ソース
 
-���饹̾�ϥ���ե��٥åȤ���ʸ���ǻϤ�ʤ��ƤϤ����ʤ�
+クラス名はアルファベットの大文字で始めなくてはいけない
 
-  # ���ܸ�.rb
-  class C��
+  # 日本語.rb
+  class C人
 
-    def initialize(̾��)
-      @̾�� = ̾��
+    def initialize(名前)
+      @名前 = 名前
     end
 
-    def ��������(̾��)
-      puts ("�ɤ��� #{̾��}���󡤻��#{@̾��}�Ǥ���")
+    def あいさつ(名前)
+      puts ("どうも #{名前}さん，私は#{@名前}です．")
     end
 
   end
 
-  C��.new("����").��������("����")
+  C人.new("山田").あいさつ("田中")
 
-=== �¹�
+=== 実行
 
-�������Υ��󥳡��ǥ���((-���ޤ��˥��󥳡��ǥ��󥰤�ʸ�������ɤλȤ�ʬ�����褯ʬ�����-))��EUC-JP�ξ��
+ソースのエンコーディング((-いまだにエンコーディングと文字コードの使い分けがよく分からん-))がEUC-JPの場合
 
-  % ruby -Ke ���ܸ�.rb
+  % ruby -Ke 日本語.rb

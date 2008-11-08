@@ -1,18 +1,18 @@
 = slapd
 
-((<OpenLDAP>))���󶡤���LDAP�����Ф��á�
+((<OpenLDAP>))が提供するLDAPサーバの話。
 
-Debian��Ǥ��á�
+Debian上での話。
 
-== TLS���ݡ���
+== TLSサポート
 
-TLS�򥵥ݡ��Ȥ��뤿��ˤϰʲ�������ե�������ɲä��ƺƵ�ư���롣
+TLSをサポートするためには以下を設定ファイルに追加して再起動する。
 
 /etc/ldap/slapd.conf:
   TLSCertificateFile      /etc/ldap/certs/server.crt
   TLSCertificateKeyFile   /etc/ldap/certs/server.key
 
-������ʤɤϰʲ��Τ褦�ˤ��ƺ����Ǥ��롣((<OpenSSL>))�⻲�ͤˡ�
+証明書などは以下のようにして作成できる。((<OpenSSL>))も参考に。
 
   % sudo mkdir -p /etc/ldap/certs
   % cd /etc/ldap/certs
@@ -20,11 +20,11 @@ TLS�򥵥ݡ��Ȥ��뤿��ˤϰʲ�������ե�������ɲä��ƺƵ�ư���롣
   % sudo chmod 600 server.key
   % sudo c_rehash .
 
-�Ǹ��c_rehash��˺��ʤ����ȡ�
+最後のc_rehashを忘れないこと。
 
-=== ���饤�����¦������
+=== クライアント側の設定
 
-���ϼ���������ʤΤǡ������Ȥä�TLS��Ȥ��ˤϥ��饤�����¦�˾��������Ͽ���ʤ��Ȥ����ʤ����ʤ��뤤�Ͼ�����γ�ǧ�ʡ��ˤ�Ŭ���ˤ���
+↑は自前証明書なので、これを使ってTLSを使うにはクライアント側に証明書を登録しないといけない。（あるいは証明書の確認（？）を適当にやる）
 
   ldap-client% sudo mkdir -p /etc/ldap/certs
   ldap-client% scp ldap-server:/etc/ldap/certs/server.crt /tmp/
@@ -32,19 +32,19 @@ TLS�򥵥ݡ��Ȥ��뤿��ˤϰʲ�������ե�������ɲä��ƺƵ�ư���롣
   ldap-client% mv /tmp/server.crt ./
   ldap-client% sudo c_rehash .
 
-�Ǹ��c_rehash��˺��ʤ����ȡ�
+最後のc_rehashを忘れないこと。
 
-�ǥե���Ȥ�/etc/ldap/certs/�ˤ���������Ȥ��褦�ˤ��롣
+デフォルトで/etc/ldap/certs/にある証明書を使うようにする。
 
 /etc/ldap/ldap.conf:
   TLS_CACERTDIR /etc/ldap/certs
 
-OpenLDAP��TLS�ΥХå�����ɤȤ���GnuTLS�����Ѥ��Ƥ������TLS_CACERTDIR���Ȥ��ʤ��Τ�TLS_CACERT�ǥե��������ꤹ�롣
+OpenLDAPがTLSのバックエンドとしてGnuTLSを利用している場合はTLS_CACERTDIRが使えないのでTLS_CACERTでファイルを指定する。
 
 /etc/ldap/ldap.conf:
   TLS_CACERT /etc/ldap/certs/server.crt
 
-���ʤߤˡ�������γ�ǧ�ʡ��ˤ�Ŭ���ˤ���ʤ餳����
+ちなみに、証明書の確認（？）を適当にするならこう。
 
 /etc/ldap/ldap.conf:
   TLS_REQCERT never

@@ -1,3 +1,3 @@
 = Ruby/RSS
 
-((<RSS Parser>))�˰�ư
+((<RSS Parser>))に移動

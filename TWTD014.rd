@@ -1,18 +1,18 @@
 = TWTD014
 
-MapSurface¤Î¼ÂÁõ
+MapSurfaceã®å®Ÿè£…
 
 == status
 
-* ¼ïÎà: story
-* ¥¤¥Æ¥ì¡¼¥·¥ç¥ó: 
-* ¥µ¥¤¥ó: ((<kou>))
-* ¾õÂÖ: open
-* ¸«ÀÑ: 0 / 0
+* ç¨®é¡ž: story
+* ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³: 
+* ã‚µã‚¤ãƒ³: ((<kou>))
+* çŠ¶æ…‹: open
+* è¦‹ç©: 0 / 0
 
 == description
 
-ÆþÎÏ¤µ¤ì¤¿¥Ñ¥é¥á¡¼¥¿¤ò½é´ü²½»þ¤ËÍ¿¤¨¤é¤ì¤¿´Ø¿ô¤Ç¼ÌÁü¤·¤Æ¡¤¼¡¤ÎSurface¤ËÅÏ¤¹Surface¡¥
+å…¥åŠ›ã•ã‚ŒãŸãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’åˆæœŸåŒ–æ™‚ã«ä¸Žãˆã‚‰ã‚ŒãŸé–¢æ•°ã§å†™åƒã—ã¦ï¼Œæ¬¡ã®Surfaceã«æ¸¡ã™Surfaceï¼Ž
 
 == test
 

@@ -2,33 +2,33 @@
 
 Rabbit is commented by ...
 
-  * ((<2 [Ruby] Rabbit - ¤Õ¤§¤ß¤Ë¤óÆüµ­ (2004-08-09)|URL:http://kazuhiko.tdiary.net/20040809.html>))
+  * ((<2 [Ruby] Rabbit - ãµã‡ã¿ã«ã‚“æ—¥è¨˜ (2004-08-09)|URL:http://kazuhiko.tdiary.net/20040809.html>))
 
       # blockquote
       # cite = http://kazuhiko.tdiary.net/20040809.html#p02
-      ¤È¤Æ¤âÌÌÇò¤½¤¦¡£
+      ã¨ã¦ã‚‚é¢ç™½ãã†ã€‚
 
-  * ((< LLDON¤ÎN - ³ÑÃ«HTML²½·×²è (2005-08-27)|URL:http://kakutani.com/20050827.html>))
+  * ((< LLDONã®N - è§’è°·HTMLåŒ–è¨ˆç”» (2005-08-27)|URL:http://kakutani.com/20050827.html>))
 
       # blockquote
       # cite = http://kakutani.com/20050827.html#p04
-      ¥×¥ì¥¼¥ó¥Ä¡¼¥ë¤òRabbit¤Ë¾è¤ê´¹¤¨¤ë¤³¤È¤Ë¤·¤¿¡£
+      ãƒ—ãƒ¬ã‚¼ãƒ³ãƒ„ãƒ¼ãƒ«ã‚’Rabbitã«ä¹—ã‚Šæ›ãˆã‚‹ã“ã¨ã«ã—ãŸã€‚
 
-  * ((<¤¿¤À¤Î¤Ë¤Ã¤­(2005-08-27)|URL:http://sho.tdiary.net/20050827.html>))
+  * ((<ãŸã ã®ã«ã£ã(2005-08-27)|URL:http://sho.tdiary.net/20050827.html>))
 
       # blockquote
       # cite = http://sho.tdiary.net/20050827.html#p02
-      Rabbit¤¬¡¢¤¢¤ó¤Ê¤Ë¤âÌµÃã¶ìÃã¤Ê¥½¥Õ¥È(Ë«¤á)¤À¤È¤ÏÃÎ¤é¤Ê¤«¤Ã¤¿¡£
+      RabbitãŒã€ã‚ã‚“ãªã«ã‚‚ç„¡èŒ¶è‹¦èŒ¶ãªã‚½ãƒ•ãƒˆ(è¤’ã‚)ã ã¨ã¯çŸ¥ã‚‰ãªã‹ã£ãŸã€‚
 
   * ((<%!zt! diary(2005-08-27)|URL:http://znz.s1.xrea.com/t/?date=20050827#p03>))
 
       # blockquote
       # cite = http://znz.s1.xrea.com/t/?date=20050827#p03
-      Rabbit¤Ï¤¤¤í¤¤¤í¤¹¤´¤½¤¦¡£
+      Rabbitã¯ã„ã‚ã„ã‚ã™ã”ãã†ã€‚
 
 
-  * ((<Rubyist Magazine - Lightweight Language Day and Night ¥ì¥İ¡¼¥È|URL:http://jp.rubyist.net/magazine/?0009-lldn-report>))
+  * ((<Rubyist Magazine - Lightweight Language Day and Night ãƒ¬ãƒãƒ¼ãƒˆ|URL:http://jp.rubyist.net/magazine/?0009-lldn-report>))
 
       # blockquote
       # cite = http://jp.rubyist.net/magazine/?0009-lldn-report#l8
-      ¥¤¥ó¥Ñ¥¯¥È¤Î¤¢¤ë¥Ç¥â¤ÇÅÙ¡¹´¿À¼¤¬¾å¤¬¤Ã¤Æ¤¤¤Ş¤·¤¿¡£
+      ã‚¤ãƒ³ãƒ‘ã‚¯ãƒˆã®ã‚ã‚‹ãƒ‡ãƒ¢ã§åº¦ã€…æ­“å£°ãŒä¸ŠãŒã£ã¦ã„ã¾ã—ãŸã€‚

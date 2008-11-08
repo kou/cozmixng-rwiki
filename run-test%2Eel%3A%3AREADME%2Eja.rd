@@ -4,53 +4,53 @@
 
 $Id: README.ja 5 2008-06-03 05:22:28Z  $
 
-== ̾��
+== 名前
 
 run-test.el
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 GPL
 
-== �ʤˤ��졩
+== なにこれ？
 
-�ƥ��Ȥμ¹Ԥ�ٱ礹��Emacs-Lisp�Ǥ���
+テストの実行を支援するEmacs-Lispです。
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/run-test.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/elisp/run-test/trunk run-test
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo ./install.sh
 
-== ���󥤥󥹥ȡ���
+== アンインストール
 
   % sudo ./uninstall.sh
 
-== �Ȥ���
+== 使い方
 
-lib/run-test.el��Emacs��ǤΥƥ��Ȥμ¹Ԥ�ٱ礹��Emacs-Lisp
-�Ǥ���lib/run-test-setting.el��run-test.el��Ȥ������������
-�Ǥ���
+lib/run-test.elはEmacs上でのテストの実行を支援するEmacs-Lisp
+です。lib/run-test-setting.elはrun-test.elを使うための設定例
+です．
 
-�Ȥ��ˤϡ��ޤ���.emacs�˰ʲ��򵭽Ҥ��ޤ���
+使うには，まず，.emacsに以下を記述します．
 
-  (setq load-path (cons run-test{,-setting}.el������ǥ��쥯�ȥ� load-path))
+  (setq load-path (cons run-test{,-setting}.elがあるディレクトリ load-path))
   (load "run-test-setting")
 
-�����Ǥ�
+ここでは
 ((<GaUnit|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=GaUnit>))
-�Υƥ��Ȥ�¹Ԥ���Ȥ��ޤ���
+のテストを実行するとします。
 
-run-test.el�Τ�����Ѱդ����Τϥƥ��Ȥ�¹Ԥ��륹����ץ�
-�Ǥ����㤨�С��ʲ��Τ褦��run-test.scm�Ȥ���������ץȤǤ���
+run-test.elのために用意するものはテストを実行するスクリプト
+です。例えば、以下のようなrun-test.scmというスクリプトです。
 
   #!/usr/bin/env gosh
 
@@ -61,12 +61,12 @@ run-test.el�Τ�����Ѱդ����Τϥƥ��Ȥ�¹Ԥ��륹����ץ�
   (define base-dir (sys-dirname *program-name*))
   (for-each load (glob #`",|base-dir|/**/test-*.scm"))
 
-�����ơ�test�Ȥ����ǥ��쥯�ȥ���äơ�����run-test.scm�˼�
-�Ը����դ��Ƥ����Ƥ����ޤ���
+そして、testというディレクトリを作って、このrun-test.scmに実
+行権を付けておいておきます。
 
-�ƥ��ȥե������test�Ȥ����ǥ��쥯�ȥ�ʲ���
-test-your-module.scm�Ȥ���̾���Ǻ�äƤ����ޤ����Ĥޤꡤ�ǥ�
-�쥯�ȥ깽���ϰʲ����ͤˤʤ�ޤ���
+テストファイルはtestというディレクトリ以下に
+test-your-module.scmという名前で作っていきます．つまり，ディ
+レクトリ構成は以下の様になります．
 
   topdir --- test --- run-test.scm
                    |
@@ -78,46 +78,46 @@ test-your-module.scm�Ȥ���̾���Ǻ�äƤ����ޤ����Ĥޤꡤ�ǥ�
                    |
                    +- test-fuga.scm
 
-�ƥ���(run-test.scm)��topdir�ǵ�ư����ޤ����Ĥޤꡤ
+テスト(run-test.scm)はtopdirで起動されます．つまり，
 
   % test/run-test.cm
 
-�Ȥ����褦�˵�ư����ޤ���
+というように起動されます．
 
-run-test.scm��񤯤Ȥ��Ϥ��Τ��Ȥ����դ��ޤ��礦��
+run-test.scmを書くときはこのことに注意しましょう．
 
-����Ϥ���ǽ�λ�Ǥ���
+設定はこれで終了です．
 
-topdir�ʲ��ˤ���Ȥ���C-cC-t(run-test)��
-topdir/test/run-test.scm���¹ԤǤ��ޤ����¹Է�̤�*run-test*
-�Хåե�����������ޤ����ƥ��Ȥ�¹Ԥ��Ƽ���/���顼��������
-�饨�顼��ȯ������assertion��C-x`�ǥ����פ��뤳�Ȥ��Ǥ��ޤ���
+topdir以下にいるときはC-cC-t(run-test)で
+topdir/test/run-test.scmが実行できます．実行結果は*run-test*
+バッファに挿入されます．テストを実行して失敗/エラーがおきた
+らエラーが発生したassertionにC-x`でジャンプすることができます．
 
-C-cT(run-test-in-new-frame)�Ȥ��ȡ��������ե졼��������
-��topdir/test/run-test.scm��¹Ԥ��ޤ����ǽ�˥ƥ��Ȥ����餻
-����˻Ȥ��Ȥ褤�Ǥ��礦��
+C-cT(run-test-in-new-frame)とやると，新しくフレームを作成し
+てtopdir/test/run-test.scmを実行します．最初にテストを走らせ
+る時に使うとよいでしょう．
 
-����Ǽ�ڤ����ˤ˥ƥ��Ȥ�¹ԤǤ��ޤ��͡�Happy testing!!
+これで手軽に頻繁にテストを実行できますね．Happy testing!!
 
-== �����Х����
+== キーバインド
 
 : C-cC-t
-   �ƥ��Ȥ����餻��
+   テストを走らせる
 
 : C-cT
-   �ƥ��Ȥ����餻�롣�ƥ��ȷ�̤Ͽ������ե졼���������Ƥ�
-   ����ɽ�����롣
+   テストを走らせる。テスト結果は新しいフレームを作成してそ
+   こに表示する。
 
-== �������ޥ����ѿ�
+== カスタマイズ変数
 
 : run-test-file-names
-   �ƥ��Ȥ�¹Ԥ��륹����ץȤγ�ĥ�Ҥ�������ե�����̾�Υ�
-   ���ȤǤ���
+   テストを実行するスクリプトの拡張子を除いたファイル名のリ
+   ストです．
    
-   �ǥե����: ("test/run-test" "test/runner" "run-test")
+   デフォルト: ("test/run-test" "test/runner" "run-test")
 
 : run-test-suffixes
-   run-test-file���ղä����ĥ�ҤΥꥹ�ȤǤ�����Ƭ�����ˤ����ĥ����
-   ͥ�褵��ޤ���
+   run-test-fileに付加する拡張子のリストです．先頭の方にある拡張子程
+   優先されます．
    
-   �ǥե����: ("" ".scm" ".rb" ".py" ".sh")
+   デフォルト: ("" ".scm" ".rb" ".py" ".sh")

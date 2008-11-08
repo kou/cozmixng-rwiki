@@ -2,51 +2,51 @@
 
 $Id: INSTALL.macosx-macports.ja 1056 2008-02-03 12:36:30Z kimuraw $
 
-Mac OS X �Υѥå��������������ƥ�ΤҤȤĤǤ��롢MacPorts �����Ѥ���
-Rabbit �򥤥󥹥ȡ��롢���Ѥ�����ˤĤ����������ޤ���
+Mac OS X のパッケージ管理システムのひとつである、MacPorts を利用して
+Rabbit をインストール、利用する手順について説明します。
 
-== �����˽���������
+== 事前に準備するもの
 
-�ʲ��Υ��եȥ�������ɬ�פǤ���Mac OS X �Υ����ƥ�DVD�ʤɤ��饤�󥹥ȡ���
-���Ƥ���������
+以下のソフトウェアが必要です。Mac OS X のシステムDVDなどからインストール
+してください。
 
 * Xcode Tools
 * X11
 * Subversion
 
-Xcode Tools �Υ��󥹥ȡ�����ˤϡ�X11 SDK �����򤹤�Τ�˺��ʤ��Ǥ���������
+Xcode Tools のインストール時には、X11 SDK を選択するのを忘れないでください。
 
-Subversion �ϡ�MacPorts �Υ��󥹥ȡ�����
+Subversion は、MacPorts のインストール後に
 
   ~% sudo port install subversion
 
-�Ȥ��ƥ��󥹥ȡ��뤹�뤫��((<URL:http://metissian.com/projects/macosx/subversion/>))
-�Ǹ�������Ƥ���Х��ʥ�ѥå����������Ѥ��ƥ��󥹥ȡ��뤹��Τ���ñ�Ǥ���
-�ޤ���Mac OS X 10.5 (Leopard) �Ǥϡ�Subversion �����󥹥ȡ��뤵��Ƥ��ޤ��Τǡ���ʬ���Ѱդ���ɬ�פϤ���ޤ���
+としてインストールするか、((<URL:http://metissian.com/projects/macosx/subversion/>))
+で公開されているバイナリパッケージを利用してインストールするのが簡単です。
+また、Mac OS X 10.5 (Leopard) では、Subversion がインストールされていますので、自分で用意する必要はありません。
 
-== MacPorts �Υ��󥹥ȡ���
+== MacPorts のインストール
 
-MacPorts �θ��������� ((<URL:http://www.macports.org/>)) �������������ɡ�
-���󥹥ȡ��뤷�ޤ����ǥ��������᡼��(.dmg)���饤�󥹥ȡ��뤹��Τ���ñ�Ǥ���
+MacPorts の公式サイト ((<URL:http://www.macports.org/>)) からダウンロード、
+インストールします。ディスクイメージ(.dmg)からインストールするのが簡単です。
 
-�Ȥ��˻��ꤷ�ʤ���С�/opt/local �ʲ��� MacPorts ��Ϣ�Υե����뷲�����󥹥ȡ���
-����ޤ���MacPorts �Υ��ޥ�ɤ����Ѥ��뤿��ˡ��Ķ��ѿ� PATH �� /opt/local/bin
-���ɲä��ޤ���
+とくに指定しなければ、/opt/local 以下に MacPorts 関連のファイル群がインストール
+されます。MacPorts のコマンドを利用するために、環境変数 PATH に /opt/local/bin
+を追加します。
 
-=== MacPorts ������
+=== MacPorts の設定
 
-��ǰ�ʤ��Ȥˡ������� MacPorts �Ǥ� Rabbit �Υѥå�����(Portfile)���Ѱդ����
-���ޤ����ȼ��Υѥå����������Ѥ��뤿��ˡ��ʲ��������Ԥ��ޤ���
+残念なことに、公式の MacPorts では Rabbit のパッケージ(Portfile)が用意されて
+いません。独自のパッケージを利用するために、以下の設定を行います。
 
-�ޤ���Portfile �� Subversion ��ݥ��ȥ꤫��������ޤ���������Ǥϡ�
-��ʬ�Υۡ���ǥ��쥯�ȥ겼�� dports/ �Ȥ����ǥ��쥯�ȥ�˥���������ɤ��ޤ���
+まず、Portfile を Subversion リポジトリから取得します。この例では、
+自分のホームディレクトリ下に dports/ というディレクトリにダウンロードします。
 
   ~% svn co http://www.cozmixng.org/repos/dports/trunk dports
   ~% cd dports
   ~/dports% portindex
 
-���ˡ����Υǥ��쥯�ȥ�� MacPorts �����Ȥ���褦�� 
-/opt/local/etc/ports/sources.conf ���Խ����ޤ���
+次に、このディレクトリを MacPorts が参照するように 
+/opt/local/etc/ports/sources.conf を編集します。
 
   # To enable your local ports repository, uncomment and customize the
   # following line to point at your local dports directory
@@ -57,89 +57,89 @@ MacPorts �θ��������� ((<URL:http://www.macports.org/>)) �������������ɡ�
   # rsync://rsync.darwinports.org/dpupdate/dports
   rsync://rsync.darwinports.org/dpupdate/dports
 
-������ /Users/yourname �Ϥ��ʤ��Υۡ���ǥ��쥯�ȥ���֤������Ƥ���������
+ここで /Users/yourname はあなたのホームディレクトリに置き換えてください。
 
-����������Ǥ��������ǧ���뤿��ˡ�Rabbit �� Portfile �ξ������Ϥ��Ƥߤޤ���
+正しく設定できたかを確認するために、Rabbit の Portfile の情報を出力してみます。
 
   ~% port info rb-rabbit
   rb-rabbit 0.5.1, Revision 0, ruby/rb-rabbit
   {http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit}
-  # �ʲ���ά #
+  # 以下省略 #
 
-����������Ǥ��Ƥ��ʤ��Ȥ��ϡ��ʲ��Τ褦�ʥ�å����������Ϥ���ޤ���
+正しく設定できていないときは、以下のようなメッセージが出力されます。
 
   ~% port info rb-rabbit
   No port rb-rabbit found.
 
 
-== Rabbit �Υ��󥹥ȡ���
+== Rabbit のインストール
 
-�ʲ��Υ��ޥ�ɤ� Rabbit �ȡ������ɬ�פʥ��եȥ����������󥹥ȡ��뤵��ޤ���
+以下のコマンドで Rabbit と、それに必要なソフトウェアがインストールされます。
 
   ~% sudo port install rb-rabbit
 
-glib �� Gtk2 �����󥹥ȡ��뤵��Ƥ��ʤ��Ȥ��ϡ������Υ��󥹥ȡ���Τ����
-�������٤λ��֤�������ޤ���
+glib や Gtk2 がインストールされていないときは、これらのインストールのために
+ある程度の時間がかかります。
 
-¾�ˤ�ʲ��� port �򥤥󥹥ȡ��뤹��Ȥ褤�Ǥ��礦��
+他にも以下の port をインストールするとよいでしょう。
 
-* htree (rb-htree) - �����������ɤ˿���Ĥ��뤳�Ȥ��Ǥ���褦�ˤʤ�ޤ�
-* Ruby-GetText-Package (rb-gettext) - ��å������ʤɤι�ݲ���ͭ���ˤʤ�ޤ�
+* htree (rb-htree) - ソースコードに色をつけることができるようになります
+* Ruby-GetText-Package (rb-gettext) - メッセージなどの国際化が有効になります
 
-���󥹥ȡ�����ˡ��Ʊ�ͤǤ���
+インストール方法は同様です。
 
   ~% sudo port install rb-htree
   ~% sudo port install rb-gettext
 
-��) Ruby-GetText-Package �������Ǥ� RubyGems ���饤�󥹥ȡ��뤵��Ƥ���Ȥ���
-rb-gettext �Υ��󥹥ȡ�������פǤ���
+注) Ruby-GetText-Package が、すでに RubyGems からインストールされているときは
+rb-gettext のインストールは不要です。
 
-Rabbit �Υǥե���Ȥ� rb-gnome �Ǥϡ�only_gtk2 �Ȥ����Хꥢ��Ȥ���ꤷ��
-���󥹥ȡ��뤵��ޤ���RSVG �ʤɡ�Ruby/Gnome ��¾�ε�ǽ�����Ѥ��������ˤ�
+Rabbit のデフォルトの rb-gnome では、only_gtk2 というバリアントを指定して
+インストールされます。RSVG など、Ruby/Gnome の他の機能を利用したい場合には
 
   ~% sudo port install rb-gnome -only_gtk2
 
-�Ȥ��뤳�Ȥǡ�Ruby/Gnome �Τ��٤ƤΥ饤�֥������Ѥ��뤳�Ȥ��Ǥ��ޤ���
-�����������ξ��ϰ�¸�ѥå�������¿������ˡ������֥��󥹥ȡ���˻��֤�
-������ޤ���
+とすることで、Ruby/Gnome のすべてのライブラリを利用することができます。
+ただし、この場合は依存パッケージが多いために、数時間インストールに時間が
+かかります。
 
-== X11 �Ķ��˴ؤ��� Tips
+== X11 環境に関する Tips
 
-����Ū�� PC-UNIX �Ķ��ȤϰۤʤꡢMac OS X �Ǥϥ�����ɥ������ƥ�Ȥ��� X ��
-���Ѥ��Ƥ��ޤ��󡣤��Τ��ᡢ�����Ĥ������դ�ɬ�פˤʤ�ޤ���
+一般的な PC-UNIX 環境とは異なり、Mac OS X ではウィンドウシステムとして X を
+利用していません。そのため、いくつかの注意が必要になります。
 
-=== X11.app ��ư����
+=== X11.app を起動する
 
-X11.app ����ư���Ƥ��ʤ���С�rabbit �ϼ¹ԤǤ��ޤ���X11.app �� 
-/���ץꥱ�������/�桼�ƥ���ƥ�/X11.app �ˤ���ޤ���
+X11.app が起動していなければ、rabbit は実行できません。X11.app は 
+/アプリケーション/ユーティリティ/X11.app にあります。
 
-=== DISPLAY �Ķ��ѿ�
+=== DISPLAY 環境変数
 
-X11 ���ư��� Rabbit �����Ѥ��뤿��ˤϡ�DISPLAY �Ķ��ѿ������ꤵ���
-���ʤ���Фʤ�ޤ���X11.app ��� xterm �Ǥ����ꤵ��Ƥ��ޤ�����ɸ���
-�����ߥʥ�� iTerm��JTerminal �����Ѥ��Ƥ���Ȥ��ϼ�ʬ�����ꤹ��ɬ�פ�
-���뤳�Ȥ����դ��Ƥ���������
+X11 上で動作する Rabbit を利用するためには、DISPLAY 環境変数が設定されて
+いなければなりません。X11.app 上の xterm では設定されていますが、標準の
+ターミナルや iTerm、JTerminal を利用しているときは自分で設定する必要が
+あることに注意してください。
 
-== Rabbit ��С�����󥢥åפ���
+== Rabbit をバージョンアップする
 
-port sync ���ޥ�ɤ� Portfile �� Subversion ��ݥ��ȥ��Ʊ�����������ǡ�
-port upgrade ���ޥ�ɤˤ�ꡢRabbit ��ǿ��ΥС������˹������뤳�Ȥ�
-�Ǥ��ޤ���
+port sync コマンドで Portfile を Subversion リポジトリと同期したうえで、
+port upgrade コマンドにより、Rabbit を最新のバージョンに更新することが
+できます。
 
   ~% sudo port sync
   ~% sudo port upgrade rb-rabbit
 
-Rabbit ������С�����󥢥åפ������Ȥ��ϡ�-n ���ץ�������ꤷ�ޤ�������
-���ץ����λ���ˤ�ꡢ��Ϣ���륽�եȥ������Ϲ��������� Rabbit �����򹹿�
-���뤳�Ȥ��Ǥ��ޤ���
+Rabbit だけをバージョンアップしたいときは、-n オプションを指定します。この
+オプションの指定により、関連するソフトウェアは更新せずに Rabbit だけを更新
+することができます。
   
   ~% sudo port -n upgrade rb-rabbit
 
 
-== Ϣ����
+== 連絡先
 
-�����Ť�������ꥯ�����Ȥʤɤϡ�Rabbit::UsersGroup.ja
+お気づきの点やリクエストなどは、Rabbit::UsersGroup.ja
 ((<URL:http://www.cozmixng.org/~rwiki/index.rb?cmd=view;name=Rabbit%3A%3AUsersGroup.ja>)) 
-�� Rabbit MacPorts ô������¼ (kimuraw at i.nifty.jp) �ޤǤɤ�����
+や Rabbit MacPorts 担当の木村 (kimuraw at i.nifty.jp) までどうぞ。
 
 

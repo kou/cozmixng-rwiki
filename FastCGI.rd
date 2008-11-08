@@ -1,18 +1,18 @@
 = FastCGI
 
-== ���󥹥ȡ���
+== インストール
 
-/usr/local/etc/pkgtools.conf��MAKE_ARGS�˰ʲ����ɲá�
+/usr/local/etc/pkgtools.confのMAKE_ARGSに以下を追加．
 
   'www/mod_fastcgi' => 'WITH_APACHE2=yes',
 
-www/mod_fastcgi�򥤥󥹥ȡ���
+www/mod_fastcgiをインストール
 
   % sudo /usr/local/sbin/portupgrade -NRr mod_fastcgi
 
-== ����
+== 設定
 
-/usr/local/etc/apache2/httpd.conf�˰ʲ����ɲá�
+/usr/local/etc/apache2/httpd.confに以下を追加．
 
   LoadModule fastcgi_module     libexec/apache2/mod_fastcgi.so
   <IfModule mod_fastcgi.c>
@@ -20,8 +20,8 @@ www/mod_fastcgi�򥤥󥹥ȡ���
     FastCgiSuexec On
   </IfModule>
 
-�Ǥ⡤�������ʤ���socket����³�Ǥ��ʤ��Ȥ����äƤ��롥�����󡤤ʤ�ǡ�
+でも，うごかない．socketに接続できないとか言っている．うーん，なんで？
 
   FastCgiIpcDir /tmp
 
-�Ȥ�����ȡ�/tmp/dynamic�Ȥ����ߤ��������ɡ�����Ǥ���ᡥ�����󡥡���
+とかすると，/tmp/dynamicとか作るみたいだけど，それでもだめ．うーん．．．

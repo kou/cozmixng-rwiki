@@ -1,83 +1,83 @@
 = kou::ToDo
 
-* ((<GaUnit>))�ˤ�ä�Scheme�äݤ�API��Ĥ��롣
+* ((<GaUnit>))にもっとSchemeっぽいAPIをつける。
 
-* Rabbit: rabbit-launcher����ʺ�äƤ�餦�ˡ�
-  * Rabbit��ư����GUI���ץꥱ������󡣼��Windows�桼���ѡ�
-  * RD��ɥ�å������Rabbit��ư��
-  * RD��˵�ư���ץ��������Ǥ��롣
-  * ��ư���ץ�������¸����ơ�����Ʊ��RD��ɥ�å������Ȥ�����¸������ư���ץ�����Ȥ���
-  * ����ɽ������RD�ϥ��ץꥱ����������ɽ�����졢�������֥륯��å������RD��ɥ�å����ʤ��Ƥ⤽��RD��ɽ�����롣
-  * RD�ΰ���ɽ���ǤϤ���RD�Υ����꡼�󥷥�åȤ�Ȥ���
-  * �����꡼�󥷥�åȤμ�����dRuby��ͳ�ǤǤ���Ϥ���
+* Rabbit: rabbit-launcherを作る（作ってもらう）。
+  * Rabbitを起動するGUIアプリケーション。主にWindowsユーザ用。
+  * RDをドラッグするとRabbitを起動。
+  * RD毎に起動オプションを指定できる。
+  * 起動オプションは保存されて、次に同じRDをドラッグしたときは保存した起動オプションを使う。
+  * 一度表示したRDはアプリケーション内に表示され、それをダブルクリックするとRDをドラッグしなくてもそのRDを表示する。
+  * RDの一覧表示ではそのRDのスクリーンショットを使う。
+  * スクリーンショットの取得はdRuby経由でできるはず。
 
-* Rabbit: rabbit-installer����ʺ�äƤ�餦�ˡ�
-  * Ruby/GTK2���ץꥱ�������Windows�桼���ѡ�
-  * Ruby/GTK2�ϥ��󥹥ȡ��뤵��Ƥ���Ȥ�������
-  * RDTool�Ȥ�Rabbit���Τ򾡼�˥���������ɤ��ƥ��󥹥ȡ��뤹�롣
-  * ��ĥ��ʤ�enscript�Ȥ���������㤦��
-  * Windows���󥹥ȡ�����ä���UI��
-  * GnomeDruid�Ȥ��롩
-    * Gtk::Assistant�ˤʤäƤ롪
+* Rabbit: rabbit-installerを作る（作ってもらう）。
+  * Ruby/GTK2アプリケーション。Windowsユーザ用。
+  * Ruby/GTK2はインストールされているという前提。
+  * RDToolとかRabbit本体を勝手にダウンロードしてインストールする。
+  * 頑張るならenscriptとかも入れちゃう。
+  * WindowsインストーラちっくなUI。
+  * GnomeDruid使える？
+    * Gtk::Assistantになってる！
 
-* Subversion: Svn::Core::PROP_XXX����ʤ��ơ�:XXX�Ȥ����褦�ˤ�񤱤�褦�ˤ��롣
+* Subversion: Svn::Core::PROP_XXXじゃなくて、:XXXというようにも書けるようにする。
 
-* �����: collectors
+* 風博士: collectors
 
-* gnome-terminal: new_tab�����Ȥ��˻��ꤷ���ǥ��쥯�ȥ�˰�ư���륪�ץ����
+* gnome-terminal: new_tabしたときに指定したディレクトリに移動するオプション
 
-* rcairo: ɽ�Υ��ݡ���
-* rcairo: ����դΥ��ݡ���
-* rcairo: �С������ɤΥ��ݡ���
-  * �Ȥꤢ����Barby::CairoOutputter���ä����äƤ�����������Ū�ˤ�QR�����ɤ⥵�ݡ��Ȥ����äݤ�����
-* rcairo: captcha�Υ��ݡ���
+* rcairo: 表のサポート
+* rcairo: グラフのサポート
+* rcairo: バーコードのサポート
+  * とりあえずBarby::CairoOutputterを作って送っておいた。将来的にはQRコードもサポートされるっぽいし。
+* rcairo: captchaのサポート
 
-* Svn: ������Хå��ˤ�rb_protect()��Ȥ���
+* Svn: コールバックにはrb_protect()を使う。
 
-* RWiki: �ƥ�ץ졼�Ȥ��롥
-* RWiki: �ɲ��ѥ֥å��ޡ�����åȤ��롥
+* RWiki: テンプレートを作る．
+* RWiki: 追加用ブックマークレットを作る．
 
-* Svn: prop-change-email.rb���롥
+* Svn: prop-change-email.rbを作る．
 
-* Rabbit: �ơ��ޥɥ�����ȥ֥饦�����Խ����󥿡��ե��������ɲá�
+* Rabbit: テーマドキュメントブラウザに編集インターフェイスを追加．
 
-* Rabbit�Υݥꥷ����ޤȤ��
-  * �ץ쥼��Ū�ˤ�ä������ʤ��Ȥ���ȱ���������褦�ˡ�
-    * ʸ�����礭�����礭��ʤ��������񤫤ʤ��褦�ˡ�
-      * ��ڡ����ˤ�������βվ�񤭤�񤱤ʤ�
-      * ��Ԥ�Ĺ����ʸ�Ϥ�񤱤ʤ��ʡ֡���������̡ߡߤȤʤ�פȤ��񤤤�����ᡥ�֡����η�̤ϡߡߡפȤ���
+* Rabbitのポリシーをまとめる
+  * プレゼン的にやっちゃだめなことをやると汚く見えるように．
+    * 文字の大きさが大きめ（ぐだぐだ書かないように）
+      * 一ページにたくさんの箇条書きを書けない
+      * 一行に長々と文章を書けない（「○○した結果××となる」とか書いちゃダメ．「○○の結果は××」とか）
 
-* RSS Parser: �㳰�˥�����°����URI�����ä��롥
+* RSS Parser: 例外にタグ／属性のURI情報も加える．
 
-* �����Ȥ򥹥饤�ɤ��б��դ���
-* �����Ȥ���¸��
-* �ޡ������ƺ�ä��ơ��ޤ���¸��
-* �ơ��ޥޡ�����undo��
-* �ޥ����ɥ�å��ǥ��饤�����촹����
-* uim-rabbit����
+* コメントをスライドに対応付け．
+* コメントを保存．
+* マージして作ったテーマを保存．
+* テーママージのundo．
+* マウスドラッグでスライド入れ換え．
+* uim-rabbitを作る
 
-* RWiki��RD2RWikiVisitor#default_ext_*��rwiki/rd/ext/�ʲ��Υ��饹�˰�ư���ƤϤɤ�������Ƥ��롥
+* RWikiのRD2RWikiVisitor#default_ext_*をrwiki/rd/ext/以下のクラスに移動してはどうかと提案する．
 * ((<Self Tutorial|URL:http://research.sun.com/research/self/release_4.0/Self-4.0/Tutorial/>))
-* Gauche��GTK+ �Υץ����쥹�С��ȥ����ॢ���ȤȤ��ˤĤ��ƤޤȤ�롥
-* Metacity��gconftool-2�ˤĤ��ƤޤȤ�롥���ץ����: -R, --set, --type
+* GaucheとGTK+ のプログレスバーとタイムアウトとかについてまとめる．
+* Metacityとgconftool-2についてまとめる．オプション: -R, --set, --type
 * ((<benchmark>)) -> ((<bsm>))
 
 == pending
 
-== ���ʤ�
+== やらない
 
-* ((<wsm>))��gosh��SEGV��Τ��ɤ���
-  * -> ����åɤ������ΤǤ�����᤿��
-* ((<wsm>))�����������Τ��Ӥˤɤ�ɤ����äƤ����Τ�ɤ��ˤ����롥
-  * --enable-threads=no�ˤ���gosh�򥳥�ѥ��뤷����ľ�ä��Τǡ�FreeBSD����Boehm GC��pthreads��������������������Ȥ������Ȥ����֡�
-* ((<WikiLink>))����Ͽ�Ǥ��ʤ��ʤäƤ���Τ�ľ����
-  * �ʤˤ⤷�Ƥ��ʤ�����ľ�äƤ��롩����
-* ((<GalleryAdministrator>))�ʤȤ�������RubyPhoto�ˤι�®����
-* RWiki��navi��border��ɴʬΨ�Ǥ����Ǥ���褦�ˤ��롥�㤨�С����30%�ʤĤޤꡤborder�ϡʲ������70%�ˤϥإå���ɽ���Ȥ���
-* WiLiKi:kou����������
-* RWiki��rt2rwiki-lib��InlineParser��ɤ��ˤ����롥
-* ((<Ruby>))�Ǽ������줿Relax NG�Х�ǡ�������/õ��
-* ((<Gauche>))��((<SWIG>))�б���
-  * -> �����äƤ��ꤷ�ޤ����� qt binding���ߤ����Τ�swig��Ȥ������ʤȻפäƤ����򸫤Ĥ��ޤ�����((<�ͤ�|URL:http://www.soraneko.com/~nel/>))
-  * �����ʤ������Ƕ�Ϥ�ä������դ��Ƥ��ޤ��󡥡֤���������Gauche�γ�ĥ�饤�֥��äƽ񤤤����ʤ��ʤ�����������Ĵ�٤ʤ���פȤ��פäƤ��뤦���˻��֤��᤮�Ƥ��ޤ���
-  * ������λ��Ǥ����Ǥϡ�������Ǥ�äƤߤޤ��͡�
+* ((<wsm>))でgoshがSEGVるのを追う．
+  * -> スレッドがからむのであきらめた．
+* ((<wsm>))がアクセスのたびにどんどん太っていくのをどうにかする．
+  * --enable-threads=noにしてgoshをコンパイルしたら直ったので，FreeBSDだとBoehm GCとpthreadsの相性が悪いんだろうということで放置．
+* ((<WikiLink>))で登録できなくなっているのを直す．
+  * なにもしていないけど直っている？？？
+* ((<GalleryAdministrator>))（というか，RubyPhoto）の高速化．
+* RWikiのnaviのborderを百分率でも指定できるようにする．例えば，上位30%（つまり，borderは（下から）70%）はヘッダに表示とか．
+* WiLiKi:kouを整理する
+* RWikiのrt2rwiki-libのInlineParserをどうにかする．
+* ((<Ruby>))で実装されたRelax NGバリデータを作る/探す
+* ((<Gauche>))の((<SWIG>))対応．
+  * -> これやってたりしますか？ qt bindingが欲しいのでswigを使おうかなと思ってここを見つけました．((<ねる|URL:http://www.soraneko.com/~nel/>))
+  * ごめんなさい．最近はめっきり手を付けていません．「そういえばGaucheの拡張ライブラリって書いた事ないなぁ，そこから調べなきゃ」とか思っているうちに時間が過ぎています．
+  * ああ，了解です．では，こちらでやってみますね．

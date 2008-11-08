@@ -1,22 +1,22 @@
 = VNC
 
-xinetd��ͳ��VNC��ư����X�����Ф�ɤ��ˤ��롥
+xinetd経由でVNCを起動してXサーバもどきにする．
 
-�����Debian GNU/Linux����ѡ�
+今回はDebian GNU/Linuxを使用．
 
-== ɬ�פʤ��
+== 必要なもの
 
-  * VNC 4.X: VNC 3.X������̯�����꤬�ۤʤ�ޤ���
+  * VNC 4.X: VNC 3.Xだと微妙に設定が異なります．
   * xinetd
-  * gdm: ¾�Υǥ����ץ쥤�ޥ͡�����Ǥ�褤
+  * gdm: 他のディスプレイマネージャでもよい
 
-== ����
+== 設定
 
-800x600, 1024x768, 1152x864, 1280x1024�β����٤�VNC�����Ф�ư���뤳�Ȥˤ��롥�Ĥ��Ǥˡ����줾��ˤĤ��ƿ���16bit�Ǥ�24bit�Ǥ��Ѱդ��롥
+800x600, 1024x768, 1152x864, 1280x1024の解像度でVNCサーバを起動することにする．ついでに，それぞれについて色数16bit版と24bit版を用意する．
 
-=== �����ӥ����ɲ�
+=== サービスの追加
 
-/etc/services�˰ʲ����ɲ�
+/etc/servicesに以下を追加
 
   vnc-800x600x16         5950/tcp
   vnc-800x600x24         5951/tcp
@@ -27,17 +27,17 @@ xinetd��ͳ��VNC��ư����X�����Ф�ɤ��ˤ��롥
   vnc-1280x1024x16       5956/tcp
   vnc-1280x1024x24       5957/tcp
 
-=== xinetd������
+=== xinetdの設定
 
-/etc/xinetd.d/vnc�Ȥ��ưʲ����ͤ����ƤΥե������������롥
+/etc/xinetd.d/vncとして以下の様な内容のファイルを作成する．
 
-192.168.0.3����ʬ��VNC�����Ф�Х���ɤ��륤�󥿡��ե�������IP���ɥ쥹���ۥ���̾���ѹ����롥
+192.168.0.3の部分はVNCサーバをバインドするインターフェイスのIPアドレスかホスト名に変更する．
 
-VNC 3.X����Ѥ��Ƥ������
+VNC 3.Xを使用している場合は
 
   -SecurityTypes None
 
-���ץ����Ϥ���ʤ���
+オプションはいらない．
 
   service vnc-800x600x16
   {
@@ -118,31 +118,31 @@ VNC 3.X����Ѥ��Ƥ������
           server_args     = -inetd -query 192.168.0.3 -once -geometry 1280x1024 -depth 24 -SecurityTypes None
   }
 
-=== xinetd��Ƶ�ư
+=== xinetdを再起動
 
   % sudo env - /etc/init.d/xinetd restart
 
-=== gdm��xdmcp��ͭ���ˤ���
+=== gdmでxdmcpを有効にする
 
-/etc/gdm/gdm.conf�����
+/etc/gdm/gdm.confの中の
 
   [xdmcp]
 
-������������
+セクション中の
 
   Enable=false
 
-��
+を
 
   Enable=true
 
-���ѹ����롥
+に変更する．
 
-=== gdm��Ƶ�ư
+=== gdmを再起動
 
   % sudo env - /etc/init.d/gdm restart
 
-== ��³
+== 接続
 
 === xvncviewer
 

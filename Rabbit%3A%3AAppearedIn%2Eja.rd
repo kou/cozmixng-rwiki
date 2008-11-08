@@ -1,14 +1,14 @@
 = Rabbit::AppearedIn.ja
 
-Rabbitд╧д│дєд╩д╚д│дэд╦╜╨╦╫д╖д▐д╖д┐бе
+RabbitуБпуБУуВУуБкуБиуБУуВНуБлхЗ║ц▓буБЧуБ╛уБЧуБЯя╝О
 
-== ╗и╗я
+== щЫСшкМ
 
-  * ╞№╖╨е╜е╒е╚ежезев 2006╟п1╖ю╣ц P54: kdmsnrд╡дєд╬е╫еэе╒егб╝еы═єб╩╡дд╦д╩д├д╞дддые╜е╒е╚ежезевд╚д╖д╞б╦
+  * цЧеч╡МуВ╜уГХуГИуВжуВзуВв 2006х╣┤1цЬИхП╖ P54: kdmsnrуБХуВУуБоуГЧуГнуГХуВгуГ╝уГлцмДя╝Иц░ЧуБлуБкуБгуБжуБДуВЛуВ╜уГХуГИуВжуВзуВвуБиуБЧуБжя╝Й
 
-== е╫еье╝еєе╞б╝е╖ечеє
+== уГЧуГмуВ╝уГ│уГЖуГ╝уВ╖уГзуГ│
 
-  * ((<Rabbit2008 - ┼ь╡■Ruby▓ё╡─01|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/>))
+  * ((<Rabbit2008 - цЭ▒ф║мRubyф╝Ъшн░01|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/>))
     (((<PDF|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/rabbit2008.pdf>)))
   * ((<Cutter - ITpro Challenge! 2008(PDF)|URL:http://www.clear-code.com/archives/itpro-challenge-2008-cutter.pdf>))
-  * ((<GaUnit - е╒ебеєепе╖ечеєепеще╓2008|URL:http://pub.cozmixng.org/~kou/archives/function-club2008/>))
+  * ((<GaUnit - уГХуВбуГ│уВпуВ╖уГзуГ│уВпуГйуГЦ2008|URL:http://pub.cozmixng.org/~kou/archives/function-club2008/>))

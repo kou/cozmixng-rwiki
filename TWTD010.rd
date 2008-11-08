@@ -1,14 +1,14 @@
 = TWTD010
 
-RWiki¤Îsrc¤ÇÀ¸¤Î¥ê¥Ó¥¸¥ç¥ó¤ò¸«¤»¤Ê¤¤¤è¤¦¤Ë¤¹¤ë¡£((<rwiki-devel:438>))
+RWikiã®srcã§ç”Ÿã®ãƒªãƒ“ã‚¸ãƒ§ãƒ³ã‚’è¦‹ã›ãªã„ã‚ˆã†ã«ã™ã‚‹ã€‚((<rwiki-devel:438>))
 
 == status
 
-* ¼ïÎà: story
-* ¥¤¥Æ¥ì¡¼¥·¥ç¥ó: 
-* ¥µ¥¤¥ó: ((<kou>))
-* ¾õÂÖ: open
-* ¸«ÀÑ: 0 / 0
+* ç¨®é¡ž: story
+* ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³: 
+* ã‚µã‚¤ãƒ³: ((<kou>))
+* çŠ¶æ…‹: open
+* è¦‹ç©: 0 / 0
 
 == description
 

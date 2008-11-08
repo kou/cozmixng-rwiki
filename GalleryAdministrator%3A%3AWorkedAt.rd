@@ -4,4 +4,4 @@ GalleryAdministrator is worked at ...
 
   * ((<Official|URL:http://pub.cozmixng.org/~gallery/>))
 
-  * ((<¡Ö¥¢¥¤ LOVE ¥¨¥Ð¥´¥¹¡×¥®¥ã¥é¥ê¡¼|URL:http://snowflake.jp/ebagos/gallery/>))
+  * ((<ã€Œã‚¢ã‚¤ LOVE ã‚¨ãƒã‚´ã‚¹ã€ã‚®ãƒ£ãƒ©ãƒªãƒ¼|URL:http://snowflake.jp/ebagos/gallery/>))

@@ -1,60 +1,60 @@
 = SNMP
 
-SNMP�ط��κ�ȵ�Ͽ�Ǥ���
+SNMP関係の作業記録です。
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo portupgrade -N net-snmp
 
-/etc/rc.conf�˰ʲ����ɲ�
+/etc/rc.confに以下を追加
 
   snmpd_enable="YES"
 
-���ʤߤˡ�
+ちなみに，
 
   net_snmpd_enable="YES"
 
-��obsolete�餷��
+はobsoleteらしい
 
-== ����
+== 設定
 
   % cd /usr/local/share/snmp
   % sudo snmpconf -g basic_setup
 
-�Ѹ�����ɤ褯�ɤ�Ф狼�롥�����Ϥ���
+英語だけどよく読めばわかる．．．はず．
 
-=== �ǥ��������̤ξ�����󶡤���
+=== ディスク容量の情報を提供する
 
-/usr/local/share/snmp/snmpd.conf(Debian�ʤ�/etc/snmp/snmpd.conf)�˰ʲ��򵭽�
+/usr/local/share/snmp/snmpd.conf(Debianなら/etc/snmp/snmpd.conf)に以下を記述
 
   disk /usr/local/var 10000
   disk /var 10000
   disk /home 10000
 
-����ǡ�
+これで，
 
   % snmpwalk -v 1 -c hogehoge localhost .1.3.6.1.4.1.2021.9.1.9.1
 
-�ǡ�/usr/local/var�Υǥ����������̤��ѡ�����Ȥ������롥
+で，/usr/local/varのディスク使用量がパーセントで得られる．
 
   % snmpwalk -v 1 -c hogehoge localhost .1.3.6.1.4.1.2021.9.1.9.2
 
-���ȡ�/var
+だと，/var
 
   % snmpwalk -v 1 -c hogehoge localhost .1.3.6.1.4.1.2021.9.1.9.3
 
-���ȡ�/home
+だと，/home
 
-=== httpd�ε�ư�����󶡤���
+=== httpdの起動数を提供する
 
   proc  httpd 20 
 
-������Ⱥ����20�ץ�������ư���뤳�Ȥ���Ĥ���Ȥ�����̣��
+これだと最大で20プロセス起動することを許可するという意味．
 
   % snmpwalk -v 1 -c hogehoge localhost .1.3.6.1.4.1.2021.2.1.5.1
 
-�ǵ�ư��Υץ�������
+で起動中のプロセス数
 
   % snmpwalk -v 1 -c hogehoge localhost .1.3.6.1.4.1.2021.2.1.4.1
 
-�ǵ�ư�Ǥ���ץ����������狼�롥
+で起動できるプロセス数がわかる．

@@ -7,7 +7,7 @@ Latest version: 0.0.1
 
 == Comments
 
-== ������
+== コメント
 
-���˥�꡼������Ȥ���̾�Τ�bsm���ѹ����褦�� - ((<kou>))
+次にリリースするときは名称をbsmに変更しよう． - ((<kou>))
 

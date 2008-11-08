@@ -3,114 +3,114 @@
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/lavie-with-logo.png
   # title = Lavie
-  # description = ¥Ş¥¹¥³¥Ã¥È¥­¥ã¥é¥¯¥¿¡¼
+  # description = ãƒã‚¹ã‚³ãƒƒãƒˆã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼
   # class = right
 
-== Rabbit¤È¤Ï/What is Rabbit?
+== Rabbitã¨ã¯/What is Rabbit?
 
-Rabbit¤Ï¡¢RD¤Ç½ñ¤«¤ì¤¿Ê¸½ñ¤ò¤â¤È¤Ë¥×¥ì¥¼¥ó¥Æ¡¼¥·¥ç¥ó¤ò¹Ô¤¦¥½¥Õ¥È¥¦¥§¥¢¤Ç¤¹¡¥
+Rabbitã¯ã€RDã§æ›¸ã‹ã‚ŒãŸæ–‡æ›¸ã‚’ã‚‚ã¨ã«ãƒ—ãƒ¬ã‚¼ãƒ³ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã‚’è¡Œã†ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã§ã™ï¼
 
 Rabbit is a presentation software. It shows RD (Ruby Document) files beautifully.
 Rabbit is rather big (3.5MB), but you can install it quickly (Rabbit is written in Ruby).
 See ((<README.en|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit%3A%3AREADME.en>))
 for more information.
 
-RD¤ÏRuby Document¤ÎÎ¬¤Ç¡¢ÁÇ¤Î¾õÂÖ¤Ç¤âÆÉ¤ß½ñ¤­¤·¤ä¤¹¤¤¤è¤¦¤Ë¥Ç¥¶¥¤¥ó¤µ¤ì¤¿¥Æ¥­¥¹¥È¤Î½ñ¼°¤Ç¤¹¡¥Wiki¤Ë¶á¤¤½ñ¤­¤«¤¿¤Ê¤Î¤ÇÈæ³ÓÅª´ÊÃ±¤ËÍı²ò¤Ç¤­¤Ş¤¹¡¥RD¤Î½ñ¼°¤Ë¤Ä¤¤¤Æ¤Ï
-((<¤³¤Á¤é|URL:http://www9.ocn.ne.jp/~ymt/ruby/rd.html>))
-¤ò¤´Í÷¤¯¤À¤µ¤¤¡¥
+RDã¯Ruby Documentã®ç•¥ã§ã€ç´ ã®çŠ¶æ…‹ã§ã‚‚èª­ã¿æ›¸ãã—ã‚„ã™ã„ã‚ˆã†ã«ãƒ‡ã‚¶ã‚¤ãƒ³ã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆã®æ›¸å¼ã§ã™ï¼Wikiã«è¿‘ã„æ›¸ãã‹ãŸãªã®ã§æ¯”è¼ƒçš„ç°¡å˜ã«ç†è§£ã§ãã¾ã™ï¼RDã®æ›¸å¼ã«ã¤ã„ã¦ã¯
+((<ã“ã¡ã‚‰|URL:http://www9.ocn.ne.jp/~ymt/ruby/rd.html>))
+ã‚’ã”è¦§ãã ã•ã„ï¼
 
-Rabbit¤Î¥¢¡¼¥«¥¤¥Ö¤Ï3.5MB¤Û¤É¤¢¤ë¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤Ë»ş´Ö¤¬¤«¤«¤ë¤È»×¤ï¤ì¤ë¤«¤â¤·¤ì¤Ş¤»¤ó¤¬¡¢
-¤Û¤È¤ó¤É¤Ï¥¹¥¯¥ê¥×¥È¤È¥Ç¡¼¥¿¤Ê¤Î¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤ÏÃ»»ş´Ö¤ÇºÑ¤ß¤Ş¤¹¡¥
+Rabbitã®ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã¯3.5MBã»ã©ã‚ã‚‹ã®ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã«æ™‚é–“ãŒã‹ã‹ã‚‹ã¨æ€ã‚ã‚Œã‚‹ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ãŒã€
+ã»ã¨ã‚“ã©ã¯ã‚¹ã‚¯ãƒªãƒ—ãƒˆã¨ãƒ‡ãƒ¼ã‚¿ãªã®ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã¯çŸ­æ™‚é–“ã§æ¸ˆã¿ã¾ã™ï¼
 
-== ¥¹¥¯¥ê¡¼¥ó¥·¥ç¥Ã¥È/Screenshots
+== ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆ/Screenshots
 
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-usa-taro.png
-  # title = ¤¦¤µ¤¿¤í¤¦
-  # description = Áö¤ê²°1
+  # title = ã†ã•ãŸã‚ã†
+  # description = èµ°ã‚Šå±‹1
   # class = right
 
 ((<Screenshots|URL:http://pub.cozmixng.org/~gallery/kou/screenshot/rabbit/>))
 
-== ¥¹¥¯¥ê¡¼¥ó¥­¥ã¥¹¥È/Screencasts
+== ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚­ãƒ£ã‚¹ãƒˆ/Screencasts
 
 ((<URL:http://pub.cozmixng.org/~kou/archives/rabbit/movies/>))
 
-== ¥À¥¦¥ó¥í¡¼¥É/Download
+== ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰/Download
 
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-kame-taro.png
-  # title = ¤«¤á¤¿¤í¤¦
-  # description = ÄÉ¤¤¤«¤±²°1
+  # title = ã‹ã‚ãŸã‚ã†
+  # description = è¿½ã„ã‹ã‘å±‹1
   # class = right
 
-ºÇ¿·¥Ğ¡¼¥¸¥ç¥ó: 0.5.7(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.7.tar.gz>)))
+æœ€æ–°ãƒãƒ¼ã‚¸ãƒ§ãƒ³: 0.5.7(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.7.tar.gz>)))
 
 The latest version: 0.5.7(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.5.7.tar.gz>)))
 
-== ¥¤¥ó¥¹¥È¡¼¥ë¤ËÉ¬Í×¤Ê¤â¤Î/Requirements
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã«å¿…è¦ãªã‚‚ã®/Requirements
 
-  * ruby-gtk2 (Â¿¤¯¤Î¥Ç¥£¥¹¥È¥ê¥Ó¥å¡¼¥·¥ç¥ó¤Ç¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Ş¤¹)
-  * ((<rdtool|URL:http://raa.ruby-lang.org/cache/rdtool/>)) (¤ª¤½¤é¤¯¥Ñ¥Ã¥±¡¼¥¸¤¬ÍÑ°Õ¤µ¤ì¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢¼êÆ°¤Ç¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤¯¤À¤µ¤¤)
+  * ruby-gtk2 (å¤šãã®ãƒ‡ã‚£ã‚¹ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ã§ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒç”¨æ„ã•ã‚Œã¦ã„ã¾ã™)
+  * ((<rdtool|URL:http://raa.ruby-lang.org/cache/rdtool/>)) (ãŠãã‚‰ããƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒç”¨æ„ã•ã‚Œã¦ã„ãªã„ã®ã§ã€æ‰‹å‹•ã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãã ã•ã„)
 
-== ¥¤¥ó¥¹¥È¡¼¥ëÊıË¡/Installation
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ–¹æ³•/Installation
 
-  (1) ruby-gtk2 ¤ò¥¤¥ó¥¹¥È¡¼¥ë
-  (2) rdtool ¤ò¥¤¥ó¥¹¥È¡¼¥ë
+  (1) ruby-gtk2 ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
+  (2) rdtool ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
         # ruby setup.rb
-  (3) Rabbit ¤ò¥¤¥ó¥¹¥È¡¼¥ë
+  (3) Rabbit ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
         # ruby setup.rb
 
-== »î¤·¤Ë»È¤Ã¤Æ¤ß¤ë/Try it
+== è©¦ã—ã«ä½¿ã£ã¦ã¿ã‚‹/Try it
 
   $ cd sample
   $ rabbit lightning-talk.rd
 
-±¦¥¯¥ê¥Ã¥¯¤ò¤¹¤ë¤È¥³¥ó¥Æ¥­¥¹¥È¥á¥Ë¥å¡¼¤¬¸½¤ì¤ë¤Î¤Ç¡¢¤½¤³¤«¤é³Æ¼ï¤ÎÁàºî¤ò¹Ô¤Ã¤Æ¤¯¤À¤µ¤¤¡¥
+å³ã‚¯ãƒªãƒƒã‚¯ã‚’ã™ã‚‹ã¨ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ãŒç¾ã‚Œã‚‹ã®ã§ã€ãã“ã‹ã‚‰å„ç¨®ã®æ“ä½œã‚’è¡Œã£ã¦ãã ã•ã„ï¼
 
-== ¥­¥ã¥Ã¥Á¥³¥Ô¡¼¡Ê°Æ¡Ë/Promo word
+== ã‚­ãƒ£ãƒƒãƒã‚³ãƒ”ãƒ¼ï¼ˆæ¡ˆï¼‰/Promo word
 
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/yukiusa.png
-  # title = ¤æ¤­¤¦¤µ
-  # description = ¥Ş¥¹¥³¥Ã¥È2
+  # title = ã‚†ãã†ã•
+  # description = ãƒã‚¹ã‚³ãƒƒãƒˆ2
   # class = right
 
-¡ÖRuby¤Ç¤Ç¤­¤Æ¤ëRabbit¤Ç¤¹¡×
+ã€ŒRubyã§ã§ãã¦ã‚‹Rabbitã§ã™ã€
 
-== ¥Ğ¥Ê¡¼/Banner
+== ãƒãƒŠãƒ¼/Banner
 
-¥Ğ¥Ê¡¼»Ï¤á¤Ş¤·¤¿¡¥
+ãƒãƒŠãƒ¼å§‹ã‚ã¾ã—ãŸï¼
 
       # image
       # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-pink.png
-      # description = ¥Ğ¥Ê¡¼¡Ê¥Ô¥ó¥¯¡Ë
+      # description = ãƒãƒŠãƒ¼ï¼ˆãƒ”ãƒ³ã‚¯ï¼‰
 
      # image
      # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-blue.png
-     # description = ¥Ğ¥Ê¡¼¡ÊÀÄ¡Ë
+     # description = ãƒãƒŠãƒ¼ï¼ˆé’ï¼‰
 
     # image
     # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-green.png
-    # description = ¥Ğ¥Ê¡¼¡ÊÎĞ¡Ë
+    # description = ãƒãƒŠãƒ¼ï¼ˆç·‘ï¼‰
 
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/rabbit-banner-heads.png
-  # description = ¥Ğ¥Ê¡¼¡Ê¤¢¤¿¤Ş¡Ë
+  # description = ãƒãƒŠãƒ¼ï¼ˆã‚ãŸã¾ï¼‰
 
-== °õºş½ĞÎÏ/Printed output
+== å°åˆ·å‡ºåŠ›/Printed output
 
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-alice.png
-  # title = ¥¢¥ê¥¹
-  # description = Áö¤ê²°3
+  # title = ã‚¢ãƒªã‚¹
+  # description = èµ°ã‚Šå±‹3
   # class = right
 
-°õºş½ĞÎÏ(0.5.7):
+å°åˆ·å‡ºåŠ›(0.5.7):
 ((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.5.7.ps>)) /
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.5.7.pdf>))
 
-°õºş½ĞÎÏ¡Ê°ìÍ÷¡Ë(0.5.7):
+å°åˆ·å‡ºåŠ›ï¼ˆä¸€è¦§ï¼‰(0.5.7):
 ((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.5.7.ps>)) /
 ((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.5.7.pdf>))
 
@@ -126,12 +126,12 @@ Printed output (index) (0.5.7):
 
 ((<BTS|URL:/retro/projects/rabbit/>))
 
-== ¥É¥­¥å¥á¥ó¥È/Documents
+== ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ/Documents
 
    # image
    # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-tanu-kitaro.png
-   # title = ¤¿¤Ì¤­¤¿¤í¤¦
-   # description = ¤á¤¯¤ê²°
+   # title = ãŸã¬ããŸã‚ã†
+   # description = ã‚ãã‚Šå±‹
    # class = right
 
   * ((<FAQ.en|Rabbit::FAQ.en>)): not yet...
@@ -144,19 +144,19 @@ Printed output (index) (0.5.7):
   * ((<INSTALL.macosx-macports.en|Rabbit::INSTALL.macosx-macports.en>))
   * ((<rabbit-mode.el::README.ja>))
 
-== ¥µ¥ó¥×¥ë/Samples
+== ã‚µãƒ³ãƒ—ãƒ«/Samples
 
   * ((<sample.en|Rabbit::sample.en>))
   * ((<sample.ja|Rabbit::sample.ja>))
   * ((<Implementation.ja|Rabbit::Implementation.ja>))
   * ((<CanRabbit.ja|Rabbit::CanRabbit.ja>))
 
-== ¤½¤ÎÂ¾/Others
+== ãã®ä»–/Others
 
     # image
     # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/mini-usagi.png
-    # title = ÅÆ
-    # description = Áö¤ê²°2
+    # title = å…
+    # description = èµ°ã‚Šå±‹2
     # class = right
 
   * ((<UsedBy|Rabbit::UsedBy>))
@@ -167,7 +167,7 @@ Printed output (index) (0.5.7):
   * ((<AppearedIn.ja|Rabbit::AppearedIn.ja>))
   * ((<ToDo|Rabbit::ToDo>))
 
-== ¥³¥á¥ó¥È/Comments
+== ã‚³ãƒ¡ãƒ³ãƒˆ/Comments
 
-  * ¡Ö¤ë¤Ó¤Ş¡×¤Ë³ÑÃ«¤µ¤ó¤Èkou¤¯¤óÅĞ¾ì  ((<URL:http://jp.rubyist.net/magazine/?0014-Hotlinks>))
-    * Å¬Åö¤Ê¤È¤³¤Ë°ÜÆ°¤·¤Æ¤¯¤À¤µ¤¤¡£- akapy
+  * ã€Œã‚‹ã³ã¾ã€ã«è§’è°·ã•ã‚“ã¨kouãã‚“ç™»å ´  ((<URL:http://jp.rubyist.net/magazine/?0014-Hotlinks>))
+    * é©å½“ãªã¨ã“ã«ç§»å‹•ã—ã¦ãã ã•ã„ã€‚- akapy

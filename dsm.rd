@@ -5,7 +5,7 @@ The latest version: 0.0.4
 
   * ((<README.ja|dsm::README.ja>))
 
-== ������
+== コメント
 
-  * 0.0.3��Gauche 0.8.6�Ǥ�ư���ޤ��� - ((<kou>))
-  * 0.0.3�ʹߤ�Gauche >= 0.8.4�Ǥ���ư���ޤ��� - ((<kou>))
+  * 0.0.3はGauche 0.8.6では動きません． - ((<kou>))
+  * 0.0.3以降はGauche >= 0.8.4でしか動きません． - ((<kou>))

@@ -2,130 +2,130 @@
 
 Logical Volume Manager.
 
-����Ū�ʥѡ��ƥ������������ܥ�塼��ˤ�������뤳�Ȥˤ�ꡤ�ѡ��ƥ������Υ�������夫���ñ���ѹ��Ǥ���褦�ˤ��롥
+論理的なパーティション（論理ボリューム）を作成することにより，パーティションのサイズを後から簡単に変更できるようにする．
 
-== ����
+== 前提
 
-�Хå����å��ΰ�˻Ȥ������ϡ��ɥǥ�����/dev/sda�����롥
-�����/backup�Ȥ��ƥޥ���Ȥ��ƻȤ�������
-����������/backup�Υ����������̤������ʤ뤫�⤷��ʤ���
+バックアップ領域に使いたいハードディスク/dev/sdaがある．
+これを/backupとしてマウントして使いたい．
+ただ，今後/backupのサイズを増量したくなるかもしれない．
 
-== ����
+== 基本
 
-LVM�ΰ�����������ˡ��
+LVM領域を作成する方法．
 
-=== �ѡ��ƥ������κ���
+=== パーティションの作成
 
-�ޤ���cfdisk�ʤɤ�/dev/sda1��/dev/sda2�ˤ櫓������̤Υѡ��ƥ������ˡ�
+まず，cfdiskなどで/dev/sda1と/dev/sda2にわける（普通のパーティション）．
 
-���֤󡤥ѡ��ƥ������Ϻ٤����櫓�������褤�Ȼפ���
+たぶん，パーティションは細かくわけた方がよいと思う．
 
-((*�����󤯤����ͤ�*)):
-����ϡ���ĤΥѡ��ƥ�����󤬲��줿��ʤ��֤󡪡�¾�Υѡ��ƥ������˼�ư�ǥǡ������񤭹��ޤ��褦�ˤʤ뤫������⤷�����줿�ѡ��ƥ����������̤��礭���ȡ��Ĥä��ѡ��ƥ������˲��줿�ѡ��ƥ������ʬ�ζ������̤�̵����ǽ�����⤤�ΤǤϤʤ�����������
+((*うさんくさい考え*)):
+それは，一つのパーティションが壊れたら（たぶん！）他のパーティションに自動でデータが書き込まれるようになるからだ．もし，壊れたパーティションの容量が大きいと，残ったパーティションに壊れたパーティション分の空き容量が無い可能性が高いのではないだろうか．
 
-���줾��Υѡ��ƥ������Υ����פ�Linux LVM�ˤ��Ƥ�����
+それぞれのパーティションのタイプはLinux LVMにしておく．
 
-=== ʪ���ܥ�塼��κ���
+=== 物理ボリュームの作成
 
-���櫓���ѡ��ƥ�������Ȥä�ʪ���ܥ�塼���������롥
+今わけたパーティションを使って物理ボリュームを作成する．
 
   % sudo pvcreate /dev/sda1
   % sudo pvcreate /dev/sda2
 
-����ʣ����ʪ���ܥ�塼���������뤳�Ȥ����롥
+一回で複数の物理ボリュームを作成することも出来る．
 
   % sudo pvcreate /dev/sda1 /dev/sda2
 
-�����ܥ�塼���pvscan��pvdisplay�ǳ�ǧ�Ǥ��롥
+論理ボリュームはpvscanやpvdisplayで確認できる．
 
   % sudo pvscan
   % sudo pvdisplay
 
-=== �ܥ�塼�॰�롼�פκ���
+=== ボリュームグループの作成
 
-ʣ����ʪ���ܥ�塼���ޤȤ�ƥܥ�塼�॰�롼�פ�������롥
+複数の物理ボリュームをまとめてボリュームグループを作成する．
 
-����Ϻ���ä�ʪ���ܥ�塼���ޤȤ�ơ�DATA�פȤ����ܥ�塼�॰�롼�פ�������롥
+今回は今作った物理ボリュームをまとめて「DATA」というボリュームグループを作成する．
 
   % sudo vgcreate DATA /dev/sdb1 /dev/sdb2
 
-�ܥ�塼�॰�롼�פ�vgscan��vgdisplay�ǳ�ǧ�Ǥ��롥
+ボリュームグループはvgscanやvgdisplayで確認できる．
 
   % sudo vgscan
   % sudo vgdisplay
 
-�ܥ�塼�॰�롼�פ�̾����vgrename���ѹ��Ǥ��롥
+ボリュームグループの名前はvgrenameで変更できる．
 
-�㤨�С���DATA�פȤ���̾���Υܥ�塼�॰�롼�פ��DATA2�פȤ���̾�����Ѥ�������аʲ��Τ褦�ˤ��롥
+例えば，「DATA」という名前のボリュームグループを「DATA2」という名前に変えたければ以下のようにする．
 
   % sudo vgrename DATA DATA2
 
-=== �����ܥ�塼��κ���
+=== 論理ボリュームの作成
 
-���褤�衤�ºݤ˥ѡ��ƥ������Τ褦�˻Ȥ��������ܥ�塼���������롥
+いよいよ，実際にパーティションのように使える論理ボリュームを作成する．
 
-60GBʬ�Ρ�backup�פȤ���̾���������ܥ�塼����DATA�פȤ���̾���Υܥ�塼�॰�롼�פ˺������롥
+60GB分の「backup」という名前の論理ボリュームを「DATA」という名前のボリュームグループに作成する．
 
   % sudo lvcreate -L60G -n backup DATA
 
-�����ܥ�塼���lvscan��lvdisplay�ǳ�ǧ�Ǥ��롥
+論理ボリュームはlvscanやlvdisplayで確認できる．
 
   % sudo lvscan
   % sudo lvdisplay
 
-=== �����ܥ�塼��Υե����ޥå�
+=== 論理ボリュームのフォーマット
 
-�ѡ��ƥ�������Ʊ���褦��mkfs�������ܥ�塼���ե����ޥåȤ��롥
+パーティションと同じようにmkfsで論理ボリュームをフォーマットする．
 
   % sudo mkfs -t ext3 /dev/mapper/DATA-backup
 
-���Ȥ�/backup�˥ޥ���Ȥ�������Ǥ��롥
+あとは/backupにマウントするだけである．
 
   % sudo mkdir -p /backup
   % sudo mount -t ext3 /backup /dev/mapper/DATA-backup
 
-/etc/fstab�ˤ���ʤΤ�񤤤Ƥ����Ƥ�褤��������
+/etc/fstabにこんなのを書いておいてもよいだろう．
 
   /dev/mapper/DATA-backup       /backup            ext3    defaults        0       2
 
-== ����
+== 管理
 
-���������ĥ������ʤɡ�
+サイズを拡張したりなど．
 
-=== �����ܥ�塼����ĥ
+=== 論理ボリュームを拡張
 
-lvextend��ȤäƳ�ĥ�Ǥ��롥
+lvextendを使って拡張できる．
 
-��DATA�ץܥ�塼�॰�롼����Ρ�backup�������ܥ�塼���10GB��ĥ������ϰʲ��Τ褦�ˤ��롥
+「DATA」ボリュームグループ内の「backup」論理ボリュームを10GB拡張する場合は以下のようにする．
 
   % sudo lvextend -L+10G /dev/mapper/DATA-backup
 
-�������ΰ�ϳ�ĥ����Ƥ�ե����륷���ƥ�ϳ�ĥ����Ƥ��ʤ��Τ�ext2resize�ʤɤǥե����륷���ƥ���ĥ����ɬ�פ����롥
+ただ，領域は拡張されてもファイルシステムは拡張されていないのでext2resizeなどでファイルシステムも拡張する必要がある．
 
   % sudo umount /backup
   % sudo ext2resize /dev/mapper/DATA-backup
 
-ext2resize�ˤϥǥХ���̾�θ�˥���������ꤹ�뤳�Ȥ�Ǥ��뤬����ά����Ⱥ��祵�����ޤǳ�ĥ���Ƥ����Τǡ�����Ͼ�ά������
+ext2resizeにはデバイス名の後にサイズを指定することもできるが，省略すると最大サイズまで拡張してくれるので，今回は省略した．
 
-=== �ܥ�塼�॰�롼�פ��ĥ
+=== ボリュームグループを拡張
 
-vgextend��ȤäƳ�ĥ�Ǥ��롥
+vgextendを使って拡張できる．
 
-�ޤ����ܥ�塼�॰�롼�פ˲ä�����ʪ���ܥ�塼���������롥
+まず，ボリュームグループに加えたい物理ボリュームを作成する．
 
   % sudo pvcreate /dev/sda3
 
-������DATA�ץܥ�塼�॰�롼�פ˲ä��������ϰʲ��Τ褦�ˤ��롥
+これを「DATA」ボリュームグループに加えたい場合は以下のようにする．
 
   % sudo vgextend DATA /dev/sda3
 
-=== �ǥ������μ�괹��
+=== ディスクの取り換え
 
 ...
 
-== ����URL
+== 参考URL
 
   * ((<Logical Volume Manager HOWTO|URL:http://www.linux.or.jp/JF/JFdocs/LVM-HOWTO.html>))
-    * �����ܥ�塼���ܥ�塼�॰�롼�פʤɤδط���
-      ((<Logical Volume Manager HOWTO: ����Ū�ʸ�§|URL:http://www.linux.or.jp/JF/JFdocs/LVM-HOWTO-3.html>))
-      �򸫤�Ȥ褤��
+    * 論理ボリュームやボリュームグループなどの関係は
+      ((<Logical Volume Manager HOWTO: 基本的な原則|URL:http://www.linux.or.jp/JF/JFdocs/LVM-HOWTO-3.html>))
+      を見るとよい．

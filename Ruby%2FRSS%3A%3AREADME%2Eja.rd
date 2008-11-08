@@ -1,3 +1,3 @@
 = Ruby/RSS::README.ja
 
-((<RSS Parser::README.ja>))§Ú§ﬂ§∆§Ø§¿§µ§§°•
+((<RSS Parser::README.ja>))„Çí„Åø„Å¶„Åè„Å†„Åï„ÅÑÔºé

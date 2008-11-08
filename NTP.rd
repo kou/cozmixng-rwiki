@@ -1,8 +1,8 @@
 = NTP
 
-NTP�ط��κ�ȵ�Ͽ�Ǥ���
+NTP関係の作業記録です。
 
-ntpd������ե������/etc/ntp.conf�����Ƥϰʲ��Τ褦�ʴ�����
+ntpdの設定ファイルは/etc/ntp.conf．内容は以下のような感じ．
 
   server ntp.tohoku.ac.jp
 

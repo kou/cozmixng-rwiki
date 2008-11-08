@@ -4,62 +4,62 @@
 
 $Id: README.ja 172 2004-06-12 15:28:45Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 GPL or BSD License
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))�������������
+((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-Scheme�Ǽ������줿������Scheme�����ϤǤ����ե��륿�ץ�����
-��Ȥ��ƤǤϤʤ�Scheme�ץ��������ǥ饤�֥��Ȥ��ƻ��Ѥ���
-�뤳�Ȥ����ꤷ�Ƥ��ޤ���
+Schemeで実装された埋め込みScheme処理系です．フィルタプログラ
+ムとしてではなくSchemeプログラム中でライブラリとして使用され
+ることを想定しています．
 
-Ʊ�ͤΤ�Τ�
+同様のものに
 ((<escm|URL:http://www.shiro.dreamhost.com/scheme/vault/escm.html>)) 
-��((<embedded
+，((<embedded
 scheme|URL:http://homepage1.nifty.com/blankspace/scheme/embed.html>))
-��((<BRL|URL:http://brl.sourceforge.net/>))�ʤɤ�����ޤ���
+，((<BRL|URL:http://brl.sourceforge.net/>))などがあります．
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/esm.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/gauche/esm/trunk esm
 
-== ���󥹥ȡ���
+== インストール
 
   # gosh install/install.scm
 
-== ��ʸ
+== 構文
 
   * <% expr ... %>
     
-    Scheme���������ߡ����Ϥ���ʤ���
+    Scheme式の埋め込み．出力されない．
 
   * <%= expr ... %>
     
-    Scheme���������ߡ��Ǹ��ɾ�����줿�����ͤ����Ϥ���롥
+    Scheme式の埋め込み．最後に評価された式の値が出力される．
 
   * <%; ... %>
     
-    �����ȡ�
+    コメント．
 
-  * ����¾
+  * その他
     
-    �ƥ����ȡ����Τޤ޽��Ϥ���롥
+    テキスト．そのまま出力される．
 
-== Gauche�ǻȤ�
+== Gaucheで使う
 
-�Ȥꤢ����
+とりあえず
 
   (use esm.gauche)
 
-���Ʋ�������
+して下さい．

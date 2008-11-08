@@ -1,26 +1,26 @@
-=��߷�Υڡ���
+=市澤のページ
 
-  * ((<HMD��Ȥä�����>))
+  * ((<HMDを使った感想>))
 
 ==Ruby
-:�Ȥꤢ����������
-�ʤ���ʹ���ƤƤޤ��פ��֤��Ruby��äƤߤ褦���ʤäƻפä���
-����Ruby��᤿�����ʤ�����Ⱦü�ˤ��Ƥƾ������Ĥ�⤢�ä�����������
-�������Ҥ��Τ֤����Ruby�繥���餷�����ʢ�����ޤ�ط��ʤ�����:-P)
+:とりあえず・・・
+なんか話聞いててまた久しぶりにRubyやってみようかなって思った。
+前にRubyやめた時かなり中途半端にやめてて少し心残りもあったし・・・。
+すずきひろのぶさんもRuby大好きらしいし（←あんまり関係ないかな:-P)
 
-:windows��ruby�ä�
-���������˻Ȥä����Ȥ��ä����������������ɤʤ���������activeruby�äƤΤ��ä����ʡ�
+:windows版rubyって
+たしか前に使ったことあった記憶があるんだけどなあ・・・。activerubyってのあったかな？
 
-google��[windows ruby]�äƤ�ä��餹�������������Ĥ��ä�������ruby�˴ؤ���Ĵ�٤�����ʤ����Ѥ��ä����������ä����ɤʤ���������activeruby�Ȥ�����ʤ����ܲȤ�����winodws�Ǥ��Ѱդ��Ƥ���褦�������ä���������gtk�Ȥ����äƤߤ�������java�������ڤʤΤ��ʤ�����
+googleで[windows ruby]ってやったらすぐいろいろ見つかった。前はrubyに関して調べる時かなり大変だった記憶があったけどなあ・・・。activerubyとかじゃなく、本家の方でwinodws版も用意しているようだ。せっかくだからgtkとかもやってみたい。（javaの方が楽なのかなあ？）
 
-  * �Ȥꤢ���������Window�Ͻ���ޤ����ɡ� - ((<kou>))
+  * とりあえずこれでWindowは出来ますけど。 - ((<kou>))
       require 'gtk'
 
       window = Gtk::Window.new(Gtk::WINDOW_TOPLEVEL)
       window.show_all
       Gtk.main
 
-:windows��ruby�γ�ȯ�Ķ��ġ���
-((<�������⡣�ȤäƤߤ褦���ʡ�|URL:http://homepage2.nifty.com/sakazuki/rde.html>))
+:windows版rubyの開発環境ツール
+((<いいかも。使ってみようかな。|URL:http://homepage2.nifty.com/sakazuki/rde.html>))
 
-  * �᡹������ܤ��Ф뤫�⤷��ʤ��Ǥ��� - ((<kou>))
+  * 近々これの本が出るかもしれないです。 - ((<kou>))

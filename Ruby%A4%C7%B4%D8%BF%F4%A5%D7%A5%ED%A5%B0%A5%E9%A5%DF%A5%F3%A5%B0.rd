@@ -1,16 +1,16 @@
-= Ruby�Ǵؿ��ץ�����ߥ�
+= Rubyで関数プログラミング
 
-((<Ruby�Ǵؿ��ץ�����ߥ�(Functional Programming in Ruby)|URL:http://sky.zero.ad.jp/~zaa54437/programming/ruby/>))���
+((<Rubyで関数プログラミング(Functional Programming in Ruby)|URL:http://sky.zero.ad.jp/~zaa54437/programming/ruby/>))より
 
-== �����˴ؿ�����ꤹ��Ȥ��ˤ�&��Ĥ��ʤ���Ф����ʤ�����
+== 引数に関数を指定するときには&をつけなければいけない？？
 
-((<�ե������ȥ��饹�δؿ�(Part 6)|URL:http://sky.zero.ad.jp/~zaa54437/programming/ruby/part6.htm>))���
+((<ファーストクラスの関数(Part 6)|URL:http://sky.zero.ad.jp/~zaa54437/programming/ruby/part6.htm>))より
 
-  �ؿ��ΰ����˴ؿ�����ꤹ�뤳�ȤϤǤ��ޤ�����
-  ����ϡ��̾�δؿ�����ǤϤʤ��ؿ����֥������Ȥ��������ơ�
-  &�����Ĥ��ơ�����������κǸ�˻��ꤷ�ʤ���Фʤ�ޤ���
+  関数の引数に関数を指定することはできますが、
+  それは、通常の関数定義ではなく関数オブジェクトを生成して、
+  &記号をつけて、しかも引数の最後に指定しなければなりません。
 
-����Ǥϥ���ʤΤ���������
+これではダメなのだろうか．
 
   def a(b, c, d)
     p b[1]
@@ -22,14 +22,14 @@
     lambda {|x| x + 2},
     lambda {|x| x + 3})
 
-== #lambda�˴ؿ����֥������Ȥ��Ϥ��ʤ�����
+== #lambdaに関数オブジェクトを渡せない？？
 
-((<����Ʃ�����γ���(2) - ��³�Ϥ�(continuation passing)|URL:http://sky.zero.ad.jp/~zaa54437/programming/ruby/appendix-b1.htm>))������
+((<参照透明性の確保(2) - 継続渡し(continuation passing)|URL:http://sky.zero.ad.jp/~zaa54437/programming/ruby/appendix-b1.htm>))あたり
 
-�ؿ����֥������Ȥ�Proc���֥������ȤΤ��Ȥʤ���Ϥ���ΤǤϤʤ������������㤨�Ф���ʴ�����
+関数オブジェクトがProcオブジェクトのことならば渡せるのではないだろうか．例えばこんな感じ．
 
-  # ��³�Ϥ���
-  # ���
+  # 継続渡し版
+  # 定義
   cont_func4 = lambda {|a| print a, "\n" }
 
   def cont_func3(a, continuation)
@@ -44,9 +44,9 @@
 
   def cont_func1(a, continuation)
     a=a+a+a;
-    # Method���֥������ȤǤ⤤���Τʤ�to_proc�Ϥ���ʤ�����
+    # Methodオブジェクトでもいいのならto_procはいらないけど
     continuation[a, method(:cont_func3).to_proc]
   end
 
-  # �¹ԥץ������
+  # 実行プログラム
   cont_func1(2, cont_func2);

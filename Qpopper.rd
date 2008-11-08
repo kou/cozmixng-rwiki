@@ -1,27 +1,27 @@
 = Qpopper
 
-Qpopper�ط��κ�ȵ�Ͽ
+Qpopper関係の作業記録
 
-== ���󥹥ȡ���
+== インストール
 
-((<DRAC>))��Ĥ��Ǥ˥��󥹥ȡ��롥WITH_POSTFIX=yes��DRAC�Τ��ᡥ
+((<DRAC>))もついでにインストール．WITH_POSTFIX=yesはDRACのため．
 
   % sudo /usr/local/sbin/portupgrade -m "WITH_DRAC=yes WITH_POSTFIX=yes" -N qpopper
 
-== ����Ū������
+== 基本的な設定
 
-=== xinetd�ǵ�ư����褦�ˤ��롥
+=== xinetdで起動するようにする．
 
-���󥹥ȡ����
+インストールは
 
   % sudo /usr/local/sbin/portupgrade -N xinetd
 
 
-inetd��ߤ��Τǡ�/etc/rc.conf�˰ʲ����ɲ�
+inetdを止めるので，/etc/rc.confに以下を追加
 
   inetd_enable="NO"
 
-����ե������/usr/local/etc/xinetd.conf
+設定ファイルは/usr/local/etc/xinetd.conf
 
   service pop3
   {
@@ -45,15 +45,15 @@ inetd��ߤ��Τǡ�/etc/rc.conf�˰ʲ����ɲ�
           server_args     = -s -f /usr/local/etc/qpopper/config
   }
 
-/usr/local/etc/qpopper/config�ϰʲ��Τ褦�ʴ���
+/usr/local/etc/qpopper/configは以下のような感じ
 
   set clear-text-password = tls
   set tls-support = alternate-port
   set tls-server-cert-file = /usr/local/etc/qpopper/certs/cert.pem
 
-������κ�����ϰʲ��Τ褦�ʴ���
+証明署の作り方は以下のような感じ
 
-  (1) �ޤ����ꥯ�������Ѥ��롥�⤷��/usr/local/openssl/openssl.cnf��̵���ä��顤/usr/local/openssl/openssl.cnf.sample�򥳥ԡ����Ƥ�����
+  (1) まず，リクエスト用を作る．もし，/usr/local/openssl/openssl.cnfが無かったら，/usr/local/openssl/openssl.cnf.sampleをコピーしておく．
 
 	 % sudo mkdir -p -m660 /usr/local/etc/qpopper/certs
 	 % sudo chown root:mail /usr/local/etc/qpopper/certs
@@ -61,42 +61,42 @@ inetd��ߤ��Τǡ�/etc/rc.conf�˰ʲ����ɲ�
 	 % sudo chmod 600 /usr/local/etc/qpopper/certs/cert.pem
 	 % sudo chown root:0 /usr/local/etc/qpopper/certs/cert.pem
 
-  (1)  ������ǧ�ڶɤ���
+  (1)  自家製認証局を作る
 
 	 % sudo openssl genrsa -des3 -out ca.key 1024
 	 % sudo openssl req -new -x509 -days 365 -key ca.key -out ca.crt
 	 % sudo openssl x509 -req -CA ca.crt -CAkey ca.key -days 365 -in req.pem -out signed-req.pem -CAcreateserial
 
-  (1) ��ʬ��ǧ�ڤ���
+  (1) 自分で認証する
 
 	 # cat signed-req.pem >> /usr/local/etc/qpopper/certs/cert.pem
 
-  (1) /usr/local/etc/qpopper/certs/ca.crt�ϸ����������������Τ��ʡ�
+  (1) /usr/local/etc/qpopper/certs/ca.crtは公開した方がいいのかな？
 
-����������ȡ����Υѥ���ɤϰ��ڼ������ޤ���APOP�ޤ���POP over SSL/TLS��ȤäƤ���������
+この設定だと，生のパスワードは一切受理しません．APOPまたはPOP over SSL/TLSを使ってください。
 
-==== ���
+==== メモ
 
-Mew���ȡ�APOP�Ϥ��ޤ��������ɡ�SSL�Ϥ��ޤ������ʤ����Ȥꤢ������
+Mewだと，APOPはうまくいくけど，SSLはうまくいかない．とりあえず，
 
   (setq mew-prog-ssl "/usr/sbin/stunnel")
 
-�Ȥ���
+とか，
 
   (setq mew-config-alist
      ...
          ("pop-ssl"       . 't)
      ...)
 
-�Ȥ��񤤤Ƥ����ȡ�SSL��Ȥ����Ȥ��뤱�ɡ����ޤ����äƤ��ʤ��ߤ���������2003-04-19
+とか書いておくと，SSLを使おうとするけど，うまくいっていないみたい．．．2003-04-19
 
-���Ȥǡ�((<URL:http://acorn.zive.net/~oyaji/>))�򸫤Ƥ�������2003-04-19
+あとで，((<URL:http://acorn.zive.net/~oyaji/>))を見ておこう．2003-04-19
   
-=== ǧ���ѥǡ����١���������
+=== 認証用データベースを初期化
 
   % sudo -u pop qpopauth -init
 
-== �桼���ɲ�
+== ユーザ追加
 
   % sudo -u pop qpopauth -user kou
 

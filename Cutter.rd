@@ -1,5 +1,5 @@
 = Cutter
 
-SF.net¤Ë°ÜÆ°¤·¤Ş¤·¤¿¡£
+SF.netã«ç§»å‹•ã—ã¾ã—ãŸã€‚
 
 ((<URL:http://cutter.sf.net/>))

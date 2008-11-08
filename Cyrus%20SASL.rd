@@ -1,20 +1,20 @@
 = Cyrus SASL
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo portupgrade -N cyrus-sasl
 
-== ÀßÄê
+== è¨­å®š
 
-¤³¤³¤Ç¤Ïcyrus-sasl2¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤¿¤â¤Î¤È¤¹¤ë¡¥
+ã“ã“ã§ã¯cyrus-sasl2ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ãŸã‚‚ã®ã¨ã™ã‚‹ï¼
 
-°Ê²¼¤Î¤è¤¦¤ÊÆâÍÆ¤Î/usr/local/lib/sasl2/smtpd.conf¤òºîÀ®
+ä»¥ä¸‹ã®ã‚ˆã†ãªå†…å®¹ã®/usr/local/lib/sasl2/smtpd.confã‚’ä½œæˆ
 
   pwcheck_method: sasldb
 
-Ç§¾Ú¥Ç¡¼¥¿¥Ù¡¼¥¹¤òºîÀ®
+èªè¨¼ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚’ä½œæˆ
 
   % sudo saslpasswd2 -c -u `sudo postconf -h mydomain` kou
   % sudo chown postfix:postfix /usr/local/etc/sasldb2.db
 
-mydomain¤ÎÉôÊ¬¤ÏPostfix¤Îsmtpd_sasl_local_domain¤Ç»ØÄê¤·¤¿¤ä¤Ä¤Ë¹ç¤ï¤»¤ë¡¥
+mydomainã®éƒ¨åˆ†ã¯Postfixã®smtpd_sasl_local_domainã§æŒ‡å®šã—ãŸã‚„ã¤ã«åˆã‚ã›ã‚‹ï¼

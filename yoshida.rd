@@ -1,29 +1,29 @@
 = yoshida
 
-== ���ĤΥڡ����Ǥ���((<�ʸ����ڡ����Ϥ�����|URL:http://kilkhor.cc.iwate-u.ac.jp/index.html>))
+== 吉田のページです。((<（公式ページはここ）|URL:http://kilkhor.cc.iwate-u.ac.jp/index.html>))
 
-== News: �������ڥǥ���
-Wiki�ǥ���饤��ɴ�ʻ�ŵ�������Ȥ����ץ��������Ȥ�����褦�Ǥ������ͤޤǡ�
+== News: ウィキぺディア
+Wikiでオンライン百科事典を作ろうというプロジェクトがあるようです。参考まで。
 ((<URL:http://ja.wikipedia.org/>))
 
-==���ƥ���
-*2003.2.10��������ɽ��
-*(('((<img:((�ǲ����Τ������))>))'))���ǡ�
-*���줳���̤ꡢ
+==　テスト
+*2003.2.10　画像の表示
+*(('((<img:((’画像のある場所’))>))'))　で、
+*これこの通り、
 ((<img:(('http://kilkhor.cc.iwate-u.ac.jp/cozmix/images/minicozmix.gif'))>))
 
-*�ȥåץڡ����˲��������줿�ȿͤ⡢����ǤФ줿�褦�Ǥ��͡�
-*��������ʤ����ϡ�Ŭ���������ؤ��Ƥ�����������m(_ _;m
+*トップページに画像を入れた犯人も、これでばれたようですね。
+*気に入らない場合は、適当に入れ替えてください。　m(_ _;m
 
-:�ǤϤ����ϡ���󥯤��ʡ�
+:ではお次は、リンクかな？
 
-*�ɤ����mailto�⤽�Τޤ޻Ȥ��ޤ��͡��ʰʲ����ȡ�
-*�����˥�󥯤���ˤϡ�����
+*どうやらmailtoもそのまま使えますね。（以下参照）
+*画像にリンクを作るには。。。
 
-== Ϣ����
-*��������
+== 連絡先
+*吉田等明
 ((<img:(('http://cozmix.sgk.iwate-u.ac.jp/images/btn001.gif'))>))
-((<Ϣ����|URL:mailto:hitoaki@iwate-u.ac.jp>))
+((<連絡先|URL:mailto:hitoaki@iwate-u.ac.jp>))
 
-== ������
-*���祳��ץ쥼��Ȥ������ʤ狼���˽����ء��������ܤ��ݤ������ä����祳�������Ǥ���
+== コメント
+*チョコをプレゼントしたい（わかい）女性へ：さくらんぼが丸ごと入ったチョコが好きです♪

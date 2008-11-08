@@ -1,32 +1,32 @@
 = Subversion
 
-Subversion�ط��κ�ȵ�Ͽ
+Subversion関係の作業記録
 
-== ���
+== メモ
 
   * ((<URL:http://ukai.jp/Slides/2003/0521-lw2003/html/index.html>))
 
-== ���󥹥ȡ���
+== インストール
 
-/usr/local/etc/pkgtools.conf��MAKE_ARGS�˰ʲ����ɲá�
+/usr/local/etc/pkgtools.confのMAKE_ARGSに以下を追加．
 
   'devel/subversion' => 'WITH_MOD_DAV_SVN=yes',
 
-devel/subversion�򥤥󥹥ȡ���
+devel/subversionをインストール
 
   % sudo /usr/local/sbin/portupgrade -NRr subversion
 
-== ����
+== 設定
 
-/usr/local/etc/apache2/httpd.conf��Ϯ��ޤ���
+/usr/local/etc/apache2/httpd.confを弄ります。
 
-�Ȥꤢ�����ʲ��Υ⥸�塼�������ɤ��ޤ���
+とりあえず以下のモジュールをロードします。
 
   LoadModule dav_module libexec/apache2/mod_dav.so
   LoadModule dav_fs_module libexec/apache2/mod_dav_fs.so
   LoadModule dav_svn_module     libexec/apache2/mod_dav_svn.so
 
-��ݥ��ȥ�ξ�����ꤷ�ޤ�������ϥ��ߥåȤ�����Υ桼����������ʤ��褦�ˤ��ޤ�����������������ï�Ǥ�����褦�ˤ��ޤ���
+リポジトリの場所を指定します。今回はコミットは特定のユーザしか出来ないようにしますが、閲覧、取得は誰でも出来るようにします。
 
   <Location /repos>
           AuthName "Subversion Repository"
@@ -39,62 +39,62 @@ devel/subversion�򥤥󥹥ȡ���
           SVNPath /usr/local/svn/repos
   </Location>
 
-Apache��Ƶ�ư��
+Apacheを再起動。
 
   % sudo /usr/local/sbin/apachectl restart
 
-== ��ݥ��ȥ�ν����
+== リポジトリの初期化
 
   % cd /usr/local
   % sudo mkdir svn
   % sudo svnadmin create svn/repos
   % sudo /usr/sbin/chown -R www:www svn/repos
 
-�����((<URL:/repos/>))�ǥ�ݥ��ȥ�����Ƥ򸫤뤳�Ȥ�����ޤ���
+これで((<URL:/repos/>))でリポジトリの内容を見ることが出来ます。
 
-=== �ѥ���ɤ���Ͽ
+=== パスワードの登録
 
-���ߥåȤ������ͤϰʲ����ͤ˥桼����Ͽ���Ʋ�������
+コミットしたい人は以下の様にユーザ登録して下さい。
 
   % sudo /usr/local/sbin/htpasswd /usr/local/svn/.htpasswd hoge
 
-== ��ݥ��ȥ����Ͽ
+== リポジトリに登録
 
-����Ū�˰�Ĥ�SVNPath�ˤ�Ʊ��Revision��������Ƥ��ޤ���
+基本的に一つのSVNPathには同じRevisionが割り当てられます。
 
-CVS�Ǥ�hoge/fuga�Ȥ����ͤ˥���ݡ��Ȥ���г���Ū�˥⥸�塼�뤬��������ޤ�����Subversion�ǤϤ��Τ褦�ˤϽ���ޤ��󡣤����ǡ�����Ū�˥⥸�塼������������ˡ��ʲ��˽񤤤Ƥ����ޤ���
+CVSではhoge/fugaという様にインポートすれば階層的にモジュールが作成されますが、Subversionではそのようには出来ません。そこで、階層的にモジュールを作成する方法を以下に書いておきます。
 
-�㤨�С�((<URL:/repos/ruby/pwm>))��((<Pseudo Web Mail>))�Υ⥸�塼��˥��������������Ȥ��ޤ������ΤȤ����ޤ�((<URL:/repos/ruby/>))�Ͻ���Ƥ��ʤ��Ȥ��ޤ���
+例えば、((<URL:/repos/ruby/pwm>))で((<Pseudo Web Mail>))のモジュールにアクセスしたいとします。このとき、まだ((<URL:/repos/ruby/>))は出来ていないとします。
 
-���λ��Ϥޤ�����ݥ��ȥ�((<URL:/repos/>))��ruby�Ȥ����⥸�塼��򥤥�ݡ��Ȥ��ޤ���
+その時はまず、リポジトリ((<URL:/repos/>))にrubyというモジュールをインポートします。
 
   % cd /usr/tmp
   % rm -rf tmp
   % mkdir -p tmp/ruby
   % svn import tmp http://www.cozmixng.org/repos/
 
-�Ť�svn����
+古いsvnだと
 
   % svn imoprt http://www.cozmixng.org/repos/ tmp
 
-���⤷��ޤ���
+かもしれません．
 
-���ΤȤ���������񤯤���˴Ķ��ѿ�SVN_EDITOR�˻��ꤵ�줿���ǥ�������ư���ޤ���SVN_EDITOR�����ꤵ��Ƥ��ʤ���VISUAL��VISUAL����ꤵ��Ƥ��ʤ���EDITOR�˻��ꤵ��Ƥ��륨�ǥ�����ư���ޤ���EDITOR����ꤵ��Ƥ��ʤ��ȥ��顼�ǽ�λ���ޤ���
+このとき、ログを書くために環境変数SVN_EDITORに指定されたエディタが起動します。SVN_EDITORが指定されていないとVISUAL、VISUALも指定されていないとEDITORに指定されているエディタを起動します。EDITORも指定されていないとエラーで終了します。
 
-���ץ����򤤤��Ĥ��Ҳ𤷤Ƥ����ޤ���
+オプションをいくつか紹介しておきます。
 
 : -m
-  �����򥳥ޥ�ɥ饤�󤫤���ꤹ�뤳�Ȥ����ޤ���
+  ログをコマンドラインから指定することも出来ます。
 
 : --username
-  ��ݥ��ȥ�˥����������뤿��Υ桼��̾����ꤹ�뤳�Ȥ�����ޤ���
+  リポジトリにアクセスするためのユーザ名を指定することが出来ます。
 
 : --encoding
-  ���󥳡��ǥ��󥰤���ꤹ�뤳�Ȥ������Τ����ܸ��ޤ�ե�����򥤥�ݡ��Ȥ���Ȥ��ϻ��ꤷ�Ʋ�������
+  エンコーディングを指定することが出来るので日本語を含むファイルをインポートするときは指定して下さい。
 
-���ץ�����¾�ˤ⤢��Τ�svn help import���ƤߤƲ�������
+オプションは他にもあるのでsvn help importしてみて下さい。
 
-�����((<URL:/repos/ruby/>))�����褿�ΤǤ��β���pwm�⥸�塼�����Ͽ���ޤ���
+これで((<URL:/repos/ruby/>))が出来たのでこの下にpwmモジュールを登録します。
 
   % cd /usr/tmp
   % rm -rf tmp
@@ -102,9 +102,9 @@ CVS�Ǥ�hoge/fuga�Ȥ����ͤ˥���ݡ��Ȥ���г���Ū�˥⥸�塼�뤬��������ޤ�����Su
   % cp -R /path/to/pwm tmp
   % svn import http://www.cozmixng.org/repos/ruby/ tmp --encoding EUC-JP -m "	* Start Pseudo Web Mail"
 
-�����((<URL:/repos/ruby/pwm/>))������ޤ���
+これで((<URL:/repos/ruby/pwm/>))が出来ます。
 
-���ʤߤ˺���ξ��ϰʲ��Τ褦�ˤ��Ƥ�����פǤ���
+ちなみに今回の場合は以下のようにしても大丈夫です。
 
   % cd /usr/tmp
   % rm -rf tmp
@@ -112,7 +112,7 @@ CVS�Ǥ�hoge/fuga�Ȥ����ͤ˥���ݡ��Ȥ���г���Ū�˥⥸�塼�뤬��������ޤ�����Su
   % cp -R /path/to/pwm tmp/ruby
   % svn import http://www.cozmixng.org/repos/ tmp --encoding EUC-JP
 
-�Ǥ⡢������Ȥ��Ĥ�֥饦���ǥ������������HEAD���������ʤ��Τ����̤�/repos/ruby/pwm/{trunk,tags/0.0.1,tags/0.0.2}/�ʤɤȤ��������ˤ��ޤ���
+でも、これだといつもブラウザでアクセスするとHEADしか見えないので普通は/repos/ruby/pwm/{trunk,tags/0.0.1,tags/0.0.2}/などという構成にします。
 
   % cd /usr/tmp
   % rm -rf tmp
@@ -120,31 +120,31 @@ CVS�Ǥ�hoge/fuga�Ȥ����ͤ˥���ݡ��Ȥ���г���Ū�˥⥸�塼�뤬��������ޤ�����Su
   % cp -R /path/to/pwm tmp/ruby/trunk
   % svn import http://www.cozmixng.org/repos/ tmp --encoding EUC-JP
 
-������trunk����tags/0.0.1�ʤɤˤ�copy��Ȥ����ɤ��Ǥ�������ϥ���ܥ�å���󥯤ߤ����ʤ�Τ餷���Τ�̵�̤˥ǥ��������̤������뤳�Ȥ�̵�������Ǥ����ޤ��������TAG���Ĥ����Ȥ������ȤǤ���
+ここでtrunkからtags/0.0.1などにはcopyを使えば良いです。これはシンボリックリンクみたいなものらしいので無駄にディスク容量が増えることは無いそうです。まぁ、これでTAGがつけれるということです。
 
   % svn copy http://www.cozmixng.org/repos/pwm/trunk http://www.cozmixng.org/repos/pwm/tags/0.0.1
 
-�⤷��tags���Ǥ��Ƥ��ʤ��Ȥ���svn mkdir�Ǥ⤷�Ƥ����Ф����Ǥ��礦��
+もし，tagsができていないときはsvn mkdirでもしておけばいいでしょう．
 
   % svn mkdir http://www.cozmixng.org/repos/pwm/tags
 
-== �����å�������
+== チェックアウト
 
-����Ͽ����PWM������å������Ȥ���ˤϰʲ��Τ褦�ˤ��ޤ���
+今登録したPWMをチェックアウトするには以下のようにします。
 
   % svn co http://www.cozmixng.org/repos/ruby/pwm/trunk hoge
 
-��������ȥ����ȥǥ��쥯�ȥ��hoge�Ȥ����ǥ��쥯�ȥ꤬�����((<URL:/repos/ruby/pwm/trunk>))�Υե����뤬�����å������Ȥ���ޤ���hoge���ά����Ȥ����Ǥ�trunk�����ꤵ�줿��Τȸ��ʤ���ޤ���
+こうするとカレントディレクトリにhogeというディレクトリが出来て((<URL:/repos/ruby/pwm/trunk>))のファイルがチェックアウトされます。hogeを省略するとここではtrunkが指定されたものと見なされます。
 
-����Ū��CVS�Ȱ��ʤΤǸ�ϼ��ϤǴ�ĥ�äƲ����������ʤߤ˻䤬��ʬ�η׻�����Subversion�򥤥󥹥ȡ��뤷��Ϯ�äƤ������Υ�⤬((<URL:/~kou/linux/svn>))�ˤ���ޤ���
+基本的にCVSと一緒なので後は自力で頑張って下さい。ちなみに私が自分の計算機にSubversionをインストールして弄っていた時のメモが((<URL:/~kou/linux/svn>))にあります。
 
 == TIPS
 
-=== Subversion��Web�����Ȥ����
+=== SubversionでWebサイトを管理
 
-Subversion�ǥ����ȴ�������ˤϥץ��ѥƥ���Ȥ��Ȥ����Ǥ��礦��
+Subversionでサイト管理するにはプロパティを使うといいでしょう。
 
-�㤨�аʲ��Τ褦�ˤ���ȡ��֥饦���ǥ�ݥ��ȥ�򸫤Ƥ�Subversion�Ǵ�������Ƥ���Ȥϵ��դ��ʤ��Ǥ��礦��
+例えば以下のようにすると、ブラウザでリポジトリを見てもSubversionで管理されているとは気付かないでしょう。
 
   % find . -regex ".*\.html\(\...\)?" -exec svn propset \
     svn:mime-type "text/html; charset=UTF-8" {} \;
@@ -154,8 +154,8 @@ Subversion�ǥ����ȴ�������ˤϥץ��ѥƥ���Ȥ��Ȥ����Ǥ��礦��
   % find . -regex ".*\.\(jpg\|jpeg\|jpe\)" \
     -exec svn propset svn:mime-type image/jpeg {} \;
 
-=== �����ɤ��狼��󤬥��顼���Ф�
+=== 何か良くわからんがエラーが出る
 
-�Ȥꤢ�����ʲ���¹Ԥ��ƤߤƤ������ĩ�路�ƤߤƲ�������
+とりあえず以下を実行してみてから再度挑戦してみて下さい。
 
   % svn cleanup

@@ -1,46 +1,46 @@
-= �ƥ��ȥڡ���
+= テストページ
 
-���Ƥ����Ϥ����Ǥ�������Ϯ�äƤߤƲ�������
+初めての方はここでいろいろ弄ってみて下さい。
 
-== ����
+== 画像
 
-* ����Ǥɤ���((<img:(('http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))>))��
-* ����Ǥɤ���(('img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))��
+* これでどうだ((<img:(('http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))>))。
+* これでどうだ(('img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png'))。
 * (('img:http://cozmixng.sgk.iwate-u.ac.jp/icons/world1.png'))
 
-* ����Ϥɤ���((<"img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png">))��
-* ����Ϥɤ���(("img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png"))��
+* これはどうだ((<"img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png">))。
+* これはどうだ(("img:http://cozmixng.sgk.iwate-u.ac.jp/icons/a.png"))。
 
 ((<(('img:http://pub.cozmixng.org/~akapy/getfirefox_large2.png'))|URL:http://getfirefox.jp/>))
 
-== ɽ
+== 表
 
-����ץ�
-
-  # RT
-  caption = �����ȥ�
-
-  ��, a, b
-  ��, c, d
-  ��, e, g
-
-��§
+シンプル
 
   # RT
-  caption = �����ȥ�
+  caption = タイトル
 
-  ��, a, b, ==
+  あ, a, b
+  い, c, d
+  う, e, g
+
+変則
+
+  # RT
+  caption = タイトル
+
+  あ, a, b, ==
   ||, c, ==, d
   e, ==, g, h
 
-== ��ĥ��
+== 拡張書式
 
   * <%= (('DATE')) %> => 2003-03-26(Wed)
   * <%= (('TIME')) %> => 2003-03-26(Wed) 19:47:09(JST)
-#  * ��(('�ƥ���'))�� => �֥ƥ��ȡ�
+#  * 「(('テスト'))」 => 「テスト」
 
 == InportWiLiKi
 
-((<WiLiKi:COZMIXNG:�ƥ���>))
+((<WiLiKi:COZMIXNG:テスト>))
 
-��������RWiki���餳��ˤ��ϡ�
+ローカルRWikiからこんにちは．

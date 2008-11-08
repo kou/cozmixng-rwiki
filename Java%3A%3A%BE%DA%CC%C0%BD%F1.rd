@@ -1,39 +1,39 @@
-= Java::������
+= Java::証明書
 
-�ƥ����ѤʤɤǺ������������ξ������Java�ǻ��Ѥ�����ˡ��
+テスト用などで作成した自前の証明書をJavaで使用する方法。
 
-== ����
+== 概要
 
-keystore�Ȥ���������Υǡ����١�������Ͽ����ɬ�פ����롣keystore�δ�����keytool�ǹԤ���
+keystoreという証明書のデータベースに登録する必要がある。keystoreの管理はkeytoolで行う。
 
-== ��Ͽ
+== 登録
 
-�������((<OpenSSL>))��server.crt�Ȥ����ե�����̾�Ǻ���������ΤȤ��롣
+証明書は((<OpenSSL>))でserver.crtというファイル名で作成したものとする。
 
   % keytool -import -alias local-server -file /tmp/server.crt -trustcacerts -noprompt
 
-��-alias local-server�פϾ�ά��ǽ�Ǿ�ά�����mykey�ˤʤ롣
+「-alias local-server」は省略可能で省略するとmykeyになる。
 
-�¹Ԥ���ȥѥ���ɤ�ʹ�����Τ�������Ϥ��롣�ʥѥ���ɤ������
+実行するとパスワードを聞かれるので二回入力する。（パスワードの設定）
 
-���ʤߤˡ��������~/.keystore����Ͽ����롣
+ちなみに、証明書は~/.keystoreに登録される。
 
-== ��ǧ
+== 確認
 
-�ʲ��μ¹Է�̤����-alias�ǻ��ꤷ��̾��������Ϥ���
+以下の実行結果の中に-aliasで指定した名前があるはず。
 
   % keytool -list
 
-== ����
+== 使用
 
-���Ȥ�java�ε�ư���ץ����ˡ�-Djavax.net.ssl.trustStore=$HOME/.keystore�פ���ꤷ�Ƶ�ư����Ф褤��
+あとはjavaの起動オプションに「-Djavax.net.ssl.trustStore=$HOME/.keystore」を指定して起動すればよい。
 
   % java -Djavax.net.ssl.trustStore=$HOME/.keystore" ...
 
-���������Τ����ݤʤ顢�����ƥ��keystore����Ͽ���롣
+そういうのが面倒なら、システムのkeystoreに登録する。
 
   % sudo keytool -import -alias local-server -file /tmp/server.crt -trustcacerts -noprompt -keystore /usr/lib/jvm/java-6-sun/jre/lib/security/cacerts
 
-���ʤߤ˥����ƥ��keystore�Υѥ���ɤϥǥե���ȤǤϡ�changeit�פǡ��ե������$JAVA_HOME/jre/lib/security/cacerts�ˤ��롣
+ちなみにシステムのkeystoreのパスワードはデフォルトでは「changeit」で、ファイルは$JAVA_HOME/jre/lib/security/cacertsにある。
 
-���������-D...�ϻ��ꤷ�ʤ��Ƥ��ɤ���
+こうすれば-D...は指定しなくても良い。

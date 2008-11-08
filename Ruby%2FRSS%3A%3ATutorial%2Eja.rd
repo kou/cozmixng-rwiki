@@ -1,3 +1,3 @@
 = Ruby/RSS::Tutorial.ja
 
-((<RSS Parser::Tutorial.ja>))§Ú§ﬂ§∆§Ø§¿§µ§§°•
+((<RSS Parser::Tutorial.ja>))„Çí„Åø„Å¶„Åè„Å†„Åï„ÅÑÔºé

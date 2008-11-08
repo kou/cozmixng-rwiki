@@ -18,11 +18,11 @@ The latest version: 0.0.8(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == Comments
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ
 
-  * ((<DIG2003|URL:http://www-cg.cis.iwate-u.ac.jp/DIG03/index2.html>))¤Ç³ØÀ¸Âç¾Þ¤ÈÆÃÊÌ¾Þ(¥¢¥¤¥·¡¼¥¨¥¹¾Þ)¤ò¼õ¾Þ¤·¤Þ¤·¤¿¡¥
+  * ((<DIG2003|URL:http://www-cg.cis.iwate-u.ac.jp/DIG03/index2.html>))ã§å­¦ç”Ÿå¤§è³žã¨ç‰¹åˆ¥è³ž(ã‚¢ã‚¤ã‚·ãƒ¼ã‚¨ã‚¹è³ž)ã‚’å—è³žã—ã¾ã—ãŸï¼Ž
 
-#=== ¶½Ì£¤ò»ý¤Ã¤Æ¤¯¤ì¤¿(¤è¤¦¤Ê)¿Í
+#=== èˆˆå‘³ã‚’æŒã£ã¦ãã‚ŒãŸ(ã‚ˆã†ãª)äºº
 
 #  * ((<\ay diary(2003-09-23)|URL:http://arika.org/diary/20030923.html#p02>))
-#  * ((<º£Æü¤Î¡Ö((<¤â¤¦²¿¤â¸À¤¦¤Þ¤¤>))¡×(2003-06-24)|URL:http://kitaj.no-ip.com/tdiary/20030624.html#p05>))
+#  * ((<ä»Šæ—¥ã®ã€Œ((<ã‚‚ã†ä½•ã‚‚è¨€ã†ã¾ã„>))ã€(2003-06-24)|URL:http://kitaj.no-ip.com/tdiary/20030624.html#p05>))

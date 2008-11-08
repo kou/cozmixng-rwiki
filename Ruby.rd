@@ -1,6 +1,6 @@
 = Ruby
 
-Ruby´Ø·¸¤Îºî¶Èµ­Ï¿
+Rubyé–¢ä¿‚ã®ä½œæ¥­è¨˜éŒ²
 
 == RWiki
 
@@ -11,35 +11,35 @@ Ruby´Ø·¸¤Îºî¶Èµ­Ï¿
   DIFF_MAILTO="kou,suzuki"
   5 2 * * *       (cd $RD_DIR; ls | grep -v -e '^CVS$' | xargs cvs add --; cvs diff -u | /usr/local/bin/nkf | mail -s "RWiki diff" $DIFF_MAILTO; cvs ci -m "    * commit by rwiki using cron on `date`") 2>&1 /dev/null
 
-=== RWiki¤ÎHEAD¤ò»È¤ª¤¦
+=== RWikiã®HEADã‚’ä½¿ãŠã†
 
-ToDo¤È¤«¥¹¥È¡¼¥ê¡¼¥«¡¼¥É¤¬»È¤¨¤ë¤é¤·¤¤¡£
+ToDoã¨ã‹ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ã‚«ãƒ¼ãƒ‰ãŒä½¿ãˆã‚‹ã‚‰ã—ã„ã€‚
 
-==== ¥¤¥ó¥¹¥È¡¼¥ë
+==== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % cvs -d :pserver:anonymous@cvs.ruby-lang.org:/src login
   % cvs -z4 -d :pserver:anonymous@cvs.ruby-lang.org:/src co -d rwiki app/rwiki
   % cd rwiki
   # ruby install.rb
 
-=== daemontools¤ÇÆ°¤«¤½¤¦
+=== daemontoolsã§å‹•ã‹ãã†
 
-==== daemontools¤Î¥¤¥ó¥¹¥È¡¼¥ë
+==== daemontoolsã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo /usr/local/sbin/portupgrade -N daemontools
   % sudo mv /usr/local/etc/rc.d/svscan.sh.sample /usr/local/etc/rc.d/svscan.sh
   % suod mkdir -p /var/service
 
-==== RWiki¤Î½àÈ÷
+==== RWikiã®æº–å‚™
 
-  (1) ((<rwiki.rb¤òdaemontools¤ÇÆ°¤«¤¹¥Ñ¥Ã¥Á|URL:http://rwiki.jin.gr.jp/cgi-bin/rw-cgi.rb?cmd=view;name=rwiki.rb%A4%F2daemontools%A4%C7%C6%B0%A4%AB%A4%B9%A5%D1%A5%C3%A5%C1>))¤ò»²¹Í¤Ërwiki.rb¤ò½ñ¤­´¹¤¨¤ë¡¥
+  (1) ((<rwiki.rbã‚’daemontoolsã§å‹•ã‹ã™ãƒ‘ãƒƒãƒ|URL:http://rwiki.jin.gr.jp/cgi-bin/rw-cgi.rb?cmd=view;name=rwiki.rb%A4%F2daemontools%A4%C7%C6%B0%A4%AB%A4%B9%A5%D1%A5%C3%A5%C1>))ã‚’å‚è€ƒã«rwiki.rbã‚’æ›¸ãæ›ãˆã‚‹ï¼
 
-  (2) daemontoolsÍÑ¤Î¥Ç¥£¥ì¥¯¥È¥êÂ¾¤òºî¤ë(rw-config.rbÅù¤ÇÀßÄê¤·¤Æ¤¤¤ëRD¥Õ¥¡¥¤¥ë¤ò³ÊÇ¼¤¹¤ë¥Ç¥£¥ì¥¯¥È¥ê¤Î¥Ñ¥¹¤Ê¤É¤ÏÀäÂĞ¥Ñ¥¹¤ËÊÑ´¹¤·¤Æ¤ª¤¯¤³¤È)
+  (2) daemontoolsç”¨ã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªä»–ã‚’ä½œã‚‹(rw-config.rbç­‰ã§è¨­å®šã—ã¦ã„ã‚‹RDãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ ¼ç´ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ãƒ‘ã‚¹ãªã©ã¯çµ¶å¯¾ãƒ‘ã‚¹ã«å¤‰æ›ã—ã¦ãŠãã“ã¨)
 
         % sudo mkdir -p /var/service/rwiki/log/main
         % sudo /usr/sbin/chown rwiki:rwiki /var/service/rwiki/log/main
 
-  (3) daemontoolsÍÑ¤Î¥¹¥¯¥ê¥×¥È¤ò½ñ¤¤¤Æ((*¼Â¹Ô¸¢¤òÉÕ¤±¤ë*))
+  (3) daemontoolsç”¨ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’æ›¸ã„ã¦((*å®Ÿè¡Œæ¨©ã‚’ä»˜ã‘ã‚‹*))
 
       * /var/service/rwiki/run
 
@@ -53,40 +53,40 @@ ToDo¤È¤«¥¹¥È¡¼¥ê¡¼¥«¡¼¥É¤¬»È¤¨¤ë¤é¤·¤¤¡£
           #!/bin/sh
           exec setuidgid rwiki multilog t ./main
 
-  (4) (daemontools¤ò)¼Â¹Ô
+  (4) (daemontoolsã‚’)å®Ÿè¡Œ
 
         % sudo /usr/local/etc/rc.d/svscan start
 
 ==== TIPS
 
-  * ºÆµ¯Æ°¤¹¤ë¤Ë¤Ï¤É¤¦¤·¤¿¤é¤¤¤¤¤Î¡©
+  * å†èµ·å‹•ã™ã‚‹ã«ã¯ã©ã†ã—ãŸã‚‰ã„ã„ã®ï¼Ÿ
 
       % sudo svc -t /var/service/rwiki
 
-  * rhtml¤À¤±ºÆÆÉ¤ß¹ş¤ß¤µ¤»¤ë¤Ë¤Ï¤É¤¦¤·¤¿¤é¤¤¤¤¤Î¡©
+  * rhtmlã ã‘å†èª­ã¿è¾¼ã¿ã•ã›ã‚‹ã«ã¯ã©ã†ã—ãŸã‚‰ã„ã„ã®ï¼Ÿ
 
       % sudo svc -h /var/service/rwiki
 
-  * ½ªÎ»¤µ¤»¤ë¤Ë¤Ï¤É¤¦¤·¤¿¤é¤¤¤¤¤Î¡©
+  * çµ‚äº†ã•ã›ã‚‹ã«ã¯ã©ã†ã—ãŸã‚‰ã„ã„ã®ï¼Ÿ
 
       % sudo svc -d /var/service/rwiki
 
-  * µ¯Æ°¤µ¤»¤ë¤Ë¤Ï¤É¤¦¤·¤¿¤é¤¤¤¤¤Î¡©
+  * èµ·å‹•ã•ã›ã‚‹ã«ã¯ã©ã†ã—ãŸã‚‰ã„ã„ã®ï¼Ÿ
 
       % sudo svc -u /var/service/rwiki
 
-  * µ¯Æ°¾õ¶·¤Ï¤É¤¦¤ä¤Ã¤Æ¸«¤ë¤Î¡©
+  * èµ·å‹•çŠ¶æ³ã¯ã©ã†ã‚„ã£ã¦è¦‹ã‚‹ã®ï¼Ÿ
 
       % sudo svstat /var/service/rwiki
 
-  * ¥í¥°¤Ï¤É¤¦¤ä¤Ã¤Æ¸«¤ë¤Î¡©
+  * ãƒ­ã‚°ã¯ã©ã†ã‚„ã£ã¦è¦‹ã‚‹ã®ï¼Ÿ
 
       % sudo cat /var/service/rwiki/log/main/current | tai64nlocal | lv
 
 
 == tDiary
 
-¥Æ¡¼¥Ş¤Î¹¹¿·¡¥
+ãƒ†ãƒ¼ãƒã®æ›´æ–°ï¼
 
   % cd /usr/local/share/tdiary
   % sudo cvs up
@@ -94,27 +94,27 @@ ToDo¤È¤«¥¹¥È¡¼¥ê¡¼¥«¡¼¥É¤¬»È¤¨¤ë¤é¤·¤¤¡£
   % sudo sh -c 'for x in *; do [ -L $x -a "" = "` echo $x | grep -e \"^\(hiki\|CVS$\)\"`" ] && rm $x; done'
   % sudo sh -c 'for x in ../theme2/*; do [ `basename $x` != "CVS" ] && ln -fs $x ./; done'
 
-== ±ÆÉñ
+== å½±èˆ
 
 ((<URL:http://www.daifukuya.com/kagemai/index.html>))
 
 BTS
 
-((<RAA:xmlscan>)) 1.x¤¬É¬Í×¡¥
+((<RAA:xmlscan>)) 1.xãŒå¿…è¦ï¼
 
-=== ¥¤¥ó¥¹¥È¡¼¥ë
+=== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
-  (1) ¥À¥¦¥ó¥í¡¼¥É
+  (1) ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰
 
         % cd /usr/local/share
         % sudo cvs -d :pserver:anonymous@jump.daifukuya.com:/cvs login 
         % sudo cvs -z4 -d :pserver:anonymous@jump.daifukuya.com:/cvs co -P kagemai
-      É¬Í×¤Ê¤é((<RAA:xmlscan>))¤Î1.x¤ò/usr/local/share/kagemai/lib/°Ê²¼¤Ë¥³¥Ô¡¼¤·¤Æ¤ª¤¯
+      å¿…è¦ãªã‚‰((<RAA:xmlscan>))ã®1.xã‚’/usr/local/share/kagemai/lib/ä»¥ä¸‹ã«ã‚³ãƒ”ãƒ¼ã—ã¦ãŠã
 
 
-  (2) ÀßÄê
+  (2) è¨­å®š
 
-      ±ÆÉñÍÑ¤Î¥æ¡¼¥¶kagemai¤Ï»È¤Ã¤Æ¤¢¤ë¤È¤¹¤ë
+      å½±èˆç”¨ã®ãƒ¦ãƒ¼ã‚¶kagemaiã¯ä½¿ã£ã¦ã‚ã‚‹ã¨ã™ã‚‹
 
         % sudo -u kagemai cp /usr/local/share/kagemai/html/* ~kagemai/public_html/
         % sudo -u kagemai ln /usr/local/share/kagemai/lib ~kagemai/ 
@@ -122,7 +122,7 @@ BTS
         % cd ~kagemai/public_html
         % sudo -u kagemai ln guest.cgi index.rb
 
-      ~kagemai/public_html/guest.cgi¤ÎºÇ½é¤ÎÊı¤ò°Ê²¼¤Î¤è¤¦¤ËÊÑ¹¹
+      ~kagemai/public_html/guest.cgiã®æœ€åˆã®æ–¹ã‚’ä»¥ä¸‹ã®ã‚ˆã†ã«å¤‰æ›´
 
         work_dir = File.dirname(File.dirname(File.expand_path(__FILE__))).untaint # setup
         kagemai_root = work_dir # setup
@@ -130,7 +130,7 @@ BTS
 
         $:.unshift("#{kagemai_root}/lib")
 
-      °Ê²¼¤Î¤è¤¦¤Ê~kagemai/public_html/.htaccess¤òºî¤ë
+      ä»¥ä¸‹ã®ã‚ˆã†ãª~kagemai/public_html/.htaccessã‚’ä½œã‚‹
 
         <Files "*.conf*">
                 deny from all
@@ -149,9 +149,9 @@ BTS
         </Files>
 
 
-      ((<URL:/~kagemai/>))¤Ë¥¢¥¯¥»¥¹¤·¤Æ¤¢¤È¤ÏCGI·ĞÍ³¤ÇÀßÄê
+      ((<URL:/~kagemai/>))ã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ã‚ã¨ã¯CGIçµŒç”±ã§è¨­å®š
 
-      ¥á¡¼¥ë¤Î¤¿¤á¤Ëbin/mailif.rb¤ÎºÇ½é¤ò°Ê²¼¤Î¤è¤¦¤ËÊÑ¹¹
+      ãƒ¡ãƒ¼ãƒ«ã®ãŸã‚ã«bin/mailif.rbã®æœ€åˆã‚’ä»¥ä¸‹ã®ã‚ˆã†ã«å¤‰æ›´
 
 
         work_dir = File.dirname(File.dirname(File.expand_path(__FILE__))).untaint # setup
@@ -163,38 +163,38 @@ BTS
 
         $:.unshift("#{kagemai_root}/lib")
 
-      ºÇ¸å¤ÎÊı¤â¾¯¤·ÊÑ¹¹
+      æœ€å¾Œã®æ–¹ã‚‚å°‘ã—å¤‰æ›´
 
         project_id = ARGV.shift.dup
 
-      ¤ò
+      ã‚’
 
         project_id = ARGV.shift
 
-      ¤Ë¤·¤Æ
+      ã«ã—ã¦
 
         app = Kagemai::MailApp.new(project_id, Kagemai::Config[:language])
 
-      ¤ò
+      ã‚’
 
         app = Kagemai::MailApp.new(project_id.dup.untaint, Kagemai::Config[:language])
 
-      ¤Ë¤¹¤ë¡¥
+      ã«ã™ã‚‹ï¼
 
-      ¥á¡¼¥ë¤Î¼õ¤±¼è¤ê¤Ï((<Postfix>))¤Îmain.cf¤Ë
+      ãƒ¡ãƒ¼ãƒ«ã®å—ã‘å–ã‚Šã¯((<Postfix>))ã®main.cfã«
 
         recipient_delimiter = +
         allow_mail_to_commands = alias,forward,include
 
-      ¤òÀßÄê¤·¤Æ~kagemai/.forward+rss¤È¤«¤Ë
+      ã‚’è¨­å®šã—ã¦~kagemai/.forward+rssã¨ã‹ã«
 
         ((':'))include:/usr/local/var/kagemai/projects/rss/include
 
-      ¤È¤«¤È½ñ¤¤¤Æ¤ª¤¯¡¥
+      ã¨ã‹ã¨æ›¸ã„ã¦ãŠãï¼
 
-=== MRTG¤ÎÀßÄê
+=== MRTGã®è¨­å®š
 
-/usr/local/share/kagemai/mrtg/mrtg.cfg¤ò»²¹Í¤Ë¤·¤Æ°Ê²¼¤Î¤è¤¦¤Ê~kagemai/mrtg.cfg¤òºî¤ë
+/usr/local/share/kagemai/mrtg/mrtg.cfgã‚’å‚è€ƒã«ã—ã¦ä»¥ä¸‹ã®ã‚ˆã†ãª~kagemai/mrtg.cfgã‚’ä½œã‚‹
 
   ### Global Config Options
   
@@ -206,16 +206,16 @@ BTS
   IconDir: /mrtg/icons/
   Language: eucjp
 
-  ## ±ÆÉñ
+  ## å½±èˆ
   ## project = gallery
   Target[gallery]: `/usr/local/bin/w3m -dump 'http://www.cozmixng.org/~kagemai/guest.cgi?project=gallery&action=mrtg&t=2'`
-  Title[gallery]: ÎßÀÑ¥ì¥İ¡¼¥È¿ô/½ªÎ»¥ì¥İ¡¼¥È¿ô¤Î¿ä°Ü [gallery]
-  PageTop[gallery]: <H1>ÎßÀÑ¥ì¥İ¡¼¥È¿ô/½ªÎ»¥ì¥İ¡¼¥È¿ô¤Î¿ä°Ü [gallery]</H1>
-  PageFoot[gallery]: &nbsp; <hr><a href="/~kagemai/guest.cgi?project=gallery&action=top">Ìá¤ë</a>
+  Title[gallery]: ç´¯ç©ãƒ¬ãƒãƒ¼ãƒˆæ•°/çµ‚äº†ãƒ¬ãƒãƒ¼ãƒˆæ•°ã®æ¨ç§» [gallery]
+  PageTop[gallery]: <H1>ç´¯ç©ãƒ¬ãƒãƒ¼ãƒˆæ•°/çµ‚äº†ãƒ¬ãƒãƒ¼ãƒˆæ•°ã®æ¨ç§» [gallery]</H1>
+  PageFoot[gallery]: &nbsp; <hr><a href="/~kagemai/guest.cgi?project=gallery&action=top">æˆ»ã‚‹</a>
   Suppress[gallery]: y
   MaxBytes[gallery]: 10000
   Options[gallery]: gauge,nopercent,integer,nobanner,nolegend,noinfo,growright,dorelpercent
   YLegend[gallery]: Reports
   ShortLegend[gallery]: &nbsp;
-  LegendI[gallery]: ½ªÎ»¥ì¥İ¡¼¥È¿ô: &nbsp;
-  LegendO[gallery]: ÎßÀÑ¥ì¥İ¡¼¥È¿ô: &nbsp;
+  LegendI[gallery]: çµ‚äº†ãƒ¬ãƒãƒ¼ãƒˆæ•°: &nbsp;
+  LegendO[gallery]: ç´¯ç©ãƒ¬ãƒãƒ¼ãƒˆæ•°: &nbsp;

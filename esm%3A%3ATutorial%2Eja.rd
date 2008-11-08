@@ -2,168 +2,168 @@
 
 = Tutorial.ja
 
-���Gauche�ǻȤäƤ��ޤ����������餯�������������¾�ν�����
-�Ǥ�Ȥ���Ȼפ��ޤ���
+私はGaucheで使っていますが，おそらく，少しいじれば他の処理系
+でも使えると思います．
 
-��ˤ�Gauche��ͭ�ε��Ҥ��ޤޤ�Ƥ��ޤ���
+例にはGauche特有の記述が含まれています．
 
-== ����
+== 基本
 
-esm�ϥƥ����Ȥ�Scheme�����Ϥ����Ǥ��륽���������ɤ��Ѵ���
-��饤�֥��Ǥ�����������������򤯤ʤ��Τǡ��ƥ����Ȥ����
-��Scheme�Υ����������ɤ������ळ�Ȥ�����ޤ���
+esmはテキストをScheme処理系が解釈できるソースコードに変換す
+るライブラリです．それだけだと面白くないので，テキストの中に
+はSchemeのソースコードを埋め込むことが出来ます．
 
-esm�ˤ�3�Ĥι�ʸ������ޤ���
+esmには3つの構文があります．
 
   * <% expr ... %>
     
-    Scheme�Υ����������ɤ������ߡ����Ϥ���ʤ���
+    Schemeのソースコードの埋め込み．出力されない．
 
   * <%= expr ... %>
     
-    Scheme�Υ����������ɤ������ߡ��Ǹ��ɾ�����줿S������
-    ��display�ǽ��Ϥ���롥
+    Schemeのソースコードの埋め込み．最後に評価されたS式の値
+    がdisplayで出力される．
 
   * <%; ... %>
     
-    �����ȡ����Ϥ���ʤ���
+    コメント．出力されない．
 
-�嵭��3�İʳ�����ʬ�ϥƥ�������ʬ�Ǥ��Τޤ޽��Ϥ���ޤ���
-Scheme�����Ϥ���ϥƥ�������ʬ�ϰ�Ĥμ��Ȥߤʤ���ޤ���
+上記の3つ以外の部分はテキスト部分でそのまま出力されます．
+Scheme処理系からはテキスト部分は一つの式とみなされます．
 
-== ��1: ������
+== 例1: 埋め込み
 
-ñ�����Ȥ��ƥƥ����Ȥ�Scheme�Ƿ׻�������̤�������Ǥߤ�
-���礦��
+単純な例としてテキストにSchemeで計算した結果を埋め込んでみま
+しょう．
 
   emb.esm
   1 + 2 = <%= (+ 1 2) %>
 
-�¹Ԥ���ˤ�bin/esm.scm��Ȥ��Ȥ����Ǥ��礦��
+実行するにはbin/esm.scmを使うといいでしょう．
 
   % bin/esm.scm sample/emb.esm
 
-���Τ褦�ʷ�̤����뤳�ȤǤ��礦��
+このような結果を得ることでしょう．
 
   emb.esm
   1 + 2 = 3
 
-<%= (+ 1 2) %>����ʬ��(+ 1 2)��ɾ��������̡��Ĥޤ�3���֤���
-��äƤ��ޤ���
+<%= (+ 1 2) %>の部分が(+ 1 2)を評価した結果，つまり3に置き換
+わっています．
 
-esm��Scheme���Ѥ���ưŪ�˥ƥ����Ȥ��������뤳�Ȥ�����ޤ���
+esmとSchemeを用いて動的にテキストを生成することが出来ます．
 
-== ��2: if
+== 例2: if
 
-���ߤλ���ˤ�äư㤦�ͤ���Ϥ���esm�����ɤ�񤤤Ƥߤޤ���
-����
+現在の時刻によって違う値を出力するesmコードを書いてみましょ
+う．
 
   if.esm
   <%
     (use srfi-19)
     (if (< (date-hour (current-date)) 12)
   %>
-  ����
-  <%; ���ߡ� %>
-  ���
+  午前
+  <%; ダミー %>
+  午後
   <% ) %>
 
-�¹Ԥ���ȡ��㤨�Ф���ʷ�̤�����Ǥ��礦��
+実行すると，例えばこんな結果を得るでしょう．
 
   if.esm
   
-  ���
+  午後
   
-��if.esm�פȡָ��פΤ������ζ��Ԥ�
+「if.esm」と「午後」のあいだの空行は
 
   <%
     (use srfi-19)
     (if (< (date-hour (current-date)) 12)
   %>
 
-��%>�θ�ˤ�����ԤΤ����Ǥ���esm���������줿�ƥ����Ȥˤ�;
-ʬ�ʶ������ꡤ���ˤ����ʤ뤳�Ȥ�����ޤ���HTML��XML�ʤɤ�
-(����ξ��ʳ���)�����̵�뤹��ƥ����Ȥ�����������ˤ���
-��ˤʤ뤳�ȤϾ��ʤ��Ǥ����������Ǥʤ��ƥ����Ȥ�����������
-�ˤϵ����դ��ʤ���Ф����ޤ���
+の%>の後にある改行のせいです．esmで生成されたテキストには余
+分な空白が入り，見にくくなることがあります．HTMLやXMLなどの
+(特定の場所以外の)空白を無視するテキストを生成する場合には問
+題になることは少ないですが，そうでないテキストを生成する場合
+には気を付けなければいけません．
 
-((<RAA:erb>))��trim�⡼�����Ǥ�����б����Ƥ��ޤ���
+((<RAA:erb>))はtrimモード等でこれに対応しています．
 
 
-=== �ƥ����Ȥϰ�Ĥ�ʸ
+=== テキストは一つの文
 
-esm�����ɤ�
+esmコードに
 
-  <%; ���ߡ� %>
+  <%; ダミー %>
 
-�Ȥ��������Ȥ����äƤ���ΤˤϤ櫓������ޤ���if��then���
-else���ʬ���뤿��Ǥ����ƥ�������ϰ�Ĥ�ʸ�ȸ��ʤ����Τ�
+というコメントが入っているのにはわけがあります．ifのthen節と
+else節を分けるためです．テキスト節は一つの文と見なされるので
 
   <% (if (< (date-hour (current-date)) 12) %>
-  ����
-  ���
+  午前
+  午後
   <% ) %>
   
-�Ȥ����then�᤬
+とするとthen節が
 
-  ����
-  ���
+  午前
+  午後
 
-��else�᤬��ά���줿�ȸ��ʤ���ޤ���
+でelse節が省略されたと見なされます．
 
-����Τ褦��
+今回のように
 
-  <%; ���ߡ� %>
+  <%; ダミー %>
 
-�Ȥ���then���else���ʬ������
+としてthen節とelse節を分けずに
 
   <%
     (if (< (date-hour (current-date)) 12)
         (begin
   %>
-  ����
+  午前
   <% ) (begin %>
-  ���
+  午後
   <% )) %>
   
-�Ȥ����褦��begin��ȤäƤ��ɤ��Ǥ��礦��
+というようにbeginを使っても良いでしょう．
 
-��������
+ただし，
 
   <%
     (if (< (date-hour (current-date)) 12)
         (begin
   %>
-  ����<%= (current-date) %>��
+  午前<%= (current-date) %>時
   <% ) (begin %>
-  ���Ϥ���<%= (- 24 (current-date)) %>����
+  午後はあと<%= (- 24 (current-date)) %>時間
   <% )) %>
     
-�Ȥ����褦��then���else�᤬�ƥ����ȤΤߤǤϤʤ�<% ... %>��
-<%= ... %>���Ƕ��ڤ��Ƥ������begin��ɬ�פǤ���
+というようにthen節やelse節がテキストのみではなく<% ... %>や
+<%= ... %>等で区切られている場合はbeginが必要です．
 
-== ��3: ��³����
+== 例3: 手続き化
 
-��������esm��饤�֥��Ȥ��ƻȤäƤߤޤ��礦��
+そろそろesmをライブラリとして使ってみましょう．
 
-define-esm��Ȥ���esm�ǽ��������ƥ����Ȥ��֤���³���������
-�뤳�Ȥ�����ޤ���
+define-esmを使うとesmで処理したテキストを返す手続きを定義す
+ることが出来ます．
 
-�����Ǥ�2�Ĥ�esm�����ɡ�1�Ĥ�Scheme�����ɤ�����Ȥ��ޤ���
+ここでは2つのesmコード，1つのSchemeコードがあるとします．
 
-=== 1�Ĥ��esm������
+=== 1つめのesmコード
 
   child.esm
   <%= (get-param :arg) %>
   end child.esm
 
-=== 2�Ĥ��esm������
+=== 2つめのesmコード
 
   parent.esm
   <%= (child :arg 1) %>
   end parent.esm
   
-=== Scheme������
+=== Schemeコード
 
   #!/usr/bin/env gosh
   # nested.scm
@@ -177,9 +177,9 @@ define-esm��Ȥ���esm�ǽ��������ƥ����Ȥ��֤���³���������
     (display (parent))
     0)
 
-=== �¹Է��
+=== 実行結果
 
-Scheme�����ɤ�¹Ԥ���Ȱʲ��Τ褦�ˤʤ�ޤ���
+Schemeコードを実行すると以下のようになります．
 
   parent.esm
   child.esm
@@ -188,59 +188,59 @@ Scheme�����ɤ�¹Ԥ���Ȱʲ��Τ褦�ˤʤ�ޤ���
 
   end parent.esm
 
-parent.esm�����child.esm�����Ƥ�esm���Ѵ������ƥ����Ȥ����
-���Ƥ��ޤ���
+parent.esmの中でchild.esmの内容をesmで変換したテキストを出力
+しています．
 
-parent.esm�����child.esm�θƽФ�
+parent.esmの中のchild.esmの呼出し
 
   <%= (child :arg 1) %>
 
-�����ܤ��Ʋ�������esm�ν��ϥƥ����Ȥ��֤���³����������뤳
-�Ȥˤ�������esm�ν��ϥƥ����Ȥ˱ƶ���Ϳ���뤳�Ȥ�����ޤ���
+に注目して下さい．esmの出力テキストを返す手続きを定義するこ
+とにより引数でesmの出力テキストに影響を与えることが出来ます．
 
-��³�������뤳�Ȥˤ��esm�ν��ϥƥ����Ȥ����ʤȤ��ƻȤ����
-���ˤʤ�ޤ���
+手続き化することによりesmの出力テキストを部品として使えるよ
+うになります．
 
-== ��4: CGI
+== 例4: CGI
 
-̤��
+未稿
 
-== ��ե����
+== リファレンス
 
-esm�ϰʲ��μ�³�����Ѱդ��Ƥ��ޤ���
+esmは以下の手続きを用意しています．
 
 --- esm-compile(src)
 
-    src�򥳥�ѥ��뤹�롥src��ʸ�������ϥݡ��ȡ�
+    srcをコンパイルする．srcは文字列か入力ポート．
 
 --- esm-result(src . env)
 
-    src�򥳥�ѥ��뤷�ƴĶ�env��ɾ��������̤�ʸ������֤���
-    env����ά���줿����*esm-default-environment* 
-    �����Ѥ���롥
+    srcをコンパイルして環境envで評価した結果の文字列を返す．
+    envが省略された場合は*esm-default-environment* 
+    が使用される．
 
 --- esm-run(src . env)
 
-    (apply esm-result src env)������줿ʸ�����display�ǽ�
-    �Ϥ��롥env����ά���줿����*esm-default-environment*
-    �����Ѥ���롥
+    (apply esm-result src env)で得られた文字列をdisplayで出
+    力する．envが省略された場合は*esm-default-environment*
+    が使用される．
 
-esm�ϰʲ��ι�ʸ���Ѱդ��Ƥ��ޤ���
+esmは以下の構文を用意しています．
 
 --- esm-result*(src)
     
-    src�򥳥�ѥ��뤷��ɾ��������̤�ʸ������֤���
-    esm-result�Ȱ�ä�src�Υ���ѥ���ϼ¹Ի��ǤϤʤ����ץ�
-    �����Υ���ѥ�����˹Ԥ��롥
+    srcをコンパイルして評価した結果の文字列を返す．
+    esm-resultと違ってsrcのコンパイルは実行時ではなく，プロ
+    グラムのコンパイル時に行われる．
 
 --- esm-run*(src)
     
-    src�򥳥�ѥ��뤷��ɾ��������̤�ʸ�����display�ǽ��Ϥ��롥
-    esm-run�Ȱ�ä�src�Υ���ѥ���ϼ¹Ի��ǤϤʤ����ץ�����
-    ��Υ���ѥ�����˹Ԥ��롥
+    srcをコンパイルして評価した結果の文字列をdisplayで出力する．
+    esm-runと違ってsrcのコンパイルは実行時ではなく，プログラ
+    ムのコンパイル時に行われる．
 
 --- define-esm(name filename)
 
-    �ե�����̾filename��esm�����ɤ򥳥�ѥ��뤷ɾ���������
-    ���֤�name�Ȥ���̾���μ�³����������롥
+    ファイル名filenameのesmコードをコンパイルし評価した結果
+    を返すnameという名前の手続きを定義する．
 

@@ -1,20 +1,20 @@
 = TWTD028
 
-zd1211b¤¬Íî¤Á¤ÆUSB¥­¡¼¥Ü¡¼¥É¤¬Æ°¤«¤Ê¤¯¤Ê¤ë¤Î¤òÄ¾¤¹
+zd1211bãŒè½ã¡ã¦USBã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãŒå‹•ã‹ãªããªã‚‹ã®ã‚’ç›´ã™
 
 == status
 
-* ¼ïÎà: task / story / bug
-* ¥¤¥Æ¥ì¡¼¥·¥ç¥ó: 
-* ¥µ¥¤¥ó: ((<kou>))
-* ¾õÂÖ: open
-* ¸«ÀÑ: 0 / 0
+* ç¨®é¡ž: task / story / bug
+* ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³: 
+* ã‚µã‚¤ãƒ³: ((<kou>))
+* çŠ¶æ…‹: open
+* è¦‹ç©: 0 / 0
 
 == description
 
-¥Ç¥Ð¥¤¥¹¡Ê((<USB¤ÎÌµÀþLAN¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹|GW-US54GXS>))¡Ë¤òÈ´¤­º¹¤·¤¹¤ë¤ÈÉü³è¤¹¤ë¡¥
+ãƒ‡ãƒã‚¤ã‚¹ï¼ˆ((<USBã®ç„¡ç·šLANã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹|GW-US54GXS>))ï¼‰ã‚’æŠœãå·®ã—ã™ã‚‹ã¨å¾©æ´»ã™ã‚‹ï¼Ž
 
-ºÆ¸½¾ò·ï¤ÏÉÔÌÀ¡¥
+å†ç¾æ¡ä»¶ã¯ä¸æ˜Žï¼Ž
 
 == test
 

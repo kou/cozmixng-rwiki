@@ -1,9 +1,9 @@
 = midmind::memo
 
-*��ML���������֤��ɤ���¤�Ǥϡ� Private�Ķ���PL-VINI�ϥ����Ȼפ�
+*（MLアーカイブを読んだ限りでは） Private環境でPL-VINIはムリだと思う
 * FEA
   * Fowarding Engine Abstraction
-  * �ե���ǥ��󥰥��󥸥����ݲ�����⥸�塼��
+  * フォワーディングエンジンを抽象化するモジュール
 
-* XORP�Υ��������ɤ�
-  * FEA������濴��
+* XORPのソースを読む
+  * FEA周りを中心に

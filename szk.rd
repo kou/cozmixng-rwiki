@@ -6,18 +6,18 @@
 
 == wiliki
  
-   * wiliki ��cozmixng �ζ�Ʊ����Ѥ˻Ȥ����Ϥ���ޤ���
-     �Ŀ��ѡ�RWiki�Ȥ�Ϣ�ȡ�cozmixng �Υ����ӥ��㡤�Ȥ��ƹͤ��Ƥ��ޤ���- ((<szk>))
-   * cozmixng �κ�Ⱦ�Ȥ��Ƥ� RWiki ���ܤǤ����ޤ��󤫡� - ((<szk>))
+   * wiliki をcozmixng の共同作業用に使う気はありません．
+     個人用，RWikiとの連携，cozmixng のサービス例，として考えています．- ((<szk>))
+   * cozmixng の作業場としては RWiki 一本でいきませんか？ - ((<szk>))
 
-   * ���漼��((<WiLiKi|URL:http://www.os.cis.iwate-u.ac.jp/~suzuki/wiliki/wiliki.cgi>)) �Ǥ���
+   * 研究室の((<WiLiKi|URL:http://www.os.cis.iwate-u.ac.jp/~suzuki/wiliki/wiliki.cgi>)) です．
 
 == port forwarding 
 
-   * �ݡ���ž�� (port forwarding) ������ǡ�ž���� IP �ϸ��ꤸ��ʤ��Ȥޤ������ɡ�- ((<szk>))
+   * ポート転送 (port forwarding) の設定で，転送先 IP は固定じゃないとまずいけど。- ((<szk>))
 
-   * DHCP�Ȥ��Ƥ��ޤ�򤷤��ʤ� - ((<kou>))
+   * DHCPとしてあまり嬉しくない - ((<kou>))
     
-   * iptable(*BSD��ipnat?ipf?)��FQDN���Ѥ����롼�ƥ���(�ե��륿��󥰡�)�����꤬����ޤ�����������ư��̤��ǧ�Ǥ����ɡ� - ((<kou>))
+   * iptable(*BSDはipnat?ipf?)でFQDNを用いたルーティング(フィルタリング？)の設定が出来ました。ただし動作未確認ですけど。 - ((<kou>))
 
-   * nat ��ư�����������ǡ�address ����ޤäƤ��ʤ��ȥ���Ǥϡ�- ((<szk>))
+   * nat を動かした時点で，address が決まっていないとダメでは？- ((<szk>))

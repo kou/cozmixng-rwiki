@@ -1,52 +1,52 @@
 = Nessus
 
-�������ƥ��������
+セキュリティスキャナ
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo /usr/local/sbin/portupgrade -NRr nessus-plugins-devel
 
-nessus-devel�Ǥ���������ɡ��ɤ��������nessus-devel���Τ⥤�󥹥ȡ��뤵��뤷���������ʤȡ�
+nessus-develでいいんだけど，どうせこれでnessus-devel本体もインストールされるし，いいかなと．
 
-nessud��ư����褦��/etc/rc.conf�˰ʲ����ɲá�
+nessudを起動するように/etc/rc.confに以下を追加．
 
   nessusd_enable="YES"
 
-nessusd�˥��������Ǥ���ۥ��Ȥ����¤������Ȥ��ϰʲ�����ꤷ
-�Ƥ����Ȥ褤���⡥
+nessusdにアクセスできるホストを制限したいときは以下も指定し
+ておくとよいかも．
 
   nessusd_flags="-D -a 127.0.0.1"
 
-== �桼������
+== ユーザ作成
 
   % sudo /usr/local/sbin/nessus-adduser
 
-ʹ���줿�Τ������Ƥ����Х桼�����ɲä���롥
+聞かれたのに答えていけばユーザが追加される．
 
-�Ǹ�ˡ����Υ桼���Ϥɤη׻���������å��Ǥ���Τ�����ꤹ�롥
+最後に，このユーザはどの計算機をチェックできるのかを指定する．
 
-�ʲ��Τ褦�ˤ����192.168.1.0/24�η׻����Τߥ����å��Ǥ��롥
+以下のようにすると192.168.1.0/24の計算機のみチェックできる．
 
   accept 192.168.1.0/24
   default deny
 
-�ְ�äƥ桼�����äƤ��ޤä����Ϥ��졥
+間違ってユーザを作ってしまった場合はこれ．
 
   % sudo /usr/local/sbin/nessus-rmuser
 
-== ���������
+== 証明書を作る
 
-�桼��ǧ�ڤ�Ź沽���뤿��˻��Ѥ����������롥
+ユーザ認証を暗号化するために使用する証明書を作る．
 
   % sudo /usr/local/sbin/nessus-mkcert
 
-�����openssl��Ȥä�����ʹ������Ĥ�����Ʊ����nessus-mkcert�ǤϾ���˻��ꤵ��Ƥ���ܤ�����Τ�ʹ�������ܤ����ʤ��ˡ�
+質問はopensslを使った時に聞かれるやつと大体同じ（nessus-mkcertでは勝手に指定されてる項目があるので聞かれる項目が少ない）．
 
-== �ץ饰����μ�ư���åץǡ���
+== プラグインの自動アップデート
 
-�ץ饰����򾡼�˥��åץǡ��Ȥ��Ƥ����褦��
-/etc/periodic/weekly/�ʲ��ˤǤ⤳��ʥե�������äƤ�����
-�ե�����̾��500.nessus-update-plugins�Ȥ�Ŭ���ˤĤ��롥
+プラグインを勝手にアップデートしてくれるように
+/etc/periodic/weekly/以下にでもこんなファイルを作っておく．
+ファイル名は500.nessus-update-pluginsとか適当につける．
 
   #!/bin/sh
 
@@ -55,14 +55,14 @@ nessusd�˥��������Ǥ���ۥ��Ȥ����¤������Ȥ��ϰʲ�����ꤷ
 
   /usr/local/sbin/nessus-update-plugins
 
-== ���Ū�˥�ݡ�������
+== 定期的にレポート生成
 
-/etc/periodic/daily/�ʲ��ˤ���ʥե�������դ��äơ�����������
-���̤Υ�ݡ��Ȥ�����������褦�ˤ��Ƥ�褤���⤷��ʤ����ե�
-����̾��600.nessus�Ȥ�Ŭ���ˡ�
+/etc/periodic/daily/以下にこんなファイルを付くって，毎日スキャ
+ン結果のレポートを生成させるようにしてもよいかもしれない．ファ
+イル名は600.nessusとか適当に．
 
-�����ե�������˥ѥ���ɤ�񤫤ʤ��㤤���ʤ��Τ�chmod 600
-�ˤ��Ƥ������Ȥ�˺�줺�ˡ�
+あ，ファイル中にパスワードを書かなきゃいけないのでchmod 600
+にしておくことを忘れずに．
 
   #!/bin/sh
 

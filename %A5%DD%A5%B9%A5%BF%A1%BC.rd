@@ -1,55 +1,55 @@
-= �ݥ�����
+= ポスター
 
-COZMIXNG�Υݥ�������
+COZMIXNGのポスター案
 
-����夬�ä���Τ�((<�����꡼|URL:http://pub.cozmixng.org/~gallery/>))�ˤ���ޤ���
+出来上がったものは((<ギャラリー|URL:http://pub.cozmixng.org/~gallery/>))にあります．
 
-�����ȤϺǽ�ˡ�<= �פ�����뤳�Ȥˤ��ޤ��󤫡�
+コメントは最初に「<= 」を入れることにしませんか？
 
-�� :
+例 :
 
-  * �ߤ�ʤǳڤ���
-    * <= �� ���ʤ�����ڤ����פΤۤ���������
+  * みんなで楽しく
+    * <= 「 あなたも私も楽しく」のほうがいい？
 
-== �������
+== いれるもの
 
-  * COZMIXNG�äƲ���
-  * �ݥꥷ��
-  * ���þ��
-  * Ϣ����
-  * �����Ȥ�URL
+  * COZMIXNGって何？
+  * ポリシー
+  * 参加条件
+  * 連絡先
+  * サイトのURL
 
-=== COZMIXNG�äƲ���
+=== COZMIXNGって何？
 
-  * ������٤Υͥåȥ������³(IX)
-    * <= �����Ͽޤ�Ȥ��ʤ��������١פ���ʤ��ơִ��פΤۤ���������
-  * �ͥåȥ�������ʤ��((<����>))�פ�������
-    * ��((<����>))�פäƲ���
-      * ���󥿡��ͥåȤǤ�äƤߤ������ʤ鲿�Ǥ�OK
-      * (��ʬ��ޤ��)�ϰ�οͤ����󥿡��ͥåȤ�ȶ�˴��������ʤ鲿�Ǥ�OK
-  * ��ư���̤��Ƹ��������Υͥåȥ���⹭���褦��
-  * ���󥿡��ͥåȤǼ�̣�������⹭���褦��
+  * 盛岡近郊のネットワークを接続(IX)
+    * <= 岩手の地図を使うなら「盛岡近郊」じゃなくて「岩手」のほうがいい？
+  * ネットワークを作るんなら「((<何か>))」をやろう！
+    * 「((<何か>))」って何？
+      * インターネットでやってみたい事なら何でもOK
+      * (自分も含めて)地域の人がインターネットを身近に感じれる事なら何でもOK
+  * 活動を通じて現実世界のネットワークも広げよう！
+  * インターネットで趣味の世界も広げよう！
 
-=== �ݥꥷ��
+=== ポリシー
 
-  * ���ڤ�(freely)
-  * �ڤ���(joyfully)
-  * �����ʻ���(whatever you like)
+  * 気楽に(freely)
+  * 楽しく(joyfully)
+  * 好きな事を(whatever you like)
 
-�ɲ�
+追加
 
   * Enjoy COZMIXNG!
 
-=== ���þ��
+=== 参加条件
 
-  * ��̣���������ï�Ǥ��紿�ޡ�
-  * ��̣��̵���ʤä�����Ƥ�OK��
-  * �ƤӶ�̣���ФƤ�����ƻ����紿�ޡ�
+  * 興味さえあれば誰でも大歓迎！
+  * 興味が無くなったらやめてもOK！
+  * 再び興味が出てきたら再参加大歓迎！
 
-=== Ϣ����
+=== 連絡先
 
-((<"cozmix@cozmix.quickml.com"|URL:mailto:cozmix@cozmix.quickml.com?cc=kou@cozmxing.org&subject=���ä��ޤ���>))
+((<"cozmix@cozmix.quickml.com"|URL:mailto:cozmix@cozmix.quickml.com?cc=kou@cozmxing.org&subject=参加します。>))
 
-=== �����Ȥ�URL
+=== サイトのURL
 
 ((<URL:http://www.cozmixng.org/>))

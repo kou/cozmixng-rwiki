@@ -1,52 +1,52 @@
 = Rabbit::FAQ.ja
 
-Rabbit �����ɲ������䤢��?
-  * ̿̾: �����
-  * ��Ʊ: babie����
+Rabbit だけど何か質問ある?
+  * 命名: 西川さん
+  * 賛同: babieさん
 
-����ʴ����Ǿ�������ɲä��Ƥ��äƤϤɤ��Ǥ��礦��
+こんな感じで上の方に追加していってはどうでしょう？
 
-== ����...
+== 質問...
 
-����...
+答え...
 
-== �ⶶ�᥽�åɥ��饤�ɤ�������̤Υ��饤�ɤ򺮤������Ȥ��ϡ�
+== 高橋メソッドスライドの中に普通のスライドを混ぜたいときは？
 
-�ⶶ�᥽�å��ѤΥơ��ޤ�Rabbit�Ǥ�lightning-talk�ȸƤФ�Ƥ��ޤ���
+高橋メソッド用のテーマはRabbitではlightning-talkと呼ばれています．
 
-�̾�ⶶ�᥽�åɤΤߤ�Ȥä����饤�ɤ����������ϰʲ��Τ褦�ˡ�lightning-talk�ץơ��ޤ�Ȥ��ޤ���
+通常，高橋メソッドのみを使ったスライドを作成する場合は以下のように「lightning-talk」テーマを使います．
 
-  = �����ȥ�
+  = タイトル
   : author
-     ����
+     オレ
   : theme
-     lightning-talk # <= ����ʴ���
+     lightning-talk # <= こんな感じ
 
-  = �����
+  = オレは
 
-  = �����
+  = オレだ
 
-�⤷���ⶶ�᥽�åɤ�Ȥä����饤�ɤ����ǤϤʤ����վ�񤭤ʤɤ�Ȥä������̤Ρץ��饤�ɤ򺮤��������Ϥ���ǤϤ��ޤ������ޤ��󡥤ʤ��ʤ顤��lightning-talk�ץơ��ޤϲվ�񤭤ʤɤθ��ɤ����������ʤ�����Ǥ���
+もし，高橋メソッドを使ったスライドだけではなく，箇条書きなどを使った「普通の」スライドを混ぜたい場合はこれではうまくいきません．なぜなら，「lightning-talk」テーマは箇条書きなどの見栄え定義を持たないからです．
 
-������褹��ˤϡ��ơ��ޤ򺮤��ޤ����¤ϡ���ligntning-talk�פȺ����ä��ơ��ޤ�ɸ��Ǥ����Ĥ��Ѱդ���Ƥ��ޤ����㤨�С���rabbit�ץơ��ޤȡ�lignting-talk�ץơ��ޤ򺮤�����lightning-rabbit�פǤ������Υơ��ޤ�Ȥ��Ȱʲ��Τ褦�ˡ��ⶶ�᥽�åɤ�Ȥä����饤�ɤ����̤Ρ�rabbit�ץơ��ޤΥ��饤�ɤ򺮤��뤳�Ȥ��Ǥ��ޤ���
+これを解決するには，テーマを混ぜます．実は，「ligntning-talk」と混ざったテーマが標準でいくつか用意されています．例えば，「rabbit」テーマと「lignting-talk」テーマを混ぜた「lightning-rabbit」です．このテーマを使うと以下のように，高橋メソッドを使ったスライドと普通の「rabbit」テーマのスライドを混ぜることができます．
 
-  = �����ȥ�
+  = タイトル
   : author
-     ����
+     オレ
   : theme
      lightning-rabbit
 
-  = �����
+  = オレは
 
-  = ������
+  = ．．．
 
-    * ������
-    * ������
-    * ������
+    * ．．．
+    * ．．．
+    * ．．．
 
-  = �����
+  = オレだ
 
-��lightning-rabbit�ץơ��ޤϰʲ��Τ褦�ˤȤƤ⾮���ʥơ��ޤǤ���
+「lightning-rabbit」テーマは以下のようにとても小さなテーマです．
 
   # enscript ruby
   include_theme("rabbit")       # (1)
@@ -63,21 +63,21 @@ Rabbit �����ɲ������䤢��?
     end
   end
 
-����ϡ��ʲ��Τ褦�ˤʤäƤ��ޤ���
+作戦は，以下のようになっています．
 
-  (1) �١����Ȥʤ�ơ��ޤ�Ŭ�Ѥ��롥��(1)����ʬ��
-  (2) lightning-talk�ѤΥ��饤�ɤ�����(2)����ʬ��
-      ���ɤ���lightning-talk�Ѥθ��ɤ�����Ǿ�񤭤��롥��(3)����ʬ��
+  (1) ベースとなるテーマを適用する．（(1)の部分）
+  (2) lightning-talk用のスライドだけ（(2)の部分）
+      見栄えをlightning-talk用の見栄え定義で上書きする．（(3)の部分）
 
-�������Ѥ���С���ñ�ˤ���äȤ����ⶶ�᥽�åɤ�Ȥä��ץ쥼��ơ�������Ԥ����Ȥ��Ǥ��ޤ����������ϡ�((*slide.lightning_talk�ϺǸ�ˡ�*))�פȤ������ȤǤ�������ϡ���¸�θ��ɤ����񤭤���Ȥ���������Ѥ��Ƥ��뤿��Ǥ���
+これを応用すれば，簡単にちょっとだけ高橋メソッドを使ったプレゼンテーションを行うことができます．注意点は「((*slide.lightning_talkは最後に！*))」ということです．これは，既存の見栄えを上書きするという作戦を用いているためです．
 
-���ʤߤˡ�(({slide.lightning_talk}))����̾�Ȥ���(({slide.takahashi}))����(({slide.lightning_talk?}))����̾�Ȥ���(({slide.takahashi?}))���Ѱդ���Ƥ��ޤ���
+ちなみに，(({slide.lightning_talk}))の別名として(({slide.takahashi}))が，(({slide.lightning_talk?}))の別名として(({slide.takahashi?}))が用意されています．
 
 Happy Rabbitting!
 
-== ����Υ��饤�ɤ����ץ��ѥƥ����Ѥ��������ϡ�
+== 特定のスライドだけプロパティを変えたい時は？
 
-�㤨�аʲ��� "Redhanded" ��ޤॹ�饤�ɤΥե���Ȥ򥤥���å����ѹ����ޤ���
+例えば以下は "Redhanded" を含むスライドのフォントをイタリックに変更します。
  match Slide do |slides| 
    slides.each do |slide| 
      if slide.match?(/Redhanded/) 
@@ -87,68 +87,68 @@ Happy Rabbitting!
  end 
 
 
-== ���Ԥ򤹤�ˤϡ�
+== 改行をするには？
 
-�ʲ��Τ褦�˽񤭤ޤ���
+以下のように書きます．
 
   (('&NewLine;'))
 
-����ϥ��饤�ɤ����Ƥ����ǤϤʤ������饤�ɥ����ȥ�Ǥ�ͭ���Ǥ���
+これはスライドの内容だけではなく，スライドタイトルでも有効です．
 
-== ���Ԥ��񤭤Ť餤��Ǥ����ɡ�����
+== 改行が書きづらいんですけど．．．
 
-Rabbit�ˤ�Ruby��Ʊ����ˡ��ʴ�������äƤ��ޤ����Ĥޤꡤ�֤�äƤϤ����ʤ����Ȥϱ���������פ褦�ˤʤäƤ��ޤ�((-Ruby����ˡ��ʴ�ϡ��㤨�Х������Х��ѿ���(({$}))��Ȥ��Ȥ�����ΤǤ���-))��
+RabbitにはRubyと同じ魔法の粉がかかっています．つまり，「やってはいけないことは汚く見える」ようになっています((-Rubyの魔法の粉は，例えばグローバル変数に(({$}))を使うというものです．-))．
 
-Rabbit�ǲ��Ԥ��񤭤Ť餯�ơ��񤯤ȥ����������Ť餯��Τ⡤Rabbit�����Ԥ�Ǥ�������Ȥ�ʤ����ߤ�������Ǥ���
+Rabbitで改行が書きづらくて，書くとソースが見づらくるのも，Rabbitが改行をできるだけ使わないで欲しいからです．
 
-�Ǥ�������Ȥ�ʤ����ߤ������֤���ͳ�ϡ֥��饤�ɤˤϲ��Ԥ򤷤ʤ���Ф����ʤ����餤Ĺ��ʸ�ϤϽ񤫤ʤ������褤�פ���Ǥ���ʸ�Ϥ�Ĺ���ʤäƤ��ޤä����ϡ����Ԥ򤹤뤳�Ȥ�ͤ������ˤ���ʸ�Ϥ�û�������ؤ����ʤ����ʤɤ�ͤ��������褤�Ǥ��礦��
+できるだけ使わないで欲しい一番の理由は「スライドには改行をしなければいけないくらい長い文章は書かない方がよい」からです．文章が長くなってしまった場合は，改行をすることを考える前にその文章を短く言い替えられないかなどを考えた方がよいでしょう．
 
-���饤�ɤ�Ĺ��ʸ�Ϥ�񤯤ȡ����Ҥ���ϥ��饤�ɤ����Ƥ��ɤळ�Ȥ˽��椷�ơ�ȯɽ�Ԥؤ����դ����ʤ��ʤäƤ��ޤ������Ǥ����ץ쥼��ơ������Υƥ��˥å��Ȥ��ơ�������ʤ��ȡ����ָ����������Ȥ��ä��Ȥ���ȯɽ�Ԥ����ܤ�����פȤ�����Τ�����ޤ�((-�ۥ�ȡ�-))�����饤�ɤ�Ĺ��ʸ�Ϥ�񤤤Ƥ���ȡ����Υƥ��˥å����Ȥ��Ť餯�ʤäƤ��ޤ��ޤ���
+スライドに長い文章を書くと，お客さんはスライドの内容を読むことに集中して，発表者への注意が少なくなってしまいがちです．プレゼンテーションのテクニックとして，「大事なこと，一番言いたいことを話すときは発表者に注目させる」というものがあります((-ホント？-))．スライドに長い文章を書いていると，このテクニックが使いづらくなってしまいます．
 
-== �֥�å������ȡ��ۥ磻�ȥ����ȡ�
+== ブラックアウト？ホワイトアウト？
 
-���饤�����Τ���ޤ����򤯤��ơ����饤�ɤ����Ƥ򸫤��ʤ����ơ���ȯɽ�Ԥ����ܤ�����פȤ����ƥ��˥å���Ȥ��Ȥ������Ѥ��뤿��ε�ǽ�Ǥ���
+スライド全体を黒または白くして，スライドの内容を見えなくして，「発表者に注目させる」というテクニックを使うときに利用するための機能です．
 
-�֥�å������Ȥ�((%B%))�ǡ��ۥ磻�ȥ����Ȥ�((%W%))�����ؤ��뤳�Ȥ��Ǥ��ޤ������줾��Υ����Х���ɤ���ͳ��((*B*))lack��((*W*))hite�Ǥ���
+ブラックアウトは((%B%))で，ホワイトアウトは((%W%))で切替えることができます．それぞれのキーバインドの理由は((*B*))lackと((*W*))hiteです．
 
-== �����ȥ륹�饤�ɤ��طʤ���ꤹ��ˤϡ�
+== タイトルスライドの背景を指定するには？
 
-title-background-color�ơ��ޤ�Ȥ��ޤ���
+title-background-colorテーマを使います．
 
-�㤨�С��طʤ��֤����������ϰʲ��Τ褦�ˤ��ޤ���
+例えば，背景を赤くしたい場合は以下のようにします．
 
   @title_background_color = "red"
   include_theme("title-background-color")
 
-�طʿ��λ���ˤ�(({#RRGGBB}))������Ȥ��ޤ����ʲ�������طʤ��֤����ޤ���
+背景色の指定には(({#RRGGBB}))形式も使えます．以下の例も背景を赤くします．
 
   @title_background_color = "#ff0000"
   include_theme("title-background-color")
 
-���ǤϤʤ��ơ���������ꤷ�����Ȥ���title-background-image�ơ��ޤ�Ȥ��ޤ���
+色ではなくて，画像を指定したいときはtitle-background-imageテーマを使います．
 
-((*����: 0.3.1�ޤǤ�title-background-image�ǤϤʤ��ơ�title-background�Ȥ���̾���Ǥ�����*))
+((*注意: 0.3.1まではtitle-background-imageではなくて，title-backgroundという名前でした．*))
 
-�ʲ����طʤ˥ޥ����åȥ���饯���֥�ӥ��פ���ꤹ����Ǥ���
+以下は背景にマスコットキャラクタ「ラビィ」を指定する例です．
 
   @title_background_image = "lavie.png"
   include_theme("title-background-image")
 
-== ���饤�ɤ��طʤ���ꤹ��ˤϡ�
+== スライドの背景を指定するには？
 
-�㤨�С��طʤ��֤����������ϰʲ��Τ褦�ˤ��ޤ���
+例えば，背景を赤くしたい場合は以下のようにします．
 
   set_background("red")
 
-�طʿ��λ���ˤ�(({#RRGGBB}))������Ȥ��ޤ����ʲ�������طʤ��֤����ޤ���
+背景色の指定には(({#RRGGBB}))形式も使えます．以下の例も背景を赤くします．
 
   set_background("#ff0000")
 
-���ǤϤʤ��ơ���������ꤷ�����Ȥ���slide-background-image�ơ��ޤ�Ȥ��ޤ���
+色ではなくて，画像を指定したいときはslide-background-imageテーマを使います．
 
-((*����: 0.3.2�ޤǤ�slide-background-image�ǤϤʤ��ơ�slide-background�Ȥ���̾���Ǥ�����*))
+((*注意: 0.3.2まではslide-background-imageではなくて，slide-backgroundという名前でした．*))
 
-�ʲ����طʤ˥ޥ����åȥ���饯���֥�ӥ��פ���ꤹ����Ǥ���
+以下は背景にマスコットキャラクタ「ラビィ」を指定する例です．
 
   @slide_background_image = "lavie.png"
   include_theme("slide-background-image")

@@ -4,7 +4,7 @@ Latest version: 0.0.2
 
   * ((<README.ja|marshal::README.ja>))
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ
 
-((<msm>))¤ËÌ¾¾ÎÊÑ¹¹¡¥ - ((<kou>))
+((<msm>))ã«åç§°å¤‰æ›´ï¼Ž - ((<kou>))
 

@@ -2,12 +2,12 @@
 
 == Comming
 
-  * ((<Event|URL:http://web.resource.org/rss/1.0/modules/event/>))¥â¥¸¥å¡¼¥ë¤â¼ÂÁõ¤¹¤ë¡©
+  * ((<Event|URL:http://web.resource.org/rss/1.0/modules/event/>))ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚‚å®Ÿè£…ã™ã‚‹ï¼Ÿ
 
 == Done
 
-  * RSS 0.9x/2.0¤ò¤â¤¦¾¯¤·¿¿ÌÌÌÜ¤Ë¥Ñ¡¼¥¹¤¹¤ë¡¥
-  * rss/converter¤ËUconv¤ÎÊÑ´¹¤¬¼ºÇÔ¤·¤¿¤È¤­¤Î½èÍý¤òÄÉ²Ã¡¥
-  * RSSÀ¸À®¥é¥¤¥Ö¥é¥ê¤È¤·¤Æ»È¤¦¤È¤­¤ÎÊ¸½ñ¤ò½ñ¤¯¡¥
+  * RSS 0.9x/2.0ã‚’ã‚‚ã†å°‘ã—çœŸé¢ç›®ã«ãƒ‘ãƒ¼ã‚¹ã™ã‚‹ï¼Ž
+  * rss/converterã«Uconvã®å¤‰æ›ãŒå¤±æ•—ã—ãŸã¨ãã®å‡¦ç†ã‚’è¿½åŠ ï¼Ž
+  * RSSç”Ÿæˆãƒ©ã‚¤ãƒ–ãƒ©ãƒªã¨ã—ã¦ä½¿ã†ã¨ãã®æ–‡æ›¸ã‚’æ›¸ãï¼Ž
   * RSS::DublincoreModel -> RSS::DublinCoreModel
-  * ((<URL:http://www.pocketsoap.com/weblog/stories/2002/09/0017.html>))¤òÆÉ¤à¡¥
+  * ((<URL:http://www.pocketsoap.com/weblog/stories/2002/09/0017.html>))ã‚’èª­ã‚€ï¼Ž

@@ -1,32 +1,32 @@
 = RD2TeX
 
-RD����(La)TeX���Ѵ�����饤�֥�ꡥ
+RDから(La)TeXに変換するライブラリ．
 
-== �����������
+== ダウンロード
 
-���ߡ����������֤Ϥ���ޤ���
-((<��ݥ��ȥ�|URL:http://www.cozmixng.org/repos/ruby/rd2tex/>))��������å������Ȥ��Ƥ���������
+現在，アーカイブはありません．
+((<リポジトリ|URL:http://www.cozmixng.org/repos/ruby/rd2tex/>))からチェックアウトしてください．
 
   svn co http://www.cozmixng.org/repos/ruby/rd2tex/trunk rd2tex
 
-== �ޤޤ�Ƥ�����
+== 含まれているもの
 
 === RD -> LaTeX
 
-RD�������̤�LaTeX���Ѵ�����饤�֥�ꡥ
+RDから普通のLaTeXに変換するライブラリ．
 
   % rd2 -r rd/rd2tex-lib XXX.rd
 
-$LOAD_PATH���ѹ����ơ��������ޥ��������ƥ�ץ졼�Ȥ��ɤ߹��ޤ��뤳�Ȥˤ����Ϥ򥫥����ޥ����Ǥ��롥
+$LOAD_PATHを変更して，カスタマイズしたテンプレートを読み込ませることにより出力をカスタマイズできる．
 
-��ʸ�Ѥäݤ�LaTeX����Ϥ�����:
+論文用っぽいLaTeXを出力する例:
 
   % ruby -I rd2tex/sample/thesis -S rd2 -r rd/rd2tex-lib XXX.rd
 
 === RD -> prosper
 
-RD����prosper��LaTeX���Ѵ�����饤�֥�ꡥ
+RDからprosper用LaTeXに変換するライブラリ．
 
   % rd2 -r rd/rd2prosper-lib XXX.rd
 
-�񼰤�((<Rabbit>))�ߤ����˽񤯡�
+書式は((<Rabbit>))みたいに書く．

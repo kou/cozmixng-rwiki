@@ -12,4 +12,4 @@ The latest version: 0.0.4(((<download|URL:http://www.cozmixng.org/~kou/download/
 
 == Comments
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

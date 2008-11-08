@@ -1,75 +1,75 @@
-= cogito::��ͭ��ݥ��ȥ깽��
+= cogito::共有リポジトリ構築
 
-ʣ���ͤǥ��ߥåȤǤ��붦ͭ��ݥ��ȥ�ι��ۡ���ͭ��ݥ��ȥ�ˤ�ssh��ͳ�ǥ����������롥
+複数人でコミットできる共有リポジトリの構築．共有リポジトリにはssh経由でアクセスする．
 
-XXX��ݥ��ȥ�Ȥ�����̾�Τ�Ŭ����
+XXXリポジトリとかいう名称は適当．
 
-Debian���á�
+Debianの話．
 
-== ��ݥ��ȥ�桼���κ���
+== リポジトリユーザの作成
 
-��ͭ��ݥ��ȥ���֤������о�˥桼���������
+共有リポジトリを置くサーバ上にユーザを作成．
 
   % sudo useradd git
 
-��ݥ��ȥ��ѤΥǥ��쥯�ȥ���ꡤ���Υǥ��쥯�ȥ��git�Ѥ˽�������롥
+リポジトリ用のディレクトリを作り，そのディレクトリをgit用に初期化する．
 
-�ץ���������project0�ѤΥ�ݥ��ȥ�ϰʲ��Τ褦�ˤʤ롥((*--shared*))���ݥ���ȡ�
+プロジェクトproject0用のリポジトリは以下のようになる．((*--shared*))がポイント．
 
   % sudo -u git mkdir -p ~git/repos/project0
   % cd ~git/repos/project0
   % sudo -u git git-init-db --shared
 
-��ݥ��ȥ�˥��ߥåȤ������桼����git��Ʊ���桼���ˤ��롥
+リポジトリにコミットしたいユーザをgitと同じユーザにする．
 
-�桼��kou��user�����ߥåȤ��������ϰʲ��Τ褦�ˤʤ롥
+ユーザkouとuserがコミットしたい場合は以下のようになる．
 
   % sudo useradd kou git
   % sudo useradd user git
 
-��ͭ��ݥ��ȥ꤬���륵���ФǤκ�ȤϤ���ǽ�λ��
+共有リポジトリがあるサーバでの作業はこれで終了．
 
-== ������ߥå�
+== 初期コミット
 
-��������ϡ���ͭ��ݥ��ȥ�򤪤��Ƥ��륵���Ф���ʤ��ơ��긵�δĶ��Ǥκ�ȡ�
+ここからは，共有リポジトリをおいているサーバじゃなくて，手元の環境での作業．
 
-�ޤ����Ķ��ѿ������ꡥ
+まず，環境変数を設定．
 
   export EMAIL="kou@cozmixng.org"
   export GIT_AUTHOR_EMAIL="$EMAIL"
   export GIT_COMMITTER_EMAIL="$EMAIL"
 
-�긵�˥��������ݥ��ȥ���äơ���ͭ��ݥ��ȥ��cg-push���롥
+手元にローカルリポジトリを作って，共有リポジトリにcg-pushする．
 
-�ޤ�������ǡ���������ǥ��쥯�ȥ�ǡ����������ݥ��ȥ���������롥
+まず，初期データがあるディレクトリで，ローカルリポジトリを初期化する．
 
   % cd work/project0
   % cg-init
 
-��ͭ��ݥ��ȥ��origin�֥����Ȥ�����Ͽ���롥��ͭ��ݥ��ȥ꤬���륵���Ф�IP���ɥ쥹��192.168.0.123���ä���ʲ��Τ褦�ˤʤ롥
+共有リポジトリをoriginブランチとして登録する．共有リポジトリがあるサーバのIPアドレスが192.168.0.123だったら以下のようになる．
 
   % cg-branch-add origin git+ssh://192.168.0.123/home/git/repos/project0
 
-�桼��̾����ꤷ����³����ˤϰʲ��Τ褦�ˤʤ롥
+ユーザ名を指定して接続するには以下のようになる．
 
   % cg-branch-add origin git+ssh://user@192.168.0.123/home/git/repos/project0
 
-���Ȥϡ�origin�֥�����cg-push�����OK��
+あとは，originブランチにcg-pushすればOK．
 
   % cg-push
 
-���Τ��Ȥϡ����̤�cg-clone������ݥ��ȥ��Ʊ���褦�˰ʲ��Τ褦��ή��ˤʤ롥
+このあとは，普通のcg-cloneしたリポジトリと同じように以下のような流れになる．
 
   % cg-update
-  �Խ�
+  編集
   % cg-commit
-  �Խ�
+  編集
   % cg-commit
   ...
   % cg-push
   ...
   % cg-update
-  �Խ�
+  編集
   % cg-commit
   ...
   % cg-push

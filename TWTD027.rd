@@ -1,23 +1,23 @@
 = TWTD027
 
-Subversion¤ÎRuby¥Ğ¥¤¥ó¥Ç¥£¥ó¥°¤òºÇ¿·¤ÎRuby-GetText¤ËÂĞ±ş¤µ¤»¤ë
+Subversionã®Rubyãƒã‚¤ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ã‚’æœ€æ–°ã®Ruby-GetTextã«å¯¾å¿œã•ã›ã‚‹
 
 == status
 
-* ¼ïÎà: task
-* ¥¤¥Æ¥ì¡¼¥·¥ç¥ó: 3
-* ¥µ¥¤¥ó: ((<kou>))
-* ¾õÂÖ: close
-* ¸«ÀÑ: 0 / 0
+* ç¨®é¡: task
+* ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³: 3
+* ã‚µã‚¤ãƒ³: ((<kou>))
+* çŠ¶æ…‹: close
+* è¦‹ç©: 0 / 0
 
 == description
 
-¤³¤ó¤Ê¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸¤¬¤Ç¤Ê¤¤¤è¤¦¤Ë¤¹¤ë¡¥
+ã“ã‚“ãªã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã§ãªã„ã‚ˆã†ã«ã™ã‚‹ï¼
 
   Deprecated. Use Locale#set instead.
   Locale.set(lctype, locale) is deprecated. Use Locale.set(locale) instead.
 
-Ruby-GetText¤Ø¤Î°ÍÂ¸¤òÌµ¤¯¤·¤¿¡¥
+Ruby-GetTextã¸ã®ä¾å­˜ã‚’ç„¡ãã—ãŸï¼
 
 == test
 

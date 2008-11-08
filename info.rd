@@ -1,3 +1,3 @@
 = Information of this site
 
-����RWiki�ˤĤ��ƤΥС���������Ǥ���
+このRWikiについてのバージョン情報です．

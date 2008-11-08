@@ -1,13 +1,13 @@
 = Test::Unit::Ext
 
-Test::Unit¤ò³ÈÄ¥¤¹¤ë¡¥
+Test::Unitã‚’æ‹¡å¼µã™ã‚‹ï¼
 
-((<RubyForge¤Ë°ÜÆ°|URL:http://test-unit-ext.rubyforge.org/>))¤·¤¿¡£
+((<RubyForgeã«ç§»å‹•|URL:http://test-unit-ext.rubyforge.org/>))ã—ãŸã€‚
 
 
-== ^C-c¤Ç»ß¤á¤Æ¤â·ë²Ì¤òÉ½¼¨
+== ^C-cã§æ­¢ã‚ã¦ã‚‚çµæœã‚’è¡¨ç¤º
 
-ºÇ¿·ÈÇ¤Ï((<¤³¤Ã¤Á|URL:http://www.cozmixng.org/repos/rwiki/trunk/test/test-unit-ext/always-show-result.rb>))
+æœ€æ–°ç‰ˆã¯((<ã“ã£ã¡|URL:http://www.cozmixng.org/repos/rwiki/trunk/test/test-unit-ext/always-show-result.rb>))
 
   # enscript ruby
   require "test/unit/ui/testrunnermediator"
@@ -39,9 +39,9 @@ Test::Unit¤ò³ÈÄ¥¤¹¤ë¡¥
     end
   end
 
-== ¥Æ¥¹¥È¤ËÍ¥ÀèÅÙ¤ò¤Ä¤±¤ë
+== ãƒ†ã‚¹ãƒˆã«å„ªå…ˆåº¦ã‚’ã¤ã‘ã‚‹
 
-ºÇ¿·ÈÇ¤Ï((<¤³¤Ã¤Á|URL:http://www.cozmixng.org/repos/rwiki/trunk/test/test-unit-ext/priority.rb>))
+æœ€æ–°ç‰ˆã¯((<ã“ã£ã¡|URL:http://www.cozmixng.org/repos/rwiki/trunk/test/test-unit-ext/priority.rb>))
 
   # enscript ruby
   require "test/unit"
@@ -204,40 +204,40 @@ Test::Unit¤ò³ÈÄ¥¤¹¤ë¡¥
     end
   end
 
-»È¤¤¤«¤¿¤Ï¤³¤ó¤Ê´¶¤¸
+ä½¿ã„ã‹ãŸã¯ã“ã‚“ãªæ„Ÿã˜
 
   # enscript ruby
   class SomeTest < Test::Unit::TestCase
     priority :must
-    def test_É¬¤º¼Â¹Ô¤µ¤ì¤ë¥Æ¥¹¥È
+    def test_å¿…ãšå®Ÿè¡Œã•ã‚Œã‚‹ãƒ†ã‚¹ãƒˆ
       ...
     end
 
     ...
 
     priority :important
-    def test_¤Û¤È¤ó¤É¤Î¾ì¹ç¼Â¹Ô¤µ¤ì¤ë¥Æ¥¹¥È
+    def test_ã»ã¨ã‚“ã©ã®å ´åˆå®Ÿè¡Œã•ã‚Œã‚‹ãƒ†ã‚¹ãƒˆ
       ...
     end
 
     ...
 
     priority :high
-    def test_¤À¤¤¤¿¤¤¤Î¾ì¹ç¼Â¹Ô¤µ¤ì¤ë¥Æ¥¹¥È
+    def test_ã ã„ãŸã„ã®å ´åˆå®Ÿè¡Œã•ã‚Œã‚‹ãƒ†ã‚¹ãƒˆ
       ...
     end
 
     ...
 
     priority :normal
-    def test_È¾Ê¬¤¯¤é¤¤¤Ï¼Â¹Ô¤µ¤ì¤ë¥Æ¥¹¥È
+    def test_åŠåˆ†ãã‚‰ã„ã¯å®Ÿè¡Œã•ã‚Œã‚‹ãƒ†ã‚¹ãƒˆ
       ...
     end
 
     ...
 
     priority :low
-    def test_¤¿¤Ş¤Ë¼Â¹Ô¤µ¤ì¤ë¥Æ¥¹¥È
+    def test_ãŸã¾ã«å®Ÿè¡Œã•ã‚Œã‚‹ãƒ†ã‚¹ãƒˆ
       ...
     end
 
@@ -245,8 +245,8 @@ Test::Unit¤ò³ÈÄ¥¤¹¤ë¡¥
   end
 
 
-¥Æ¥¹¥È¤ÎÍ¥ÀèÅÙ¤òÊÑ¤¨¤¿¤¤¤È¤­¤Ï¡¤¥Æ¥¹¥È¥á¥½¥Ã¥É¤ÎÄêµÁ¤ò°ÜÆ°¤µ
-¤»¤ë¤À¤±¡¥Í¥ÀèÅÙ¤¬¹â¤¤¥Æ¥¹¥È¤Û¤É¥Õ¥¡¥¤¥ë¤ÎÀèÆ¬¤ÎÊı¤ÇÄêµÁ¤·¤Æ¡¤
-¤è¤¯ÌÜ¤¬ÉÕ¤¯¤è¤¦¤Ë¤¹¤ë¤Î¤¬¥ß¥½¡¥
+ãƒ†ã‚¹ãƒˆã®å„ªå…ˆåº¦ã‚’å¤‰ãˆãŸã„ã¨ãã¯ï¼Œãƒ†ã‚¹ãƒˆãƒ¡ã‚½ãƒƒãƒ‰ã®å®šç¾©ã‚’ç§»å‹•ã•
+ã›ã‚‹ã ã‘ï¼å„ªå…ˆåº¦ãŒé«˜ã„ãƒ†ã‚¹ãƒˆã»ã©ãƒ•ã‚¡ã‚¤ãƒ«ã®å…ˆé ­ã®æ–¹ã§å®šç¾©ã—ã¦ï¼Œ
+ã‚ˆãç›®ãŒä»˜ãã‚ˆã†ã«ã™ã‚‹ã®ãŒãƒŸã‚½ï¼
 
-Ãí°Õ: ((*--priority¥ª¥×¥·¥ç¥ó¤òÉÕ¤±¤Ê¤¤¤ÈÍ¥ÀèÅÙ¤Ï¹ÍÎ¸¤·¤Ş¤»¤ó*))
+æ³¨æ„: ((*--priorityã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’ä»˜ã‘ãªã„ã¨å„ªå…ˆåº¦ã¯è€ƒæ…®ã—ã¾ã›ã‚“*))

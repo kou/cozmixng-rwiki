@@ -1,109 +1,109 @@
-= RD working draft ���ܸ���
+= RD working draft 日本語版
 
-RWiki�ϥڡ������Խ��κݤ�RD�Ȥ����񼰤��Ѥ��ޤ���RD�Ȥϰʲ��Τ褦�ʤ�ΤǤ���
+RWikiはページの編集の際にRDという書式を用います。RDとは以下のようなものです。
 
-== RD�Ȥϲ���
+== RDとは何か
 
-RD�Ȥ�Ruby�Ǥ�POD�Ǥ����Ĥޤ�Ruby������ץȥե������������������տޤ���
-������줿�ɥ�����ȥե����ޥåȤǤ���
+RDとはRuby版のPODです。つまりRubyスクリプトファイルの中に埋め込む事を意図して
+定義されたドキュメントフォーマットです。
 
-RD�ϼ��plain text�򤵤ޤ��ޤʥե����ޥåȤ��Ѵ�����plain2�Ȥ����ץ������
-�αƶ�������Ƥ��ޤ������Τ��ᡢRD��plain text�˻��Ƥ��ꡢ����ץ�Ǥ��ä���
-����ʸˡ�ʤΤ��ɤߤ䤹���񤭤䤹���Ǥ��礦��
+RDは主にplain textをさまざまなフォーマットに変換するplain2というプログラム
+の影響を受けています。そのため、RDはplain textに似ており、シンプルですっきり
+した文法なので読みやすく書きやすいでしょう。
 
-== Ruby���󥿥ץ꥿��RD��ɤΤ褦�˰�����
+== RubyインタプリタはRDをどのように扱うか
 
-Ruby�Υ��󥿥ץ꥿��ñ���"(({=begin}))"�ǻϤޤ�Ԥ���"(({=end}))"�ǻϤޤ�
-�ԤޤǤ�̵�뤷�ޤ����Ǥ����顢������ץȥե������������������Ǥ���Τ�
-RD�����ǤϤ���ޤ��󡣲��Ǥ�(({=begin}))��(({=end}))�δ֤˽񤯻����Ǥ����
-�Ǥ���RD�������ΰ�Ĥˤ����ޤ��󤬡�Rubyɸ��Υɥ�����ȥե����ޥåȤ�
-����Ƥ��ޤ���((-�⤷¾�Υɥ�����ȥե����ޥåȤ˶�̣������ʤ顢�㤨��
+Rubyのインタプリタは単純に"(({=begin}))"で始まる行から"(({=end}))"で始まる
+行までを無視します。ですから、スクリプトファイル中に埋め込む事ができるのは
+RDだけではありません。何でも(({=begin}))と(({=end}))の間に書く事ができるの
+です。RDは選択肢の一つにすぎませんが、Ruby標準のドキュメントフォーマットと
+されています。((-もし他のドキュメントフォーマットに興味があるなら、例えば
 rubyapi2
 ((<URL:http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/xml.html#rubyapi2>))
-�ʤɤ򸫤�Ȥ����Ǥ��礦�������Ruby/Gtk�Τ褦���絬�ϥ饤�֥��Υɥ�����
-�ȸ����˺���Ƥ��ޤ���-))
+などを見るといいでしょう。これはRuby/Gtkのような大規模ライブラリのドキュメン
+ト向けに作られています。-))
 
-== RD�δ���Ū�ʳ�ǰ��ʸˡ
+== RDの基本的な概念と文法
 === Element, Block, Inline
 
-���줫��������Ǥ�"Element"�Ȥ����Ѹ�((-����: RD��ʸˡ�Ѹ�ˤĤ��ƤϤ�
-�������ܸ����򤢤Ƥޤ���Ǥ�����-))��ƥ����Ȥ�ʸ�Ϲ�¤��Ϳ���뤿���
-�������ǤȤ�����̣���Ѥ��ޤ�������ˡ�"((<Block>))"�Ȥ����Ѹ�����Ū
-�礭���������Х�ʹ�¤��ɽ��Element�ˡ�"((<Inline>))"�Ȥ����Ѹ�����Ū����
-����������ʡ��ƥ����Ȥ��ղ�Ū�ʽ�����Ϳ����Element���Ф����Ѥ��ޤ���
+これからの説明では"Element"という用語((-訳注: RDの文法用語についてはあ
+えて日本語訳をあてませんでした。-))をテキストに文章構造を与えるための
+構成要素という意味で用います。さらに、"((<Block>))"という用語を比較的
+大きくグローバルな構造を表すElementに、"((<Inline>))"という用語を比較的小さ
+くローカルな、テキストに付加的な修飾を与えるElementに対して用います。
 
-����丫�Ф����ꥹ�Ȥʤɤ�Block�Ǥ���RD�Ǥ�Block��ɽ���Τ�
-����ǥ�Ȥ��ü�ʸ�����Ѥ��ޤ���Block������Ҥˤ��뤳�Ȥ�ʣ����
-��¤��ɽ���Ǥ��ޤ��������ơ�Block��ɽ���ϼ�����plain text�˸���
-�ޤ����ܤ�����((<Block>))�򸫤Ƥ���������
+段落や見出し、リストなどがBlockです。RDではBlockを表すのに
+インデントや特殊文字を用います。Blockを入れ子にすることで複雑な
+構造も表現できます。そして、Blockの表現は自然とplain textに見え
+ます。詳しくは((<Block>))を見てください。
 
-��Ĵ�䥳���ɤ仲�Ȥʤɤ�Inline�Ǥ���(('((? ... ?))'))�Τ褦�ʥ��å���
-�ü�ʸ�����ȹ礻��Inline��ɽ���˻Ȥ��ޤ����ۤȤ�ɤ�Inline���ߤ���
-����ҤˤǤ��ޤ����ܤ�����((<Inline>))�򸫤Ƥ���������
+強調やコードや参照などがInlineです。(('((? ... ?))'))のようなカッコと
+特殊文字の組合せがInlineの表現に使われます。ほとんどのInlineが互いに
+入れ子にできます。詳しくは((<Inline>))を見てください。
 
 === Block
-==== ����ʸˡ
+==== 基本文法
 
-Block�ϹԻظ���ʸˡ�ˤ��������ޤ����ĤޤꡢƱ���Ԥˤ���ʸ���Ϥ��٤�Ʊ��
-Block��°���Ƥ��ޤ�������ǥ�Ȥ�Block������ҥ�٥�ȥ����פ�ɽ����
-���ޤ����Ԥ���Ƭ��ʸ����Block�Υ����פ˴ط����ޤ���
+Blockは行指向の文法にしたがいます。つまり、同じ行にある文字はすべて同じ
+Blockに属しています。インデントはBlockの入れ子レベルとタイプを表して
+います。行の先頭の文字はBlockのタイプに関係します。
 
-+ ��ǰ���Ѹ�
++ 概念と用語
 
 :Baseline
-  Baseline�ϥ���ǥ�Ȥδ��Ǥ�������ԤΥ���ǥ�ȤȤ�Baseline������Ū
-  �ʿ����Ϥ��ιԤ�°����Block�Υ����פ˱ƶ����ޤ���
+  Baselineはインデントの基準です。ある行のインデントととBaselineの相対的
+  な深さはその行の属するBlockのタイプに影響します。
 
 :Head Char
-  Head Char�϶���ʸ����������Ԥ���Ƭ��ʸ���Ǥ���
+  Head Charは空白文字を除いた行の先頭の文字です。
 
 :STRINGLINE
-  STRINGLINE�����̤�ʸ���ǹ������줿�ԤǤ���STRINGLINE��"(({*}))",
-  "(({(((|num|)))}))", "(({:}))", "(({=}))", "(({+}))"�Ȥ��ä�ʸ����
-  Head Char�Ȥ��Ƥϴޤߤޤ��󡣤�����������ǥ�Ȥ��줿�Ԥʤ�"(({=}))"
-  ��"(({+}))"��Head Char�Ȥ��뤳�Ȥ��Ǥ��ޤ���
+  STRINGLINEは普通の文字で構成された行です。STRINGLINEは"(({*}))",
+  "(({(((|num|)))}))", "(({:}))", "(({=}))", "(({+}))"といった文字を
+  Head Charとしては含みません。しかし、インデントされた行なら"(({=}))"
+  や"(({+}))"をHead Charとすることができます。
 
 :WHITELINE
-  WHITELINE�϶���ʸ�������ιԤǤ���
+  WHITELINEは空白文字だけの行です。
 
 :Comment
-  (({/^#/}))�˥ޥå�����Ԥϥ����ȤȤߤʤ���ޤ���
+  (({/^#/}))にマッチする行はコメントとみなされます。
 
-+ Baseline�η���ȱƶ�
-�ȥåץ�٥�Ǥ�((<Baseline>))�ϹԤκ�ü�Ǥ����ꥹ����Ǥ�Baseline��ListItem
-�κǽ��((<Block>))�ˤ�äƷ��ꤷ�ޤ����㤨�С�
++ Baselineの決定と影響
+トップレベルでは((<Baseline>))は行の左端です。リスト内ではBaselineはListItem
+の最初の((<Block>))によって決定します。例えば、
 
-  Example: "|" ��Baseline��ɽ���Ƥ��ޤ���
-    |���ιԤϥȥåץ�٥��TextBlock�ιԤ��Ȥ��ޤ���
-    |<- �������äơ�Baseline�Ϻ�ü�Ǥ���
-      *|List��Ǥ� (1)
-       |<- ���Τ褦��Baseline��(1)�ιԤǷ��ꤵ��ޤ���
-      *    |Ʊ��List�Ǥ�ListItem���Baseline�����ꤵ��ޤ���
-           |<- �������äơ�1���ܤ�ListItem�Ȥϰ㤦������Baseline������ޤ���
-|���ιԤϥȥåץ�٥��TextBlock�ιԤ��Ȥ��ޤ���
-|<- �������äơ�Baseline�Ϻ�ü�Ǥ���
-  *|List��Ǥ� (1)
-   |<- ���Τ褦��Baseline��(1)�ιԤǷ��ꤵ��ޤ���
-  *    |Ʊ��List�Ǥ�ListItem���Baseline�����ꤵ��ޤ���
-       |<- �������äơ�1���ܤ�ListItem�Ȥϰ㤦������Baseline������ޤ���
+  Example: "|" はBaselineを表しています。
+    |この行はトップレベルのTextBlockの行だとします。
+    |<- したがって、Baselineは左端です。
+      *|List内では (1)
+       |<- このようにBaselineは(1)の行で決定されます。
+      *    |同じListでもListItem毎にBaselineが決定されます。
+           |<- したがって、1番目のListItemとは違うここにBaselineがあります。
+|この行はトップレベルのTextBlockの行だとします。
+|<- したがって、Baselineは左端です。
+  *|List内では (1)
+   |<- このようにBaselineは(1)の行で決定されます。
+  *    |同じListでもListItem毎にBaselineが決定されます。
+       |<- したがって、1番目のListItemとは違うここにBaselineがあります。
 
-Block���̤�Block������ҤˤʤäƤ�����ˤ�������Block��Baseline�ϳ�¦��
-Block��Baseline���⿼���ʤ�ޤ���
+Blockが別のBlockに入れ子になっている時には内部のBlockのBaselineは外側の
+BlockのBaselineよりも深くなります。
 
-Baseline�ȥ���ǥ�Ȥ�����Ū�ʰ��ִط���Block�Υ����פ˱ƶ����ޤ���
-Baseline��Ʊ�������˥���ǥ�Ȥ��줿((<STRINGLINE>))��((<TextBlock>))
-��°���ԤȤʤ�ޤ�������Baseline��꿼������ǥ�Ȥ��줿((<STRINGLINE>))
-��((<Verbatim>))�ιԤǤ���
+Baselineとインデントの相対的な位置関係がBlockのタイプに影響します。
+Baselineと同じ深さにインデントされた((<STRINGLINE>))は((<TextBlock>))
+に属す行となります。一方Baselineより深くインデントされた((<STRINGLINE>))
+は((<Verbatim>))の行です。
 
-==== Block�Υ�����
+==== Blockのタイプ
 + Headline
 
-Headline��"(({=}))"��"(({+}))"��((<Head Char>))�Ȥ���Ԥǹ�������ޤ���
-Headline��1�԰ʾ�ˤϤʤ�ޤ���Headline�ϥȥåץ�٥�������֤�����
-�Ǥ��ޤ���
+Headlineは"(({=}))"か"(({+}))"を((<Head Char>))とする行で構成されます。
+Headlineは1行以上にはなりません。Headlineはトップレベルだけに置く事が
+できます。
 
   Example:
-  |<- �ȥåץ�٥��Baseline
+  |<- トップレベルのBaseline
   = Headline 1.
   === Headline 1.1.1.
   + Headline 1.1.1.1.1.
@@ -112,9 +112,9 @@ Headline��1�԰ʾ�ˤϤʤ�ޤ���Headline�ϥȥåץ�٥�������֤�����
 === Headline 1.1.1.
 + Headline 1.1.1.1.1.
 
-Headline����Ƭ���ü�ʸ����Headline�Υ�٥��ɽ���Ƥ��ޤ������οޤ�
-�ǽ�Υޡ����ϺǤ��礭�ʥ�٥�Τ�Τǡ��Ǹ�Υޡ�������äȤ⾮����
-��٥�Τ�ΤǤ���
+Headlineの先頭の特殊文字はHeadlineのレベルを表しています。次の図で
+最初のマークは最も大きなレベルのもので、最後のマークがもっとも小さな
+レベルのものです。
 
   Fig: Headline Marks
   =
@@ -124,307 +124,307 @@ Headline����Ƭ���ü�ʸ����Headline�Υ�٥��ɽ���Ƥ��ޤ������οޤ�
   +
   ++
 
-�ޡ�����³���ƥ����Ȥ�Headline�Υ����ȥ�Ǥ��������Ʊ����
-((<Reference>))�Υ�٥�Ȥ��ƻȤ��ޤ���
+マークに続くテキストはHeadlineのタイトルです。これは同時に
+((<Reference>))のラベルとして使われます。
 
-Headline�Υ����ȥ�ˤ�((<Reference>))��Footnote�����((<Inline>))��Ȥ�����
-�Ǥ��ޤ���
+Headlineのタイトルには((<Reference>))とFootnoteを除く((<Inline>))を使う事が
+できます。
 
 + Include
 
-Include��"(({<<<}))"��((<Head Char>))�Ȥ������θ���˥��󥯥롼�ɤ���
-�ե������̾����³���Ԥ���ʤ�ޤ���RD�����Υե�����Ƚ��Ϥ���ե����ޥ�
-�Ȥǽ񤫤줿�ե�����Τɤ���Ǥ�Include�ˤ�äƥ��󥯥롼�ɤǤ��ޤ���
+Includeは"(({<<<}))"を((<Head Char>))とし、その後ろにインクルードする
+ファイルの名前が続く行からなります。RD形式のファイルと出力するフォーマッ
+トで書かれたファイルのどちらでもIncludeによってインクルードできます。
 
-RD�����Υե�����򥤥󥯥롼�ɤ�����ˤϥ��󥯥롼�ɤ����ե������̾
-����"foo.rd"���ͤ�".rd"�⤷����".rb"�Ȥ������ե��å����Ǥʤ��ƤϤʤ��
-���󡣤����ơ�"(({<<<}))"�θ�ˤϥ��ե��å�����ޤ᤿�ե�����δ�����
-̾����񤭤ޤ����㤨�С������ͤˤǤ���
+RD形式のファイルをインクルードする時にはインクルードされるファイルの名
+前は"foo.rd"の様に".rd"もしくは".rb"というサフィックスでなくてはなりま
+せん。そして、"(({<<<}))"の後にはサフィックスを含めたファイルの完全な
+名前を書きます。例えば、次の様にです。
   <<< foo.rd
 
-���Ϥ���ե����ޥåȤΥե�����򥤥󥯥롼�ɤ���ˤϡ����󥯥롼�ɤ����
-�ե�����Ϥ��ν��ϥե����ޥåȤ˸�ͭ�Υ��ե��å���������ʤ��Ȥ����ޤ���
-�㤨�С�HTML�Υե�����򥤥󥯥롼�ɤ���ˤ�".html"�Ȥ������ե��å�����
-Texinfo�����Υե�����򥤥󥯥롼�ɤ���ˤ�".texi"�Ȥ������ե��å�����
-�Ĥ��ޤ��������ơ�"(({<<<}))"�θ���ˤϥ��ե��å�����������ե������
-̾����񤭤ޤ����㤨�С�
+出力するフォーマットのファイルをインクルードするには、インクルードされる
+ファイルはその出力フォーマットに固有のサフィックスを持たないといけません。
+例えば、HTMLのファイルをインクルードするには".html"というサフィックスを、
+Texinfo形式のファイルをインクルードするには".texi"というサフィックスを
+つけます。そして、"(({<<<}))"の後ろにはサフィックスを除いたファイルの
+名前を書きます。例えば、
   <<< foo
-�Ƚ񤯤櫓�Ǥ���
+と書くわけです。
 
-���ξ�硢RD�ե����ޥå���HTML����Ϥ�����ˤ�"foo.html"�򥤥󥯥롼��
-����Texinfo�����ǽ��Ϥ�����ˤ�"foo.texi"�򥤥󥯥롼�ɤ��ޤ������ϥե���
-�ޥåȤ�Include���Ѥ�����ˤ�ʣ����(������ʤ�٤�¿����)�����Υ���
-�롼�ɥե�������Ѱդ��٤��Ǥ���
+この場合、RDフォーマッタはHTMLを出力する時には"foo.html"をインクルード
+し、Texinfo形式で出力する時には"foo.texi"をインクルードします。出力フォー
+マットのIncludeを用いる時には複数の(しかもなるべく多くの)形式のインク
+ルードファイルを用意すべきです。
 
 + TextBlock
 
-TextBlock��ʣ����((<STRINGLINE>))���鹽������ޤ��������ιԤ�((<Baseline>))
-��Ʊ������ǥ�ȤǤʤ��Ȥ����ޤ���((<Baseline>))��꿼��((<STRINGLINE>))��
-((<Verbatim>))�ιԤȤߤʤ���ޤ���
+TextBlockは複数の((<STRINGLINE>))から構成されます。それらの行は((<Baseline>))
+と同じインデントでないといけません。((<Baseline>))より深い((<STRINGLINE>))は
+((<Verbatim>))の行とみなされます。
 
-TextBlock��((<Inline>))�������˴ޤ�����Ǥ��ޤ���
+TextBlockは((<Inline>))を内部に含む事ができます。
 
   Example:
   |
-  �����TextBlock�Ǥ���
-  TextBlock��2���ܤιԤǤ���
-    ���ιԤ�TextBlock�Ǥʤ�Verbatim�Ǥ���
-  * �����Ƥ��ιԤ�List�ιԤǤ���(���Τˤ�ListItem�����TextBlock�ιԤǤ�
-    ����ΤǤ���)
+  これはTextBlockです。
+  TextBlockの2行目の行です。
+    この行はTextBlockでなくVerbatimです。
+  * そしてこの行はListの行です。(正確にはListItemの中のTextBlockの行でも
+    あるのですが)
 
-������ϼ��Τ褦�˥ե����ޥåȤ���ޤ���
+この例は次のようにフォーマットされます。
 
-�����TextBlock�Ǥ���
-TextBlock��2���ܤιԤǤ���
-  ���ιԤ�TextBlock�Ǥʤ�Verbatim�Ǥ���
-* �����Ƥ��ιԤ�List�ιԤǤ���(���Τˤ�ListItem�����TextBlock�ιԤǤ�
-  ����ΤǤ���)
+これはTextBlockです。
+TextBlockの2行目の行です。
+  この行はTextBlockでなくVerbatimです。
+* そしてこの行はListの行です。(正確にはListItemの中のTextBlockの行でも
+  あるのですが)
 
 + Verbatim
 
-Ruby������ץȤ���Ѥ���Τ�Verbatim���Ѥ�������Ǥ��ޤ���Verbatim��
-((<Baseline>))��꿼������ǥ�Ȥ����((<STRINGLINE>))�ǹ�������ޤ���
-Verbatim��"(({*}))"��"(({(1)}))"��"(({:}))"�Ȥ��ä��ü�ʸ����((<Head
-Char>))�Ȥ��ƻ��ĹԤ�ޤ�����Ǥ��ޤ����������Ϻǽ�ιԤˤ��֤���
-���Ǥ��ޤ��󡣺ǽ�ιԤˤ���Ȥ��ˤ�((<List>))�ȸ��ʤ���ޤ���Verbatim
-�Ϻǽ�ιԤ����������ǥ�ȤιԤ�ޤߤޤ���Verbatim��((<WHITELINE>))
-��ޤ������Ǥ��ޤ���
+Rubyスクリプトを引用するのにVerbatimを用いる事ができます。Verbatimは
+((<Baseline>))より深いインデントを持つ((<STRINGLINE>))で構成されます。
+Verbatimは"(({*}))"や"(({(1)}))"や"(({:}))"といった特殊文字を((<Head
+Char>))として持つ行も含む事ができますが、それらは最初の行には置く事
+ができません。最初の行にあるときには((<List>))と見なされます。Verbatim
+は最初の行より浅いインデントの行も含みません。Verbatimは((<WHITELINE>))
+を含める事ができます。
 
-((<Inline>))��Verbatim��ǤϻȤ��ޤ���
+((<Inline>))はVerbatim内では使えません。
 
  Example:
-  �����Verbatim�Ǥ���
-    �ǽ�ιԤ�꿼������ǥ�Ȥ���äƤ⡢Ʊ��Verbatim�ιԤˤʤ�ޤ���
-  * ���ιԤ�List�˸����ޤ�����Verbatim�Ǥ���
- ���������ιԤϺǽ�ιԤ�����������ǥ�Ȥ���Ƥ���Τǡ��̤�Verbatim
- �ιԤˤʤ�ޤ���
+  これはVerbatimです。
+    最初の行より深いインデントを持っても、同じVerbatimの行になります。
+  * この行はListに見えますが、Verbatimです。
+ しかしこの行は最初の行よりも浅くインデントされているので、別のVerbatim
+ の行になります。
 
-�����㤬���Τ褦�˥ե����ޥåȤ���ޤ���
+この例が次のようにフォーマットされます。
 
-  �����Verbatim�Ǥ���
-    �ǽ�ιԤ�꿼������ǥ�Ȥ���äƤ⡢Ʊ��Verbatim�ιԤˤʤ�ޤ���
-  * ���ιԤ�List�˸����ޤ�����Verbatim�Ǥ���
- ���������ιԤϺǽ�ιԤ�����������ǥ�Ȥ���Ƥ���Τǡ��̤�Verbatim
- �ιԤˤʤ�ޤ���
+  これはVerbatimです。
+    最初の行より深いインデントを持っても、同じVerbatimの行になります。
+  * この行はListに見えますが、Verbatimです。
+ しかしこの行は最初の行よりも浅くインデントされているので、別のVerbatim
+ の行になります。
 
 + List
 
-List���ü��((<Block>))�Ǥ���List��ʣ����ListItem���鹽�����졢ListItem
-��ʣ����Block���鹽������ޤ����������äơ�List��Block�������˴ޤ����
-�Ǥ��ޤ����ޤ���ΤǤ���Block�ˤ�List���Ȥ�ޤߤޤ���((-((<Headline>))
-��((<Include>))��List�����˻��Ƥޤ���-))
+Listは特殊な((<Block>))です。Listは複数のListItemから構成され、ListItem
+は複数のBlockから構成されます。したがって、ListはBlockを内部に含む事が
+できます。含む事のできるBlockにはList自身も含みます。((-((<Headline>))
+や((<Include>))はList内部に持てません。-))
 
-ListItem��((<WHITELINE>))��ޤ�����Ǥ��ޤ�����((<TextBlock>))��
-���Ƥޤ��󡣤��Τ��ᡢWHITELINE��֤ˤϤ�����ˤ�ä�ʣ����TextBlock
-��ListItem�������֤������Ǥ��ޤ���
+ListItemは((<WHITELINE>))を含む事ができますが、((<TextBlock>))は
+持てません。そのため、WHITELINEを間にはさむ事によって複数のTextBlock
+をListItem内部に置く事ができます。
 
-List�ˤ�"((<ItemList>))"��"((<EnumList>))"��"((<DescList>))",
-"((<MethodList>))��4���ब����ޤ���
+Listには"((<ItemList>))"、"((<EnumList>))"、"((<DescList>))",
+"((<MethodList>))の4種類があります。
 
 ++ ItemList
 
-ItemList��ñ����ֹ��դ���ʤ�List�Ǥ���ItemListItem��"(({*}))"�Ȥ���
-((<Head Char>))�ιԤǻϤޤ�ޤ���ItemListItem�κǽ��Block��ɬ��
-((<TextBlock>))�ˤʤ�ޤ���
+ItemListは単純な番号付されないListです。ItemListItemは"(({*}))"という
+((<Head Char>))の行で始まります。ItemListItemの最初のBlockは必ず
+((<TextBlock>))になります。
 
   Example:
-  * ��List�κǽ��Item
-      * ��List�κǽ��Item
-      * ��List��2���ܤ�Item
-    ��List��Item�˴ޤޤ��TextBlock
+  * 親Listの最初のItem
+      * 子Listの最初のItem
+      * 子Listの2番目のItem
+    親ListのItemに含まれるTextBlock
 
-���Τ褦�˥ե����ޥåȤ���ޤ���
+下のようにフォーマットされます。
 
-  * ��List�κǽ��Item
-      * ��List�κǽ��Item
-      * ��List��2���ܤ�Item
-    ��List��Item�˴ޤޤ��TextBlock
+  * 親Listの最初のItem
+      * 子Listの最初のItem
+      * 子Listの2番目のItem
+    親ListのItemに含まれるTextBlock
 
 ++ EnumList
 
-EnumList���ֹ��դ��줿List�Ǥ���EnumListItem��"(({((|num|))}))"(((|num|))
-������)�Ȥ���((<Head Char>))�ιԤǤϤ��ޤ�ޤ���¾�����Ǥ�EnumList��
-((<ItemList>))��Ʊ���Ǥ���
+EnumListは番号付されたListです。EnumListItemは"(({((|num|))}))"(((|num|))
+は整数)という((<Head Char>))の行ではじまります。他の点ではEnumListは
+((<ItemList>))と同じです。
 
   Example:
-  (1) ��List�κǽ��Item
-        * ��List�Ȥʤ�ItemList
-  (2) ��List��2���ܤ�Item
-  (10) �ֹ��̵�뤵��ޤ���
+  (1) 親Listの最初のItem
+        * 子ListとなるItemList
+  (2) 親Listの2番目のItem
+  (10) 番号は無視されます。
 
-���Τ褦�˥ե����ޥåȤ���ޤ���
+次のようにフォーマットされます。
 
-  (1) ��List�κǽ��Item
-        * ��List�Ȥʤ�ItemList
-  (2) ��List��2���ܤ�Item
-  (10) �ֹ��̵�뤵��ޤ���
+  (1) 親Listの最初のItem
+        * 子ListとなるItemList
+  (2) 親Listの2番目のItem
+  (10) 番号は無視されます。
 
 ++ DescList
 
-DescList���Ѹ������Τ����List�Ǥ���DescListItem��2�Ĥ���ʬ����ʤ�ޤ���
-1�Ĥ�Term�ѡ��ȤǤ⤦1�Ĥ�Description�ѡ��ȤǤ���Term�ѡ��Ȥ�((<Reference>))
-��Label�Ȥ��ƻȤ��ޤ���
+DescListは用語説明のためのListです。DescListItemは2つの部分からなります。
+1つはTermパートでもう1つはDescriptionパートです。Termパートは((<Reference>))
+のLabelとして使われます。
 
-Term�ѡ��Ȥ�"(({:}))"�Ȥ���((<Head Char>))�ιԤ���ʤ�ޤ���Term�ѡ��Ȥ�
-�Ԥϥ���ǥ�ȤǤ��뤳�Ȥ������Term�ѡ��Ȥ�((<Headline>))��Ʊ�ͤǤ���
+Termパートは"(({:}))"という((<Head Char>))の行からなります。Termパートの
+行はインデントできることを除くとTermパートは((<Headline>))と同様です。
 
-Description�ѡ��Ȥ�Term�ѡ��Ȥμ��ιԤ���Ϥ��ޤ�ޤ���Description�ѡ���
-��((<Baseline>))��Term�ѡ��Ȥ�(((<Head Char>))�������)�ƥ�������ʬ��
-Ʊ������꿼���ʤ��Ȥ����ޤ����㤨�м�����ϴְ�äƤ��ޤ���
+DescriptionパートはTermパートの次の行からはじまります。Descriptionパート
+の((<Baseline>))はTermパートの(((<Head Char>))を除いた)テキスト部分と
+同じかより深くないといけません。例えば次の例は間違っています。
 
   Example:
   :   |Term
     |Description.
 
-Description�ѡ��Ȥ�ʣ����((<Block>))��ޤ�����Ǥ��ޤ���((<List>))��
-�ǽ��Block�Ȥ��뤳�Ȥ�Ǥ��ޤ���Term�ѡ��Ȥ�((<Inline>))��ޤ����
-�Ǥ��ޤ�����((<Reference>))��Footnote���㳰�Ǥ���
+Descriptionぱーとは複数の((<Block>))を含む事ができます。((<List>))を
+最初のBlockとすることもできます。Termパートは((<Inline>))を含む事が
+できますが、((<Reference>))とFootnoteは例外です。
 
   Example:
   :Term
-     Description�κǽ�ι�
-     2���ܤι�
+     Descriptionの最初の行
+     2番目の行
   :Term2
-     * List��ޤ�����Ǥ��ޤ�
+     * Listも含む事ができます
      * ...
 
-���Τ褦�˥ե����ޥåȤ���ޤ���
+次のようにフォーマットされます。
 
   :Term
-     Description�κǽ�ι�
-     2���ܤι�
+     Descriptionの最初の行
+     2番目の行
   :Term2
-     * List��ޤ�����Ǥ��ޤ�
+     * Listも含む事ができます
      * ...
 
 ++ MethodList
 
-MethodList�ϥ᥽�åɤ������Τ�����ü�ʥ����פ�((<DescList>))�Ǥ���
-�ۤȤ�ɤ�����MethodList��((<DescList>))��Ʊ�ͤǤ�����Label�ε�§
-�ϰ�äƤ��ޤ���RD�ե����ޥå���MethodList��Term�ѡ��Ȥ��ʤ�餫��
-Ruby�Τ��륯�饹�Υ᥽�åɤ������C�δؿ��ץ��ȥ����פȤ��ä��褦��
-�ץ������Υ����ɤǤ�����ΤäƤ��ޤ������Τ��ᡢMethodList��
-�᥽�åɤΰ����Τ褦�˸�������ʬ����������Label�Ȥʤ�ޤ����ܺ٤�
-((<Label��Reference>))�򸫤Ƥ���������
+MethodListはメソッドの説明のための特殊なタイプの((<DescList>))です。
+ほとんどの点でMethodListは((<DescList>))と同様ですが、Labelの規則
+は違っています。RDフォーマッタはMethodListのTermパートがなんらかの
+Rubyのあるクラスのメソッドや定数やCの関数プロトタイプといったような
+プログラムのコードであると知っています。そのため、MethodListは
+メソッドの引数のように見える部分を除いた上でLabelとなります。詳細は
+((<LabelとReference>))を見てください。
 
-MethodListItem��((<DescList>))��Ʊ�ͤ�Term�ѡ��Ȥ�Description
-�ѡ��Ȥ�����ޤ���Term�ѡ��Ȥ�"(({---}))"�Ȥ���((<Head Char>))
-�ιԤǤʤꡢDescription�ѡ��Ȥ�((<TextBlock>))��((<Verbatim>))
-��((<List>))��ޤ�����Ǥ��ޤ������������դ�MethodList��((<List>))
-������֤��٤��ǤϤ���ޤ���RD�Ͼ���Ū�ˤϤ����ػߤ��뤫��
-����ޤ���
+MethodListItemは((<DescList>))と同様にTermパートとDescription
+パートを持ちます。Termパートは"(({---}))"という((<Head Char>))
+の行でなり、Descriptionパートは((<TextBlock>))や((<Verbatim>))
+、((<List>))を含む事ができます。しかし、逆にMethodListを((<List>))
+の中に置くべきではありません。RDは将来的にはこれを禁止するかも
+しれません。
 
   Example:
-  --- Array#each {|i| ... } # => Label��"Array#each"
-        �ƹ��ܤ��Ф��ƥ֥��å���ɾ�����롣
-  --- Array#index(val) # => Label��"Array#index"
-        ((|val|))��Ʊ���ͤǤ���ǽ�ι��ܤ��֤���Ʊ�����ܤ�̵���Ȥ��ˤ�
-        (({nil}))���֤���
+  --- Array#each {|i| ... } # => Labelは"Array#each"
+        各項目に対してブロックを評価する。
+  --- Array#index(val) # => Labelは"Array#index"
+        ((|val|))と同じ値である最初の項目を返す。同じ項目が無いときには
+        (({nil}))を返す。
 
-�����㤬���Τ褦�˥ե����ޥåȤ���ޤ���
+この例が次のようにフォーマットされます。
 
   --- Array#each {|i| ... }
-        �ƹ��ܤ��Ф��ƥ֥��å���ɾ�����롣
+        各項目に対してブロックを評価する。
   --- Array#index(val)
-        ((|val|))��Ʊ���ͤǤ���ǽ�ι��ܤ��֤���Ʊ�����ܤ�̵���Ȥ��ˤ�
-        (({nil}))���֤���
+        ((|val|))と同じ値である最初の項目を返す。同じ項目が無いときには
+        (({nil}))を返す。
 
-�ե����ޥå��Τ����Ĥ���MethodList��Term�ѡ��Ȥ˽񤫤�Ƥ���Τ�Ruby
-�Υ᥽�åɤ�����ʤɤǤ���Ȳ��ꤷ�Ƥ��ޤ����������ä��ե����ޥå��Ǥ�
-MethodList��Term�ѡ��Ȥ򥤥�ƥꥸ����Ȥ˰��������Ǥ��ޤ��������Τ���
-�ˤ�����δ����ˤ������ä�RD���ɬ�פ�����ޤ���
+フォーマッタのいくつかはMethodListのTermパートに書かれているのはRuby
+のメソッドや定数などであると仮定しています。そういったフォーマッタでは
+MethodListのTermパートをインテリジェントに扱う事ができますが、そのため
+には特定の慣習にしたがってRDを書く必要があります。
 
-ɸ��Ū��Ruby���饹��ե���󥹤Τ���δ����Ȥ��Ƽ��Τ褦�ʤ�Τ���Ƥ�
-��Ƥ��ޤ���
-  : ���󥹥��󥹥᥽�å�
-      ���饹((|Class|))�Υ��󥹥��󥹥᥽�å�((|method|))
+標準的なRubyクラスリファレンスのための慣習として次のようなものが提案さ
+れています。
+  : インスタンスメソッド
+      クラス((|Class|))のインスタンスメソッド((|method|))
         Class#method(its params  ...) { parameter block }
-  : ���饹�᥽�å�(���饹���ðۥ᥽�å�)
-      ���饹((|Class|))�Υ��饹�᥽�å�((|method|))
+  : クラスメソッド(クラスの特異メソッド)
+      クラス((|Class|))のクラスメソッド((|method|))
         Class.method(its params ...) { parameter block }
-  : ���饹���
-      ���饹((|Class|))�����((|Const|))
+  : クラス定数
+      クラス((|Class|))の定数((|Const|))
         Class::Const
-  : �ؿ��᥽�å�
-      �ؿ�((|func|))
+  : 関数メソッド
+      関数((|func|))
         function#func(its params ...) { parameter block }
 
-Ruby�Ϥ����Ĥ����ü��ʸ��(e.g. [], []=, +, -, <<, ...)�ϥ᥽�åɤ�̾��
-(���̻�)�Ȥ��ƻȤ��ޤ������λ���Ruby���󥿥ץ꥿�Ϥ����Υ᥽�åɤ�
-�ѡ��������̤Υ᥽�åɤȤϰ�ä���꤫��(�黻�ҥ᥽�å�)�ǹԤ��ޤ���
-�����������δ����ǤϤ����α黻�ҥ᥽�åɤ�Ʊ���褦�˽񤭤ޤ���
+Rubyはいくつかの特殊な文字(e.g. [], []=, +, -, <<, ...)はメソッドの名前
+(識別子)として使います。この時、Rubyインタプリタはこれらのメソッドの
+パースを普通のメソッドとは違ったやりかた(演算子メソッド)で行います。
+しかし、この慣習ではこれらの演算子メソッドも同じように書きます。
 
   Example:
     --- Array#[](key)
-          ((|key|))���б������ͤ��֤���
+          ((|key|))に対応する値を返す。
     --- Array#[]=(key, value)
-          ((|key|))�ξ���((|value|))���Ǽ���롣
+          ((|key|))の場所に((|value|))を格納する。
     --- Array#+(other)
-          2�Ĥ�(({Array}))���礷�Ƥ�����֤��ޤ���
+          2つの(({Array}))を結合してそれを返します。
 
 === Inline
-Inline��((<TextBlock>))��((<Headline>))��((<DescList>))��Term�ѡ��Ȥ�
-��ǻȤ������Ǥ��ޤ������å���Ȥä��ޡ������åפ�Inline�˻Ȥ��ޤ���
-InlineƱ�Τϸߤ�������ҤˤǤ��ޤ���
+Inlineは((<TextBlock>))や((<Headline>))、((<DescList>))のTermパートの
+中で使う事ができます。カッコを使ったマークアップがInlineに使われます。
+Inline同士は互いに入れ子にできます。
 
-����Inline�ΰ����ǤϺ�¦�˽񼰤򡢱�¦�˥ե����ޥåȸ���ͻҤ�ɽ��
-���Ƥ��ޤ���
+次のInlineの一覧では左側に書式を、右側にフォーマット後の様子を表示
+しています。
 
 :(('((*Em*))')) => ((*Em*))
-    ��Ĵ
+    強調
 
 :(('(({while gets...}))')) => (({while gets...}))
-    �ץ������Υ�����
+    プログラムのコード
 
 :(('((|var|))')) => ((|var|))
-    �᥿�ѿ�((- Var�ˤĤ��Ƥξܤ���������texinfo.texi�γ�����ʬ�ˤ���ޤ���-))
+    メタ変数((- Varについての詳しい説明はtexinfo.texiの該当部分にあります。-))
 
 :(('((%ruby -v%))')) => ((%ruby -v%))
-    �����ܡ���
+    キーボード
 
 :(('((:Term:))'))
     => ((:Term:))
 
-    ����ǥ����䥭����ɤȤʤ��Ѹ�λ���
+    インデクスやキーワードとなる用語の指定
 
 :(('((<Identity or URL>))'))
     => ((<Indentity or URL>))
 
-    ���ȡ��ܤ�����((<Label��Reference>))�򸫤Ƥ���������
+    参照。詳しくは((<LabelとReference>))を見てください。
 
 :(('((-Footnote-))'))
     => ((-Footnote-))
 
-    ����
+    脚注
 
 :(('(('verb\'))')) => (('verb'))
-    Inline��varbatim(�ե����ޥå�����)
+    Inlineのvarbatim(フォーマット抑制)
 
-==== Label��Reference
+==== LabelとReference
 
-Reference�ˤ�Label��ɬ�פǤ���RD�Ǥ�((<Headline>))�Υ����ȥ��((<DescList>))
-��((<MethodList>))��Term�ѡ��Ȥ�����Label�Ȥʤ�ޤ����������äơ��ơ���
-((<Headline>))�ˤϰ㤦�����ȥ��Ĥ��Ƥ����ʤ��ƤϤʤ�ޤ��󡣤��������
-������Ȥ��������Ϥޤ����դ��äƤ��ޤ���
+ReferenceにはLabelが必要です。RDでは((<Headline>))のタイトルと((<DescList>))
+や((<MethodList>))のTermパートだけがLabelとなります。したがって、各々の
+((<Headline>))には違うタイトルをつけてあげなくてはなりません。この問題の
+きちんとした解決策はまだ見付かっていません。
 
-+ �ɤΤ褦��Label���Ĥ����뤫
++ どのようにLabelがつけられるか
 
-((<Headline>))�Υ����ȥ��((<DescList>))��((<MethodList>))��Term�ѡ��Ȥ�
-Label�Ȥ��ƻȤ��ޤ�����������((<Inline>))���ޤޤ�뤿��ˡ�����餬
-���Τޤ�Label�Ȥ��ƻȤ��롢�Ȥ����ۤ�ñ��ǤϤ���ޤ���
+((<Headline>))のタイトルと((<DescList>))や((<MethodList>))のTermパートが
+Labelとして使われます。しかし、((<Inline>))が含まれるために、それらが
+そのままLabelとして使われる、というほど単純ではありません。
 
-���ˡ�((<MethodList>))��Label�դ��ˤ����ƤϤ���ü�Ǥ���((<MethodList>))
-��Term�ѡ��Ȥ�((<Inline>))��ޤߤޤ��󤬡���������RD�Ǥ�((<MethodList>))
-��Term�ѡ��Ȥϥ᥽�åɥ�ե���󥹤䤽��������ʪ�Ȥߤʤ���ޤ��Τǡ�����
-�褦�ʥ롼��ǥ�٥뤬�դ����ޤ���
+第一に、((<MethodList>))はLabel付けにおいてはやや特殊です。((<MethodList>))
+のTermパートは((<Inline>))を含みませんが、その代わりRDでは((<MethodList>))
+のTermパートはメソッドリファレンスやそれに類似の物とみなされますので、次の
+ようなルールでラベルが付けられます。
 
-  (1) "(({(}))"��"(({{}))"�����ˤ���ƥ����Ȥ�������٥�ȸ��ʤ���롣((-
-      "(({(...)}))"�������Υƥ����Ȥϥ᥽�åɤΰ������ȸ��ʤ��졢
-      "(({{...}}))"�������Υƥ����Ȥϥ᥽�åɤΥ֥��å��ȸ��ʤ����ΤǤ���-))
+  (1) "(({(}))"や"(({{}))"の前にあるテキストだけがラベルと見なされる。((-
+      "(({(...)}))"の内部のテキストはメソッドの引数だと見なされ、
+      "(({{...}}))"の内部のテキストはメソッドのブロックと見なされるのです。-))
 
-������򸫤�С��ɤΤ褦�˥롼�뤬Ŭ�Ѥ���Ƥ��뤫�狼��Ǥ��礦��
-"(({# =>}))"��걦�ˤ���Τ�((<MethodList>))��Term�ѡ��Ȥ�����Ф��줿
-Label�Ǥ���
+次の例を見れば、どのようにルールが適用されているかわかるでしょう。
+"(({# =>}))"より右にあるのが((<MethodList>))のTermパートから抽出された
+Labelです。
 
   Example:
     --- Array.new([size[, val]]) # => Array.new
@@ -432,57 +432,57 @@ Label�Ǥ���
     --- Array#each { ... } # => Array#each
     --- void rb_define_method(VALUE class, ...) # => void rb_define_method
 
-���ˡ�((<Headline>))�Υ����ȥ��((<DescList>))��Term�ѡ��Ȥξ��ˤϡ�����
-�褦�����̤ʥ롼��Ϥ���ޤ��󤬡�((<Inline>))��ޤ��������Τǡ�((<Inline>))
-���Ѥ��륫�å������������Υ롼�뤬����ޤ���
+次に、((<Headline>))のタイトルや((<DescList>))のTermパートの場合には、この
+ような特別なルールはありませんが、((<Inline>))を含む事があるので、((<Inline>))
+に用いるカッコを取り除くためのルールがあります。
 
-  (1)�ɤ��((<Inline>))������Label�ˤϱƶ����ޤ��󡣤������äơ�
+  (1)どんな((<Inline>))修飾もLabelには影響しません。したがって、
         = ((*Headline*))
-      ��
+      と
         = Headline
-      �϶���"Headline"��Label����ޤ�ޤ���
-  (2)��������Label����Ф���ݤˤ�((<Inline>))�γ��ϥ��å��θ���Ƚ�ü���å�
-     �����ˤ������ʸ���ϼ�������ޤ����������äơ�
+      は共に"Headline"とLabelが決まります。
+  (2)しかし、Labelを抽出する際には((<Inline>))の開始カッコの後ろと終端カッコ
+     の前にある空白文字は取り除かれます。したがって、
         = ((* Headline  *))
-     ��
+     も
         = ((*Headline*))
-     ��"Headline"��Label���Ĥ����ޤ���
+     も"Headline"とLabelがつけられます。
 
 + Reference
 
-Label�ΤĤ���줿Element��Reference�ˤ�äƻ��ȤǤ��ޤ���Reference��
-(('((<...>))'))�Ȥ������å��ǽ��������((<Inline>))�Ǥ���
+LabelのつけられたElementはReferenceによって参照できます。Referenceは
+(('((<...>))'))というカッコで修飾される((<Inline>))です。
 
-�Ǥ��ñ��Reference�λ���ˡ�ϡ�ñ��Label�򤽤Υ��å�����˽񤱤Ф褤�ΤǤ���
+最も簡単なReferenceの使用法は、単にLabelをそのカッコの中に書けばよいのです。
   ((<Label>))
-�����"Label"�Ȥ���Label���Ф��뻲�ȤȤʤ�ޤ����ޤ����ե����ޥå��ˤ��
-���ϤǤ�"Label"�Ȥ����ƥ����Ȥ�ɽ���ˤ�Ȥ��ޤ�����: ((<Label>))((-
-"Label"�Ȥ���Label�ΤĤ���Element��̵���ΤǤ����餯Reference���ͤˤ�
-�����ʤ��Ǥ��礦��-))
+これは"Label"というLabelに対する参照となります。また、フォーマッタによる
+出力では"Label"というテキストが表示にも使われます。例: ((<Label>))((-
+"Label"というLabelのついたElementが無いのでおそらくReferenceの様には
+見えないでしょう。-))
 
-URL�ˤ�äƼ����줿�꥽�����򻲾Ȥ���ˤϼ��Τ褦�˽񤭤ޤ���
+URLによって示されたリソースを参照するには次のように書きます。
   ((<URL:http://www.ruby-lang.org/en/raa.html>))
-��ǽ�ʤ�RD�ե����ޥå���URL�򼡤Τ褦�˥ϥ��ѡ���󥯤��ޤ�����:
+可能ならRDフォーマッタはURLを次のようにハイパーリンクします。例:
 ((<URL:http://www.ruby-lang.org/en/raa.html>)).
 
-Label�Ȥϰ㤦�ƥ����Ȥ�ɽ���˻Ȥ��������ˤϼ��Τ褦�˽񤭤ޤ���
+Labelとは違うテキストを表示に使いたい時には次のように書きます。
   ((<Text for display|Label>))
-"Text for display"��ɽ���ѤΥƥ����ȤȤ��ƻȤ�졢"Label"��Label�Ȥ���
-�Ȥ��ޤ�����: ((<Text for display|Label>))
+"Text for display"が表示用のテキストとして使われ、"Label"がLabelとして
+使われます。例: ((<Text for display|Label>))
 
-ɽ���ѤΥƥ����Ȥ�((<Inline>))��ޤ�����Ǥ��ޤ�����������Footnote��
-Reference���Ȥ�ޤ���ϤǤ��ޤ���
+表示用のテキストは((<Inline>))を含む事ができます。しかし、Footnoteと
+Reference自身を含む事はできません。
 
-Reference��Ǥ�"|"��"/"���ü�ʸ���ʤΤǤ�����Ȥ��������ˤϡ������ޤ�
-��ʬ���ȥ��֥륯�����ȤǰϤäƤ��ʤ��Ȥ����ޤ��󡣤����Reference��Τɤ�
-��ʬ�Ǥ�Ʊ���Ǥ���
+Reference内では"|"や"/"は特殊文字なのでこれらを使いたい時には、それを含む
+部分ごとダブルクオートで囲ってやらないといけません。これはReference内のどの
+部分でも同じです。
    ((<"Bar | inside display text"|Label>))
 ((<"Bar | inside display text"|Label>))
 
-ɽ���ѤΥƥ����Ȥ�URL�ؤ�Reference�ˤ�Ȥ������Ǥ��ޤ���
+表示用のテキストはURLへのReferenceにも使う事ができます。
    ((<Ruby Application Archive|URL:http://www.ruby-lang.org/en/raa.html>))
 ((<Ruby Application Archive|URL:http://www.ruby-lang.org/en/raa.html>))
 
-ɽ���ѤΥƥ����Ȥ�̵�����ˤ������Label��((<Inline>))��Ȥ��ޤ���
+表示用のテキストが無い場合には代わりにLabelに((<Inline>))を使えます。
    ((<((*Label*))>))
 ((<((*Label*))>))

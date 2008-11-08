@@ -4,83 +4,83 @@
 
 $Id: Reference.ja 341 2007-12-02 06:07:26Z kou $
 
-RSS Maker¤Î¥ê¥Õ¥¡¥ì¥ó¥¹¤Ç¤¹¡¥
+RSS Makerã®ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ã§ã™ï¼Ž
 
-RSS Parser¤ÎAPI¤ÏRSS/Atom¤ÎÍ×ÁÇ¤òÃÎ¤Ã¤Æ¤¤¤ì¤Ð»È¤¨¤ë¤Ï¤º¤Ê¤Î¤Ç
-¾ÊÎ¬¤·¤Þ¤¹¡¥¤´¤á¤ó¤Ê¤µ¤¤¡¥
+RSS Parserã®APIã¯RSS/Atomã®è¦ç´ ã‚’çŸ¥ã£ã¦ã„ã‚Œã°ä½¿ãˆã‚‹ã¯ãšãªã®ã§
+çœç•¥ã—ã¾ã™ï¼Žã”ã‚ã‚“ãªã•ã„ï¼Ž
 
-== Ãí°Õ
+== æ³¨æ„
 
-Ruby¤ÎÅÁÅýÅª¤Ê(({Class#instance_method}))¤ä
-(({Class.class_method}))¤È¤¤¤¦É½µ­¤ò»È¤¤¤Þ¤»¤ó¡¥¼ÂºÝ¤Ë¥³¡¼¥É
-¤Ë½ñ¤¯¤È¤­¤ÈÆ±¤¸É½µ­¤ò»È¤¤¤Þ¤¹¡¥¤Ä¤Þ¤ê¡¤(({obj}))¤Î¥¤¥ó¥¹¥¿
-¥ó¥¹¥á¥½¥Ã¥É(({meth}))¤ò¼¨¤¹¤¿¤á¤Ë°Ê²¼¤Î¤è¤¦¤Ë½ñ¤­¤Þ¤¹¡¥
+Rubyã®ä¼çµ±çš„ãª(({Class#instance_method}))ã‚„
+(({Class.class_method}))ã¨ã„ã†è¡¨è¨˜ã‚’ä½¿ã„ã¾ã›ã‚“ï¼Žå®Ÿéš›ã«ã‚³ãƒ¼ãƒ‰
+ã«æ›¸ãã¨ãã¨åŒã˜è¡¨è¨˜ã‚’ä½¿ã„ã¾ã™ï¼Žã¤ã¾ã‚Šï¼Œ(({obj}))ã®ã‚¤ãƒ³ã‚¹ã‚¿
+ãƒ³ã‚¹ãƒ¡ã‚½ãƒƒãƒ‰(({meth}))ã‚’ç¤ºã™ãŸã‚ã«ä»¥ä¸‹ã®ã‚ˆã†ã«æ›¸ãã¾ã™ï¼Ž
 
   obj.meth
 
-°Ê²¼¤Ë¸½¤ì¤ë(({maker}))¤Ï(({RSS::Maker.make}))¤ËÅÏ¤·¤¿¥Ö¥í¥Ã
-¥¯¤Ø¤Î°ú¿ôÌ¾¤È¤·¤Þ¤¹¡¥¤Ä¤Þ¤ê¡¤°Ê²¼¤Î¤è¤¦¤Ë¤·¤¿»þ¤Î
-(({maker}))¤È¤¤¤¦¤³¤È¤Ç¤¹¡¥
+ä»¥ä¸‹ã«ç¾ã‚Œã‚‹(({maker}))ã¯(({RSS::Maker.make}))ã«æ¸¡ã—ãŸãƒ–ãƒ­ãƒƒ
+ã‚¯ã¸ã®å¼•æ•°åã¨ã—ã¾ã™ï¼Žã¤ã¾ã‚Šï¼Œä»¥ä¸‹ã®ã‚ˆã†ã«ã—ãŸæ™‚ã®
+(({maker}))ã¨ã„ã†ã“ã¨ã§ã™ï¼Ž
 
   RSS::Maker.make(...) do |maker|
     ...
   end
 
 --- RSS::Maker.make(version, &block)
-     ((|version|))¤Ë¤Ï(({"1.0"}))¤Þ¤¿¤Ï(({"0.9"}))¤Þ¤¿¤Ï
-     (({"0.91"}))¤Þ¤¿¤Ï(({"2.0"}))¤ò»ØÄê¤·¤Þ¤¹¡¥(({"0.9"}))
-     ¤È(({"0.91"}))¤ÏÆ±¤¸¤Ç¤¢¤ë¤³¤È¤ËÃí°Õ¤·¤Æ¤¯¤À¤µ¤¤¡¥¥Ð¡¼
-     ¥¸¥ç¥óÈÖ¹æ¤ÎÁ°¤Ë(({"rss"}))¤ò¤Ä¤±¤Æ¤³¤Î¤è¤¦¤Ë»ØÄê¤¹¤ë¤³
-     ¤È¤â½ÐÍè¤Þ¤¹:
+     ((|version|))ã«ã¯(({"1.0"}))ã¾ãŸã¯(({"0.9"}))ã¾ãŸã¯
+     (({"0.91"}))ã¾ãŸã¯(({"2.0"}))ã‚’æŒ‡å®šã—ã¾ã™ï¼Ž(({"0.9"}))
+     ã¨(({"0.91"}))ã¯åŒã˜ã§ã‚ã‚‹ã“ã¨ã«æ³¨æ„ã—ã¦ãã ã•ã„ï¼Žãƒãƒ¼
+     ã‚¸ãƒ§ãƒ³ç•ªå·ã®å‰ã«(({"rss"}))ã‚’ã¤ã‘ã¦ã“ã®ã‚ˆã†ã«æŒ‡å®šã™ã‚‹ã“
+     ã¨ã‚‚å‡ºæ¥ã¾ã™:
      (({"rss1.0"}))/(({"rss2.0"}))/(({"rss0.9"}))/(({"rss0.91"}))
 
-     Atom¥Õ¥£¡¼¥ÉÊ¸½ñ¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï
+     Atomãƒ•ã‚£ãƒ¼ãƒ‰æ–‡æ›¸ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯
      (({"atom"}))/(({"atom:feed"}))/(({"atom1.0"}))/(({"atom1.0:feed"}))
-     ¤ò»ØÄê¤·¤Æ¤¯¤À¤µ¤¤¡£
+     ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚
 
-     Atom¥¨¥ó¥È¥êÊ¸½ñ¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï
-     (({"atom:entry"}))/(({"atom1.0:entry"}))¤ò»ØÄê¤·¤Æ¤¯¤À¤µ¤¤¡£
+     Atomã‚¨ãƒ³ãƒˆãƒªæ–‡æ›¸ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯
+     (({"atom:entry"}))/(({"atom1.0:entry"}))ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚
 
-     ((|block|))¤ò¼Â¹Ô¤·¤¿¤¢¤È¤Î(({maker}))¥ª¥Ö¥¸¥§¥¯¥È¤«¤é
-     RSS¥ª¥Ö¥¸¥§¥¯¥È¤òÀ¸À®¤·¤ÆÊÖ¤·¤Þ¤¹¡¥
+     ((|block|))ã‚’å®Ÿè¡Œã—ãŸã‚ã¨ã®(({maker}))ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰
+     RSSã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã—ã¦è¿”ã—ã¾ã™ï¼Ž
 
-== ¥â¥Ç¥ë
+== ãƒ¢ãƒ‡ãƒ«
 
-¤¤¤¯¤Ä¤«¤Î¥ª¥Ö¥¸¥§¥¯¥È¤Ï¶¦ÄÌ¤ÎAPI¤ò»ý¤Ã¤Æ¤¤¤Þ¤¹¡£
+ã„ãã¤ã‹ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯å…±é€šã®APIã‚’æŒã£ã¦ã„ã¾ã™ã€‚
 
 === AtomTextConstruct
 
-Atom¤Î¥µ¥Ý¡¼¥È¤Ë¤è¤ê¡¢(({maker.channel.title}))¤Ê¤É¤ÏÃ±¤Ê¤ë
-¥Æ¥­¥¹¥È¤À¤±¤Ç¤Ï¤Ê¤¯¡¢¥¿¥°¤Å¤±¤µ¤ì¤¿¥Æ¥­¥¹¥È¤äXMLÍ×ÁÇ¤ò»ØÄê
-¤Ç¤­¤ë¤è¤¦¤Ë¤Ê¤ê¤Þ¤·¤¿¡£¤½¤ì¤é¤Ï°Ê²¼¤Î¤è¤¦¤Ê¥á¥½¥Ã¥É¤ò»ý¤Á¤Þ
-¤¹¡£
+Atomã®ã‚µãƒãƒ¼ãƒˆã«ã‚ˆã‚Šã€(({maker.channel.title}))ãªã©ã¯å˜ãªã‚‹
+ãƒ†ã‚­ã‚¹ãƒˆã ã‘ã§ã¯ãªãã€ã‚¿ã‚°ã¥ã‘ã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆã‚„XMLè¦ç´ ã‚’æŒ‡å®š
+ã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã—ãŸã€‚ãã‚Œã‚‰ã¯ä»¥ä¸‹ã®ã‚ˆã†ãªãƒ¡ã‚½ãƒƒãƒ‰ã‚’æŒã¡ã¾
+ã™ã€‚
 
 --- type
-     ÆâÍÆ¤Î¼ïÎà¤òÊÖ¤·¤Þ¤¹¡£
+     å†…å®¹ã®ç¨®é¡žã‚’è¿”ã—ã¾ã™ã€‚
 --- type=(value)
-     ((|value|))¤Ïtext/html/xhtml¤Î¤¤¤º¤ì¤«¤ò»ØÄê¤·¤Þ¤¹¡£
+     ((|value|))ã¯text/html/xhtmlã®ã„ãšã‚Œã‹ã‚’æŒ‡å®šã—ã¾ã™ã€‚
 
 --- content
-     ¼ïÎà¤¬text/html¤Î¾ì¹ç¤ÎÆâÍÆ¤òÊÖ¤·¤Þ¤¹¡£
+     ç¨®é¡žãŒtext/htmlã®å ´åˆã®å†…å®¹ã‚’è¿”ã—ã¾ã™ã€‚
 --- content=(value)
-     ¼ïÎà¤¬text/html¤Î¾ì¹ç¤ÎÆâÍÆ¤òÀßÄê¤·¤Þ¤¹¡£
+     ç¨®é¡žãŒtext/htmlã®å ´åˆã®å†…å®¹ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- xml_content
-     ¼ïÎà¤¬xhtml¤Î¾ì¹ç¤ÎÆâÍÆ¤òÊÖ¤·¤Þ¤¹¡£
+     ç¨®é¡žãŒxhtmlã®å ´åˆã®å†…å®¹ã‚’è¿”ã—ã¾ã™ã€‚
 --- xml_content=(value)
-     ¼ïÎà¤¬xhtml¤Î¾ì¹ç¤ÎÆâÍÆ¤òÀßÄê¤·¤Þ¤¹¡£Ê¸»úÎó¤Þ¤¿¤Ï
-     RSS::XML::Element¤Ç»ØÄê¤·¤Þ¤¹¡£¤¢¤ë¤¤¤Ï¡¢¤½¤ì¤é¤ÎÇÛÎó¤Ç
-     »ØÄê¤¹¤ë¤³¤È¤â½ÐÍè¤Þ¤¹¡£
+     ç¨®é¡žãŒxhtmlã®å ´åˆã®å†…å®¹ã‚’è¨­å®šã—ã¾ã™ã€‚æ–‡å­—åˆ—ã¾ãŸã¯
+     RSS::XML::Elementã§æŒ‡å®šã—ã¾ã™ã€‚ã‚ã‚‹ã„ã¯ã€ãã‚Œã‚‰ã®é…åˆ—ã§
+     æŒ‡å®šã™ã‚‹ã“ã¨ã‚‚å‡ºæ¥ã¾ã™ã€‚
 
 --- xhtml
-     (({xml_content}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({xml_content}))ã®åˆ¥åã§ã™ã€‚
 --- xhtml=(value)
-     (({xml_content=}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({xml_content=}))ã®åˆ¥åã§ã™ã€‚
 
 === AtomPersonConstruct
 
-Atom¤Î¥µ¥Ý¡¼¥È¤Ë¤è¤ê¡¢¿Í¤òÉ½¸½¤¹¤ë¥â¥Ç¥ë¤¬Æ³Æþ¤µ¤ì¤Þ¤·¤¿¡£¤½
-¤ì¤Ï°Ê²¼¤Î¤è¤¦¤Ê¥á¥½¥Ã¥É¤ò»ý¤Á¤Þ¤¹¡£
+Atomã®ã‚µãƒãƒ¼ãƒˆã«ã‚ˆã‚Šã€äººã‚’è¡¨ç¾ã™ã‚‹ãƒ¢ãƒ‡ãƒ«ãŒå°Žå…¥ã•ã‚Œã¾ã—ãŸã€‚ã
+ã‚Œã¯ä»¥ä¸‹ã®ã‚ˆã†ãªãƒ¡ã‚½ãƒƒãƒ‰ã‚’æŒã¡ã¾ã™ã€‚
 
 --- name
 --- name=(value)
@@ -93,70 +93,70 @@ Atom¤Î¥µ¥Ý¡¼¥È¤Ë¤è¤ê¡¢¿Í¤òÉ½¸½¤¹¤ë¥â¥Ç¥ë¤¬Æ³Æþ¤µ¤ì¤Þ¤·¤¿¡£¤½
 
 == maker
 
-RSS/Atom¤Î¥ë¡¼¥ÈÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤Ç¤¹¡¥
+RSS/Atomã®ãƒ«ãƒ¼ãƒˆè¦ç´ ã‚’ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§ã™ï¼Ž
 
-(({maker.channel}))¤Þ¤¿¤Ï(({maker.items}))¤òÅ¬ÀÚ¤ËÀßÄê¤·¤Ê¤±
-¤ì¤ÐRSS/Atom¤ÏÀ¸À®¤µ¤ì¤Þ¤»¤ó¡¥
+(({maker.channel}))ã¾ãŸã¯(({maker.items}))ã‚’é©åˆ‡ã«è¨­å®šã—ãªã‘
+ã‚Œã°RSS/Atomã¯ç”Ÿæˆã•ã‚Œã¾ã›ã‚“ï¼Ž
 
 --- maker.version
-     ºîÀ®¤¹¤ëXML¤Î¥Ð¡¼¥¸¥ç¥ó¤òÊÖ¤·¤Þ¤¹¡¥
+     ä½œæˆã™ã‚‹XMLã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.version=(value)
-     ºîÀ®¤¹¤ëXML¤Î¥Ð¡¼¥¸¥ç¥ó¤òÀßÄê¤·¤Þ¤¹¡¥
+     ä½œæˆã™ã‚‹XMLã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’è¨­å®šã—ã¾ã™ï¼Ž
 
 --- maker.encoding
-     ºîÀ®¤¹¤ëXML¤Î¥¨¥ó¥³¡¼¥Ç¥£¥ó¥°¤òÊÖ¤·¤Þ¤¹¡¥¥Ç¥Õ¥©¥ë¥È¤Ï
-     UTF-8¤Ç¤¹¡¥
+     ä½œæˆã™ã‚‹XMLã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’è¿”ã—ã¾ã™ï¼Žãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯
+     UTF-8ã§ã™ï¼Ž
 
 --- maker.encoding=(value)
-     ºîÀ®¤¹¤ëXML¤Î¥¨¥ó¥³¡¼¥Ç¥£¥ó¥°¤òÀßÄê¤·¤Þ¤¹¡¥(({maker}))
-     ¤ËÀßÄê¤¹¤ëºÝ¤Î¥¨¥ó¥³¡¼¥Ç¥£¥ó¥°¤Ï¤³¤³¤Ç»ØÄê¤·¤¿¤â¤Î¤Ë¤¹
-     ¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+     ä½œæˆã™ã‚‹XMLã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’è¨­å®šã—ã¾ã™ï¼Ž(({maker}))
+     ã«è¨­å®šã™ã‚‹éš›ã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã¯ã“ã“ã§æŒ‡å®šã—ãŸã‚‚ã®ã«ã™
+     ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- maker.standalone
-     ºîÀ®¤¹¤ëXML¤Îstandalone¤òÊÖ¤·¤Þ¤¹¡¥
+     ä½œæˆã™ã‚‹XMLã®standaloneã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.standalone=(value)
-     ºîÀ®¤¹¤ëXML¤Îstandalone¤òÀßÄê¤·¤Þ¤¹¡¥
+     ä½œæˆã™ã‚‹XMLã®standaloneã‚’è¨­å®šã—ã¾ã™ï¼Ž
 
 --- maker.feed_version
-     ºîÀ®¤¹¤ë¥Õ¥£¡¼¥É¤Î¥Ð¡¼¥¸¥ç¥ó¤òÊÖ¤·¤Þ¤¹¡¥
+     ä½œæˆã™ã‚‹ãƒ•ã‚£ãƒ¼ãƒ‰ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.rss_version
-     (({maker.feed_version}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({maker.feed_version}))ã®åˆ¥åã§ã™ã€‚
 
 --- maker.xml_stylesheets
-     (({xml_stylesheet}))¤ò´ÉÍý¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤òÊÖ¤·¤Þ¤¹¡¥
+     (({xml_stylesheet}))ã‚’ç®¡ç†ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™ï¼Ž
      
 --- maker.channel
-     channelÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤òÊÖ¤·¤Þ¤¹¡¥Atom¥Õ¥£¡¼
-     ¥ÉÊ¸½ñ¤Ç¤Ïatom:feedÍ×ÁÇ¤òÀ¸À®¤·¤Þ¤¹¡£
+     channelè¦ç´ ã‚’ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™ï¼ŽAtomãƒ•ã‚£ãƒ¼
+     ãƒ‰æ–‡æ›¸ã§ã¯atom:feedè¦ç´ ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      
 --- maker.image
-     imageÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤òÊÖ¤·¤Þ¤¹¡¥Atom¥Õ¥£¡¼
-     ¥ÉÊ¸½ñ¤Ç¤Ïatom:feed/atom:logoÍ×ÁÇ¤òÀ¸À®¤·¤Þ¤¹¡£
+     imageè¦ç´ ã‚’ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™ï¼ŽAtomãƒ•ã‚£ãƒ¼
+     ãƒ‰æ–‡æ›¸ã§ã¯atom:feed/atom:logoè¦ç´ ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      
 --- maker.items
-     itemÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤ò´ÉÍý¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤ò
-     ÊÖ¤·¤Þ¤¹¡¥Atom¥Õ¥£¡¼¥ÉÊ¸½ñ¤Ç¤Ïatom:feed/atom:entryÍ×ÁÇ
-     ¤ËÂÐ±þ¤·¤Þ¤¹¡£Atom¥¨¥ó¥È¥êÊ¸½ñ¤Ç¤ÏºÇ½é¤Îitem¤Î¤ß¤¬»ÈÍÑ
-     ¤µ¤ì¤Þ¤¹¡£
+     itemè¦ç´ ã‚’ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç®¡ç†ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’
+     è¿”ã—ã¾ã™ï¼ŽAtomãƒ•ã‚£ãƒ¼ãƒ‰æ–‡æ›¸ã§ã¯atom:feed/atom:entryè¦ç´ 
+     ã«å¯¾å¿œã—ã¾ã™ã€‚Atomã‚¨ãƒ³ãƒˆãƒªæ–‡æ›¸ã§ã¯æœ€åˆã®itemã®ã¿ãŒä½¿ç”¨
+     ã•ã‚Œã¾ã™ã€‚
      
 --- maker.textinput
-     textinputÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤òÊÖ¤·¤Þ¤¹¡¥
+     textinputè¦ç´ ã‚’ç”Ÿæˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™ï¼Ž
      
 === maker.xml_stylsheets
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.xml_stylesheets.new_xml_stylesheet
-     ¿·¤·¤¯(({xml_stylesheet}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({xml_stylesheet}))¤Ï(({xml_stylesheet}))¥ê¥¹¥È¤ÎºÇ¸å
-     ¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤
-     ¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({xml_stylesheet}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({xml_stylesheet}))ã¯(({xml_stylesheet}))ãƒªã‚¹ãƒˆã®æœ€å¾Œ
+     ã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Žãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„
+     ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.xml_stylesheets.new_xml_stylesheet do |xss|
          xss.XXX = XXX
@@ -165,13 +165,13 @@ RSS/Atom¤Î¥ë¡¼¥ÈÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤Ç¤¹¡¥
 
 ==== xml_stylesheet
 
-(({xml_stylesheet}))¤Ï
-(({maker.xml_stylesheet.new_xml_stylesheet}))¤ÇºîÀ®¤µ¤ì¤¿¥ª
-¥Ö¥¸¥§¥¯¥È¤È¤·¤Þ¤¹¡¥
+(({xml_stylesheet}))ã¯
+(({maker.xml_stylesheet.new_xml_stylesheet}))ã§ä½œæˆã•ã‚ŒãŸã‚ª
+ãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¾ã™ï¼Ž
 
-(({href}))¤È(({type}))¤ÏÉ¬¤º»ØÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥¤¿¤À¤·¡¤
-(({href}))¤ËÀßÄê¤·¤¿ÃÍ¤Î³ÈÄ¥»Ò¤¬.xsl¤Þ¤¿¤Ï.css¤Î¾ì¹ç¤Ï
-(({type}))¤ò»ØÄê¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Þ¤»¤ó¡¥¼«Æ°¤Ç¿äÂ¬¤·¤Þ¤¹¡¥
+(({href}))ã¨(({type}))ã¯å¿…ãšæŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼ŽãŸã ã—ï¼Œ
+(({href}))ã«è¨­å®šã—ãŸå€¤ã®æ‹¡å¼µå­ãŒ.xslã¾ãŸã¯.cssã®å ´åˆã¯
+(({type}))ã‚’æŒ‡å®šã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ï¼Žè‡ªå‹•ã§æŽ¨æ¸¬ã—ã¾ã™ï¼Ž
 
 --- xml_stylesheet.href
 --- xml_stylesheet.href=(value)
@@ -193,76 +193,76 @@ RSS/Atom¤Î¥ë¡¼¥ÈÍ×ÁÇ¤òÀ¸À®¤¹¤ë¥ª¥Ö¥¸¥§¥¯¥È¤Ç¤¹¡¥
 
 == maker.channel
 
-channelÍ×ÁÇ¤ÎÃÍ¤òÀßÄê¤·¤Þ¤¹¡¥Atom¥Õ¥£¡¼¥ÉÊ¸½ñ¤Î¾ì¹ç¤Ï
-atom:feedÍ×ÁÇ¤ËÂÐ±þ¤·¤Þ¤¹¡£Atom¥¨¥ó¥È¥êÊ¸½ñ¤Î¾ì¹ç¤Ï¤¤¤¯¤Ä¤«
-¤ÎÃÍ¤¬¥Ç¥Õ¥©¥ë¥ÈÃÍ¤È¤·¤ÆÍøÍÑ¤µ¤ì¤Þ¤¹¡£
+channelè¦ç´ ã®å€¤ã‚’è¨­å®šã—ã¾ã™ï¼ŽAtomãƒ•ã‚£ãƒ¼ãƒ‰æ–‡æ›¸ã®å ´åˆã¯
+atom:feedè¦ç´ ã«å¯¾å¿œã—ã¾ã™ã€‚Atomã‚¨ãƒ³ãƒˆãƒªæ–‡æ›¸ã®å ´åˆã¯ã„ãã¤ã‹
+ã®å€¤ãŒãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã¨ã—ã¦åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
 
-RSS 1.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï(({about}))¡¤(({title}))¡¤(({link}))¡¤
-(({description}))¤òÀßÄê¤·¤Ê¤±¤ì¤Ð¤¤¤±¤Þ¤»¤ó¡¥
+RSS 1.0ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯(({about}))ï¼Œ(({title}))ï¼Œ(({link}))ï¼Œ
+(({description}))ã‚’è¨­å®šã—ãªã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ï¼Ž
 
-RSS 0.91¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï(({title}))¡¤(({link}))¡¤
-(({description}))¡¤(({language}))¤òÀßÄê¤·¤Ê¤±¤ì¤Ð¤¤¤±¤Þ¤»¤ó¡¥
+RSS 0.91ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯(({title}))ï¼Œ(({link}))ï¼Œ
+(({description}))ï¼Œ(({language}))ã‚’è¨­å®šã—ãªã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ï¼Ž
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï(({title}))¡¤(({link}))¡¤
-(({description}))¤òÀßÄê¤·¤Ê¤±¤ì¤Ð¤¤¤±¤Þ¤»¤ó¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯(({title}))ï¼Œ(({link}))ï¼Œ
+(({description}))ã‚’è¨­å®šã—ãªã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ï¼Ž
 
-Atom¥Õ¥£¡¼¥ÉÊ¸½ñ¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï(({title}))¡¢(({updated}))¡¢
-(({id}))¤òÀßÄê¤·¤Ê¤±¤ì¤Ð¤¤¤±¤Þ¤»¤ó¡£¤â¤·¡¢maker.itemsÃæ¤Î¤É
-¤Îitem¤â(({author}))¤òÀßÄê¤·¤Ê¤¤¾ì¹ç¤Ï(({author}))¤òÀßÄê¤·¤Ê
-¤±¤ì¤Ð¤¤¤±¤Þ¤»¤ó¡£
+Atomãƒ•ã‚£ãƒ¼ãƒ‰æ–‡æ›¸ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã¯(({title}))ã€(({updated}))ã€
+(({id}))ã‚’è¨­å®šã—ãªã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ã€‚ã‚‚ã—ã€maker.itemsä¸­ã®ã©
+ã®itemã‚‚(({author}))ã‚’è¨­å®šã—ãªã„å ´åˆã¯(({author}))ã‚’è¨­å®šã—ãª
+ã‘ã‚Œã°ã„ã‘ã¾ã›ã‚“ã€‚
 
-¾åµ­¤Î(({maker.channel}))¤¬Í×µá¤¹¤ëÃÍ¤òÀßÄê¤·¤Æ¤¤¤Ê¤¤¾ì¹ç¤Ï
-(({RSS::NotSetError}))Îã³°¤¬È¯À¸¤·¤Þ¤¹¡¥
+ä¸Šè¨˜ã®(({maker.channel}))ãŒè¦æ±‚ã™ã‚‹å€¤ã‚’è¨­å®šã—ã¦ã„ãªã„å ´åˆã¯
+(({RSS::NotSetError}))ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã™ï¼Ž
 
-ÀâÌÀ¤¬¤Ê¤¤¥á¥½¥Ã¥É¤ÏÃ±¤Ê¤ë¥¢¥¯¥»¥µ¤Ç¤¹¡£
+èª¬æ˜ŽãŒãªã„ãƒ¡ã‚½ãƒƒãƒ‰ã¯å˜ãªã‚‹ã‚¢ã‚¯ã‚»ã‚µã§ã™ã€‚
 
 --- maker.channel.about
 --- maker.channel.about=(value)
 
 --- maker.channel.title
-     (({title.content}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÈÆ±¤¸µóÆ°¤Ç¤¹¡£
+     (({title.content}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¨åŒã˜æŒ™å‹•ã§ã™ã€‚
 --- maker.channel.title {|title| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({title}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({title}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- maker.channel.title=(value)
-     (({title.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({title.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.links
-     (({links}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({links}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.link
-     (({links}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({href}))¤òÊÖ¤·¤Þ¤¹¡£
-     (({links}))¤¬¶õ¤Î¾ì¹ç¤Ï(({nil}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({links}))ã®æœ€åˆã®è¦ç´ ã®(({href}))ã‚’è¿”ã—ã¾ã™ã€‚
+     (({links}))ãŒç©ºã®å ´åˆã¯(({nil}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.link=(value)
-     (({links}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({href}))¤Ë((|value|))¤òÀßÄê
-     ¤·¤Þ¤¹¡£(({links}))¤¬¶õ¤Î¾ì¹ç¤Ï(({links.new_link}))¤Ç¿·
-     ¤·¤¯ºîÀ®¤·¡¢(({href}))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({links}))ã®æœ€åˆã®è¦ç´ ã®(({href}))ã«((|value|))ã‚’è¨­å®š
+     ã—ã¾ã™ã€‚(({links}))ãŒç©ºã®å ´åˆã¯(({links.new_link}))ã§æ–°
+     ã—ãä½œæˆã—ã€(({href}))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.description
-     (({description.content}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÈÆ±¤¸µóÆ°¤Ç¤¹¡£
+     (({description.content}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¨åŒã˜æŒ™å‹•ã§ã™ã€‚
 --- maker.channel.description {|description| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({description}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({description}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- maker.channel.description=(value)
-     (({description.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({description.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.subtitle
-     (({maker.channel.description}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.description}))ã®åˆ¥åã§ã™ï¼Ž
 --- maker.channel.subtitle=(value)
-     (({maker.channel.description=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.description=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- maker.channel.language
 --- maker.channel.language=(value)
 
 --- maker.channel.copyright
-     (({copyright.content}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÈÆ±¤¸µóÆ°¤Ç¤¹¡£
+     (({copyright.content}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¨åŒã˜æŒ™å‹•ã§ã™ã€‚
 --- maker.channel.copyright {|copyright| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({copyright}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({copyright}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- maker.channel.copyright=(value)
-     (({copyright.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({copyright.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.rights
 --- maker.channel.rights {|rights| ...}
-     (({maker.channel.copyright}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.copyright}))ã®åˆ¥åã§ã™ï¼Ž
 --- maker.channel.rights=(value)
-     (({maker.channel.copyright=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.copyright=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- maker.channel.managingEditor
 --- maker.channel.managingEditor=(value)
@@ -280,88 +280,88 @@ Atom¥Õ¥£¡¼¥ÉÊ¸½ñ¤òÀ¸À®¤¹¤ë¾ì¹ç¤Ï(({title}))¡¢(({updated}))¡¢
 --- maker.channel.date=(value)
 
 --- maker.channel.pubDate
-     (({maker.channel.date}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.date}))ã®åˆ¥åã§ã™ï¼Ž
 --- maker.channel.pubDate=(value)
-     (({maker.channel.date=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.date=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- maker.channel.updated
-     (({maker.channel.date}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.date}))ã®åˆ¥åã§ã™ï¼Ž
 --- maker.channel.updated=(value)
-     (({maker.channel.date=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.date=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- maker.channel.lastBuildDate
 --- maker.channel.lastBuildDate=(value)
 
 --- maker.channel.generator
-     (({generator.content}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({generator.content}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.generator {|generator| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({generator}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({generator}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- maker.channel.generator=(value)
-     (({generator.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({generator.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.ttl
 --- maker.channel.ttl=(value)
 
 --- maker.channel.categories
-     (({categories}))¤òÊÖ¤·¤Þ¤¹¡¥
+     (({categories}))ã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.channel.cloud
-     (({cloud}))¤òÊÖ¤·¤Þ¤¹¡¥
+     (({cloud}))ã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.channel.skipDays
-     (({skipDays}))¤òÊÖ¤·¤Þ¤¹¡¥
+     (({skipDays}))ã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.channel.skipHours
-     (({skipHours}))¤òÊÖ¤·¤Þ¤¹¡¥
+     (({skipHours}))ã‚’è¿”ã—ã¾ã™ï¼Ž
 
 --- maker.channel.authors
-     (({authors}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({authors}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.author
-     (({authors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤òÊÖ¤·¤Þ¤¹¡£
-     (({authors}))¤¬¶õ¤Î¾ì¹ç¤Ï(({nil}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({authors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã‚’è¿”ã—ã¾ã™ã€‚
+     (({authors}))ãŒç©ºã®å ´åˆã¯(({nil}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.author=(value)
-     (({authors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤Ë((|value|))¤òÀßÄê
-     ¤·¤Þ¤¹¡£(({authors}))¤¬¶õ¤Î¾ì¹ç¤Ï(({authors.new_author}))¤Ç¿·
-     ¤·¤¯ºîÀ®¤·¡¢(({name}))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({authors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã«((|value|))ã‚’è¨­å®š
+     ã—ã¾ã™ã€‚(({authors}))ãŒç©ºã®å ´åˆã¯(({authors.new_author}))ã§æ–°
+     ã—ãä½œæˆã—ã€(({name}))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.contributors
-     (({contributors}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({contributors}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.contibutor
-     (({contibutors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤òÊÖ¤·¤Þ¤¹¡£
-     (({contibutors}))¤¬¶õ¤Î¾ì¹ç¤Ï(({nil}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({contibutors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã‚’è¿”ã—ã¾ã™ã€‚
+     (({contibutors}))ãŒç©ºã®å ´åˆã¯(({nil}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- maker.channel.contibutor=(value)
-     (({contibutors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤Ë((|value|))¤òÀßÄê
-     ¤·¤Þ¤¹¡£(({contibutors}))¤¬¶õ¤Î¾ì¹ç¤Ï
-     (({contibutors.new_contibutor}))¤Ç¿·¤·¤¯ºîÀ®¤·¡¢
-     (({name}))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({contibutors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã«((|value|))ã‚’è¨­å®š
+     ã—ã¾ã™ã€‚(({contibutors}))ãŒç©ºã®å ´åˆã¯
+     (({contibutors.new_contibutor}))ã§æ–°ã—ãä½œæˆã—ã€
+     (({name}))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- maker.channel.icon
-     (({maker.channel.image_favicon.about}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.image_favicon.about}))ã®åˆ¥åã§ã™ï¼Ž
 --- maker.channel.icon=(value)
-     (({maker.channel.image_favicon.about=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel.image_favicon.about=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- maker.channel.logo
-     (({maker.image.url}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.image.url}))ã®åˆ¥åã§ã™ï¼Ž
 --- maker.channel.logo=(value)
-     (({maker.image.url=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.image.url=}))ã®åˆ¥åã§ã™ï¼Ž
 
 === maker.channel.title
 
-AtomTextConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomTextConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSSã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 === maker.channel.links
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.channel.links.new_link
-     ¿·¤·¤¯(({link}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({link}))¤Ï(({link}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({link}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({link}))ã¯(({link}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.channel.links.new_link do |link|
          link.XXX = XXX
@@ -370,10 +370,10 @@ RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
 
 ==== link
 
-(({link}))¤Ï(({maker.channel.links.new_link}))¤ÇºîÀ®¤µ¤ì¤¿¥ª
-¥Ö¥¸¥§¥¯¥È¤È¤·¤Þ¤¹¡¥
+(({link}))ã¯(({maker.channel.links.new_link}))ã§ä½œæˆã•ã‚ŒãŸã‚ª
+ãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¾ã™ï¼Ž
 
-(({href}))¤ò»ØÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({href}))ã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- link.href
 --- link.href=(value)
@@ -395,21 +395,21 @@ RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
 
 === maker.channel.description
 
-AtomTextConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomTextConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSSã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 === maker.channel.copyright
 
-AtomTextConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomTextConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSSã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 === maker.channel.generator
 
-RSS 2.0/Atom¥Õ¥£¡¼¥ÉÊ¸½ñ¤òÀ¸À®¤¹¤ë¤È¤­¤ËÍøÍÑ¤µ¤ì¤Þ¤¹¡£
+RSS 2.0/Atomãƒ•ã‚£ãƒ¼ãƒ‰æ–‡æ›¸ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã«åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 --- maker.channel.generator.uri
 --- maker.channel.generator.uri=(value)
@@ -422,18 +422,18 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
 
 === maker.channel.categories
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.channel.categories.new_category
-     ¿·¤·¤¯(({category}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({category}))¤Ï(({category}))¥ê¥¹¥È¤ÎºÇ¸å
-     ¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤
-     ¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({category}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({category}))ã¯(({category}))ãƒªã‚¹ãƒˆã®æœ€å¾Œ
+     ã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Žãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„
+     ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.channel.categories.new_category do |category|
          category.XXX = XXX
@@ -442,11 +442,11 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== category
 
-(({category}))¤Ï
-(({maker.channel.categories.new_category}))¤ÇºîÀ®¤µ¤ì¤¿¥ª
-¥Ö¥¸¥§¥¯¥È¤È¤·¤Þ¤¹¡¥
+(({category}))ã¯
+(({maker.channel.categories.new_category}))ã§ä½œæˆã•ã‚ŒãŸã‚ª
+ãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¾ã™ï¼Ž
 
-(({content}))¤ò»ØÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({content}))ã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- category.domain
 --- category.domain=(value)
@@ -456,9 +456,9 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 === maker.channel.cloud
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-Á´¤Æ¤ÎÂ°À­¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+å…¨ã¦ã®å±žæ€§ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- maker.channel.cloud.domain
 --- maker.channel.cloud.domain=(value)
@@ -477,18 +477,18 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 === maker.channel.skipDays
 
-RSS 0.91/2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 0.91/2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.channel.skipDays.new_day
-     ¿·¤·¤¯(({day}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({day}))¤Ï(({day}))¥ê¥¹¥È¤ÎºÇ¸å
-     ¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤
-     ¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({day}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({day}))ã¯(({day}))ãƒªã‚¹ãƒˆã®æœ€å¾Œ
+     ã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Žãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„
+     ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.channel.skipDays.new_day do |day|
          day.XXX = XXX
@@ -497,29 +497,29 @@ RSS 0.91/2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== day
 
-(({day}))¤Ï
-(({maker.channel.skipDays.new_day}))¤ÇºîÀ®¤µ¤ì¤¿¥ª
-¥Ö¥¸¥§¥¯¥È¤È¤·¤Þ¤¹¡¥
+(({day}))ã¯
+(({maker.channel.skipDays.new_day}))ã§ä½œæˆã•ã‚ŒãŸã‚ª
+ãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¾ã™ï¼Ž
 
-(({content}))¤ò»ØÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({content}))ã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- day.content
 --- day.content=(value)
 
 === maker.channel.skipHours
 
-RSS 0.91/2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 0.91/2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.channel.skipHours.new_hour
-     ¿·¤·¤¯(({hour}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({hour}))¤Ï(({hour}))¥ê¥¹¥È¤ÎºÇ¸å
-     ¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤
-     ¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({hour}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({hour}))ã¯(({hour}))ãƒªã‚¹ãƒˆã®æœ€å¾Œ
+     ã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Žãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„
+     ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.channel.skipHours.new_hour do |hour|
          hour.XXX = XXX
@@ -528,28 +528,28 @@ RSS 0.91/2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== hour
 
-(({hour}))¤Ï
-(({maker.channel.skipHours.new_hour}))¤ÇºîÀ®¤µ¤ì¤¿¥ª
-¥Ö¥¸¥§¥¯¥È¤È¤·¤Þ¤¹¡¥
+(({hour}))ã¯
+(({maker.channel.skipHours.new_hour}))ã§ä½œæˆã•ã‚ŒãŸã‚ª
+ãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¾ã™ï¼Ž
 
-(({content}))¤ò»ØÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({content}))ã‚’æŒ‡å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- hour.content
 --- hour.content=(value)
 
 === maker.channel.authors
 
-Atom¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+Atomã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.channel.authors.new_author
-     ¿·¤·¤¯(({author}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({author}))¤Ï(({author}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({author}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({author}))ã¯(({author}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.channel.authors.new_author do |author|
          author.XXX = XXX
@@ -558,21 +558,21 @@ Atom¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== author
 
-AtomPersonConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomPersonConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
 === maker.channel.contributors
 
-Atom¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+Atomã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.channel.contributors.new_contributor
-     ¿·¤·¤¯(({contributor}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({contributor}))¤Ï(({contributor}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({contributor}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({contributor}))ã¯(({contributor}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.channel.contributors.new_contributor do |contributor|
          contributor.XXX = XXX
@@ -581,19 +581,19 @@ Atom¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== contributor
 
-AtomPersonConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomPersonConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
 == maker.image
 
-RSS 1.0¤Î¾ì¹ç¤Ï(({url}))¡¤(({title}))¡¤
-(({maker.channel.link}))¡¤(({maker.channel}))¤¬Å¬ÀÚ¤ËÀßÄê¤µ
-¤ì¤Æ¤¤¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+RSS 1.0ã®å ´åˆã¯(({url}))ï¼Œ(({title}))ï¼Œ
+(({maker.channel.link}))ï¼Œ(({maker.channel}))ãŒé©åˆ‡ã«è¨­å®šã•
+ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
-RSS 0.91/2.0¤Î¾ì¹ç¤Ï(({url}))¡¤(({title}))¡¤
-(({maker.channel.link}))¤¬Å¬ÀÚ¤ËÀßÄê¤µ¤ì¤Æ¤¤¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+RSS 0.91/2.0ã®å ´åˆã¯(({url}))ï¼Œ(({title}))ï¼Œ
+(({maker.channel.link}))ãŒé©åˆ‡ã«è¨­å®šã•ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
-Atom¥Õ¥£¡¼¥É¤Î¾ì¹ç¤Ï(({url}))¤¬Å¬ÀÚ¤ËÀßÄê¤µ¤ì¤Æ¤¤¤ëÉ¬Í×¤¬¤¢¤ê
-¤Þ¤¹¡¥
+Atomãƒ•ã‚£ãƒ¼ãƒ‰ã®å ´åˆã¯(({url}))ãŒé©åˆ‡ã«è¨­å®šã•ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚Š
+ã¾ã™ï¼Ž
 
 --- maker.image.title
 --- maker.image.title=(value)
@@ -612,15 +612,15 @@ Atom¥Õ¥£¡¼¥É¤Î¾ì¹ç¤Ï(({url}))¤¬Å¬ÀÚ¤ËÀßÄê¤µ¤ì¤Æ¤¤¤ëÉ¬Í×¤¬¤¢¤ê
 
 == maker.items
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- maker.items.new_item
-     ¿·¤·¤¯(({item}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({item}))¤Ï(({item}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({item}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({item}))ã¯(({item}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        maker.items.new_item do |item|
          item.XXX = XXX
@@ -628,135 +628,135 @@ Atom¥Õ¥£¡¼¥É¤Î¾ì¹ç¤Ï(({url}))¤¬Å¬ÀÚ¤ËÀßÄê¤µ¤ì¤Æ¤¤¤ëÉ¬Í×¤¬¤¢¤ê
        end
 
 --- maker.items.do_sort
-     ¸½ºß¤Î(({do_sort}))¤ÎÃÍ¤ò¼èÆÀ¤·¤Þ¤¹¡¥¥Ç¥Õ¥©¥ë¥È¤Ç¤Ï
-     (({false}))¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡¥
+     ç¾åœ¨ã®(({do_sort}))ã®å€¤ã‚’å–å¾—ã—ã¾ã™ï¼Žãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯
+     (({false}))ã«ãªã£ã¦ã„ã¾ã™ï¼Ž
 
 --- maker.items.do_sort=(boolean_or_proc)
-     (({true}))¤ËÀßÄê¤¹¤ë¤È(({item.date}))¤¬¿·¤·¤¤½ç¤ËÊÂ¤ÓÂØ
-     ¤¨¤Þ¤¹¡¥(({Proc}))¥ª¥Ö¥¸¥§¥¯¥È¤ò»ØÄê¤¹¤ë¤³¤È¤Ë¤è¤êÊÂ¤Ó
-     ÂØ¤¨ÊýË¡¤ò¥«¥¹¥¿¥Þ¥¤¥º¤¹¤ë¤³¤È¤¬¤Ç¤­¤Þ¤¹¡¥
+     (({true}))ã«è¨­å®šã™ã‚‹ã¨(({item.date}))ãŒæ–°ã—ã„é †ã«ä¸¦ã³æ›¿
+     ãˆã¾ã™ï¼Ž(({Proc}))ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã«ã‚ˆã‚Šä¸¦ã³
+     æ›¿ãˆæ–¹æ³•ã‚’ã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºã™ã‚‹ã“ã¨ãŒã§ãã¾ã™ï¼Ž
 
 --- maker.items.max_size
-     ¸½ºß¤Î(({max_size}))¤ÎÃÍ¤ò¼èÆÀ¤·¤Þ¤¹¡¥¥Ç¥Õ¥©¥ë¥È¤Ç¤Ï
-     (({-1}))¤Ë¤Ê¤Ã¤Æ¤¤¤Þ¤¹¡¥
+     ç¾åœ¨ã®(({max_size}))ã®å€¤ã‚’å–å¾—ã—ã¾ã™ï¼Žãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯
+     (({-1}))ã«ãªã£ã¦ã„ã¾ã™ï¼Ž
 
 --- maker.items.max_size=(integer)
-     ½ÐÎÏ¤¹¤ë(({item}))¤Î¿ô¤ÎºÇÂçÃÍ¤òÀßÄê¤·¤Þ¤¹¡¥
+     å‡ºåŠ›ã™ã‚‹(({item}))ã®æ•°ã®æœ€å¤§å€¤ã‚’è¨­å®šã—ã¾ã™ï¼Ž
 
 
 === item
 
-(({item}))¤Ï(({maker.items.new_item}))¤ÇºîÀ®¤µ¤ì¤¿¥ª¥Ö¥¸¥§¥¯
-¥È¤È¤·¤Þ¤¹¡¥
+(({item}))ã¯(({maker.items.new_item}))ã§ä½œæˆã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯
+ãƒˆã¨ã—ã¾ã™ï¼Ž
 
-RSS 1.0/0.91¤Î¾ì¹ç¤Ï(({title}))¡¤(({link}))¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢
-¤ê¤Þ¤¹¡¥
+RSS 1.0/0.91ã®å ´åˆã¯(({title}))ï¼Œ(({link}))ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚
+ã‚Šã¾ã™ï¼Ž
 
-RSS 2.0¤Î¾ì¹ç¤Ï(({title}))¤Þ¤¿¤Ï(({description}))¤òÀßÄê¤¹¤ë
-É¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+RSS 2.0ã®å ´åˆã¯(({title}))ã¾ãŸã¯(({description}))ã‚’è¨­å®šã™ã‚‹
+å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
-Atom¥Õ¥£¡¼¥É¤Î¾ì¹ç¤Ï(({id}))¡¢(({title}))¡¢(({updated}))¤òÀß
-Äê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£(({id}))¤¬ÀßÄê¤µ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¤Ï
-(({link}))¤òÍøÍÑ¤·¤Þ¤¹¡£
+Atomãƒ•ã‚£ãƒ¼ãƒ‰ã®å ´åˆã¯(({id}))ã€(({title}))ã€(({updated}))ã‚’è¨­
+å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚(({id}))ãŒè¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯
+(({link}))ã‚’åˆ©ç”¨ã—ã¾ã™ã€‚
 
-Atom¥¨¥ó¥È¥ê¤Î¾ì¹ç¤Ï(({id}))¡¢(({title}))¡¢(({updated}))¡¢°ì
-¿Í°Ê¾å¤Î(({authors}))¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡£(({id}))¤¬ÀßÄê
-¤µ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¤Ï(({link}))¤òÍøÍÑ¤·¤Þ¤¹¡£(({authors}))¤¬°ì
-¿Í¤âÀßÄê¤µ¤ì¤Æ¤¤¤Ê¤¤¾ì¹ç¤Ï(({maker.channel.authors}))¤òÍøÍÑ
-¤·¤Þ¤¹¡£
+Atomã‚¨ãƒ³ãƒˆãƒªã®å ´åˆã¯(({id}))ã€(({title}))ã€(({updated}))ã€ä¸€
+äººä»¥ä¸Šã®(({authors}))ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚(({id}))ãŒè¨­å®š
+ã•ã‚Œã¦ã„ãªã„å ´åˆã¯(({link}))ã‚’åˆ©ç”¨ã—ã¾ã™ã€‚(({authors}))ãŒä¸€
+äººã‚‚è¨­å®šã•ã‚Œã¦ã„ãªã„å ´åˆã¯(({maker.channel.authors}))ã‚’åˆ©ç”¨
+ã—ã¾ã™ã€‚
 
 --- item.title
-     (({title.content}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÈÆ±¤¸µóÆ°¤Ç¤¹¡£
+     (({title.content}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¨åŒã˜æŒ™å‹•ã§ã™ã€‚
 --- item.title {|title| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({title}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({title}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- item.title=(value)
-     (({title.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({title.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.links
-     (({links}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({links}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.link
-     (({title}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÏString¤«nil¤Ç¤·¤¿¡£
+     (({title}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¯Stringã‹nilã§ã—ãŸã€‚
 --- item.title=(value)
-     (({title.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({title.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.links
-     (({links}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({links}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.link
-     (({links}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({href}))¤òÊÖ¤·¤Þ¤¹¡£
-     (({links}))¤¬¶õ¤Î¾ì¹ç¤Ï(({nil}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({links}))ã®æœ€åˆã®è¦ç´ ã®(({href}))ã‚’è¿”ã—ã¾ã™ã€‚
+     (({links}))ãŒç©ºã®å ´åˆã¯(({nil}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.link=(value)
-     (({links}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({href}))¤Ë((|value|))¤òÀßÄê
-     ¤·¤Þ¤¹¡£(({links}))¤¬¶õ¤Î¾ì¹ç¤Ï(({links.new_link}))¤Ç¿·
-     ¤·¤¯ºîÀ®¤·¡¢(({href}))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({links}))ã®æœ€åˆã®è¦ç´ ã®(({href}))ã«((|value|))ã‚’è¨­å®š
+     ã—ã¾ã™ã€‚(({links}))ãŒç©ºã®å ´åˆã¯(({links.new_link}))ã§æ–°
+     ã—ãä½œæˆã—ã€(({href}))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.description
-     (({description.content}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÈÆ±¤¸µóÆ°¤Ç¤¹¡£
+     (({description.content}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¨åŒã˜æŒ™å‹•ã§ã™ã€‚
 --- item.description {|description| ....}
-     ¥Ö¥í¥Ã¥¯(({description}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯(({description}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- item.description=(value)
-     (({description.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({description.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.summary
 --- item.summary {|summary| ...}
-     (({item.description}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({item.description}))ã®åˆ¥åã§ã™ã€‚
 --- item.summary=(value)
-     (({item.description=}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({item.description=}))ã®åˆ¥åã§ã™ã€‚
 
 --- item.date
 --- item.date=(value)
 
 --- item.pubDate
-     (({item.date}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({item.date}))ã®åˆ¥åã§ã™ï¼Ž
 --- item.pubDate=(value)
-     (({item.date=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({item.date=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- item.updated
-     (({item.date}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({item.date}))ã®åˆ¥åã§ã™ï¼Ž
 --- item.updated=(value)
-     (({item.date=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({item.date=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- item.authors
-     (({authors}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({authors}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.author
-     (({authors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤òÊÖ¤·¤Þ¤¹¡£
-     (({authors}))¤¬¶õ¤Î¾ì¹ç¤Ï(({nil}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({authors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã‚’è¿”ã—ã¾ã™ã€‚
+     (({authors}))ãŒç©ºã®å ´åˆã¯(({nil}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.author=(value)
-     (({authors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤Ë((|value|))¤òÀßÄê
-     ¤·¤Þ¤¹¡£(({authors}))¤¬¶õ¤Î¾ì¹ç¤Ï(({authors.new_author}))¤Ç¿·
-     ¤·¤¯ºîÀ®¤·¡¢(({name}))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({authors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã«((|value|))ã‚’è¨­å®š
+     ã—ã¾ã™ã€‚(({authors}))ãŒç©ºã®å ´åˆã¯(({authors.new_author}))ã§æ–°
+     ã—ãä½œæˆã—ã€(({name}))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.contibutors
-     (({contibutors}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({contibutors}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.contibutor
-     (({contibutors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤òÊÖ¤·¤Þ¤¹¡£
-     (({contibutors}))¤¬¶õ¤Î¾ì¹ç¤Ï(({nil}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({contibutors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã‚’è¿”ã—ã¾ã™ã€‚
+     (({contibutors}))ãŒç©ºã®å ´åˆã¯(({nil}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.contibutor=(value)
-     (({contibutors}))¤ÎºÇ½é¤ÎÍ×ÁÇ¤Î(({name}))¤Ë((|value|))¤òÀßÄê
-     ¤·¤Þ¤¹¡£(({contibutors}))¤¬¶õ¤Î¾ì¹ç¤Ï
-     (({contibutors.new_contibutor}))¤Ç¿·¤·¤¯ºîÀ®¤·¡¢
-     (({name}))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({contibutors}))ã®æœ€åˆã®è¦ç´ ã®(({name}))ã«((|value|))ã‚’è¨­å®š
+     ã—ã¾ã™ã€‚(({contibutors}))ãŒç©ºã®å ´åˆã¯
+     (({contibutors.new_contibutor}))ã§æ–°ã—ãä½œæˆã—ã€
+     (({name}))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.comments
 --- item.comments=(value)
 
 --- item.guid
-     (({guid}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({guid}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.enclosure
-     (({enclosure}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({enclosure}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.source
-     (({source}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({source}))ã‚’è¿”ã—ã¾ã™ã€‚
 --- item.categories
-     (({categories}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({categories}))ã‚’è¿”ã—ã¾ã™ã€‚
 
 --- item.rights
-     (({rights.content}))¤òÊÖ¤·¤Þ¤¹¡£0.1.6°ÊÁ°¤ÈÆ±¤¸µóÆ°¤Ç¤¹¡£
+     (({rights.content}))ã‚’è¿”ã—ã¾ã™ã€‚0.1.6ä»¥å‰ã¨åŒã˜æŒ™å‹•ã§ã™ã€‚
 --- item.rights {|rights| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({rights}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({rights}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 --- item.rights=(value)
-     (({rights.content}))¤Ë((|value|))¤òÀßÄê¤·¤Þ¤¹¡£
+     (({rights.content}))ã«((|value|))ã‚’è¨­å®šã—ã¾ã™ã€‚
 
 --- item.content
-     (({content}))¤òÊÖ¤·¤Þ¤¹¡£
+     (({content}))ã‚’è¿”ã—ã¾ã™ã€‚
 
 --- item.id
 --- item.id=(value)
@@ -766,90 +766,90 @@ Atom¥¨¥ó¥È¥ê¤Î¾ì¹ç¤Ï(({id}))¡¢(({title}))¡¢(({updated}))¡¢°ì
 
 ==== item.title
 
-AtomTextConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomTextConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSSã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 ==== item.links
 
-RSS 2.0/Atom¤òÀ¸À®¤¹¤ë¤È¤­¤ËÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0/Atomã‚’ç”Ÿæˆã™ã‚‹ã¨ãã«åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- item.links.new_link
-     ¿·¤·¤¯(({link}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({link}))¤Ï(({link}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({link}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({link}))ã¯(({link}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        item.links.new_link do |link|
          link.XXX = XXX
          ...
        end
 
-     (({item.links.new_link}))¤¬ºîÀ®¤¹¤ë(({link}))¤Ï
-     (({maker.channel.links.new_link}))¤¬ºîÀ®¤¹¤ë
-     (({link}))¤ÈÆ±¤¸API¤ò»ý¤Á¤Þ¤¹¡¥
+     (({item.links.new_link}))ãŒä½œæˆã™ã‚‹(({link}))ã¯
+     (({maker.channel.links.new_link}))ãŒä½œæˆã™ã‚‹
+     (({link}))ã¨åŒã˜APIã‚’æŒã¡ã¾ã™ï¼Ž
 
 ==== item.description
 
-AtomTextConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomTextConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSSã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 ==== item.authors
 
-RSS 2.0/Atom¤òÀ¸À®¤¹¤ë¤È¤­¤ËÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0/Atomã‚’ç”Ÿæˆã™ã‚‹ã¨ãã«åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- item.authors.new_author
-     ¿·¤·¤¯(({author}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({author}))¤Ï(({author}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({author}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({author}))ã¯(({author}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        item.authors.new_author do |author|
          author.XXX = XXX
          ...
        end
 
-     (({item.authors.new_author}))¤¬ºîÀ®¤¹¤ë(({author}))¤Ï
-     (({maker.channel.authors.new_author}))¤¬ºîÀ®¤¹¤ë
-     (({author}))¤ÈÆ±¤¸API¤ò»ý¤Á¤Þ¤¹¡¥
+     (({item.authors.new_author}))ãŒä½œæˆã™ã‚‹(({author}))ã¯
+     (({maker.channel.authors.new_author}))ãŒä½œæˆã™ã‚‹
+     (({author}))ã¨åŒã˜APIã‚’æŒã¡ã¾ã™ï¼Ž
 
 ==== item.contributors
 
-Atom¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+Atomã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- item.contributors.new_contributor
-     ¿·¤·¤¯(({contributor}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({contributor}))¤Ï(({contributor}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({contributor}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({contributor}))ã¯(({contributor}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        item.contributors.new_contributor do |contributor|
          contributor.XXX = XXX
          ...
        end
 
-     (({item.contributors.new_contributor}))¤¬ºîÀ®¤¹¤ë(({contributor}))¤Ï
-     (({maker.channel.contributors.new_contributor}))¤¬ºîÀ®¤¹¤ë
-     (({contributor}))¤ÈÆ±¤¸API¤ò»ý¤Á¤Þ¤¹¡¥
+     (({item.contributors.new_contributor}))ãŒä½œæˆã™ã‚‹(({contributor}))ã¯
+     (({maker.channel.contributors.new_contributor}))ãŒä½œæˆã™ã‚‹
+     (({contributor}))ã¨åŒã˜APIã‚’æŒã¡ã¾ã™ï¼Ž
 
 ==== item.guid
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({content}))¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({content}))ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- item.guid.isPermaLink
 --- item.guid.isPermaLink=(value)
@@ -859,9 +859,9 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== item.enclosure
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({url}))¡¤(({length}))¡¤(({type}))¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({url}))ï¼Œ(({length}))ï¼Œ(({type}))ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- item.enclosure.url
 --- item.enclosure.url=(value)
@@ -874,9 +874,9 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== item.source
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({url}))¡¤(({content}))¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+(({url}))ï¼Œ(({content}))ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
 --- item.source.url
 --- item.source.url=(value)
@@ -886,87 +886,87 @@ RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
 
 ==== item.categories
 
-RSS 2.0¤òÀ¸À®¤¹¤ë¤È¤­¤À¤±ÍøÍÑ¤µ¤ì¤Þ¤¹¡¥
+RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹ã¨ãã ã‘åˆ©ç”¨ã•ã‚Œã¾ã™ï¼Ž
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- item.categories.new_category
-     ¿·¤·¤¯(({category}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({category}))¤Ï(({category}))¥ê¥¹¥È¤ÎºÇ¸å
-     ¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({category}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({category}))ã¯(({category}))ãƒªã‚¹ãƒˆã®æœ€å¾Œ
+     ã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        item.categories.new_category do |category|
          category.XXX = XXX
          ...
        end
 
-     (({item.categories.new_category}))¤¬ºîÀ®¤¹¤ë
-     (({category}))¤Ï
-     (({maker.channel.categories.new_category}))¤¬ºîÀ®¤¹¤ë
-     (({category}))¤ÈÆ±¤¸API¤ò»ý¤Á¤Þ¤¹¡¥
+     (({item.categories.new_category}))ãŒä½œæˆã™ã‚‹
+     (({category}))ã¯
+     (({maker.channel.categories.new_category}))ãŒä½œæˆã™ã‚‹
+     (({category}))ã¨åŒã˜APIã‚’æŒã¡ã¾ã™ï¼Ž
 
 ==== item.rights
 
-AtomTextConstruct¤ò»²¾È¤·¤Æ¤¯¤À¤µ¤¤¡£
+AtomTextConstructã‚’å‚ç…§ã—ã¦ãã ã•ã„ã€‚
 
-RSS¤òÀ¸À®¤¹¤ë¤È¤­¤Ï(({content}))¤·¤«ÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+RSSã‚’ç”Ÿæˆã™ã‚‹ã¨ãã¯(({content}))ã—ã‹åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 ==== item.content
 
-Atom¤òÀ¸À®¤¹¤ë¤È¤­¤Î¤ßÍøÍÑ¤µ¤ì¤Þ¤¹¡£
+Atomã‚’ç”Ÿæˆã™ã‚‹ã¨ãã®ã¿åˆ©ç”¨ã•ã‚Œã¾ã™ã€‚
 
 --- type
-     ÆâÍÆ¤Î¼ïÎà¤òÊÖ¤·¤Þ¤¹¡£
+     å†…å®¹ã®ç¨®é¡žã‚’è¿”ã—ã¾ã™ã€‚
 --- type=(value)
-     ((|value|))¤Ïtext¡¢html¡¢xhtml¤Þ¤¿¤ÏMIME¥¿¥¤¥×¤ò»ØÄê¤·¤Þ
-     ¤¹¡£
+     ((|value|))ã¯textã€htmlã€xhtmlã¾ãŸã¯MIMEã‚¿ã‚¤ãƒ—ã‚’æŒ‡å®šã—ã¾
+     ã™ã€‚
 
 --- src
-     ¼ïÎà¤¬MIME¥¿¥¤¥×¤Î¤È¤­¤ÎÆâÍÆ¤ÎIRI¤òÊÖ¤·¤Þ¤¹¡£
+     ç¨®é¡žãŒMIMEã‚¿ã‚¤ãƒ—ã®ã¨ãã®å†…å®¹ã®IRIã‚’è¿”ã—ã¾ã™ã€‚
 --- src=(value)
-     ¼ïÎà¤¬MIME¥¿¥¤¥×¤Î¤È¤­¤ÎÆâÍÆ¤ÎIRI¤ò»ØÄê¤·¤Þ¤¹¡£
+     ç¨®é¡žãŒMIMEã‚¿ã‚¤ãƒ—ã®ã¨ãã®å†…å®¹ã®IRIã‚’æŒ‡å®šã—ã¾ã™ã€‚
 
 --- content
-     ¼ïÎà¤¬text¡¢html¤¢¤ë¤¤¤ÏXMLÍÑ°Ê³°¤ÎMIME¥¿¥¤¥×¤Î¾ì¹ç¤Î
-     ÆâÍÆ¤òÊÖ¤·¤Þ¤¹¡£
+     ç¨®é¡žãŒtextã€htmlã‚ã‚‹ã„ã¯XMLç”¨ä»¥å¤–ã®MIMEã‚¿ã‚¤ãƒ—ã®å ´åˆã®
+     å†…å®¹ã‚’è¿”ã—ã¾ã™ã€‚
 --- content=(value)
-     ¼ïÎà¤¬text¡¢html¤¢¤ë¤¤¤ÏXMLÍÑ°Ê³°¤ÎMIME¥¿¥¤¥×¤Î¾ì¹ç¤ÎÆâ
-     ÍÆ¤òÀßÄê¤·¤Þ¤¹¡£Base64¥¨¥ó¥³¡¼¥Ç¥£¥ó¥°¤¬É¬Í×¤ÊMIME¥¿¥¤
-     ¥×¤Î¾ì¹ç¤Ç¤âBase64¥¨¥ó¥³¡¼¥Ç¥£¥ó¥°¤ò¹Ô¤Ã¤¿Ê¸»úÎó¤ò»ØÄê
-     ¤¹¤ëÉ¬Í×¤Ï¤¢¤ê¤Þ¤»¤ó¡£
+     ç¨®é¡žãŒtextã€htmlã‚ã‚‹ã„ã¯XMLç”¨ä»¥å¤–ã®MIMEã‚¿ã‚¤ãƒ—ã®å ´åˆã®å†…
+     å®¹ã‚’è¨­å®šã—ã¾ã™ã€‚Base64ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ãŒå¿…è¦ãªMIMEã‚¿ã‚¤
+     ãƒ—ã®å ´åˆã§ã‚‚Base64ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã‚’è¡Œã£ãŸæ–‡å­—åˆ—ã‚’æŒ‡å®š
+     ã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚
 
 --- xml_content
-     ¼ïÎà¤¬xhtml¤¢¤ë¤¤¤ÏXMLÍÑ¤ÎMIME¥¿¥¤¥×¤Î¾ì¹ç¤ÎÆâÍÆ¤òÊÖ¤·
-     ¤Þ¤¹¡£
+     ç¨®é¡žãŒxhtmlã‚ã‚‹ã„ã¯XMLç”¨ã®MIMEã‚¿ã‚¤ãƒ—ã®å ´åˆã®å†…å®¹ã‚’è¿”ã—
+     ã¾ã™ã€‚
 --- xml_content=(value)
-     ¼ïÎà¤¬xhtml¤¢¤ë¤¤¤ÏXMLÍÑ¤ÎMIME¥¿¥¤¥×¤Î¾ì¹ç¤ÎÆâÍÆ¤òÀßÄê¤·
-     ¤Þ¤¹¡£Ê¸»úÎó¤Þ¤¿¤ÏRSS::XML::Element¤Ç»ØÄê¤·¤Þ¤¹¡£¤¢¤ë¤¤
-     ¤Ï¡¢¤½¤ì¤é¤ÎÇÛÎó¤Ç»ØÄê¤¹¤ë¤³¤È¤â½ÐÍè¤Þ¤¹¡£
+     ç¨®é¡žãŒxhtmlã‚ã‚‹ã„ã¯XMLç”¨ã®MIMEã‚¿ã‚¤ãƒ—ã®å ´åˆã®å†…å®¹ã‚’è¨­å®šã—
+     ã¾ã™ã€‚æ–‡å­—åˆ—ã¾ãŸã¯RSS::XML::Elementã§æŒ‡å®šã—ã¾ã™ã€‚ã‚ã‚‹ã„
+     ã¯ã€ãã‚Œã‚‰ã®é…åˆ—ã§æŒ‡å®šã™ã‚‹ã“ã¨ã‚‚å‡ºæ¥ã¾ã™ã€‚
 
 --- xhtml
-     (({xml_content}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({xml_content}))ã®åˆ¥åã§ã™ã€‚
 --- xhtml=(value)
-     (({xml_content=}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({xml_content=}))ã®åˆ¥åã§ã™ã€‚
 
 --- xml
-     (({xml_content}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({xml_content}))ã®åˆ¥åã§ã™ã€‚
 --- xml=(value)
-     (({xml_content=}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({xml_content=}))ã®åˆ¥åã§ã™ã€‚
 
 == maker.textinput
 
-RSS 1.0¤Î¾ì¹ç¤Ï(({title}))¡¤(({description}))¡¤(({name}))¡¤
-(({link}))¡¤(({maker.channel}))¤òÅ¬ÀÚ¤ËÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ
-¤¹¡¥
+RSS 1.0ã®å ´åˆã¯(({title}))ï¼Œ(({description}))ï¼Œ(({name}))ï¼Œ
+(({link}))ï¼Œ(({maker.channel}))ã‚’é©åˆ‡ã«è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾
+ã™ï¼Ž
 
-RSS 0.91/2.0¤Î¾ì¹ç¤Ï(({title}))¡¤(({description}))¡¤
-(({name}))¡¤(({link}))¤òÀßÄê¤¹¤ëÉ¬Í×¤¬¤¢¤ê¤Þ¤¹¡¥
+RSS 0.91/2.0ã®å ´åˆã¯(({title}))ï¼Œ(({description}))ï¼Œ
+(({name}))ï¼Œ(({link}))ã‚’è¨­å®šã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼Ž
 
-Atom¤Ç¤ÏÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
+Atomã§ã¯åˆ©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚
 
 --- maker.textinput.title
 --- maker.textinput.title=(value)
@@ -980,9 +980,9 @@ Atom¤Ç¤ÏÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
 --- maker.textinput.link
 --- maker.textinput.link=(value)
 
-== ¥â¥¸¥å¡¼¥ë
+== ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
 
-°Ê²¼¤Î¥â¥¸¥å¡¼¥ë¤¬ÁÈ¤ß¹þ¤Þ¤ì¤Æ¤¤¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒçµ„ã¿è¾¼ã¾ã‚Œã¦ã„ã¾ã™ï¼Ž
 
   * Content
   * Dublin Core
@@ -994,85 +994,85 @@ Atom¤Ç¤ÏÍøÍÑ¤µ¤ì¤Þ¤»¤ó¡£
 
 === Content
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({item}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({item}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- content_encoded
 --- content_encoded=(value)
 
 === Dublin Core
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({maker.channel}))¡¤(({maker.image}))¡¤
-(({item}))¡¤(({maker.textinput}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({maker.channel}))ï¼Œ(({maker.image}))ï¼Œ
+(({item}))ï¼Œ(({maker.textinput}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
-RSS Maker¤Ï0.1.3¤è¤êÊ£¿ô¤ÎDublin Core¤ÎÍ×ÁÇ¤ò¥µ¥Ý¡¼¥È¤·¤Þ¤·
-¤¿¡¥¤½¤Î¤¿¤á¡¤Dublin Core¼þ¤ê¤ÎAPI¤¬ÊÑ¹¹¤µ¤ì¤Þ¤·¤¿¤¬¡¤0.1.2
-°ÊÁ°¤ÎAPI¤â¸ß´¹À­¤Î¤¿¤á¤Ë»Ä¤µ¤ì¤Æ¤¤¤ë¤Î¤Ç0.1.2°ÊÁ°¤Î¤¿¤á¤Ëºî
-À®¤µ¤ì¤¿¥¹¥¯¥ê¥×¥È¤âÆ°ºî¤¹¤ë¤Ï¤º¤Ç¤¹¡¥
+RSS Makerã¯0.1.3ã‚ˆã‚Šè¤‡æ•°ã®Dublin Coreã®è¦ç´ ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¾ã—
+ãŸï¼Žãã®ãŸã‚ï¼ŒDublin Coreå‘¨ã‚Šã®APIãŒå¤‰æ›´ã•ã‚Œã¾ã—ãŸãŒï¼Œ0.1.2
+ä»¥å‰ã®APIã‚‚äº’æ›æ€§ã®ãŸã‚ã«æ®‹ã•ã‚Œã¦ã„ã‚‹ã®ã§0.1.2ä»¥å‰ã®ãŸã‚ã«ä½œ
+æˆã•ã‚ŒãŸã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚‚å‹•ä½œã™ã‚‹ã¯ãšã§ã™ï¼Ž
 
 --- dc_titles.new_title
-     ¿·¤·¤¯<dc:title>Í×ÁÇ¤òÄÉ²Ã¤·¡¤¤½¤ì¤òÊÖ¤·¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã<dc:title>è¦ç´ ã‚’è¿½åŠ ã—ï¼Œãã‚Œã‚’è¿”ã—ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        dc_titles.new_title do |title|
          title.XXX = XXX
          ...
        end
 
-     ÃÍ¤òÀßÄê¤¹¤ë¤Ë¤Ï(({dc_titles.new_title.value=}))¤ä¡¤(({value=}))
-     ¤ÎÊÌÌ¾¤Ç¤¢¤ë(({dc_titles.new_title.content=}))¤òÍøÍÑ¤Ç¤­
-     ¤Þ¤¹¡¥
+     å€¤ã‚’è¨­å®šã™ã‚‹ã«ã¯(({dc_titles.new_title.value=}))ã‚„ï¼Œ(({value=}))
+     ã®åˆ¥åã§ã‚ã‚‹(({dc_titles.new_title.content=}))ã‚’åˆ©ç”¨ã§ã
+     ã¾ã™ï¼Ž
 
-     ¸½ºßÀßÄê¤·¤Æ¤¤¤ëÃÍ¤ò¼èÆÀ¤¹¤ë¤Ë¤Ï(({value}))¤ä(({value}))
-     ¤ÎÊÌÌ¾¤Ç¤¢¤ë(({content}))¤òÍøÍÑ¤Ç¤­¤Þ¤¹¡¥
+     ç¾åœ¨è¨­å®šã—ã¦ã„ã‚‹å€¤ã‚’å–å¾—ã™ã‚‹ã«ã¯(({value}))ã‚„(({value}))
+     ã®åˆ¥åã§ã‚ã‚‹(({content}))ã‚’åˆ©ç”¨ã§ãã¾ã™ï¼Ž
 
 --- dc_descriptions.new_description
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_creators.new_creator
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_subjects.new_subject
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_publishers.new_publisher
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_contributors.new_contributor
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_types.new_type
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_formats.new_format
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_identifiers.new_identifier
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_sources.new_source
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_languages.new_language
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_relations.new_relation
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_coverages.new_coverage
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_rights_list.new_rights
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 --- dc_rightses.new_rights
-     (({dc_rights_list.new_rights}))¤ÎÊÌÌ¾¤Ç¤¹¡£
+     (({dc_rights_list.new_rights}))ã®åˆ¥åã§ã™ã€‚
 
 --- dc_dates.new_date
-     »ÈÍÑÊýË¡¤Ï(({dc_titles.new_title}))¤ÈÆ±ÍÍ¤Ç¤¹¡¥
+     ä½¿ç”¨æ–¹æ³•ã¯(({dc_titles.new_title}))ã¨åŒæ§˜ã§ã™ï¼Ž
 
 
-¸ß´¹À­¤Î¤¿¤á¤Ë¡¤1ÈÖ½é¤á¤Ë¸½¤ì¤ëDublin Core¤ÎÍ×ÁÇ¤òÁàºî¤¹¤ë°Ê
-²¼¤Î¥á¥½¥Ã¥É¤âÄÉ²Ã¤·¤Þ¤¹¡¥
+äº’æ›æ€§ã®ãŸã‚ã«ï¼Œ1ç•ªåˆã‚ã«ç¾ã‚Œã‚‹Dublin Coreã®è¦ç´ ã‚’æ“ä½œã™ã‚‹ä»¥
+ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- dc_title
 --- dc_title=(value)
@@ -1117,14 +1117,14 @@ RSS Maker¤Ï0.1.3¤è¤êÊ£¿ô¤ÎDublin Core¤ÎÍ×ÁÇ¤ò¥µ¥Ý¡¼¥È¤·¤Þ¤·
 --- dc_rights=(value)
 
 --- dc_date
-     (({maker.channel}))¤È(({item}))¤Ç¤Ï(({date}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel}))ã¨(({item}))ã§ã¯(({date}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- dc_date=(value)
-     (({maker.channel}))¤È(({item}))¤Ç¤Ï(({date=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({maker.channel}))ã¨(({item}))ã§ã¯(({date=}))ã®åˆ¥åã§ã™ï¼Ž
 
 === Syndication
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({maker.channel}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({maker.channel}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- sy_updatePeriod
 --- sy_updatePeriod=(value)
@@ -1137,7 +1137,7 @@ RSS Maker¤Ï0.1.3¤è¤êÊ£¿ô¤ÎDublin Core¤ÎÍ×ÁÇ¤ò¥µ¥Ý¡¼¥È¤·¤Þ¤·
 
 === TrackBack
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({item}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({item}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- trackback_ping
 --- trackback_ping=(value)
@@ -1146,15 +1146,15 @@ RSS Maker¤Ï0.1.3¤è¤êÊ£¿ô¤ÎDublin Core¤ÎÍ×ÁÇ¤ò¥µ¥Ý¡¼¥È¤·¤Þ¤·
 
 ==== trackback_abouts
 
-(({#<<}))¡¤(({#[]}))¡¤(({#[]=}))¡¤(({#first}))¡¤(({#last}))¡¤
-(({#push}))¡¤(({#pop}))¡¤(({#shift}))¡¤(({#unshift}))¡¤
-(({#each}))¡¢(({#size}))¡¢(({#empty?}))¡¢(({#clear}))¡¢
-(({#replace}))¤Ê¤ÉÇÛÎó¤ÈÆ±¤¸¥á¥½¥Ã¥É¤â»ý¤Á¤Þ¤¹¡¥
+(({#<<}))ï¼Œ(({#[]}))ï¼Œ(({#[]=}))ï¼Œ(({#first}))ï¼Œ(({#last}))ï¼Œ
+(({#push}))ï¼Œ(({#pop}))ï¼Œ(({#shift}))ï¼Œ(({#unshift}))ï¼Œ
+(({#each}))ã€(({#size}))ã€(({#empty?}))ã€(({#clear}))ã€
+(({#replace}))ãªã©é…åˆ—ã¨åŒã˜ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚æŒã¡ã¾ã™ï¼Ž
 
 --- trackback_abouts.new_about
-     ¿·¤·¤¯(({about}))¤òºîÀ®¤·¡¤ÊÖ¤·¤Þ¤¹¡¥ºîÀ®¤µ¤ì¤¿
-     (({about}))¤Ï(({about}))¥ê¥¹¥È¤ÎºÇ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã(({about}))ã‚’ä½œæˆã—ï¼Œè¿”ã—ã¾ã™ï¼Žä½œæˆã•ã‚ŒãŸ
+     (({about}))ã¯(({about}))ãƒªã‚¹ãƒˆã®æœ€å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        trackback_abouts.new_about do |about|
          about.XXX = XXX
@@ -1163,35 +1163,35 @@ RSS Maker¤Ï0.1.3¤è¤êÊ£¿ô¤ÎDublin Core¤ÎÍ×ÁÇ¤ò¥µ¥Ý¡¼¥È¤·¤Þ¤·
 
 + about
 
-(({about}))¤Ï(({trackback_abouts.new_about}))¤ÇºîÀ®¤µ¤ì¤¿¥ª¥Ö¥¸¥§¥¯
-¥È¤È¤·¤Þ¤¹¡¥
+(({about}))ã¯(({trackback_abouts.new_about}))ã§ä½œæˆã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯
+ãƒˆã¨ã—ã¾ã™ï¼Ž
 
 --- value
 --- value=(new_value)
 
 --- resource
-    (({value}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+    (({value}))ã®åˆ¥åã§ã™ï¼Ž
 --- resource=(new_value)
-    (({value=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+    (({value=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- content
-    (({value}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+    (({value}))ã®åˆ¥åã§ã™ï¼Ž
 --- content=(new_value)
-    (({value=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+    (({value=}))ã®åˆ¥åã§ã™ï¼Ž
 
 === Image
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({item}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({item}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- image_item
 
-¤Þ¤¿¡¤°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({channel}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ã¾ãŸï¼Œä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({channel}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- image_favicon
 
 ==== image_item
 
-Dublin Core¤Î¥á¥½¥Ã¥É¤â»È¤¨¤Þ¤¹¡¥
+Dublin Coreã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚ä½¿ãˆã¾ã™ï¼Ž
 
 --- image_item.about
 --- image_item.about=
@@ -1203,21 +1203,21 @@ Dublin Core¤Î¥á¥½¥Ã¥É¤â»È¤¨¤Þ¤¹¡¥
 --- image_item.image_width=
 
 --- image_item.width
-     (({image_item.image_width}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({image_item.image_width}))ã®åˆ¥åã§ã™ï¼Ž
 --- image_item.width=
-     (({image_item.image_width=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({image_item.image_width=}))ã®åˆ¥åã§ã™ï¼Ž
 
 --- image_item.image_height
 --- image_item.image_height=
 
 --- image_item.height
-     (({image_item.image_height}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({image_item.image_height}))ã®åˆ¥åã§ã™ï¼Ž
 --- image_item.height=
-     (({image_item.image_height=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({image_item.image_height=}))ã®åˆ¥åã§ã™ï¼Ž
 
 ==== image_favicon
 
-Dublin Core¤Î¥á¥½¥Ã¥É¤â»È¤¨¤Þ¤¹¡¥
+Dublin Coreã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚‚ä½¿ãˆã¾ã™ï¼Ž
 
 --- image_item.about
 --- image_item.about=
@@ -1226,16 +1226,16 @@ Dublin Core¤Î¥á¥½¥Ã¥É¤â»È¤¨¤Þ¤¹¡¥
 --- image_item.image_size=
 
 --- image_item.size
-     (({image_item.image_size}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({image_item.image_size}))ã®åˆ¥åã§ã™ï¼Ž
 --- image_item.size=
-     (({image_item.image_size=}))¤ÎÊÌÌ¾¤Ç¤¹¡¥
+     (({image_item.image_size=}))ã®åˆ¥åã§ã™ï¼Ž
 
 === ITunes
 
-PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
-¤ì¤Þ¤¹¡£
+Podcastç”¨ã®æƒ…å ±ã‚’ç”Ÿæˆã—ã¾ã™ã€‚RSS 2.0ã‚’ç”Ÿæˆã™ã‚‹å ´åˆã®ã¿åˆ©ç”¨ã•
+ã‚Œã¾ã™ã€‚
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({channel}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({channel}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- itunes_author
 --- itunes_author=
@@ -1244,18 +1244,18 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 --- itunes_block=
 
 --- itunes_block?
-     (({itunes_block}))¤¬(({"yes"}))¤Þ¤¿¤Ï(({true}))¤Î¤È¤­¤Ë
-     (({true}))¤òÊÖ¤·¤Þ¤¹¡£ÂçÊ¸»ú¾®Ê¸»ú¤Ï¶èÊÌ¤µ¤ì¤Þ¤»¤ó¡£
+     (({itunes_block}))ãŒ(({"yes"}))ã¾ãŸã¯(({true}))ã®ã¨ãã«
+     (({true}))ã‚’è¿”ã—ã¾ã™ã€‚å¤§æ–‡å­—å°æ–‡å­—ã¯åŒºåˆ¥ã•ã‚Œã¾ã›ã‚“ã€‚
 
 --- itunes_categories
 
 --- new_itunes_category(text=nil)
-     ¿·¤·¤¯(({itunes_category}))¤òºîÀ®¤·¡¢ÊÖ¤·¤Þ¤¹¡£
-     ((|text|))¤Ï(({itunes_category.text}))¤ËÀßÄê¤µ¤ì¤Þ¤¹¡£
-     (({itunes_category}))¤Ï(({itunes_categories}))¥ê¥¹¥È¤ÎºÇ
-     ¸å¤ËÄÉ²Ã¤µ¤ì¤Æ¤¤¤Þ¤¹¡£
+     æ–°ã—ã(({itunes_category}))ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+     ((|text|))ã¯(({itunes_category.text}))ã«è¨­å®šã•ã‚Œã¾ã™ã€‚
+     (({itunes_category}))ã¯(({itunes_categories}))ãƒªã‚¹ãƒˆã®æœ€
+     å¾Œã«è¿½åŠ ã•ã‚Œã¦ã„ã¾ã™ã€‚
 
-     (({itunes_categories.new_category}))¤è¤ê¤âÊØÍø¤Ç¤¹¡£
+     (({itunes_categories.new_category}))ã‚ˆã‚Šã‚‚ä¾¿åˆ©ã§ã™ã€‚
 
 --- itunes_image
 --- itunes_image=
@@ -1264,14 +1264,14 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 --- itunes_explicit=
 
 --- itunes_explicit?
-     (({itunes_explicit}))¤¬(({"yes"}))¤Þ¤¿¤Ï(({true}))¤Î¤È¤­¤Ë
-     (({true}))¤òÊÖ¤·¡¢(({"clean"}))¤Þ¤¿¤Ï(({false}))¤Î¤È¤­
-     ¤Ë(({false}))¤òÊÖ¤·¡¢¤½¤ì°Ê³°¤Î¤È¤­¤Ë(({nil}))¤òÊÖ¤·¤Þ
-     ¤¹¡£ÂçÊ¸»ú¾®Ê¸»ú¤Ï¶èÊÌ¤µ¤ì¤Þ¤»¤ó¡£
+     (({itunes_explicit}))ãŒ(({"yes"}))ã¾ãŸã¯(({true}))ã®ã¨ãã«
+     (({true}))ã‚’è¿”ã—ã€(({"clean"}))ã¾ãŸã¯(({false}))ã®ã¨ã
+     ã«(({false}))ã‚’è¿”ã—ã€ãã‚Œä»¥å¤–ã®ã¨ãã«(({nil}))ã‚’è¿”ã—ã¾
+     ã™ã€‚å¤§æ–‡å­—å°æ–‡å­—ã¯åŒºåˆ¥ã•ã‚Œã¾ã›ã‚“ã€‚
 
 --- itunes_keywords
 --- itunes_keywords=(keywords)
-     ((|keywords|))¤ÏÇÛÎó¤Þ¤¿¤ÏCSV·Á¼°¤ÎÊ¸»úÎó¤Ç»ØÄê¤·¤Þ¤¹¡£
+     ((|keywords|))ã¯é…åˆ—ã¾ãŸã¯CSVå½¢å¼ã®æ–‡å­—åˆ—ã§æŒ‡å®šã—ã¾ã™ã€‚
 
 --- itunes_new_feed_url
 --- itunes_new_feed_url=
@@ -1284,7 +1284,7 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 --- itunes_summary
 --- itunes_summary=
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({item}))¤ËÄÉ²Ã¤·¤Þ¤¹¡¥
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({item}))ã«è¿½åŠ ã—ã¾ã™ï¼Ž
 
 --- itunes_author
 --- itunes_author=
@@ -1293,27 +1293,27 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 --- itunes_block=
 
 --- itunes_block?
-     (({itunes_block}))¤¬(({"yes"}))¤Þ¤¿¤Ï(({true}))¤Î¤È¤­¤Ë
-     (({true}))¤òÊÖ¤·¤Þ¤¹¡£ÂçÊ¸»ú¾®Ê¸»ú¤Ï¶èÊÌ¤µ¤ì¤Þ¤»¤ó¡£
+     (({itunes_block}))ãŒ(({"yes"}))ã¾ãŸã¯(({true}))ã®ã¨ãã«
+     (({true}))ã‚’è¿”ã—ã¾ã™ã€‚å¤§æ–‡å­—å°æ–‡å­—ã¯åŒºåˆ¥ã•ã‚Œã¾ã›ã‚“ã€‚
 
 --- itunes_duration
 --- itunes_duration=
 
 --- itunes_duration {|itunes_duration| ...}
-     ¥Ö¥í¥Ã¥¯¤Ë(({itunes_duration}))¤òÅÏ¤·¤Þ¤¹¡£
+     ãƒ–ãƒ­ãƒƒã‚¯ã«(({itunes_duration}))ã‚’æ¸¡ã—ã¾ã™ã€‚
 
 --- itunes_explicit
 --- itunes_explicit=
 
 --- itunes_explicit?
-     (({itunes_explicit}))¤¬(({"yes"}))¤Þ¤¿¤Ï(({true}))¤Î¤È¤­¤Ë
-     (({true}))¤òÊÖ¤·¡¢(({"clean"}))¤Þ¤¿¤Ï(({false}))¤Î¤È¤­
-     ¤Ë(({false}))¤òÊÖ¤·¡¢¤½¤ì°Ê³°¤Î¤È¤­¤Ë(({nil}))¤òÊÖ¤·¤Þ
-     ¤¹¡£ÂçÊ¸»ú¾®Ê¸»ú¤Ï¶èÊÌ¤µ¤ì¤Þ¤»¤ó¡£
+     (({itunes_explicit}))ãŒ(({"yes"}))ã¾ãŸã¯(({true}))ã®ã¨ãã«
+     (({true}))ã‚’è¿”ã—ã€(({"clean"}))ã¾ãŸã¯(({false}))ã®ã¨ã
+     ã«(({false}))ã‚’è¿”ã—ã€ãã‚Œä»¥å¤–ã®ã¨ãã«(({nil}))ã‚’è¿”ã—ã¾
+     ã™ã€‚å¤§æ–‡å­—å°æ–‡å­—ã¯åŒºåˆ¥ã•ã‚Œã¾ã›ã‚“ã€‚
 
 --- itunes_keywords
 --- itunes_keywords=(keywords)
-     ((|keywords|))¤ÏÇÛÎó¤Þ¤¿¤ÏCSV·Á¼°¤ÎÊ¸»úÎó¤Ç»ØÄê¤·¤Þ¤¹¡£
+     ((|keywords|))ã¯é…åˆ—ã¾ãŸã¯CSVå½¢å¼ã®æ–‡å­—åˆ—ã§æŒ‡å®šã—ã¾ã™ã€‚
 
 --- itunes_subtitle
 --- itunes_subtitle=
@@ -1325,31 +1325,31 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 
 --- itunes_categories.new_category
 
-     ¿·¤·¤¯<itunes:category>Í×ÁÇ¤òÄÉ²Ã¤·¡¤¤½¤ì¤òÊÖ¤·¤Þ¤¹¡¥
-     ¥Ö¥í¥Ã¥¯¤ò»ØÄê¤·¤¿°Ê²¼¤Î¤è¤¦¤Ê»È¤¤¤«¤¿¤ò¿ä¾©¤·¤Þ¤¹¡¥
+     æ–°ã—ã<itunes:category>è¦ç´ ã‚’è¿½åŠ ã—ï¼Œãã‚Œã‚’è¿”ã—ã¾ã™ï¼Ž
+     ãƒ–ãƒ­ãƒƒã‚¯ã‚’æŒ‡å®šã—ãŸä»¥ä¸‹ã®ã‚ˆã†ãªä½¿ã„ã‹ãŸã‚’æŽ¨å¥¨ã—ã¾ã™ï¼Ž
 
        itunes_categories.new_category do |category|
          category.text = CATEGORY_NAME
          ...
        end
 
-     ÃÍ¤òÀßÄê¤¹¤ë¤Ë¤Ï(({itunes_category.text=}))¤ò»È¤¤¤Þ¤¹¡£
+     å€¤ã‚’è¨­å®šã™ã‚‹ã«ã¯(({itunes_category.text=}))ã‚’ä½¿ã„ã¾ã™ã€‚
 
-     ¸½ºßÀßÄê¤·¤Æ¤¤¤ëÃÍ¤ò¼èÆÀ¤¹¤ë¤Ë¤Ï
-     (({itunes_category.text}))¤ò»È¤¤¤Þ¤¹¡£
+     ç¾åœ¨è¨­å®šã—ã¦ã„ã‚‹å€¤ã‚’å–å¾—ã™ã‚‹ã«ã¯
+     (({itunes_category.text}))ã‚’ä½¿ã„ã¾ã™ã€‚
 
-     ¥µ¥Ö¥«¥Æ¥´¥ê¤ò»ØÄê¤¹¤ë¤Ë¤Ï
-     (({itunes_category.new_category.text=}))¤È¤·¤Þ¤¹¡£
+     ã‚µãƒ–ã‚«ãƒ†ã‚´ãƒªã‚’æŒ‡å®šã™ã‚‹ã«ã¯
+     (({itunes_category.new_category.text=}))ã¨ã—ã¾ã™ã€‚
 
 + itunes_category
 
 --- itunes_category.text
 --- itunes_category.text=
-     ¥«¥Æ¥´¥êÌ¾¤ò¼èÆÀ¡¦»ØÄê¤·¤Þ¤¹¡£
+     ã‚«ãƒ†ã‚´ãƒªåã‚’å–å¾—ãƒ»æŒ‡å®šã—ã¾ã™ã€‚
 
 --- itunes_category.new_category
-     ¥µ¥Ö¥«¥Æ¥´¥ê¤ò»ØÄê¤·¤Þ¤¹¡£»ÈÍÑÊýË¡¤Ï
-     (({itunes_categories.new_category}))¤ÈÆ±ÍÍ¤Ç¤¹¡£
+     ã‚µãƒ–ã‚«ãƒ†ã‚´ãƒªã‚’æŒ‡å®šã—ã¾ã™ã€‚ä½¿ç”¨æ–¹æ³•ã¯
+     (({itunes_categories.new_category}))ã¨åŒæ§˜ã§ã™ã€‚
 
 ==== itunes_owner
 
@@ -1363,8 +1363,8 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 
 --- itunes_duration.content
 --- itunes_duration.content=(content)
-     ¼¡¤Î¤É¤ì¤«¤Î·Á¼°¤ÇºÆÀ¸»þ´Ö¤ò»ØÄê¤·¤Þ¤¹¡£¡ÊH: »þ´Ö, M:
-     Ê¬, S: ÉÃ¡Ë
+     æ¬¡ã®ã©ã‚Œã‹ã®å½¢å¼ã§å†ç”Ÿæ™‚é–“ã‚’æŒ‡å®šã—ã¾ã™ã€‚ï¼ˆH: æ™‚é–“, M:
+     åˆ†, S: ç§’ï¼‰
        * HH:MM:SS
        * H:MM:SS
        * MM:SS
@@ -1381,7 +1381,7 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 
 === Slash
 
-°Ê²¼¤Î¥á¥½¥Ã¥É¤ò(({item}))¤ËÄÉ²Ã¤·¤Þ¤¹¡£
+ä»¥ä¸‹ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’(({item}))ã«è¿½åŠ ã—ã¾ã™ã€‚
 
 --- slash_section
 --- slash_section=(value)
@@ -1394,16 +1394,16 @@ PodcastÍÑ¤Î¾ðÊó¤òÀ¸À®¤·¤Þ¤¹¡£RSS 2.0¤òÀ¸À®¤¹¤ë¾ì¹ç¤Î¤ßÍøÍÑ¤µ
 
 --- slash_hit_parade
 
-     slash:hit_parade¤ÎÃÍ¤òÀ°¿ô¤ÎÇÛÎó¤ÇÊÖ¤·¤Þ¤¹¡£¥³¥ó¥Þ¶èÀÚ¤ê
-     ¤ÎÀ°¿ô¤ÎÊ¸»úÎó¤Ç¤Ï¤Ê¤¤¤Î¤ÇÃí°Õ¤·¤Æ¤¯¤À¤µ¤¤¡£
+     slash:hit_paradeã®å€¤ã‚’æ•´æ•°ã®é…åˆ—ã§è¿”ã—ã¾ã™ã€‚ã‚³ãƒ³ãƒžåŒºåˆ‡ã‚Š
+     ã®æ•´æ•°ã®æ–‡å­—åˆ—ã§ã¯ãªã„ã®ã§æ³¨æ„ã—ã¦ãã ã•ã„ã€‚
 
 --- slash_hit_parade=(value)
 
-     ((|value|))¤Ï¥³¥ó¥Þ¶èÀÚ¤ê¤ÎÀ°¿ô¤ÎÊ¸»úÎó¤Ç¤âÀ°¿ô¤ÎÇÛÎó¤Ç
-     ¤â¤É¤Á¤é¤Ç¤â¤«¤Þ¤¤¤Þ¤»¤ó¡£
+     ((|value|))ã¯ã‚³ãƒ³ãƒžåŒºåˆ‡ã‚Šã®æ•´æ•°ã®æ–‡å­—åˆ—ã§ã‚‚æ•´æ•°ã®é…åˆ—ã§
+     ã‚‚ã©ã¡ã‚‰ã§ã‚‚ã‹ã¾ã„ã¾ã›ã‚“ã€‚
 
 --- slash_hit_parades
-     slash_hit_parade¤ÎÊÌÌ¾¤Ç¤¹¡£
+     slash_hit_paradeã®åˆ¥åã§ã™ã€‚
 
 --- slash_hit_parades=(value)
-     slash_hit_parade=¤ÎÊÌÌ¾¤Ç¤¹¡£
+     slash_hit_parade=ã®åˆ¥åã§ã™ã€‚

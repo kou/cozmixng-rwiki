@@ -1,8 +1,8 @@
 = PostgreSQL
 
-== •¢•√•◊•«°º•»
+== „Ç¢„ÉÉ„Éó„Éá„Éº„Éà
 
-  % # PostgreSQL§Úª»§√§∆§§§Î•¢•◊•Í•±°º•∑•Á•Û§ÚΩ™Œª
+  % # PostgreSQL„Çí‰Ωø„Å£„Å¶„ÅÑ„Çã„Ç¢„Éó„É™„Ç±„Éº„Ç∑„Éß„É≥„ÇíÁµÇ‰∫Ü
   % sudo -u pgsql -H sh -c 'pg_dumpall > ~pgsql/dump.sql'
   % sudo env - /usr/local/etc/rc.d/postgresql stop
   % sudo /usr/local/sbin/portupgrade -Rr postgresql-server
@@ -11,4 +11,4 @@
   % sudo -u pgsql -H cp ~pgsql/data{.`date +%Y%m%d`,}/postmaster.opts
   % sudo env - /usr/local/etc/rc.d/postgresql start
   % sudo -u pgsql -H sh -c 'psql -f ~pgsql/dump.sql postgres'
-  % # PostgreSQL§Úª»§√§∆§§§Î•¢•◊•Í•±°º•∑•Á•Û§ÚµØ∆∞
+  % # PostgreSQL„Çí‰Ωø„Å£„Å¶„ÅÑ„Çã„Ç¢„Éó„É™„Ç±„Éº„Ç∑„Éß„É≥„ÇíËµ∑Âãï

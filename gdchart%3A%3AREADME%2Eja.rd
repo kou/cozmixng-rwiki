@@ -4,123 +4,123 @@
 
 $Id: README.ja 622 2005-11-25 05:33:11Z kou $
 
-== ̾��
+== 名前
 
 gdchart
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 Ruby's
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����
+((<COZMIXNG RWiki - 連絡先
 |URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))
-�������������
+を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-((<GDChart|URL:http://www.fred.net/brv/chart/>))��Ruby�Х���
-�ǥ��󥰤Ǥ���Ruby��C�Υ��󥿡��ե�������
-((<SWIG|URL:http://www.swig.org/>))���������Ƥ��ޤ���
+((<GDChart|URL:http://www.fred.net/brv/chart/>))のRubyバイン
+ディングです．RubyとCのインターフェイスは
+((<SWIG|URL:http://www.swig.org/>))で生成しています．
 
-Ʊ�ͤΤ�Τˡ�((<RAA:ruby-gdchart>))������ޤ���
+同様のものに，((<RAA:ruby-gdchart>))があります．
 
-== ��¸���Ƥ�����
+== 依存しているもの
 
   * ((<GD|URL:www.boutell.com/gd/>))
   * ((<GDChart|URL:http://www.fred.net/brv/chart/>))
   * ((<SWIG|URL:http://www.swig.org/>))
 
-=== ����Ф褤���
+=== あればよいもの
 
-GDChart�⤳�������Ѥ��ƥ���ѥ��뤵��Ƥ���ɬ�פ�����ޤ���
+GDChartもこれらを利用してコンパイルされている必要があります．
 
   * ((<libfreetype|URL:http://sourceforge.net/projects/freetype/>))
-    �����ܸ�򰷤��������ɬ�ܡ�
+    （日本語を扱いたければ必須）
   * ((<libjpeg|URL:http://www.ijg.org/>))
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/gdchart.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/ruby/gdchart/trunk gdchart
 
-== ���󥹥ȡ���
+== インストール
 
   % ruby setup.rb config
 
-�⤷�����󥯥롼�ɥѥ����ɲä�������аʲ��Τ褦�ˤ��Ƥ�����
-����
+もし，インクルードパスを追加したければ以下のようにしてくださ
+い．
 
-  % ruby setup.rb config -- --with-opt-include=�ѥ�1:�ѥ�2:...
+  % ruby setup.rb config -- --with-opt-include=パス1:パス2:...
 
-�⤷���饤�֥��ѥ����ɲä�������аʲ��Τ褦�ˤ��Ƥ���������
+もし，ライブラリパスを追加したければ以下のようにしてください．
 
   % ruby setup.rb config -- --with-opt-lib=path1:path2:...
 
---with-opt-include��--with-opt-lib���ץ�����Ʊ���˻��ꤹ��
-���Ȥ��Ǥ��ޤ���
+--with-opt-includeと--with-opt-libオプションは同時に指定する
+ことができます．
 
-���ȤϤ��Ĥ��̤�Ǥ���
+あとはいつも通りです．
 
   % ruby setup.rb setup
   # ruby setup.rb install
 
-== �Ȥ���
+== 使い方
 
-sample/�ʲ��򻲹ͤˤ��Ƥ��������������ʤ������ܤ������Ȥ�
-��ǽ񤭤ޤ������֤�
+sample/以下を参考にしてください．ごめんなさい，詳しいことは
+後で書きます．たぶん．
 
-���ܸ�򰷤���������sample/*_ja.rb�����ͤˤʤ�Ȼפ��ޤ���
+日本語を扱いたい場合はsample/*_ja.rbが参考になると思います．
 
 
-���ΤȤ����ϡ��Ȥꤢ������~/.irbrc�˰ʲ��Τ褦�˽񤤤�TAB��
-�᥽�å�̾���䴰���Ƥ��ޤ����Ƥ��Ƥ���������
+今のところは，とりあえず，~/.irbrcに以下のように書いてTABで
+メソッド名を補完してごまかしていてください．
 
   require 'irb/completion'
 
-�㤨�С��ߥ���դ�������������ϰʲ��Τ褦�ˤ���Ȥ褤����
-����ޤ���
+例えば，円グラフを作成したい場合は以下のようにするとよいかも
+しれません．
 
   % irb -r gdchart/pie
   irb(main):001:0> pie = GDChart::Pie.new
   irb(main):002:0> pie.[TAB]
 
 
-���뤤�ϡ�lib/gdchart/base.rb�Ȥ�lib/gdchart/graph.rb�Ȥ�
-lib/gdchart/pie.rb�ΰʲ��Υ����Ȥ��񤫤줿��ʬ��겼�ΤȤ�
-���򸫤�Ȥ褤���⤷��ޤ���
+あるいは，lib/gdchart/base.rbとかlib/gdchart/graph.rbとか
+lib/gdchart/pie.rbの以下のコメントが書かれた部分より下のとこ
+ろを見るとよいかもしれません．
 
   # _
   ### method generation
 
-=== ���ܸ��Ȥ��Ȥ�������
+=== 日本語を使うときの注意
 
-��Ϥꡤ�礷�����ȤϽ񤫤ʤ��ΤǤ��������ܸ��Ȥ��Ȥ��ϰʲ�
-�Τ��Ȥ����դ��Ƥ���������
+やはり，大したことは書かないのですが，日本語を使うときは以下
+のことに注意してください．
 
-  * ʸ�������ɤ�UTF-8�ˤ��Ƥ���������GD�Υ���ѥ���λ�����
-    ��ä��Ѥ�äƤ��뤫��ˡ�
+  * 文字コードをUTF-8にしてください（GDのコンパイルの仕方に
+    よって変わってくるかも）．
 
-  * �ե���Ȥ����ܸ��TrueType�ե���Ȥ���ꤷ�Ƥ���������
+  * フォントは日本語のTrueTypeフォントを指定してください．
 
-  * �ե���Ȥ����Ǥʤ���������size����ʤ���ptsize�����ˤ��
-    �ꤷ�Ƥ���������
+  * フォントだけでなくサイズ（sizeじゃなくてptsizeの方）も指
+    定してください．
     
-    �㤨�С�����դΥ����ȥ�����ꤹ����ϰʲ��Τ褦�ˤ���
-    ����
+    例えば，グラフのタイトルを設定する場合は以下のようにしま
+    す．
     
       graph = GDChart::Graph.new
-      graph.title = "�����Ȥ�"
+      graph.title = "たいとる"
       graph.title_font = ".../mikachan.ttf"
       graph.title_ptsize = 20.0
 
-== ����
+== 感謝
 
-  * Markus����: �Х���𤷤Ƥ���ޤ�����
-  * Frank����: �Х���𤷤Ƥ���ޤ�����
+  * Markusさん: バグ報告してくれました．
+  * Frankさん: バグ報告してくれました．

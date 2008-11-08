@@ -1,14 +1,14 @@
-= �ͥ�
+= ネタ
 
-== ư�����
+== 動くやつ
 
   * ((<Pseudo Web Mail>))
   * ((<WiLiKi|URL:/~wiliki/>))
-  * ((<���ȥ꡼�ߥ�|URL:https://streaming.cozmixng.org/>))
+  * ((<ストリーミング|URL:https://streaming.cozmixng.org/>))
   * ((<GalleryAdministrator>))
 
-== ��
+== 案
 
-  * ((<�ϰ��ߤ����ʥ����ӥ�>))
-  * ((<������ä������󥿡��ե���������>))
-  * Jail����S�������߲�ǽ��WiLiKi��ư����
+  * ((<地域誌みたいなサービス>))
+  * ((<３月に話したインターフェースの話>))
+  * JailしてS式埋め込み可能なWiLiKiを動かす

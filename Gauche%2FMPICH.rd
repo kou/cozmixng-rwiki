@@ -1,6 +1,6 @@
 = Gauche/MPICH
 
-╩┬╬єе╫еэе░еще▀еєе░ещеде╓ещеъ((<MPICH|URL:http://www-unix.mcs.anl.gov/mpi/mpich/>))д╬Gaucheе╨едеєе╟егеєе░
+ф╕жхИЧуГЧуГнуВ░уГйуГЯуГ│уВ░уГйуВдуГЦуГйуГк((<MPICH|URL:http://www-unix.mcs.anl.gov/mpi/mpich/>))уБоGaucheуГРуВдуГ│уГЗуВгуГ│уВ░
 
   * ((<README.en|"Gauche/MPICH::README.en">))
   * ((<README.ja|"Gauche/MPICH::README.ja">))

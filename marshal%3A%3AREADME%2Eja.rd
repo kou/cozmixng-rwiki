@@ -4,34 +4,34 @@
 
 $Id: README.ja 190 2004-06-23 13:58:57Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 GPL or BSD License
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))�������������
+((<COZMIXNG RWiki - 連絡先|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-�ʰ�marshal/unmarshal�饤�֥��Ǥ���
+簡易marshal/unmarshalライブラリです．
 
-ʸ�������ͤʤ�read/write�Ǥ��륪�֥������ȤϤ��Τޤ�
-read/write��Ȥä�marshal/unmarshal���ޤ�������³���ʤ�
-read/write�Ǥ��ʤ����֥������Ȥ�ID��Ĥ��ƥ����Ǵ�������
-�����ĤޤꡤƱ���ץ�������Ǥ�marshal/unmarshal�Ǥ��ޤ�����
-�ץ�������ۤ���marshal/unmarshal�ϤǤ��ޤ���
+文字列や数値などread/writeできるオブジェクトはそのまま
+read/writeを使ってmarshal/unmarshalしますが，手続きなど
+read/writeできないオブジェクトはIDをつけてメモリ上で管理しま
+す．つまり，同じプロセス内ではmarshal/unmarshalできますが，
+プロセスを越えてmarshal/unmarshalはできません．
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/marshal.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/gauche/marshal/trunk marshal
 
-== ���󥹥ȡ���
+== インストール
 
   # gosh install/install.scm

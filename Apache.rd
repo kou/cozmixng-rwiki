@@ -1,31 +1,31 @@
 = Apache
 
-Apache�ط��κ�ȵ�Ͽ�Ǥ���
+Apache関係の作業記録です。
 
-== ���󥹥ȡ���
+== インストール
 
-/usr/local/etc/pkgtools.conf��MAKE_ARGS�˰ʲ����ɲá�
+/usr/local/etc/pkgtools.confのMAKE_ARGSに以下を追加．
 
   'www/apache*' => [
     'WITH_SUEXEC_MODULES=yes',
     'WITH_SSL_MODULES=yes',
    ],
 
-www/apache22�򥤥󥹥ȡ���
+www/apache22をインストール
 
   % sudo /usr/local/sbin/portupgrade -NRr apache
 
-www/apache20����www/apache22�˥��åץǡ��Ȥ�����ϰʲ��Τ褦�ˤ��롥
+www/apache20からwww/apache22にアップデートする場合は以下のようにする．
 
   % sudo nice -20 /usr/local/sbin/portupgrade -NRr -o www/apache22 apache
 
-== Digestǧ�ڤ�Ȥ�
+== Digest認証を使う
 
-httpd.conf��auth_digest�⥸�塼�������ɤ��뵭�Ҥ��ɲä��롣
+httpd.confにauth_digestモジュールをロードする記述を追加する。
 
   LoadModule auth_digest_module libexec/apache2/mod_auth_digest.so
 
-httpd.conf��.htaccess��Digestǧ�ڤ�����򵭽Ҥ���
+httpd.confや.htaccessにDigest認証の設定を記述する
 
   AuthName realm_name
   AuthType Digest
@@ -33,15 +33,15 @@ httpd.conf��.htaccess��Digestǧ�ڤ�����򵭽Ҥ���
   AuthDigestFile /path/to/digest/file
   Require valid-user
 
-Digestǧ���ѤΥե��������
+Digest認証用のファイルを作る
 
   % /usr/local/sbin/htdigest -c /path/to/digest/file realm_name user_name
 
-�����ǡ�realm_name��AuthName�ǻ��ꤷ����ΤȤ��ʤ���Τ���ꤹ�롣
+ここで、realm_nameはAuthNameで指定したものとおなじものを指定する。
 
-== SSL��Ȥ�
+== SSLを使う
 
-���Ȥ���������Υꥯ�����Ȥ��롥Common Name��www.cozmxing.org�Ȥ�streaming.cozmixng.org�Ȥ��ˤ��롥
+鍵とか，証明書のリクエストを作る．Common Nameはwww.cozmxing.orgとかstreaming.cozmixng.orgとかにする．
 
   % sudo openssl req -new \
       -out /usr/local/etc/apache2/ssl.crt/server.csr \
@@ -51,41 +51,41 @@ Digestǧ���ѤΥե��������
       -out /usr/local/etc/apache2/ssl.key/server.key
   % sudo chmod 600 /usr/local/etc/apache2/ssl.key/server.{pem,key}
 
-�⤷��������ʲ��Τ褦��-config���ץ����ɬ�פ��⤷��ʤ���
+もしかしたら以下のような-configオプションが必要かもしれない．
 
   -config /etc/ssl/openssl.cnf
 
-���ʤߤˡ�req -subject��Ȥ���req -new���ꤷ���ͤ򸫤뤳�Ȥ��Ǥ��롥
+ちなみに，req -subjectを使えばreq -new設定した値を見ることができる．
 
   % openssl req -subject \
       -in /usr/local/etc/apache2/ssl.crt/server.csr
 
-�⤷�ʤ��ä��顤ǧ�ڶɤ��롥���뤤��((<CAcert|URL:http://www.cacert.org/>))�����Ѥ��롥
+もしなかったら，認証局を作る．あるいは((<CAcert|URL:http://www.cacert.org/>))を利用する．
   % cd /usr/local/share/ca
   % sudo sh /usr/src/crypto/openssl/apps/CA.sh -newca
 
-ǧ�ڤ��롥
+認証する．
   % cd /usr/local/share/ca/
   % sudo openssl ca -cert /usr/local/share/ca/demoCA/cacert.pem \
       -keyfile /usr/local/share/ca/demoCA/private/cakey.pem \
       -in /usr/local/etc/apache2/ssl.key/server.csr \
       -out /usr/local/etc/apache2/ssl.crt/server.crt
 
-== ̾���١����ΥС������ۥ���
+== 名前ベースのバーチャルホスト
 
-̾���١����ΥС������ۥ��Ȥ�����򤷤���IP���ɥ쥹����ꤹ�롥
+名前ベースのバーチャルホストの設定をしたいIPアドレスを指定する．
 
-�ɤ�IP���ɥ쥹���ɤ�����*����ꤹ�롥IP���ɥ쥹�θ�˥ݡ����ֹ�����Ǥ��롥
+どのIPアドレスも良い場合は*を指定する．IPアドレスの後にポート番号も指定できる．
 
   NameVirtualHost *:80
 
-��������ȡ��ɤ�IP���ɥ쥹�Ǥ�褤����80�֥ݡ��ȤΤ�̾���١����ΥС������ۥ��Ȥ����Ѥ��롥
+この例だと，どのIPアドレスでもよいが，80番ポートのみ名前ベースのバーチャルホストを利用する．
 
-���ˡ��С������ۥ��Ȥ���ꤹ�롥
+次に，バーチャルホストを指定する．
 
-�ƥС������ۥ��Ȥˤϡ�����Ǥ�ServerName��DocumentRoot����ꤹ�롥�ǥե���Ȥ����Ѥ��������ϡ����ֺǽ�˽񤭡�DocumentRoot��<VirtualHost>�γ��ǻ��ꤷ����Ĥ�Ʊ������ˤ��롥
+各バーチャルホストには，最低でもServerNameとDocumentRootを指定する．デフォルトで利用される設定は，一番最初に書き，DocumentRootは<VirtualHost>の外で指定したやつを同じ設定にする．
 
-<VirtualHost>��IP���ɥ쥹�λ�����ˡ�ϡʤ���������NameVirtualHost��Ʊ����
+<VirtualHost>のIPアドレスの指定方法は（だいたい）NameVirtualHostと同じ．
 
   <VirtualHost *:80>
     ServerName www.cozmixng.org
@@ -100,18 +100,18 @@ Digestǧ���ѤΥե��������
     CustomLog /var/log/cozmix.sgk.iwate-u.ac.jp-access_log combined
   </VirtualHost>
 
-�С������ۥ��Ȥμ¹ԥ桼�������롼�פ��ѹ�����ˤ�SuexecUserGroup����ꤹ�롥�Ť�Apache�ǻ���Ǥ���User��Group�ϻ��ѤǤ��ʤ���
+バーチャルホストの実行ユーザ／グループを変更するにはSuexecUserGroupを指定する．古いApacheで指定できたUserとGroupは使用できない．
 
-== httpready���ʤ�
+== httpreadyがない
 
-Apache 2.2.x��ư������Ȱʲ��Τ褦��warning���Ф��礬���롥
+Apache 2.2.xを起動させると以下のようにwarningが出る場合がある．
 
   [warn] (2)No such file or directory: Failed to enable the 'httpready' Accept Filter
 
-���ξ��ϰʲ��Τ褦�ˤ���Ф褤��
+この場合は以下のようにすればよい．
 
   % sudo kldload accf_http.ko
 
-���ư������˸ƤӽФ��Τ����ݤʤΤ�/boot/loader.conf�˰ʲ����ɲá�
+毎回起動した毎に呼び出すのは面倒なので/boot/loader.confに以下を追加．
 
   accf_http_load="YES"

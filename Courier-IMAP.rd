@@ -1,16 +1,16 @@
 = Courier-IMAP
 
-Maildir·Á¼°ÂĞ±ş¤ÎPOP3¡¤IMAP¥µ¡¼¥Ğ¡¥((<DRAC>))¤Ë¤ÏÂĞ±ş¤·¤Æ¤¤¤Ê¤¤(((<ÂĞ±ş¤µ¤»¤Æ¤¤¤ë¿Í¤Ï¤¤¤ë|URL:http://www.ftserve.net/~fuji/linux/popbeforesmtp.shtml>)))¡¥
+Maildirå½¢å¼å¯¾å¿œã®POP3ï¼ŒIMAPã‚µãƒ¼ãƒï¼((<DRAC>))ã«ã¯å¯¾å¿œã—ã¦ã„ãªã„(((<å¯¾å¿œã•ã›ã¦ã„ã‚‹äººã¯ã„ã‚‹|URL:http://www.ftserve.net/~fuji/linux/popbeforesmtp.shtml>)))ï¼
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo /usr/local/sbin/portupgrade -NRr courier-imap
 
-== ÀßÄê
+== è¨­å®š
 
-ÀßÄê¥Õ¥¡¥¤¥ë¤Ï/usr/local/etc/courier-imap/{imapd,imapd-ssl,pop3d,pop3d-ssl}
+è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã¯/usr/local/etc/courier-imap/{imapd,imapd-ssl,pop3d,pop3d-ssl}
 
-°Ê²¼¡¤ÊÑ¹¹ÅÀ
+ä»¥ä¸‹ï¼Œå¤‰æ›´ç‚¹
 
 === imapd
 
@@ -46,34 +46,34 @@ Maildir·Á¼°ÂĞ±ş¤ÎPOP3¡¤IMAP¥µ¡¼¥Ğ¡¥((<DRAC>))¤Ë¤ÏÂĞ±ş¤·¤Æ¤¤¤Ê¤¤(((<ÂĞ±ş¤µ¤»¤Æ¤¤¤
 
   TLS_CERTFILE=/usr/local/etc/courier-imap/pop3d.pem
 
-=== UNIX¥¢¥«¥¦¥ó¥È¤¬Â¸ºß¤·¤Ê¤¤¾ì¹ç
+=== UNIXã‚¢ã‚«ã‚¦ãƒ³ãƒˆãŒå­˜åœ¨ã—ãªã„å ´åˆ
 
-((<Postfix>))¤Ç¥Ğ¡¼¥Á¥ã¥ë¥Û¥¹¥È¤òÀßÄê¤·¤Æ¤ª¤¯¡¥
+((<Postfix>))ã§ãƒãƒ¼ãƒãƒ£ãƒ«ãƒ›ã‚¹ãƒˆã‚’è¨­å®šã—ã¦ãŠãï¼
 
-==== ¥æ¡¼¥¶¤òºî¤ë
+==== ãƒ¦ãƒ¼ã‚¶ã‚’ä½œã‚‹
 
-  % sudo /usr/local/sbin/userdb ¥¢¥«¥¦¥ó¥ÈÌ¾@cozmixng.org set \
-      home=/home/mailuser/cozmixng.org/¥¢¥«¥¦¥ó¥ÈÌ¾ \
-      mail=/home/mailuser/cozmixng.org/¥¢¥«¥¦¥ó¥ÈÌ¾/Maildir \
+  % sudo /usr/local/sbin/userdb ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå@cozmixng.org set \
+      home=/home/mailuser/cozmixng.org/ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå \
+      mail=/home/mailuser/cozmixng.org/ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå/Maildir \
       uid=10000 gid=10000
 
-Îã:
+ä¾‹:
   % sudo /usr/local/sbin/userdb kou@cozmixng.org set \ 
       home=/home/mailuser/cozmixng.org/kou \
       mail=/home/mailuser/cozmixng.org/kou/Maildir \
       uid=10000 gid=10000
 
-==== ¥æ¡¼¥¶¤Î¥Ñ¥¹¥ï¡¼¥É¤òÀßÄê¤¹¤ë
+==== ãƒ¦ãƒ¼ã‚¶ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’è¨­å®šã™ã‚‹
 
   % sudo /usr/local/sbin/userdbpw -md5 | \
       sudo /usr/local/sbin/userdb \
-        ¥¢¥«¥¦¥ó¥ÈÌ¾@cozmixng.org set pop3pw
+        ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå@cozmixng.org set pop3pw
   % sudo /usr/local/sbin/userdbpw -md5 | \
       sudo /usr/local/sbin/userdb \
-        ¥¢¥«¥¦¥ó¥ÈÌ¾@cozmixng.org set imappw
+        ã‚¢ã‚«ã‚¦ãƒ³ãƒˆå@cozmixng.org set imappw
   % sudo /usr/local/sbin/makeuserdb
 
-Îã:
+ä¾‹:
   % sudo /usr/local/sbin/userdbpw -md5 | \
       sudo /usr/local/sbin/userdb \
         kou@cozmixng.org set pop3pw
@@ -82,43 +82,43 @@ Maildir·Á¼°ÂĞ±ş¤ÎPOP3¡¤IMAP¥µ¡¼¥Ğ¡¥((<DRAC>))¤Ë¤ÏÂĞ±ş¤·¤Æ¤¤¤Ê¤¤(((<ÂĞ±ş¤µ¤»¤Æ¤¤¤
         kou@cozmixng.org set imappw
   % sudo /usr/local/sbin/makeuserdb
 
-CRAM-MD5¤òÍøÍÑ¤¹¤ë¤Ê¤é¤³¤¦¡¥
+CRAM-MD5ã‚’åˆ©ç”¨ã™ã‚‹ãªã‚‰ã“ã†ï¼
 
   % sudo /usr/local/sbin/userdbpw -hmac-md5 | \
       sudo /usr/local/sbin/userdb \
         kou@cozmixng.org set hmac-md5pw
   % sudo /usr/local/sbin/makeuserdb
 
-¤³¤ì¤ÏPOP3¤Ç¤âIMAP¤Ç¤â¶¦ÄÌ¤Ç»È¤¨¤ë¤ß¤¿¤¤¡¥
+ã“ã‚Œã¯POP3ã§ã‚‚IMAPã§ã‚‚å…±é€šã§ä½¿ãˆã‚‹ã¿ãŸã„ï¼
 
-==== quota¤òÀßÄê
+==== quotaã‚’è¨­å®š
 
-¤³¤ó¤Ê¤³¤È¤ò¤¹¤ë¤Èquota¤òÀßÄê¤Ç¤­¤ë¤ß¤¿¤¤¡¥¤Á¤Ê¤ß¤Ë¡¤¤³¤ÎÎã¤À¤È100MB¡¥
+ã“ã‚“ãªã“ã¨ã‚’ã™ã‚‹ã¨quotaã‚’è¨­å®šã§ãã‚‹ã¿ãŸã„ï¼ã¡ãªã¿ã«ï¼Œã“ã®ä¾‹ã ã¨100MBï¼
 
   % sudo /usr/local/sbin/userdb \
       kou@cozmixng.org set quota=100000000
   % sudo /usr/local/sbin/makeuserdb
 
 
-=== ¥Ğ¡¼¥Á¥ã¥ë¥Û¥¹¥È¤òÀßÄê¤·¤Æ¤¤¤Ê¤¤¾ì¹ç
+=== ãƒãƒ¼ãƒãƒ£ãƒ«ãƒ›ã‚¹ãƒˆã‚’è¨­å®šã—ã¦ã„ãªã„å ´åˆ
 
-==== ¥æ¡¼¥¶¤Î¥Û¡¼¥à¤ËMaildir¤òºî¤ë
+==== ãƒ¦ãƒ¼ã‚¶ã®ãƒ›ãƒ¼ãƒ ã«Maildirã‚’ä½œã‚‹
 
   % maildirmake ~/Maildir
 
-/usr/share/skel¤Ëºî¤Ã¤Æ¤ª¤¯¤È¿·µ¬ÅĞÏ¿¤·¤¿¥æ¡¼¥¶¤Ï¼«Ê¬¤Çºî¤é¤Ê¤¯¤Æ¤âÎÉ¤¤¡£
+/usr/share/skelã«ä½œã£ã¦ãŠãã¨æ–°è¦ç™»éŒ²ã—ãŸãƒ¦ãƒ¼ã‚¶ã¯è‡ªåˆ†ã§ä½œã‚‰ãªãã¦ã‚‚è‰¯ã„ã€‚
 
   % sudo maildirmake /usr/share/skel/Maildir
 
-== ¾ÚÌÀ½ñ
+== è¨¼æ˜æ›¸
 
-=== ¼«Ê¬¤Çºî¤ë
+=== è‡ªåˆ†ã§ä½œã‚‹
 
-ºî¤êÊı¤Ï((<Apache>))¤ä((<¥¹¥È¥ê¡¼¥ß¥ó¥°>))¤ä((<Qpopper>))¤È°ì½ï¡¥
+ä½œã‚Šæ–¹ã¯((<Apache>))ã‚„((<ã‚¹ãƒˆãƒªãƒ¼ãƒŸãƒ³ã‚°>))ã‚„((<Qpopper>))ã¨ä¸€ç·’ï¼
 
-Ãí°ÕÅÀ¤Ï¡¤Courier-IMAP¤ÏÈëÌ©¸°¤È¾ÚÌÀ½ñ¤òÆ±¤¸¥Õ¥¡¥¤¥ë¤Ë¤·¤Ê¤±¤ì¤Ğ¤¤¤±¤Ê¤¤¤³¤È¤Ç¤¢¤ë¡¥¤Ê¤Î¤Ç¡¤°Ê²¼¤Î¤è¤¦¤Ë¤·¤Æ{imapd.pem,pop3d.pem}¤òºî¤ë¡¥
+æ³¨æ„ç‚¹ã¯ï¼ŒCourier-IMAPã¯ç§˜å¯†éµã¨è¨¼æ˜æ›¸ã‚’åŒã˜ãƒ•ã‚¡ã‚¤ãƒ«ã«ã—ãªã‘ã‚Œã°ã„ã‘ãªã„ã“ã¨ã§ã‚ã‚‹ï¼ãªã®ã§ï¼Œä»¥ä¸‹ã®ã‚ˆã†ã«ã—ã¦{imapd.pem,pop3d.pem}ã‚’ä½œã‚‹ï¼
 
-¸°¤òºî¤ë¡¥Common Name¤Ïmail.cozmixng.org¤Ë¤¹¤ë¤³¤È¡¥
+éµã‚’ä½œã‚‹ï¼Common Nameã¯mail.cozmixng.orgã«ã™ã‚‹ã“ã¨ï¼
 
   % sudo openssl req -new \
     -out /usr/local/etc/courier-imap/server.csr \
@@ -128,51 +128,51 @@ CRAM-MD5¤òÍøÍÑ¤¹¤ë¤Ê¤é¤³¤¦¡¥
     -out /usr/local/etc/courier-imap/server.key
   % sudo chmod 600 /usr/local/etc/courier-imap/server.{pem,key}
 
-Ç§¾Ú¤¹¤ë(¾ÊÎ¬)¡¥
+èªè¨¼ã™ã‚‹(çœç•¥)ï¼
 
-¾ÚÌÀ½ñ¤ÈÈëÌ©¸°¤ò°ì½ï¤Ë¤¹¤ë¡¥
+è¨¼æ˜æ›¸ã¨ç§˜å¯†éµã‚’ä¸€ç·’ã«ã™ã‚‹ï¼
 
   % cd /usr/local/etc/courier-imap
   % sudo sh -c 'cat server.crt server.key > pop3d.pem'
   % sudo cp {pop3,imap}d.pem
   % sudo chmod 600 {pop3,imap}d.pem
 
-=== mkimapdcert¤ò»È¤¦
+=== mkimapdcertã‚’ä½¿ã†
 
-/usr/local/etc/courier-imap/imapd-cnf¤òºî¤ë¡¥/usr/local/etc/courier-imap/imapd-cnf.dist¤ò¥³¥Ô¡¼¤·¤Æ¡¤¤½¤ì¤òÊÔ½¸¤¹¤ë¤È¤è¤¤¤À¤í¤¦¡¥
+/usr/local/etc/courier-imap/imapd-cnfã‚’ä½œã‚‹ï¼/usr/local/etc/courier-imap/imapd-cnf.distã‚’ã‚³ãƒ”ãƒ¼ã—ã¦ï¼Œãã‚Œã‚’ç·¨é›†ã™ã‚‹ã¨ã‚ˆã„ã ã‚ã†ï¼
 
   % sudo cp /usr/local/etc/courier-imap/imapd-cnf{.dist,}
 
-Ãí°ÕÅÀ¤Ï
+æ³¨æ„ç‚¹ã¯
 
   [ req_dn ]
 
-¤ÎÃæ¤Î
+ã®ä¸­ã®
 
   CN=localhost
 
-¤òIMAP/POP¥µ¡¼¥Ğ¤Î¤â¤Î¤ËÊÑ¤¨¤ë¤³¤È¡Êmail.cozmixng.org¤È¤«¡Ë¡¥
+ã‚’IMAP/POPã‚µãƒ¼ãƒã®ã‚‚ã®ã«å¤‰ãˆã‚‹ã“ã¨ï¼ˆmail.cozmixng.orgã¨ã‹ï¼‰ï¼
 
-¸å¤Ï¡¤mkimpadcert¤ò¼Â¹Ô¤¹¤ë¤À¤±¡¥
+å¾Œã¯ï¼Œmkimpadcertã‚’å®Ÿè¡Œã™ã‚‹ã ã‘ï¼
 
   % sudo mkimapdcert
 
-¾ÚÌÀ½ñÂ¾¤Ï/usr/local/share/courier-imap/imapd.pem¤ËÀ¸À®¤µ¤ì¤ë¡¥¤Á¤Ê¤ß¤Ë¡¤/usr/local/share/courier-imap/imapd.pem¤¬¤â¤¦¤¹¤Ç¤Ë¤¢¤ë¤Èmkimpadcert¤Ï¿·¤·¤¯imapd.pem¤òºî¤é¤Ê¤¤¡Ê¾å½ñ¤­¤·¤Ê¤¤¡Ë¤Î¤Ç¡¤ºî¤ê¤Ê¤ª¤¹¤È¤­¤Ïrm¤·¤Æ¤«¤émkimapdcert¤ò
-¼Â¹Ô¤¹¤ë¤³¤È¡¥
+è¨¼æ˜æ›¸ä»–ã¯/usr/local/share/courier-imap/imapd.pemã«ç”Ÿæˆã•ã‚Œã‚‹ï¼ã¡ãªã¿ã«ï¼Œ/usr/local/share/courier-imap/imapd.pemãŒã‚‚ã†ã™ã§ã«ã‚ã‚‹ã¨mkimpadcertã¯æ–°ã—ãimapd.pemã‚’ä½œã‚‰ãªã„ï¼ˆä¸Šæ›¸ãã—ãªã„ï¼‰ã®ã§ï¼Œä½œã‚ŠãªãŠã™ã¨ãã¯rmã—ã¦ã‹ã‚‰mkimapdcertã‚’
+å®Ÿè¡Œã™ã‚‹ã“ã¨ï¼
 
-pop3d.pem¤Ïimapd.pem¤ò¥³¥Ô¡¼¤¹¤ì¤Ğ¤è¤¤¡¥
+pop3d.pemã¯imapd.pemã‚’ã‚³ãƒ”ãƒ¼ã™ã‚Œã°ã‚ˆã„ï¼
 
-== µ¯Æ°
+== èµ·å‹•
 
-µ¯Æ°¤¹¤ë¤È¤­¤Ï/usr/local/libexec/courier-imap/{imapd,pop3d}-ssl.rc¤ò»È¤¦¡¥/usr/local/etc/rc.d/courier-imap-{impad,pop3d}-ssl.sh¤È¤·¤Æ¥ê¥ó¥¯¤òÄ¥¤Ã¤Æ¤ª¤¯¤È¤¤¤¤¤À¤í¤¦¡¥
+èµ·å‹•ã™ã‚‹ã¨ãã¯/usr/local/libexec/courier-imap/{imapd,pop3d}-ssl.rcã‚’ä½¿ã†ï¼/usr/local/etc/rc.d/courier-imap-{impad,pop3d}-ssl.shã¨ã—ã¦ãƒªãƒ³ã‚¯ã‚’å¼µã£ã¦ãŠãã¨ã„ã„ã ã‚ã†ï¼
 
-== ¥¯¥é¥¤¥¢¥ó¥È¤ÎÀßÄê
+== ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®è¨­å®š
 
-¤¦¤Ş¤¯¤¤¤«¤Ê¤¤¡¥¡¥¡¥
+ã†ã¾ãã„ã‹ãªã„ï¼ï¼ï¼
 
-=== ÀÎ¤Ï¤¦¤Ş¤¯¤¤¤Ã¤¿ÀßÄê
+=== æ˜”ã¯ã†ã¾ãã„ã£ãŸè¨­å®š
 
-Mew¤Ê¤é
+Mewãªã‚‰
 
   (setq mew-prog-ssl "/usr/sbin/stunnel")
 
@@ -182,22 +182,22 @@ Mew¤Ê¤é
        ("imap-ssl"      . 't)
    ...)
 
-¤È¤«½ñ¤¯¡¥¤½¤ó¤Ç¤â¤Ã¤Æ¡¤¥á¡¼¥ë¥µ¡¼¥Ğ¤Î¾ÚÌÀ½ñ¤ò¤â¤Ã¤Æ¤­¤Æ¡Ê~/mail.pem¤È¤¹¤ë¡Ë¡¤~/.certs/°Ê²¼¤ËÃÖ¤¯¡¥~/.certs/°Ê²¼¤ËÃÖ¤¯¤È¤­¤Î¥Õ¥¡¥¤¥ëÌ¾¤Ï"#{¾ÚÌÀ½ñ¤Î¥Ï¥Ã¥·¥åÃÍ}.0"¤Ê¤ó¤À¤Ã¤Æ¤µ¡¥
+ã¨ã‹æ›¸ãï¼ãã‚“ã§ã‚‚ã£ã¦ï¼Œãƒ¡ãƒ¼ãƒ«ã‚µãƒ¼ãƒã®è¨¼æ˜æ›¸ã‚’ã‚‚ã£ã¦ãã¦ï¼ˆ~/mail.pemã¨ã™ã‚‹ï¼‰ï¼Œ~/.certs/ä»¥ä¸‹ã«ç½®ãï¼~/.certs/ä»¥ä¸‹ã«ç½®ãã¨ãã®ãƒ•ã‚¡ã‚¤ãƒ«åã¯"#{è¨¼æ˜æ›¸ã®ãƒãƒƒã‚·ãƒ¥å€¤}.0"ãªã‚“ã ã£ã¦ã•ï¼
 
   % mkdir -p ~/.certs
   % cp ~/mail.pem ~/.certs/`openssl x509 -hash -noout -in ~/mail.pem`.0
 
-¤Á¤Ê¤ß¤Ë¡¤¥á¡¼¥ë¥µ¡¼¥Ğ¤Î¾ÚÌÀ½ñ¤Ï
+ã¡ãªã¿ã«ï¼Œãƒ¡ãƒ¼ãƒ«ã‚µãƒ¼ãƒã®è¨¼æ˜æ›¸ã¯
 
   -----BEGIN CERTIFICATE-----
 
-¤«¤é
+ã‹ã‚‰
 
   -----END CERTIFICATE-----
 
-¤Ş¤Ç¤ÎÉôÊ¬¡¥mkimapdcert¤Çimapd.pem¤òºî¤Ã¤¿¤Î¤Ê¤é¡¤imapd.pem¤Î¿¿¤óÃæ¤¢¤¿¤ê¤Ë¤¢¤ë¤Ï¤º¡¥
+ã¾ã§ã®éƒ¨åˆ†ï¼mkimapdcertã§imapd.pemã‚’ä½œã£ãŸã®ãªã‚‰ï¼Œimapd.pemã®çœŸã‚“ä¸­ã‚ãŸã‚Šã«ã‚ã‚‹ã¯ãšï¼
 
 
-¤â¤·¡¤¾ÚÌÀ½ñ¤ò¸¡¾Ú¡Ê¡©¡Ë¤·¤Ê¤¤¤Ê¤é°Ê²¼¤ò½ñ¤¤¤Æ¤ª¤¯¡¥
+ã‚‚ã—ï¼Œè¨¼æ˜æ›¸ã‚’æ¤œè¨¼ï¼ˆï¼Ÿï¼‰ã—ãªã„ãªã‚‰ä»¥ä¸‹ã‚’æ›¸ã„ã¦ãŠãï¼
 
   (setq mew-ssl-verify-level 0)

@@ -1,6 +1,6 @@
 = kou::Link
 
-== �ʤˤ�
+== なにか
 
   * ((<Color scheme|URL:http://www.pixy.cz/apps/barvy/index-en.html>))
 
@@ -10,110 +10,110 @@
 
   * ((<An Interview with Brian Kernighan|URL:http://www-2.cs.cmu.edu/~mihaib/kernighan-interview/>))
 
-  * ((<�������£ףţ¥ڡ���������ԥ塼���ο�����ʬ���̺�����|URL:http://www.chienowa.co.jp/frame1/ijinden/index.html>))
-  * ((<�ܲȥ��󥿥ӥ塼�������С�ˡ�ؼԥ�å�������(from (('/')).J)|URL:http://slashdot.jp/article.pl?sid=03/01/09/0735214>))
+  * ((<ちえの和ＷＥＢページ：コンピュータ偉人伝（分野別索引）|URL:http://www.chienowa.co.jp/frame1/ijinden/index.html>))
+  * ((<本家インタビュー：サイバー法学者レッシグ教授(from (('/')).J)|URL:http://slashdot.jp/article.pl?sid=03/01/09/0735214>))
 
-  * ((<����󡦥��� �ץ��������� ���٥�ȤΤ�����|URL:http://www.isse.kuis.kyoto-u.ac.jp/alankay/>))
-    * ���������ʤ���
-      * �������������������͡�squeak���ٶ����롩 - ((<szk>))
-        * �����Ǥ��ͤ����ޤ���smalltalk����ˤʤ��Ǥ�����squeak��smalltalk����ʤ��Ƥ�ͷ�٤��Ǥ�����
+  * ((<アラン・ケイ プロジェクト イベントのご案内|URL:http://www.isse.kuis.kyoto-u.ac.jp/alankay/>))
+    * いきたいなぁ。
+      * こころ、くすぐられるよね。squeakも勉強する？ - ((<szk>))
+        * いいですねぇ。まずはsmalltalkからになるんですか？squeakはsmalltalkしらなくても遊べるんですか？
 
-  * ((<���Ǥ��³|URL:http://www.shiro.dreamhost.com/scheme/docs/cont-j.html>))
-    * continuation -- �ʤ��(ȿ���������ʤ뤳�Ȥ�)�񤤤��Τ��ʤ���((<szk>))
-      * �����⹥���Ǥ��ͤ������ʤߤˤ����Gauche��ML����ξ���Ǥ��͡�
+  * ((<何でも継続|URL:http://www.shiro.dreamhost.com/scheme/docs/cont-j.html>))
+    * continuation -- なんで(反応したくなることを)書いたのかなぁ．((<szk>))
+      * 先生も好きですねぇ。ちなみにこれはGaucheのMLからの情報ですね．
 
-  * ((<���̤Τ�Ĥ�ξ��Ԥ�|URL:http://www.shiro.dreamhost.com/scheme/trans/beating-the-averages-j.html>))
+  * ((<普通のやつらの上を行け|URL:http://www.shiro.dreamhost.com/scheme/trans/beating-the-averages-j.html>))
 
-  * ((<�ץ��������ȿ��ĸ���|URL:http://www.genpaku.org/index.html>))
+  * ((<プロジェクト杉田玄白|URL:http://www.genpaku.org/index.html>))
 
-  * ((<��6��LVM�ˤ�뼫ư�Хå����åס������ƥ�ι���|URL:http://www.atmarkit.co.jp/flinux/rensai/root06/root06a.html>))
+  * ((<第6回　LVMによる自動バックアップ・システムの構築|URL:http://www.atmarkit.co.jp/flinux/rensai/root06/root06a.html>))
 
-  * ((<��IT��Ϣ�� XLink�ǹ�����������1�� ����ޤ�4ǯ�����ä�XLink���ͤ����|URL:http://www.atmarkit.co.jp/fxml/tanpatsu/22xlink/01.html>))
+  * ((<＠IT：連載 XLinkで広がる世界（1） 制定まで4年かかったXLink仕様の中身|URL:http://www.atmarkit.co.jp/fxml/tanpatsu/22xlink/01.html>))
 
-  * Linux�Ǻ��IPv6�ͥåȥ���Ķ�((<[����]|URL:http://www.atmarkit.co.jp/flinux/special/usagi/usagi01a.html>))((<[����]|URL:http://www.atmarkit.co.jp/flinux/special/usagi/usagi02a.html>))((<[����]|URL:http://www.atmarkit.co.jp/flinux/special/usagi/usagi03a.html>))
+  * Linuxで作るIPv6ネットワーク環境((<[前編]|URL:http://www.atmarkit.co.jp/flinux/special/usagi/usagi01a.html>))((<[中編]|URL:http://www.atmarkit.co.jp/flinux/special/usagi/usagi02a.html>))((<[後編]|URL:http://www.atmarkit.co.jp/flinux/special/usagi/usagi03a.html>))
 
-== ���ǥ���
+== エディタ
 
-  * ((<�ƥ����ȥ��ǥ�����vim�λȤ���|URL:http://pcmania.jp/~moraz/>))
+  * ((<テキストエディターvimの使い方|URL:http://pcmania.jp/~moraz/>))
 
 == Ruby
 
-  * ((<�������ƥ���ǥ�|URL:http://www.ruby-lang.org/ja/man-1.6/?cmd=view;name=%A5%BB%A5%AD%A5%E5%A5%EA%A5%C6%A5%A3%A5%E2%A5%C7%A5%EB>))
+  * ((<セキュリティモデル|URL:http://www.ruby-lang.org/ja/man-1.6/?cmd=view;name=%A5%BB%A5%AD%A5%E5%A5%EA%A5%C6%A5%A3%A5%E2%A5%C7%A5%EB>))
 
-  * ((<����å���ɥå� ����ѥ� (('|')) �ޤĤ�Ȥ椭�Ҥ� ������|URL:http://slashdot.jp/articles/03/03/14/0258247.shtml?topic=86>))
+  * ((<スラッシュドット ジャパン (('|')) まつもとゆきひろ 答える|URL:http://slashdot.jp/articles/03/03/14/0258247.shtml?topic=86>))
 
-  * ((<OO���󥸥˥����ء� �� �� 20 �� ���� ů ����δ� ��|URL:http://www.ogis-ri.co.jp/otc/hiroba/others/OORing/interview20.html>))���
+  * ((<OOエンジニアの輪！ 〜 第 20 回 高林 哲 さんの巻 〜|URL:http://www.ogis-ri.co.jp/otc/hiroba/others/OORing/interview20.html>))より
 
-    �����ʤ�Ǥ����ɡ����� Kernighan ( �����˥ϥ� ) �Υ��󥿥ӥ塼 ���ɤ���顢Kernighan �������ڥ��󥸥˥����Ф��ƥ��ɥХ����򡣤Ȥ��ä�ʹ����Ƥ���Ǥ��͡� Kernighan ��������ñ��ǡ����򤤤Ȼפ����Ȥ���ʤ����ȡ���������ʤ��Ȥɤ�����뵤�ˤʤ�ʤ������ɤ������ޤ����ʤ����顣���򤤤Ȼפä����Ȥʤ顢���ޤ����뤫�⤷��ʤ��פȤ������Ȥ���äƤ�����Ǥ���
+    そうなんですけど、前に Kernighan ( カーニハン ) のインタビュー を読んだら、Kernighan が、後輩エンジニアに対してアドバイスを。とかって聞かれてたんですね。 Kernighan の答えは単純で「面白いと思うことをやりなさいと。そうじゃないとどうせやる気にならないし、どうせうまくやれないから。面白いと思ったことなら、うまくやれるかもしれない」ということを言っていたんです。
 
   * ((<Ruby User Group Italia|URL:http://ada2.unipv.it/ruby/index.rb>))
 
 == Scheme
 
-=== ��³
+=== 継続
 
-  * ((<��³|URL:http://www.stdio.h.kyoto-u.ac.jp/~hioki/gairon-enshuu/SchemeNotes/continuation.html>))
+  * ((<継続|URL:http://www.stdio.h.kyoto-u.ac.jp/~hioki/gairon-enshuu/SchemeNotes/continuation.html>))
 
   * ((<(Scheme) (Lisp)|URL:http://www.geocities.co.jp/SiliconValley-PaloAlto/7043/index.html>))
 
-  * ((<��³�λ���ˡ|URL:http://www.ice.nuie.nagoya-u.ac.jp/~h003149b/lang/block.html>))
+  * ((<継続の使用法|URL:http://www.ice.nuie.nagoya-u.ac.jp/~h003149b/lang/block.html>))
 
-  * ((<WebBased���ץ�|URL:http://www.csl.sony.co.jp/person/masui/Forum/data/20011215023622/>))
+  * ((<WebBasedアプリ|URL:http://www.csl.sony.co.jp/person/masui/Forum/data/20011215023622/>))
 
-== �������ƥ�
+== セキュリティ
 
-  * ((<OpenSSL�Υ��󥹥ȡ���ȥ����ڥ�������|URL:http://bitarts.jp/tech/linux/openssl.html>))
+  * ((<OpenSSLのインストールとキーペアの生成|URL:http://bitarts.jp/tech/linux/openssl.html>))
 
 == XML
 
 === RSS
 
-  * ((<RDF Site Summary (RSS) 1.0|URL:http://www.net.intap.or.jp/INTAP/s-web/data/TR/1-2.html>))(���ܸ�)
-  * ((<Resource Description Framework (RDF) Model and Syntax Specification|URL:http://www.nmda.or.jp/enc/w3c/rec-rdf-syntaxj.html>))(���ܸ�)
+  * ((<RDF Site Summary (RSS) 1.0|URL:http://www.net.intap.or.jp/INTAP/s-web/data/TR/1-2.html>))(日本語)
+  * ((<Resource Description Framework (RDF) Model and Syntax Specification|URL:http://www.nmda.or.jp/enc/w3c/rec-rdf-syntaxj.html>))(日本語)
   * ((<W3C RDF Validation Service|URL:http://www.w3.org/RDF/Validator/>))
 
   * ((<RSS 2.0|URL:http://backend.userland.com/rss>))
   * ((<Redland RSS 1.0 Validator and Viewer|URL:http://www.redland.opensource.ac.uk/rss/>))
 
-== �����ץ󥽡����ط�
+== オープンソース関係
 
-  * ((<�����ȥХ�����|URL:http://cruel.org/freeware/cathedral.html>))
-  * ((<�Υ������ե����γ���|URL:http://cruel.org/freeware/noosphere.html>))
-  * ((<��ˡ�Τ��ʤ�|URL:http://cruel.org/freeware/magicpot.html>))
+  * ((<伽藍とバザール|URL:http://cruel.org/freeware/cathedral.html>))
+  * ((<ノウアスフィアの開墾|URL:http://cruel.org/freeware/noosphere.html>))
+  * ((<魔法のおなべ|URL:http://cruel.org/freeware/magicpot.html>))
 
   * ((<URL:http://softeng-www.cs.shinshu-u.ac.jp/Thesis/2001/Undergraduate/chisa/thesis.pdf>))
 
-== WebDAV�ط�
+== WebDAV関係
 
-  * ((<WebDAV-jp �᡼��󥰥ꥹ��|URL:http://begi.net/webdav/>))
+  * ((<WebDAV-jp メーリングリスト|URL:http://begi.net/webdav/>))
 
   * ((<mod_dav FAQ|URL:http://webdav.todo.gr.jp/faq/mod_dav.faq-jp.html>))
 
-  * ((<(('Subversion: ����������'))|URL:http://subversion.bluegate.org/doc/book.html>))
+  * ((<(('Subversion: 公式ガイド'))|URL:http://subversion.bluegate.org/doc/book.html>))
 
-    * ((<��ݥ��ȥ�Υͥåȥ����|URL:http://subversion.bluegate.org/doc/book.html#svn-ch-5-sect-4>))���
+    * ((<リポジトリのネットワーク化|URL:http://subversion.bluegate.org/doc/book.html#svn-ch-5-sect-4>))より
 
-      �⤷��ʣ����Subversion��ݥ��ȥ�򥵥ݡ��Ȥ��褦�Ȥ��Ƥ��ơ����줬����������ǥ��������Ʊ���ƥǥ��쥯�ȥ����ľ�硢�̤�̿���Ȥ����Ȥ��Ǥ��ޤ��������SVNParentPath ̿��ǡ����̤οƥǥ��쥯�ȥ����ꤷ�ޤ������Ȥ��С��⤷��ʣ���� Subversion��ݥ��ȥ��/usr/local/svn �ǥ��쥯�ȥ�˺�ä�http://my.server.com/svn/repos1�Ȥ��� http://my.server.com/svn/repos2�Ȥ������褦��URL�ǥ��������������Ф������ʲ�����Τ褦�� httpd.conf���깽ʸ��Ȥ����Ȥ��Ǥ��ޤ�:
+      もし、複数のSubversionリポジトリをサポートしようとしていて、それが、ローカルディスク上の同じ親ディレクトリを持つ場合、別の命令を使うことができます。それはSVNParentPath 命令で、共通の親ディレクトリを指定します。たとえば、もし、複数の Subversionリポジトリを/usr/local/svn ディレクトリに作ってhttp://my.server.com/svn/repos1とか、 http://my.server.com/svn/repos2とかいうようなURLでアクセスしたいばあい、以下の例のような httpd.conf設定構文を使うことができます:
 
         <Location /svn>
           DAV svn
           SVNParentPath /usr/local/svn
         </Location>
 
-      ���ι�ʸ��Ȥ��ȡ�Apache �ϥѥ���ʬ��/svn/ �ǻϤޤ뤹�٤Ƥ�URL��Subversion��DAV�ץ��Х����ˤ錄���ޤ������ΤȤ���SVNParentPath ̿��ǻ��ꤷ���ǥ��쥯�ȥ���Υ����ƥ�ϼºݤ�Subversion��ݥ��ȥ�Ǥ���Ȳ�ᤵ��ޤ�����������������ʹ�ʸ�Ǥ�������ϡ�SVNPath ̿��ȤϤ����äơ���������ݥ��ȥ����Τ�Apache��Ƶ�ư����ɬ�פ��ʤ�����Ǥ���
+      この構文を使うと、Apache はパス部分が/svn/ で始まるすべてのURLを、SubversionのDAVプロバイダにわたします。このとき、SVNParentPath 命令で指定したディレクトリ中のアイテムは実際のSubversionリポジトリであると解釈されます。これは非常に便利な構文です。それは、SVNPath 命令とはちがって、新しいリポジトリを作るのにApacheを再起動する必要がないからです。
 
 
 
-== Blog�ط�
+== Blog関係
 
-  * ((<CNET Japan - �� ��������Ҥ������礭�ʤ��Ȥ��Ǥ���ס���Movable Type��ȯ�Ԥ�ʹ��|URL:http://japan.cnet.com/news/maker/story/0,2000047861,20052279-1,00.htm>))
+  * ((<CNET Japan - 「 小さい会社こそ、大きなことができる」　—Movable Type開発者に聞く|URL:http://japan.cnet.com/news/maker/story/0,2000047861,20052279-1,00.htm>))
 
-== ����Ω���夲��
+== 事業立ち上げ？
 
-  * ((<������ܶ⵬��������ݷкѡ����ȴĶ������������ݷкѻ��Ⱦ�|URL:http://www.meti.go.jp/policy/mincap/index.html>))
+  * ((<最低資本金規制の特例−経済・事業環境整備−政策−経済産業省|URL:http://www.meti.go.jp/policy/mincap/index.html>))
 
-  * ((<ͭ�²����Ω�ޥ˥奢��|URL:http://port-system.net/yugen/>))
+  * ((<有限会社設立マニュアル|URL:http://port-system.net/yugen/>))
 
-    * Ω���夲��1�ߤǤ������ɾ���Ū�ˤϤ�����Ѱդ���Ȥ������Ȥ���NPO�äƤ���Ȥ��ɤ��ʤ��������
+    * 立ち上げは1円でいいけど将来的にはお金を用意するということか。NPOってお金とかどうなんだろう。
 
-  * ((<��긩�澮������������|URL:http://www.ginga.or.jp/cgi-bin/ginga/index.cgi>))
+  * ((<岩手県中小企業団体中央会|URL:http://www.ginga.or.jp/cgi-bin/ginga/index.cgi>))

@@ -1,52 +1,52 @@
 = PTM-UBT3S
 
-Debian GNU/Linux��USB��³��Bluetooth�����ץ�PTM-UBT3S��Ȥä�P902iS��Audio Sink�ˤ�������
-���ɡ��ޤ�̵���Ȥ����á�
+Debian GNU/LinuxをUSB接続のBluetoothアダプタPTM-UBT3Sを使ってP902iSのAudio Sinkにしたい。
+けど、まだ無理という話。
 
-�����㤦������ɡ�((<"HOWTO/AudioDevices"|URL:http://wiki.bluez.org/wiki/HOWTO/AudioDevices>))�⻲�ͤˤʤ뤫��͡�
+少し違うんだけど、((<"HOWTO/AudioDevices"|URL:http://wiki.bluez.org/wiki/HOWTO/AudioDevices>))も参考になるかもね。
 
-== Bluetooth������
+== Bluetoothの設定
 
-USB ID�Ϥ���ʴ�����
+USB IDはこんな感じ。
 
   % lsusb
   Bus 004 Device 006: ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
 
-ǧ������������ʤ��ñ��������ؤ�򥤥󥹥ȡ��뤹���ǧ�������Ϥ���
+認識させるだけなら簡単。ここらへんをインストールすれば認識されるはず。
 
   % sudo aptitude -V -r install bluetooth bluez-firmware bluez-utils
 
-hcidump�⤢���������
+hcidumpもあると便利。
 
   % sudo aptitude -V -r install bluez-hcidump
 
-hcitool�Ǽ�ʬ�ΥǥХ�����������ǧ������Ƥ��롣
+hcitoolで自分のデバイスが見れれば認識されている。
 
   % hcitool dev
   Devices:
           hci0    00:11:22:33:44:55
 
-== �ץ��ե����������
+== プロファイルの設定
 
-Bluetooth�б�ü��������ʬ�Ϥ���ʤ��Ȥ��Ǥ���衢�Ȥ������Τ��ץ��ե�����餷����
-�����Audio Sink�ʲ��������ˤ��Ǥ���ȸ���������
+Bluetooth対応端末が、自分はこんなことができるよ、とかいうのがプロファイルらしい。
+今回はAudio Sink（音声再生）ができると言いたい。
 
-/etc/default/bluetooth�ΰ��ֺǸ�˽񤤤Ƥ���SDPTOOL_OPTIONS��add A2SNK���ɲá�
+/etc/default/bluetoothの一番最後に書いてあるSDPTOOL_OPTIONSにadd A2SNKを追加。
   SDPTOOL_OPTIONS="add A2SNK"
 
-ʣ���񤯤Ȥ��ϡ� ; �פǶ��ڤ롣
+複数書くときは「 ; 」で区切る。
   SDPTOOL_OPTIONS="add A2SNK ; add AVRTG ; add OPUSH ; add HS"
 
-OPUSH�ϥե����붦ͭ�ʡ��ˤ�HS�ϥϥ�ɥ��åȤ餷����
+OPUSHはファイル共有（？）でHSはハンドセットらしい。
 
-ȿ�Ǥ����뤿���bluetooth�����ӥ���Ƶ�ư��
+反映させるためにbluetoothサービスを再起動。
 
   % sudo /etc/init.d/bluetooth stop
   % sudo /etc/init.d/bluetooth start
 
-restart��Ȥ��ȥץ��ե���������꤬ȿ�Ǥ���ʤ��Τ����ա�
+restartを使うとプロファイルの設定が反映されないので注意。
 
-�ʲ��Ǥ��������ФƤ����餿�֤�����ס�
+以下でいろいろ出てきたらたぶん大丈夫。
 
   % sdptool browse local
   ...
@@ -64,34 +64,34 @@ restart��Ȥ��ȥץ��ե���������꤬ȿ�Ǥ���ʤ��Τ����ա�
       Version: 0x0100
   ...
 
-== ������������
+== 音声受信設定
 
-Bluetooth��ͳ�ǲ�����������뤿��ˤ�bluetoothd-service-audio��Ȥ���
+Bluetooth経由で音声を受信するためにはbluetoothd-service-audioを使う。
 
-���ɡ�Debian��bluez-utils�ѥå�������--enable-audio�ǥ���ѥ��뤵��Ƥ��ʤ��Τ�bluetoothd-service-audio�����󥹥ȡ��뤵��ʤ������֤�Ubuntu���ȥ��󥹥ȡ��뤵��Ƥ뵤�����롣��ǰ�Ǥ�����
+けど、Debianのbluez-utilsパッケージは--enable-audioでコンパイルされていないのでbluetoothd-service-audioがインストールされない。たぶん、Ubuntuだとインストールされてる気がする。残念でした。
 
-�ǤϤ���ʤΤǡ�audio/�ʲ���bluetoothd-service-audio��Ϣ����make install���Ƥ⤦������ĥ�äƤߤ��������ȥ������򸫤ʤ����õ�ꡣ
+ではあれなので、audio/以下でbluetoothd-service-audio関連だけmake installしてもう少し頑張ってみた。ログとソースを見ながら手探り。
 
-=== ɬ�פʥե�����
+=== 必要なファイル
 
-audio/�ʲ���make install����ȥ��󥹥ȡ��뤵���ե����뤬­��ʤ�������Ū�ˤϰʲ��ΤȤ��ꡣ
+audio/以下でmake installするとインストールされるファイルが足りない。具体的には以下のとおり。
 
   * /etc/bluetooth/audio.conf
   * /etc/bluetooth/audio.service
   * /usr/lib/bluetooth/bluetoothd-service-audio
 
-=== ��ư��ư
+=== 自動起動
 
-/etc/bluetooth/audio.conf��Autostart���ѹ����ơ�hcid����ư�����鲻�������ӥ��ѤΥ�����bluetoothd-service-audio�ⵯư����褦�ˤ��롣
+/etc/bluetooth/audio.confのAutostartを変更して、hcidが起動したら音声サービス用のサーバbluetoothd-service-audioも起動するようにする。
 
   Autostart=true
 
-�Ƶ�ư��˺�줺�ˡ�
+再起動を忘れずに。
 
   % sudo /etc/init.d/bluetooth stop
   % sudo /etc/init.d/bluetooth start
 
-�ʲ���/org/bluez/service_audio�����Ϥ��줿������ס�
+以下で/org/bluez/service_audioが出力されたら大丈夫。
 
   % sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez org.bluez.Manager.ListServices
   method return sender=:1.106 -> dest=:1.108 reply_serial=2
@@ -99,11 +99,11 @@ audio/�ʲ���make install����ȥ��󥹥ȡ��뤵���ե����뤬­��ʤ�������Ū�ˤϰ�
         string "/org/bluez/service_audio"
      ]
 
-== ��³����
+== 接続設定
 
-P902iS��Bluetooth�������³�������ɬ��ǧ�ڤ򤹤�ɬ�פ�����ߤ�����
+P902iSはBluetooth機器に接続する時は必ず認証をする必要があるみたい。
 
-�Ȥ������Ȥǡ�options��security��auto�ˤ��ơ�passkey�򤽤�äݤ��Τˤ��롣
+ということで、optionsのsecurityをautoにして、passkeyをそれっぽいのにする。
 
   options {
           ...
@@ -112,16 +112,16 @@ P902iS��Bluetooth�������³�������ɬ��ǧ�ڤ򤹤�ɬ�פ�����ߤ�����
           passkey "secret";
   }
 
-�����P902iS��Bluetooth����³����ꥹ�Ȥǥ�����������Ͽ�Ǥ���褦�ˤʤ롣
+これでP902iSのBluetoothの接続機器リストでサーチして登録できるようになる。
 
-�Ǥ⡢���������ǥ����ǥ��������ӥ��ˤĤʤ����Ȥ��Ƥ⤹�����ڤ�Ƥ��ޤ�������ϡ�bluetoothd-audio-service�ˤĤʤ����Ȥ��Ƥ��ΤȤ���ǧ�ڤ˼��Ԥ��뤫�顣�ʵ������Ͽ�������hcid���Ф���ǧ�ڤ򤷤褦�Ȥ��ơ�����passkey��Ȥä�ǧ�ڤ򤹤롣��
+でも、その勢いでオーディオサービスにつなごうとしてもすぐに切れてしまう。これは、bluetoothd-audio-serviceにつなごうとしてそのときの認証に失敗するから。（機器を登録する時はhcidに対して認証をしようとして、↑のpasskeyを使って認証をする。）
 
-bluetoothd-audio-service��org.bluez.Database.RequestAuthorization��ǧ�ڤ򤷤褦�Ȥ��롣�����hcid���������Ƥ���API(?)�ǡ�������Ǥϥǥե���Ȥ�ǧ�ڥ���������Ȥ�ǧ�ڤ��褦�Ȥ��롣hcid.conf��passkey��ȤäƤ���ʤ��Τ����ʴ�����
+bluetoothd-audio-serviceはorg.bluez.Database.RequestAuthorizationで認証をしようとする。これはhcidが公開しているAPI(?)で、この中ではデフォルトの認証エージェントで認証しようとする。hcid.confのpasskeyを使ってくれないのが嫌な感じ。
 
-�ǥե���Ȥ�ǧ�ڥ���������Ȥϥǥե���ȤǤ����ꤵ��Ƥ��ʤ��Τ�ǧ�ڤ�ɬ�����Ԥ��롣�ǥե���Ȥ�ǧ�ڥ���������Ȥϰʲ�������Ǥ���褦�ʤ�����ɡ�XXX�ˤɤ���ͤ����ꤷ����褤�Τ��狼���
+デフォルトの認証エージェントはデフォルトでは設定されていないので認証が必ず失敗する。デフォルトの認証エージェントは以下で設定できるようなんだけど、XXXにどんな値を設定したらよいのかわからん。
 
   % sudo dbus-send --system --print-reply --dest=org.bluez /org/bluez org.bluez.Security.RegisterDefaultAuthorizationAgent string:XXX
 
-���ʤߤˡ�dbus-api.txt�ˤ�AuthorizationAgent��experimental�ߤ����ʤ��Ȥ��񤫤�Ƥ�����
+ちなみに、dbus-api.txtにはAuthorizationAgentがexperimentalみたいなことが書かれていた。
 
-�Ȥ������Ȥǡ��ޤ�������ˤ���ã���Ƥ��ޤ���Ȥ���
+ということで、まだゴールには到達していませんとさ。

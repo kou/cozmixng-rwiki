@@ -1,7 +1,7 @@
 = Pseudo Web Mail
 
-((<Æ°ºîÎã|URL:http://pub.cozmixng.org/~pwm/>))
+((<å‹•ä½œä¾‹|URL:http://pub.cozmixng.org/~pwm/>))
 
   * ((<README.ja|Pseudo Web Mail::README.ja>))
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

@@ -1,16 +1,16 @@
 = PXE
 
-Preboot eXecution Environment��ά��
+Preboot eXecution Environmentの略。
 
-�ͥåȥ���֡��Ȥε��ʡ�
+ネットワークブートの規格。
 
-== �����Ф�����
+== サーバの設定
 
-((<DHCP>))�����Ф���ͥåȥ�����������äƤ��ơ�((<TFTP>))��ȤäƵ�ư���᡼�������������ɤ��������ȤäƵ�ư���롣
+((<DHCP>))サーバからネットワークの設定をもらってきて、((<TFTP>))を使って起動イメージをダウンロードし、それを使って起動する。
 
-Linux�ξ��ϵ�ư���᡼���Ȥ���syslinux�˴ޤޤ�Ƥ���pxelinux�Ȥ����֡��ȥ�������Ȥ���pxelinux�������ͥ륤�᡼���Ȥ�initrd���ɤ߹���ǵ�ư����ߤ�����
+Linuxの場合は起動イメージとしてsyslinuxに含まれているpxelinuxというブートローダを使い、pxelinuxがカーネルイメージとかinitrdを読み込んで起動するみたい。
 
-== ���饤����Ȥ�����
+== クライアントの設定
 
-BIOS��PXE�򥵥ݡ��Ȥ��Ƥ���Ф����Ȥ������ݡ��Ȥ��Ƥ��ʤ��ä���GRUB�Ȥ��Ǵ�ĥ�롣
+BIOSがPXEをサポートしていればそれを使う。サポートしていなかったらGRUBとかで頑張る。
 

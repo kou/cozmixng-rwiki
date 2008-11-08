@@ -19,11 +19,11 @@ The latest version: 0.1.6
   * API was changed since 0.1.3. (old API is deprecated but still works)
   * ((<run-test.el>)) was separated as other package.
 
-== Ãí
+== æ³¨
 
-  * 0.1.3¤«¤éAPI¤¬ÊÑ¤ï¤ê¤Ş¤·¤¿¡£¡ÊÁ°¤ÎAPI¤âÈó¿ä¾©¤Ç¤¹¤¬¤Ş¤À»È¤¨¤Ş¤¹¡£¡Ë
-  * 0.1.4¤«¤é((<run-test.el>))¤¬ÊÌ¥Ñ¥Ã¥±¡¼¥¸¤Ë¤Ê¤ê¤Ş¤·¤¿¡£
+  * 0.1.3ã‹ã‚‰APIãŒå¤‰ã‚ã‚Šã¾ã—ãŸã€‚ï¼ˆå‰ã®APIã‚‚éæ¨å¥¨ã§ã™ãŒã¾ã ä½¿ãˆã¾ã™ã€‚ï¼‰
+  * 0.1.4ã‹ã‚‰((<run-test.el>))ãŒåˆ¥ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«ãªã‚Šã¾ã—ãŸã€‚
 
 == Comments
 
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

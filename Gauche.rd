@@ -1,16 +1,16 @@
 = Gauche
 
-Guahce´Ø·¸¤Îºî¶Èµ­Ï¿
+Guahceé–¢ä¿‚ã®ä½œæ¥­è¨˜éŒ²
 
 == Gauche
 
-=== ports¤Ç¥¤¥ó¥¹¥È¡¼¥ë
+=== portsã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   %  sudo /usr/local/sbin/portupgrade -N -m "GAUCHE_THREADS=pthreads GAUCHE_ENCODING=euc-jp" gauche
 
-gauche-gdbm¤Ï<gdbm.h>¤¬¸«¤Ä¤«¤é¤Ê¤¤¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤µ¤ì¤Ê¤¤¡¥¸«¤Ä¤«¤é¤Ê¤¤ÍıÍ³¤Ï(g)cc¤Îinclude path¤Ë/usr/local/include¤¬´Ş¤Ş¤ì¤Æ¤¤¤Ê¤¤¤«¤é¡¥
+gauche-gdbmã¯<gdbm.h>ãŒè¦‹ã¤ã‹ã‚‰ãªã„ã®ã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã‚Œãªã„ï¼è¦‹ã¤ã‹ã‚‰ãªã„ç†ç”±ã¯(g)ccã®include pathã«/usr/local/includeãŒå«ã¾ã‚Œã¦ã„ãªã„ã‹ã‚‰ï¼
 
-¤È¤¤¤¦¤³¤È¤Çlang/gauche/Makefile¤òÊÑ¹¹
+ã¨ã„ã†ã“ã¨ã§lang/gauche/Makefileã‚’å¤‰æ›´
 
   CONFIGURE_ARGS= --enable-threads=${GAUCHE_THREADS} \
   -    --enable-multibyte=${GAUCHE_ENCODING}
@@ -19,26 +19,26 @@ gauche-gdbm¤Ï<gdbm.h>¤¬¸«¤Ä¤«¤é¤Ê¤¤¤Î¤Ç¥³¥ó¥Ñ¥¤¥ë¤µ¤ì¤Ê¤¤¡¥¸«¤Ä¤«¤é¤Ê¤¤ÍıÍ³¤Ï(g)
   +    --with-local=${PREFIX}
 
 
-include path¤Ï(g)cc¤ËËä¤á¹ş¤ß¤Ê¤Î¡©ÀßÄê¥Õ¥¡¥¤¥ë¤òÆÉ¤ó¤À¤ê¤·¤Æ¤¤¤ë¤ï¤±¤Ç¤Ï¤Ê¤¤¤Î¡©
+include pathã¯(g)ccã«åŸ‹ã‚è¾¼ã¿ãªã®ï¼Ÿè¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã‚“ã ã‚Šã—ã¦ã„ã‚‹ã‚ã‘ã§ã¯ãªã„ã®ï¼Ÿ
 
-=== ÉáÄÌ¤Ë¥¤¥ó¥¹¥È¡¼¥ë
+=== æ™®é€šã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
-(1) Æş¼êÀè
+(1) å…¥æ‰‹å…ˆ
      http://www.shiro.dreamhost.com/scheme/gauche/download-j.html
      http://prdownloads.sourceforge.net/gauche/Gauche-0.6.7.1.tgz
-(2) confiugre¥ª¥×¥·¥ç¥ó
+(2) confiugreã‚ªãƒ—ã‚·ãƒ§ãƒ³
      ./configure --enable-multibyte=euc-jp --with-iconv=/usr/local --with-local=/usr/local
-(3) »äÅª¤Êmemo
-    * make test ¤·¤ÆÆ°ºî¤ò³ÎÇ§¤¹¤ë¤³¤È
-    * enable-multibyte=euc-jp¤Ïdefault. FreeBSD ¤Îconfigure ¤Çutf-8 ¤ò»ØÄê¤·¤Æ¤¤¤ë¡¥
-    * enable-multithread=no ¤¬FreeBSD¤Îdefault.
-      * FreeBSD¤Ç¤ÏBoehm GC ¤¬pthread safe ¤Ç¤Ï¤Ê¤¤¤é¤·¤¤
-      * Lisp¤Ç¤âBoehmGC »È¤¦¤ó¤À¡¥¡¥¡¥
-      * make test ¤Îthread ¤Ïpass¤¹¤ë¤ó¤Ç¤¹¤¬¡¥
+(3) ç§çš„ãªmemo
+    * make test ã—ã¦å‹•ä½œã‚’ç¢ºèªã™ã‚‹ã“ã¨
+    * enable-multibyte=euc-jpã¯default. FreeBSD ã®configure ã§utf-8 ã‚’æŒ‡å®šã—ã¦ã„ã‚‹ï¼
+    * enable-multithread=no ãŒFreeBSDã®default.
+      * FreeBSDã§ã¯Boehm GC ãŒpthread safe ã§ã¯ãªã„ã‚‰ã—ã„
+      * Lispã§ã‚‚BoehmGC ä½¿ã†ã‚“ã ï¼ï¼ï¼
+      * make test ã®thread ã¯passã™ã‚‹ã‚“ã§ã™ãŒï¼
 
 == WiLiKi
 
-=== CVS¤Î¤ò¥¤¥ó¥¹¥È¡¼¥ë by ((<kou>))
+=== CVSã®ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ« by ((<kou>))
 
   # cd /usr/local/share
   # cvs -d:pserver:anonymous@cvs.sourceforge.net:/cvsroot/wiliki login
@@ -49,26 +49,26 @@ include path¤Ï(g)cc¤ËËä¤á¹ş¤ß¤Ê¤Î¡©ÀßÄê¥Õ¥¡¥¤¥ë¤òÆÉ¤ó¤À¤ê¤·¤Æ¤¤¤ë¤ï¤±¤Ç¤Ï¤Ê¤¤¤Î¡
   # make
   # make install
 
-wiliki.cgi¤È¤«¤Ïsrc°Ê²¼¤Ë¤¢¤ë¡¥
+wiliki.cgiã¨ã‹ã¯srcä»¥ä¸‹ã«ã‚ã‚‹ï¼
 
-=== ¥¤¥ó¥¹¥È¡¼¥ë by ((<szk>))
+=== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ« by ((<szk>))
 
-WiLiKi-0.3 ¤ò¥¤¥ó¥¹¥È¡¼¥ë¤·¤Ş¤·¤¿¡¥¤¬¡¥¡¥¡¥
+WiLiKi-0.3 ã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¾ã—ãŸï¼ãŒï¼ï¼ï¼
 
-(1) Æş¼êÀè
+(1) å…¥æ‰‹å…ˆ
      http://www.shiro.dreamhost.com/scheme/wiliki/wiliki.cgi?WiLiKi%3aRSSMix&l=jp
      http://prdownloads.sourceforge.net/gauche/SXML-gauche-0.9.tgz
-(2) ¥¤¥ó¥¹¥È¡¼¥ëÀè¤Ï
+(2) ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å…ˆã¯
 
      `gauche-config --sitelibdir`
 
-(1) wiliki.cgi, rssmix.cgi, wiliki-sample.css ¤Ï¤Ş¤À ~suzuki/gauche/WiLiKi/src ¤Î²¼
+(1) wiliki.cgi, rssmix.cgi, wiliki-sample.css ã¯ã¾ã  ~suzuki/gauche/WiLiKi/src ã®ä¸‹
 
-(2) ¤Ş¤Àrssmix.cgi ¤¬Æ°¤­¤Ş¤»¤ó¡¥¤Ï¤Æ¤Ê¡©
-    ¤Ş¤À gauche ¤¬¤¦¤Ş¤¯»È¤¨¤Ê¤¤¡¥¥·¥¯¥Ï¥Ã¥¯¤·¤Æ debug¡¥
-    * --enable-multithread=no¤Çconfigure¤µ¤ì¤Æ¤¤¤¿¤Î¤Ç, RSS¤ò½¸¤á¤ë¤¿¤á¤Îthread ¤òºî¤ë¤È¤³¤í¤Çnot implemented ¤Î error ¤¬raise.
-    * cgi-main ¤¬ :on-error ¤Çerror ¤òcatch¤·¡¤ERROR ¥Ú¡¼¥¸¤¬É½¼¨¤µ¤ì¤ë¡¥
-    * ports¤ÎMakefile ¤Ë¤Ï BoehmGC¤ÈFreeBSDpthread¤ÏÂÌÌÜ¤é¤·¤¤¤È½ñ¤¤¤Æ¤¢¤ë¡¥
-    * ¤Ç¤â multithread ¤Çconfigure¤·¤Æ¡¤Æ°¤«¤·¤Æ¤ß¤¿¤¬¡¤thread ¤ÏÆ°¤¯¤è¤¦¤À¤¬¡¤RSS¤Ï¥²¥Ã¥È¤Ç¤­¤º¡¤¤À¤ó¤Ş¤ê¤Ë¡¥¡¥¡¥
-    * ¤½¤Î¸åÄ´¤Ù¤¿¤é¡¤thread¤ÎÃæ¤Îhttp-get¤¬½ª¤ï¤Ã¤Æ¤·¤Æ¤¤¤Ê¤¤¤â¤è¤¦¡¥¥í¥°¤Ç¤Ï¡¤HTTP ¤ÎGET¤ÏÀµ¾ï¤Ë½ª¤ï¤Ã¤Æ¤¤¤ë¤è¤¦¤Ë¸«¤¨¤ë¡¥¤Ï¤Æ¡¥
-    * thread ¤ä¤á¤Æ¤ß¤ë¤ÈRSS¤Ï¤È¤ì¤ë¤è¤¦¤Ë¤Ê¤ë¤¬¡¤SXML¤Ç¥¨¥é¡¼¡©
+(2) ã¾ã rssmix.cgi ãŒå‹•ãã¾ã›ã‚“ï¼ã¯ã¦ãªï¼Ÿ
+    ã¾ã  gauche ãŒã†ã¾ãä½¿ãˆãªã„ï¼ã‚·ã‚¯ãƒãƒƒã‚¯ã—ã¦ debugï¼
+    * --enable-multithread=noã§configureã•ã‚Œã¦ã„ãŸã®ã§, RSSã‚’é›†ã‚ã‚‹ãŸã‚ã®thread ã‚’ä½œã‚‹ã¨ã“ã‚ã§not implemented ã® error ãŒraise.
+    * cgi-main ãŒ :on-error ã§error ã‚’catchã—ï¼ŒERROR ãƒšãƒ¼ã‚¸ãŒè¡¨ç¤ºã•ã‚Œã‚‹ï¼
+    * portsã®Makefile ã«ã¯ BoehmGCã¨FreeBSDpthreadã¯é§„ç›®ã‚‰ã—ã„ã¨æ›¸ã„ã¦ã‚ã‚‹ï¼
+    * ã§ã‚‚ multithread ã§configureã—ã¦ï¼Œå‹•ã‹ã—ã¦ã¿ãŸãŒï¼Œthread ã¯å‹•ãã‚ˆã†ã ãŒï¼ŒRSSã¯ã‚²ãƒƒãƒˆã§ããšï¼Œã ã‚“ã¾ã‚Šã«ï¼ï¼ï¼
+    * ãã®å¾Œèª¿ã¹ãŸã‚‰ï¼Œthreadã®ä¸­ã®http-getãŒçµ‚ã‚ã£ã¦ã—ã¦ã„ãªã„ã‚‚ã‚ˆã†ï¼ãƒ­ã‚°ã§ã¯ï¼ŒHTTP ã®GETã¯æ­£å¸¸ã«çµ‚ã‚ã£ã¦ã„ã‚‹ã‚ˆã†ã«è¦‹ãˆã‚‹ï¼ã¯ã¦ï¼
+    * thread ã‚„ã‚ã¦ã¿ã‚‹ã¨RSSã¯ã¨ã‚Œã‚‹ã‚ˆã†ã«ãªã‚‹ãŒï¼ŒSXMLã§ã‚¨ãƒ©ãƒ¼ï¼Ÿ

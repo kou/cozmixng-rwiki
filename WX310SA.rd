@@ -1,62 +1,62 @@
 = WX310SA
 
-Debian GNU/Linux���顤WILLCOM��PHP��WX310SA��Ȥäƥ��󥿡��ͥåȤ���³�������ꡥ
-��³���WILLCOM���󶡤��Ƥ���PRIN(PRovider INcluded)��Ȥ���
+Debian GNU/Linuxから，WILLCOMのPHP，WX310SAを使ってインターネットに接続する設定．
+接続先はWILLCOMが提供しているPRIN(PRovider INcluded)を使う．
 
-== �ɥ饤��
+== ドライバ
 
-�����ͥ�����äƤ���cdc_acm�Ǥ����롥
+カーネルに入っているcdc_acmでいける．
 
-WX310SA��ǧ������Ƥ���С�dmesg�˥�å��������Ǥơ��ɤΥǥХ����˳�����Ƥ������狼�롥
+WX310SAが認識されていれば，dmesgにメッセージがでて，どのデバイスに割り当てたかがわかる．
 
   % dmesg | grep cdc_acm
   cdc_acm 2-1:1.0: ttyACM0: USB ACM device
   ...
 
-���ξ���/dev/ttyACM0��ͳ��PPP��Ԥ���
+この場合は/dev/ttyACM0経由でPPPを行う．
 
-== ����
+== 設定
 
-pppconfig��Ȥ��Τ��ڡ�
+pppconfigを使うのが楽．
 
-���������ɷ����ǿʤࡥ����ʴ����Ǥ�����Ϥ���
+ウィザード形式で進む．こんな感じでいけるはず．
 
-: �ץ��Х���̾
-   prin��Ǥ�ա�
+: プロバイダ名
+   prin（任意）
 
-: DNS������
+: DNSの設定
    Dynamic
 
-: ǧ����ˡ
+: 認証方法
    PAP
 
-: �桼��̾
+: ユーザ名
    prin
 
-: �ѥ����
+: パスワード
    prin
 
-: ®��
-   115200�ʥǥե���ȡ�
+: 速度
+   115200（デフォルト）
 
-: �ѥ륹�ޤ��ϥȡ���
-   Tone�ʥȡ����
+: パルスまたはトーン
+   Tone（トーン）
 
-: �����ֹ�
-   0570570711##64��4�ѥ��å������ξ���
+: 電話番号
+   0570570711##64（4パケット方式の場合）
 
-: ��ǥ�ݡ���
-   Manual��/dev/ttyACM0������dmesg�ǳ�ǧ������ġ�
+: モデムポート
+   Manualで/dev/ttyACM0を指定（dmesgで確認したやつ）
 
-���Finished�ǥե�����˽񤭽Ф��ơ���λ��((*�ե�����˽񤭽Ф��Τ�˺�줺��*))
+後はFinishedでファイルに書き出して，終了．((*ファイルに書き出すのを忘れずに*))
 
 
-== ��³
+== 接続
 
   % sudo pon prin
 
-prin��pppconfig�����ꤷ���ץ��Х���̾��
+prinはpppconfigで設定したプロバイダ名．
 
-���Ǥ���Ȥ���poff��
+切断するときはpoff．
 
   % sudo poff prin

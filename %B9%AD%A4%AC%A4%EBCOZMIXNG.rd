@@ -1,154 +1,154 @@
-= ������COZMIXNG
+= 広がるCOZMIXNG
 
-  * author: ��ƣ��ʿ
+  * author: 須藤功平
   * institution: COZMIXNG
 
 = COZMIXNG?
 
 ((<URL:http://cozmixng.org/>))
 
-  * COZMIXNG�Ͼ�Ǥ���
-    * ͷ���Ϥ�������
-  * �ݥꥷ��
-    * ���ڤ�
-    * �ڤ���
-    * �����ʻ���
+  * COZMIXNGは場である
+    * 遊園地より空き地
+  * ポリシー
+    * 気軽に
+    * 楽しく
+    * 好きな事を
 
-= ����
+= 構成
 
-  * ��ǯ�ܤ�COZMIXNG
-  * ���줫���COZMIXNG
+  * 一年目のCOZMIXNG
+  * これからのCOZMIXNG
 
-= ��ǯ�ܤ�COZMIXNG
+= 一年目のCOZMIXNG
 
-  * �����ӥ�
-  * �����
+  * サービス
+  * 出来事
 
-= �����ӥ�
+= サービス
 
   * Wiki
   * Pseudo Web Mail
   * WikiLink
   * HikiFarm
-  * �����꡼
-    * �����ӥ�����ʬ���̤�����((*����Ǥɤ�ʿͤ��ɤ�ʤ��Ȥ򤷤Ƥ���Τ�*))�����ä��������᡼�����䤹���褦�˻פ��ޤ���WikiLink��kou�λȤ�����Ҳ𤷤ƻȤ�����ƤäƷ��ǡ�¾�Υ����ӥ��Ϥɤ����ޤ���?(Wiki�ȥ�����ϰ���??)
-    * ��������դ��Ƥߤޤ�����Wiki�ˤĤ��Ƥ��ä������ˤ��ޤ���
+  * ギャラリー
+    * サービスの部分全般だけど((*それでどんな人がどんなことをしているのか*))があった方がイメージしやすいように思います。WikiLinkはkouの使い方を紹介して使い方提案って形で、他のサービスはどうしましょ?(Wikiとギャラリは安泰??)
+    * 使用例を付けてみました．Wikiについては話すだけにします．
 
 = WikiLink
 
 ((<URL:http://pub.cozmixng.org/~wikilink/>))
 
-  * Wiki��Хå�����ɤˤ�����󥯥����ƥ�
-  * RSS�١����Υ���ƥʵ�ǽ
-  * ��ȯư��
-    * �ݡ����륵���Ȥ�Ĥ���
-      * ���ƥ��경
-      * ��������
+  * Wikiをバックエンドにしたリンクシステム
+  * RSSベースのアンテナ機能
+  * 開発動機
+    * ポータルサイトをつくる
+      * カテゴリ化
+      * 毎日更新
 
-= WikiLink/������
+= WikiLink/使用例
 
-  * RSS Aggregator�Ȥ���
-    * COZMIXNG�ΤۤȤ�ɤΥ����ӥ���RSS����
-  * �����֥å��ޡ����Ȥ���
-  * �ݡ����륵���ȤȤ������ñ�ʤ륢��ƥʡ�
+  * RSS Aggregatorとして
+    * COZMIXNGのほとんどのサービスはRSSを提供
+  * 公開ブックマークとして
+  * ポータルサイトというより単なるアンテナ？
 
 = HikiFarm
 
 ((<URL:http://pub.cozmixng.org/~hiki/>))
 
-  * ��ñ�˿�����Hiki(Wiki�ΰ��)�����
-  * Hiki��˸����ܤ��ѹ���ǽ
-    * �����ܤ��Ѥ������ͤ�¿��(α�����οͤ���äƤ���)
-    * �����ܽ��ס�
-  * ����������WikiLink���İ�
+  * 簡単に新しいHiki(Wikiの一種)を作れる
+  * Hiki毎に見た目を変更可能
+    * 見た目を変えたい人が多い(留学生の人も言っていた)
+    * 見た目重要？
+  * 更新状況はWikiLinkで把握
 
-= HikiFarm/������
+= HikiFarm/使用例
 
-  * �Ŀ�/��������Υۡ���ڡ������ڡ����Ȥ���
-  * ���饹/���ȤΥۡ���ڡ����Ȥ���
-  * ��Ū���Wiki����
-    * Wiki�������
-    * ̾�����֤ϥ����ƥ�ǥ��ݡ��Ȥ��ʤ��Ƥ��ɤ���
+  * 個人/サークルのホームページスペースとして
+  * クラス/授業のホームページとして
+  * 目的毎にWikiを作る
+    * Wikiに秩序を？
+    * 名前空間はシステムでサポートしなくても良い？
 
-= �����꡼ 
+= ギャラリー 
 
 ((<URL:http://pub.cozmixng.org/~gallery/>))
 
-  * ����饤��������������ƥ�
-  * �֥饦��/�᡼��Ǵ���
-  * ��ݲ�
-  * �ե꡼
+  * オンライン画像管理システム
+  * ブラウザ/メールで管理
+  * 国際化
+  * フリー
 
-= �����꡼/������
+= ギャラリー/使用例
 
-  * Wiki�˲���������ǽ��ɬ�פ�
-    * WiLiKi���Ȥ߹�碌��
-    * ���ݡ�
-  * �ۡ���ڡ���������
+  * Wikiに画像管理機能は必要か
+    * WiLiKiと組み合わせて
+    * 面倒？
+  * ホームページ作成に
 
-= �����
+= 出来事
 
-  * �ֵ���COZMIXNG
-  * �������פ�����
-  * �ٶ���δ��/�»�
-  * DIG2003�Ǽ���
+  * 講義でCOZMIXNG
+  * 不来方祭で宣伝
+  * 勉強会の企画/実施
+  * DIG2003で受賞
 
-= �ֵ���COZMIXNG
+= 講義でCOZMIXNG
 
 ((<URL:http://pub.cozmixng.org/~wiliki/>))
 
   * WiLiKi
   * Subversion
-  * �����꡼
+  * ギャラリー
 
-((<�����������θ���|URL:http://www.os.cis.iwate-u.ac.jp/~suzuki/wiliki/wiliki.cgi?lect-with-wiki-2003&l=jp>))
+((<鈴木先生の体験記|URL:http://www.os.cis.iwate-u.ac.jp/~suzuki/wiliki/wiliki.cgi?lect-with-wiki-2003&l=jp>))
 
-= �������פ����� 
+= 不来方祭で宣伝 
 
-  * �о�
-    * �⹻��
-    * ��²Ϣ��
-  * Wiki�ȥ����꡼�ǥۡ���ڡ��������θ�
-  * ((<40�ͤ��餤������|URL:http://www.cozmixng.org/~wiliki/index.cgi?%a4%b3%a4%ba%a4%ab%a4%bf%ba%d703>))
-  * ���ͤ��������פθ��񤭹���
+  * 対象
+    * 高校生
+    * 家族連れ
+  * Wikiとギャラリーでホームページ作成体験
+  * ((<40人くらいが参加|URL:http://www.cozmixng.org/~wiliki/index.cgi?%a4%b3%a4%ba%a4%ab%a4%bf%ba%d703>))
+  * 数人は不来方祭の後も書き込み
 
-= �ٶ���δ��/�»� 
+= 勉強会の企画/実施 
 
-  * ���ե饤��Ǥ��ư���褦
-  * ��°�ˤȤ��줺���˳ؤ�
-  * ���Ƥ�Wiki�ˤޤȤ��
-    * ���滲�ä��ư�
-    * ȿ��/��ǧ/��
+  * オフラインでも活動しよう
+  * 所属にとらわれず共に学ぶ
+  * 内容をWikiにまとめる
+    * 途中参加が容易
+    * 反省/確認/資産
 
-= DIG2003�Ǽ���
+= DIG2003で受賞
 
-  * ����̾: GalleryAdministrator
-  * �������
-  * ���̾�(��������������)
+  * 作品名: GalleryAdministrator
+  * 学生大賞
+  * 特別賞(アイシーエス賞)
 
-= ���줫���COZMIXNG
+= これからのCOZMIXNG
 
-  * ��������Wiki
-  * �����Wiki
+  * 小学生にWiki
+  * 教育とWiki
 
-= ��������Wiki
+= 小学生にWiki
 
-  * �ƻҤ�Wiki
-  * Wiki�ϡ�����
-    * ���򤤡�
-    * ��ñ��(�������Ϥ���ʤ��ȥ��ᡩ)
-  * ��ͤ����񹳤����ʤ���
+  * 親子でWiki
+  * Wikiは．．．
+    * 面白い？
+    * 簡単？(音声入力じゃないとダメ？)
+  * 大人よりも抵抗が少ない？
 
-= �����Wiki
+= 教育とWiki
 
-  * ���դ����̤ζ�Ʊ��Ⱦ�ˤʤ�롩
-    * ����
-  * ((<Wiki�ǵ���|URL:http://www.cozmixng.org/~wiliki/index.cgi?%b6%b5%b0%e9%a4%ce%b8%bd%be%ec%a4%c7Wiki%3f>))
-  * ����
-    * �ֵ��Ρ��Ȥ��ñ���ŻҲ�������
-    * �ֵ����Ƥ�Wiki�˽񤯤��Ȥˤ�����������
+  * 教師と生徒の共同作業場になれる？
+    * 共育
+  * ((<Wikiで議論|URL:http://www.cozmixng.org/~wiliki/index.cgi?%b6%b5%b0%e9%a4%ce%b8%bd%be%ec%a4%c7Wiki%3f>))
+  * 先生
+    * 講義ノートを簡単に電子化したい
+    * 講義内容をWikiに書くことにより整理される
 
-= ������COZMIXNG
+= 明日のCOZMIXNG
 
-  * ��ǯ��
+  * 新年会
   * Join us!

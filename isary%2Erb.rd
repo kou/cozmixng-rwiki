@@ -2,15 +2,15 @@
 
 Interactive Sary
 
-((<SDIC|URL:http://www.namazu.org/~tsuchiya/sdic/>))��((<SUFARY|URL:http://nais.to/~yto/tools/sufary/>))����ʤ���((<Sary|URL:http://sary.namazu.org/>))��Ȥ����������Ū��Sary��Ȥ��ץ�����ࡥ
+((<SDIC|URL:http://www.namazu.org/~tsuchiya/sdic/>))で((<SUFARY|URL:http://nais.to/~yto/tools/sufary/>))じゃなくて((<Sary|URL:http://sary.namazu.org/>))を使うための対話的にSaryを使うプログラム．
 
-�褦��SUFARY��array��Sary��(���ޥ�ɤ�SDIC�ǻȤ�ʪ�Τ߼���)��
+ようはSUFARYのarrayのSary版(コマンドはSDICで使う物のみ実装)．
 
-�ǡ������sdic.el�ǻȤ��ˤ�
+で，これをsdic.elで使うには
 
-  (1) �¹Ը����դ���
-  (2) PATH���̤äƤ���Ȥ������֤�
-  (3) .emacs�ʤɤ˰ʲ����ɲ�
+  (1) 実行権を付ける
+  (2) PATHが通っているところに置く
+  (3) .emacsなどに以下を追加
 
         (add-hook 'sdic-mode-hook
                   '(lambda ()

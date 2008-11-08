@@ -1,19 +1,19 @@
-= ���ü��罸
+= 参加者募集
 
-# ��������5ʬ
+# 持ち時間5分
 
 : author
-   ��ƣ��ʿ
+   須藤功平
 : institution
    COZMIXNG
 : theme
    cozmixng
 
-= ����
+= 内容
 
-  * COZMIXNG�ξҲ�
-  * ���Ƥ��뻲�ü���
-  * ��ư�Ҳ�
+  * COZMIXNGの紹介
+  * 求めている参加者像
+  * 活動紹介
 
 = COZMIXNG
 
@@ -24,29 +24,29 @@
 
 = WANTED!!!
 
-  * COZMIXNG�ΤҤäѤ���
+  * COZMIXNGのひっぱり役
 
-  * ǽưŪ��((*����*))���ꤿ����
+  * 能動的に((*何か*))をやりたい人
 
-= COZMIXNG�Ͼ�
+= COZMIXNGは場
 
   # image
   # src = cozmixng_is_field.png
   # keep_scale = true
   # relative_width = 90
 
-= ��ư�Ҳ�
+= 活動紹介
 
-  * Web���ڡ���
+  * Webスペース
   * Wiki
-  * ��ȯ�ٱ�
-  * ML����
+  * 開発支援
+  * ML作成
 
-= Web���ڡ���
+= Webスペース
 
-  * ���եȥ�����
-    * �������С��������ɽ�
-  * �����Хץ������������
+  * ソフトウェア
+    * 新しいバージョンに追従
+  * サーバプロセスも応相談
     * The RWiki
 
 http://pub.cozmixng.org/~XXX/
@@ -61,25 +61,25 @@ http://pub.cozmixng.org/~XXX/
 
 http://pub.cozmixng.org/~hiki/XXX/
 
-= ��ȯ�ٱ�
+= 開発支援
 
-  * Subversion��ݥ��ȥ�
-    * ���եȥ�������ȯ�Τ�����
-    * �ֵ��Ǽ½����뤿���
+  * Subversionリポジトリ
+    * ソフトウェア開発のお供に
+    * 講義で実習するために
 
 http://cozmixng.org/repos/XXX/
 
-= ML����
+= ML作成
 
   * QuickML
 
       To: net@ml.cozmixng.org
       Cc: friend1@example.com,
         friend2@example.com
-      Subject: ��������
+      Subject: 作成！！
 
-      �ͥåȥ��Ϣ������ML
+      ネットワーク連絡会用ML
 
 = Join us!!
 
-COZMIXNG��((*����*))���ޤ��󤫡�
+COZMIXNGで((*何か*))しませんか？

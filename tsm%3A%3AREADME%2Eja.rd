@@ -4,109 +4,109 @@
 
 $Id: README.ja 221 2004-07-10 01:35:34Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 GPL or BSD License
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����
+((<COZMIXNG RWiki - 連絡先
 |URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))
-�������������
+を御覧下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-tsm��Tuple Space in Scheme�ˤ�
+tsm（Tuple Space in Scheme）は
 ((<dsm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=dsm>)) 
-���Ѥ������ץ륹�ڡ����饤�֥��Ǥ������󥿡��ե�������
+を用いたタプルスペースライブラリです．インターフェイスは
 ((<Rinda|URL:http://www2a.biglobe.ne.jp/~seki/ruby/rinda.html>)) 
-�򻲹ͤˤ��Ƥ��ޤ���
+を参考にしています．
 
-�ʲ��Τ褦�ʵ�ǽ������ޤ���
+以下のような機能があります．
 
-  * ���ץ��ͭ�����¤����ꤹ�롥
-  * ���ץ�Υޥå��ˤ�util.match�ߴ��Υѥ������Ȥ���
+  * タプルに有効期限を設定する．
+  * タプルのマッチにはutil.match互換のパターンを使う．
 
-�ʲ��Τ褦�ʵ�ǽ�Ϥ���ޤ���ʼ������뵤�Ϥ���ޤ��ˡ�
+以下のような機能はありません（実装する気はあります）．
 
-  * ���٥�ȡ�take�Ȥ�write��ȯ�����˥�����Хå���ư���롥
-  * �ʿ��ͤ�ꥹ�Ȥ�ʸ����ʤɡ˴���Ū�ʷ��ʳ��Υ��֥�������
-    �򥿥ץ���̤��ƶ�ͭ���롥
-  * move�ʥ��饤����Ȥ˥��ץ���֤��Τ����������饿�ץ륹�ڡ�
-    �����饿�ץ�������������take��
+  * イベント（takeとかwrite）発生時にコールバックを起動する．
+  * （数値やリストや文字列など）基本的な型以外のオブジェクト
+    をタプルを通じて共有する．
+  * move（クライアントにタプルを返すのが成功したらタプルスペー
+    スからタプルを削除する安全なtake）
 
-== ��¸�饤�֥��
+== 依存ライブラリ
 
   * ((<dsm|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=dsm>))
   * ((<marshal|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=marshal>))
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/tsm.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/gauche/tsm/trunk tsm
 
-== ���󥹥ȡ���
+== インストール
 
   # gosh install/install.scm
 
-== ��¤
+== 構造
 
-tsm�Ǥ�2�İʾ�Υ������ʽ�����ñ�̡�����åɤ��Ѥ��Ƥ��ʤ���
-��1�ץ�������1�������ˤʤ�ޤ��ʤ�����͡��ˤ�������åɤ���
-���Ƥ����1�ץ������ˤĤ�ʣ���Υ���������Ĥ��Ȥ��Ǥ��ޤ���
-���Ѥ��ƥ��ץ륹�ڡ��������Ѥ��ޤ����ҤȤĤϥ��ץ륹�ڡ�����
-�󶡤��륿�����ǡ�����ʳ��ϥ��ץ륹�ڡ��������Ѥ��륿����
-�ʥ��饤����ȡˤǤ��ʤ�����󡤥��ץ륹�ڡ��������Ѥ��륿��
-����ʣ���Υ��ץ륹�ڡ��������Ѥ��뤳�Ȥ�Ǥ��ޤ����������Ǥ�
-�䰦���ޤ��ˡ�
+tsmでは2つ以上のタスク（処理の単位．スレッドを用いていなけれ
+ば1プロセスは1タスクになります（いいよね？）が，スレッドを用
+いていれば1プロセスにつき複数のタスクを持つことができます）
+を用いてタプルスペースを利用します．ひとつはタプルスペースを
+提供するタスクで，それ以外はタプルスペースを利用するタスク
+（クライアント）です（もちろん，タプルスペースを利用するタス
+クが複数のタプルスペースを利用することもできますが，ここでは
+割愛します）．
 
 
   +--------------+     +----------------+     +--------------+
-  | ���饤����� | <-> | ���ץ륹�ڡ��� | <-> | ���饤����� |
+  | クライアント | <-> | タプルスペース | <-> | クライアント |
   +--------------+     +----------------+     +--------------+
                          ^            ^
       +--------------+   |            |   +--------------+
-      | ���饤����� | <-+    ...     +-> | ���饤����� |
+      | クライアント | <-+    ...     +-> | クライアント |
       +--------------+                    +--------------+
 
 
 
-���ץ륹�ڡ����ϥ��ץ���ݴɤ�����֤��󶡤��ޤ������ζ��֤�
-���ץ륹�ڡ������󶡤��륿��������λ����Ⱦ��Ǥ��ޤ������֤�
-���Ǥ���ȶ�����Υ��ץ���˴�����ޤ���
+タプルスペースはタプルを保管する空間を提供します．この空間は
+タプルスペースを提供するタスクが終了すると消滅します．空間が
+消滅すると空間内のタプルは破棄されます．
 
-== ����ˡ
+== 利用法
 
-���饤����Ȥϥ��ץ륹�ڡ������Ф��ơ����ץ��񤯡���äƤ�
-��Ȥ�������Ԥ��ޤ���tsm�Ǥϡ����줾��
-(({tuple-space-write}))��(({tuple-space-take}))�Ȥ�����³��
-�ˤʤ�ޤ���
+クライアントはタプルスペースに対して，タプルを書く／取ってく
+るという操作を行います．tsmでは，それぞれ
+(({tuple-space-write}))／(({tuple-space-take}))という手続き
+になります．
 
-�㤨�С����饤�����1��A�Ȥ��ޤ��ˤ����饤�����2��B�Ȥ��ޤ���
-��(({(1 2 3)}))�Ȥ����ꥹ�Ȥ��Ϥ��Ȥ��������ͤ��ޤ�������
-�륹�ڡ������Ѥ���ȡ���������ϰʲ��Τ褦�˲��Ǥ��ޤ���
+例えば，クライアント1（Aとします）がクライアント2（Bとします）
+に(({(1 2 3)}))というリストを渡すという問題を考えます．タプ
+ルスペースを用いると，この問題は以下のように解決できます．
 
-  (1) ���ץ륹�ڡ�����ư���롥
-  (1) A�����ץ륹�ڡ�����(({(1 2 3)}))�Ȥ������ץ��񤭹��ࡥ
-  (1) B�����ץ륹�ڡ�������(({(1 2 3)}))�Ȥ������ץ�����
-      ����
+  (1) タプルスペースを起動する．
+  (1) Aがタプルスペースに(({(1 2 3)}))というタプルを書き込む．
+  (1) Bがタプルスペースから(({(1 2 3)}))というタプルを取り出
+      す．
 
-���ץ륹�ڡ����ˤ�A��B�ʳ����������ץ��¸�ߤ���Τǡ����ץ�
-�ˤϡ����ץ���̤��뤿��Υ������դ������¿���Ǥ��礦����
-���С�����ϡ�A���񤭹��ॿ�ץ�ˤ�(({to-B}))�Ȥ�����������
-���뤳�Ȥˤ��ޤ���
+タプルスペースにはA，B以外が扱うタプルも存在するので，タプル
+には，タプルを識別するためのタグを付ける事が多いでしょう．例
+えば，今回は，Aが書き込むタプルには(({to-B}))というタグを付
+けることにします．
 
-����β��ˡ�Ǥ�3�ĤΥ�������¸�ߤ��ޤ������줾�졤���ץ륹
-�ڡ�����A��B�Ǥ������줾��Υ����ɤ�ʲ��˼����ޤ���
+今回の解決法では3つのタスクが存在します．それぞれ，タプルス
+ペース，A，Bです．それぞれのコードを以下に示します．
 
-=== ���ץ륹�ڡ��� 
+=== タプルスペース 
 
-���ץ륹�ڡ����Υ����ɤϰʲ��Τ褦�ˤʤ�ޤ���
+タプルスペースのコードは以下のようになります．
 
   (use tsm.tuple-space)
 
@@ -115,18 +115,18 @@ tsm�Ǥ�2�İʾ�Υ������ʽ�����ñ�̡�����åɤ��Ѥ��Ƥ��ʤ���
       (tuple-space-start! tuple-space)
       (tuple-space-join! tuple-space)))
 
-(({make-tuple-space}))�ǥ��ץ륹�ڡ������������
-(({tuple-space-start!}))�ǵ�ư���Ƥ�������Ǥ���
-(({tuple-space-join!}))�ϥ��ץ륹�ڡ�������λ����Τ��Ԥ���
-����
+(({make-tuple-space}))でタプルスペースを作成し，
+(({tuple-space-start!}))で起動しているだけです．
+(({tuple-space-join!}))はタプルスペースが終了するのを待ちま
+す．
 
-���ץ륹�ڡ������Τϡ־�פ��󶡤�������ǡ������å����Ȥ߹�
-�ळ�ȤϤʤ��Τǡ�¿���Υ��ץ륹�ڡ����Υ����ɤϰʾ�Τ褦��
-�ʤ�Ǥ��礦��
+タプルスペース自体は「場」を提供するだけで，ロジックを組み込
+むことはないので，多くのタプルスペースのコードは以上のように
+なるでしょう．
 
 === A
 
-A�Υ����ɤϰʲ��Τ褦�ˤʤ�ޤ���
+Aのコードは以下のようになります．
 
   (use tsm.proxy)
 
@@ -134,14 +134,14 @@ A�Υ����ɤϰʲ��Τ褦�ˤʤ�ޤ���
     (let ((tuple-space (tuple-space-connect "dsmp://localhost:2929")))
       (tuple-space-write tuple-space '(to-B (1 2 3)))))
 
-(({tuple-space-connect}))�ǥ��ץ륹�ڡ�������³����
-(({tuple-space-write}))�ǥ��ץ륹�ڡ�����(({(to-B (1 2
-3))}))�Ȥ������ץ��񤭹���Ǥ��ޤ����ꥹ�Ȥκǽ�����ǤǤ�
-��(({to-B}))�������ˤʤ�ޤ���
+(({tuple-space-connect}))でタプルスペースに接続し，
+(({tuple-space-write}))でタプルスペースに(({(to-B (1 2
+3))}))というタプルを書き込んでいます．リストの最初の要素であ
+る(({to-B}))がタグになります．
 
 === B
 
-B�Υ����ɤϰʲ��Τ褦�ˤʤ�ޤ���
+Bのコードは以下のようになります．
 
   (use tsm.proxy)
 
@@ -150,60 +150,60 @@ B�Υ����ɤϰʲ��Τ褦�ˤʤ�ޤ���
       (print (cdr (tuple-space-take tuple-space
                                     '(('to-B ((? number?) ...))))))))
 
-(({tuple-space-take}))�ϥ��ץ륹�ڡ���������ꤷ���ѥ������
-�ޥå����륿�ץ��ҤȤļ��Ф������Υ��ץ�򥿥ץ륹�ڡ���
-���������ޤ����⤷ʣ���Υ��ץ뤬�ޥå�������硤�ɤΥ��ץ�
-�����Ф���뤫�Ϥ狼��ޤ���
+(({tuple-space-take}))はタプルスペースから指定したパターンに
+マッチするタプルをひとつ取り出し，そのタプルをタプルスペース
+から削除します．もし複数のタプルがマッチした場合，どのタプル
+が取り出されるかはわかりません．
 
-(({tuple-space-take}))�˻��ꤹ��ѥ�����ν�����Gauche 0.8
-����ɸ��ź�դ���Ƥ���util.match�⥸�塼��Υѥ������Ʊ����
-����
+(({tuple-space-take}))に指定するパターンの書き方はGauche 0.8
+から標準添付されているutil.matchモジュールのパターンと同じで
+す．
 
-=== ��ư
+=== 起動
 
-�ޤ������ץ륹�ڡ�����ư���ޤ���
+まず，タプルスペースを起動します．
 
   % gosh space.scm
 
-A��B�ε�ư�����Ǥ�դǹ����ޤ��󡥤����Ǥϡ�B��A�ν���ǵ�ư
-���뤳�Ȥˤ��ޤ���
+AとBの起動順序は任意で構いません．ここでは，B，Aの順序で起動
+することにします．
 
-���ץ륹�ڡ����Ȥ��̤Υ����ߥʥ�򳫤���B��ư���ޤ���
-
-  % gosh client-b.scm
-
-B�ϻ��ꤷ���ѥ�����˥ޥå����륿�ץ뤬���դ���ޤǥ֥��å�
-���ޤ���
-
-³���ơ��ޤ����̤Υ����ߥʥ�򳫤�A��ư���ޤ���
-
-  % gosh client-a.scm
-
-A����ư�����B���ʥ�����������˥��ץ�����Ƥ���Ϥ��ƽ�λ��
-�ޤ���
-
-������Ѥ���A��B�ν���ǵ�ư���ޤ���
-
-  % gosh client-a.scm
-
-A�ϥ��ץ��񤭹���Ǥ����˽�λ���ޤ���
-
-³����B��ư���ޤ���
+タプルスペースとは別のターミナルを開き，Bを起動します．
 
   % gosh client-b.scm
 
-B�����ꤷ���ѥ�����Υ��ץ뤬���Ǥ˥��ץ륹�ڡ������¸�ߤ���
-�ΤǤ����˥��ץ�����Ƥ���Ϥ��ƽ�λ���ޤ���
+Bは指定したパターンにマッチするタプルが見付かるまでブロック
+します．
 
-A��B�򤿤�����ư���Ƥߤ�Τ����򤤤��⤷��ޤ���
+続いて，また，別のターミナルを開きAを起動します．
+
+  % gosh client-a.scm
+
+Aが起動するとBが（タグを除いた）タプルの内容を出力して終了し
+ます．
+
+順序を変えてA，Bの順序で起動します．
+
+  % gosh client-a.scm
+
+Aはタプルを書き込んですぐに終了します．
+
+続いてBを起動します．
+
+  % gosh client-b.scm
+
+Bが指定したパターンのタプルがすでにタプルスペース上に存在する
+のですぐにタプルの内容を出力して終了します．
+
+A，Bをたくさん起動してみるのも面白いかもしれません．
 
 
-== ��1
+== 例1
 
-���륿������writer�Ȥ��ޤ��ˤϥ��ץ��񤭹��ߤޤ��ꡤ�̤Υ�
-������reader�Ȥ��ޤ��ˤϥ��ץ����Ф��ޤ��äƤߤޤ��礦��
+あるタスク（writerとします）はタプルを書き込みまくり，別のタ
+スク（readerとします）はタプルを取り出しまくってみましょう．
 
-�ʲ���3�ĤΥե������������ޤ���
+以下の3つのファイルを作成します．
 
   * tuple-space.scm
   * writer.scm
@@ -254,82 +254,82 @@ A��B�򤿤�����ư���Ƥߤ�Τ����򤤤��⤷��ޤ���
           (#f)
         (print (tuple-space-take tuple-space '(_))))))
 
-=== ��ư���롥
+=== 起動する．
 
-�ǽ��tuple-space.scm��ư���Ƥ����С�writer.scm��
-reader.scm�ϤɤΤ褦�ʽ���ǵ�ư���Ƥ⹽���ޤ���writer.scm
-��reader.scm��ʣ����ư���Ƥ⹽���ޤ���
+最初にtuple-space.scmを起動しておけば，writer.scmと
+reader.scmはどのような順序で起動しても構いません．writer.scm
+とreader.scmを複数起動しても構いません．
 
-���٤Ƶ�ư����ȡ�writer.scm���񤭹�������ץ��reader.scm��
-�Ҥ������Ǥ��Ф��ޤ���
+すべて起動すると，writer.scmが書き込んだタプルをreader.scmが
+ひたすら吐き出します．
 
-== ��ե����
+== リファレンス
 
-=== ���ץ륹�ڡ���
+=== タプルスペース
 
-(use tsm.tuple-space)�򤹤륿�����Τ��ȤǤ���
+(use tsm.tuple-space)をするタスクのことです．
 
 #--- make-tuple-space(URI &optional minimum-update-ranosecond)
 --- make-tuple-space(URI)
-     ((|URI|))�˥Х���ɤ��줿���ץ륹�ڡ�����������ޤ���
+     ((|URI|))にバインドされたタプルスペースを作成します．
 
 --- tuple-space-start!(tuple-space)
-     ((|tuple-space|))��ư���ޤ���
+     ((|tuple-space|))を起動します．
 
 --- tuple-space-join!(tuple-space)
-     ((|tuple-space|))����λ����Τ��Ԥ��ޤ���
+     ((|tuple-space|))が終了するのを待ちます．
 
 --- tuple-space-stop!(tuple-space)
-     ((|tuple-space|))��λ���ޤ���
+     ((|tuple-space|))を終了します．
 
 
-=== ���饤�����
+=== クライアント
 
-(use tsm.proxy)�򤹤륿�����Τ��ȤǤ���
+(use tsm.proxy)をするタスクのことです．
 
 --- tuple-space-connect(URI)
-     ((|URI|))�ǻ��ꤵ�줿���ץ륹�ڡ�������³�������ץ륹�ڡ�
-     ������³�򤹤�ץ��������֥������Ȥ��֤��ޤ���
+     ((|URI|))で指定されたタプルスペースに接続し，タプルスペー
+     スへ接続をするプロキシオブジェクトを返します．
 
 --- tuple-space-shutdown!(proxy)
-     ((|proxy|))����³���Ƥ��륿�ץ륹�ڡ����Ȥ���³�����Ǥ�
-     �ޤ���
+     ((|proxy|))が接続しているタプルスペースとの接続を切断し
+     ます．
 
 --- tuple-space-write(proxy value &optional (timeout #f))
-     ((|proxy|))����³���Ƥ��륿�ץ륹�ڡ����˥��ץ�Ȥ���
-     ((|value|))��񤭹��ߤޤ����񤭹�������ץ��Ĺ���Ƥ�
-     ((|timeout|))�ǻ��ꤵ�줿���֤������ץ륹�ڡ�����¸�ߤ�
-     �ޤ��󡥤⤷��((|timeout|))�ǻ��ꤷ�����֤�᤮���饿�ץ�
-     ���ڡ����˺������ޤ����⤷��((|timeout|))����ά���줿
-     �ꡤ(({#f}))�����ꤵ�줿����(({tuple-space-take}))��
-     ���Ф�����ޤǥ��ץ�ϥ��ץ륹�ڡ�����¸�ߤ�³����
-     ����((|timeout|))�ˤϡ��ޥ������ä�ɽ���¿������äȥޥ�
-     �����ä�ɽ���դ��Ĥ������Υꥹ�Ȥ���ꤷ�ޤ���
+     ((|proxy|))が接続しているタプルスペースにタプルとして
+     ((|value|))を書き込みます．書き込んだタプルは長くても
+     ((|timeout|))で指定された期間だけタプルスペースに存在し
+     ません．もし，((|timeout|))で指定した期間を過ぎたらタプル
+     スペースに削除されます．もし，((|timeout|))が省略された
+     り，(({#f}))が指定された場合は(({tuple-space-take}))で
+     取り出されるるまでタプルはタプルスペースに存在し続けま
+     す．((|timeout|))には，マイクロ秒を表す実数か，秒とマイ
+     クロ秒を表すふたつの整数のリストを指定します．
 
 --- tuple-space-take(proxy patterns &optional (timeout #f) fallback)
-     ((|proxy|))����³���Ƥ��륿�ץ륹�ڡ������
-     ((|patterns|))�˥ޥå�����ѥ������ҤȤļ��Ф��ޤ���
-     ���Ф��줿���ץ�ϥ��ץ륹�ڡ�������������ޤ���
-     ((|patterns|))��util.match��Ʊ���񼰤Ǥ���
+     ((|proxy|))が接続しているタプルスペース中の
+     ((|patterns|))にマッチするパターンをひとつ取り出します．
+     取り出されたタプルはタプルスペースから削除されます．
+     ((|patterns|))はutil.matchと同じ書式です．
      
-     ((|timeout|))���ά������(({#f}))����ꤹ��ȡ����ꤷ��
-     �ѥ�����˥ޥå����륿�ץ뤬���դ���ޤǥ֥��å����ޤ���
-     �⤷��((|timeout|))����ꤷ�����ϡ����ꤷ��������˥�
-     �ץ뤬���դ���ʤ���Х��顼��ȯ�����ޤ����⤷��
-     ((|fallback|))����ꤷ�Ƥ���Х��顼��ȯ��������
-     ((|fallback|))���֤�ޤ���
+     ((|timeout|))を省略したり(({#f}))を指定すると，指定した
+     パターンにマッチするタプルが見付かるまでブロックします．
+     もし，((|timeout|))を指定した場合は，指定した期間内にタ
+     プルが見付からなければエラーが発生します．もし，
+     ((|fallback|))を指定していればエラーが発生せずに
+     ((|fallback|))が返ります．
      
-     ((|timeout|))�ˤϡ��ޥ������ä�ɽ���¿������äȥޥ�
-     �����ä�ɽ���դ��Ĥ������Υꥹ�Ȥ���ꤷ�ޤ���
+     ((|timeout|))には，マイクロ秒を表す実数か，秒とマイ
+     クロ秒を表すふたつの整数のリストを指定します．
 
 --- tuple-space-read(proxy patterns &optional (timeout #f) fallback)
-     ���Ĥ��ä����ץ�򥿥ץ륹�ڡ������������ʤ���������
-     (({tuple-space-read}))�Ȱۤʤ�ޤ���
+     見つかったタプルをタプルスペースから削除しない点だけが
+     (({tuple-space-read}))と異なります．
 
 --- tuple-space-read-all(proxy patterns)
-     ((|proxy|))����³���Ƥ��륿�ץ륹�ڡ������
-     ((|patterns|))�˥ޥå����륿�ץ�Υꥹ�Ȥ��֤��ޤ���
-     ((|patterns|))��util.match��Ʊ���񼰤Ǥ���
+     ((|proxy|))が接続しているタプルスペース中で
+     ((|patterns|))にマッチするタプルのリストを返します．
+     ((|patterns|))はutil.matchと同じ書式です．
 
-     (({tuple-space-take}))��(({tuple-space-read}))�Ȱۤʤꡤ��
-     �μ�³���ϥ֥��å����ޤ���
+     (({tuple-space-take}))，(({tuple-space-read}))と異なり，こ
+     の手続きはブロックしません．

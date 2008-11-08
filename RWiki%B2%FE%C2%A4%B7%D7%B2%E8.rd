@@ -1,17 +1,17 @@
-= RWiki��¤�ײ�
+= RWiki改造計画
 
-����夬�ä���Τ˴ؤ��Ƥ�((<RWiki Extension Kit>))�˽񤤤Ƥ��ޤ���
+出来上がったものに関しては((<RWiki Extension Kit>))に書いています．
 
 == m17n
 
-��˥塼�θ�����Ѥ�������
+メニューの言語を変えたい．
 
-front�˸��������Ϥ��Ƥ������
+frontに言語情報を渡してやろう．
 
-User Agent�����Ӥξ��ϥ�˥塼�Ͼ��ʤ���
+User Agentが携帯の場合はメニューは少なく．
 
-(('*')).rhtml.#{lang}���ɤ߹��ࡥ���Ӥξ���*.rhtml.i���ɤࡥ
+(('*')).rhtml.#{lang}を読み込む．携帯の場合は*.rhtml.iを読む．
 
-InterWiki��SOAP�Υ��ԡ��Ǥ�ʸ�������ɤ����Ǥ���褦�ˤ��롥
+InterWikiやSOAPのコピーでも文字コードを指定できるようにする．
 
-RD��ʸ�������ɤ�EUC-JP����UTF-8�ˤ���ä��ʤ���
+RDの文字コードをEUC-JPからUTF-8にしよっかなぁ．

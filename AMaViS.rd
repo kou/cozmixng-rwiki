@@ -1,50 +1,50 @@
 = AMaViS
 
-¥¦¥£¥ë¥¹/¥¹¥Ñ¥à¥Á¥§¥Ã¥«(¤Î¥Õ¥í¥ó¥È¥¨¥ó¥É¡©)
+ã‚¦ã‚£ãƒ«ã‚¹/ã‚¹ãƒ‘ãƒ ãƒã‚§ãƒƒã‚«(ã®ãƒ•ãƒ­ãƒ³ãƒˆã‚¨ãƒ³ãƒ‰ï¼Ÿ)
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo portupgrade -NRr amavisd-new
 
-== ÀßÄê
+== è¨­å®š
 
-/usr/local/etc/amvisd.conf-dist¤ò/usr/local/etc/amavisd.conf¤Ë¥³¥Ô¡¼¤·¤ÆÊÔ½¸
+/usr/local/etc/amvisd.conf-distã‚’/usr/local/etc/amavisd.confã«ã‚³ãƒ”ãƒ¼ã—ã¦ç·¨é›†
 
   $mydomain = 'cozmixng.org'
 
-¶Ø»ß¤¹¤ë¥Õ¥¡¥¤¥ë¤ÏÌµ¤¤¡¥
+ç¦æ­¢ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã¯ç„¡ã„ï¼
 
   $final_banned_destiny     = D_PASS;
 
-¥¹¥Ñ¥à¤ò¾¡¼ê¤ËµñÈİ¤·¤Ê¤¤
+ã‚¹ãƒ‘ãƒ ã‚’å‹æ‰‹ã«æ‹’å¦ã—ãªã„
 
   $final_spam_destiny       = D_PASS;
 
-¥¦¥£¥ë¥¹¥Á¥§¥Ã¥¯ÍÑ¤ÎÀßÄê¤Ï((<ClamAV>))¤Ë¤¢¤ë¡¥
+ã‚¦ã‚£ãƒ«ã‚¹ãƒã‚§ãƒƒã‚¯ç”¨ã®è¨­å®šã¯((<ClamAV>))ã«ã‚ã‚‹ï¼
 
-/etc/aliases¤ËÉ¬Í×¤½¤¦¤Ê¥¢¥É¥ì¥¹¤òÄÉ²Ã
+/etc/aliasesã«å¿…è¦ãã†ãªã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’è¿½åŠ 
 
   virus-quarantine: root
   spam-quarantine: root
   virusalert: root
   spam.police: root
 
-¤¿¤À¤·¡¤´í¸±¤Ê¥á¡¼¥ë¤¬ÆÏ¤¯¤³¤È¤¬¤¢¤ë¤«¤â¤·¤ì¤Ê¤¤¡¥
+ãŸã ã—ï¼Œå±é™ºãªãƒ¡ãƒ¼ãƒ«ãŒå±Šãã“ã¨ãŒã‚ã‚‹ã‹ã‚‚ã—ã‚Œãªã„ï¼
 
-ÊÑ¹¹¤òÈ¿±Ç
+å¤‰æ›´ã‚’åæ˜ 
 
   % sudo postalias /etc/aliases
 
-/etc/rc.d¤Ë°Ê²¼¤òÄÉ²Ã
+/etc/rc.dã«ä»¥ä¸‹ã‚’è¿½åŠ 
 
   amavisd_enable="YES"
 
-/usr/local/etc/postfix/main.cf¤Ë°Ê²¼¤òÄÉ²Ã
+/usr/local/etc/postfix/main.cfã«ä»¥ä¸‹ã‚’è¿½åŠ 
 
   ## for amavisd-new
   content_filter = smtp-amavis:[127.0.0.1]:10024
 
-/usr/local/etc/postfix/master.cf¤Ë°Ê²¼¤òÄÉ²Ã
+/usr/local/etc/postfix/master.cfã«ä»¥ä¸‹ã‚’è¿½åŠ 
 
   ## for amavisd-new
   smtp-amavis unix -      -       n       -       2  lmtp
@@ -60,10 +60,10 @@
      -o smtpd_recipient_restrictions=permit_mynetworks,reject
      -o mynetworks=127.0.0.0/8
 
-ÀßÄê¤òºÆÆÉ¤ß¹ş¤ß
+è¨­å®šã‚’å†èª­ã¿è¾¼ã¿
 
   % sudo env - /usr/local/etc/rc.conf/postfix.sh reload
 
-== ¥¯¥é¥¤¥¢¥ó¥È¤ÎÀßÄê
+== ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã®è¨­å®š
 
-((<Mew>))¤Ï4 > ¤ÇSPAMÂĞ±ş¤À¤Ã¤Æ¤µ¡¥ ;-<
+((<Mew>))ã¯4 > ã§SPAMå¯¾å¿œã ã£ã¦ã•ï¼ ;-<

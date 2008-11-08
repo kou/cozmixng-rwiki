@@ -1,119 +1,119 @@
 = Amway
 
-���०������Ĵ�٤Ƥߤ롥
+アムウェイを調べてみる．
 
-((<Google�ǡ�amway�פ򸡺����Ƥߤ�|URL:http://www.google.co.jp/search?q=amway&num=100&hl=ja&lr=lang_ja&sa=X&oi=lrtip8>))
+((<Googleで「amway」を検索してみる|URL:http://www.google.co.jp/search?q=amway&num=100&hl=ja&lr=lang_ja&sa=X&oi=lrtip8>))
 
-((<Google�ǡ�amway 5�粽���ʡפ򸡺����Ƥߤ�|URL:http://www.google.co.jp/search?num=100&hl=ja&q=amway+5%E5%A4%A7%E5%8C%96%E7%B2%A7%E5%93%81&btnG=Google+%E6%A4%9C%E7%B4%A2&lr=lang_ja>))
-  * ����äݤ��Τ��ʤ��ʤ���
+((<Googleで「amway 5大化粧品」を検索してみる|URL:http://www.google.co.jp/search?num=100&hl=ja&q=amway+5%E5%A4%A7%E5%8C%96%E7%B2%A7%E5%93%81&btnG=Google+%E6%A4%9C%E7%B4%A2&lr=lang_ja>))
+  * それっぽいのがないなぁ．
 
-���������դ����ΤϾ���ɲä��Ƥ������Ȥˤ��褦��
+新しく見付けたのは上に追加していくことにしよう！
 
 
-== ���०������Ͷ�����θ���ݡ���
+== アムウェイ勧誘　実体験レポート
 
 ((<URL:http://7m3ltd.ddo.jp/~ltd/amway.html>))
 
-2003ǯ�ʤΤ����Ū��������
+2003年なので比較的新しい．
 
-�����ˤ����ޤΥǥ⤬�����󤯤����ʥ��०�����ΤȤ����Τϻ���ˡ�̤�����ƻȤäƤ���Τˡ����Τ����ޤϻ���ˡ��((*ȿ����*))����ƻȤäƤ��ʤ�����ή��ʤ��Ȥ������०���������ޤ⸶�դǻȤ���ή��ʤ��Ȥ��ˤȤ������Ȥ��񤤤Ƥ��ä���
+ここにも洗剤のデモがうさんくさい（アムウェイのところのは使用法通り薄めて使っているのに，市販の洗剤は使用法に((*反して*))薄めて使っていないから流れないとか，アムウェイの洗剤も原液で使えば流れないとか）ということが書いてあった．
 
-== ���०�����������ߥڡ���
+== アムウェイ問題特設ページ
 
 ((<URL:http://www6.big.or.jp/~beyond/akutoku/network/amway/>))
 
-���˸��դ��Ƥ��äȢ��˥��äƤ������֤����ΤϤ뤭�Τۤ�Ѥ��פؤΥ�󥯤⤢�롥
+前に見付けてずっと↓にメモっておいた「うえのはるきのほめぱげ」へのリンクもある．
 
-�ʲ��˥��äƤ��������Ǽ��ĤʤɤΥڡ����⤢�롥
+以下にメモってある議論や掲示板などのページもある．
 
-=== ���०�������Ԥ�������٥�
+=== アムウェイ信者の論理レベル
 
 ((<URL:http://www6.big.or.jp/~beyond/akutoku/network/amway/mc.html>))
 
-���०�������ԤȤε����οʤ�����Ҳ𤷤Ƥ���ڡ�����
+アムウェイ信者との議論の進み方を紹介しているページ．
 
-������ɤ�Ǥ��������Ȥ��������դ����ʤ��ʤ鿮��ͽ�����餷����
+これを読んでおかしいところが見付けられないなら信者予備軍らしい．
 
-=== ���०��������æ�񤵤�������Ǥ��뤫��
+=== アムウェイから脱会させる事ができるか？
 
 ((<URL:http://beyond.2log.net/akutoku/archives/qa/pslg56263.html>))
 
-�Ǽ��ġ�
+掲示板．
 
-���ˤʤä���ġ�
-  * ���०����¦�ο�: ���ٻ�Ƥߤ��餤�������
-  * ¾�ο�: �ʥ��ߥʡ��Ȥ����äơ˻�ƤߤƤɤäפ�Ϥޤä��顤�⤦���Ť�Ƚ�ǤǤ��ʤ��ʤ뤸���
-  * ¾�ο�: ��Ƥߤƥ�����ä��鼫����Ǥ�����դ����㤦�Ρ�
+気になったやつ．
+  * アムウェイ側の人: 一度試してみたらいいんだ．
+  * 他の人: （セミナーとかいって）試してみてどっぷりはまったら，もう冷静に判断できなくなるじゃん．
+  * 他の人: 試してみてダメだったら自己責任で片付けちゃうの？
 
-== ���०����Ƥ���Ǽ��Ĳ�������������ˡ���Ǥꡪ��
+== アムウェイ討論掲示板過去ログ　悪徳商法お断り！！
 
 ((<URL:http://www.marin21.com/akutoku/ambbs-log/>))
 
-2000ǯ��ʬ�����ʤ������Ƥ��Ť��ʤäƤ��뤫�⤷��ʤ���
+2000年の分しかなくて内容が古くなっているかもしれない．
 
-== ���०�������긦���
+== アムウェイ問題研究所
 
 ((<URL:http://homepage1.nifty.com/marin/amway/>))
 
-���०�������ʤΥǥ���Ф���ͻ���
-  * ���ޤ����: ���̤����ޤ���᤹��٤��ʤΤˤ��Ƥ��ʤ��Ȥ���������Τ��������ѤȤ������̤β���ȿ�����Ȥ���
+アムウェイ商品のデモに対する考察．
+  * 洗剤の比較: 普通の洗剤も希釈するべきなのにしていないとか，白く濁るのは乳化作用という普通の化学反応だとか．
 
-== Amway���ݤ���Ǽ���
+== Amway現象を語る掲示板
 
-((<���०�������ݤ����ļ�|URL:http://hanbai.com/discuss/discuss.cgi?id=amway&stat=1&info=1>))
+((<アムウェイ現象を語る会議室|URL:http://hanbai.com/discuss/discuss.cgi?id=amway&stat=1&info=1>))
 
-����2005-11-22�ˤǤ�ư���Ƥ��롥
+今（2005-11-22）でも動いている．
 
-== Amway�����ܤβ�ҤˤĤ���
+== Amwayの日本の会社について
 
-  * ((<�߼��о�ɽ|URL:http://www.amway.co.jp/company/balancesheet.jsp>))
-    * ʿ��16ǯ11��11���˷軻����8���12����ѹ�����������6���Ķ�ǯ�١�ʿ��16ǯ9��1����ʿ��16ǯ12��31���ˤ�4����ˤʤäƤ������äơ�
+  * ((<貸借対照表|URL:http://www.amway.co.jp/company/balancesheet.jsp>))
+    * 平成16年11月11日に決算期を8月から12月に変更したから第6期営業年度（平成16年9月1日〜平成16年12月31日）は4カ月になっているんだって．
 
-== �����ΤϤ뤭�Τۤ�Ѥ�
+== うえのはるきのほめぱげ
 
 ((<URL:http://home.intercity.or.jp/users/ytera/ueno/>))
 
-1996-1997���餤�ȸŤ����ɡ���Amway�פǸ�������Ⱦ�̤ˤ���Web�����ȤΤ����ο����ʤ��Ŀͥ����ȡ�
+1996-1997くらいと古いけど，「Amway」で検索すると上位にくるWebサイトのうちの数少ない個人サイト．
 
-  * ((<�ͤΥ饤�ե��|URL:http://home.intercity.or.jp/users/ytera/ueno/lifework.html>))
-    * �ܿͤˤ��Amway�ξҲ�
-    * ����ä���ͳ���־�οͤ��������äƤ�������餽���ʤ�Ǥ��������ˤʤäƤ��뵤�����ʤ��Ǥ�ʤ���
+  * ((<僕のライフワーク|URL:http://home.intercity.or.jp/users/ytera/ueno/lifework.html>))
+    * 本人によるAmwayの紹介．
+    * ちょっと理由が「上の人がそういってたんだからそうなんです！」風になっている気がしないでもない．
 
   * ((<Amway FAQ|URL:http://home.intercity.or.jp/users/ytera/ueno/tetutalk.html>))
-    * �ܿͤ�Amway�򴫤᤿�Ȼפ���((<ů����|URL:http://home.intercity.or.jp/users/ytera/ueno/tetupro.html>))�ˤ��FAQ��
-    * ¾�Τϰ�����Amway�ΤϤ�����������Amway�ʤ�����Ȥ���ή�졥
-    * ��¾�Τϰ����פΤȤ�������ͳ�����򤬤ʤ�������10ǯ���餤�����ä����顩
+    * 本人にAmwayを勧めたと思われる((<哲さん|URL:http://home.intercity.or.jp/users/ytera/ueno/tetupro.html>))によるFAQ．
+    * 他のは悪い→Amwayのはいい→だからAmwayなんだ，という流れ．
+    * 「他のは悪い」のところの理由が根拠がない感じ．10年くらい前の話だから？
 
   * ((<Amway FAQ2|URL:http://home.intercity.or.jp/users/ytera/ueno/tetu003.html>))
-    * ����FAQ��Vol. 2��
-    * �ǽ�Τʤ󤳤���FAQ��Amway�ȴط��Τʤ����ȡ��Ĥ��Amway�Τ��ȡ�
-    * �֥Υ�ޤ��ʤ��פȤ�������OK�פȤ��Ǥ��뤱�ɡ�����ʤ��Ȥ򤷤Ƥ�����ʡ֥Υ��̵���Ǥ������³����פȤ��ֻ����줹�����������ʤ���פȤ��ˤ򤷤Ƥ������٤����ʤ����顤����ʤ��ȤϤ��ʤ�������������ĥ�졪�Ȥ���������
-    * �֤ޤ��ϡ���ʬ�����󥬥���äơ��Ȥ��פäƤ����Τ��ܿͤΤ�����Ȥ������äƤʤ����ɡ���ʬ��ů����ˤˤ��٤������뤳�ȤˤĤ��ƤϿ���Ƥ��ʤ��ʤ���
-    * �����Ǥ��οͤ��������äƤ��뤫�餽���ʤ��Ū��Ÿ���������롥
+    * ↑のFAQのVol. 2．
+    * 最初のなんこかのFAQはAmwayと関係のないこと．残りはAmwayのこと．
+    * 「ノルマがない」とか「返品OK」とかできるけど，そんなことをしていたら（「ノルマ無しでだらだら続ける」とか「仕入れすぎたから返品する」とか）をしていたら儲けられないから，そんなことはしない方がいい，頑張れ！という感じ？
+    * 「まずは，自分がガンガン買って，使え」っていうのを本人のためだとしか言ってないけど，自分（哲さん）にも儲けが入ることについては触れていないなぁ．
+    * ここでも上の人がそういっているからそうなんだ的な展開が見られる．
 
-  * ((<ů����Υ��ԡ�����|URL:http://home.intercity.or.jp/users/ytera/ueno/tetu001.html>))
-    * �ܤ����Ǥ�������ˡ֤���ϥ��०�����䡪���פ�Ϣ�Ƥ��줿�餽�ε��ˤʤä��㤦�Τ��ʤ���
+  * ((<哲さんのスピーチ集|URL:http://home.intercity.or.jp/users/ytera/ueno/tetu001.html>))
+    * 目の前でこんな風に「それはアムウエイや！！」と連呼されたらその気になっちゃうのかなぁ．
 
-== Skeptic's Dictionary: ���०����
+== Skeptic's Dictionary: アムウェイ
 
 ((<URL:http://www.genpaku.org/skepticj/amway.html>))
 
-����
+要約．
 
-  * 1998ǯ�αѸ�ε�����������
-  * �ޥ����ˡ��
+  * 1998年の英語の記事の翻訳．
+  * マルチ商法．
     * ((<Skeptic's Dictionary: multi-level marketing|URL:http://www.genpaku.org/skepticj/mlm.html>))
-    * Ʊ�������Ȥˤ����⡥
-    * ���ʤ��������������δ�Ͷ��Ĵ���뾦ˡ
-  * �ʥ���ꥫ�Ǥϡ˹�ˡŪ�ʥԥ�ߥå��ȿ���
-    * ��ˡŪ�ʥԥ�ߥå��ȿ��ȡ����ˡ�ʥԥ�ߥå��ȿ��ʤ�����ͤ��߹֡ˤȤΰ㤤�ϡ��ºݤ˾��ʤ�ή�̤��Ƥ��뤫�ɤ����餷����
-    * Amway�Ǥϥԥ�ߥå��ȿ��ˤʤäƤ��Ƽ�ʬ��겼�Υԥ�ߥåɤ����䤷�Ƥ����Ф����ۤɼ�ʬ���٤���������Ȥ����ΤϤͤ��߹֤�Ʊ�������ƥ�������ºݤ˾��ʤ�ή�̤����Ƥ���Τ��ۤʤ롥
-  * �ʾ��ʤ����̤����䤷�ơ��٤����ǽ���ϤۤȤ�ɤʤ���
-    * ��ʬ����ä��ꤹ�뤫��ȥ�ȥ󤫾����٤������١�
-    * ���ߥʡ��Ȥ��ǾҲ𤵤��ͤϤۤ�ΰ�����
-    * �٤���ʤ������Ȼ�Ŧ�����ȡ��֤���ʤˤ������٤����櫓���ʤ��פʤɤȤ�����
-    * �٤���ʤ��Τϥ���١������Ȥ���ʬ��Ư���Ƥ��ʤ�������Ȼפ���
+    * 同じサイトによる解説．
+    * 商品の販売よりも販売員の勧誘を強調する商法
+  * （アメリカでは）合法的なピラミッド組織．
+    * 合法的なピラミッド組織と，非合法なピラミッド組織（いわゆるねずみ講）との違いは，実際に商品が流通しているかどうからしい．
+    * Amwayではピラミッド組織になっていて自分より下のピラミッドを増やしていけばいくほど自分の儲けは増えるというのはねずみ講と同じシステムだが，実際に商品を流通させているのが異なる．
+  * （商品を普通に販売して）儲かる可能性はほとんどない．
+    * 自分で買ったりするからトントンか少し儲ける程度．
+    * セミナーとかで紹介される人はほんの一部．
+    * 儲からないじゃんと指摘されると，「そんなにすぐに儲けれるわけがない」などという．
+    * 儲からないのはモチベーションとか十分に働いていないからだと思う．
 
-�䴶��
+私感．
 
-  * ���ߥʡ��˻��ä���Ȥ������ޥ���ɥ���ȥ����뤵��Ƥ����Τ��ʤ���
+  * セミナーに参加するとだんだんマインドコントロールされていくのかなぁ．

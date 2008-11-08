@@ -1,33 +1,33 @@
 = TWTD005
 
-Rabbit 0.4.2¤Î¥ê¥ê¡¼¥¹
+Rabbit 0.4.2ã®ãƒªãƒªãƒ¼ã‚¹
 
 == status
 
-* ¼ïÎà: story
-* ¥¤¥Æ¥ì¡¼¥·¥ç¥ó: 1
-* ¥µ¥¤¥ó: ((<kou>))
-* ¾õÂÖ: close
-* ¸«ÀÑ: 0 / 0
+* ç¨®é¡: story
+* ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³: 1
+* ã‚µã‚¤ãƒ³: ((<kou>))
+* çŠ¶æ…‹: close
+* è¦‹ç©: 0 / 0
 
 == description
 
 == test
 
-* svn log¤ò¸«¤Ê¤¬¤éNEWS.{en,ja}¤ò¹¹¿·
-* ./update-po.rb¤Çpo¤ò¹¹¿·
-* misc/make-image-sample.rb¤Ç¥¹¥¯¥ê¡¼¥ó¥·¥ç¥Ã¥ÈºîÀ®
-* misc/make-print-sample.rb¤ÇPS/PDF¤Î¥µ¥ó¥×¥ë¤òºîÀ®
-* ./update-rd.rb¤ÇRWiki¾å¤Ë¥É¥­¥å¥á¥ó¥È¤ò¥³¥Ô¡¼
-* dist.sh¤Ç¥¢¡¼¥«¥¤¥ÖºîÀ®
-* download/index.xml¤òÊÔ½¸¤·¤Æ¥¢¡¼¥«¥¤¥Ö¤Ø¤Î¥ê¥ó¥¯¤òÄÉ²Ã
-* download/¤ò¥³¥ß¥Ã¥È
-* www¤Çsvn up¤·¤ÆWeb¥µ¥¤¥È¤ÎHTML¤ò¹¹¿·
-* ((<RAA:rabbit>))¤ò¹¹¿·
-* ((<GnomeFiles|URL:http://gnomefiles.org/>))¤ò¹¹¿·
-* rabbit-shockers¤Ë¥¢¥Ê¥¦¥ó¥¹¥á¡¼¥ë¤òÅê¤²¤ë¡£
-* lib/rabbit/rabbit.rb¤ÎVERSION¤ò¹¹¿·
-* po/*/rabbit.po¤ÎProject-Id-Version¤ò¹¹¿·
+* svn logã‚’è¦‹ãªãŒã‚‰NEWS.{en,ja}ã‚’æ›´æ–°
+* ./update-po.rbã§poã‚’æ›´æ–°
+* misc/make-image-sample.rbã§ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆä½œæˆ
+* misc/make-print-sample.rbã§PS/PDFã®ã‚µãƒ³ãƒ—ãƒ«ã‚’ä½œæˆ
+* ./update-rd.rbã§RWikiä¸Šã«ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’ã‚³ãƒ”ãƒ¼
+* dist.shã§ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ä½œæˆ
+* download/index.xmlã‚’ç·¨é›†ã—ã¦ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã¸ã®ãƒªãƒ³ã‚¯ã‚’è¿½åŠ 
+* download/ã‚’ã‚³ãƒŸãƒƒãƒˆ
+* wwwã§svn upã—ã¦Webã‚µã‚¤ãƒˆã®HTMLã‚’æ›´æ–°
+* ((<RAA:rabbit>))ã‚’æ›´æ–°
+* ((<GnomeFiles|URL:http://gnomefiles.org/>))ã‚’æ›´æ–°
+* rabbit-shockersã«ã‚¢ãƒŠã‚¦ãƒ³ã‚¹ãƒ¡ãƒ¼ãƒ«ã‚’æŠ•ã’ã‚‹ã€‚
+* lib/rabbit/rabbit.rbã®VERSIONã‚’æ›´æ–°
+* po/*/rabbit.poã®Project-Id-Versionã‚’æ›´æ–°
 
 == history
 

@@ -1,18 +1,18 @@
-= ¥ê¥ó¥¯
+= ãƒªãƒ³ã‚¯
 
-== COZMIXNG´Ø·¸
+== COZMIXNGé–¢ä¿‚
 
-  * ((<¥á¥¤¥ó¥µ¥¤¥È|URL:/>))
+  * ((<ãƒ¡ã‚¤ãƒ³ã‚µã‚¤ãƒˆ|URL:/>))
   * ((<Public COZMIXNG|URL:http://pub.cozmixng.org/>))
   * ((<Streaming COZMIXNG|URL:http://streaming.cozmixng.org/>))
   * ((<WiLiKi|URL:/~wiliki/>))
   * ((<Pseudo Web Mail|URL:http://pub.cozmixng.org/~pwm/>))
-  * ((<±ÆÉñ|URL:/~kagemai/>))
-  * ((<¥¢¥¯¥»¥¹¾õ¶·|URL:/analog/>))
-  * ((<¥È¥é¥Õ¥£¥Ã¥¯|URL:/mrtg/>))
+  * ((<å½±èˆž|URL:/~kagemai/>))
+  * ((<ã‚¢ã‚¯ã‚»ã‚¹çŠ¶æ³|URL:/analog/>))
+  * ((<ãƒˆãƒ©ãƒ•ã‚£ãƒƒã‚¯|URL:/mrtg/>))
   * ((<yasushi diary|URL:/~yasushi/d/>))
   * ((<suzuki diary|URL:/~suzuki/d/>))
 
-== Ãøºî¸¢´Ø·¸
+== è‘—ä½œæ¨©é–¢ä¿‚
 
-  * ((<Ãøºî¸¢¤È¤«¥Í¥Ã¥È¥é¥¸¥ª¤È¤«²»³ÚÇÛ¿®¤È¤«|URL:http://www.ladio.net/corrupt/corrupt_rights.html>))
+  * ((<è‘—ä½œæ¨©ã¨ã‹ãƒãƒƒãƒˆãƒ©ã‚¸ã‚ªã¨ã‹éŸ³æ¥½é…ä¿¡ã¨ã‹|URL:http://www.ladio.net/corrupt/corrupt_rights.html>))

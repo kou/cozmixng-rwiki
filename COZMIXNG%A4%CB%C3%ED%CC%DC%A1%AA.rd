@@ -1,47 +1,47 @@
-= COZMIXNG�����ܡ�
+= COZMIXNGに注目！
 
-  * COZMIXNG��
-    * ������(Next Generation)COZMIX
-    * COZMIX�Ȥ�������ξ�ǲ���������
+  * COZMIXNG？
+    * 次世代(Next Generation)COZMIX
+    * COZMIXという土台の上で何かをやろう
 
-= �ݥꥷ��
+= ポリシー
 
-  * ���ڤ�
-  * �ڤ���
-  * �����ʤ��Ȥ�
+  * 気楽に
+  * 楽しく
+  * 好きなことを
 
-= ���þ��
+= 参加条件
 
-  * ��̣���������ï�Ǥ��紿�ޡ�
-  * ��̣���ʤ��ʤä�����Ƥ�OK��
-  * �ƤӶ�̣���ФƤ�����ƻ����紿�ޡ�
+  * 興味さえあれば誰でも大歓迎！
+  * 興味がなくなったらやめてもOK！
+  * 再び興味が出てきたら再参加大歓迎！
 
-= �����äƤ���Ρ�
+= 何をやっているの？
 
   * WikiWikiWeb
-  * ���ȥ꡼�ߥ�
-  * ���̤οͤ˵��ڤ˥��󥿡��ͥåȤ�
-  * ���򤽤��ʤ��Ȥʤ�ʤ�Ǥ�
+  * ストリーミング
+  * 一般の人に気軽にインターネットを
+  * 面白そうなことならなんでも
 
 = WikiWikiWeb
 
-  * ï�Ǥ�񤭴�������Web�ڡ���
+  * 誰でも書き換えられるWebページ
   * ((<RWiki|URL:/~rwiki/>))
-    * Ruby�Ǽ������줿Wiki��������
+    * Rubyで実装されたWikiクローン
   * ((<WiLiKi|URL:/~wiliki/wiliki.cgi>))
-    * Gauche�Ǽ������줿Wiki��������
+    * Gaucheで実装されたWikiクローン
 
-= ���ȥ꡼�ߥ�
+= ストリーミング
 
-  * ������
-  * ���ȥ꡼�ȥ����ƥ����Ȥⵤ�ڤ�
+  * 教育用
+  * ストリートアーティストも気軽に
 
-= ���ڤ˥��󥿡��ͥå�
+= 気軽にインターネット
 
-  * Web���ڡ���̵����
+  * Webスペース無料提供
   * ((<PWM|URL:http://pub.cozmixng.org/~pwm/>))
-  * ((<�����꡼|URL:http://pub.cozmixng.org/~gallery/>))
+  * ((<ギャラリー|URL:http://pub.cozmixng.org/~gallery/>))
 
-= ���򤽤��ʤ���
+= 面白そうなこと
 
   * ((<WebDAV|URL:/webdav/>))

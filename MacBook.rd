@@ -1,22 +1,22 @@
 = MacBook
 
-MacBook���ư���Ƥ���Debian GNU/Linux�ˤĤ��ơ�
+MacBook上で動いているDebian GNU/Linuxについて。
 
-�����ܡ��ɤΡ�n�פ����Ϥ���ʤ��Ȥ������롣
+キーボードの「n」が入力されないときがある。
 
-== ���å��ѥåɤ�����
+== タッチパッドの設定
 
-����Ū�ˤ�((<MacBook - Debian Wiki|URL:http://wiki.debian.org/MacBook>))�˽񤤤Ƥ���Ȥ���ǡ��ʲ��Τ褦���ѹ���
+基本的には((<MacBook - Debian Wiki|URL:http://wiki.debian.org/MacBook>))に書いてあるとおりで、以下のように変更。
 
-  * ���ܻإ����������ͭ��
-  * ���ܻءʻ��ܻءˤǤα�����å��ʿ����楯��å��ˤ�̵��
-  * ��������åפǿ����楯��å�
-  * ��������åפǱ�����å�
-  * ���������������ͭ��
+  * 二本指スクロールを有効
+  * 二本指（三本指）での右クリック（真ん中クリック）を無効
+  * 左上隅タップで真ん中クリック
+  * 右上隅タップで右クリック
+  * 下隅スクロールを有効
 
-�ɤ�����Edge�ˤ��뤫�ʤɤ���Ĵ���ˤ�((<synclient>))����ѡ�
+どこからEdgeにするかなどの微調整には((<synclient>))を使用。
 
-/etc/X11/xorg.conf�γ�����ʬ�ϰʲ��ΤȤ��ꡣ
+/etc/X11/xorg.confの該当部分は以下のとおり。
 
   Section "InputDevice"
           Identifier      "Synaptics Touchpad"
@@ -59,30 +59,30 @@ MacBook���ư���Ƥ���Debian GNU/Linux�ˤĤ��ơ�
           Option          "SHMConfig" "on"
   EndSection
 
-== �ץ����������ؤν���
+== プロジェクタへの出力
 
-MacBook�β��̤�1280x800�����ɡ����̤Υץ�����������1024x768�ǽĲ�����Ψ���㤦���ץ쥼��ΤȤ��ϥץ����������˱ǤäƤ������Ƥ�Ʊ����Τ���̤ˤ�Ǥ��������Ǥ⡢MacBook�β����٤�1024x768�ˤ���ȡ���ĥ�äƤ���ơ��������Τ�1024x768�β��̤�ɽ�����Ƥ���褦�Ȥ��롣�Ǥ⡢��������Ȳ��̤��Ĥ�Ǥ��ޤ����Ȥ������Ȥǡ�1024x768�ˤ��Ƥ�1024x768�νĲ�����Ψ���Ѥ�����ɽ���������ꡣ
+MacBookの画面は1280x800だけど、普通のプロジェクタは1024x768で縦横の比率が違う。プレゼンのときはプロジェクタに映っている内容と同じものを画面にも映したい。でも、MacBookの解像度を1024x768にすると、頑張ってくれて、画面全体で1024x768の画面を表示してくれようとする。でも、そうすると画面が歪んでしまう。ということで、1024x768にしても1024x768の縦横の比率を変えずに表示する設定。
 
   % xrandr --output LVDS --set PANEL_FITTING center --mode 1024x768
 
-PANEL_FITTING�ץ��ѥƥ����ͤ�center�ˤ���Τ��ݥ���ȡ��ǥե���Ȥ�full_aspect�ǡ������ͤ��Ȳ��̤˹�碌��褦�˽Ĳ�����ѹ����롣
+PANEL_FITTINGプロパティの値をcenterにするのがポイント。デフォルトはfull_aspectで、この値だと画面に合わせるように縦横比を変更する。
 
-���ʤߤˡ��ץ��ѥƥ����ͤϰʲ��Τ褦�˳�ǧ�Ǥ��롣
+ちなみに、プロパティの値は以下のように確認できる。
 
   % xrandr --properties
 
-�Ĥ��Ǥˡ��ץ�����������VGA�ˤؤ�ɽ����ͭ���ˤ�����ˡ��񤤤Ƥ�����
+ついでに、プロジェクタ（VGA）への表示を有効にする方法も書いておく。
 
   % xrandr --output VGA --auto
 
-����Ū�˲����٤���ꤹ�����--mode��Ȥ���
+明示的に解像度を指定する場合は--modeを使う。
 
   % xrandr --output VGA --mode 1024x768
 
-���ѤǤ���--mode���ͤϰ����ʤ���xrandr��ư����ȳ�ǧ�Ǥ��롣
+利用できる--modeの値は引数なしでxrandrを起動すると確認できる。
 
   % xrandr
 
-�ץ�����������VGA�ˤؤν��Ϥ������Ϥ������롣
+プロジェクタ（VGA）への出力をやめる場合はこうする。
 
   % xrandr --output VGA --off

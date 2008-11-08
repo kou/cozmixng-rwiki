@@ -4,199 +4,199 @@
 
 $Id: README.ja 574 2005-05-20 13:56:34Z kou $
 
-== ���
+== 作者
 
 Kouhei Sutou <kou@cozmixng.org>
 
-== �饤����
+== ライセンス
 
 Ruby's
 
-̵�ݾڤǤ���
+無保証です。
 
-== ���ꤤ
+== お願い
 
-GalleryAdministrator��¿���첽���줿���եȥ������Ǥ�����������
-�䤬����Ǥ��ʤ��������ܸ��(����äݤ�)�Ѹ�ʳ��Υ�å�����
-���ѰդǤ��ޤ��󡥤��Τ��ᡤ���(���ä��ꤷ��)�Ѹ��ե��
-�����Υ�å������ե��������Ƥ��ޤ���
+GalleryAdministratorは多言語化されたソフトウェアです．しかし，
+私が理解できないため日本語と(それっぽい)英語以外のメッセージ
+が用意できません．そのため，私は(しっかりした)英語やフランス
+語等のメッセージファイルを求めています．
 
-== �᡼��󥰥ꥹ��
+== メーリングリスト
 
-((<COZMIXNG RWiki - Ϣ����
+((<COZMIXNG RWiki - 連絡先
 |URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=%CF%A2%CD%ED%C0%E8>))
-�������������
+を御覧下さい．
 
-== �Х��ȥ�å��󥰥����ƥ�
+== バグトラッキングシステム
 
-���ո�����˾�Զ��������Ϻ�ԤؤΥ᡼�롤�嵭�Υ᡼��󥰥�
-���ȡ�RWiki�ؤν񤭹��ߤޤ���((<����
+ご意見ご要望不具合報告等は作者へのメール，上記のメーリングリ
+スト，RWikiへの書き込みまたは((<影舞
 |URL:http://www.cozmixng.org/~kagemai/?project=gallery;action=top>))
-�����Ѳ�������
+をご利用下さい．
 
-== �ʤˤ��졩
+== なにこれ？
 
-((<RAA:RubyPhoto>))��
-((<zphoto|URL:http://namazu.org/~satoru/zphoto>))�Υ᡼���
-CGI�Υ��󥿡��ե������Ǥ���
+((<RAA:RubyPhoto>))と
+((<zphoto|URL:http://namazu.org/~satoru/zphoto>))のメールと
+CGIのインターフェイスです．
 
-����ˤϳ�ĥ��RubyPhoto����°���Ƥ���ޤ�����ĥ�ǤǤʤ���ư���ޤ���
-�ޤ������ꥸ�ʥ�Υ���ץ����°���Ƥ��ޤ���
+これには拡張版RubyPhotoが付属してあります．拡張版でないと動きません．
+また，オリジナルのサンプルは付属していません．
 
-zphoto�ϡ��С������1.1�ʾ�Τ�Τ�Ȥ��Ȥʤ��褤�Ǥ���
+zphotoは，バージョンが1.1以上のものを使うとなおよいです．
 
-ʣ���θ�����б����������꡼�������Ǥ��ޤ���
+複数の言語に対応したギャラリーを生成できます。
 
-����ץ�Ȥ���(tDiary��)�ơ��ޤ�桼�����ѹ��Ǥ��륮���꡼
-�Υƥ�ץ졼�Ȥ�JavaScript�������ѤΥ����꡼����������ƥ�
-�ץ졼�Ȥ���°���Ƥ��ޤ���
+サンプルとして(tDiaryの)テーマをユーザが変更できるギャラリー
+のテンプレートとJavaScript、携帯用のギャラリーを生成するテン
+プレートも付属しています。
 
-== ��¸�饤�֥��
+== 依存ライブラリ
 
-  * ((<RAA:RubyPhoto>))��(���������֤˴ޤޤ�Ƥ��ޤ���)
-  * ((<RAA:RMagick>))�ޤ���((<RAA:Imlib2-Ruby>))�ޤ���
-    ImageMagick�Υ��ޥ��(convert��identify)
-  * ((<RAA:rss>))(���ܸ��Ȥ��ΤǤ����ɬ��)
-  * Iconv�Х���ǥ��󥰤ޤ���((<RAA:Uconv>))(((<RAA:Uconv>))������������)
-  * XML�ץ�����(((<RAA:REXML>))2.5.0�ʾ�ޤ���
-    ((<RAA:xmlscan>))�ޤ���((<RAA:xmlparser>)))
+  * ((<RAA:RubyPhoto>))改(アーカイブに含まれています。)
+  * ((<RAA:RMagick>))または((<RAA:Imlib2-Ruby>))または
+    ImageMagickのコマンド(convertとidentify)
+  * ((<RAA:rss>))(日本語を使うのであれば必須)
+  * Iconvバインディングまたは((<RAA:Uconv>))(((<RAA:Uconv>))の方がお奨め)
+  * XMLプロセサ(((<RAA:REXML>))2.5.0以上または
+    ((<RAA:xmlscan>))または((<RAA:xmlparser>)))
 
-=== ����Ф����饤�֥��
+=== あればいいライブラリ
 
-  * ((<RAA:TMail>))(�᡼�륤�󥿡��ե�������Ȥ��ΤǤ����ɬ��)
+  * ((<RAA:TMail>))(メールインターフェイスを使うのであれば必要)
 
-=== ����Ф������
+=== あればいいもの
 
   * ((<zphoto|URL:http://www.namazu.org/~satoru/zphoto/>))
 
-== ������ˡ
+== 入手方法
 
 ((<URL:http://www.cozmixng.org/~kou/download/gallery.tar.gz>))
 
   % svn co http://www.cozmixng.org/repos/ruby/gallery/trunk gallery
 
-== ���󥹥ȡ���
+== インストール
 
   % ruby setup.rb config
   % ruby setup.rb setup
   # ruby setup.rb install
 
-== ����
+== 設定
 
-�����Ĥ��Υե�����򥳥ԡ�(cp)�ޤ��ϥ��(ln -s)���ơ�����
-�ե�����(admin.rb��shared.xml)���Խ����Ƥ����������ʲ������
-�ϥ��ԡ����Ƥ��ޤ���
+いくつかのファイルをコピー(cp)またはリンク(ln -s)して，設定
+ファイル(admin.rbやshared.xml)を編集してください。以下の例で
+はコピーしています．
 
-=== CGI��
+=== CGI用
 
-  % cp interface/admin.rb /HTTP�ǥ�����������ǥ��쥯�ȥ�/
-  % cp sample/counter.rb /admin.rb��Ʊ���ǥ��쥯�ȥ�/
-  % cp sample/{http,gallery}.conf /�����ɥѥ����̤äƤ���ǥ��쥯�ȥ�/
-  % cp sample/dot.htaccess /HTTP�ǥ�����������ǥ��쥯�ȥ�/.htaccess
-  % cp sample/scripts/* /JS_PATH�����ꤷ���ǥ��쥯�ȥ�/
-  % cp sample/dot.rubyphoto-ignore /ENV["HOME"]�����ꤷ���ǥ��쥯�ȥ�/.rubyphoto-ignore
+  % cp interface/admin.rb /HTTPでアクセスするディレクトリ/
+  % cp sample/counter.rb /admin.rbと同じディレクトリ/
+  % cp sample/{http,gallery}.conf /ロードパスが通っているディレクトリ/
+  % cp sample/dot.htaccess /HTTPでアクセスするディレクトリ/.htaccess
+  % cp sample/scripts/* /JS_PATHに設定したディレクトリ/
+  % cp sample/dot.rubyphoto-ignore /ENV["HOME"]に設定したディレクトリ/.rubyphoto-ignore
 
-���Ȥϡ�
+あとは，
 
-  * admin.rb, httpd.conf, gallery.conf��������ѹ�
-  * admin.rb��CGI�Ȥ��Ƽ¹ԤǤ���褦������ʼ¹Ը����ɲä�����ʤɡ�
-  * admin.rb��GALLERY_DIR��GALLERY_DATA_DIR�˽񤭹����褦������
+  * admin.rb, httpd.conf, gallery.confの設定を変更
+  * admin.rbをCGIとして実行できるように設定（実行権を追加したりなど）
+  * admin.rbがGALLERY_DIRとGALLERY_DATA_DIRに書き込めるように設定
 
-���Ʋ�������
+して下さい．
 
-=== �ƥ�ץ졼����
+=== テンプレート用
 
-sample/templates/�ˤ����Ĥ��ƥ�ץ졼�Ȥ��Ѱդ��Ƥ���Τǹ����ʤ�Τ�
-���򤷤Ʋ�������ʣ�����򤷤Ƥ⤫�ޤ��ޤ��󡥤�����󡤼�ʬ�Ǻ�äƤ⤫
-�ޤ��ޤ���
+sample/templates/にいくつかテンプレートが用意してあるので好きなものを
+選択して下さい．複数選択してもかまいません．もちろん，自分で作ってもか
+まいません．
 
-zphoto�ǻϤޤ�ƥ�ץ졼�Ȥ�zphoto�ѤΥƥ�ץ졼�Ȥˤʤ�ޤ���
+zphotoで始まるテンプレートはzphoto用のテンプレートになります．
 
-  % cp -R sample/templates/�����ʥƥ�ץ졼�� /TEMPLATES_DIR�����ꤷ���ǥ��쥯�ȥ�/
-  % cp sample/css/* /CSS�ѤΥǥ��쥯�ȥ�/
-  % cp sample/images/* /����(����������)�ѤΥǥ��쥯�ȥ�/
+  % cp -R sample/templates/好きなテンプレート /TEMPLATES_DIRに設定したディレクトリ/
+  % cp sample/css/* /CSS用のディレクトリ/
+  % cp sample/images/* /画像(アイコン等)用のディレクトリ/
 
-���Ȥϳƥƥ�ץ졼�Ȥ�shared.xml��������ѹ����Ʋ�������
+あとは各テンプレートのshared.xmlの設定を変更して下さい．
 
-=== RubyPhoto��
+=== RubyPhoto用
 
-   % cp sample/dot.rubyphoto-ignore /ENV['HOME']�����ꤷ���ǥ��쥯�ȥ�/
+   % cp sample/dot.rubyphoto-ignore /ENV['HOME']に設定したディレクトリ/
 
-  * ���ܸ���
+  * 日本語用
 
-      % cp sample/album.xml.ja /�����꡼�Υǥ��쥯�ȥ�/album.xml.ja
-      % cp sample/album.xml.ja /�����꡼�ǡ����Υǥ��쥯�ȥ�/album.xml.ja
+      % cp sample/album.xml.ja /ギャラリーのディレクトリ/album.xml.ja
+      % cp sample/album.xml.ja /ギャラリーデータのディレクトリ/album.xml.ja
 
-  * �Ѹ���
+  * 英語用
 
-      % cp sample/album.xml.en /�����꡼�Υǥ��쥯�ȥ�/album.xml.en
-      % cp sample/album.xml.en /�����꡼�ǡ����Υǥ��쥯�ȥ�/album.xml.en
+      % cp sample/album.xml.en /ギャラリーのディレクトリ/album.xml.en
+      % cp sample/album.xml.en /ギャラリーデータのディレクトリ/album.xml.en
 
-=== �᡼����
+=== メール用
 
-�᡼��ǲ�������Ƥ��������ϡ��ʲ��κ�Ȥ�ɬ�פˤʤ�ޤ���
+メールで画像を投稿したい場合は，以下の作業も必要になります．
 
-  % cp sample/mail.conf /�����ɥѥ����̤äƤ���ǥ��쥯�ȥ�/
-  % cp interface/mail_admin.rb /�ɤ���/
+  % cp sample/mail.conf /ロードパスが通っているディレクトリ/
+  % cp interface/mail_admin.rb /どこか/
 
-ɬ�פʤ�С�
+必要ならば，
 
-  % cp sample/dot.forward /�ۡ���ǥ��쥯�ȥ�/.forward
+  % cp sample/dot.forward /ホームディレクトリ/.forward
 
-== �Ȥ�
+== 使う
 
-�֥饦����admin.rb�˥����������Ʋ�������
+ブラウザでadmin.rbにアクセスして下さい．
 
 == Tips
 
-=== �����ԤΥѥ��������
+=== 管理者のパスワード設定
 
-"."�ϴ����Ը��¤���ä��桼���ˤʤ�ޤ����ʤΤǡ��ޤ����֥桼
-����Ͽ�פ�"."�Υѥ���ɤ����ꤷ�Ʋ�������
+"."は管理者権限を持ったユーザになります．なので，まず，「ユー
+ザ登録」で"."のパスワードを設定して下さい．
 
-=== �Хå����å�
+=== バックアップ
 
-GALLERY_DATA_DIR�����Хå����åפ����GALLERY_DIR����������
-��HTML�ϴ���������Ǥ��ޤ����⤷��GALLERY_DIR�����Ƥ��ä���
-���ޤä����ϰʲ��Τ褦�ˤ��Ʋ�������
+GALLERY_DATA_DIRさえバックアップすればGALLERY_DIRに生成され
+るHTMLは完全に復活できます．もし，GALLERY_DIRの内容が消えて
+しまった場合は以下のようにして下さい．
 
-  * GALLERY_DATA_DIR��GALLERY_DIR�˥��ԡ�
+  * GALLERY_DATA_DIRをGALLERY_DIRにコピー
 
     % rm -rf GALLERY_DIR; cp -r GALLERY_DATA_DIR GALLERY_DIR
 
-  * gallery.conf��ALWAYS_OUTPUT_ALL_HTML��true���ѹ�
-  * admin.rb�ǡ�Ŭ���ʥ����꡼�ޤ��ϲ����������ʤɤ��ѹ���
-    ����¸���롥
+  * gallery.confのALWAYS_OUTPUT_ALL_HTMLをtrueに変更
+  * admin.rbで，適当なギャラリーまたは画像の説明などを変更し
+    て保存する．
 
-  * ���ʤ���֤�������Ȼפ��ޤ�����HTML����������ޤ�������
-    ����Flash��¾����Υڡ����ؤΥ�󥯤���������ʤ��Ȼפ�
-    �ΤǤ⤦����Ŭ���ʥ����꡼�ޤ��ϲ����������ʤɤ��ѹ���
-    ����¸����Ȥ����Ǥ��礦������ˡ��ۡ���ڡ�����᡼�륢
-    �ɥ쥹�ؤΥ�󥯤�����admin.rb�˥������󤷤��ͤΤ�Τˤ�
-    ��Ϥ��ʤΤǡ��ơ��Υ桼���˥������󤷤Ƥ��ä�HTML���
-    �������ʤ���Ф����ޤ���
+  * かなり時間がかかると思いますが，HTMLが生成されます．ただ
+    し，Flashや他言語のページへのリンクが生成されないと思う
+    のでもう一度適当なギャラリーまたは画像の説明などを変更し
+    て保存するといいでしょう．さらに，ホームページやメールア
+    ドレスへのリンクが全てadmin.rbにログインした人のものにな
+    るはずなので，各々のユーザにログインしてもらってHTMLを再
+    生成しなければいけません．
 
-�����󡤤���ޤ�򤷤��ʤ��Ǥ��͡�
+うーん，あんまり嬉しくないですね．
 
-=== ���󥽡��뤫�饢�åץǡ���
+=== コンソールからアップデート
 
-sample/initgallery.rb��Ȥ��ޤ���
+sample/initgallery.rbを使います．
 
-  % initgallery.rb --config-file gallery.conf�ؤΥѥ� --lang .ja
+  % initgallery.rb --config-file gallery.confへのパス --lang .ja
 
-�㤨�С�gallery.conf��~gallery/site/gallery.conf�ˤ������
-����ʴ�����
+例えば，gallery.confが~gallery/site/gallery.confにある場合は
+こんな感じ．
 
   % initgallery.rb --config-file ~gallery/site/gallery.conf --lang .ja
 
-�ʹԾ�����ɽ���������ä���--verbosity 3����ꤹ�롥
+進行状況を表示したかったら--verbosity 3を指定する．
 
   % initgallery.rb --config-file ~gallery/site/gallery.conf --lang .ja --verbosity 3
 
-���ʤߤˡ��Ѹ��ѤΥ����꡼�򹹿�����������--lang .en���
-���Ѥ�--lang .ja.i����ꤷ�Ƥ���������
+ちなみに，英語用のギャラリーを更新したい場合は--lang .enを携
+帯用は--lang .ja.iを指定してください．
 
-== ����
+== 感謝
 
-  * ���Ф�����: ��������ΥХ���ݡ��Ȥȡ������Ĥ��Υѥå���
-    ĺ���ޤ��������꤬�Ȥ��������ޤ���
+  * おばたさん: たくさんのバグレポートと，いくつかのパッチを
+    頂きました．ありがとうございます．

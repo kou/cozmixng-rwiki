@@ -1,43 +1,43 @@
 = RWiki Extension Kit
 
-�ѥå�������
-((<��������|URL:http://www.cozmixng.org/~kou/download/rwiki-ext-0.0.1.tar.gz>))
-���ʥåץ���åȤ�
+パッケージは
+((<ここから|URL:http://www.cozmixng.org/~kou/download/rwiki-ext-0.0.1.tar.gz>))
+スナップショットは
 
   % svn co http://www.cozmixng.org/repos/ruby/rwiki-ext/trunk
 
-�Ǥɤ�����
+でどうぞ．
 
-== �ۤʤä�RWiki�֤ǤΥڡ����Υ��ԡ�
+== 異なったRWiki間でのページのコピー
 
-SOAP���Ѥ��롥
+SOAPを用いる．
 
-=== ���󥹥ȡ�����ˡ
+=== インストール方法
 
-�� : ((<RAA:SOAP4R>)) >= 1.4.8 and (((<RAA:XMLParser>)) or ((<RAA:REXML>)))
+要 : ((<RAA:SOAP4R>)) >= 1.4.8 and (((<RAA:XMLParser>)) or ((<RAA:REXML>)))
 
-((<RAA:xmlscan>))�Ǥ�OK�������ʤ��Ȥ�((<RAA:NQXML>))�Ǥϥ��ᡣ���󥳡��ǥ��󥰤�ʬ��UTF-8����EUC-JP���Ѵ����ʤ��㤤���ʤ����顣���֤�
+((<RAA:xmlscan>))でもOKか？少なくとも((<RAA:NQXML>))ではダメ。エンコーディングを自分でUTF-8からEUC-JPに変換しなきゃいけないから。たぶん。
 
   require 'rwiki/soap'
 
-=== ����ˡ
+=== 使用法
 
-  (1) ��¦�Υ�˥塼��[((<SOAP|soap>))]�ذ�ư
-  (1) ���ԡ����ڡ��������ԡ����ڡ����Τ���RWiki������(dRuby������)����³����SOAP�����С����ԡ�(�ɲ�)��ڡ���(��ά����ȥ��ԡ����ڡ������������Ȥߤʤ����)�����
-  (1) copy�ޤ���append�ܥ���򲡤�
-  (1) ���ԡ�(�ɲ�)��ڡ������Խ�����submit
+  (1) 左側のメニューの[((<SOAP|soap>))]へ移動
+  (1) コピー元ページ、コピー元ページのあるRWikiサーバ(dRubyサーバ)に接続するSOAPサーバ、コピー(追加)先ページ(省略するとコピー元ページと等しいとみなされる)を指定
+  (1) copyまたはappendボタンを押す
+  (1) コピー(追加)先ページを編集してsubmit
 
 === Known Bugs
 
-  * ¸�ߤ��ʤ��ڡ����򥳥ԡ����ڡ����Ȥ��ƻ��ꤹ��ȥ����Ф���³�Ǥ��ʤ��ȸ����롣
+  * 存在しないページをコピー元ページとして指定するとサーバに接続できないと言われる。
 
-== �ۤʤä�Wiki��Recent��ɽ��
+== 異なったWikiのRecentを表示
 
-���󥹥ȡ��뤹��ȥ�˥塼��[RSS 1.0], [RSS Recent], [RSS Topic]�Ȥ�����˥塼�������ޤ���
+インストールするとメニューに[RSS 1.0], [RSS Recent], [RSS Topic]というメニューが増えます。
 
-  * [RSS 1.0]��[Recent]�ξ��15���RSS 1.0�����ǽ��Ϥ��ޤ���
-  * [RSS Recent]��RSS 1.0��������ƹ������ɽ�����ޤ���
-  * [RSS Topic]�ϳƥڡ�����ɽ�������ȥԥå�������򤷤ޤ���
+  * [RSS 1.0]は[Recent]の上位15件をRSS 1.0形式で出力します。
+  * [RSS Recent]はRSS 1.0を収集して更新順に表示します。
+  * [RSS Topic]は各ページに表示されるトピックの設定をします。
 
 You can find [RSS 1.0], [RSS Recent] and [RSS Topic] menus over each page when you can success installation.
 
@@ -56,15 +56,15 @@ If you want to customize, define below constants:
   * RWiki::RSS::DISPLAY (display or not | default : true)
   * RWiki::RSS::DISPLAY_NUMBER (display number | default : 5)
   * RWiki::RSS::DISPLAY_CHARACTERS (display characters | default : 20)
-  * RWiki::RSS::TRUE_VALUES (array of value that is recognized true | default : ["�Ϥ�", "yes", "true"] | ��((<"�Ϥ�">))�� is "yes" in Japanese)
+  * RWiki::RSS::TRUE_VALUES (array of value that is recognized true | default : ["はい", "yes", "true"] | 「((<"はい">))」 is "yes" in Japanese)
 
 before
 
   require 'rwiki/rss'
 
-=== ���󥹥ȡ�����ˡ
+=== インストール方法
 
-��: ((<RAA:rss>))
+要: ((<RAA:rss>))
 
   require 'rwiki/rss'
 
@@ -78,22 +78,22 @@ Add bellow to your rwiki.rb.
 
 === TIPS
 
-����å����ͭ�����¤κǾ��ͤʤɤ��ѹ���������Ǥ��ޤ���
+キャッシュの有効期限の最小値などを変更する事ができます。
 
-�ѹ�����ˤ�
+変更するには
 
   require 'rwiki/rss'
 
-��������
+する前に
 
-  * RWiki::RSS::MINIMUM_EXPIRE (���㥭��å������(��) | �ǥե���� : 60 * 60)
-  * RWiki::RSS::EXPIRE (����å�����֤Υǥե������(��) | �ǥե���� : 2 * 60 * 60)
-  * RWiki::RSS::DISPLAY (ɽ�����뤫�ɤ��� | �ǥե���� : true)
-  * RWiki::RSS::DISPLAY_NUMBER (ɽ�������� | �ǥե���� : 5)
-  * RWiki::RSS::DISPLAY_CHARACTERS (ɽ������ʸ���� | �ǥե���� : 20)
-  * RWiki::RSS::TRUE_VALUES (����ǧ������ʸ��������� | �ǥե���� : ["�Ϥ�", "yes", "true"])
+  * RWiki::RSS::MINIMUM_EXPIRE (最低キャッシュ時間(秒) | デフォルト : 60 * 60)
+  * RWiki::RSS::EXPIRE (キャッシュ時間のデフォルト値(秒) | デフォルト : 2 * 60 * 60)
+  * RWiki::RSS::DISPLAY (表示するかどうか | デフォルト : true)
+  * RWiki::RSS::DISPLAY_NUMBER (表示する件数 | デフォルト : 5)
+  * RWiki::RSS::DISPLAY_CHARACTERS (表示する文字数 | デフォルト : 20)
+  * RWiki::RSS::TRUE_VALUES (真と認識する文字列の配列 | デフォルト : ["はい", "yes", "true"])
 
-�Ȥ��������������Ƥ���������
+という定数を定義してください。
 
 You can change some default settings. For example expire of cache and so on.
 
@@ -104,7 +104,7 @@ If you want to customize, define below constants:
   * RWiki::RSS::DISPLAY (display or not | default : true)
   * RWiki::RSS::DISPLAY_NUMBER (display number | default : 5)
   * RWiki::RSS::DISPLAY_CHARACTERS (display characters | default : 20)
-  * RWiki::RSS::TRUE_VALUES (array of value that is recognized true | default : ["�Ϥ�", "yes", "true"] | ��((<"�Ϥ�">))�� is "yes" in Japanese)
+  * RWiki::RSS::TRUE_VALUES (array of value that is recognized true | default : ["はい", "yes", "true"] | 「((<"はい">))」 is "yes" in Japanese)
 
 before
 
@@ -112,81 +112,81 @@ before
 
 == ImportWiki
 
-�ۤʤ�Wiki�Υڡ����򤳤�RWiki�Ǳ���/�Խ����ޤ���
+異なるWikiのページをこのRWikiで閲覧/編集します．
 
-=== ���󥹥ȡ�����ˡ
+=== インストール方法
 
   require 'rwiki/importwiki'
 
-ɬ�פ˱�����
+必要に応じて
 
   require 'rwiki/importrwiki'
 
-�Ȥ�
+とか
 
   require 'rwiki/importwiliki'
 
-�Ȥ���
+とか．
 
 === TIPS
 
-  * ��ҤΥ��ԡ���ǽ�Ȥ��碌�ƻȤ��ȡ��긵��RWiki�Υڡ�����¾��Wiki�˥��ԡ��Ǥ��롣
+  * 上述のコピー機能とあわせて使うと、手元のRWikiのページを他のWikiにコピーできる。
 
-    ������ϡ�To:��ImportWikiName��񤯤��������Ȥ��С�((*WiLiKi:COZMIXNG:�ƥ���*))�Ȥ���
+    やり方は、To:にImportWikiNameを書くだけ。たとえば、((*WiLiKi:COZMIXNG:テスト*))とか。
 
 
-== ��˥塼��̾�����ѹ�
+== メニューの名前を変更
 
-(�����Ǥ�)���˽ФƤ����˥塼̾���ѹ����ޤ�
+(ここでは)左に出ているメニュー名を変更します
 
-=== ���󥹥ȡ�����ˡ
+=== インストール方法
 
   require 'rwiki/rename-menu'
 
-�ʲ���((|book|))��RWiki::Book���֥������ȡ�
+以下の((|book|))はRWiki::Bookオブジェクト．
 
   substitution_table = {
-  	"Home" => "�ۡ���/Home",
-  	"Info" => "����/Info",
-  	"Map" => "�ޥå�/Map",
-  	"Recent" => "�Ƕ�ι���/Recent",
-  	"List" => "�ڡ�������/List",
-  	"Page Rank" => "���Ⱦ���/Page Rank",
-  	"Orphan" => "��Ω�ڡ���/Orphan",
-  	"Like" => "�����ȥ븡��/Like",
-  	"Concat" => "���/Concat",
+  	"Home" => "ホーム/Home",
+  	"Info" => "情報/Info",
+  	"Map" => "マップ/Map",
+  	"Recent" => "最近の更新/Recent",
+  	"List" => "ページ一覧/List",
+  	"Page Rank" => "参照状況/Page Rank",
+  	"Orphan" => "孤立ページ/Orphan",
+  	"Like" => "タイトル検索/Like",
+  	"Concat" => "結合/Concat",
   	# navi labels
-  	"link" => "���/Link",
-  	"src" => "������/Src",
-  	"edit" => "�Խ�/Edit",
-  	"help" => "�إ��/Help",
-  	"search" => "����/Search",
+  	"link" => "リンク/Link",
+  	"src" => "ソース/Src",
+  	"edit" => "編集/Edit",
+  	"help" => "ヘルプ/Help",
+  	"search" => "検索/Search",
   }
 
   book.rename_menu(substitution_table)
 
 == WikiLink
 
-Wiki��Хå�����ɤȤ�����󥯥����ƥ�
+Wikiをバックエンドとしたリンクシステム
 
-=== ���󥹥ȡ���
+=== インストール
 
   require 'rwiki/link'
 
   RWiki::LinkSystem.install("WikiLink", "Link", "Category")
 
-�����WikiLink�Ȥ����ڡ�����WikiLink�Ȥʤ롥�狼��Ť餤�ʡ�
+これでWikiLinkというページがWikiLinkとなる．わかりづらいな．
 
-=== ���
+=== メモ
 
-  * ��󥯤Υڡ��������Ǥ���褦�ˤ��롥
+  * リンクのページを削除できるようにする．
 
-    * ������[2003-10-09]
+    * した．[2003-10-09]
 
-      �����ȥ��������ä��Ⱥ������롥
+      タイトルと説明を消すと削除される．
 
-  * �ڡ����˥����󥿤��դ����ɤ������Ƥ���ڡ�����ʬ����褦�ˤ��롥
+  * ページにカウンタを付けて良く見られているページが分かるようにする．
 
-    ����ϡ��ڡ�������������˥ڡ�����񤭴����Ƥ����Ф�����������revision�Ϥ����������Ƥ��ޤ����ɡ�Last-modified���Ѥ�뤫��ï�����������ȤϤ�����ʬ���롥
+    これは，ページが見られる毎にページを書き換えていけばいいだろう．revisionはすぐに増えてしまうけど，Last-modifiedが変わるから誰かが見たことはすぐに分かる．
 
-    * ������[2003-10-09]
+    * した．[2003-10-09]

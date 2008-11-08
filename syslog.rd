@@ -1,14 +1,14 @@
 = syslog
 
-== pub.cozmixng.org ¤Îreboot by ((<szk>)) 2003/10/31 9:00 º¢ 
-* Á°ÆüÌë¤è¤ê¡¤www.cozmixng.org ¤Ø¥¢¥¯¥»¥¹¤Ç¤­¤Ê¤¯¤Ê¤ë
-* www ¤Î pub:/usr/local ¥Ş¥¦¥ó¥È¤Ë pub NFS not responding ¥á¥Ã¥»¡¼¥¸
-* pub ¤Î /var/log/messages ¤Ë
-  * mountd ¤Ø¤Î kill -HUP 
-  * nfsd ¤Îsocket create error, nfsd nfssvc ¥¨¥é¡¼
+== pub.cozmixng.org ã®reboot by ((<szk>)) 2003/10/31 9:00 é ƒ 
+* å‰æ—¥å¤œã‚ˆã‚Šï¼Œwww.cozmixng.org ã¸ã‚¢ã‚¯ã‚»ã‚¹ã§ããªããªã‚‹
+* www ã® pub:/usr/local ãƒã‚¦ãƒ³ãƒˆã« pub NFS not responding ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+* pub ã® /var/log/messages ã«
+  * mountd ã¸ã® kill -HUP 
+  * nfsd ã®socket create error, nfsd nfssvc ã‚¨ãƒ©ãƒ¼
 
-    * streaming.cozmixng.org¤¬NFS not reponding¤È¤Ê¤Ã¤Æ¤¤¤¿¤Î¤Ç¤¤¤í¤¤¤í¤¤¤¸¤Ã¤Æ¤¿¤ó¤Ç¤¹¡¥¤Ê¤ó¤Ç¡¤www¤Ï¥Ş¥¦¥ó¥È¤Ç¤­¤Æ¤¤¤ë¤Î¤Ëstreaming¤Ï¥Ş¥¦¥ó¥È¤Ç¤­¤Ê¤¤¤ó¤À¤í¤¦¤È¡¥ - ((<kou>))
+    * streaming.cozmixng.orgãŒNFS not repondingã¨ãªã£ã¦ã„ãŸã®ã§ã„ã‚ã„ã‚ã„ã˜ã£ã¦ãŸã‚“ã§ã™ï¼ãªã‚“ã§ï¼Œwwwã¯ãƒã‚¦ãƒ³ãƒˆã§ãã¦ã„ã‚‹ã®ã«streamingã¯ãƒã‚¦ãƒ³ãƒˆã§ããªã„ã‚“ã ã‚ã†ã¨ï¼ - ((<kou>))
 
-* Â¿Ê¬, mountd ¤È nfsd ¤¬ÄÌ¿®ÉÔÇ½¤Ë¤Ê¤Ã¤¿¤È¿äÂ¬
-* pub ¤ò reboot ¤·¤Ş¤·¤¿¡¥
-  * ¤Æ¤Ã¤­¤êapache¤¬Æ°¤¤¤Æ¤¤¤Ê¤¤¤«¤é¤À¤È»×¤¤¤Ş¤·¤¿¡¥ - ((<kou>))
+* å¤šåˆ†, mountd ã¨ nfsd ãŒé€šä¿¡ä¸èƒ½ã«ãªã£ãŸã¨æ¨æ¸¬
+* pub ã‚’ reboot ã—ã¾ã—ãŸï¼
+  * ã¦ã£ãã‚ŠapacheãŒå‹•ã„ã¦ã„ãªã„ã‹ã‚‰ã ã¨æ€ã„ã¾ã—ãŸï¼ - ((<kou>))

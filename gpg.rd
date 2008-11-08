@@ -1,70 +1,70 @@
 = gpg
 
-GnuPG�����ƥ�Υᥤ��ץ�����ࡥ
+GnuPGシステムのメインプログラム．
 
-== ���κ���
+== 鍵の作成
 
-�줫�鸰���������ʤ顤ǰ�Τ��ᡤ~/.gnupg/�������Ƥ����������������⡥
+一から鍵を作成するなら，念のため，~/.gnupg/を削除しておいた方がいいかも．
 
   % rm -rf ~/.gnupg/
 
-����������롥
+鍵を作成する．
 
   % gpg --gen-key
 
-�����������䤵���Τ�Ŭ���������롥
+いろいろ質問されるので適当に答える．
 
-== �������κ���
+== 失効鍵の作成
 
-������ޤ줿�Ȥ������Ȥ��ˡ�����̵���ˤ��뤿��θ����������롥
+鍵が盗まれたとかしたときに，鍵を無効にするための鍵を生成する．
 
   % gpg --gen-revoke user_id
 
-�桼��ID�ˤϥ᡼�륢�ɥ쥹����ꤹ��餷�����ʤΤǡ��㤨�Ф���ʴ����ˤʤ�Τ��ʡ�
+ユーザIDにはメールアドレスを指定するらしい．なので，例えばこんな感じになるのかな．
 
   % gpg --gen-revoke "Kouhei Sutou <kou@cozmixng.org>"
 
-"Kouhei Sutou <kou@cozmixng.org>"����ʤ���"kou@cozminxg.org"�����Ǥ����Τ��⤷��ʤ����ɡ��褯�狼��ʤ���
+"Kouhei Sutou <kou@cozmixng.org>"じゃなくて"kou@cozminxg.org"だけでいいのかもしれないけど，よくわからない．
 
-== ���򥭡������Ф���Ͽ����
+== 鍵をキーサーバに登録する
 
-�ޤ�����ʬ�θ�������̾����Ĵ�٤롥
+まず，自分の公開鍵の名前を調べる．
 
   % gpg --fingerprint kou@cozmixng.org
   pub   1024D/1C837F31 2004-06-11
-                   ���� = 7714 A383 F6F7 3E2D 9828  791D 1742 3F64 1C83 7F31
+                   指紋 = 7714 A383 F6F7 3E2D 9828  791D 1742 3F64 1C83 7F31
   uid                  Kouhei Sutou <kou@cozmixng.org>
   sub   1024g/C0E70A35 2004-06-11
 
-���ν��Ϥ�((%pub  1024D/1C837F31%))��((*1C837F31*))����ʬ��̾���ˤʤ롥
+この出力の((%pub  1024D/1C837F31%))の((*1C837F31*))の部分が名前になる．
 
-̾�����狼�ä��饭�������Ф˸��򥢥åץ����ɤ��롥
+名前がわかったらキーサーバに鍵をアップロードする．
 
   % gpg --send-keys 1C837F31
 
-���Ф餯���Ƽ긵�θ��򹹿����Ƥߤơ���ʬ�θ������դ������Ͽ���������Ƥ��롥
+しばらくして手元の鍵を更新してみて，自分の鍵が見付かれば登録は成功している．
 
   % gpg --refresh-keys
 
-�ǥե���Ȥǻ��Ѥ���륭�������Ф�~/.gnupg/gpg.conf���㤨�аʲ��Τ褦�˽񤤤Ƥ��롥
+デフォルトで使用されるキーサーバは~/.gnupg/gpg.confに例えば以下のように書いてある．
 
   keyserver hkp://subkeys.pgp.net
 
-������ѹ��������--keyserver�ǻ���Ǥ��롥
+これを変更する場合は--keyserverで指定できる．
 
   % gpg --keyserver hkp://keys.exapmle.com --send-keys 1C837F31
 
-== �᡼����̾���롥
+== メールを署名する．
 
-Mew�ξ��ϡ�draft�⡼�ɤǡ�C-cC-s�ǽ�̾����롥���ΤȤ�����������������˻��ꤷ���ѥ��ե졼����ʹ����롥
+Mewの場合は，draftモードで，C-cC-sで署名出来る．このとき，鍵を作成した時に指定したパスフレーズを聞かれる．
 
-== �������ۤ��롥
+== 鍵を配布する．
 
-Mew�Ǹ����������ۤ���ˤϡ�C-cC-a���ơ�ź�եե�������������褦�ˤ��Ƥ��顤ź���ΰ��p�򲡤��ȡ���������ź�ս���롥
+Mewで公開鍵を配布するには，C-cC-aして，添付ファイルを作成するようにしてから，添付領域でpを押すと，公開鍵を添付出来る．
 
-== ��������ƥ����ȥե�����Ȥ��ƽ񤭽Ф�
+== 公開鍵をテキストファイルとして書き出す
 
-��������
+公開鍵を
 
   -----BEGIN PGP PUBLIC KEY BLOCK-----
   Version: GnuPG v1.2.4 (GNU/Linux)
@@ -74,30 +74,30 @@ Mew�Ǹ����������ۤ���ˤϡ�C-cC-a���ơ�ź�եե�������������褦�ˤ��Ƥ��顤ź�
   =To6Z
   -----END PGP PUBLIC KEY BLOCK-----
 
-�Ȥ����褦�ˡ��ƥ����ȥե�����Ȥ��ƽ��Ϥ���ˤϡ��ʲ��Τ褦�ˤ��롥
+というように，テキストファイルとして出力するには，以下のようにする．
 
   % gpg --export --armor
 
-== ���θ��������Ѥ��롥
+== 相手の公開鍵を信用する．
 
-���θ�������ʬ����̩���ǽ�̾���롥����ʹ�����ΤǤ���ˤĤ��������Ƥ�����
+相手の公開鍵を自分の秘密鍵で署名する．何か聞かれるのでそれについて答えていく．
 
   % gpg -lsign-key xxx@example.com
 
-���θ��������Ѥ��롥
+相手の公開鍵を信用する．
 
   % gpg --edit-key xxx@example.com
 
-���ޥ�ɤ�ʹ���Ƥ���Τ�trust�����Ϥ��롥���Ȥϡ�ʹ���줿���Ȥ������Ƥ���������
+コマンドを聞いてくるのでtrustと入力する．あとは，聞かれたことに答えていくだけ．
 
-== ��ʬ�θ����������롥
+== 自分の公開鍵を送る．
 
-Mew�Ǥ�C-cC-a��ź���ΰ���äơ��������p�����Ϥ���Ф褤��
+MewではC-cC-aで添付領域を作って，その中でpを入力すればよい．
 
-== ���θ������ǰŹ沽���롥
+== 相手の公開鍵で暗号化する．
 
-Mew�Ǥϡ�draft�⡼�ɤ�C-cC-e�����Ϥ��롥���κݡ����θ��������Ѥ��Ƥ��ʤ���аŹ沽�Ͻ���ʤ���
+Mewでは，draftモードでC-cC-eを入力する．この際，相手の公開鍵を信用していなければ暗号化は出来ない．
 
-== ����饤��PGP��å����������沽����
+== インラインPGPメッセージを復号化する
 
-Mew�Ǥϡ���ư�����沽�Ǥ��ʤ�����C-cC-z�Ȥ�������沽����롥
+Mewでは，自動で復号化できないが，C-cC-zとすると復号化出来る．

@@ -2,16 +2,16 @@
 
 
 == memo
- *JAVA�Ǹ������Ź�ν�̾�ϤǤ���餷�������Ź沽�����椵����ˤ����ӥץ饰����Υ��󥹥ȡ��뤬ɬ��
- *ISP��IPv6�Υ����ӥ������ä����ϤޤäƤ�ߤ���
- * ����⸶��Gray�λ���3/15���ڡˡ�16������
+ *JAVAで公開鍵暗号の署名はできるらしいが、暗号化、復号させるには別途プラグインのインストールが必要
+ *ISPでIPv6のサービスがけっこう始まってるみたい
+ * 安比高原でGrayの試乗会　3/15（土）〜16（日）
 
-== ��뤳��
- * VoIPĴ�٤�
+== やること
+ * VoIP調べる
 
-== �ɤ�٤����
+== 読むべきもの
  * OverCast: Reliable Multicasting with an Overlay Network
-   * multicast �ѥ��åȤ�ɬ���Ϥ��Ȥ������ȡ�����Ϻ����Υᥫ�˥��ब�ʤ���С�̵���ʵ�������ΤǤ���������overlay network�äƤ����Τ��ߤ�����- ((<szk>))
-   * streaming �� reliable �ˤ�������Ǥ����� - ((<szk>))
+   * multicast パケットが必ず届くということ？それは再送のメカニズムがなければ、無理な気がするのですが。。。overlay networkっていうのがみそ？　- ((<szk>))
+   * streaming を reliable にしたいんですか？ - ((<szk>))
 
-   * ������IP�ޥ�����㥹�Ȥʤ�����Τ����Ack��ɤ����ǤޤȤ�ƽ��󤷤��ꡢNack�Ȥä��ꤷ�Ƥ��Ǥ�����OverCast��Overlay�ͥåȥ���ǡ��ƥۥ��Ȥ��ѥ��åȤ���Ѥ���Τǡ��ƥۥ��Ȥ�Reliable�ˤ���������Ǥ���ΤǤ�����IP�ޥ�����㥹�Ȥϡ����󥿡��ͥåȤǻȤ���褦����ڤ�����Τ��񤷤��Τǡ��Ƕ�ϥ��ץꥱ��������٥�ޥ�����㥹�Ȥθ��椬����2ǯ���餤�Ǥ��ʤ��ȯ�ˤʤ�ޤ�������- ((<yasushi>))
+   * 信頼性IPマルチキャストなら再送のためにAckをどこかでまとめて集約したり、Nack使ったりしてるんですが、OverCastはOverlayネットワークで、各ホストがパケットを中継するので、各ホストでReliableにする処理ができるのです。　IPマルチキャストは、インターネットで使えるように普及させるのは難しいので、最近はアプリケーションレベルマルチキャストの研究がここ2年ぐらいでかなり活発になりました。　- ((<yasushi>))

@@ -1,13 +1,13 @@
 = RubyCocoa
 
-== CGContextRef�����
+== CGContextRefを取得
 
   # enscript ruby
   OSX::NSGraphicsContext.currentContext.graphicsPort
 
-�������������˥�����ɥ���ɽ�������ꤷ�Ƥ����ʤ���nil���֤äƤ��롣
+ただし、事前にウィンドウを表示したりしておかないとnilが返ってくる。
 
-���ʤߤˡ������Ȥä�Cairo::QuartzSurface����ʤ餳����
+ちなみに、これを使ってCairo::QuartzSurfaceを作るならこう。
 
   # enscript ruby
   require 'osx/cocoa'

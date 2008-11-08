@@ -1,76 +1,76 @@
 = FreeBSD
 
-FreeBSD�ط��κ�ȵ�Ͽ�Ǥ���
+FreeBSD関係の作業記録です。
 
-== NFS�����Фˤʤ�
+== NFSサーバになる
 
-/etc/rc.conf�˰ʲ��򵭽ҡ�
+/etc/rc.confに以下を記述．
 
   nfs_server_enable="YES"
   nfs_reserved_port_only="YES"
 
-portmap_enable="YES"�Ϥ��äƤ�ʤ��Ƥ⤤����
+portmap_enable="YES"はあってもなくてもいい．
 
-/etc/exports�˰ʲ��򵭽ҡ�
+/etc/exportsに以下を記述．
 
   /path/to/export/dir  client1 client2
 
-www��streaming���ɤ߹��ߤΤߤ�/usr/local�Ȥ��Υ��֥ǥ��쥯�ȥ�⥨�����ݡ��Ȥ������ʤ顤�ʲ��Τ褦�˵��Ҥ��롥
+wwwとstreamingに読み込みのみで/usr/localとそのサブディレクトリもエクスポートしたいなら，以下のように記述する．
 
   /usr/local -ro -alldirs www streaming
 
-/etc/exports����ɤ߹��ߡ�
+/etc/exportsを再読み込み．
 
   % sudo kill -HUP `cat /var/run/mountd.pid`
 
-�ʲ��������ʤΤ����ա�
+以下じゃダメなので注意！
 
   % sudo env - /etc/rc.d/mountd restart
 
-�Ȥ�
+とか
 
   % sudo env - /etc/rc.d/mountd reload
 
 
-== exports�ξ������ǧ
+== exportsの状況を確認
 
   % showmount -e [hostname]
 
-== �ƥޥ���Ȥ���
+== 再マウントする
 
   # mount -u /hoge/fuga
 
-== NFS����˥�������ե����륷���ƥ��ޥ���Ȥ���
+== NFSより後にローカルファイルシステムをマウントする
 
-NFS����˥ޥ���Ȥ�������������ե����륷���ƥ�Υ��ץ�����noauto��ä��롥
+NFSより後にマウントしたいローカルファイルシステムのオプションにnoautoを加える．
 
   /dev/ad0s1f /usr/local/etc ufs,noauto 0 0
 
-/etc/rc.local�ǥޥ���Ȥ��롥
+/etc/rc.localでマウントする．
 
   #!/bin/sh
 
   mount /usr/local/etc
 
-/etc/rc�Ǥϡ��ޤ�NFS�ʳ��Τ�Τ�ޥ���Ȥ��Ƥ���NFS��ޥ���Ȥ��Ƥ���ΤǤ������ʤ���Ф����ʤ�(�Ȼפ�)���ޤ���/etc/rc.local��¹Ԥ������/usr/local/etc/rc.d/�򸫤Ƥ���褦�ʤΤǤ���ʤ�Ǥ������ʤȡ�
+/etc/rcでは，まずNFS以外のものをマウントしてからNFSをマウントしているのでこうしなければいけない(と思う)．まぁ，/etc/rc.localを実行した後に/usr/local/etc/rc.d/を見ているようなのでこんなんでいいかなと．
 
-== ���֤򤢤碌��
+== 時間をあわせる
 
-/etc/rc.conf�˰ʲ��򵭽�
+/etc/rc.confに以下を記述
 
   ntpdate_enable="YES"
   ntpdate_flags="-b ntp.tohoku.ac.jp"
   xntpd_enable="YES"
 
-ntpd������ˤĤ��Ƥ�((<NTP>))
+ntpdの設定については((<NTP>))
 
-== ����tty�ο��򸺤餹
+== 仮想ttyの数を減らす
 
-/etc/ttys��ɬ�פ�ʬ����ttyv?��on�ˤ��ƻĤ��off�ˤ��롥
+/etc/ttysで必要な分だけttyv?をonにして残りをoffにする．
 
-== CVSup��Ports�򥢥åץ��졼��
+== CVSupでPortsをアップグレード
 
-  (1) /etc/make.conf�˰ʲ����ɲ�
+  (1) /etc/make.confに以下を追加
         SUP_UPDATE=     yes
 
         SUP=    /usr/local/bin/cvsup
@@ -78,7 +78,7 @@ ntpd������ˤĤ��Ƥ�((<NTP>))
         SUPHOST=        cvsup.jp.FreeBSD.org
         PORTSSUPFILE=   /usr/share/examples/cvsup/ports-supfile
 
-  (2) ����ʤ���Τϻ��ä���ʤ��褦�ˤ��롣/usr/sup/refuse�˰ʲ���񤯡�
+  (2) いらないものは持って来ないようにする。/usr/sup/refuseに以下を書く。
         ports/chinese
         ports/french
         ports/german
@@ -87,77 +87,77 @@ ntpd������ˤĤ��Ƥ�((<NTP>))
         ports/hebrew
         ports/russian
         ports/vietnamese
-  (4) �¹ԡ�
+  (4) 実行！
         % (cd /usr/ports; make update)
 
-portupgrade��������
+portupgradeは便利。
 
-== �����Υ����ơ������
+== ログのローテーション
 
-FreeBSD�Ǥ�newsyslog��Ȥ��Τ��ڤ餷����
+FreeBSDではnewsyslogを使うのが筋らしい。
 
-�ե������/etc/newsyslog.conf��
+ファイルは/etc/newsyslog.conf。
 
-=== Apache�Υ���������ơ������
+=== Apacheのログをローテーション
 
-���1����0���˥����ơ�����󤷤ƺ���12����ʬ��¸���Ƥ�������ϰʲ��Τ褦�ʴ�����
+毎月1日の0時にローテーションして最大12ヵ月分保存しておく設定は以下のような感じ。
 
   /var/log/httpd-access.log                       644  12    *    $M1D0     Z     /var/run/httpd.pid
   /var/log/httpd-error.log                        644  12    *    $M1D0     Z     /var/run/httpd.pid
   /var/log/httpd-suexec.log                        644  12    *    $M1D0     Z     /var/run/httpd.pid
 
-Z(+����)�θ��pid�ν񤤤Ƥ���ե�����̾(�㤨��/var/run/httpd.pid)��񤯤ȥ����ʥ�(�ǥե���ȤǤ�SIGHUP)�����롣((<Apache>))������SIGUSR1(30���ä�)������ȥ����ե������close/open����餷�������֤󡣤��ʤߤˤ���������Ǥ�Apache��Ƶ�ư����close/open���Ƥޤ��͡�
+Z(+空白)の後にpidの書いてあるファイル名(例えば/var/run/httpd.pid)を書くとシグナル(デフォルトではSIGHUP)を送る。((<Apache>))ちゃんはSIGUSR1(30だって)を送るとログファイルをclose/openするらしい。たぶん。ちなみにこの設定例ではApacheを再起動してclose/openしてますね。
 
-newsyslog��(�ǥե���ȤǤ�)cron�������ư���Ƥ���ΤǺƵ�ư�Ȥ���ɬ�פʤ���
+newsyslogは(デフォルトでは)cronで毎時間動いているので再起動とかは必要なし。
 
-=== �ҤȤĤΥե������ʣ���Υ����ơ������§�����
+=== ひとつのファイルに複数のローテーション規則を指定
 
-���Υե������ѤΥ���ȥ��ʣ���Խ񤱤Ф褤�ߤ�����
+そのファイル用のエントリを複数行書けばよいみたい．
 
-�ʲ���/var/log/all.log��ʲ��Τɤ��餫�ξ��˥ޥå�����������ơ�����󤹤����ꡥ
+以下は/var/log/all.logを以下のどちらかの条件にマッチしたらローテーションする設定．
 
-   * ����0��
-   * �ե����륵������1GB��ۤ���
+   * 毎日0時
+   * ファイルサイズが1GBを越えた
 
   /var/log/all.log                        600  7     *    @T00  J
   /var/log/all.log                        600  7     100000       *  J
 
-== SWAP���ɲ�
+== SWAPを追加
 
-FreeBSD��VM�Υڡ����󥰥��르�ꥺ����Թ�塤�ᥤ������2�ܰʾ�SWAP���ʤ����Ϥ�Ф��ڤ�ʤ��餷����see tuning(7)�ˡ��Ȥ������Ȥǡ�����ڤ�SWAP���ɲä�����ˡ��
+FreeBSDはVMのページングアルゴリズムの都合上，メインメモリの2倍以上SWAPがないと力を出し切れないらしい（see tuning(7)）．ということで，お手軽にSWAPを追加する方法．
 
-=== SWAP�ѥե��������
+=== SWAP用ファイルを作る
 
-�㤨�С�/usr/local/SWAPFILE��512MB��SWAP�ѥե�����ˤ���ˤϰʲ����ͤˤ��롥
+例えば，/usr/local/SWAPFILEを512MBのSWAP用ファイルにするには以下の様にする．
 
   % sudo dd if=/dev/zero of=/usr/local/SWAPFILE bs=1024k count=512
 
-1G�ˤ��������count=512��count=1024�ˤ��롥
+1Gにしたければcount=512をcount=1024にする．
 
-=== SWAP�Ȥ���ǧ��������
+=== SWAPとして認識させる
 
-/etc/rc.conf�˰ʲ��Τ褦�˵��Ҥ��ƺƵ�ư��
+/etc/rc.confに以下のように記述して再起動．
 
   swapfile="/usr/local/SWAPFILE"
 
-���뤤�ϡ�4.9�ξ��ϰʲ���¹ԡ�
+あるいは，4.9の場合は以下を実行．
 
   % sudo vnconfig -e /dev/vn0b /usr/local/SWAPFILE swap
 
-5.x�ξ��ϰʲ���¹ԡ�
+5.xの場合は以下を実行．
 
   % sudo env - PATH=/sbin:/usr/sbin:/bin:/usr/bin /etc/rc.d/addswap start
 
-=== ��ǧ
+=== 確認
 
   % /usr/sbin/pstat -s
 
-== msk(4)��ư���ʤ��ʤ�
+== msk(4)が動かなくなる
 
-RELENG_7�����ä�msk(4)��ȤäƤ��ƥͥåȥ������٤򤫤����/var/log/messages�˰ʲ��Τ褦�ʥ������Ǥ��ĤŤ��ƥͥåȥ�����Ȥ��ʤ��ʤ�����н�ˡ��
+RELENG_7に入ったmsk(4)を使っていてネットワークに負荷をかけると/var/log/messagesに以下のようなログを吐きつづけてネットワークが使えなくなる時の対処法。
 
   kernel: msk0: watchdog timeout (missed Tx interrupts) -- recovering
 
-/bool/loader.conf�˰ʲ����ɲä��ƺƵ�ư��
+/bool/loader.confに以下を追加して再起動。
 
   hw.msk.msi_disable="1"

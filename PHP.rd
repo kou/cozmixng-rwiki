@@ -1,12 +1,12 @@
 = PHP
 
-== ÀßÄê
+== è¨­å®š
 
-httpd.conf¤Ë°Ê²¼¤òµ­½Ò
+httpd.confã«ä»¥ä¸‹ã‚’è¨˜è¿°
 
   LoadModule php5_module        libexec/apache22/libphp5.so
 
   AddType application/x-httpd-php .php
   AddType application/x-httpd-php-source .phps
 
-¤¢¤Ş¤±¤ÇDirectoryIndex¤Ëindex.php¤òÉÕ¤±²Ã¤¨¤Æ¤â¤è¤·
+ã‚ã¾ã‘ã§DirectoryIndexã«index.phpã‚’ä»˜ã‘åŠ ãˆã¦ã‚‚ã‚ˆã—

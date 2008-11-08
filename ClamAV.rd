@@ -1,38 +1,38 @@
 = ClamAV
 
-¥Õ¥ê¡¼¤Î¥¢¥ó¥Á¥¦¥¤¥ë¥¹¥½¥Õ¥È
+ãƒ•ãƒªãƒ¼ã®ã‚¢ãƒ³ãƒã‚¦ã‚¤ãƒ«ã‚¹ã‚½ãƒ•ãƒˆ
 
-((<AMaViS>))¤È°ì½ï¤Ë»È¤¦
+((<AMaViS>))ã¨ä¸€ç·’ã«ä½¿ã†
 
-== ¥¤¥ó¥¹¥È¡¼¥ë
+== ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 
   % sudo portupgrade -NRr clamav
 
-== ÀßÄê
+== è¨­å®š
 
 /usr/local/etc/clamav.conf
 
-vscan¥æ¡¼¥¶¤Ç¼Â¹Ô¤¹¤ë¤è¤¦¤Ë¤¹¤ë¡¥
+vscanãƒ¦ãƒ¼ã‚¶ã§å®Ÿè¡Œã™ã‚‹ã‚ˆã†ã«ã™ã‚‹ï¼
 
   User vscan
 
-¥í¥°¥Õ¥¡¥¤¥ë¤È¤«¤Îvscan¤Ë½êÍ­¼Ô¤òÊÑ¤¨¤ë¡¥
+ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã¨ã‹ã®vscanã«æ‰€æœ‰è€…ã‚’å¤‰ãˆã‚‹ï¼
 
   % sudo chown -R vscan:vscan /var/run/clamav
   % sudo touch /var/log/clamav/clamd.log
   % sudo chown -R vscan:vscan /var/log/clamav/clamd.log
 
-/etc/rc.conf¤Ë°Ê²¼¤òÄÉ²Ã
+/etc/rc.confã«ä»¥ä¸‹ã‚’è¿½åŠ 
 
   clamav_clamd_enable="YES"
   clamav_freshclam_enable="YES"
 
-µ¯Æ°
+èµ·å‹•
 
   % sudo env - /usr/local/etc/rc.d/clamav-clamd.sh start
   % sudo env - /usr/local/etc/rc.d/clamav-freshclam.sh start
 
-/usr/local/etc/amavisd.conf¤ÎClamAV¤Î¤È¤³¤í¤Î¥³¥á¥ó¥È¤ò³°¤·¤Æ¥½¥±¥Ã¥È¤Î¥¢¥É¥ì¥¹¤òÅ¬Åö¤ËÊÑ¤¨¤ë¡¥
+/usr/local/etc/amavisd.confã®ClamAVã®ã¨ã“ã‚ã®ã‚³ãƒ¡ãƒ³ãƒˆã‚’å¤–ã—ã¦ã‚½ã‚±ãƒƒãƒˆã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’é©å½“ã«å¤‰ãˆã‚‹ï¼
 
   ### http://clamav.elektrapro.com/
   ['Clam Antivirus-clamd',
@@ -42,6 +42,6 @@ vscan¥æ¡¼¥¶¤Ç¼Â¹Ô¤¹¤ë¤è¤¦¤Ë¤¹¤ë¡¥
   # NOTE: run clamd under the same user as amavisd,
   # match the socket name in clamav.conf to the socket name in this entry
 
-ºÆµ¯Æ°
+å†èµ·å‹•
 
   % sudo env - /usr/local/etc/rc.d/amavisd.sh restart

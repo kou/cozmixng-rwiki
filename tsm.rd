@@ -4,4 +4,4 @@ Latest version: 0.0.1
  
   * ((<README.ja|tsm::README.ja>))
  
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

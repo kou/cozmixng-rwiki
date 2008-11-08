@@ -1,4 +1,4 @@
 = kenke
 
-* ((<kenke::¥á¥â>))
+* ((<kenke::ãƒ¡ãƒ¢>))
 * ((<kenke::Debian>))

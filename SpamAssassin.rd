@@ -1,58 +1,58 @@
 = SpamAssassin
 
-���ѥ�ե��륿���������᡼��Υإå��ˤ�X-Spam-Flag: YES���Ĥ���
+スパムフィルタ．怪しいメールのヘッダにはX-Spam-Flag: YESがつく．
 
-== ���󥹥ȡ���
+== インストール
 
   % sudo portupgrade -NRr p5-Mail-SpamAssassin
 
-== ����
+== 設定
 
 /usr/local/etc/mail/spamassassin/local.cf
 
-((<AMaViS>))�Ȱ��˻Ȥ��Τ�����Ϥ��ʤ��Ƥ��ɤ��������Τ��ʡ�
+((<AMaViS>))と一緒に使うので設定はしなくても良い．．．のかな？
 
-== �ؽ�
+== 学習
 
-���ѥ�:
+スパム:
 
-  % sa-learn --spam ���ѥ�᡼�뤬����ǥ��쥯�ȥ�
+  % sa-learn --spam スパムメールがあるディレクトリ
 
-�ϥ�:
+ハム:
 
-  % sa-learn --ham �ϥ�᡼�뤬����ǥ��쥯�ȥ�
+  % sa-learn --ham ハムメールがあるディレクトリ
 
-=== �Ŀͤǳؽ�
+=== 個人で学習
 
-AMaViS�Ȱ��˻ȤäƤ������amavisd��Ʊ���桼���ʤ����Ǥ�vscan�桼���ˤ�ư���Ƥ���Τǡ��ؽ��ǡ����١�����~vscan/.spamassassin/�ʲ��ˤ��롥
+AMaViSと一緒に使っている場合はamavisdと同じユーザ（ここではvscanユーザ）で動いているので，学習データベースは~vscan/.spamassassin/以下にある．
 
-�Ȥ������Ȥǡ�vscan�桼���Ȥ���ssh�Ǥ���褦�ˡ�~vscan/.ssh/authorized_keys�˼�ʬ�θ���������Ͽ���Ƥ�����
+ということで，vscanユーザとしてsshできるように，~vscan/.ssh/authorized_keysに自分の公開鍵を登録しておく．
 
-((<Mew>))���Ȱʲ��Τ褦�����ꤷ�Ƥ�����lc�ǥ��ѥ�᡼��ؽ���lh�ǥϥ�᡼��ؽ����Ǥ��롥
+((<Mew>))だと以下のように設定しておくとlcでスパムメール学習，lhでハムメール学習ができる．
 
   # enscript elisp
   (setq mew-ham-prog "ssh")
-  (setq mew-ham-prog-args '("vscan@�᡼�륵����" "sa-learn" "--ham"))
+  (setq mew-ham-prog-args '("vscan@メールサーバ" "sa-learn" "--ham"))
   (setq mew-spam-prog "ssh")
-  (setq mew-spam-prog-args ("vscan@�᡼�륵����" "sa-learn" "--spam"))
+  (setq mew-spam-prog-args ("vscan@メールサーバ" "sa-learn" "--spam"))
 
-mew-config-alist��ȤäƤ�����Ϥ�����
+mew-config-alistを使っている場合はこう．
 
   # enscript elisp
   (setq mew-config-alist
-        `(("����̾"
+        `(("設定名"
            ("ham-prog"       . "ssh")
-           ("ham-prog-args"  . ("vscan@�᡼�륵����" "sa-learn" "--ham"))
+           ("ham-prog-args"  . ("vscan@メールサーバ" "sa-learn" "--ham"))
            ("spam-prog"      . "ssh")
-           ("spam-prog-args" . ("vscan@�᡼�륵����" "sa-learn" "--spam"))
+           ("spam-prog-args" . ("vscan@メールサーバ" "sa-learn" "--spam"))
            ...)
           ...))
 
-=== �ߤ�ʤǳؽ�
+=== みんなで学習
 
-�ƥ桼����IMAP�ǡ�spam�ס���ham�ץե������ʬ�ष���᡼���root���¤Ǽ������ơ�vscan�桼����sa-learn���롥
+各ユーザがIMAPで「spam」，「ham」フォルダに分類したメールをroot権限で収集して，vscanユーザでsa-learnする．
 
-/etc/daily.local�˰ʲ����ɲá�������������Ȥ�����Ƭ��(('#!/bin/sh'))�Ƚ񤤤�chmod +x����Τ�˺�줺�ˡ�
+/etc/daily.localに以下を追加．新規作成するときは先頭に(('#!/bin/sh'))と書いてchmod +xするのを忘れずに．
 
   # enscript sh
   # For spam filter

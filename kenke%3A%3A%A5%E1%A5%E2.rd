@@ -1,20 +1,20 @@
-= kenke::¥á¥â
+= kenke::ãƒ¡ãƒ¢
 
-=== rails-nav:goto-layouts¤Ç¥¨¥é¡¼
-¥¨¥é¡¼ÆâÍÆ: Wrong type argument: listp, "--"
+=== rails-nav:goto-layoutsã§ã‚¨ãƒ©ãƒ¼
+ã‚¨ãƒ©ãƒ¼å†…å®¹: Wrong type argument: listp, "--"
 
-rails_navigation.el ¤Î defun rails-nav:goto-layouts () ¤Ç
+rails_navigation.el ã® defun rails-nav:goto-layouts () ã§
   -  (let ((items (list (cons "--" "--")
   +  (let ((items (list
-¤Ë¤·¤¿¤é¥¨¥é¡¼¤¬½Ğ¤Ê¤¯¤Ê¤Ã¤¿
+ã«ã—ãŸã‚‰ã‚¨ãƒ©ãƒ¼ãŒå‡ºãªããªã£ãŸ
 
-=== MySQL¤ÇÊ¸»ú²½¤±
+=== MySQLã§æ–‡å­—åŒ–ã‘
 
-/etc/mysql/my.cnf¤Î[mysqld]¤ÎÉôÊ¬¤Ë²¼µ­¤òÄÉ²Ã
+/etc/mysql/my.cnfã®[mysqld]ã®éƒ¨åˆ†ã«ä¸‹è¨˜ã‚’è¿½åŠ 
 
   default-character-set=utf8
   skip-character-set-client-handshake
 
 * /etc/init.d/mysql restart
 
-* ¥Ç¡¼¥¿¥Ù¡¼¥¹¡¢¥Æ¡¼¥Ö¥ë¤òºî¤êÄ¾¤¹¡£
+* ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã€ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œã‚Šç›´ã™ã€‚

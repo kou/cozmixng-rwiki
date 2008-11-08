@@ -1,72 +1,72 @@
 = Debian GNU/Linux
 
-Debian GNU/Linux�ط��κ�ȵ�Ͽ
+Debian GNU/Linux関係の作業記録
 
-== wheel���롼�װʳ�su����ʤ��褦�ˤ���
+== wheelグループ以外su出来ないようにする
 
-/etc/pam.d/su�ΰʲ��Υ����ȹԤ�ͭ���ˤ��롥
+/etc/pam.d/suの以下のコメント行を有効にする．
 
   # auth       required   pam_wheel.so group=wheel
 
-group=wheel���ά�����gourp=root�����ꤵ�줿��ΤȤߤʤ���롥
+group=wheelを省略するとgourp=rootが指定されたものとみなされる．
 
-== sshd��root�Υ����������ݤ���
+== sshdでrootのログインを拒否する
 
-/etc/ssh/sshd_config�ΰʲ��ιԤ򥳥��ȥ����Ȥ��롥�ޤ��ϡ�yes��((*no*))�ˤ��롥
+/etc/ssh/sshd_configの以下の行をコメントアウトする．または，yesを((*no*))にする．
 
   PermitRootLogin yes
 
 
-== {CD,DVD}-R/RW��Ȥ�
+== {CD,DVD}-R/RWを使う
 
-/etc/modules�˰ʲ��򵭽�
+/etc/modulesに以下を記述
 
   ide-scsi
   sg
 
-/boot/grub/menu.lst��kernel�ιԤ�hdc=ide-scsi���ɲ�
+/boot/grub/menu.lstのkernelの行にhdc=ide-scsiを追加
 
   title Debian GNU/Linux
   root (hd0,0)
   kernel /vmlinuz root=/dev/hda1 hdc=ide-scsi
   initrd /initrd.img
 
-�Ƶ�ư
+再起動
 
-/dev/sr0��/dev/cdrom�˥���ܥ�å���󥯤���
+/dev/sr0を/dev/cdromにシンボリックリンクする
 
   % cd /dev
   % sudo ln -s sr0 cdrom
 
-�ʲ�ɬ�פ��ä����ʤ���
+以下必要だったかなぁ？
 
-/dev/scd0�Υ��롼�פ�cdrom�ˤ���
+/dev/scd0のグループをcdromにする
 
   % sudo chgrp cdrom /dev/scd0
   % sudo chmod g+rw /dev/scd0
 
-{CD,DVD}-R/RW��Ȥ��桼����cdrom���롼�פˤ����
+{CD,DVD}-R/RWを使うユーザをcdromグループにいれる
 
   % sudo adduser hoge cdrom
 
-== NFS�ǥޥ���Ȥ���
+== NFSでマウントする
 
-((*portmap�򥤥󥹥ȡ��뤷�Ƥ����ʤ��Ȥ����ޤ���*))
+((*portmapをインストールしておかないといけません．*))
 
-  % sudo mount -t nfs ������̾:/hoge /fuga/hoge
+  % sudo mount -t nfs サーバ名:/hoge /fuga/hoge
 
-== IPv6�Υ��ɥ쥹�����ꤹ��
+== IPv6のアドレスを設定する
 
-/etc/network/interfaces�˰ʲ��Τ褦�˵��Ҥ��롥
+/etc/network/interfacesに以下のように記述する．
 
-�ʲ��ϼ�ʬ�Υ��ɥ쥹����AAAA:BBBB:CCCC:DDDD::fff0/64����ʬ��IPv6�Υ��ɥ쥹��AAAA:BBBB:CCCC:DDDD::1���ǥե���ȥ롼����IPv6���ɥ쥹�ξ�硥
+以下は自分のアドレスが，AAAA:BBBB:CCCC:DDDD::fff0/64が自分のIPv6のアドレス，AAAA:BBBB:CCCC:DDDD::1がデフォルトルータのIPv6アドレスの場合．
 
   iface eth0 inet6 static
     address AAAA:BBBB:CCCC:DDDD::fff0
     netmask 64
     gateway AAAA:BBBB:CCCC:DDDD::1
 
-��ư�Ǥ��ˤϤ�����
+手動でやるにはこう．
 
   % sudo /sbin/ifconfig eth0 add AAAA:BBBB:CCCC:DDDD::fff0/64
   % sudo /sbin/route -A inet6 add ::/1 dev eth0 gw AAAA:BBBB:CCCC:DDDD::1

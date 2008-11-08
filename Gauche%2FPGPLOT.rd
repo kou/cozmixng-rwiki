@@ -1,8 +1,8 @@
 = Gauche/PGPLOT
 
-╓╙Ё╗╫Я╓╜╓╧╓К╓©╓А╓н╔И╔╓╔ж╔И╔Й((<PGPLOT|URL:http://www.astro.caltech.edu/~tjp/pgplot/>))╓нGauche╔п╔╓╔С╔г╔ё╔С╔╟
+Ц│┼Г╣╣Ф⌡╦Ц│█Ц│≥Ц┌▀Ц│÷Ц┌│Ц│╝Ц┐╘Ц┌╓Ц┐√Ц┐╘Ц┐╙((<PGPLOT|URL:http://www.astro.caltech.edu/~tjp/pgplot/>))Ц│╝GaucheЦ┐░Ц┌╓Ц┐ЁЦ┐┤Ц┌ёЦ┐ЁЦ┌╟
 
-((<PGPLOT|URL:http://www.astro.caltech.edu/~tjp/pgplot/>))╓оFortran╓г╫Я╓╚╓Л╓ф╓ф║╓Cмя╓к╔╓╔С╔©║╪╔у╔╖╔╓╔╧╓╛мя╟у╓╣╓Л╓ф╓╓╓К║╔
+((<PGPLOT|URL:http://www.astro.caltech.edu/~tjp/pgplot/>))Ц│╞FortranЦ│╖Ф⌡╦Ц│▀Ц┌▄Ц│╕Ц│╕О╪▄CГ■╗Ц│╚Ц┌╓Ц┐ЁЦ┌©Ц┐╪Ц┐∙Ц┌╖Ц┌╓Ц┌╧Ц│▄Г■╗Ф└▐Ц│∙Ц┌▄Ц│╕Ц│└Ц┌▀О╪▌
 
   * ((<README.en|"Gauche/PGPLOT::README.en">))
   * ((<README.ja|"Gauche/PGPLOT::README.ja">))

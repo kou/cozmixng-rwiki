@@ -4,29 +4,29 @@
 
 $Id: Tutorial.ja 202 2004-06-24 16:13:08Z kou $
 
-== ή��
+== 流れ
 
-scratch���Ѥ���Web�١������ץꥱ�������ȯ�ϰʲ��Τ褦�ˤ�
-��Ǥ��礦��
+scratchを用いたWebベースアプリケーション開発は以下のようにな
+るでしょう．
 
-  * ���ץꥱ�������ε�ǽ���󶡤���饤�֥��κ���
-  * scratch�����Ф˥ޥ���Ȥ��륵���֥�åȤκ���
-  * ���饤����Ȥ��׵���б����륢�������κ���
-  * ���饤����Ȥ��֤���̤���������ӥ塼�κ���
+  * アプリケーションの機能を提供するライブラリの作成
+  * scratchサーバにマウントするサーブレットの作成
+  * クライアントの要求に対応するアクションの作成
+  * クライアントに返す結果を生成するビューの作成
 
-�ǽ�Υ饤�֥��κ�����scratch�˰�¸���ʤ��褦�ˤ���٤���
-������¸���ʤ��褦�ˤ����scratch��Ȥ����Ȥ���Ƥ�Ȥ���
-�魯���Ȥ��Ǥ��ޤ���
+最初のライブラリの作成はscratchに依存しないようにするべきで
+す．依存しないようにするとscratchを使うことをやめても使いま
+わすことができます．
 
-�����Ǥϡ��饤�֥����ä��Ѱդ����˺Ѥ��ñ�ʥ��ץꥱ������
-�����˻Ȥ��ޤ��������Ǻ������륢�ץꥱ�������ϥ�������
-������������login-count���ץꥱ�������Ǥ���
+ここでは，ライブラリは特に用意せずに済む簡単なアプリケーショ
+ンを例に使います．ここで作成するアプリケーションはログインし
+た回数を数えるlogin-countアプリケーションです．
 
-== �����֥�åȤκ���
+== サーブレットの作成
 
-login-count-servlet�Ȥ����⥸�塼���login-count���ץꥱ������
-���ѤΥ����֥�åȤ��������make-login-count-servlet���������
-export���ޤ���
+login-count-servletというモジュールにlogin-countアプリケーショ
+ン用のサーブレットを作成するmake-login-count-servletを定義し，
+exportします．
 
   (define-module login-count-servlet
     (use scratch.servlet)
@@ -48,80 +48,80 @@ export���ޤ���
 
   (provide "login-count-servlet")
 
-�ޤ���use���Ƥ���⥸�塼����������ޤ���
+まず，useしているモジュールを説明します．
 
   * scratch.servlet
     
-    �����֥�åȤΥ��饹<scratch-servlet>���������Ƥ����
-    ���塼��Ǥ��������֥�åȤ���Ȥ���ɬ��use���Ƥ�����
-    ����
+    サーブレットのクラス<scratch-servlet>が定義されているモ
+    ジュールです．サーブレットを作るときは必ずuseしてくださ
+    い．
 
   * scratch.session
     
-    ���å����˴ؤ���⥸�塼��Ǥ���
-    make-login-count-servlet���make-scratch-session��³����
-    �ȤäƤ���Τ�ɬ�פˤʤ�ޤ���<scratch-servlet>���饹��
-    ���󥹥��󥹤��������Ȥ��˥�����ɰ���
-    :session-constructor���ά�������use����ɬ�פϤ����
-    ����
+    セッションに関するモジュールです．
+    make-login-count-servlet内でmake-scratch-session手続きを
+    使っているので必要になります．<scratch-servlet>クラスの
+    インスタンスを作成するときにキーワード引数
+    :session-constructorを省略する場合はuseする必要はありま
+    せん．
 
   * scratch.user.manager.file
     
-    �桼������/������������˴ؤ���⥸�塼��Ǥ���
-    <scratch-servlet>���饹�Υ��󥹥��󥹤��������Ȥ��˥���
-    ��ɰ���:user-manager���ά�������use����ɬ�פϤ����
-    ����
+    ユーザ管理/アクセス制御に関するモジュールです．
+    <scratch-servlet>クラスのインスタンスを作成するときにキー
+    ワード引数:user-managerを省略する場合はuseする必要はありま
+    せん．
 
   * scratch.db.file
     
-    �ǡ�����ե�������Ѥ��ƴ�������⥸�塼��Ǥ���
-    <scratch-servlet>���饹�Υ��󥹥��󥹤��������Ȥ��˥���
-    ��ɰ���:db���ά�������ġ�scratch.user.manager.file��
-    ���Ѥ��ʤ�����use����ɬ�פϤ���ޤ���
+    データをファイルを用いて管理するモジュールです．
+    <scratch-servlet>クラスのインスタンスを作成するときにキー
+    ワード引数:dbを省略し，かつ，scratch.user.manager.fileを
+    使用しない場合はuseする必要はありません．
 
-����Ǥϡ�(make <scratch-servlet> ...)�Υ�����ɰ�����ߤ�
-�����ޤ��礦��
+それでは，(make <scratch-servlet> ...)のキーワード引数をみて
+いきましょう．
 
   * :servlet-module-name
     
       'number-table-servlet
     
-    �����ɬ�����ꤷ�Ƥ������������Υ⥸�塼��̾�β�(a��a.b 
-    �Ȥ����⥸�塼�뤬���ä���a.b��a�β��ˤ���Ȥ�����̣)��
-    ����������ӥ塼��������뤳�Ȥˤʤ�ޤ���
+    これは必ず指定してください．このモジュール名の下(aとa.b 
+    というモジュールがあったらa.bがaの下にあるという意味)に
+    アクションやビューを定義することになります．
 
   * :session-constructor
     
       (lambda () (make-scratch-session :count 0))
     
-    ���������å������������Ȥ��˸ƤФ�����̵���μ�³��
-    �Ǥ�����ά�����make-scratch-session���ƤФ�ޤ���
+    新しくセッションを作成するときに呼ばれる引数無しの手続き
+    です．省略するとmake-scratch-sessionが呼ばれます．
     
-    make-scratch-session�ؤΥ�����ɰ�����Ϳ����줿�����
-    �ɤ������Ȥʤ륻�å����ñ�̤Υǡ�����Ϳ����줿�ͤȤ���
-    ��������ޤ���
+    make-scratch-sessionへのキーワード引数は与えられたキーワー
+    ドがキーとなるセッション単位のデータを与えられた値として
+    初期化します．
     
-    ���å����ñ�̤Υǡ�������������ɬ�פ��ʤ����Ͼ�ά��
-    �ƹ����ޤ���
+    セッション単位のデータを初期化する必要がない場合は省略し
+    て構いません．
 
   * :db
     
       (make <scratch-db-file)
     
-    �����֥�å�ñ�̤Υǡ������������ǡ����١�������ꤷ��
-    ������ά���줿����(make <scratch-db-null>)�����ꤵ�줿
-    ��ΤȤߤʤ���ޤ���<scratch-db-null>�ϲ��⤷�ʤ��ǡ���
-    �١����Ǥ���
+    サーブレット単位のデータを管理するデータベースを指定しま
+    す．省略された場合は(make <scratch-db-null>)が指定された
+    ものとみなされます．<scratch-db-null>は何もしないデータ
+    ベースです．
     
-    �ǡ����١��������Ѥ��ʤ����Ȥ�#f��ɽ�����˲��⤷�ʤ��ǡ�
-    ���١��������Ѥ��뤳�Ȥˤ�ꡤ�ǡ����١��������Ѥ��Ƥ���
-    ���ɤ����򵤤ˤ���ɬ�פ��ʤ��ʤ�ޤ���<scratch-db-file>
-    ����¾�Υǡ����١�����Ʊ�����󥿡��ե������ǥ�����������
-    �����Ǥ����ǡ����١��������Ѥ��ʤ����ϥǡ������ȥ���ñ
-    ��̵�뤵�������Ǥ���
+    データベースを利用しないことを#fで表さずに何もしないデー
+    タベースを利用することにより，データベースを利用している
+    かどうかを気にする必要がなくなります．<scratch-db-file>
+    等，他のデータベースと同じインターフェイスでアクセスする
+    だけです．データベースを利用しない場合はデータストアは単
+    に無視されるだけです．
     
-    �ǡ����١����Υ��󥿡��ե�������scratch.db���������Ƥ�
-    �ޤ���
+    データベースのインターフェイスはscratch.dbで定義されてい
+    ます．
 
   * :user-manager
     
@@ -130,55 +130,55 @@ export���ޤ���
         :authority-map '((#t #t)
                          (#f add-user)))
     
-    �桼�������ȥ��������������ꤷ�Ƥ��ޤ����桼�������⥢
-    ���������������ʤ����Ͼ�ά��ǽ�Ǥ�����ά���줿����
-    (make <user-manager-null>)�����ꤵ�줿��ΤȤߤʤ���ޤ���
+    ユーザ管理とアクセス制御を指定しています．ユーザ管理もア
+    クセス制御藻しない場合は省略可能です．省略された場合は
+    (make <user-manager-null>)が指定されたものとみなされます．
     
-    �����Ǥϡ��桼���������֥������ȤȤ���
-    <user-manager-file>���饹�Υ��󥹥��󥹤���ꤷ�Ƥ��ޤ���
+    ここでは，ユーザ管理オブジェクトとして
+    <user-manager-file>クラスのインスタンスを指定しています．
     
-    �������������:default-authority��:authority-map�Ǥ��Ƥ�
-    �ޤ���:default-authority�ˤ�allow������ʳ��Υ���ܥ�
-    (deny����ꤹ�뤳�Ȥ�侩)����ꤷ�Ƥ���������allow�ξ�
-    ��ϥǥե���Ȥ����ƤΥ桼�����Ф������ƤΥ��������ϵ�
-    �Ĥ���ޤ���allow�ʳ��ξ��ϵ��ݤ���ޤ���
+    アクセス制御は:default-authorityと:authority-mapでしてい
+    ます．:default-authorityにはallowかそれ以外のシンボル
+    (denyを指定することを推奨)を指定してください．allowの場
+    合はデフォルトで全てのユーザに対して全てのアクションは許
+    可されます．allow以外の場合は拒否されます．
     
-    �ǥե���ȤΥ������������:authority-map��ȿž�Ǥ��ޤ���
-    :authority-map�ˤϥ桼��̾���ǽ�����Ǥ�Ϣ�ۥꥹ�Ȥ����
-    ���ޤ���Ϣ�ۥꥹ�Ȥ���Ƭ�����˥ޥå������Ƥ����ǽ�˥ޥ�
-    ��������Τ�Ŭ�Ѥ���ޤ���
+    デフォルトのアクセス制御は:authority-mapで反転できます．
+    :authority-mapにはユーザ名が最初の要素の連想リストを指定
+    します．連想リストは先頭から順にマッチさせていき最初にマッ
+    チしたものが適用されます．
     
-    �㤨�С�:default-authority��allow��:authority-map��((foo
-    a b c))�Ȥ�������foo�Ȥ����桼����a��b��c�Ȥ������������
-    �ϵ��ݤ��졤����ʳ��Υ��������ϵ��Ĥ���ޤ���bar�Ȥ����桼
-    ���ˤ����ƤΥ�������󤬵��Ĥ���ޤ���
+    例えば，:default-authorityがallowで:authority-mapが((foo
+    a b c))という場合はfooというユーザはaとbとcというアクション
+    は拒否され，それ以外のアクションは許可されます．barというユー
+    ザには全てのアクションが許可されます．
     
-    �桼��̾����ʬ�ˤ�#t�ޤ���#f����ꤹ�뤳�Ȥ�Ǥ��ޤ���#t������
-    �Υ桼���˥ޥå����ޤ���#f�ϥ������󤷤Ƥ��ʤ��桼���˥ޥ�
-    �����ޤ���������������ʬ�ˤ�#t����ꤹ�뤳�Ȥ��Ǥ��ޤ���
-    ��������ƤΥ��������˥ޥå����ޤ���
+    ユーザ名の部分には#tまたは#fを指定することもできます．#tは全て
+    のユーザにマッチします．#fはログインしていないユーザにマッ
+    チします．アクションの部分には#tを指定することができます．
+    これは全てのアクションにマッチします．
     
-    :default-authority��deny��:authority-map��
+    :default-authorityがdenyで:authority-mapが
     
       ((#t a))
     
-    �Ȥ����������ƤΥ������󤷤Ƥ���桼�����Ф���a�Ȥ���
-    ���������ϵ��Ĥ��졤¾�Υ��������ϵ��ݤ���ޤ���
+    という場合は全てのログインしているユーザに対してaという
+    アクションは許可され，他のアクションは拒否されます．
     
-    :default-authority��deny��:authority-map��
+    :default-authorityがdenyで:authority-mapが
     
       ((guest show)
        (#t #t)
        (#f add-uesr))
     
-    �Ȥ������ϡ��������󤷤Ƥ���guest�ʳ��Υ桼���ˤ�����
-    �Υ��������ϵ��Ĥ���ޤ�����guest�桼�����Ф��Ƥ�show
-    ���������������������󤷤Ƥ��ʤ��桼���ˤ�add-user����
-    ���������������Ĥ���ޤ���
+    という場合は，ログインしているguest以外のユーザには全て
+    のアクションは許可されますが，guestユーザに対してはshow
+    アクションだけ，ログインしていないユーザにはadd-userアク
+    ションだけしか許可されません．
 
-== ���������κ���
+== アクションの作成
 
-�ޤ������������򰷤��⥸�塼���������ޤ���
+まず，アクションを扱うモジュールを作成します．
 
   (define-module login-count-servlet.action
     (use scratch.db)
@@ -187,19 +187,19 @@ export���ޤ���
   (select-module login-count-servlet.action)
   (provide "login-count-servlet.action")
 
-use����⥸�塼���scratch.action�Τߤǹ����ޤ��󤬡�scratch
-�Ǵ������Ƥ���ǡ����˥�������������桼�������򤹤���ˤ�
-scratch.db��scratch.user.manager��use���Ƥ����Ȥ褤�Ǥ��礦��
+useするモジュールはscratch.actionのみで構いませんが，scratch
+で管理しているデータにアクセスしたりユーザ管理をする場合には
+scratch.dbとscratch.user.managerもuseしておくとよいでしょう．
 
-�����Ǥϡ��ʲ���3�ĤΥ�����������ޤ���
+ここでは，以下の3つのアクションを作ります．
 
   * login
     
-    �⤷���Ϥ��줿�桼����¸�ߤ��ʤ�����ɲä��ƥ������󤵤�
-    �롥���Ϥ��줿�桼���ȥѥ���ɤ����äƤ���Х�������
-    ���롥���ΤȤ��Υӥ塼��jump-to-main
+    もし入力されたユーザが存在しなければ追加してログインさせ
+    る．入力されたユーザとパスワードがあっていればログインさ
+    せる．このときのビューはjump-to-main
     
-    �����Ǥʤ���Х������󤵤��ʤ������ΤȤ��Υӥ塼��login��
+    そうでなければログインさせない．このときのビューはlogin．
     
       (define (do-login)
         (or (and-let* ((user (get-param *scratch-user-key*))
@@ -222,7 +222,7 @@ scratch.db��scratch.user.manager��use���Ƥ����Ȥ褤�Ǥ��礦��
 
   * main
     
-    �ȡ���������������򥫥���ȥ��åס��ӥ塼��main��
+    トータルログイン回数をカウントアップ．ビューはmain．
     
       (define (do-main)
         (set-servlet-value! 'count (+ 1 (get-servlet-value 'count)))
@@ -230,14 +230,14 @@ scratch.db��scratch.user.manager��use���Ƥ����Ȥ褤�Ǥ��礦��
 
   * countup
     
-    ���å����ñ�̤Υ����󥿤򥫥���ȥ��åפ��롥�ӥ塼��main��
+    セッション単位のカウンタをカウントアップする．ビューはmain．
     
       (define (do-countup)
         (set-value! 'count (+ 1 (get-value 'count)))
         'main)
 
-�ǥե���ȤΥ���������main�ˡ�������������ݤ������Υ���
-������login�ˤ��ޤ���
+デフォルトのアクションはmainに，アクセスを拒否した場合のアク
+ションはloginにします．
 
   (define (do-default)
     (do-main))
@@ -245,7 +245,7 @@ scratch.db��scratch.user.manager��use���Ƥ����Ȥ褤�Ǥ��礦��
   (define (do-deny)
     (do-login))
 
-�ǽ�Ū�ˤϰʲ����ͤˤʤ�ޤ���
+最終的には以下の様になります．
 
   (define-module login-count-servlet.action
     (use srfi-2)
@@ -290,36 +290,36 @@ scratch.db��scratch.user.manager��use���Ƥ����Ȥ褤�Ǥ��礦��
 
   (provide "login-count-servlet.action")
 
-== �ӥ塼�κ���
+== ビューの作成
 
-scratch���饤����Ȥ�CGI�ξ��(HTTP���Ѥ��Ƥ�����)���ӥ塼
-�ϥ��饤����Ȥ��֤���̤�ʸ����Υĥ꡼���֤��ޤ����Ǥ��ñ
-�ʥĥ꡼��ñ�ʤ�ʸ����Ǥ����㤨�С��ʲ��Τ�Τ�ʸ����Υĥ꡼
-�Ǥ���
+scratchクライアントがCGIの場合(HTTPを用いている場合)，ビュー
+はクライアントに返す結果を文字列のツリーで返します．最も簡単
+なツリーは単なる文字列です．例えば，以下のものが文字列のツリー
+です．
 
   "str"
   ("s" "t" "r")
   (("s") ("t" (("r"))))
 
-scratch���饤����Ȥϥĥ꡼��tree->string���Ѥ���(������)��
-�饤����Ȥ��֤��ޤ������ʤߤˡ������Υĥ꡼�Ϥɤ��"str"
-�Ȥ���ʸ����Ȥ��ƥ��饤����Ȥ��֤���ޤ���
+scratchクライアントはツリーをtree->stringを用いて(本当の)ク
+ライアントに返します．ちなみに，これらのツリーはどれも"str"
+という文字列としてクライアントに返されます．
 
-���ߡ�scratch�Ǥ�HTTP�������ݡ��Ȥ��Ƥ��ʤ��Τǡ������Ǥϡ�
-���饤����Ȥ�HTTP�ξ��Ȥ��ƿʤ�ޤ���
+現在，scratchではHTTPしかサポートしていないので，ここでは，
+クライアントがHTTPの場合として進めます．
 
-�ӥ塼�������ˤ�������Scheme�����ϤǤ���
+ビューの生成には埋め込みScheme処理系である
 ((<esm|URL:http://www.cozmixng.org/~rwiki/index.rb?cmd=view;name=esm>))
-��Ȥ���ˡ�ȡ�text.html-lite��Ȥ���ˡ��¿���Ȥ���Ǥ��礦��
-ʸ����¿�����ˤ�esm����ʸ���󤬤���ۤ�¿���ʤ������ʬ
-���䷫���֤���¿���ʤ�Ȥ����Ǥ�text.html-lite���Ѥ���������
-���Ǥ��礦�������������դ��Ĥ���¾Ū�ǤϤʤ��Τǡ�¿���ξ�
-����Ȥ߹�碌�ƻȤ��Ȥ褤�Ǥ��礦��
+を使う方法と，text.html-liteを使う方法が多く使われるでしょう．
+文字列が多い場合にはesmが，文字列がそれほど多くなく，条件分
+岐や繰り返しが多くなるところではtext.html-liteを用いる方がよ
+いでしょう．ただ，これらふたつは排他的ではないので，多くの場
+合は組み合わせて使うとよいでしょう．
 
-�����jump-to-main�ӥ塼�ϼ�³���ǡ�¾�Υӥ塼��esm��Ȥä�
-�񤯤��Ȥˤ��ޤ���
+今回はjump-to-mainビューは手続きで，他のビューはesmを使って
+書くことにします．
 
-�ӥ塼�Τ���Υ⥸�塼��ϰʲ��Τ褦�ˤʤ�ޤ���
+ビューのためのモジュールは以下のようになります．
 
   (define-module login-count-servlet.view.http
     (use gauche.parameter)
@@ -328,12 +328,12 @@ scratch���饤����Ȥϥĥ꡼��tree->string���Ѥ���(������)��
   (select-module login-count-servlet.view.http)
   (provide "login-count-servlet/view/http")
 
-esm��Ȥ��Ȥ���scratch.view.http�ʳ��ˤ�esm.gauche��
-gauche.parameter��use���ʤ���Ф����ʤ����Ȥ����դ��Ƥ�����
-����
+esmを使うときはscratch.view.http以外にもesm.gaucheと
+gauche.parameterをuseしなければいけないことに注意してくださ
+い．
 
-�ޤ���jump-to-main�ӥ塼����ޤ������Υӥ塼��main�ӥ塼��
-������쥯�Ȥ�������Υӥ塼�Ǥ���
+まず，jump-to-mainビューを作ります．このビューはmainビューに
+リダイレクトするだけのビューです．
 
   (define (jump-to-main)
     (set-response-value!
@@ -342,22 +342,22 @@ gauche.parameter��use���ʤ���Ф����ʤ����Ȥ����դ��Ƥ�����
                       *scratch-password-key* (get-param *scratch-password-key*)))
     "")
 
-���饤����Ȥ�HTTP�ξ���set-response-value!��:location�Ȥ�
-�������˥�����쥯�Ȥ�����URL����ꤷ�ޤ���href�Ȥ�����³��
-�ϼ�ʬ���Ȥ�URL���������뤿��������ʼ�³���Ǥ���������쥯
-�Ȥ������HTTP�����ΤˤϾ����ɬ�פʤ��ΤǶ�ʸ������֤���
-���ޤ���
+クライアントがHTTPの場合はset-response-value!で:locationとい
+うキーにリダイレクトしたいURLを指定します．hrefという手続き
+は自分自身のURLを生成するための便利な手続きです．リダイレク
+トする場合はHTTPの本体には情報は必要ないので空文字列を返して
+います．
 
-����Υǥ��쥯�ȥ�ˤ���esm�ե����������ɤ��Ƽ�³���Ȥ���
-�������ˤ�load-esm-files��Ȥ��ޤ���load-esm-files�ϰ�����
-ʸ�����glob(7)�Υѥ�����Ȥ��ư����Τǡ��ʲ��Τ褦�ˤ����
-��ĥ�Ҥ�esm�Υե�����������ɤ߹��ळ�Ȥ��Ǥ��ޤ���
+特定のディレクトリにあるesmファイルをロードして手続きとして
+定義するにはload-esm-filesを使います．load-esm-filesは引数の
+文字列をglob(7)のパターンとして扱うので，以下のようにすれば
+拡張子がesmのファイルを全て読み込むことができます．
 
   (load-esm-files "login-count-servlet/view/http/*.esm")
 
-load-esm-files�����������³����«�����륷��ܥ��export����
-�Τǡ���ȯ�Ԥ�����Ū��export����ɬ�פϤ���ޤ��󡥤�äơ�
-�ӥ塼�Υ⥸�塼��ϰʲ��Τ褦�ˤʤ�ޤ���
+load-esm-filesは定義した手続きを束縛するシンボルをexportする
+ので，開発者が明示的にexportする必要はありません．よって，
+ビューのモジュールは以下のようになります．
 
 
   (define-module login-count-servlet.view.http
@@ -381,10 +381,10 @@ load-esm-files�����������³����«�����륷��ܥ��export����
 
   (provide "login-count-servlet/view/http")
 
-default-view���ǥե���ȤǸƤӽФ����ӥ塼�Ǥ��������Ǥϡ�
-ñ��main�ӥ塼��Ƥ�Ǥ�������Ǥ���
+default-viewがデフォルトで呼び出されるビューです．ここでは，
+単にmainビューを呼んでいるだけです．
 
-����Ǥ�esm�ե�����򸫤Ƥ����ޤ��礦��
+それではesmファイルを見ていきましょう．
 
 header.esm:
   <html>
@@ -402,9 +402,9 @@ show-message.esm:
   <h2><%= (h (get-cycle-value :message)) %></h2>
   <% ) %>
 
-�����ϡ��ӥ塼������Ѥ����뤳�Ȥ�����˺��줿�ӥ塼��
-�����ӥ塼�Ȥ��äƤ�ñ�ʤ��³���ʤΤǡ�¾�Υӥ塼������ñ
-�˸ƤӽФ��ޤ���
+これらは，ビューの中で用いられることを前提に作られたビューで
+す．ビューといっても単なる手続きなので，他のビューからも簡単
+に呼び出せます．
 
 login.esm:
   <%= (header) %>
@@ -417,10 +417,10 @@ login.esm:
   </form>
   <%= (footer) %>
 
-form�Ȥ�����³����form���ϥ��������������³���Ǥ��������
-�ɰ���:action�ˤ�äƼ��Υ�����������ꤹ�뤳�Ȥ��Ǥ��ޤ���
-user-name-input��password-input�ϥ桼��̾/�ѥ�������ϥե���
-�����Ϥ��뤿��������ʼ�³���Ǥ���
+formという手続きはform開始タグを生成する手続きです．キーワー
+ド引数:actionによって次のアクションを指定することができます．
+user-name-inputとpassword-inputはユーザ名/パスワード入力フォー
+ムを出力するための便利な手続きです．
 
 main.esm:
   <%= (header) %>
@@ -441,23 +441,23 @@ main.esm:
   </p>
   <%= (footer) %>
 
-href�ϥ�����ɰ���:new-session��#t����ꤹ�뤳�Ȥˤ�äƥ�
-�饤����Ȥ˶���Ū�˿��������å����򳫻Ϥ����뤳�Ȥ��Ǥ���
-����get-user/get-id�ϥ������󤷤Ƥ���桼��̾/ID����������
-³���Ǥ���
+hrefはキーワード引数:new-sessionに#tを指定することによってク
+ライアントに強制的に新しいセッションを開始させることができま
+す．get-user/get-idはログインしているユーザ名/IDを取得する手
+続きです．
 
-����ϻ��Ѥ��Ƥ��ޤ��󤬡�esm��text.html-lite���Ȥ߹�碌��
-�Ȥ��Ȥ��ϰʲ��Τ��Ȥ����դ��Ƥ���������
+今回は使用していませんが，esmとtext.html-liteを組み合わせて
+使うときは以下のことに注意してください．
 
-  * esm���<%= exp %>��ʸ����Υĥ꡼����ꤷ�ʤ���
+  * esm中の<%= exp %>に文字列のツリーを指定しない．
     
-    <%= exp %>��tree->string�ǤϤʤ�x->string���Ѥ���exp���
-    �Ϥ���ΤǴ����̤�η�̤ˤʤ�ʤ����⤷��ޤ���
+    <%= exp %>はtree->stringではなくx->stringを用いてexpを出
+    力するので期待通りの結果にならないかもしれません．
 
-=== scratch������
+=== scratchサーバ
 
-����Ǥϡ�scratch�����Ф˥����֥�åȤ�ޥ���Ȥ���scratch��
-�饤����Ȥ�����׵������դ��륹����ץȤ�񤭤ޤ��礦��
+それでは，scratchサーバにサーブレットをマウントしてscratchク
+ライアントからの要求を受け付けるスクリプトを書きましょう．
 
   #!/usr/bin/env gosh
 
@@ -475,18 +475,18 @@ href�ϥ�����ɰ���:new-session��#t����ꤹ�뤳�Ȥˤ�äƥ�
       (scratch-server-start! server)
       (scratch-server-join! server)))
 
-make-scratch-server�ˤϥ�����ɰ���:port����ꤷ�ƤɤΥݡ�
-�Ȥǥ����Ф�ư���뤫����ꤷ�ޤ��������Ф����������
-add-mount-point!��login-count�ѤΥ����֥�åȤ�ޥ���Ȥ���
-�����ޥ���ȥݥ���Ȥ�scratch���饤����Ȥ�������������ݤ�
-���Ѥ���ޤ���scratch-server-start!��scratch���饤����Ȥ���
-���׵������դ�������ϴ�λ�Ǥ���scratch-server-join!��
-scratch�����Ф���λ����ޤǥץ�������λ���ʤ��褦�ˤ���
-��³���Ǥ���
+make-scratch-serverにはキーワード引数:portを指定してどのポー
+トでサーバを起動するかを指定します．サーバを作成したら
+add-mount-point!でlogin-count用のサーブレットをマウントしま
+す．マウントポイントはscratchクライアントがアクセスする際に
+使用されます．scratch-server-start!でscratchクライアントから
+の要求を受け付ける準備は完了です．scratch-server-join!は
+scratchサーバが終了するまでプログラムを終了しないようにする
+手続きです．
 
-=== scratch���饤�����
+=== scratchクライアント
 
-���饤����Ȥ�CGI�Ȥ��ޤ���
+クライアントはCGIとします．
 
   #!/usr/bin/env gosh
 
@@ -501,17 +501,17 @@ scratch�����Ф���λ����ޤǥץ�������λ���ʤ��褦�ˤ���
                       *login-count-mount-point*
                       :debug #t))
 
-scratch-cgi-main ��scratch�����Ф�URI�ȡ���ۤ����ꤷ���ޥ�
-��ȥݥ���Ȥ���ꤷ�ޤ�����ϡ��饤�֥������ݤ򸫤Ƥ����
-����
+scratch-cgi-main にscratchサーバのURIと，先ほど設定したマウ
+ントポイントを指定します．後は，ライブラリで面倒を見てくれま
+す．
 
-=== �¹�
+=== 実行
 
-�ǽ�˥����Ф�ư���ޤ���
+最初にサーバを起動します．
 
   % ./login-count-server.scm
 
-���饤����Ȥ�CGI���¹ԤǤ�����˰�ư���ƥ֥饦�����饢��
-�������ƤߤƤ�������������������̤��Ф��������Ǥ���
+クライアントをCGIが実行できる場所に移動してブラウザからアク
+セスしてみてください．ログイン画面が出たら成功です．
 
-�ʤ������Υ���ץ��sample/login-count/�˴ޤޤ�Ƥ��ޤ���
+なお，このサンプルはsample/login-count/に含まれています．

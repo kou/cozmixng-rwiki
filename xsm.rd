@@ -5,4 +5,4 @@ Latest version: 0.0.3(((<download|URL:http://www.cozmixng.org/~kou/download/xsm-
   * ((<README.ja|xsm::README.ja>))
   * ((<README.en|xsm::README.en>))
  
-== ¥³¥á¥ó¥È
+== ã‚³ãƒ¡ãƒ³ãƒˆ

@@ -1,18 +1,18 @@
 = ZnMarg
 
 == Margarine
-* ((<Margarine Project ¡Á ¹Í¤¨¤Ê¤¤¥Ñ¥ó¤È¥Ğ¥¿¡¼¤ÈÏÃ¤¹ÊıË¡ ¡Á|URL:http://plantl.org/l/munou/margarine/>))¤«¤é¥À¥¦¥ó¥í¡¼¥É¤¹¤ë¡£
-* ºÇ¿·ÈÇ¤Ç¤ÏÊÑ¤ï¤Ã¤Æ¤ë¤«¤â¤·¤ì¤Ş¤»¤ó¤¬¡¢
-  1.0.5¤Ç¤Ï¥«¥ì¥ó¥È¥Ç¥£¥ì¥¯¥È¥ê¤Ë¥Õ¥¡¥¤¥ë¤òÅ¸³«¤¹¤ë¤Î¤Ç
-  Â¾¤Î¥Õ¥¡¥¤¥ë¤Èº®¤¶¤ë¤È¤Ş¤º¤¤¤È¤³¤í¤ÇÅ¸³«¤·¤Ê¤¤¤è¤¦¤Ë¡£
-* ((<RAA:mysql-ruby>))¤È((<RAA:ruby-chasen>))¤¬É¬Í×¤Ê¤Î¤Ç
-  ÊÌÅÓ¥¤¥ó¥¹¥È¡¼¥ë¤·¤Æ¤ª¤¯¡£
+* ((<Margarine Project ã€œ è€ƒãˆãªã„ãƒ‘ãƒ³ã¨ãƒã‚¿ãƒ¼ã¨è©±ã™æ–¹æ³• ã€œ|URL:http://plantl.org/l/munou/margarine/>))ã‹ã‚‰ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ã€‚
+* æœ€æ–°ç‰ˆã§ã¯å¤‰ã‚ã£ã¦ã‚‹ã‹ã‚‚ã—ã‚Œã¾ã›ã‚“ãŒã€
+  1.0.5ã§ã¯ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å±•é–‹ã™ã‚‹ã®ã§
+  ä»–ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¨æ··ã–ã‚‹ã¨ã¾ãšã„ã¨ã“ã‚ã§å±•é–‹ã—ãªã„ã‚ˆã†ã«ã€‚
+* ((<RAA:mysql-ruby>))ã¨((<RAA:ruby-chasen>))ãŒå¿…è¦ãªã®ã§
+  åˆ¥é€”ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ãŠãã€‚
 
-* marg.rb¤Î1¹ÔÌÜ¤ò(({#!/usr/bin/env ruby -Ke}))¤ËÊÑ¹¹¡£
-  FreeBSD¤Ç¤Ï¤³¤ì¤Ç¤¤¤¤¤±¤ÉLinux¤À¤È/usr/bin/env¤¬
-  (({'ruby -Ke'}))¤ò¼Â¹Ô¤·¤è¤¦¤È¤·¤Æ¼ºÇÔ¤¹¤ë¡£
-* marg.rb¤Î(({$DEFAULT_MARG}))¤È(({require 'margarine.rb'}))¤Î´Ö¤Ë
-  ÀßÄê¥Õ¥¡¥¤¥ë¤òÆÉ¤ß¹ş¤Ş¤»¤ë½èÍı¤òÆş¤ì¤¿¡£
+* marg.rbã®1è¡Œç›®ã‚’(({#!/usr/bin/env ruby -Ke}))ã«å¤‰æ›´ã€‚
+  FreeBSDã§ã¯ã“ã‚Œã§ã„ã„ã‘ã©Linuxã ã¨/usr/bin/envãŒ
+  (({'ruby -Ke'}))ã‚’å®Ÿè¡Œã—ã‚ˆã†ã¨ã—ã¦å¤±æ•—ã™ã‚‹ã€‚
+* marg.rbã®(({$DEFAULT_MARG}))ã¨(({require 'margarine.rb'}))ã®é–“ã«
+  è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã¾ã›ã‚‹å‡¦ç†ã‚’å…¥ã‚ŒãŸã€‚
     $DEFAULT_MARG = 'defaultmarg'
 
     if File.symlink?(__FILE__)
@@ -25,37 +25,37 @@
 
     require 'margarine.rb'
   ((<HackingMarg|URL:http://plantl.org/l/munou/margarine/hiki/hiki.cgi?HackingMarg>))
-  ¤Ë¤è¤ë¤È¡¢ËÜ²È¤Ç¤Ï$HOME/.margrc¤òÆÉ¤à¤è¤¦¤Ë¤Ê¤ê¤½¤¦¡£
+  ã«ã‚ˆã‚‹ã¨ã€æœ¬å®¶ã§ã¯$HOME/.margrcã‚’èª­ã‚€ã‚ˆã†ã«ãªã‚Šãã†ã€‚
 
-* znz-config.rb¤ÎºîÀ®¡£
+* znz-config.rbã®ä½œæˆã€‚
     $DB_USER = 'znz'
     $DB_NAME = 'znz'
-    $DB_PASSWORD = '¤³¤³¤Ë¥Ñ¥¹¥ï¡¼¥É'
+    $DB_PASSWORD = 'ã“ã“ã«ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰'
     $DEFAULT_MARG = 'znmarg'
 
 == plum
-* ((<URL:http://plum.sourceforge.jp/>))¤ËºÇ¿·ÈÇ¤¬¤¢¤ë¡£
-* ºÇ¿·ÈÇ¤ò¥À¥¦¥ó¥í¡¼¥É¤·¤ÆÅ¸³«¤·¤¿¥Ç¥£¥ì¥¯¥È¥êplum-2.33.2¤ËÆş¤ë¡£
-* Àè¤Û¤É¤Îmarg.rb¤Ë¥·¥ó¥Ü¥ê¥Ã¥¯¥ê¥ó¥¯¤òÄ¥¤ë¡£
+* ((<URL:http://plum.sourceforge.jp/>))ã«æœ€æ–°ç‰ˆãŒã‚ã‚‹ã€‚
+* æœ€æ–°ç‰ˆã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã—ã¦å±•é–‹ã—ãŸãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªplum-2.33.2ã«å…¥ã‚‹ã€‚
+* å…ˆã»ã©ã®marg.rbã«ã‚·ãƒ³ãƒœãƒªãƒƒã‚¯ãƒªãƒ³ã‚¯ã‚’å¼µã‚‹ã€‚
     ln -s ~/margarine/znmarg/marg.rb .
-* margarine.plm¤òmodule/munou¤Ë¥³¥Ô¡¼¡£
+* margarine.plmã‚’module/munouã«ã‚³ãƒ”ãƒ¼ã€‚
     mkdir module/munou
     cp -p ~/margarine/znmarg/margarine.plm module/munou/margarine.plm
-* plum-znmarg.conf¤òºîÀ®¡£
+* plum-znmarg.confã‚’ä½œæˆã€‚
     cp plum-default.conf plum-znmarg.conf
     vi plum-znmarg.conf
-* plum-znmarg.conf¤Ç¤Ï
+* plum-znmarg.confã§ã¯
   * plum.nick
   * plum.user
   * plum.name
   * plum.server
   * channel.join.connect.channel
   * ctcp.userinfo.info
-  * log.client.file (margarine¤ÎµóÆ°¥Á¥§¥Ã¥¯ÍÑ)
-  * log.daily.file (ÉáÄÌ¤Î¥í¥°¼è¤êÍÑ)
-  ¤òÀßÄê¤·¤Æ¡¢ËöÈø¤Ë
+  * log.client.file (margarineã®æŒ™å‹•ãƒã‚§ãƒƒã‚¯ç”¨)
+  * log.daily.file (æ™®é€šã®ãƒ­ã‚°å–ã‚Šç”¨)
+  ã‚’è¨­å®šã—ã¦ã€æœ«å°¾ã«
     + munou/margarine.plm
     munou.margarine.marg: znmarg
     munou.margarine.reply: default
     munou.margarine.register: true
-  ¤òÄÉ²Ã¤·¤¿¡£
+  ã‚’è¿½åŠ ã—ãŸã€‚

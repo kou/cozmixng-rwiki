@@ -1,18 +1,18 @@
 = TWTD002
 
-GtkTransparent¤ÎÄó°Æ
+GtkTransparentã®ææ¡ˆ
 
 == status
 
-* ¼ïÎà: story
-* ¥¤¥Æ¥ì¡¼¥·¥ç¥ó: 1
-* ¥µ¥¤¥ó: ((<kou>))
-* ¾õÂÖ: close
-* ¸«ÀÑ: 0 / 0
+* ç¨®é¡: story
+* ã‚¤ãƒ†ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³: 1
+* ã‚µã‚¤ãƒ³: ((<kou>))
+* çŠ¶æ…‹: close
+* è¦‹ç©: 0 / 0
 
 == description
 
-gtk-devel¤Ë¥á¡¼¥ë¤ò½ñ¤¯¡£
+gtk-develã«ãƒ¡ãƒ¼ãƒ«ã‚’æ›¸ãã€‚
 
 == test
 

@@ -1,70 +1,70 @@
 = Postfix
 
-Postfix�ط��κ�ȵ�Ͽ
+Postfix関係の作業記録
 
-������Ѥ�ƥ��Ȥ��Ƥ����ڡ���((<Mail relay testing|URL:http://www.abuse.net/relay.html>))
+不正中継をテストしてくれるページ((<Mail relay testing|URL:http://www.abuse.net/relay.html>))
 
-== ���󥹥ȡ���
+== インストール
 
-SMTP AUTH�򤹤뤿���SASL v2��Ȥ���褦�ˤ��Ƥ������ʤΤ�cyrus-sasl2�򥤥󥹥ȡ��뤷�Ƥ�����
+SMTP AUTHをするためにSASL v2も使えるようにしておく．なのでcyrus-sasl2をインストールしておく．
 
   % sudo portupgrade -N cyrus-sasl
 
-== ����Ū������
+== 基本的な設定
 
-�ե������/usr/local/etc/postfix/main.cf
+ファイルは/usr/local/etc/postfix/main.cf
 
-=== @�ʲ��ˤϥǥե���Ȥǥɥᥤ��̾���դ���
+=== @以下にはデフォルトでドメイン名を付ける
 
   myorigin = $mydomain
 
-=== ����������
+=== 配送先を指定
 
   mydestination = $myhostname, localhost.$mydomain, $mydomain, mail.$mydomain
 
-=== ���ݤ����Ȥ��Υ쥹�ݥ󥹥����ɤ����
+=== 拒否したときのレスポンスコードを指定
 
-550�ϥ᡼�����ݤ������Ȥ򼨤���
+550はメールを拒否したことを示す．
 
-450�ϸ�����äƤͤȤ������Ȥ򼨤���
+450は後で送ってねということを示す．
 
   unknown_local_recipient_reject_code = 550
 
-=== ���Ѥ���ۥ��Ȥ����
+=== 信用するホストを指定
 
-��ʬ�ΤȤ����������Ѥ��롥
+自分のところだけ信用する．
 
   mynetworks_style = host
 
-=== /etc/aliases�򹹿�
+=== /etc/aliasesを更新
 
   % sudo postalias /etc/aliases
 
-== IPv6�����Ѥ���
+== IPv6も利用する
 
-inet_protocols�����Ѥ���IP�μ������ꤹ�롥
+inet_protocolsに利用するIPの種類を指定する．
 
-�ʲ��Τ褦�ˤ��Ƥ��������Ѳ�ǽ�ʤ��IPv4��IPv6�����Ѥ��롥
+以下のようにしておくと利用可能ならばIPv4とIPv6を利用する．
 
   inet_protocols = all
 
-IPv4�������Ѥ��������ϰʲ��Τ褦�˽񤯡�
+IPv4だけ利用したい場合は以下のように書く．
 
   inet_protocols = ipv4
 
-IPv6�������Ѥ��������ϰʲ��Τ褦�˽񤯡�
+IPv6だけ利用したい場合は以下のように書く．
 
   inet_protocols = ipv6
 
-ξ��ͭ���ˤ��������ϰʲ��Τ褦�˽񤯡�
+両方有効にしたい場合は以下のように書く．
 
   inet_protocols = ipv4, ipv6
 
-== (A)POP before SMTP������
+== (A)POP before SMTPの設定
 
-((<Qpopper>))��ȤäƤ����Ȥ��Ϥ����ȤäƤ������ʤ��ʤ�Qpopper��((<DRAC>))��Ȥ������顥
+((<Qpopper>))を使っていたときはこれを使っていた．なぜならQpopperが((<DRAC>))を使えたから．
 
-hash�Ȥ�dbm����ʤ���btree���ä���
+hashとかdbmじゃなくてbtreeだった．
 
   smtpd_recipient_restrictions =
           permit_mynetworks
@@ -73,49 +73,49 @@ hash�Ȥ�dbm����ʤ���btree���ä���
           reject_unauth_destination
           reject
 
-mynetworks��DRAC��ǧ�ڤ����ۥ��Ȥ��ɲä��롥
+mynetworksにDRACで認証したホストを追加する．
 
   mynetworks = 127.0.0.0/8, btree:/usr/local/etc/dracd
 
-IPv6��ͭ���ˤ������ϡ�[[::1]]���ɲä��Ƥ����Ȥ褤��
+IPv6を有効にした場合は，[[::1]]も追加しておくとよい．
 
   mynetworks = 127.0.0.0/8, [[::1]], btree:/usr/local/etc/dracd
 
-== SMTP AUTH������
+== SMTP AUTHの設定
 
-((<Courier-IMAP>))��((<DRAC>))��Ȥ��ʤ��Τ�SMTP AUTH�ˤ��롥
+((<Courier-IMAP>))は((<DRAC>))を使えないのでSMTP AUTHにする．
 
-�����Ǥ�((<Cyrus SASL>))��Ȥ���
+ここでは((<Cyrus SASL>))を使う．
 
-SASL�ˤ��ǧ�ڤ�ͭ���ˤ���
+SASLによる認証を有効にする
 
   smtpd_sasl_auth_enable = yes
 
-SASL�ѤΥɥᥤ�������
+SASL用のドメインの設定
 
   smtpd_sasl_local_domain = $mydomain
 
-ƿ̾�ˤ��ǧ�ڡ�ʿʸ�ˤ��ǧ�ڤ���Ĥ��ʤ�
+匿名による認証，平文による認証を許可しない
 
   smtpd_sasl_security_options = noanonymous, noplaintext
 
-����Outlook�Τ���˰ʲ��Τ褦�ˤ��Ƥ�����
+が，Outlookのために以下のようにしておく．
 
   smtpd_sasl_security_options = noanonymous
   broken_sasl_auth_clients = yes
 
-STARTTLS��Ȥ���褦�ˤ���(Mew���ȻȤ��ʤ�)����̩���Ⱦ������(((<Apache>))�λ���Ʊ���褦��)��ä���
+STARTTLSを使えるようにする(Mewだと使えない)．秘密鍵と証明書は(((<Apache>))の時と同じように)作った．
 
   smtpd_tls_cert_file = /usr/local/etc/postfix/certs/smtpd.pem
   smtpd_tls_key_file = /usr/local/etc/postfix/certs/smtpd.key
   smtpd_use_tls = yes 
   smtpd_tls_session_cache_database = sdbm:/usr/local/etc/postfix/smtpd_scache
 
-����å����ѤΥե��������
+キャッシュ用のファイルを作る
 
   % sudo touch /usr/local/etc/postfix/smtpd_scache.{dir,pag}
 
-SMTP AUTH�������������饤����Ȥϵ��Ĥ���(permit_sasl_authenticated���ɲ�)��
+SMTP AUTHが成功したクライアントは許可する(permit_sasl_authenticatedを追加)．
 
   smtpd_recipient_restrictions =
         permit_mynetworks
@@ -125,55 +125,55 @@ SMTP AUTH�������������饤����Ȥϵ��Ĥ���(permit_sasl_authenticated���ɲ�)��
         reject_unauth_destination
         reject
 
-==== ���饤����Ȥ�����
+==== クライアントの設定
 
-Mew�ʤ�
+Mewなら
 
   (setq mew-config-alist
    ...
        ("smtp-user"     . "kou")
    ...)
 
-�Ȥ��񤤤Ƥ�������SMTP AUTH����褦�ˤʤ롥
+とか書いておいたらSMTP AUTHするようになる．
 
-== ž��������
+== 転送の設定
 
-  (1) ž�����relay_domains�˲ä��Ƥ�����
+  (1) 転送先をrelay_domainsに加えておく。
 
         relay_domains = transport.$mydomain
 
-  (2) transport_maps��ž�����륢�ɥ쥹��ž������б���񤤤��ե��������ꤹ��(.db�ϤĤ��ʤ�)��
+  (2) transport_mapsに転送するアドレスと転送先の対応を書いたファイルを指定する(.dbはつけない)。
 
         transport_maps = hash:/usr/local/etc/postfix/transport
 
-  (3) transport_maps�ǻ��ꤷ���ե�������б��ط���񤯡�
+  (3) transport_mapsで指定したファイルに対応関係を書く。
 
         hoge@transport.example.com smtp:[transport.example.com]
         .transport.example.com smtp:transport.example.com
       
-      ���ڡ����κ�¦��ž������᡼�륢�ɥ쥹�ޤ��ϥɥᥤ��Ǳ�¦��ž����ˤʤ롣
+      スペースの左側が転送するメールアドレスまたはドメインで右側が転送先になる。
 
-      ��������ȡ�hoge@transport.example.com���ƤΥ᡼���transport.example.com��SMTP��ž������(ž����Υۥ���̾��[]�ǰϤޤ�Ƥ����MX�쥳���ɤ�����ʤ�)���ɥᥤ��κǸ夬.transport.example.com���ƤΥ᡼���transport.example.com��MX�쥳���ɤǻ��ꤵ�줿�ۥ��Ȥ�SMTP��ž������롣
+      この例だと、hoge@transport.example.com宛てのメールはtransport.example.comにSMTPで転送され(転送先のホスト名が[]で囲まれているとMXレコードを引かない)、ドメインの最後が.transport.example.com宛てのメールはtransport.example.comのMXレコードで指定されたホストにSMTPで転送される。
 
-      ����Υ桼�����ƤΥ᡼���ž���򤹤�Ȥ�(��¦��hoge@transport.example.com�Ƚ񤫤�Ƥ���Ȥ�)�ϡ��ʲ��Τ��Ȥ����դ��ʤ���Ф����ʤ��褦����
+      特定のユーザ宛てのメールの転送をするとき(左側にhoge@transport.example.comと書かれているとき)は、以下のことに注意しなければいけないようだ。
 
-        * ž���襵���Ф�mydestination�˴ޤޤ�Ƥ���ʤ�С�ž���������Ф����Υ桼���Υ᡼�������������ˤʤäƤ��ʤ���Ф����ʤ���
+        * 転送先サーバがmydestinationに含まれているならば、転送元サーバがそのユーザのメールを受け取る設定になっていなければいけない。
 
-      �ʤΤǡ��⤷��ž���������Ф˥桼��(�����Ǥ�hoge)�����ʤ��Ȥ���/etc/aliases��ʲ��Τ褦���Խ�����ʤɤ��Ƽ�������褦�ˤ��Ƥ���ɬ�פ�����(�Ȼפ�)���Ȥ�������mydestination�ˤ��줺��relay_domain�ˤ����Ф�����
+      なので、もし、転送元サーバにユーザ(上の例ではhoge)がいないときは/etc/aliasesを以下のように編集するなどして受け取れるようにしておく必要がある(と思う)。というか，mydestinationにいれずにrelay_domainにいれればいい．
 
         hoge: root
 
-  (4) ��®�˸����Ǥ���褦�ˤ��뤿��˥ǡ����١��������롣
+  (4) 高速に検索できるようにするためにデータベース化する。
 
         % sudo /usr/local/sbin/postmap /usr/local/etc/postfix/transport
 
-  (5) �����ȿ�Ǥ�����
+  (5) 設定を反映させる
 
         % sudo /usr/local/sbin/postfix reload
 
-== �С������ɥᥤ�������
+== バーチャルドメインの設定
 
-(1) main.cf�˰ʲ����ɲ�
+(1) main.cfに以下を追加
 
       virtual_maps = hash:/usr/local/etc/postfix/vmaps
       virtual_mailbox_base = /home/mailuser
@@ -183,66 +183,66 @@ Mew�ʤ�
       virtual_uid_maps = static:10000
       virtual_gid_maps = static:10000
 
-(2) uid, gid�Ȥ��10000��mailuser�Ȥ����桼�������
+(2) uid, gidともに10000のmailuserというユーザを作成
 
-(3) /usr/local/etc/postfix/vmailbox�˥С������ʥ᡼�륢�ɥ쥹�����
+(3) /usr/local/etc/postfix/vmailboxにバーチャルなメールアドレスを指定
 
       kou@example.com example.com/kou/Maildir/
       hoge@example.com example.com/hoge/Maildir/
 
-    �Ȥ�
+    とか
 
-(4) /usr/local/etc/postfix/vmaildomains�˥С������ɥᥤ������ꡥ((*�С������ɥᥤ������ꤹ��ɥᥤ��̾��mydestination��������Ƥ�����*))
+(4) /usr/local/etc/postfix/vmaildomainsにバーチャルドメインを設定．((*バーチャルドメインに設定するドメイン名はmydestinationから除いておく．*))
 
       example.com HOGE FUGA
 
-(5) /usr/local/etc/postfix/vmaps�˥С������ɥᥤ�󰸤Υ᡼��ǥ�������桼����ž�����륢�ɥ쥹���б��򵭽�
+(5) /usr/local/etc/postfix/vmapsにバーチャルドメイン宛のメールでローカルユーザに転送するアドレスの対応を記述
 
       postmaster@example.com root
       mailuser@example.com root
       info@example.com root
       webmaster@example.com  root
 
-    �⤷��vmaildomains�˥С������ɥᥤ���񤤤Ƥ��ʤ����vmaps����Ƭ�˰ʲ���񤤤Ƥ���
+    もし，vmaildomainsにバーチャルドメインを書いていなければvmapsの先頭に以下を書いておく
 
       example.com anything
 
-    ���ʤߤˡ�anything�ΤȤ����ϲ���񤤤Ƥ⤤���餷����
+    ちなみに，anythingのところは何を書いてもいいらしい．
 
-(6) {vmailbox,vmaildomains,vmaps}��DB��
+(6) {vmailbox,vmaildomains,vmaps}をDB化
 
       % sudo /usr/local/sbin/postmap /usr/local/etc/postfix/{vmailbox,vmaildoamins,vmaps}
 
-(6) ����ե��������ɤ߹���
+(6) 設定ファイルを再読み込み
 
       % sudo env - /usr/local/etc/rc.d/postfix.sh reload
 
-== 8bit -> 7bit�Ѵ�����������
+== 8bit -> 7bit変換を抑制する
 
-�ǥե���ȤǤ�Content-Transfer-Encoding: 8bit�Υ᡼���quoted-printable���Ѵ�����ߤ������������������ˤϰʲ��򵭽Ҥ���Ф褤��
+デフォルトではContent-Transfer-Encoding: 8bitのメールをquoted-printableに変換するみたい．これを抑制するには以下を記述すればよい．
 
   disable_mime_output_conversion = yes
 
-8bit�äƤޤ����Ե������Τ����顥
+8bitってまだお行儀悪いのかしら．
 
 
 == Rgrey
 
-���ѥ��ۤȤ�ɵ��ݤǤ���Ȥ���((<Rgrey - S25R + greylisting|URL:http://k2net.hakuba.jp/rgrey/>))������򤹤롣�ѥ����Ѥ����ʳ���Ʊ����
+スパムをほとんど拒否できるという((<Rgrey - S25R + greylisting|URL:http://k2net.hakuba.jp/rgrey/>))の設定をする。パスを変えた以外は同じ。
 
-�ޤ���Postfix�Ѥ�Greylist�μ����Ǥ���Postgrey�򥤥󥹥ȡ��뤹�롣
+まず、Postfix用のGreylistの実装であるPostgreyをインストールする。
 
   % sudo /usr/local/sbin/portupgrade -NRr postgrey
 
-/etc/rc.conf�˰ʲ����ɲä���Postgrey��ư����褦�ˤ��롣
+/etc/rc.confに以下を追加してPostgreyを起動するようにする。
 
   postgrey_enable="YES"
 
-Postgrey��ư���롣
+Postgreyを起動する。
 
   % sudo /usr/local/etc/rc.d/postgre start
 
-/usr/local/etc/postfix/main.cf���Խ�����Postgrey��Ȥ��褦�ˤ��롣
+/usr/local/etc/postfix/main.cfを編集し、Postgreyを使うようにする。
 
   smtpd_restriction_classes =
       check_greylist
@@ -256,7 +256,7 @@ Postgrey��ư���롣
 
   policy_time_limit = 3600
 
-/usr/local/etc/postfix/check_client_fqdn���롣
+/usr/local/etc/postfix/check_client_fqdnを作る。
 
   /^unknown$/                                  check_greylist
   /^[^\.]*[0-9][^0-9\.]+[0-9]/                 check_greylist
@@ -266,18 +266,18 @@ Postgrey��ư���롣
   /^[^\.]*[0-9]\.[^\.]*[0-9]\.[^\.]+\..+\./    check_greylist
   /^(dhcp|dialup|ppp|adsl)[^\.]*[0-9]/         check_greylist
 
-����ϡ��ǡ����١��������ˤ��Ƥ��ʤ��Τǡ�postmap�Ϥ��ʤ��Ƥ⤤����
+これは、データベース扱いにしていないので、postmapはしなくてもいい。
 
-���Ȥϡ��������ɤ߹��ߤ��롣
+あとは、設定を再読み込みする。
 
   % sudo /usr/local/etc/rc.d/postfix.sh reload
 
-== submission�ݡ����б�
+== submissionポート対応
 
-/usr/local/etc/postfix/master.cf�˰ʲ��ιԤ��ɲá�
+/usr/local/etc/postfix/master.cfに以下の行を追加。
 
   submission   inet    n       -       n       -       -       smtpd
 
-����ե��������ɤ߹��ߤ��롣
+設定ファイルを再読み込みする。
 
   % sudo /usr/local/etc/rc.d/postfix.sh reload

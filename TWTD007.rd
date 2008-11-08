@@ -1,18 +1,18 @@
 = TWTD007
 
-((<rwiki-devel:431>))�θ���
+((<rwiki-devel:431>))の検証
 
 == status
 
-* ����: story
-* ���ƥ졼�����: 1
-* ������: ((<kou>))
-* ����: close
-* ����: 0 / 0
+* 種類: story
+* イテレーション: 1
+* サイン: ((<kou>))
+* 状態: close
+* 見積: 0 / 0
 
 == description
 
-��󤷤ˤ��褦���Ȼפä����ɤ�ä���ä���
+後回しにしようかと思ったけどやっちゃった。
 
 == test
 

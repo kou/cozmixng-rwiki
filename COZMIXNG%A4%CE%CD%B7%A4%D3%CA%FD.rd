@@ -1,7 +1,7 @@
-= COZMIXNG��ͷ����
+= COZMIXNGの遊び方
 
-��((<COZMIXNG��ͷ����>))�פ��ꤷ��COZMIXNG���󶡤��Ƥ��륵���ӥ��λȤ����Υǥ���ԤäƤ��ޤ������Τ�((<ML|Ϣ����>))��((<�ȥåץڡ���|URL:/>))�ǹԤäƤ��ޤ���COZMIXNG�˶�̣���������ϻ��ä��Ƥߤޤ��󤫡�
+「((<COZMIXNGの遊び方>))」と題してCOZMIXNGで提供しているサービスの使い方のデモ会を行っています。告知は((<ML|連絡先>))や((<トップページ|URL:/>))で行っています．COZMIXNGに興味がある方は参加してみませんか？
 
-��ǻȤä�������((<����|URL:http://pub.cozmixng.org/~kou/how_to_play_with_cozmixng/>))���Ƥ��ޤ���
+会で使った資料は((<公開|URL:http://pub.cozmixng.org/~kou/how_to_play_with_cozmixng/>))しています．
 
-��θ���ä����줿���Ƥ�((<COZMIXNG�κ���>))�ˤޤȤ�Ƥ���ޤ���
+会の後で話し合われた内容は((<COZMIXNGの今後>))にまとめてあります．

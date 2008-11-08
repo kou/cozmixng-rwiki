@@ -1,76 +1,76 @@
 = svn-utils
 
-Subversion�Τ���ξ�ʪ����(Powered by Ruby)
+Subversionのための小物たち(Powered by Ruby)
 
-== �ޤޤ�Ƥ�����
+== 含まれているもの
 
-  * commit�᡼������������ꡤcommit RSS����Ϥ��륹����ץ�
+  * commitメールを送信したり，commit RSSを出力するスクリプト
 
-== ������ˡ
+== 入手方法
 
-���������֤Ϥ���ޤ���
+アーカイブはありません．
 
   % svn co http://www.cozmixng.org/repos/ruby/svn-utils/trunk/ svn-utils
 
 == bin/commit-email.rb
 
-commit�᡼������������ꡤcommit RSS����Ϥ��륹����ץ�
+commitメールを送信したり，commit RSSを出力するスクリプト
 
-=== ����
+=== 設定
 
-��ݥ��ȥ�/hooks/post-commit��ʲ��Τ褦�ˤ��롥�¹Ը����դ���Τ�˺�줺�ˡ�
+リポジトリ/hooks/post-commitを以下のようにする．実行権を付けるのを忘れずに．
 
   #!/bin/sh
   REPOS="$1"
   REV="$2"
   
   PATH=/usr/local/bin:/usr/bin:/bin
-  # �� svnlook�Ȥ�ruby�Ȥ�commit-email.rb������ѥ���ޤ�뤳�ȡ�
+  # ↑ svnlookとかrubyとかcommit-email.rbがあるパスを含めること．
   export PATH
   
   commit-email.rb \
-    "$REPOS" "$REV" �᡼������륢�ɥ쥹 \
-    -I svn-utils/lib�ؤΥѥ� \
-    -r ��ݥ��ȥ��URI�ʺǸ��/���դ��ʤ��� \
-    --rss-path ���Ϥ���RSS�ؤΥѥ���URI����ʤ����� \
-    --rss-uri RSS��URI \
-    --name �ץ���������̾ \
-    --error-to ���顼�������ä����������襢�ɥ쥹 \
-    --from �᡼���From�ˤ��륢�ɥ쥹
+    "$REPOS" "$REV" メールを送るアドレス \
+    -I svn-utils/libへのパス \
+    -r リポジトリのURI（最後に/を付けない） \
+    --rss-path 出力するRSSへのパス（URIじゃない！） \
+    --rss-uri RSSのURI \
+    --name プロジェクト名 \
+    --error-to エラーが起こった時に通知先アドレス \
+    --from メールのFromにするアドレス
 
-���ʤߤˡ�RSS����Ϥ��ʤ��Ƥ�褤�ʤ餳��Ǥ褤�Ǥ���
-
-  commit-email.rb \
-    "$REPOS" "$REV" �᡼������륢�ɥ쥹 \
-    -I svn-utils/lib�ؤΥѥ� \
-    -r ��ݥ��ȥ��URI�ʺǸ��/���դ��ʤ��� \
-    --name �ץ���������̾ \
-    --error-to ���顼�������ä����������襢�ɥ쥹 \
-    --from �᡼���From�ˤ��륢�ɥ쥹
-
-�Ȥˤ���ư���������ʤ餳��Ǥ�褤�Ǥ���
+ちなみに，RSSを出力しなくてもよいならこれでよいです．
 
   commit-email.rb \
-    "$REPOS" "$REV" �᡼������륢�ɥ쥹 \
-    -I svn-utils/lib�ؤΥѥ�
+    "$REPOS" "$REV" メールを送るアドレス \
+    -I svn-utils/libへのパス \
+    -r リポジトリのURI（最後に/を付けない） \
+    --name プロジェクト名 \
+    --error-to エラーが起こった時に通知先アドレス \
+    --from メールのFromにするアドレス
 
-=== ������
+とにかく動かしたいならこれでもよいです．
 
-RWiki��((<��ݥ��ȥ�|URL:http://www.cozmixng.org/repos/rwiki/>))�Ǥϰʲ��Τ褦�ˤ��Ƥ��ޤ���
+  commit-email.rb \
+    "$REPOS" "$REV" メールを送るアドレス \
+    -I svn-utils/libへのパス
 
-����:
+=== 設定例
 
-  * svn-utils��~kou/work/ruby/svn-utils/�ʲ��˥����å������Ȥ��Ƥ��롥
-  * svnlook��ruby��/usr/local/bin/�ʲ��ˤ��롥
-  * ���ߥåȥ᡼���rwiki-commit@ml.cozmixng.org�Ȥ���ML�����롥
-  * ��ݥ��ȥ��URI��http://www.cozmixng.org/repos/rwiki
-  * RSS��/usr/local/var/svn/rss/rwiki.rdf�˽��Ϥ��롥
-  * RSS��URI��http://www.cozmixng.org/rss/rwiki.rdf
-  * �ץ���������̾��RWiki
-  * ���顼��ȯ��������kou@cozmixng.org�����Ρ�
-  * ���ߥåȥ᡼���null@cozmixng.org���������Ƥ���ʥ��ߥåȥ᡼�������ML�ϻ��üԤ�����ƤǤ��ʤ��Τǡ�����Ͻ��סˡ�
+RWikiの((<リポジトリ|URL:http://www.cozmixng.org/repos/rwiki/>))では以下のようにしています．
 
-�����դޤ��ơ������ʤ�ޤ���
+前提:
+
+  * svn-utilsは~kou/work/ruby/svn-utils/以下にチェックアウトしてある．
+  * svnlookとrubyは/usr/local/bin/以下にある．
+  * コミットメールはrwiki-commit@ml.cozmixng.orgというMLに送る．
+  * リポジトリのURIはhttp://www.cozmixng.org/repos/rwiki
+  * RSSは/usr/local/var/svn/rss/rwiki.rdfに出力する．
+  * RSSのURIはhttp://www.cozmixng.org/rss/rwiki.rdf
+  * プロジェクト名はRWiki
+  * エラーが発生したらkou@cozmixng.orgに通知．
+  * コミットメールはnull@cozmixng.orgから送られてくる（コミットメールを送るMLは参加者しか投稿できないので，これは重要）．
+
+これをふまえて，こうなります．
 
   #!/bin/sh
   REPOS="$1"
