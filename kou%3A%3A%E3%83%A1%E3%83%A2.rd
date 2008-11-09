@@ -1,5 +1,9 @@
 = kou::メモ
 
+  * [2008-11-09] このRWikiのSubversionが落ちるようになったのはコンテンツがEUC-JPだからかと思ってUTF-8にしたらRSSのdiffにEUC-JPとUTF-8が混ざって壊れたRSSになってしまった。しかも、原因はEUC-JPじゃなくて、1.5.xからはSvn::Locale.setを自分で呼ばなきゃいけなくなったからだった。
+
+    うーん、これはわからんよなぁ。svn.rbを用意してその中でsvn/coreとかを読み込んで、Svn::Locale.setを呼ぶようにしようかなぁ。使う人はrequire 'svn'してという感じで。
+
   * [2008-04-29] {www,share,streaming}: 6.2-STABLE -> 7.0-STABLE.
 
   * ((<「OpenGLを使ってJavaでも3Dを楽しもう」：ITpro|URL:http://itpro.nikkeibp.co.jp/article/COLUMN/20060703/242298/>))
