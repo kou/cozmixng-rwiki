@@ -1,5 +1,7 @@
 = kou::メモ
 
+  * ↓はとりあえずdiffのエンコーディングが変だったらRSSに入れないようにした。
+
   * [2008-11-09] このRWikiのSubversionが落ちるようになったのはコンテンツがEUC-JPだからかと思ってUTF-8にしたらRSSのdiffにEUC-JPとUTF-8が混ざって壊れたRSSになってしまった。しかも、原因はEUC-JPじゃなくて、1.5.xからはSvn::Locale.setを自分で呼ばなきゃいけなくなったからだった。
 
     うーん、これはわからんよなぁ。svn.rbを用意してその中でsvn/coreとかを読み込んで、Svn::Locale.setを呼ぶようにしようかなぁ。使う人はrequire 'svn'してという感じで。
