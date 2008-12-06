@@ -12,3 +12,4 @@ Rabbitはこんなところに出没しました．
     (((<PDF|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/rabbit2008.pdf>)))
   * ((<Cutter - ITpro Challenge! 2008(PDF)|URL:http://www.clear-code.com/archives/itpro-challenge-2008-cutter.pdf>))
   * ((<GaUnit - ファンクションクラブ2008|URL:http://pub.cozmixng.org/~kou/archives/function-club2008/>))
+  * ((<xUnit 2008 - オブラブ忘年会 〜ふりかえり2008〜|URL:http://pub.cozmixng.org/~kou/archives/object-club-2008-winter/>))
