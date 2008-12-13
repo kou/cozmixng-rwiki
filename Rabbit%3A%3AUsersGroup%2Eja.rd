@@ -155,7 +155,13 @@
     * ((<グニャラくんのグニャグニャ備忘録@はてな|URL:http://d.hatena.ne.jp/tasukuchan/>))
   * hsbtさん
     * ((<HsbtDiary|URL:http://hsbt.org/diary/>))
-    * ((<わたしとtDiary|URL:http://www.slideshare.net/hsbt/sapporo-ruby-kaigi01-presentation>))  
+    * ((<わたしとtDiary|URL:http://www.slideshare.net/hsbt/sapporo-ruby-kaigi01-presentation>))
+  * authorNariさん
+    * ((<I am Cruby!|URL:http://d.hatena.ne.jp/authorNari/>))
+    * ((<narihiro.info|URL:http://www.narihiro.info/>))
+      * ((<私は如何にしてNarioを作り、1面をクリアしたか|URL:http://www.narihiro.info/resource/presen/why_maked_nario_and_clear_1_map.pdf>))
+      * ((<Rubyはゲームの夢を見るか？|URL:http://www.narihiro.info/resource/presen/Do_ruby_Dream_of_Game.pdf>))
+      * ((<効率的なビットマップマーキングを用いたRuby用ごみ集め実装|URL:http://www.narihiro.info/resource/presen/Ruby%20Garbage%20Collection%20Using%20Efficient%20Bitmap%20Marking.pdf>))
   * ...
 
 == 参加しようかなぁな人達
