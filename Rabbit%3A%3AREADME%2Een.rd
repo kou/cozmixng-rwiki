@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1140 2008-07-31 09:46:36Z kou $
+$Id: README.en 1174 2008-09-28 01:45:17Z kou $
 
 == Name
 
@@ -103,6 +103,12 @@ Mr. MIYAMUKO
 misc/emacs/
 
 Atsushi Takeda
+
+=== RabbIRC
+
+bin/rabbirc
+
+akira yamada
 
 == Co-Authors
 
@@ -790,6 +796,7 @@ page from XXX.rd.
   * akira yamada:
     * He makes Debian package (*.deb).
     * He reports some bugs and also fixes them.
+    * He made rabbirc.
   * usatti: She drow some logos and taro series images.
   * dot: He helps installation on Windows.
   * tanaka: He checks operations on Windows.
