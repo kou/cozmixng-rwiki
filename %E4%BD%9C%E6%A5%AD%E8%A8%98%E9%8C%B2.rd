@@ -27,6 +27,7 @@
   * ((<AMaViS>))
   * ((<SpamAssassin>))
   * ((<ClamAV>))
+  * ((<clamav-milter>))
   * ((<FastCGI>))
   * ((<Samba>))
   * ((<QuickML>))
@@ -38,3 +39,4 @@
   * ((<Nessus>))
   * ((<PostgreSQL>))
   * ((<dkim-milter>))
+  * ((<milter-manager>))
