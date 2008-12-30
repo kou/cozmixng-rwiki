@@ -69,8 +69,9 @@ hashとかdbmじゃなくてbtreeだった．
   smtpd_recipient_restrictions =
           permit_mynetworks
           permit_auth_destination
-          check_client_access btree:/usr/local/etc/dracd
           reject_unauth_destination
+          check_client_access btree:/usr/local/etc/dracd
+          permit_auth_destination
           reject
 
 mynetworksにDRACで認証したホストを追加する．
@@ -120,9 +121,9 @@ SMTP AUTHが成功したクライアントは許可する(permit_sasl_authentica
   smtpd_recipient_restrictions =
         permit_mynetworks
         permit_sasl_authenticated
-        permit_auth_destination
-        check_client_access btree:/usr/local/etc/dracd
         reject_unauth_destination
+        check_client_access btree:/usr/local/etc/dracd
+        permit_auth_destination
         reject
 
 ==== クライアントの設定
@@ -215,7 +216,7 @@ Mewなら
 
 (6) 設定ファイルを再読み込み
 
-      % sudo env - /usr/local/etc/rc.d/postfix.sh reload
+      % sudo env - /usr/local/etc/rc.d/postfix reload
 
 == 8bit -> 7bit変換を抑制する
 
@@ -240,7 +241,7 @@ Mewなら
 
 Postgreyを起動する。
 
-  % sudo /usr/local/etc/rc.d/postgre start
+  % sudo /usr/local/etc/rc.d/postgrey start
 
 /usr/local/etc/postfix/main.cfを編集し、Postgreyを使うようにする。
 
@@ -270,7 +271,7 @@ Postgreyを起動する。
 
 あとは、設定を再読み込みする。
 
-  % sudo /usr/local/etc/rc.d/postfix.sh reload
+  % sudo /usr/local/etc/rc.d/postfix reload
 
 == submissionポート対応
 
@@ -280,4 +281,16 @@ Postgreyを起動する。
 
 設定ファイルを再読み込みする。
 
-  % sudo /usr/local/etc/rc.d/postfix.sh reload
+  % sudo /usr/local/etc/rc.d/postfix reload
+
+== milter
+
+Postfixでも((<milter>))を使う基本的な設定。
+
+  * milterが動いていない場合は受け取る（デフォルトでは一時拒否）
+  * できるだけ新しいmilterプロトコル（バージョン6）を使う（デフォルトでは2）
+
+/usr/local/etc/postfix/main.cfに以下を追加。
+
+  milter_default_action = accept
+  milter_protocol = 6
