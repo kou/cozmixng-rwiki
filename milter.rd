@@ -20,8 +20,7 @@ test-milterのビルド:
   % cc -o test-milter{,.c} -L/usr/lib/libmilter -lmilter
 
 実験用スクリプト（statistics.rb）:
-  # enscript: ruby
-
+  # enscript ruby
   #!/usr/bin/env ruby
 
   require 'shellwords'
