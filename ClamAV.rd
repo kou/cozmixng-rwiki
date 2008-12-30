@@ -2,11 +2,15 @@
 
 フリーのアンチウイルスソフト
 
-((<AMaViS>))と一緒に使う
+((<AMaViS>))または((<clamav-milter>))と一緒に使う。
 
 == インストール
 
-  % sudo portupgrade -NRr clamav
+clamav-milterもインストールするため、/usr/local/etc/pkgtools.confのMAKE_ARGSに以下を追加する。
+
+  'security/clamav' => 'WITH_MILTER=yes',
+
+  % sudo /usr/local/sbin/portupgrade -NRr clamav
 
 == 設定
 
@@ -29,14 +33,18 @@ vscanユーザで実行するようにする．
 
 起動
 
-  % sudo env - /usr/local/etc/rc.d/clamav-clamd.sh start
-  % sudo env - /usr/local/etc/rc.d/clamav-freshclam.sh start
+  % sudo env - /usr/local/etc/rc.d/clamav-clamd start
+  % sudo env - /usr/local/etc/rc.d/clamav-freshclam start
+
+=== AMaViSの設定
+
+clamav-milterと使う場合は必要ない。
 
 /usr/local/etc/amavisd.confのClamAVのところのコメントを外してソケットのアドレスを適当に変える．
 
   ### http://clamav.elektrapro.com/
   ['Clam Antivirus-clamd',
-    \&ask_daemon, ["CONTSCAN {}\n", '/var/run/clamav/clamd'],
+    \&ask_daemon, ["CONTSCAN {}\n", '/var/run/clamav/clamd.sock'],
     qr/\bOK$/, qr/\bFOUND$/,
     qr/^.*?: (?!Infected Archive)(.*) FOUND$/ ],
   # NOTE: run clamd under the same user as amavisd,
@@ -44,4 +52,4 @@ vscanユーザで実行するようにする．
 
 再起動
 
-  % sudo env - /usr/local/etc/rc.d/amavisd.sh restart
+  % sudo env - /usr/local/etc/rc.d/amavisd restart
