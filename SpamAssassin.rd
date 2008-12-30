@@ -10,7 +10,11 @@
 
 /usr/local/etc/mail/spamassassin/local.cf
 
-((<AMaViS>))と一緒に使うので設定はしなくても良い．．．のかな？
+((<AMaViS>))と一緒に使うので設定はしなくても良い。
+
+スパム判定されたときのみX-Spam-StatusとX-Spam-Levelをつけるようにする設定。（デフォルトではスパムかどうかに関係なく常につく）
+  remove_header ham Status
+  remove_header ham Level
 
 == 学習
 
