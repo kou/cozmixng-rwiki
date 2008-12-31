@@ -23,7 +23,7 @@ www/apache20からwww/apache22にアップデートする場合は以下のよ�
 
 httpd.confにauth_digestモジュールをロードする記述を追加する。
 
-  LoadModule auth_digest_module libexec/apache2/mod_auth_digest.so
+  LoadModule auth_digest_module libexec/apache22/mod_auth_digest.so
 
 httpd.confや.htaccessにDigest認証の設定を記述する
 
@@ -44,12 +44,12 @@ Digest認証用のファイルを作る
 鍵とか，証明書のリクエストを作る．Common Nameはwww.cozmxing.orgとかstreaming.cozmixng.orgとかにする．
 
   % sudo openssl req -new \
-      -out /usr/local/etc/apache2/ssl.crt/server.csr \
-      -keyout /usr/local/etc/apache2/ssl.key/server.pem
+      -out /usr/local/etc/apache22/ssl.crt/server.csr \
+      -keyout /usr/local/etc/apache22/ssl.key/server.pem
   % sudo openssl rsa \
-      -in /usr/local/etc/apache2/ssl.key/server.pem \
-      -out /usr/local/etc/apache2/ssl.key/server.key
-  % sudo chmod 600 /usr/local/etc/apache2/ssl.key/server.{pem,key}
+      -in /usr/local/etc/apache22/ssl.key/server.pem \
+      -out /usr/local/etc/apache22/ssl.key/server.key
+  % sudo chmod 600 /usr/local/etc/apache22/ssl.key/server.{pem,key}
 
 もしかしたら以下のような-configオプションが必要かもしれない．
 
@@ -58,7 +58,7 @@ Digest認証用のファイルを作る
 ちなみに，req -subjectを使えばreq -new設定した値を見ることができる．
 
   % openssl req -subject \
-      -in /usr/local/etc/apache2/ssl.crt/server.csr
+      -in /usr/local/etc/apache22/ssl.crt/server.csr
 
 もしなかったら，認証局を作る．あるいは((<CAcert|URL:http://www.cacert.org/>))を利用する．
   % cd /usr/local/share/ca
@@ -68,8 +68,8 @@ Digest認証用のファイルを作る
   % cd /usr/local/share/ca/
   % sudo openssl ca -cert /usr/local/share/ca/demoCA/cacert.pem \
       -keyfile /usr/local/share/ca/demoCA/private/cakey.pem \
-      -in /usr/local/etc/apache2/ssl.key/server.csr \
-      -out /usr/local/etc/apache2/ssl.crt/server.crt
+      -in /usr/local/etc/apache22/ssl.key/server.csr \
+      -out /usr/local/etc/apache22/ssl.crt/server.crt
 
 == 名前ベースのバーチャルホスト
 
