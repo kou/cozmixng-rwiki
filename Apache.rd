@@ -49,7 +49,7 @@ Digest認証用のファイルを作る
   % sudo openssl rsa \
       -in /usr/local/etc/apache22/server.pem \
       -out /usr/local/etc/apache22/server.key
-  % sudo chmod 600 /usr/local/etc/apache22//server.{pem,key}
+  % sudo chmod 600 /usr/local/etc/apache22/server.{pem,key}
 
 もしかしたら以下のような-configオプションが必要かもしれない．
 
