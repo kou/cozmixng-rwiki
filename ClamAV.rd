@@ -10,6 +10,8 @@ clamav-milterもインストールするため、/usr/local/etc/pkgtools.confの
 
   'security/clamav' => 'WITH_MILTER=yes',
 
+インストール。
+
   % sudo /usr/local/sbin/portupgrade -NRr clamav
 
 == 設定
