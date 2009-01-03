@@ -8,13 +8,42 @@
 
 == 設定
 
-/usr/local/etc/mail/spamassassin/local.cf
+((<AMaViS>))と一緒に使う場合は、設定はしなくてもよい。
 
-((<AMaViS>))と一緒に使うので設定はしなくても良い。
+((<spamass-milter>))と一緒に使う場合は、設定しなければいけない。
+
+=== spamd
+
+接続はローカルホストからのみ受け付ける。
+
+/etc/rc.conf
+  spamd_enable="YES"
+  spamd_flags="-c -i 127.0.0.1"
+
+起動。
+
+  % sudo env - /usr/local/etc/rc.d/sa-spamd start
+
+spamdは子プロセスを起動し、その子プロセスがspamcからのリクエストを受け付ける。子プロセスの実効ユーザを変えることもできるが、spamcは子プロセスに接続するときに実効ユーザを伝え、子プロセスはその実効ユーザとしてスパムメールチェックを行う。なので、spamdも子プロセスもrootユーザで動いていてもよい気がする。
+
+ただし、spamcのオプションで実効ユーザを指定できるので、他のユーザとしてスパムメールチェックを行うこともできる。
+
+  % spamc -u other-user < ~/Maildir/new/...
+
+ちなみに、子プロセスをrootユーザ以外で起動する場合は以下のようにする。USER_NAMEとGROUP_NAMEは、例えば、spamdとspamd。（SpamAssassinをportsからインストールした時に作成されるユーザとグループ）
+
+/etc/rc.conf
+  spamd_flags="-c -i 127.0.0.1 -u USER_NAME -g GROUP_NAME"
+
+=== ヘッダー
 
 スパム判定されたときのみX-Spam-StatusとX-Spam-Levelをつけるようにする設定。（デフォルトではスパムかどうかに関係なく常につく）
+
+/usr/local/etc/mail/spamassassin/local.cf
   remove_header ham Status
   remove_header ham Level
+
+ちなみに、X-Spam-Checker-Versionヘッダは必ずつく。
 
 == 学習
 
