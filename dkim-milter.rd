@@ -1,6 +1,6 @@
 = dkim-milter
 
-((<https://sourceforge.net/projects/dkim-milter/>))
+((<URL:https://sourceforge.net/projects/dkim-milter/>))
 
 DKIM（DomainKeys Identified Mail）を実装した((<milter>))。署名（DKIM-Signatureヘッダをつける）と検証（DKIM-Signatureヘッダを見つけて、DNSを引いて公開鍵を見つけて、署名の正当性を判断）の両方できる。
 
