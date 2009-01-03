@@ -289,8 +289,18 @@ Postfixでも((<milter>))を使う基本的な設定。
 
   * milterが動いていない場合は受け取る（デフォルトでは一時拒否）
   * できるだけ新しいmilterプロトコル（バージョン6）を使う（デフォルトでは2）
+  * SASL認証結果の情報をmilterに渡す
 
 /usr/local/etc/postfix/main.cfに以下を追加。
 
   milter_default_action = accept
   milter_protocol = 6
+
+  milter_mail_macros = {auth_author} {auth_type} {auth_authen}
+  milter_data_macros = {auth_author} {auth_type} {auth_authen}
+  milter_eoh_macros = {auth_author} {auth_type} {auth_authen}
+  milter_eom_macros = {auth_author} {auth_type} {auth_authen}
+
+milter_eoh_macrosはmilter_protocolが6以上じゃないと使えない。
+
+milter_mail_macrosのしか効いていない気もする。複数していたら一番はやいイベントでだけ有効？（未確認）
