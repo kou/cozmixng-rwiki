@@ -161,3 +161,38 @@ RELENG_7に入ったmsk(4)を使っていてネットワークに負荷をかけ
 /bool/loader.confに以下を追加して再起動。
 
   hw.msk.msi_disable="1"
+
+== coreを吐かせる
+
+プロセスがSEGVなどで異常終了したときにcoreを吐かせるようにする設定。
+
+通常のプロセスはsysctl kern.coredumpが1になっていればcoreを吐く。これはデフォルトの設定なので、通常のプロセスについては特にすることはない。
+
+  % sudo /sbin/sysctl kern.coredump
+  kern.coredump: 1
+
+setuid/setgidされたプロセスはsysctl kern.sugid_coredumpが1になっていればcoreを吐く。これはデフォルトの設定ではないので設定する必要がある。
+
+  % sudo /sbin/sysctl kern.sugid_coredump
+  kern.sugid_coredump: 0
+  % sudo /sbin/sysctl kern.sugid_coredump=1
+  kern.sugid_coredump: 0 -> 1
+  % sudo /sbin/sysctl kern.sugid_coredump
+  kern.sugid_coredump: 1
+
+coreが吐かれるファイルはsysctl kern.corefileで確認できる。
+
+  % sudo /sbin/sysctl kern.corefile
+  kern.corefile: %N.core
+
+デフォルトではカレントディレクトリに吐かれるがsetuid/setgidするプロセスは/にchdirしていることが多く、/はroot権限がなければ書き込むことができないことが多いため、coreは吐こうとするがcoreファイルの作成には失敗する。（たぶん。予想。）
+
+ということで、sysctl kern.corefileのパスに書き込み可能なフルパスを指定するとcoreファイルを作成できるようになる。
+
+  % sudo /sbin/sysctl kern.corefile=/tmp/%N.%P.%U.core
+  kern.corefile: %N.core -> /tmp/%N.%P.%U.core
+
+この設定を起動時に行うためには/etc/sysctl.confに以下の内容を追記する。
+
+  kern.sugid_coredump=1
+  kern.corefile=/tmp/%N.%P.%U.core
