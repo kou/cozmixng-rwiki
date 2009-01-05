@@ -189,10 +189,12 @@ coreが吐かれるファイルはsysctl kern.corefileで確認できる。
 
 ということで、sysctl kern.corefileのパスに書き込み可能なフルパスを指定するとcoreファイルを作成できるようになる。
 
-  % sudo /sbin/sysctl kern.corefile=/tmp/%N.%P.%U.core
-  kern.corefile: %N.core -> /tmp/%N.%P.%U.core
+  % sudo /sbin/sysctl kern.corefile=/var/tmp/%N.%P.%U.core
+  kern.corefile: %N.core -> /var/tmp/%N.%P.%U.core
+
+%Nはプログラム名、%PはプロセスID、%UはユーザIDに展開される。
 
 この設定を起動時に行うためには/etc/sysctl.confに以下の内容を追記する。
 
   kern.sugid_coredump=1
-  kern.corefile=/tmp/%N.%P.%U.core
+  kern.corefile=/var/tmp/%N.%P.%U.core
