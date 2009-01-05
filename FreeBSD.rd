@@ -198,3 +198,18 @@ coreが吐かれるファイルはsysctl kern.corefileで確認できる。
 
   kern.sugid_coredump=1
   kern.corefile=/var/tmp/%N.%P.%U.core
+
+また、各ユーザ毎の設定も注意する必要がある。coreのサイズの上限は以下で確認できる。
+
+  % limits -c
+  Resource limits (current):
+    coredumpsize-max infinity kB
+    coredumpsize-cur        0 kB
+
+coreのサイズの上限をなくするには以下のようにする。
+
+  % eval `limits -e -c infinity`
+
+もし、特定のコマンドのみ上限をなくする場合は以下のようにすることもできる。
+
+  % limits -c infinty コマンド
