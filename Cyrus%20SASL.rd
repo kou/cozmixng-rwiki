@@ -2,15 +2,17 @@
 
 == インストール
 
-  % sudo portupgrade -N cyrus-sasl
+  % sudo /usr/local/sbin/portupgrade -NRr cyrus-sasl2
 
 == 設定
 
-ここではcyrus-sasl2をインストールしたものとする．
+以下のような内容の/usr/local/lib/sasl2/smtpd.confを作成。（今は自動でできる？こんな内容の設定を書いた記憶がない。。。）
 
-以下のような内容の/usr/local/lib/sasl2/smtpd.confを作成
+  pwcheck_method: auxprop
+  auxprop_plugin: sasldb
+  mech_list: PLAIN LOGIN CRAM-MD5 DIGEST-MD5
 
-  pwcheck_method: sasldb
+SMTPSで接続するので平文も許可。
 
 認証データベースを作成
 
