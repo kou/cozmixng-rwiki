@@ -1,4 +1,4 @@
-= milter-manager
+= milter manager
 
 ((<URL:http://sourceforge.net/projects/milter-manager/>))
 
