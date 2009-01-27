@@ -10,7 +10,7 @@ Sendmailが作ったメールフィルタ（Mail fILTER）のきまり。
 
 inetよりもunixの方が10倍程度は速い。（手元のDebian GNU/Linux環境で((*簡単に*))試した場合）
 
-((<Postfix>))付属のtest-milterに対して((<milter-manager>))のmilter-test-serverで接続して実験した結果。
+((<Postfix>))付属のtest-milterに対して((<milter manager>))のmilter-test-serverで接続して実験した結果。
 
 milter-test-serverはmilterプロトコルを話すので、SMTPの影響はない。
 
