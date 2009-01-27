@@ -42,4 +42,4 @@
   * ((<dkim-milter>))
   * ((<sid-milter>))
   * ((<milter-greylist>))
-  * ((<milter-manager>))
+  * ((<milter manager>))
