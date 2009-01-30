@@ -53,9 +53,14 @@ OpenLDAPがTLSのバックエンドとしてGnuTLSを利用している場合は
 
 === ldapsearchでTLS接続できない
 
-ldapsearchだとTLS関連のログがあまりでないので、直接
-gnutls-cliで確認する。以下のコマンドで接続してみると、何かわ
-かるかもしれない。
+TLS_CACERTで登録している証明書がおかしいかもしれない。以下の
+コマンドで接続して出力される証明書と同じ証明書を含が
+TLS_CACERTで指定したファイルに含まれているか確認すること。
 
   % gnutls-cli --insecure -p 636 your.ldap.server -d 4711 --print-cert
 
+=== ldapsearchのログを詳細にする
+
+-d -1オプションをつける。
+
+  % ldapsearch -d -1 ...
