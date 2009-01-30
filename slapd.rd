@@ -48,3 +48,14 @@ OpenLDAPがTLSのバックエンドとしてGnuTLSを利用している場合は
 
 /etc/ldap/ldap.conf:
   TLS_REQCERT never
+
+== トラブルシューティング
+
+=== ldapsearchでTLS接続できない
+
+ldapsearchだとTLS関連のログがあまりでないので、直接
+gnutls-cliで確認する。以下のコマンドで接続してみると、何かわ
+かるかもしれない。
+
+  % gnutls-cli --insecure -p 636 your.ldap.server -d 4711 --print-cert
+
