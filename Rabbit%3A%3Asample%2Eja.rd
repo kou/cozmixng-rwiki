@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 1134 2008-07-30 13:36:43Z kou $
+# $Id: rabbit.rd 1207 2009-02-06 12:33:52Z kou $
 
 = Rabbit
 
@@ -125,6 +125,13 @@
 #  # normalized_height = 50
 #  # relative_width = 100
 #  # relative_height = 50
+
+= 画像: 鏡面反射
+
+  # image
+  # src = shocker.jpg
+  # relative_height = 80
+  # reflect_ratio = 0.5
 
 = 画像サイズ
 
