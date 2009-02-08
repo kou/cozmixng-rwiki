@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit-en.rd
-# $Id: rabbit-en.rd 1140 2008-07-31 09:46:36Z kou $
+# $Id: rabbit-en.rd 1207 2009-02-06 12:33:52Z kou $
 
 = Rabbit(en)
 
@@ -125,6 +125,13 @@ A presentation tool
 #  # normalized_height = 50
 #  # relative_width = 100
 #  # relative_height = 50
+
+= Image: Reflect
+
+  # image
+  # src = shocker.jpg
+  # relative_height = 80
+  # reflect_ratio = 0.5
 
 = Image size
 
