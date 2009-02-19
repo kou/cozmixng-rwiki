@@ -170,7 +170,7 @@ lennyのコンソールからはCtrl+]で抜けられる。
 
   % sudo ln -s /etc/xen/xm-lenny /etc/xen/auto/
 
-これで起動・終了・再起動などができるようになる。
+これで起動・終了・再起動などができるようになる。（あれ？状態を保存して、再開している？）
 
   % sudo /sbin/service xendomains start
   % sudo /sbin/service xendomains stop
