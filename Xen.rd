@@ -138,7 +138,7 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
 
 IPアドレスが異なると外に出られない。xencons=ttyをつけないと、起動時に止まってしまう。
 
-/etc/xen/xm-lenny:
+/etc/xen/lenny.cfg:
   kernel  = '/var/xen/lenny/vmlinuz'
   ramdisk = '/var/xen/lenny/initrd.img'
   memory  = '256'
@@ -153,7 +153,7 @@ IPアドレスが異なると外に出られない。xencons=ttyをつけない�
 
 ためしに起動してみる。
 
-  % sudo /usr/sbin/xm create /etc/xen/xm-lenny -c
+  % sudo /usr/sbin/xm create /etc/xen/lenny.cfg -c
 
 ログインプロンプトがでたら成功。パスワードなしでrootでログインできる。
 
@@ -166,9 +166,9 @@ IPアドレスが異なると外に出られない。xencons=ttyをつけない�
 
 lennyのコンソールからはCtrl+]で抜けられる。
 
-自動起動するようにする場合は、/etc/xen/xm-lennyへのリンクを/etc/xen/auto/以下に置く。
+自動起動するようにする場合は、/etc/xen/lenny.cfgへのリンクを/etc/xen/auto/以下に置く。
 
-  % sudo ln -s /etc/xen/xm-lenny /etc/xen/auto/
+  % sudo ln -s /etc/xen/lenny.cfg /etc/xen/auto/
 
 これで起動・終了・再起動などができるようになる。（あれ？状態を保存して、再開している？）
 
