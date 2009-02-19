@@ -75,7 +75,7 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
   % sudo su - -c "/sbin/chroot /mnt"
   lenny# apt-key update
   lenny# aptitude update
-  lenny# aptitude install -V -D -y sudo ssh lv
+  lenny# aptitude install -V -D -y sudo ssh linux-image-xen-686 lv vim
 
 ホスト名の設定:
   lenny# echo 'xm-lenny' > /etc/hostname
@@ -101,6 +101,8 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
   /dev/sda1       /               ext3    defaults,errors=remount-ro 0       1
   /dev/sda2       none            swap    sw              0       0
 
+ネットワークの設定。lennyのIPアドレスとして192.168.1.2を使う。このアドレスはあとでXenの設定をするときに使う。
+
 /etc/network/interfaces:
   # _
   # Used by ifup(8) and ifdown(8). See the interfaces(5) manpage or
@@ -115,9 +117,20 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
     netmask 255.255.255.0
     gateway 192.168.1.1
 
+設定が完了したら、chrootを抜けて、ホスト側にlennyのカーネルを取り出す。
+
+アンマウントする。
+
+  lenny# exit
+  % sudo cp /mnt/boot/{vmlinuz,initrd.img}-2.6.26-1-xen-686 /var/xen/lenny/
+  % cd /var/xen/lenny
+  % sudo ln -s vmlinuz-2.6.26-1-xen-686 vmlinuz
+  % sudo ln -s initrd.img-2.6.26-1-xen-686 initrd.img
+  % sudo umount /mnt
+
 == DomainUとして登録
 
-インストールしたlennyをDomainUとして登録する。設定は/etc/xen/xm-lennyとする。
+インストールしたlennyをDomUとして登録する。設定は/etc/xen/xm-lennyとする。
 
 注意する点は、vifのIPアドレスはlennyに設定したIPアドレスと同じにすることと、extraにxencons=ttyを設定すること。
 
@@ -138,9 +151,16 @@ IPアドレスが異なると外に出られない。xencons=ttyをつけない�
 
 ためしに起動してみる。
 
-  %  sudo /usr/sbin/xm create /etc/xen/xm-lenny -c
+  % sudo /usr/sbin/xm create /etc/xen/xm-lenny -c
 
 ログインプロンプトがでたら成功。パスワードなしでrootでログインできる。
+
+ユーザを作成し、sudoの設定をしたらrootのパスワードは潰す。
+
+  # adduser kou
+  # visudo
+  # passwd -l
+  # exit
 
 lennyのコンソールからはCtrl+]で抜けられる。
 
