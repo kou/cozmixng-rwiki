@@ -103,6 +103,8 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
 
 ネットワークの設定。lennyのIPアドレスとして192.168.1.2を使う。このアドレスはあとでXenの設定をするときに使う。
 
+デフォルトゲートウェイはIPアドレスの最後の数字に127を足したものにする。この場合は192.168.1.129になる。（127は/etc/xen/scripts/vif-natの中で使われている数字。）
+
 /etc/network/interfaces:
   # _
   # Used by ifup(8) and ifdown(8). See the interfaces(5) manpage or
@@ -115,7 +117,7 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
   iface eth0 inet static
     address 192.168.1.2
     netmask 255.255.255.0
-    gateway 192.168.1.1
+    gateway 192.168.1.129
 
 設定が完了したら、chrootを抜けて、ホスト側にlennyのカーネルを取り出す。
 
