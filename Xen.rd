@@ -44,10 +44,6 @@ VMWare上のCentOSだとブリッジモードにするとネットワークが�
 
 再起動する。
 
-=== トラブルシューティング
-
-CentOS 5.2のkernel-xen-2.6.18-92.1.22.el5ではr8169カーネルモジュールがうまく動かない？
-
 == Debian GNU/Linux lennyのインストール
 
 lennyはdebootstrapでインストールする。
@@ -74,6 +70,50 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
   % sudo mount -o loop /var/xen/lenny/disk.img /mnt
   % sudo su - -c "DEBOOTSTRAP_DIR=$PWD $PWD/debootstrap --arch i386 lenny /mnt http://cdn.debian.or.jp/debian/ $PWD/scripts/debian/sid"
 
+ベースシステムがインストールできたら、chrootして基本的な設定を行う。
+
+  % sudo su - -c "/sbin/chroot /mnt"
+  lenny# apt-key update
+  lenny# aptitude update
+  lenny# aptitude install -V -D -y sudo ssh lv
+
+ホスト名の設定:
+  lenny# echo 'xm-lenny' > /etc/hostname
+
+/etc/hosts:
+  127.0.0.1 localhost
+  127.0.1.1 xm-lenny.example.com xm-lenny
+
+  # The following lines are desirable for IPv6 capable hosts
+  ::1     ip6-localhost ip6-loopback
+  fe00::0 ip6-localnet
+  ff00::0 ip6-mcastprefix
+  ff02::1 ip6-allnodes
+  ff02::2 ip6-allrouters
+  ff02::3 ip6-allhosts
+
+/etc/fstab:
+  # _
+  # /etc/fstab: static file system information.
+  #
+  # <file system> <mount point>   <type>  <options>       <dump>  <pass>
+  proc            /proc           proc    defaults        0       0
+  /dev/sda1       /               ext3    defaults,errors=remount-ro 0       1
+  /dev/sda2       none            swap    sw              0       0
+
+/etc/network/interfaces:
+  # _
+  # Used by ifup(8) and ifdown(8). See the interfaces(5) manpage or
+  # /usr/share/doc/ifupdown/examples for more information.
+  
+  auto lo
+  iface lo inet loopback
+  
+  auto eth0
+  iface eth0 inet static
+    address 192.168.1.2
+    netmask 255.255.255.0
+    gateway 192.168.1.1
 
 == DomainUとして登録
 
