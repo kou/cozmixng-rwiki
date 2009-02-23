@@ -4,6 +4,12 @@
 
   % openssl req -new -x509 -nodes -keyout server.key -out server.crt
 
+== パスフレーズ無しの証明要求書を作る。
+
+（？）嘘かも。
+
+  % openssl req -new -nodes -keyout server.key -out server.csr
+
 == 証明書の中身を見る．
 
   % openssl x509 -text -in xxx.crt
