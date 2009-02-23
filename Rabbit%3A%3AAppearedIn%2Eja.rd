@@ -14,3 +14,4 @@ Rabbitはこんなところに出没しました．
   * ((<GaUnit - ファンクションクラブ2008|URL:http://pub.cozmixng.org/~kou/archives/function-club2008/>))
   * ((<xUnit 2008 - オブラブ忘年会 〜ふりかえり2008〜|URL:http://pub.cozmixng.org/~kou/archives/object-club-2008-winter/>))
   * ((<まず好きなこと、そしてそれを続けること - 仙台Ruby会議01|URL:http://pub.cozmixng.org/~kou/archives/SendaiRubyKaigi01/>))
+  * ((<"milter manager - フリーソフトウェアで迷惑メール対策 - オープンソースカンファレンス2009 Tokyo/Spring"|URL:http://pub.cozmixng.org/~kou/archives/osc2009-spring/>))
