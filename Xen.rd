@@ -136,7 +136,13 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
 
 注意する点は、vifのIPアドレスはlennyに設定したIPアドレスと同じにすることと、extraにxencons=ttyを設定すること。
 
-IPアドレスが異なると外に出られない。xencons=ttyをつけないと、起動時に止まってしまう。
+IPアドレスが異なると外に出られない。
+
+xencons=ttyをつけないと、起動時に止まってしまう。
+
+clock=jiffiesをつけないとこんなメッセージがたくさん/var/log/messagesにでて何もできなくなってしまう。
+
+  clocksource/0: Time went backwards: ret=5af6d65a24f delta=-312972075237201 shadow=5af3252f37f offset=3b1338fe
 
 /etc/xen/lenny.cfg:
   kernel  = '/var/xen/lenny/vmlinuz'
@@ -149,7 +155,7 @@ IPアドレスが異なると外に出られない。xencons=ttyをつけない�
   on_poweroff = 'destroy'
   on_reboot   = 'restart'
   on_crash    = 'restart'
-  extra   = 'xencons=tty'
+  extra   = 'xencons=tty clock=jiffies'
 
 ためしに起動してみる。
 
