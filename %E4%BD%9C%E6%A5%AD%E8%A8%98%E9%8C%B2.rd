@@ -43,3 +43,4 @@
   * ((<sid-milter>))
   * ((<milter-greylist>))
   * ((<milter manager>))
+  * ((<Heimdal>))
