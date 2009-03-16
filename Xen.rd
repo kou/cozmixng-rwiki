@@ -78,11 +78,11 @@ XenのDomU関連のものは/var/xen/lenny以下に置くことにする。
   lenny# aptitude install -V -D -y sudo ssh linux-image-xen-686 lv vim
 
 ホスト名の設定:
-  lenny# echo 'xm-lenny' > /etc/hostname
+  lenny# echo 'lenny' > /etc/hostname
 
 /etc/hosts:
   127.0.0.1 localhost
-  127.0.1.1 xm-lenny.example.com xm-lenny
+  127.0.1.1 lenny.example.com lenny
 
   # The following lines are desirable for IPv6 capable hosts
   ::1     ip6-localhost ip6-loopback
