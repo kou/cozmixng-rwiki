@@ -64,3 +64,12 @@ TLS_CACERTで指定したファイルに含まれているか確認すること�
 -d -1オプションをつける。
 
   % ldapsearch -d -1 ...
+
+=== BDBがアップデートして起動時にエラー
+
+db_recoverでデータベースのバージョンアップ。ただし、db_recoverは((*新しいバージョンのもの*))を使うこと。（↓のX.Xを4.6とか新しいバージョンにする。）
+
+  % sudo -u ldap -H db_recover-X.X -h /usr/local/var/db/openldap-data/
+
+実行すると以下のようなメッセージがでるが、大丈夫。アップデートされている。
+  db_recover-4.6: Program version 4.6 doesn't match environment version 4.4
