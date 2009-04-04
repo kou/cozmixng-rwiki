@@ -6,6 +6,10 @@ Rabbitはこんなところに出没しました．
 
   * 日経ソフトウェア 2006年1月号 P54: kdmsnrさんのプロフィール欄（気になっているソフトウェアとして）
 
+== 書籍
+
+  * ((<Ruby技術社認定私見公式ガイド|URL:http://www.amazon.co.jp/Ruby%E6%8A%80%E8%A1%93%E8%80%85%E8%AA%8D%E5%AE%9A%E8%A9%A6%E9%A8%93-%E5%85%AC%E5%BC%8F%E3%82%AC%E3%82%A4%E3%83%89-ITpro-BOOKs-%E4%BC%8A%E8%97%A4%E5%BF%A0%E3%83%86%E3%82%AF%E3%83%8E%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BA/dp/4822234304>)) P18: Rubyで実装されたデスクトップ・アプリケーションの例として。
+
 == プレゼンテーション
 
   * ((<Rabbit2008 - 東京Ruby会議01|URL:http://pub.cozmixng.org/~kou/archives/TokyoRubyKaigi01/>))
