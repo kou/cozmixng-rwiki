@@ -10,7 +10,7 @@ Must fulfill at least one of the following conditions:
   * Use Rabbit for every presentation.
   * Used Rabbit at least once for a presentation.
   * Thinking about using Rabbit for your presentations, but haven't had the chance yet.
-  * Performing a presentation in publuc with Rabbit and getting your name added to the ((<Rabbit::UsedBy>)) list.
+  * Performing a presentation in public with Rabbit and getting your name added to the ((<Rabbit::UsedBy>)) list.
   * Having an interest in Rabbit's unique features, i.e. The tortoise and the hair, the rabbit hole.
   * Written a patch for Rabbit.
   * Drawn something (character, logos, web-buttons) for Rabbit.
@@ -28,14 +28,15 @@ Must fulfill at least one of the following conditions:
 There are lots of "shy" people so when reporting a bug, adding a link to the report in your own website/blog is a good idea.
 （((<Recently added members|URL:http://pub.cozmixng.org/~wikilink/index.rb?cmd=view;name=Category126>))）
 
-If you're interested you can find the archives here: ((<rabbit-shockers-en ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers/>))
+If you're interested you can find the archives here: ((<rabbit-shockers-en ML|URL:http://www.cozmixng.org/~w3ml/index.rb/rabbit-shockers-en/>))
 （((<QuickML|URL:http://quickml.com/>)) powered）.  To join the list, send an e-mail like the following:
 
-    To: rabbit-shockers@ml.cozmixng.org
+    To: rabbit-shockers-en@ml.cozmixng.org
     Cc: kou@cozmixng.org
     Subject: [Any subject will do]
     
-    [Some sort of greeting, we recommend a self-introduction or some information on how you learned about Rabbit]
+    [Some sort of greeting, we recommend a self-introduction or
+     some information on how you learned about Rabbit]
 
   * kou（一人目のRabbitユーザ）
   * みやむこさん（Rabbitの共同開発者の一人。rabbit-mode.lの作者）
