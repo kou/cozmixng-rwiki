@@ -96,7 +96,7 @@
     * ((<Nowhere Near|URL:http://d.hatena.ne.jp/drawnboy/20060129/1138469323>))
   * 武田くん（rabbit-mode.el作者）
   * 木村さん（DarwinPortsのパッケージ作成）
-    * ((<きりかノート|URL:http://kimuraw.txt-nifty.com/d/>))
+    * ((<きりかノート 2冊め|URL:http://d.hatena.ne.jp/kimuraw/>))
 
 # RubyKaigi 2006後
 
