@@ -38,6 +38,7 @@ COZMIXNGいいだしっぺ．
   * ((<slapd>))
   * ((<MacBook>))
   * ((<Xen>))
+  * ((<git>))
 
 == 小物
 
