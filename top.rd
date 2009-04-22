@@ -1,1 +1,13 @@
-<meta http-equiv="refresh" content="2;URL=http://erdohdulu.blogcu.com/">
+= COZMIXNG RWiki
+
+ようこそ，((<COZMIXNG>))へ．
+
+== 目次
+
+  * ((<参加者>))
+  * ((<活動>))
+  * ((<ToWantToDo>))
+  * ((<作業記録>))
+  * ((<連絡先>))
+  * ((<リンク>))
+  * ((<ヘルプ|help>))
