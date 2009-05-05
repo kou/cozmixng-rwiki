@@ -84,9 +84,12 @@ IPv6を有効にした場合は，[[::1]]も追加しておくとよい．
 
 == SMTP AUTHの設定
 
-((<Courier-IMAP>))は((<DRAC>))を使えないのでSMTP AUTHにする．
+((<Dovecot>))を使ってSMTP AUTHをする。
 
-ここでは((<Cyrus SASL>))を使う．
+Dovecotを使う。
+
+  smtpd_sasl_type = dovecot
+  smtpd_sasl_path = /var/spool/postfix/private/auth
 
 SASLによる認証を有効にする
 
