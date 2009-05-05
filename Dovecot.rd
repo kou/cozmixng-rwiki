@@ -21,6 +21,10 @@ Courier-IMAP用に作った証明書を使う。Courier-IMAPでは鍵と証明�
   ssl_cert_file = /usr/local/etc/dovecot/dovecot.crt
   ssl_key_file = /usr/local/etc/dovecot/dovecot.key
 
+SSL/TLSまたはローカルからの接続以外の時は平文で認証できないようにする。
+
+  disable_plaintext_auth = yes
+
 === Maildir
 
 メールボックスはMaildirにする。
