@@ -44,3 +44,4 @@
   * ((<milter-greylist>))
   * ((<milter manager>))
   * ((<Heimdal>))
+  * ((<Dovecot>))
