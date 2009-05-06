@@ -77,3 +77,12 @@ UNIXアカウントがある人はPAMを使って、ない人は/etc/passwdと�
   }
 
 ((<Postfix>))側にも設定が必要。
+
+=== INBOX.
+
+Courier-IMAPと同じく、プライベートメールボックスのネームスペースをINBOX.とする。（この説明が正しいかどうかはわからない。）
+
+  namespace private {
+    prefix = INBOX.
+    inbox = yes
+  }
