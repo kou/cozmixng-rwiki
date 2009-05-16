@@ -2,7 +2,7 @@
 
 = Tutorial.ja
 
-$Id: Tutorial.ja 325 2007-09-09 10:18:31Z kou $
+$Id: Tutorial.ja 377 2009-05-16 02:07:58Z kou $
 
 == 注意
 
@@ -518,7 +518,22 @@ xml-stylesheetを追加したい場合は以下のようにします．
 もし，RSS 0.91を生成したい場合は，RSS 2.0の場合と同様に
 (({RSS::Maker.make}))の第一引数を(({"0.91"}))に変更します．
 
+ただし、RSS 0.91では言語指定が必須なので、言語を指定する必要
+があります。ここでは日本語であると指定します。
+
   rss = RSS::Maker.make("0.91") do |maker|
+    maker.channel.language = "ja"
+    ...
+  end
+
+RSS 1.0など、/rdf:RDF/channel/language要素がないフィードの場
+合でも、単に無視したりdc:languageとして扱ったりと適切に処理し
+ます。そのため、以下のように「バージョンが(({"0.91"}))のとき
+だけ言語を指定する」というように書く必要は((*ありません*))。
+フィードのバージョンに関わらず言語を指定してください。
+
+  rss = RSS::Maker.make("0.91") do |maker|
+    maker.channel.language = "ja" if maker.feed_version == "0.91"
     ...
   end
 
