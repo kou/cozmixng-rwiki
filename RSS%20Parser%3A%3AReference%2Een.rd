@@ -2,7 +2,7 @@
 
 = Reference.en
 
-$Id: Reference.en 341 2007-12-02 06:07:26Z kou $
+$Id: Reference.en 381 2009-05-16 03:57:02Z kou $
 
 This is a reference of RSS Maker.
 
@@ -97,6 +97,9 @@ This is an object which makes root element of RSS or Atom.
 
 RSS or Atom object doesn't be made if you don't configure
 (({maker.channel})) or (({maker.items})) appropriately.
+
+If you want to make RSS 0.91, you need to also configure
+(({maker.image})) appropriately.
 
 --- maker.version
      Returns XML version.
