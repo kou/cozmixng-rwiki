@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 349 2007-12-27 07:59:52Z kou $
+$Id: README.en 378 2009-05-16 03:00:50Z kou $
 
 == Name
 
@@ -25,6 +25,11 @@ Ruby's
   * RSS Parser works more strictly in each upgrade. You may
     get empty string by #to_s even if you got RSS
     string. You will find problems by calling #validate.
+  * RSS::Maker.make returns nil before RSS Parser 0.2.5 but
+    RSS::Maker.make raises an exception since RSS Parser
+    0.2.5 when you don't set required information on
+    RSS::Maker.make. Because it's difficult to fix all
+    problems without any information where is problem.
 
 == What's this?
 
@@ -81,7 +86,7 @@ parse an RSS 0.90 feed try to run the following:
   * Tomoaki: He sent me a bug report of documents.
   * Chris Lee: He sent me a bug report.
   * Ronald Pijnacker: He sent me a bug report.
-  * Kazuhiro NISHIYAMA: He sent me a bug report of documents.
+  * Kazuhiro NISHIYAMA: He sent me bug reports.
   * Christian W. Zuckschwerdt: He gave me an advice for
     treating RSS 0.90.
   * Takuo Yonezawa: He sent me a bug report.
@@ -89,3 +94,5 @@ parse an RSS 0.90 feed try to run the following:
     content:encoded with RSS 2.0:
     ((<URL:http://www.rssboard.org/rss-profile>))
   * Ray Chen: He sent me a bug report.
+  * Michael Auzenne: He sent me a bug report.
+  * Akinori MUSHA: He suggested an API improvement.
