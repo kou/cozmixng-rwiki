@@ -2,7 +2,7 @@
 
 = Tutorial.en
 
-$Id: Tutorial.en 325 2007-09-09 10:18:31Z kou $
+$Id: Tutorial.en 377 2009-05-16 02:07:58Z kou $
 
 Sorry for my funny English :-(
 
@@ -524,9 +524,26 @@ argument of (({RSS::Maker.make})) like the following:
 If you want to make RSS 0.91, you need to change the first
 argument of (({RSS::Maker.make})) to (({"0.91"})).
 
+But it's not enough. You need to specify language because
+RSS 0.91 requires /rss/channel/language.
+
   rss = RSS::Maker.make("0.91") do |maker|
+    maker.channel.language = "en"
     ...
   end
+
+Specified language is just ignored or treated as dc:language
+if generated feed type doesn't have 'language' field like
+RSS 1.0. You ((*don't*)) need to write your code for
+"language is specified only when RSS 0.91 is generating"
+like the following:
+
+  rss = RSS::Maker.make("0.91") do |maker|
+    maker.channel.language = "en" if maker.feed_version == "0.91"
+    ...
+  end
+
+You can always specify language.
 
 ==== Making Atom 1.0
 
