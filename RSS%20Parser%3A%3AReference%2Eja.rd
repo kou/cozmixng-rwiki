@@ -2,7 +2,7 @@
 
 = Reference.ja
 
-$Id: Reference.ja 341 2007-12-02 06:07:26Z kou $
+$Id: Reference.ja 381 2009-05-16 03:57:02Z kou $
 
 RSS Makerのリファレンスです．
 
@@ -97,6 +97,9 @@ RSS/Atomのルート要素を生成するオブジェクトです．
 
 (({maker.channel}))または(({maker.items}))を適切に設定しなけ
 ればRSS/Atomは生成されません．
+
+RSS 0.91を生成する場合は(({maker.image}))も適切に設定しなけ
+ればいけません。
 
 --- maker.version
      作成するXMLのバージョンを返します．
