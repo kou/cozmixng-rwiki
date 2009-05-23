@@ -1,11 +1,11 @@
 = INSTALL.macosx-macports.en
 
-$Id: INSTALL.macosx-macports.en 1060 2008-02-04 21:43:20Z kou $
+$Id: INSTALL.macosx-macports.en 1226 2009-03-12 11:13:56Z kou $
 
 This document describes how to install Rabbit with MacPorts and how to use
 Rabbit on Mac OS X.
 
-== Requirement
+== Requirements
 
 The following programs are needed.
 
@@ -15,7 +15,7 @@ The following programs are needed.
   * from MacPorts (sudo port install subversion)
   * from ((<URL:http://metissian.com/projects/macosx/subversion/>))
 
-Remember to select "X11 SDK" at installing Xcode Tools.
+Remember to select "X11 SDK" when installing the Xcode Tools.
 
 == Install MacPorts
 
@@ -23,13 +23,13 @@ see ((<URL:http://www.macports.org/>)).
 
 === Configuration of MacPorts
 
-First, get the portfiles of Rabbit from subversion repository,
+First, get the Rabbit portfiles from the subversion repository,
 
   ~% svn co http://www.cozmixng.org/repos/dports/trunk dports
   ~% cd dports
   ~/dports% portindex
 
-Then, edit /opt/local/etc/ports/sources.conf like this,
+Then, edit /opt/local/etc/macports/sources.conf like this,
 
   # To enable your local ports repository, uncomment and customize the
   # following line to point at your local dports directory
@@ -40,9 +40,9 @@ Then, edit /opt/local/etc/ports/sources.conf like this,
   # rsync://rsync.darwinports.org/dpupdate/dports
   rsync://rsync.darwinports.org/dpupdate/dports
 
-(/Users/yourname means your home directory)
+(/Users/yourname is your home directory)
 
-"port info" command tells you the installation is succeeded or not.
+"port info" command tells you if the installation succeeded or not.
 
   ### OK ###
   ~% port info rb-rabbit
@@ -57,12 +57,17 @@ Then, edit /opt/local/etc/ports/sources.conf like this,
 
 == installing Rabbit
 
+You might want to do the following to update information for
+required ports.
+
+  ~% sudo port sync
+
 The following command will install rabbit and its dependencies.
 
   ~% sudo port install rb-rabbit
 
 
-You can install these ports to make rabbit more better.
+You can install these ports to make rabbit even better.
 
 * htree (rb-htree) - enable syntax coloring
 * Ruby-GetText-Package (rb-gettext) - enable I18N message catalogs
@@ -88,7 +93,7 @@ the following operation upgrades your Rabbit.
   ~% sudo port sync
   ~% sudo port upgrade rb-rabbit
 
-If you want to upgrader only Rabbit (rb-rabbit), you can upgrade with "-n"
+If you want to upgrade Rabbit only (rb-rabbit), you can upgrade with the "-n"
 option.
 
   ~% sudo port -n upgrade rb-rabbit
