@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 1174 2008-09-28 01:45:17Z kou $
+$Id: README.ja 1231 2009-04-12 11:06:15Z kou $
 
 == 名前
 
@@ -34,6 +34,10 @@ Kouhei Sutou <kou@cozmixng.org>
 
   カワイイ方のうさぎです．
 
+* たいらびとたいやき
+
+  たいやきが好きな食いしん坊なうさぎです。
+
 * バナー
 
   カワイイバナーです．
@@ -50,13 +54,13 @@ Kouhei Sutou <kou@cozmixng.org>
 
   カワイイかめです．
 
-sode <sodetaka@kono.cis.iwate-u.ac.jp>
+sode
 
 === 画像（3）
 
 旗
 
-gan <shinsato@kono.cis.iwate-u.ac.jp>
+gan
 
 === 画像（4）
 
@@ -805,6 +809,8 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）�
     * Rabbitを使ってプレゼンしてくれます．
     * Windowsへのインストール用ドキュメントを更新してくれま
       した。
+    * Mac OS Xへのインストール用ドキュメントを更新してくれま
+      した。
   * Vincentさん: Max OS Xでの動作確認をしてくれます．フラン
     ス語のメッセージを用意してくれました．
   * sodeさん: かっこいい兎とかかわいいうさぎとかかわいいかめ
@@ -860,3 +866,5 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）�
     * Rabbitを使ってプレゼンしてくれます。
     * プレゼンの中でこっそりバグレポートをしてくれました。
   * 中井さん: 不具合を報告してくれます。
+  * Eduardo Gonzalezさん: 英語のドキュメントをよくしてくれま
+    した。
