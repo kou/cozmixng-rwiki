@@ -1,6 +1,6 @@
 = INSTALL.macosx-macports.ja
 
-$Id: INSTALL.macosx-macports.ja 1056 2008-02-03 12:36:30Z kimuraw $
+$Id: INSTALL.macosx-macports.ja 1226 2009-03-12 11:13:56Z kou $
 
 Mac OS X のパッケージ管理システムのひとつである、MacPorts を利用して
 Rabbit をインストール、利用する手順について説明します。
@@ -46,7 +46,7 @@ MacPorts の公式サイト ((<URL:http://www.macports.org/>)) からダウン�
   ~/dports% portindex
 
 次に、このディレクトリを MacPorts が参照するように 
-/opt/local/etc/ports/sources.conf を編集します。
+/opt/local/etc/macports/sources.conf を編集します。
 
   # To enable your local ports repository, uncomment and customize the
   # following line to point at your local dports directory
@@ -73,6 +73,11 @@ MacPorts の公式サイト ((<URL:http://www.macports.org/>)) からダウン�
 
 
 == Rabbit のインストール
+
+まず、以下のコマンドで、Rabbitに必要なソフトウェアの情報を更新し
+ておくのも良いかもしれません。
+
+  ~% sudo port sync
 
 以下のコマンドで Rabbit と、それに必要なソフトウェアがインストールされます。
 
