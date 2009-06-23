@@ -1,5 +1,6 @@
 = midmind::memo
 
+* NetBSD or OpenBSDに移植
 *（MLアーカイブを読んだ限りでは） Private環境でPL-VINIはムリだと思う
 * FEA
   * Fowarding Engine Abstraction
