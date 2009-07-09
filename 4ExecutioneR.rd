@@ -1,0 +1,1 @@
+Aq Berk cince serveri hackledim xD
