@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1231 2009-04-12 11:06:15Z kou $
+$Id: README.en 1263 2009-07-16 08:22:17Z kou $
 
 == Name
 
@@ -833,3 +833,4 @@ page from XXX.rd.
     * Reported a bug.
   * JunichiNakai: Reports bugs.
   * Eduardo Gonzalez: Improves documents in English.
+  * Kazuhiro NISHIYAMA: Reported a bug.
