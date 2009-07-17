@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd 
-# $Id: rabbit.rd 1207 2009-02-06 12:33:52Z kou $
+# $Id: rabbit.rd 1260 2009-06-27 13:38:12Z kou $
 
 = Rabbit
 
@@ -55,6 +55,7 @@
 
 = 機能: UI（2）
 
+  # wait
   * 一覧ページ
   * 落書き
   * (('wait'))ポーズ
