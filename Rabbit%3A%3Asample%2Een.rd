@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit-en.rd
-# $Id: rabbit-en.rd 1225 2009-02-28 15:44:59Z wm_eddie $
+# $Id: rabbit-en.rd 1260 2009-06-27 13:38:12Z kou $
 
 = Rabbit(en)
 
@@ -55,6 +55,7 @@ A presentation tool
 
 = Features: UI (2)
 
+  # wait
   * Index page
   * Graffiti
   * (('wait'))Pause
