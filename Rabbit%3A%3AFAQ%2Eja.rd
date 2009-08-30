@@ -10,6 +10,21 @@ Rabbit だけど何か質問ある?
 
 答え...
 
+== PDFでうさぎと亀を使いたいときは？
+
+pdf-tortoise-and-hareテーマとRABBIT_ALLOTTED_TIME環境変数を使います。
+
+  % RABBIT_ALLOTTED_TIME=5m rabbit --theme pdf-tortoise-and-hare slide.pdf
+
+RABBIT_ALLOTTED_TIMEの値の書式はスライド中に
+
+  : allotted-time
+      5m
+
+と書くときと同じものが使えます。
+
+上の例だと「5m」なので、亀が5分かけて走ります。
+
 == 亀を元に戻したいときは？
 
  Alt+t
