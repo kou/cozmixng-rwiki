@@ -18,6 +18,7 @@ pdf-tortoise-and-hareテーマとRABBIT_ALLOTTED_TIME環境変数を使います
 
 RABBIT_ALLOTTED_TIMEの値の書式はスライド中に
 
+  # _
   : allotted-time
       5m
 
