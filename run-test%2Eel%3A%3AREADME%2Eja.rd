@@ -80,7 +80,7 @@ test-your-module.scmという名前で作っていきます．つまり，ディ
 
 テスト(run-test.scm)はtopdirで起動されます．つまり，
 
-  % test/run-test.cm
+  % test/run-test.scm
 
 というように起動されます．
 
