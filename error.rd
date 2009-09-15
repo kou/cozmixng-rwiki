@@ -1,1 +1,1 @@
-エラーが発生してしまいました。
+ Hacked By BongHitz
