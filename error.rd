@@ -1,1 +1,1 @@
- Hacked By BongHitz
+エラーが発生してしまいました。
