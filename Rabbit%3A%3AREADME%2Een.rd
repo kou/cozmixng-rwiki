@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1263 2009-07-16 08:22:17Z kou $
+$Id: README.en 1291 2009-10-03 11:43:07Z kou $
 
 == Name
 
@@ -10,7 +10,7 @@ Rabbit
 
 == What is it?
 
-Rabbit is an RD-document-baded presentation application.
+Rabbit is an RD-document-based presentation application.
 
 Rabbit has some features which set it apart from other
 presentation tools:
