@@ -138,6 +138,8 @@ Printed output (index) (0.6.3):
   * ((<FAQ.ja|Rabbit::FAQ.ja>))
   * ((<README.en|Rabbit::README.en>))
   * ((<README.ja|Rabbit::README.ja>))
+  * ((<NEWS.en|Rabbit::NEWS.en>))
+  * ((<NEWS.ja|Rabbit::NEWS.ja>))
   * ((<INSTALL.win32.en|Rabbit::INSTALL.win32.en>))
   * ((<INSTALL.win32.ja|Rabbit::INSTALL.win32.ja>))
   * ((<INSTALL.macosx-macports.ja|Rabbit::INSTALL.macosx-macports.ja>))
