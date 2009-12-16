@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1291 2009-10-03 11:43:07Z kou $
+$Id: README.en 1309 2009-10-17 09:18:27Z kou $
 
 == Name
 
@@ -834,3 +834,5 @@ page from XXX.rd.
   * JunichiNakai: Reports bugs.
   * Eduardo Gonzalez: Improves documents in English.
   * Kazuhiro NISHIYAMA: Reported a bug.
+  * Masaki Suketa: Reported bugs related Ruby 1.9.
+  * kdmsnr: Reported a bug.
