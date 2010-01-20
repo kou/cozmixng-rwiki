@@ -223,8 +223,9 @@ Mewなら
 
 == バーチャルメールボックスのquota
 
-virtual_mailbox_limitで設定できる。デフォルトは512MB。正弦をなくするなら0を指定する。
+virtual_mailbox_limitで設定できる。デフォルトは50MB。制限をなくするなら0を指定する。制限をなくする場合はmailbox_size_limitも0にすることを忘れないこと。
 
+  mailbox_size_limit = 0
   virtual_mailbox_limit = 0
 
 == 8bit -> 7bit変換を抑制する
