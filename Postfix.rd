@@ -175,7 +175,7 @@ Mewなら
 
         % sudo /usr/local/sbin/postfix reload
 
-== バーチャルドメインの設定
+== バーチャルメールボックスの設定
 
 (1) main.cfに以下を追加
 
@@ -220,6 +220,12 @@ Mewなら
 (6) 設定ファイルを再読み込み
 
       % sudo env - /usr/local/etc/rc.d/postfix reload
+
+== バーチャルメールボックスのquota
+
+virtual_mailbox_limitで設定できる。デフォルトは512MB。正弦をなくするなら0を指定する。
+
+  virtual_mailbox_limit = 0
 
 == 8bit -> 7bit変換を抑制する
 
