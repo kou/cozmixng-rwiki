@@ -44,9 +44,9 @@ Rabbitのアーカイブは3.5MBほどあるのでコンパイルに時間がか
   # description = 追いかけ屋1
   # class = right
 
-最新バージョン: 0.6.3(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.6.3.tar.gz>)))
+最新バージョン: 0.6.4(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.6.4.tar.gz>)))
 
-The latest version: 0.6.3(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.6.3.tar.gz>)))
+The latest version: 0.6.4(((<download|URL:http://www.cozmixng.org/~kou/download/rabbit-0.6.4.tar.gz>)))
 
 == インストールに必要なもの/Requirements
 
@@ -106,21 +106,21 @@ The latest version: 0.6.3(((<download|URL:http://www.cozmixng.org/~kou/download/
   # description = 走り屋3
   # class = right
 
-印刷出力(0.6.3):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.6.3.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.6.3.pdf>))
+印刷出力(0.6.4):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.6.4.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-0.6.4.pdf>))
 
-印刷出力（一覧）(0.6.3):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.6.3.ps>)) /
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.6.3.pdf>))
+印刷出力（一覧）(0.6.4):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.6.4.ps>)) /
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-index-0.6.4.pdf>))
 
-Printed output(0.6.3):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-0.6.3.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-0.6.3.pdf>))
+Printed output(0.6.4):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-0.6.4.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-0.6.4.pdf>))
 
-Printed output (index) (0.6.3):
-((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-index-0.6.3.ps>))/
-((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-index-0.6.3.pdf>))
+Printed output (index) (0.6.4):
+((<PS|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-index-0.6.4.ps>))/
+((<PDF|URL:http://pub.cozmixng.org/~kou/archives/rabbit/rabbit-en-index-0.6.4.pdf>))
 
 == BTS
 
