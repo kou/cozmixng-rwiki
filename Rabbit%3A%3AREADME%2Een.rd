@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1309 2009-10-17 09:18:27Z kou $
+$Id: README.en 1357 2010-01-29 13:50:12Z kou $
 
 == Name
 
@@ -642,6 +642,7 @@ sample/theme-bench-en.rab.
 Rabbit searches for themes by using ruby's $LOAD_PATH. If you make
 a theme, place it into
 ((|PATH_OF_INCLUDED_IN_$LOAD_PATH/rabbit/theme/THEME_NAME/THEME_NAME.rb|))
+or ((|DIRECTORY_OF_SOURCE_FILE/THEME_NAME.rb|)).
 
 === How do I write a theme?
 
@@ -836,3 +837,4 @@ page from XXX.rd.
   * Kazuhiro NISHIYAMA: Reported a bug.
   * Masaki Suketa: Reported bugs related Ruby 1.9.
   * kdmsnr: Reported a bug.
+  * Youhei SASAKI: The official Debian package maintainer.
