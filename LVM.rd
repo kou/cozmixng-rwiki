@@ -100,12 +100,11 @@ lvextendを使って拡張できる．
 
   % sudo lvextend -L+10G /dev/mapper/DATA-backup
 
-ただ，領域は拡張されてもファイルシステムは拡張されていないのでext2resizeなどでファイルシステムも拡張する必要がある．
+ただ，領域は拡張されてもファイルシステムは拡張されていないのでresize2fsなどでファイルシステムも拡張する必要がある．
 
-  % sudo umount /backup
-  % sudo ext2resize /dev/mapper/DATA-backup
+  % sudo resize2fs /dev/mapper/DATA-backup
 
-ext2resizeにはデバイス名の後にサイズを指定することもできるが，省略すると最大サイズまで拡張してくれるので，今回は省略した．
+resize2fsにはデバイス名の後にサイズを指定することもできるが，省略すると最大サイズまで拡張してくれるので，今回は省略した．
 
 === ボリュームグループを拡張
 
