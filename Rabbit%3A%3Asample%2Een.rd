@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit-en.rd
-# $Id: rabbit-en.rd 1260 2009-06-27 13:38:12Z kou $
+# $Id: rabbit-en.rd 1384 2010-07-31 06:50:07Z kou $
 
 = Rabbit(en)
 
@@ -205,6 +205,25 @@ Create EPS ahead of time((-needs gs-))
   # image
   # src = rabbit.xcf
   # relative_height = 100
+
+= aafigure
+
+  # aafigure
+  # relative_width = 90
+#  # foreground = #ff3333
+  A   B   C   D   E   F   G   H   I   J   K   L   M
+   AA  BB  CC  DD  EE  FF  GG  HH  II  JJ  KK  LL  MM
+   AA  BB  CC  DD  EE  FF  GG  HH  II  JJ  KK  LL  MM
+
+   aa  bb  cc  dd  ee  ff  gg  hh  ii  jj  kk  ll  mm
+   aa  bb  cc  dd  ee  ff  gg  hh  ii  jj  kk  ll  mm
+
+  N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+   NN  OO  PP  QQ  RR  SS  TT  UU  VV  WW  XX  YY  ZZ
+   NN  OO  PP  QQ  RR  SS  TT  UU  VV  WW  XX  YY  ZZ
+
+   nn  oo  pp  qq  rr  ss  tt  uu  vv  ww  xx  yy  zz
+   nn  oo  pp  qq  rr  ss  tt  uu  vv  ww  xx  yy  zz
 
 = Word Wrapping
 
