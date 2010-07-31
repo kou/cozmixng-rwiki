@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1357 2010-01-29 13:50:12Z kou $
+$Id: README.en 1377 2010-05-25 09:59:27Z kou $
 
 == Name
 
@@ -112,6 +112,12 @@ Atsushi Takeda
 bin/rabbirc
 
 akira yamada
+
+=== Rabbitter
+
+bin/rabbitter
+
+OBATA Akio
 
 == Co-Authors
 
@@ -821,6 +827,7 @@ page from XXX.rd.
     * Makes presentations with Rabbit.
     * Reports some bugs and also fixes them.
     * Helps debug many problems.
+    * Made Rabbitter.
   * Masao Mutoh:
     * Makes presentations with Rabbit.
     * Updated INSTALL.win32.ja.
