@@ -2,7 +2,7 @@
 
 = README.ja
 
-$Id: README.ja 1355 2010-01-29 13:48:57Z kou $
+$Id: README.ja 1377 2010-05-25 09:59:27Z kou $
 
 == 名前
 
@@ -109,6 +109,12 @@ misc/emacs/
 bin/rabbirc
 
 やまだあきらさん
+
+=== Rabbitter
+
+bin/rabbitter
+
+おばたさん
 
 == 共同開発者
 
@@ -855,6 +861,7 @@ XXX.rdから1ページに8枚のスライドが入ったPDF（XXX_multi.pdf）�
     * Rabbitを使ってプレゼンしてくれます。
     * バグ報告をし、修正もしてくれます。
     * たくさんデバッグしてくれます。
+    * Rabbitterを作ってくれました。
   * むとうさん:
     * Rabbitを使ってプレゼンしてくれます。
     * Windowsへのインストール用ドキュメントを更新してくれま
