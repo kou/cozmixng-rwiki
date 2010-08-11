@@ -1,6 +1,6 @@
 = midmind
 
-ルータの次はスイッチか
+ナレッジマネジメントに関する研究を始めました
 
 * ((<midmind::memo>))
 * ((<XORP|URL:http://www.xorp.org/>))
