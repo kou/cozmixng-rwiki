@@ -16,7 +16,7 @@ See ((<README.en|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit%3A%3AR
 for more information.
 
 RDはRuby Documentの略で、素の状態でも読み書きしやすいようにデザインされたテキストの書式です．Wikiに近い書きかたなので比較的簡単に理解できます．RDの書式については
-((<こちら|URL:http://www9.ocn.ne.jp/~ymt/ruby/rd.html>))
+((<こちら|URL:http://www.cozmixng.org/~rwiki/?cmd=view;name=RD>))
 をご覧ください．
 
 Rabbitのアーカイブは3.5MBほどあるのでコンパイルに時間がかかると思われるかもしれませんが、
