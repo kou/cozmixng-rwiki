@@ -8,5 +8,6 @@
 == 参考
 
 * ((<広まるWikiの社内利用 - Wikiをナレッジ・マネジメントに生かす企業が急増中|URL:http://www.ciojp.com/contents/?id=00005560;t=0>))
+* ((<Activity theory as a methodology of knowledge management|URL:http://ci.nii.ac.jp/els/110007044021.pdf?id=ART0008969466&type=pdf&lang=jp&host=cinii&order_no=&ppv_type=0&lang_sw=&no=1282566271&cp=>))
 * ((<コラボレーション・タスクのためのSchedule-wikiを用いたKnow-who支援機能の実現|URL:http://ci.nii.ac.jp/els/110002695934.pdf?id=ART0002972719&type=pdf&lang=jp&host=cinii&order_no=&ppv_type=0&lang_sw=&no=1282565380&cp=>))
 * ((<ナレッジマネジメント導入によるパーソナルプロジェクトマネジメント教育に関する研究|URL:http://ci.nii.ac.jp/els/110007602936.pdf?id=ART0009420922&type=pdf&lang=jp&host=cinii&order_no=&ppv_type=0&lang_sw=&no=1282566148&cp=>))
