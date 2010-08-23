@@ -8,4 +8,4 @@
 == 参考
 
 * ((<広まるWikiの社内利用 - Wikiをナレッジ・マネジメントに生かす企業が急増中|URL:http://www.ciojp.com/contents/?id=00005560;t=0>))
-* コラボレーション・タスクのためのSchedule-wikiを用いたKnow-who支援機能の実現
+* ((<コラボレーション・タスクのためのSchedule-wikiを用いたKnow-who支援機能の実現|URL:http://ci.nii.ac.jp/els/110002695934.pdf?id=ART0002972719&type=pdf&lang=jp&host=cinii&order_no=&ppv_type=0&lang_sw=&no=1282565380&cp=>))
