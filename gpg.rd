@@ -82,7 +82,7 @@ Mewで公開鍵を配布するには，C-cC-aして，添付ファイルを作�
 
 相手の公開鍵を自分の秘密鍵で署名する．何か聞かれるのでそれについて答えていく．
 
-  % gpg -lsign-key xxx@example.com
+  % gpg --sign-key xxx@example.com
 
 相手の公開鍵を信用する．
 
