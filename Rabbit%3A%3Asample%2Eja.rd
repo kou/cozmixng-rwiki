@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit.rd
-# $Id: rabbit.rd 1384 2010-07-31 06:50:07Z kou $
+# $Id: rabbit.rd 1409 2010-09-25 12:49:27Z kou $
 
 = Rabbit
 
@@ -107,6 +107,14 @@
   * テーマの再読み込み
   * テーマの切り替え
 
+= 機能: タグ
+
+(('tag:x-large:大きなテキスト'))
+
+(('tag:center'))中央寄せされたテキスト
+
+(('tag:right'))右寄せされたテキスト
+
 = ToDo
 
   * インラインでの画像表示
@@ -133,6 +141,38 @@
   # src = shocker.jpg
   # relative_height = 80
   # reflect_ratio = 0.5
+
+= 画像: 背景（1）
+
+  * 背景画像
+  * デフォルトはセンタリング
+
+== プロパティ
+
+: background-image
+   lavie.png
+
+: background-image-relative-width
+   50
+
+# : background-image-align
+#    right
+
+# : background-image-relative-margin-right
+#    3
+
+= 画像: 背景（2）
+
+    # image
+    # src = lavie.png
+    # relative-width = 30
+    # align = right
+#    # vertical-align = top
+    # relative-margin-right = -5
+
+  * 右寄せ背景画像
+  * スライド内で指定
+    * align = right
 
 = 画像サイズ
 
@@ -344,6 +384,34 @@ URL先の画像をダウンロード
 
 : 情報ウィンドウ表示切替え
    I
+
+= 操作: 本番用（3）
+
+: 虫眼鏡
+   Ctrl+右クリック
+
+   ホイールで拡大率変更
+
+: スポットライト
+   ダブル右クリック
+
+   ホイールで半径変更
+
+= 操作: 本番用（4）
+
+: 落書き
+   ポップアップ（右クリック）→\n落書きモード
+
+: マウスジェスチャー
+   右ドラッグ
+
+= 操作: 本番用（5）
+
+: ホワイトアウト
+   W
+
+: ブラックアウト
+   B
 
 = 操作: 保存
 
