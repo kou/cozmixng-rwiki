@@ -1,6 +1,6 @@
 # To run with it without system install.
 #  % ruby -I./lib bin/rabbit -f sample/rabbit-en.rd
-# $Id: rabbit-en.rd 1384 2010-07-31 06:50:07Z kou $
+# $Id: rabbit-en.rd 1409 2010-09-25 12:49:27Z kou $
 
 = Rabbit(en)
 
@@ -106,6 +106,14 @@ A presentation tool
   * Theme reload
   * Change theme
 
+= Features: Tag
+
+(('tag:x-large:Large Text'))
+
+(('tag:center'))Centerized Text
+
+(('tag:right'))Right-Justified Text
+
 = ToDo
 
   * Inline images
@@ -133,6 +141,38 @@ A presentation tool
   # src = shocker.jpg
   # relative_height = 80
   # reflect_ratio = 0.5
+
+= Image: Background (1)
+
+  * Background image
+  * Centering by default
+
+== Properties
+
+: background-image
+   lavie.png
+
+: background-image-relative-width
+   50
+
+# : background-image-align
+#    right
+
+: background-image-relative-margin-right
+   3
+
+= Image: Background (2)
+
+    # image
+    # src = lavie.png
+    # relative-width = 30
+    # align = right
+#    # vertical-align = top
+    # relative-margin-right = -5
+
+  * Right justified backgorund image
+  * Specify in slide
+    * align = right
 
 = Image size
 
@@ -335,6 +375,35 @@ End of source code.
 
 : Toggle info window
    I
+
+= Op.: On stage (3)
+
+: Magnifier
+   Ctrl + right click
+
+   Change scale by wheel
+
+: Spotlight
+   Double right clicks
+
+   Change radius by wheel
+
+= Op.: On stage (4)
+
+: Graffiti
+   Popup menu (right click) (('&rightarrow;'))\n
+   "Graffiti mode"
+
+: Mouse gesture
+   Right button drag
+
+= Op.: On stage (5)
+
+: Whiteout
+   W
+
+: Blackout
+   B
 
 = Op.: Save
 
