@@ -2,7 +2,7 @@
 
 = README.en
 
-$Id: README.en 1377 2010-05-25 09:59:27Z kou $
+$Id: README.en 1420 2010-10-24 14:42:20Z kou $
 
 == Name
 
@@ -136,8 +136,11 @@ The images above are copyright their respective owners.
 
 == License
 
-Licensed under the same terms and conditions as Ruby. For
-more information see COPYING.
+Licensed under GPLv2 or later. For more information see
+'GPL' file. Provided patches, codes and so on are also
+licensed under GPLv2 or later. Kouhei Sutou can change their
+license. Authores of them are cosidered agreeing with those
+rules when they contribute their patches, codes and so on.
 
 lib/rabbit/div/prototype.js released under an MIT-style
 licence. For more information see ((<Prototype JavaScript
