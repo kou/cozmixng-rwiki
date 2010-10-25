@@ -144,6 +144,8 @@ Printed output (index) (0.9.1):
   * ((<INSTALL.win32.ja|Rabbit::INSTALL.win32.ja>))
   * ((<INSTALL.macosx-macports.ja|Rabbit::INSTALL.macosx-macports.ja>))
   * ((<INSTALL.macosx-macports.en|Rabbit::INSTALL.macosx-macports.en>))
+  * ((<INSTALL.macosx-homebrew.ja|Rabbit::INSTALL.macosx-homebrew.ja>))
+  * ((<INSTALL.macosx-homebrew.en|Rabbit::INSTALL.macosx-homebrew.en>))
   * ((<rabbit-mode.el::README.ja>))
 
 == サンプル/Samples
