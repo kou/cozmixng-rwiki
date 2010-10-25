@@ -1,6 +1,6 @@
 = INSTALL.macosx-macports.ja
 
-$Id: INSTALL.macosx-macports.ja 1271 2009-08-02 12:52:43Z kimuraw $
+$Id: INSTALL.macosx-macports.ja 1415 2010-10-05 13:02:39Z kdmsnr $
 
 Mac OS X のパッケージ管理システムのひとつである、MacPorts を利用して
 Rabbit をインストール、利用する手順について説明します。
