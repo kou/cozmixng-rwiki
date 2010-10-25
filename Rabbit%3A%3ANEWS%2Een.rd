@@ -2,7 +2,25 @@
 
 = NEWS.en
 
-$Id: NEWS.en 1410 2010-09-26 03:39:30Z kou $
+$Id: NEWS.en 1423 2010-10-25 13:24:07Z kou $
+
+== Changes 0.9.1 from 0.9.0: 2010-10-25
+
+Changed license: Ruby's -> GPLv2 or later
+
+=== Improvements
+
+  * Removed rabbit.bat from gem. [U.Nakamura]
+  * Added documentation for Homebrew. [kdmsnr]
+  * Changed license to GPLv2 or later from Ruby's.
+    (It assumed that Kouhei Sutou can change contributed
+    codes and so on. If contributes can't accept the rule,
+    those codes and so on aren't included in Rabbit.)
+
+=== Thanks
+
+  * U.Nakamura
+  * kdmsnr
 
 == Changes 0.9.0 from 0.6.5: 2010-09-26
 
