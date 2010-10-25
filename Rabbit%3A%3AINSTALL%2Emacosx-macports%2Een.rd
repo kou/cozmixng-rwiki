@@ -1,6 +1,6 @@
 = INSTALL.macosx-macports.en
 
-$Id: INSTALL.macosx-macports.en 1271 2009-08-02 12:52:43Z kimuraw $
+$Id: INSTALL.macosx-macports.en 1415 2010-10-05 13:02:39Z kdmsnr $
 
 This document describes how to install Rabbit with MacPorts and how to use
 Rabbit on Mac OS X.
