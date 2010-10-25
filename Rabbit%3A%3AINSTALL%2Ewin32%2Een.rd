@@ -2,7 +2,7 @@
 
 = INSTALL.win32.en
 
-$Id: INSTALL.win32.en 1225 2009-02-28 15:44:59Z wm_eddie $
+$Id: INSTALL.win32.en 1415 2010-10-05 13:02:39Z kdmsnr $
 
 == Install Ruby
 
