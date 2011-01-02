@@ -1,95 +1,119 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//fEN">
-<!-- saved from url=(0040)http://forum.betaradioshow.com/index.php -->
-<HTML><HEAD><TITLE>Hテ「CKテェD DewRim</TITLE>
-<META content="text/html; charset=windows-1254" http-equiv=Content-Type>
-<STYLE type=text/css>BODY {
-	SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-FACE-COLOR: #000000; SCROLLBAR-DARKSHADOW-COLOR: #000000; FONT-FAMILY: Verdana; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #000000
+<title>Hacked MaLi_042</title>
+<style type="text/css"> 
+<!--
+body,td,th {
+	color: #CCCCCC;
 }
-.Estilo10 {
-	FONT-FAMILY: Haettenschweiler; COLOR: #ffffff
-}
-.Estilo8 {
-	FONT-FAMILY: Haettenschweiler; COLOR: #ffffff; FONT-SIZE: 10px
-}
-.ws26 {
-	FONT-SIZE: 35px
+body {
+	background-color: #000000;
 }
 .style1 {
-	FONT-FAMILY: "Courier New", Courier, mono
+	font-family: tahoma;
+	font-size: 10pt;
 }
 .style2 {
-	FONT-FAMILY: Haettenschweiler
+	color: #FF0000;
+	font-weight: bold;
 }
-.style6 {
-	FONT-SIZE: 16px
-}
-.style7 {
-	COLOR: #99ff00; FONT-WEIGHT: bold
-}
+.style3 {color: #FFFFFF}
+.style7 {color: #FFFFFF; font-weight: bold; }
 .style8 {
-	COLOR: #ffffff
+	font-family: tahoma;
+	font-size: 16pt;
+	color: #FFFFFF;
 }
-.style10 {
-	FONT-SIZE: 18px
+.style11 {font-size: 14pt}
+-->
+</style></head>
+ 
+<body>
+<div align="center">
+  <p>&nbsp;</p>
+  <p class="style8"><br />
+ 
+    <span class="style11"></span></p>
+
+ 
+<font color="white">Saygトアlar.</font>
+ 
+<p><font face="Georgia"><font color="aqua"><font size="20">Hacked ?</font></font></font></p>
+ 
+<p align="center" class="style2 style1 style97"><strong><span class="style3">[</span> <span class="style50">Turkトアsh Hackers Team</span> <span class="style3">] </span></strong></p>
+<p align="center" class="style94 style2 style1 style20"><strong><span class="style34"> </span><span class="style3">| </span><span class="style34">M</span> <span class="style3">|</span> <span class="style34">A</span><span class="style3">|</span> <span class="style34"> L </span><span class="style3">| </span><span class="style34">i </span><span class="style3">|</span>
+ 
+ <p>
+  <span class="style3"> says: ALLAH'u Ekber !</span></p>
+ 
+<p align=center style='text-align:center'><b><span style='font-family:Corbel;
+color:red'><script language="JavaScript1.2"> 
+ 
+ 
+var message="Ben Hayatトア Terazimde Tarttトアm Arazimde Gテシneナ歹 Yテシzテシmテシ Dテカnテシp Yattトアm."
+var neonbasecolor="#ff0000"
+var neontextcolor="#ffffff"
+var neontextcolor2="#660000"
+var flashspeed=100						// speed of flashing in milliseconds
+var flashingletters=3						// number of letters flashing in neontextcolor
+var flashingletters2=1						// number of letters flashing in neontextcolor2 (0 to disable)
+var flashpause=0						// the pause between flash-cycles in milliseconds
+ 
+///No need to edit below this line/////
+ 
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
 }
-.style11 {
-	COLOR: #ffff00; FONT-WEIGHT: bold
+else
+document.write(message)
+ 
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
 }
-.stil2 {
-	COLOR: #0000ff; FONT-SIZE: 35px; FONT-WEIGHT: bold
+ 
+function neon(){
+ 
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
 }
-</STYLE>
+ 
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+ 
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+ 
+ 
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+ 
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+</script></span></b><br>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
-<META name=GENERATOR content="MSHTML 8.00.6001.18939"></HEAD>
-<BODY aLink=#ff0000 link=#646464 bgColor=#000000 text=#ff0000 vLink=#ff0000>
-<DIV align=center><SPAN 
-style="FILTER: blur(add=1,direction=270,strength=30); HEIGHT: 30px">
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style2 align=center><FONT style="FONT-SIZE: 50pt">HACKテ灰 テ毓 
-DewRim</FONT></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style2 align=center>&nbsp;</P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style10 align=center>テ毓-DewRim |<SPAN class=style8>| テ毓-DesTan </SPAN></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-align=center>&nbsp;</P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-align=center>&nbsp;</P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style10 align=center>Hi Admin :)<SPAN class=style8></SPAN></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-align=center>&nbsp;</P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style7 align=center><FONT size=4 face=Verdana>DewRim Say</FONT></P><FONT 
-size=4 face=Verdana>トーlk deト殃lsin sonda olmayacksトアn... </FONT>
-<P></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-align=center>&nbsp;</P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style7 align=center><FONT size=4 face=Verdana></FONT></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-align=center><B><FONT color=#ffffff size=5 face=Verdana></FONT><FONT 
-color=#747474 size=5 face=Verdana><SPAN 
-style="BACKGROUND-COLOR: #ffffff"></SPAN></FONT></B></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-class=style1 align=center><IMG alt=DewRim 
-src="http://img201.imageshack.us/img201/8108/burhack.jpg" width=500 height=500></P>
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: -1px; WORD-SPACING: -1px" 
-align=center><FONT color=#a6a6a6><SPAN 
-style="FONT-FAMILY: Webdings; FONT-SIZE: 29pt"></SPAN></FONT><B><FONT 
-
-</FONT><FONT color=#ffffff size=5 face="Courier New">Spycrew65@hotmail.com ~ By-DewRim@hotmail.com</FONT><FONT 
-color=#a6a6a6 size=5 face="Courier New"></FONT></B> 
-<P style="MARGIN-TOP: -1px; MARGIN-BOTTOM: 0pt; WORD-SPACING: -1px" 
-align=center></P></DIV></SPAN></SPAN><EMBED height=0 type=audio/mpeg hidden=true 
-
-
-<center><object type="application/x-shockwave-flash" data="http://flash-mp3-player.net/medias/player_mp3_mini.swf" width="200" height="20"> <param name="movie" value="http://flash-mp3-player.net/medias/player_mp3_mini.swf" /> <param name="bgcolor" value="#000000" /> <param name="FlashVars" value="mp3=http://www.bdpistanbul.com/BDP.mp3&amp;autoplay=1" /> </object> 
-  
-</center> 
-  
-</body> 
-  
-  
-</html> 
-  
