@@ -1,2 +1,13 @@
-* Ruby link
-  * ((<DOWNLOAD PLEASE|URL:http://ahb.me/335g>))
+= COZMIXNG RWiki
+
+ようこそ，((<COZMIXNG>))へ．
+
+== 目次
+
+  * ((<参加者>))
+  * ((<活動>))
+  * ((<ToWantToDo>))
+  * ((<作業記録>))
+  * ((<連絡先>))
+  * ((<リンク>))
+  * ((<ヘルプ|help>))
