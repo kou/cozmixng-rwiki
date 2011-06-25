@@ -1,5 +1,7 @@
 = Rabbit
 
+((*公式サイトは((<URL:http://rabbit-shocker.org/>))へ移行しました。*))
+
   # image
   # src = http://www.cozmixng.org/repos/rabbit/trunk/data/rabbit/image/rabbit-images/lavie-with-logo.png
   # title = Lavie
