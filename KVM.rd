@@ -22,6 +22,12 @@ virt-viewerは仮想マシンにVNCでつないで、仮想マシンをGUIで操
 
 virtinstは新しい仮想マシンのインストールを簡単にやってくれる便利ツール。
 
+libvirt関連のツールはrootユーザーかlibvirtグループに入っているユーザーしか使えないので、作業用の一般ユーザーをlibvirtグループに入れておく。
+
+  % sudo adduser kou libvirt
+
+グループの設定を反映させるためにログインしなおす。
+
 == 設定
 
 === ブリッジの設定
@@ -110,3 +116,108 @@ virtinstは新しい仮想マシンのインストールを簡単にやってく
 
 NICが2枚あるという設定なので同様にeth1とbr1も設定する。
 
+=== FreeBSD 9 amd64のインストール
+
+まずはインストールCDのISOをダウンロードする。
+
+  % wget -c ftp://ftp.jp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/9.0/FreeBSD-9.0-RELEASE-amd64-disc1.iso
+
+ISOはどこに置いていてもいいが、libvirt関連のファイルが/var/lib/libvirt/以下にまとまっていそうなのでその下に置くことにする。
+
+  % sudo mkdir -p /var/lib/libvirt/isos
+  % sudo mv FreeBSD-9.0-RELEASE-amd64-disc1.iso /var/lib/libvirt/isos/
+
+以下のような設定で仮想マシンを作成する。
+
+: 名前（ゲスト機のホスト名ではなくてホスト機からみたゲストマシンの名前）
+    www
+: メモリー
+    1GB
+: ディスク容量
+    40GB（実体は/var/lib/libvirt/images/www.imgというファイル）
+: ネットワーク
+    br0を使ったブリッジ接続
+: インストールCD
+    /var/lib/libvirt/isos/FreeBSD-9.0-RELEASE-amd64-disc1.iso
+
+virt-installでこれらの設定をしてインストールする。
+
+  % virt-install --connect qemu:///system --name www --ram 1024 --disk path=/var/lib/libvirt/images/www.img,size=40 --network bridge=br0 --cdrom /var/lib/libvirt/isos/FreeBSD-9.0-RELEASE-amd64-disc1.iso
+
+もし、作業するユーザーがlibvirgグループに入っていない場合は失敗するので注意。また、ssh -YとかでXを転送するようにしていなくてもエラーになるので注意。
+
+中途半端に作られてしまった場合は以下のようにして仮想マシンを削除できる。
+
+  % virsh --connect qemu:///system destroy www
+  % virsh --connect qemu:///system undefine www
+
+destroyで仮想マシンを止めて、undefineで登録を削除する。
+
+VNCクライアントが立ち上がったらインストーラーを使ってインストールする。
+
+
+インストールが終わったらbr1用のネットワークを追加する。virsh attach-interfaceでいけそうな雰囲気があるけど、KVMだからなのかうまく動かなかったので直接設定ファイルを編集する。
+
+  % virsh --connect qemu:///system edit www
+
+エディタが立ち上がってXMLを編集することになる。その中に以下のような<interface>という部分がある。
+
+  ...
+    <interface type='bridge'>
+      <mac address='52:54:00:fc:39:5f'/>
+      <source bridge='br0'/>
+      <target dev='vnet0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+  ...
+
+これをコピペしてブリッジのインターフェイス、MACアドレス、PCIバスのスロット番号（たぶんXML内を見渡すと0x04まで使っているはずなので0x05を使う）を変えた項目を追加する。
+
+  ...
+    <interface type='bridge'>
+      <mac address='52:54:00:fc:39:5f'/>
+      <source bridge='br0'/>
+      <target dev='vnet0'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <interface type='bridge'>
+      <mac address='52:54:00:fc:39:6f'/>
+      <source bridge='br1'/>
+      <target dev='vnet1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
+    </interface>
+  ...
+
+これで一度仮想マシンを止めてから立ち上げ直すとインターフェイスが追加されているはず。
+
+まず、ゲスト機にログインしてシャットダウンする。
+
+  host% ssh www
+  www% sudo /sbin/shutdown -p now
+
+終了しているかどうかを確認する。
+
+  % virsh --connect qemu:///system list --all
+   Id Name                 State
+  ----------------------------------
+    - www                  shut off
+
+Stateがshut offになっていれば終了している。以下のようにすれば仮想マシンが起動する。
+
+  % virsh --connect qemu:///system start www
+
+最後に自動起動するようにしておく。もし、たまにしか動かさない仮想マシンではこの設定をする必要はない。
+
+  % virsh --connect qemu:///system autostart www
+
+後で自動起動を無効にしたい場合は以下のように--disableをつける。
+
+  % virsh --connect qemu:///system autostart www --disable
+
+あとは普通のマシンようにセットアップする。
+
+=== Debian GNU/Linux Squeeze amd64のインストール
+
+インストールCDが違うだけで後は同じ。
+
+  % wget -c http://cdimage.debian.org/debian-cd/6.0.3/amd64/iso-cd/debian-6.0.3-amd64-netinst.iso
