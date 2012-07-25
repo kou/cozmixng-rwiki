@@ -1,13 +1,3 @@
-= COZMIXNG RWiki
-
-ようこそ，((<COZMIXNG>))へ．
-
-== 目次
-
-  * ((<参加者>))
-  * ((<活動>))
-  * ((<ToWantToDo>))
-  * ((<作業記録>))
-  * ((<連絡先>))
-  * ((<リンク>))
-  * ((<ヘルプ|help>))
+hacked by sys1993*
+Ashiyane Digital Security Team*
+We Love Iran*
