@@ -1,4 +1,13 @@
-Hacked By XaRt
+= COZMIXNG RWiki
 
+ようこそ，((<COZMIXNG>))へ．
 
-GreeTZ : FitFer0 - Turkguvenligi - F0RTYS3V3N - Wynx
+== 目次
+
+  * ((<参加者>))
+  * ((<活動>))
+  * ((<ToWantToDo>))
+  * ((<作業記録>))
+  * ((<連絡先>))
+  * ((<リンク>))
+  * ((<ヘルプ|help>))
