@@ -77,9 +77,9 @@ libvirt関連のツールはrootユーザーかlibvirtグループに入って�
   	dns-nameservers 192.168.0.254
   	dns-search example.com
 
-以下のようにすれば反映できる。（ifup/ifdownでも個別にできるが、2つのインターフェイスの設定を変えないといけないためこっちの方が楽だと思う。あるいは再起動する。）
+以下のようにすれば反映できる。（ifup/ifdownでも個別にできるが、2つのインターフェイスの設定を変えないといけないためこっちの方が楽だと思う。）
 
-  % sudo /usr/sbin/service networking restart
+  % sudo /sbin/shutdown -r now
 
 ただ、リモートから作業しているとネットワークの設定をするのは怖い。なので、以下のように万が一うまくいかないときは自動で元の設定に戻すようにするのがいいのではないかと思う。
 
