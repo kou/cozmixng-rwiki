@@ -4,11 +4,11 @@
 
   % openssl req -new -x509 -nodes -keyout server.key -out server.crt
 
-== パスフレーズ無しの証明要求書を作る。
+== パスフレーズ無しの鍵と証明要求書を作る。
 
-（？）嘘かも。
+  % openssl req -new -nodes -newkey rsa:4096 -keyout server.key -out server.req
 
-  % openssl req -new -nodes -keyout server.key -out server.csr
+server.reqをCAcertに送れば証明書をもらえる。
 
 == 証明書の中身を見る．
 
